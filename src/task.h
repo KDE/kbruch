@@ -120,10 +120,10 @@ private:
 	/** the ratio vector */
 	RatioArray ratio_vector;
 
-	/** the operation vector, smaller by one then ratio_vector */
+	/** the operation vector, smaller by one than ratio_vector */
 	ShortArray op_vector;
 
-	/** the prime factor vector is used to store alle prime factors of the
+	/** the prime factor vector is used to store all prime factors of the
 	 * main denominator */
 	PrimeFactorArray prim_fac_vector;
 
@@ -151,7 +151,7 @@ private:
 };
 
 
-/* ------ some prototyps of non class functions ------ */
+/* ------ some prototypes of non class functions ------ */
 
 /** it is possible to code: cout << task_object << endl; */
 QTextStream & operator<<(QTextStream & str, task & ptask);

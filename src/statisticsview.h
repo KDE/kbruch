@@ -28,8 +28,8 @@ class QGridLayout;
 
 /*!
   * StatisticsView takes care of the statistics of a test.
-  * It saves the number of correct and wrong questions and
-  * views its data to the user.
+  * It saves the number of correct and wrong answers and
+  * displays this data to the user.
   * \author Sebastian Stein
   * \author Eva Brucherseifer
   */

@@ -35,9 +35,9 @@ class QSpacerItem;
 class QPushButton;
 class QVBoxLayout;
 
-/*! Constructs a QWidget, which shows the task to the user. 
+/*! Constructs a QWidget, which shows the task to the user.
  *  The class also provides input fields, so that the user can enter the result.
- *  It also controlls the interaction, so that the entered result gets checked
+ *  It also controls the interaction, so that the entered result gets checked
  *  and a new task can be generated.
  *  \author Sebastian Stein
  * */

@@ -35,7 +35,7 @@
 #include <stdlib.h>
 #include <limits.h>
 
-/* this includes are needed for Qt support */
+/* these includes are needed for Qt support */
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
