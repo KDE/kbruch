@@ -21,7 +21,7 @@ using boost::unit_test_framework::test_suite;
 using boost::unit_test_framework::test_case;
 
 // the class to be tested
-#include "../src/primenumber.h"
+#include "primenumber.h"
 
 
 class primenumber_test
