@@ -53,12 +53,12 @@
 			<default code="true">Qt::darkGreen</default>
 			<whatsthis>Color of the numbers in the task view</whatsthis>
 		</entry>
-		<entry type="Color" key="operationColor">
+		<entry name="operationColor" type="Color">
 			<label>Color of the operation signs in the task view</label>
 			<default code="true">Qt::blue</default>
 			<whatsthis>Color of the operation signs in the task view</whatsthis>
 		</entry>
-		<entry type="Color" key="fractionBarColor">
+		<entry name="fractionBarColor" type="Color">
 			<label>Color of the fraction bars in the task view</label>
 			<default code="true">Qt::red</default>
 			<whatsthis>Color of the fraction bars in the task view</whatsthis>

@@ -65,7 +65,7 @@
                     </property>
                     <widget class="KColorButton" row="1" column="1">
                         <property name="name">
-                            <cstring>operationColorButton</cstring>
+                            <cstring>operationColor</cstring>
                         </property>
                         <property name="sizePolicy">
                             <sizepolicy>
@@ -91,7 +91,7 @@
                     </widget>
                     <widget class="KColorButton" row="2" column="1">
                         <property name="name">
-                            <cstring>fractionBarColorButton</cstring>
+                            <cstring>fractionBarColor</cstring>
                         </property>
                         <property name="text">
                             <string></string>
