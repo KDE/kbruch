@@ -1,5 +1,58 @@
 what is left to do
+==================
 
 	* use another font size from KGlobalSettings
 
 	* find a better way to align task and statistical window
+
+	* use function pow() from math.h instead of high()
+
+	* remove #define TRUE and use datatype bool
+
+	* maybe use int instead of short because source easier to read
+
+	* document classes to be able to use KDoc
+
+	* maybe use kdDebug() vor debug messages
+
+	* split class task in representation, calculate and generation
+
+	* integrate KBruch as part into KMath
+
+
+feature request
+===============
+
+- a visual representation of fractions in circles, rectangeles, ... for
+beginners
+- the possibility to practic conversions from fractions to decimal numbers and
+vica versa.  1/8 = 0.125
+- the calculation with 'mixed numbers' like  2 1/3 + 5 1/7 =
+- train actions like   1/3 = 3/9 or   15/45 = 1/3. I don't know the Englisch
+words for this actions.
+
+there's also an algorithm to convert decimal numbers of infinite
+length, but with a repeating part ( which means the decimal
+representations of all rational numbers ) into fractions...  I think
+the idea was to divide the repeating part by a number which you write
+down as x 9's where x is the length of the repeating part ( that's the
+best i can explain it in english :). E.g. 0,111... would become 1/9
+.  0.1212... would become 12/99 etc.  This is the way they explained
+it to us in high school, i'm sure there's an easy way to write this
+down in code...
+
+With a being your periodical decimal number and n being the length of the
+period, you multiply a by 10^n and then subtract a:
+
+a = 0.1111111
+
+10a = 1.1111111
+
+9a = 1
+a = 1 / 9
+
+b = 0.213213213213
+1000b = 213.213213213213
+999b = 213
+b = 213 / 999
+
