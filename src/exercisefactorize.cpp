@@ -77,6 +77,8 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	m_factorsEnteredEdit = new QLineEdit( this, "m_factorsEnteredEdit" );
 	layout4->addWidget( m_factorsEnteredEdit );
 	m_factorsEnteredEdit->setReadOnly(true);
+	m_factorsEnteredEdit->setEnabled(false);
+	m_factorsEnteredEdit->setPaletteForegroundColor(QColor(0, 0, 0));
 	
 	m_factorsWidget = new FactorizedWidget( this, "m_factorsWidget", m_factorsResult);
 	layout4->addWidget( m_factorsWidget );
@@ -143,27 +145,13 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	m_taskLabel->setText(tmp_str);
 
 	// now set the color for the task label
-	pal = m_taskLabel->palette();
-	cg = pal.active();
-	cg.setColor(QColorGroup::Foreground, SettingsClass::numberColor());
-	pal.setActive(cg);
-	cg = pal.inactive();
-	cg.setColor(QColorGroup::Foreground, SettingsClass::numberColor());
-	pal.setInactive(cg);
-	m_taskLabel->setPalette(pal);
+	m_taskLabel->setPaletteForegroundColor(SettingsClass::numberColor());
 
 	// the equal sign
 	m_equalSignLabel->setText("=");
 
 	// now set the color for the equal sign
-	pal = m_equalSignLabel->palette();
-	cg = pal.active();
-	cg.setColor(QColorGroup::Foreground, SettingsClass::operationColor());
-	pal.setActive(cg);
-	cg = pal.inactive();
-	cg.setColor(QColorGroup::Foreground, SettingsClass::operationColor());
-	pal.setInactive(cg);
-	m_equalSignLabel->setPalette(pal);
+	m_equalSignLabel->setPaletteForegroundColor(SettingsClass::operationColor());
 
 	// the wrong/correct label, we hide it
 	result_label->setText(i18n("WRONG"));
@@ -262,6 +250,15 @@ void ExerciseFactorize::forceNewTask()
 
 void ExerciseFactorize::update()
 {
+	// now set the color for the task label
+	m_taskLabel->setPaletteForegroundColor(SettingsClass::numberColor());
+
+	// now set the color for the equal sign
+	m_equalSignLabel->setPaletteForegroundColor(SettingsClass::operationColor());
+
+	// and the factors
+	m_factorsWidget->updateAndRepaint();
+
 	// update for itself
 	((QWidget *) this)->update();
 }
