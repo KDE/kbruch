@@ -39,8 +39,6 @@ MainQtWidget::MainQtWidget()
 #ifdef DEBUG
 	kdDebug() << "constructor MainQtWidget" << endl;
 #endif
-	setXMLFile("kbruchui.rc");
-
 	// creating KActions, used by the kbruchui.rc file
 	setupActions();
 
@@ -171,11 +169,11 @@ void MainQtWidget::NrOfTermsBoxSlot()
 	if (curr_nr == "2")
 	{
 		m_MaxMainDenominatorBox->insertItem("10");
-		m_MaxMainDenominatorBox->insertItem("20"));
+		m_MaxMainDenominatorBox->insertItem("20");
 		m_MaxMainDenominatorBox->insertItem("30");
 		m_MaxMainDenominatorBox->insertItem("50");
 		m_nrRatios = 2;
-	} else if (curr_nr == "3")) {
+	} else if (curr_nr == "3") {
 		m_MaxMainDenominatorBox->insertItem("20");
 		m_MaxMainDenominatorBox->insertItem("30");
 		m_MaxMainDenominatorBox->insertItem("50");
