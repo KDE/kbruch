@@ -97,6 +97,7 @@ void MainQtWidget::writeOptions()
 	m_config->writeEntry("muldiv", m_mulDiv);
 	m_config->writeEntry("number_ratios", m_nrRatios);
 	m_config->writeEntry("max_main_denominator", m_maxMainDenominator);
+        m_config->sync();
 }
 
 void MainQtWidget::setupActions()
@@ -134,7 +135,7 @@ void MainQtWidget::setupActions()
 							    actionCollection(), "MaxMainDenominatorLabelAction");
 
 	// the ComboBox holding possible values for the max. main denominator
-	m_MaxMainDenominatorBox = new QComboBox();
+	m_MaxMainDenominatorBox = new QComboBox(this);
 	m_MaxMainDenominatorBox->insertItem("10");
 	m_MaxMainDenominatorBox->insertItem("20");
 	m_MaxMainDenominatorBox->insertItem("30");
@@ -150,7 +151,7 @@ void MainQtWidget::setupActions()
 		case 50 : m_MaxMainDenominatorBox->setCurrentItem(3);
 					 break;
 	}
-	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal Main Denominator"), ALT+Key_T, this, SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorBoxAction"); 
+	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal Main Denominator"), ALT+Key_T, this, SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_MaxMainDenominatorBox, SIGNAL(activated(int)),
@@ -163,7 +164,7 @@ void MainQtWidget::setupActions()
 						   actionCollection(), "OperationLabelAction");
 
 	// the ComboBox holding possible combinations for operations
-	m_OperationBox = new QComboBox();
+	m_OperationBox = new QComboBox(this);
 	m_OperationBox->insertItem(i18n("Addition/Subtraction"));
 	m_OperationBox->insertItem(i18n("Multiplication/Division"));
 	m_OperationBox->insertItem(i18n("All Operations Mixed"));

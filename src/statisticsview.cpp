@@ -149,6 +149,7 @@ StatisticsView::~StatisticsView()
 		m_config->setGroup("Statistics");
 		m_config->writeEntry("count", count);
 		m_config->writeEntry("correct", correct);
+                m_config->sync();
 	}
 
 	/* no need to delete any child widgets, Qt does it by itself */
