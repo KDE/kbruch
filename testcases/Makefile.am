@@ -1,4 +1,4 @@
-bin_PROGRAMS = kbruch_test
+check_PROGRAMS = kbruch_test
 
 kbruch_test_SOURCES = task.cpp ratio.cpp primzahl.cpp primzahl_test.cpp kbruch_test.cpp
 

@@ -64,6 +64,10 @@ kbruch_test_LDADD   = -lboost_unit_test_framework-gcc $(LIB_KDEUI)
 I hope someone finds a portable way to do this Makefile stuff. Please fix it,
 I'm not a Automake/Autoconf guru!
 
+You can compile the test program by typing:
+
+make check
+
 If you were able to compile it, you can execute the test case program
 kbruch_test from within this directory.
 
