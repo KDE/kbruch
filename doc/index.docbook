@@ -146,7 +146,7 @@ task. From 2 to 5, inclusive.</para></listitem>
 
 <varlistentry>
 <term><guilabel>Max. main denominator</guilabel></term>
-<listitem><para>The highest number &kbruch; will use as a denominator in the
+<listitem><para>The highest number &kbruch; will use as the main denominator in the
 tasks it sets. From a minimum of 10 to a maximum of 50.</para></listitem>
 </varlistentry>
 
