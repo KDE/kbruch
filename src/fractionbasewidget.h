@@ -58,7 +58,7 @@ protected:
 	QFont m_font;
 
 	/** overrideing the paint event of QWidget */
-	virtual void paintEvent(QPaintEvent*);
+	virtual void paintEvent(QPaintEvent*) = 0;
 
 	/** paints a ratio at the given position */
 	void paintRatio(QPainter & paint, ratio tmp_ratio, int & x_pos, QFontMetrics & fm, bool show_mixed);

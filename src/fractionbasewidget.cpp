@@ -50,9 +50,6 @@ void FractionBaseWidget::updateAndRepaint()
 	update();
 }
 
-// virtual
-void FractionBaseWidget::paintEvent(QPaintEvent*) {};
-
 void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_pos, QFontMetrics & fm, bool show_mixed)
 {
 	QPen pen = paint.pen(); // get the pen
