@@ -131,7 +131,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 	m_checkButton = new QPushButton( baseWidget, "m_checkButton" );
 	m_checkButton->setText(i18n("&Check Task"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button won't work if you have not entered a result yet."));
+	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 	lowerHBox->addWidget(m_checkButton, 1, Qt::AlignRight);
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
 
@@ -394,7 +394,7 @@ void ExerciseConvert::showResult()
 void ExerciseConvert::nextTask()
 {
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button won't work if you have not entered a result yet."));
+	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 
 	numer_edit->setEnabled(true);
 	deno_edit->setEnabled(true);

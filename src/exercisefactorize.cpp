@@ -205,7 +205,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 
 	// the check task button
 	m_checkButton->setText( i18n( "&Check Task" ) );
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button won't work if you have not entered a result yet."));
+	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
 	m_checkButton->setDefault(true); // is the default button of the dialog
 
@@ -379,7 +379,7 @@ void ExerciseFactorize::showResult()
 void ExerciseFactorize::nextTask()
 {
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button won't work if you have not entered a result yet."));
+	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 
 	// enable prime factor buttons
 	m_factor2Button->setEnabled(true);
