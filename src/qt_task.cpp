@@ -255,7 +255,7 @@ qt_task::~qt_task()
 	we can not do this in the constructor */
 void qt_task::set_position()
 {
-	stats->move(x() + frameGeometry().width() + 7, y());
+	stats->move(x() + frameGeometry().width() + int(abs((frameGeometry().width() - geometry().width())) / 2) , geometry().y());
 	return;
 }
 
