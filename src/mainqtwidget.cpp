@@ -20,17 +20,21 @@
 
 #include <kaccel.h>
 #include <kapplication.h>
-#include <kdebug.h>
 #include <kaction.h>
+#include <kdebug.h>
+#include <kiconloader.h>
+#include <kjanuswidget.h>
 #include <klocale.h>
 
 #include <qsplitter.h>
 #include <qlabel.h>
 #include <qtooltip.h>
 #include <qwhatsthis.h>
+#include <qwidget.h>
 
 #include <math.h>
 
+#include "exercisecompare.h"
 #include "taskview.h"
 #include "statisticsview.h"
 
@@ -58,21 +62,38 @@ MainQtWidget::MainQtWidget()
 	QSplitter* splitter = new QSplitter(QSplitter::Horizontal, this,"QSplitter");
 	setCentralWidget(splitter);
 
+	// the iconlist, where the user can choose the different exercises
+	m_exercises = new KJanusWidget(splitter, "KJanusWidget", KJanusWidget::IconList);
+
 	// create the statistic view
 	m_statview = new StatisticsView(splitter, "StatisticsView");
 
-	// create the task view with the given defaults
-	m_taskview = new TaskView(splitter,"TaskView", m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
+	// add the pages
+	//
+	// we have the exercise to solve fraction tasks
+	QVBox * page = m_exercises->addVBoxPage(i18n("Fraction Task"), i18n("Solve a Task with Fractions"), DesktopIcon("misc"));
+	m_taskview = new TaskView((QWidget *) page, "TaskView", m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
+
+	// we have the exercise to solve fraction tasks
+	page = m_exercises->addVBoxPage(i18n("Comparison Task"), i18n("Compare given Ratios"), DesktopIcon("misc"));
+	m_exerciseCompare = new ExerciseCompare((QWidget *) page, "ExerciseCompare");
 
 	splitter->setResizeMode(m_statview, QSplitter::FollowSizeHint);
 
-	// connect TaskView and StatisticView, so that StatisticView gets informed
-	// about how the user solved a given task (wrong or correct)
+	// we must change the status of the menubar before another page is shown
+	QObject::connect(m_exercises, SIGNAL(aboutToShowPage(QWidget *)), this, SLOT(slotAboutToShowPage(QWidget *)));
+
+	// connect signals of the exercises and StatisticView, so that StatisticView
+	// gets informed about how the user solved a given task (wrong or correct)
 	QObject::connect(m_taskview, SIGNAL(signalTaskSolvedCorrect()), m_statview, SLOT(addCorrect()));
 	QObject::connect(m_taskview, SIGNAL(signalTaskSolvedWrong()), m_statview, SLOT(addWrong()));
+	QObject::connect(m_exerciseCompare, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
+	QObject::connect(m_exerciseCompare, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
 
 	resize(QSize(QMAX(toolBar()->sizeHint().width(), sizeHint().width()), sizeHint().height()));
 
+	// now show the last exercise
+	m_exercises->showPage(SettingsClass::activeExercise());
 }
 
 MainQtWidget::~MainQtWidget()
@@ -99,10 +120,14 @@ void MainQtWidget::readOptions()
 
 void MainQtWidget::writeOptions()
 {
+	SettingsClass::setActiveExercise(m_exercises->activePageIndex());
+
+	// save settings for exercise solve task with fractions
 	SettingsClass::setAddsub(m_addSub);
 	SettingsClass::setMuldiv(m_mulDiv);
 	SettingsClass::setNumber_ratios(m_nrRatios);
 	SettingsClass::setMax_main_denominator(m_maxMainDenominator);
+
 	SettingsClass::writeConfig();
 }
 
@@ -202,8 +227,50 @@ void MainQtWidget::setupActions()
 
 void MainQtWidget::NewTask()
 {
-	// generate a new task
-	(void) m_taskview->forceNewTask();
+#ifdef DEBUG
+	kdDebug() << "NewTask MainQtWidget" << endl;
+	kdDebug() << "pageIndex(m_taskview): " << m_exercises->pageIndex(m_taskview) << endl;
+	kdDebug() << "pageIndex(m_exerciseCompare): " << m_exercises->pageIndex(m_exerciseCompare) << endl;
+#endif
+
+	// check which page should generate a new task
+	switch (m_exercises->activePageIndex())
+	{
+		case 0 :
+					m_taskview->forceNewTask();
+					break;
+		case 1 :
+					m_exerciseCompare->forceNewTask();
+					break;
+	}
+
+/* this doesn't seem to work, because pageIndex always returns 0
+	
+	if (m_exercises->activePageIndex() == m_exercises->pageIndex(m_taskview))
+	{
+		m_taskview->forceNewTask();
+		return;
+	}
+	if (m_exercises->activePageIndex() == m_exercises->pageIndex(m_exerciseCompare))
+	{
+		m_exerciseCompare->forceNewTask();
+		return;
+	}
+*/
+
+/* this even do not compile, but I don't know why
+
+	switch (m_exercises->activePageIndex())
+	{
+		case m_exercises->pageIndex(m_taskview):
+					break;
+		case m_exercises->pageIndex(m_exerciseCompare):
+					m_exerciseCompare->forceNewTask();
+					break;
+	}
+*/
+
+	return;
 }
 
 void MainQtWidget::NrOfTermsBoxSlot()
@@ -329,6 +396,31 @@ void MainQtWidget::slotApplySettings()
 {
 	// update the task view
 	m_taskview->update();
+	m_exerciseCompare->update();
+
+	return;
+}
+
+void MainQtWidget::slotAboutToShowPage(QWidget * page)
+{
+#ifdef DEBUG
+	kdDebug() << "slotAboutToShowPage MainQtWidget" << endl;
+	kdDebug() << "pageIndex(m_taskview): " << m_exercises->pageIndex(m_taskview) << endl;
+	kdDebug() << "pageIndex(m_exerciseCompare): " << m_exercises->pageIndex(m_exerciseCompare) << endl;
+#endif
+
+	// check which page to show
+	if (m_exercises->pageIndex(page) == m_exercises->pageIndex(m_taskview))
+	{
+		// exercise solve task with fraction (taskview.h)
+		m_NrOfTermsBox->setEnabled(true);
+		m_MaxMainDenominatorBox->setEnabled(true);
+		m_OperationBox->setEnabled(true);
+	} else {
+		m_NrOfTermsBox->setEnabled(false);
+		m_MaxMainDenominatorBox->setEnabled(false);
+		m_OperationBox->setEnabled(false);
+	}
 
 	return;
 }

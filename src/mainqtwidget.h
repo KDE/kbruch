@@ -20,10 +20,12 @@
 #include <kmainwindow.h>
 
 
+class KJanusWidget;
 class KWidgetAction;
 
 class QLabel;
 
+class ExerciseCompare;
 class StatisticsView;
 class TaskView;
 
@@ -54,8 +56,16 @@ class MainQtWidget : public KMainWindow
 		/** pointing to the statistics view */
 		StatisticsView * m_statview;
 
-		/** pointing to the task view */
+		/** the iconlist for the different exercises */
+		KJanusWidget * m_exercises;
+
+		/** pointing to the exercise solving a task with fractions; added as page
+		 * to the iconlist */
 		TaskView * m_taskview;
+
+		/** pointing to the exercise comparing ratios; added as page to the
+		 * iconlist */ 
+		ExerciseCompare * m_exerciseCompare;
 		
 		bool m_addSub;
 		bool m_mulDiv;
@@ -109,6 +119,11 @@ class MainQtWidget : public KMainWindow
 		 * makes sure, all parts of the UI update to new settings
 		 */
 		void slotApplySettings();
+
+		/**
+		 * called just before another page is shown
+		 */
+		void slotAboutToShowPage(QWidget * page);
 
 	protected:
 		/** Function is called when user calls termination.

@@ -3,6 +3,14 @@
 <kcfg>
 	<kcfgfile name="kbruchrc"/>
 
+	<group name="General">
+		<entry type="Int" key="activeExercise">
+			<label>Active exercise.</label>
+			<default>0</default>
+			<whatsthis>Saves the active exercise's type.</whatsthis>
+		</entry>
+	</group>
+
 	<group name="Task">
 		<entry type="Bool" key="addsub">
 			<label>Enable Addition/Subtraction</label>

@@ -39,7 +39,7 @@
 /* constructor */
 TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
                   bool pmul_div, unsigned int pnr_ratios, unsigned int pmax_md):
-		QWidget(parent, name), add_sub(padd_sub), mul_div(pmul_div),
+		ExerciseBase(parent, name), add_sub(padd_sub), mul_div(pmul_div),
 		nr_ratios(pnr_ratios), max_md(pmax_md)
 {
 #ifdef DEBUG
@@ -185,6 +185,10 @@ void TaskView::setTaskParameters(bool padd_sub, bool pmul_div, unsigned int pnr_
  * mainly used after changing the task parameters */
 void TaskView::forceNewTask()
 {
+#ifdef DEBUG
+	kdDebug() << "forceNewTask TaskView()" << endl;
+#endif
+
 	if (m_currentState == _CHECK_TASK)
 	{
 		// emit the signal for wrong
@@ -327,13 +331,6 @@ void TaskView::nextTask()
 }
 
 /* ------ private slots ------ */
-
-/* show the KBruch handbook section about the task window */
-void TaskView::slotShowBook()
-{
-	kapp->invokeHelp("task-menu");
-	return;
-}
 
 void TaskView::slotCheckButtonClicked()
 {
