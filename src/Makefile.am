@@ -6,8 +6,7 @@ kbruch_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
 EXTRA_DIST = kbruch.cpp kbruch.h kbruch.desktop hi32-app-kbruch.png hi16-app-kbruch.png lo32-app-kbruch.png lo16-app-kbruch.png mainqtwidget.cpp mainqtwidget.h primzahl.cpp primzahl.h statisticsview.cpp statisticsview.h taskview.cpp taskview.h ratio.cpp ratio.h task.cpp task.h kbruch.rc
 
-mydatadir = $(kde_appsdir)/Edutainment/Mathematics
-mydata_DATA = kbruch.desktop
+xdg_apps_DATA = kbruch.desktop
 
 KDE_ICON = AUTO
 
