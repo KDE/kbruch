@@ -349,7 +349,7 @@ void TaskView::nextTask()
 		case DIV :
 			// there seems to be different division signs around the world
 			// so please translate it to the right one for your country
-			op_lab_vek[tmp_counter]->setText(i18n(":"));
+			op_lab_vek[tmp_counter]->setText(i18n("division symbol", "/"));
 			break;
 		} /* switch (operation) */
 	} /* for (tmp_counter = 0; tmp_counter < nr_ratios - 1; tmp_counter++) */
