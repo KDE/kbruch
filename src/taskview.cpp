@@ -34,7 +34,7 @@
 #include <qpushbutton.h>
 #include <qtooltip.h>
 #include <qvbox.h>
-
+#include <knumvalidator.h>
 
 #include <math.h>
 
@@ -453,9 +453,10 @@ void TaskView::newLayout()
 	// now we add the input fields aligned in a VBox
 	ratioVBoxLayout = new QVBoxLayout(baseWidget, 5, 5);
 	taskHBoxLayout->addLayout(ratioVBoxLayout);
-
+        KIntValidator *valnum = new KIntValidator( this );
 	/* add input box so the user can enter numerator */
 	numer_edit = new QLineEdit(baseWidget);
+        numer_edit->setValidator( valnum );
 	ratioVBoxLayout->addWidget(numer_edit);
 	QToolTip::add(numer_edit, i18n("Enter the numerator of your result"));
 
@@ -467,6 +468,7 @@ void TaskView::newLayout()
 
 	/* add input box so the user can enter denominator */
 	deno_edit = new QLineEdit(baseWidget);
+        deno_edit->setValidator( valnum );
 	ratioVBoxLayout->addWidget(deno_edit);
 	QToolTip::add(deno_edit, i18n("Enter the denominator of your result"));
 
