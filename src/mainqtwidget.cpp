@@ -163,7 +163,7 @@ void MainQtWidget::setupActions()
 
 	// a label just describing the Number of terms ComboBox
 	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0, "kde toolbar widget");
-	m_NrOfTermsLabelAction = new KWidgetAction(m_NrOfTermsLabel, i18n("Terms:"), ALT+Key_T,
+	m_NrOfTermsLabelAction = new KWidgetAction(m_NrOfTermsLabel, i18n("Terms:"), ALT+Key_E,
 						   this, SLOT(NrOfTermsBoxSlot()),
 						   actionCollection(), "NrOfTermsLabelAction");
 
@@ -176,14 +176,14 @@ void MainQtWidget::setupActions()
 	m_NrOfTermsBox->setCurrentItem(m_nrRatios - 2);
 	QToolTip::add( m_NrOfTermsBox, i18n( "The number of terms you want" ) );
 	QWhatsThis::add( m_NrOfTermsBox, i18n( "Choose the number of terms (2, 3, 4 or 5) you want for calculating fractions." ) );
-	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of Terms"), ALT+Key_T, this, SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsBoxAction");
+	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of Terms"), ALT+Key_E, this, SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_NrOfTermsBox, SIGNAL(activated(int)), this, SLOT(NrOfTermsBoxSlot()));
 
 	// a label just describing the max. main denominator ComboBox
 	m_MaxMainDenominatorLabel = new QLabel(i18n("Max. main denominator:"), 0, "kde toolbar widget");
-	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Max. main denominator:"), ALT+Key_T,
+	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Max. main denominator:"), ALT+Key_D,
 							    this, SLOT(MaxMainDenominatorBoxSlot()),
 							    actionCollection(), "MaxMainDenominatorLabelAction");
 
@@ -206,7 +206,7 @@ void MainQtWidget::setupActions()
 		case 50 : m_MaxMainDenominatorBox->setCurrentItem(3);
 					 break;
 	}
-	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal Main Denominator"), ALT+Key_T, this, SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorBoxAction");
+	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal Main Denominator"), ALT+Key_D, this, SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_MaxMainDenominatorBox, SIGNAL(activated(int)),
