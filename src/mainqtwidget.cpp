@@ -71,11 +71,11 @@ MainQtWidget::MainQtWidget()
 	// add the pages
 	//
 	// we have the exercise to solve fraction tasks
-	QVBox * page = m_exercises->addVBoxPage(i18n("Fraction Task"), i18n("Solve a Task with Fractions"), DesktopIcon("misc"));
+	QVBox * page = m_exercises->addVBoxPage(i18n("Fraction Task"), "", DesktopIcon("misc"));
 	m_taskview = new TaskView((QWidget *) page, "TaskView", m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
 
 	// we have the exercise to solve fraction tasks
-	page = m_exercises->addVBoxPage(i18n("Comparison Task"), i18n("Compare given Ratios"), DesktopIcon("misc"));
+	page = m_exercises->addVBoxPage(i18n("Comparison Task"), "", DesktopIcon("misc"));
 	m_exerciseCompare = new ExerciseCompare((QWidget *) page, "ExerciseCompare");
 
 	splitter->setResizeMode(m_statview, QSplitter::FollowSizeHint);
