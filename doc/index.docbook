@@ -1,0 +1,306 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1.2-Based Variant V1.1//EN"
+ "dtd/kdex.dtd" [
+<!ENTITY kappname "&kbruch;"><!-- replace kapp here -->
+  <!ENTITY kbruch "<application>KBruch</application>">
+<!ENTITY package "kdeedu">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE"><!-- change language only here -->
+]>
+
+<book lang="&language;">
+
+<bookinfo>
+<title>The &kbruch; Handbook</title>
+
+<authorgroup>
+<author>
+<firstname>Sebastian</firstname>
+<surname>Stein</surname>
+<affiliation>
+<address><email>kbruch@hpfsc.de</email></address>
+</affiliation>
+</author>
+
+<!--
+<othercredit role="developer">
+<firstname>Robert</firstname>
+<surname>Gogolok</surname>
+<affiliation>
+<address><email>mail@robert-gogolok.de</email></address>
+</affiliation>
+<contrib>Developer</contrib>
+</othercredit>
+-->
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+</authorgroup>
+
+<copyright>
+<year>2001-2003</year>
+<holder>Sebastian Stein</holder>
+</copyright>
+
+<legalnotice>&FDLNotice;</legalnotice>
+
+<date>2003-06-02</date>
+<releaseinfo>1.0</releaseinfo>
+
+<abstract>
+<para>&kbruch; is a small program to generate tasks with fractions. The user
+has to solve the given task by entering the right value for numerator and
+denominator. The program checks the input and gives a feedback.
+</para>
+	
+</abstract>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>education</keyword>
+<keyword>fraction</keyword>
+<keyword>mathematic</keyword>
+<keyword>denominator</keyword>
+<keyword>kbruch</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title>Introduction</title>
+
+<para>
+KBruch is a small program to generate tasks with fractions. The user has to
+solve the given task by entering the right value for numerator and denominator.
+The program checks the input and gives a feedback.
+</para>
+<para>
+The task generation can be adjusted by different parameters. The user can
+decide if he wants to solve tasks with addition/substraction and/or
+multiplication/division.
+</para>
+<para>
+It is possible to enter the number of ratios and the maximum for the main
+denominator.
+</para>
+<para>
+KBruch is very compact and focuses on the core idea of a task generator. A
+online help system provides context sensitive help for the different
+situations. 
+</para>
+<para>
+KBruch provides a text interface as well. This means you can use KBruch without
+starting X-Windows. You have to use the -t command line option. It is free and
+licensed under the &GNU; Public License.
+</para>
+</chapter>
+
+<chapter id="using-kbruch">
+<title>Using &kbruch;</title>
+
+<para>Here are screenshots of &kbruch; in action:</para>
+
+<!--
+<screenshot>
+<screeninfo>&kbruch; main screen, directly after the start</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="screenshot1.png" format="PNG" width="300"/>
+</imageobject>
+<textobject>
+<phrase>&kbruch; main screen</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+-->
+
+<para>You see that using &kbruch; is easy to use and that it is
+usefull for pupil of all ages and also for students and such as
+a small and quick database.</para>
+
+<!--
+<screenshot>
+<screeninfo>&kbruch; can show you which elementshave are
+solid/liquid/vapor at a given temperature.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="screenshot2.png" format="PNG" width="300"/>
+</imageobject>
+<textobject>
+<phrase>the "State of Matter"-Dialog</phrase>
+</textobject>
+<caption>
+</caption>
+</mediaobject>
+</screenshot>
+
+<screenshot>
+<screeninfo>&kbruch; with the training option</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="screenshot3.png" format="PNG" width="300"/>
+</imageobject>
+<textobject>
+<phrase>&kbruch; with the training option dialog visible</phrase>
+</textobject>
+<caption><para>Here is a screenshot of &kbruch;'s training dialog.</para> 
+</caption>
+</mediaobject>
+</screenshot>
+-->
+
+<para>If you are too good for this world, you can change the
+level.</para>
+
+</chapter>
+
+<chapter id="config">
+<title>The Text Interface and Generator Mode</title>
+<para>
+&kbruch; offers a text interface as well. You can start this interface directly
+from a shell:
+</para>
+<para>
+	<userinput>kbruch -t</userinput>
+</para>
+<para>
+or
+</para>
+<para>
+	<userinput>kbruch --text</userinput>
+</para>
+<para>
+<screenshot>
+<screeninfo>Main Menu</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="text_main.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase>Main Menu</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+If you are a teacher you may be interested to generate a lot of complicate
+tasks. &kbruch; provides for this purpose a generator mode. You can only call
+it from a command line:
+</para>
+<para>
+	<userinput>kbruch -g</userinput>
+</para>
+<para>
+or
+</para>
+<para>
+	<userinput>kbruch --generate</userinput>
+</para>
+<para>
+<screenshot>
+<screeninfo>Generator Mode</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="generator.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase>Generator Mode</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+As shown in the screenshot, you can stop the generator mode by pressing Ctrl+C.
+It is not possible to influence the task generator. You can not set parameters
+like number of terms, maximal main denominator size or which operations should
+be used.
+</para>
+</chapter>
+
+<chapter id="credits">
+
+<title>Credits and License</title>
+<para>&kbruch;</para>
+<para>
+Program Copyright, 2001-2003 Sebastian Stein
+ <email>kbruch@hpfsc.de</email>
+</para>
+
+<para> Contributors:</para>
+
+<itemizedlist>
+<listitem><para>
+Eva Brucherseifer for writing KMath (&kbruch;'s GUI is based on this work)
+</para></listitem>
+<listitem><para>
+Dominique Devriese for bug fixing
+</para></listitem>
+<listitem><para>
+<ulink url="http://www.net-tex.de/">Stefan Schumacher</ulink> for testing a very early version
+</para></listitem>
+<listitem><para>
+<ulink url="http://www.guckes.net/">Sven Guckes</ulink> for testing the text interface
+</para></listitem>
+<listitem><para>
+David Faure for helping with KDE CVS and KDE Bugzilla
+</para></listitem>
+<listitem><para>
+Robert Gogolok for helping with KDE CVS
+</para></listitem>
+<listitem><para>
+Anne-Marie Mahfouf for managing the KDE Edu project
+</para></listitem>
+</itemizedlist>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+
+&underFDL;           <!-- FDL: do not remove -->
+&underGPL;        	 <!-- GPL License -->
+
+</chapter>
+
+<appendix id="installation">
+<title>Installation</title>
+
+<sect1 id="getting-kbruch">
+<title>How to obtain &kbruch;</title>
+
+&install.intro.documentation;
+
+</sect1>
+
+<sect1 id="requirements">
+<title>Requirements</title>
+
+<para>
+In order to successfully use &kbruch; (version > 0.3), you need &kde; > 2.0 .
+</para>
+
+<para>
+&kbruch; itself can be found
+on <ulink url="http://edu.kde.org/kbruch">The &kbruch; home page</ulink>
+and is part of the KDE-Edu project</para>
+
+<para>You can find a list of changes in the file ChangeLog in the 
+distribution of kbruch</para>
+
+</sect1>
+
+<sect1 id="compilation">
+<title>Compilation and Installation</title>
+
+&install.compile.documentation;
+
+</sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->
