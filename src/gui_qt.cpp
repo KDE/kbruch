@@ -56,7 +56,7 @@ gui_qt::gui_qt(QWidget * parent, const char * name): QVBox(parent, name),
 
 	/* show KBruch - version in the titel of the main widget */
 	QString caption = i18n("KBruch - ");
-	caption += VERSION;
+	caption += KBRUCH_VERSION;
 	setCaption(caption);
 
 	/* fix the size of the main widget with +10% over the minimum */
