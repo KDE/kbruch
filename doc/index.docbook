@@ -150,8 +150,8 @@ parts:
 </para>
 <para>
 First you have to choose an exercise in the exercise chooser on the left side
-of the window. The task part will change according to the choosen task. The
-settings in the toolbar will be enabled, if you have choosen the exercise
+of the window. The task part will change according to the chosen task. The
+settings in the toolbar will be enabled, if you have chosen the exercise
 <guimenu>Fraction Task</guimenu>.
 </para>
 <para>
@@ -167,7 +167,7 @@ You can hide the statistic part by dragging the vertical separator to the
 right.
 </para>
 <para>
-If you terminate &kbruch; the currently choosen exercise will be saved and
+If you terminate &kbruch; the currently chosen exercise will be saved and
 restored on next startup.
 </para>
 </sect1>
@@ -377,7 +377,7 @@ the bigger fraction of both by selecting the correct comparison sign.
 </mediaobject>
 </screenshot>
 
-<para>After you have choosen the comparison sign click on the <guimenu>Check
+<para>After you have chosen the comparison sign click on the <guimenu>Check
 Task</guimenu> button. &kbruch; will
 check your input and present the correct result. After this step you will get
 to the next task by clicking on the <guimenu>Next Task</guimenu> button.
