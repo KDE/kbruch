@@ -262,6 +262,8 @@ void ExerciseFactorize::forceNewTask()
 
 void ExerciseFactorize::update()
 {
+	m_taskLabel->setPaletteForegroundColor(SettingsClass::numberColor());
+	m_equalSignLabel->setPaletteForegroundColor(SettingsClass::operationColor());
 	// update for itself
 	((QWidget *) this)->update();
 }

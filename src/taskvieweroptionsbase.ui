@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>TaskViewerOptionsBase</class>
 <widget class="QWidget">
     <property name="name">
@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>486</width>
-            <height>497</height>
+            <height>518</height>
         </rect>
     </property>
     <vbox>
@@ -27,6 +27,9 @@
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                 </sizepolicy>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Change the font of the numbers</string>
             </property>
         </widget>
         <widget class="QGroupBox">
@@ -82,6 +85,9 @@
                                 <blue>255</blue>
                             </color>
                         </property>
+                        <property name="toolTip" stdset="0">
+                            <string>CHange the color of the operation signs</string>
+                        </property>
                     </widget>
                     <widget class="KColorButton" row="2" column="1">
                         <property name="name">
@@ -96,6 +102,9 @@
                                 <green>0</green>
                                 <blue>0</blue>
                             </color>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>Change the color of the fraction bar</string>
                         </property>
                     </widget>
                     <widget class="QLabel" row="2" column="0">
@@ -132,7 +141,7 @@
                     </widget>
                     <widget class="KColorButton" row="0" column="1">
                         <property name="name">
-                            <cstring>numberColorButton</cstring>
+                            <cstring>kcfg_numberColor</cstring>
                         </property>
                         <property name="text">
                             <string></string>
@@ -143,6 +152,9 @@
                                 <green>255</green>
                                 <blue>0</blue>
                             </color>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>Change the color of the numbers</string>
                         </property>
                     </widget>
                     <widget class="QLabel" row="0" column="0">
@@ -166,10 +178,9 @@
         </widget>
     </vbox>
 </widget>
-<customwidgets>
-</customwidgets>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
+    <includehint>kfontdialog.h</includehint>
     <includehint>kcolorbutton.h</includehint>
     <includehint>kcolorbutton.h</includehint>
     <includehint>kcolorbutton.h</includehint>

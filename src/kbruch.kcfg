@@ -48,7 +48,7 @@
 	</group>
 
 	<group name="TaskViewer">
-		<entry type="Color" key="numberColor">
+		<entry name="numberColor" type="Color">
 			<label>Color of the numbers in the task view</label>
 			<default code="true">Qt::darkGreen</default>
 			<whatsthis>Color of the numbers in the task view</whatsthis>
