@@ -120,7 +120,7 @@ void MainQtWidget::setupActions()
 	m_NrOfTermsBox->insertItem("5");
 	m_NrOfTermsBox->setCurrentItem(m_nrRatios - 2);
 	QToolTip::add( m_NrOfTermsBox, i18n( "the number of terms you want" ) );
-	QWhatsThis::add( m_NrOfTermsBox, i18n( "Choose the number of terms (2, 3, 4 or 5) you want for calculating fractions" ) );
+	QWhatsThis::add( m_NrOfTermsBox, i18n( "Choose the number of terms (2, 3, 4 or 5) you want for calculating fractions." ) );
 	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of Terms"), ALT+Key_T, this, SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
@@ -138,8 +138,8 @@ void MainQtWidget::setupActions()
 	m_MaxMainDenominatorBox->insertItem("20");
 	m_MaxMainDenominatorBox->insertItem("30");
 	m_MaxMainDenominatorBox->insertItem("50");
-	QToolTip::add( m_MaxMainDenominatorBox, i18n( "the maximum number you can have as denominator" ) );
-	QWhatsThis::add( m_MaxMainDenominatorBox, i18n( "Choose the number which will be the maximum for the denominator: 10, 20, 30, 40 or 50" ) );
+	QToolTip::add( m_MaxMainDenominatorBox, i18n( "the maximum number you can have as main denominator" ) );
+	QWhatsThis::add( m_MaxMainDenominatorBox, i18n( "Choose the number which will be the maximum for the main denominator: 10, 20, 30, 40 or 50." ) );
 	switch (m_maxMainDenominator)
 	{
 		case 10 : m_MaxMainDenominatorBox->setCurrentItem(0);
@@ -177,7 +177,7 @@ void MainQtWidget::setupActions()
 		m_OperationBox->setCurrentItem(2);
 	}
 	QToolTip::add( m_OperationBox, i18n( "the operations you want" ) );
-	QWhatsThis::add( m_OperationBox, i18n( "Choose the type of operations you want for calculating fractions: Addition/Substraction, Multiplication/Division or All Operations Mixed. If you choose All Operations Mixed, the program will randomly chooseaddition, substraction, multiplication and/or division." ) );
+	QWhatsThis::add( m_OperationBox, i18n( "Choose the type of operations you want for calculating fractions: Addition/Substraction, Multiplication/Division or All Operations Mixed. If you choose All Operations Mixed, the program will randomly choose addition, substraction, multiplication and/or division." ) );
 	m_OperationBoxAction = new KWidgetAction(m_OperationBox, i18n("Operations:"), ALT+Key_O, this, SLOT(OperationBoxSlot()), actionCollection(), "OperationBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
