@@ -167,25 +167,21 @@ void StatisticsView::calc()
 	QString new_text;
 	QString number;
 
-	new_text.sprintf("<b>%d</b>", m_count);
+	new_text = QString("<b>%1</b>").arg(m_count);
 	result1Label->setText(new_text);
 
 	/* we have to be careful with division by 0 */
 	if (m_count == 0)
 	{
-		result2Label->setText("- (-%)");
-		result3Label->setText("- (-%)");
-	}
-	else
-	{
+		result2Label->setText("- (- %)");
+		result3Label->setText("- (- %)");
+	} else {
 		/* set the correct label */
-		new_text.sprintf("%d (%d %%)", m_correct,
-		                 int(double(m_correct) / m_count * 100));
+		new_text = QString("%1 (%2 %)").arg(m_correct).arg(int(double(m_correct) / m_count * 100));
 		result2Label->setText(new_text);
 
 		/* set the incorrect label */
-		new_text.sprintf("%d (%d %%)", m_count - m_correct,
-		                 int(double(m_count - m_correct) / m_count * 100));
+		new_text = QString("%1 (%2 %)").arg(m_count - m_correct).arg(int(double(m_count - m_correct) / m_count * 100));
 		result3Label->setText(new_text);
 	}
 }
