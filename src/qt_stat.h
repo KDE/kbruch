@@ -42,7 +42,7 @@ class qt_stat : public QDialog
 		void addCorrect();
 		void addWrong();
 	private:
-		void qt_stat::calc();
+		void calc();
 
 		unsigned int count;
 		unsigned int correct;
