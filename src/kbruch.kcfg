@@ -70,5 +70,10 @@
 			<whatsthis>Font used for the task view</whatsthis>
 			<default code="true">KGlobalSettings::generalFont()</default>
 		</entry>
+		<entry type="Bool" key="showSpecialRatioNotation">
+			<label>Enable to show result also as a mixed number</label>
+			<whatsthis>Enables/Disables to show the result also in the special mixed number notation.</whatsthis>
+			<default>true</default>
+		</entry>
 	</group>
 </kcfg>

@@ -39,10 +39,10 @@
 #include "exerciseconvert.h"
 #include "exercisefactorize.h"
 #include "taskview.h"
+#include "taskvieweroptionsbase.h"
 #include "statisticsview.h"
 
 #include "settingsclass.h"
-#include "settingsdialog.h"
 
 /* ------ public member functions ------ */
 

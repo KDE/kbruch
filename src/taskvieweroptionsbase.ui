@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>486</width>
-            <height>518</height>
+            <height>558</height>
         </rect>
     </property>
     <property name="caption">
@@ -177,6 +177,33 @@
                         </property>
                     </widget>
                 </grid>
+            </widget>
+        </widget>
+        <widget class="QGroupBox">
+            <property name="name">
+                <cstring>groupBox2</cstring>
+            </property>
+            <property name="title">
+                <string>General</string>
+            </property>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>kcfg_showSpecialRatioNotation</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>20</y>
+                        <width>440</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Show result also as a mixed number like 1 2/3.</string>
+                </property>
+                <property name="toolTip" stdset="0">
+                    <string>Here you can enable/disable to show the result in the mixed number notation.</string>
+                </property>
             </widget>
         </widget>
     </vbox>
