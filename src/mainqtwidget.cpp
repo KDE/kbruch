@@ -219,35 +219,25 @@ void MainQtWidget::NrOfTermsBoxSlot()
          m_MaxMainDenominatorBox->insertItem("30");
          m_MaxMainDenominatorBox->insertItem("50");
          m_nrRatios = 2;
+         m_maxMainDenominator = 10;
       } else if (curr_nr == "3") {
          m_MaxMainDenominatorBox->insertItem("20");
          m_MaxMainDenominatorBox->insertItem("30");
          m_MaxMainDenominatorBox->insertItem("50");
          m_nrRatios = 3;
-         if (m_maxMainDenominator < 20)
-         {
-            m_maxMainDenominator = 20;
-            m_MaxMainDenominatorBox->setCurrentItem(0);
-         }
+         m_maxMainDenominator = 20;
       } else if (curr_nr == "4") {
          m_MaxMainDenominatorBox->insertItem("20");
          m_MaxMainDenominatorBox->insertItem("30");
          m_MaxMainDenominatorBox->insertItem("50");
          m_nrRatios = 4;
-         if (m_maxMainDenominator < 20)
-         {
-            m_maxMainDenominator = 20;
-            m_MaxMainDenominatorBox->setCurrentItem(0);
-         }
+         m_maxMainDenominator = 20;
       } else {
          m_MaxMainDenominatorBox->insertItem("50");
          m_nrRatios = 5;
-         if (m_maxMainDenominator < 50)
-         {
-            m_maxMainDenominator = 50;
-            m_MaxMainDenominatorBox->setCurrentItem(0);
-         }
+         m_maxMainDenominator = 50;
       }
+		m_MaxMainDenominatorBox->setCurrentItem(0);
    } else {
       /* no multiplication or division allowed, so we add the default values */
       m_MaxMainDenominatorBox->insertItem("10");
