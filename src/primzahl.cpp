@@ -56,8 +56,16 @@ short primzahl::isPrimeNumber(uint number)
 {
 	/* check, if we can find a divisor */
 	for (unsigned int dummy = get_first(); dummy < number; dummy = get_next())
+	{
 		if ((number % dummy == 0) && (dummy != number))
 			return 0; // we found one
+
+		/* we found a prime number, because we only have to test the given 
+		 * number against all known prime numbers smaller square root of the 
+		 * number */
+		if (dummy * dummy > number)
+			return 0;
+	}
 
 	return 1; // we found no one
 }
