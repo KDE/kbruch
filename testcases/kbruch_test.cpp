@@ -21,6 +21,7 @@ using boost::unit_test_framework::test_suite;
 
 // the test classes
 #include "primenumber_test.cpp"
+#include "ratio_test.cpp"
 
 // test program entry point
 test_suite* init_unit_test_suite(int /* argc */, char** /* argv */)
@@ -30,6 +31,7 @@ test_suite* init_unit_test_suite(int /* argc */, char** /* argv */)
 
 	// add test suites to the top test suite
 	top_test_suite->add(new primenumber_test_suite());
+	top_test_suite->add(new ratio_test_suite());
 
 	return top_test_suite.release();
 }
