@@ -225,7 +225,7 @@ qt_task::qt_task(QWidget * parent, const char * name,	short padd_sub,
 
 	/* show selected operations */
 	if (add_sub == YES && mul_div == NO)
-		setCaption(i18n("addition and substraction task"));
+		setCaption(i18n("addition and subtraction task"));
 	if (add_sub == NO && mul_div == YES)
 		setCaption(i18n("multiplication and division task"));
 	if (add_sub == YES && mul_div == YES)
@@ -386,7 +386,7 @@ void qt_task::okBtnClicked()
 			entered_result.reduce();
 			if (entered_result == result)
 				KMessageBox::information(this, 
-									i18n("You entered the correct result, but not reduced.\nPlease enter your results always reduced. I will count this task as not correctly solved."), i18n("KBruch"));
+									i18n("You entered the correct result, but not reduced.\nAlways enter your results as reduced. This task will be counted as not correctly solved."), i18n("KBruch"));
 			/* change the statistics -> add wrong solved task */
 			stats->addWrong();
 
