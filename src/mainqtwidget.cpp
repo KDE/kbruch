@@ -234,6 +234,8 @@ void MainQtWidget::setupActions()
 
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_OperationBox, SIGNAL(activated(int)), this, SLOT(OperationBoxSlot()));
+	
+	setupGUI();
 }
 
 
