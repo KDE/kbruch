@@ -33,7 +33,6 @@
 
 /* standard C++ library includes */
 #include <stdlib.h>
-#include <time.h>
 
 #include "rationalwidget.h"
 #include "resultwidget.h"
@@ -47,9 +46,6 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 #ifdef DEBUG
 	kdDebug() << "constructor ExerciseConvert()" << endl;
 #endif
-	
-	// init random generator
-	srand(time(NULL));
 
 	/* create a new task */
 	QApplication::setOverrideCursor(waitCursor); /* show the sand clock */

@@ -30,7 +30,6 @@
 
 /* standard C++ library includes */
 #include <stdlib.h>
-#include <time.h>
 
 /* ----- public member functions ----- */
 
@@ -41,9 +40,6 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 #ifdef DEBUG
 	kdDebug() << "constructor ExerciseCompare()" << endl;
 #endif
-	
-	// init random generator
-	srand(time(NULL));
 
 	/* create a new task */
 	QApplication::setOverrideCursor(waitCursor); /* show the sand clock */

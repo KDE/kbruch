@@ -19,7 +19,10 @@
 
 #include "version.h"
 
+/* standard C++ library includes */
 #include <math.h>
+#include <stdlib.h>
+#include <time.h>
 
 #include <iostream>
 
@@ -301,6 +304,9 @@ int gui_qt_ini(int argc, char * argv[])
 /* the main program */
 int main(int argc, char * argv[])
 {
+	// init random generator
+	srand(time(NULL));
+
 	/* check, if we have some command line parameters */
 	for (int count = 1; count < argc; count++)
 	{
