@@ -32,13 +32,13 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2004-02-18</date>
-<releaseinfo>3.1.91</releaseinfo>
+<date>2004-07-09</date>
+<releaseinfo>3.3</releaseinfo>
 
 <abstract>
-<para>&kbruch; is a small program to generate tasks with fractions. The user
-has to solve the given task by entering the right value for numerator and
-denominator. The program checks the input and gives feedback.
+<para>&kbruch; is a small program to practice calculating with fractions.
+Different exercises are provided for this purpose. The program checks user's
+input and gives feedback.
 </para>
 	
 </abstract>
@@ -58,33 +58,47 @@ denominator. The program checks the input and gives feedback.
 <title>Introduction</title>
 
 <para>
-&kbruch; is a small program to generate tasks with fractions. The user has to
-solve the given task by entering the right value for numerator and denominator.
-The program checks the input and gives feedback.
+&kbruch; is a small program to practice calculating with fractions. Therefor
+4 different exercises are offered.
 </para>
+
+<itemizedlist>
+	<listitem><para>
+		Fraction Task - in this exercise you have to solve a given fraction task.
+You have to enter numerator and denominator. This is the main exercise.
+	</para></listitem>
+	<listitem><para>
+		Comparison - in this exercise you have to compare the size of 2 given ratios.
+	</para></listitem>
+	<listitem><para>
+		Conversion - in this exercise you have to convert a given number into a ratio.
+	</para></listitem>
+	<listitem><para>
+		Factorization - in this exercise you have to factorize a given number into its prime factors.
+	</para></listitem>
+</itemizedlist>
+
 <para>
-The task generation can be adjusted by using different parameters. The user can
-decide if he wants to solve tasks with addition/subtraction and/or
-multiplication/division.
+In all different exercises &kbruch; will generate a task and the user has to
+solve it. The program checks the input and gives a feedback about it.
 </para>
+
 <para>
-It is possible to enter the number of ratios and the maximum for the main
-denominator.
+&kbruch; counts how many tasks were solved at all and how many tasks were
+solved correctly. The statistics are shown to the user, but this part of the
+main window can be hided. The user can reset the statistics at any point.
 </para>
+
 <para>
 &kbruch; is very compact and focuses on the core idea of a task generator. An
 online help system provides context-sensitive help for the different
 situations. 
 </para>
 <para>
-&kbruch; provides a text interface as well. This means you can use &kbruch;
-without starting the &X-Window;. To do this you use the <option>-t</option>
-command line option. 
-</para>
-<para>
-It is free and licensed under the &GNU; Public License.
+&kbruch; is free and licensed under the &GNU; Public License.
 </para>
 </chapter>
+
 
 <chapter id="using-kbruch">
 <title>Using &kbruch;</title>
@@ -106,32 +120,126 @@ It is free and licensed under the &GNU; Public License.
 	</mediaobject>
 </screenshot>
 
-
 <para>
 All action takes place in this screen. This ensures that &kbruch; is
-easy to use even for young users! The main screen is separated into 4
+easy to use even for young users! The main screen is separated into 5
 parts:
 
 <itemizedlist>
 	<listitem><para>
-		the menu bar with the 2 menus <guimenu>Task</guimenu> and
-		<guimenu>Help</guimenu>
+		the menu bar with the 3 menus <guimenu>Task</guimenu>,
+<guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
 	</para></listitem>
 	<listitem><para>
-		the toolbar, where you can set the difficulty of the generated tasks
+		the toolbar, where you can set the difficulty for the tasks given in the fraction exercise
+	</para></listitem>
+	<listitem><para>
+		the exercise chooser, where you can switch between the different exercises
+	</para></listitem>
+	<listitem><para>
+		the task part, where you have to enter the result of the given task
 	</para></listitem>
 	<listitem><para>
 		the statistical part, where you can see how many tasks have been solved
 		correctly or attempted
 	</para></listitem>
-	<listitem><para>
-		the task part, where you have to enter the result of the given task
-	</para></listitem>
 </itemizedlist>
+</para>
+<para>
+First you have to choose an exercise in the exercise chooser on the left side
+of the window. The task part will change according to the choosen task. The
+settings in the toolbar will be enabled, if you have choosen the exercise
+<guimenu>Fraction Task</guimenu>.
+</para>
+<para>
+You will find an icon to generate a new task in the toolbar as well. This
+action is also available in the menu
+<menuchoice><guimenu>Task</guimenu><guimenuitem>New
+Task</guimenuitem></menuchoice>. This action is always enabled. If you have not
+solved the currently given task, a new task is generated and the given task is
+counted as not correctly solved.
+</para>
+<para>
+You can hide the statistic part by dragging the vertical separator to the
+right.
+</para>
+
+<para>
+If you terminate &kbruch; the current choosen exercise will be saved and
+restored on next startup.
 </para>
 </sect1>
 
-<sect1 id="task_paras">
+<sect1 id="statistics">
+<title>Statistical Part</title>
+<para>
+In this part of the main screen you can see:	
+<itemizedlist>
+	<listitem><para>
+		how many tasks have been solved
+	</para></listitem>
+	<listitem><para>
+		how many tasks have been solved correctly
+	</para></listitem>
+	<listitem><para>
+		how many tasks have been solved incorrectly
+	</para></listitem>
+</itemizedlist>
+</para>
+<para>
+You can reset the statistics by clicking on the <guimenu>Reset</guimenu> button
+under the figures.
+</para>
+<para>
+The statistics will be saved on &kbruch;'s termination and restored on next
+startup.
+</para>
+</sect1>
+
+<sect1 id="settings">
+<title>Settings Window</title>
+<para>
+In this part of the main screen you can adjust some general settings for the
+task display.
+</para>
+
+<screenshot>
+	<screeninfo>&kbruch; settings dialog</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="settings.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase>&kbruch; settings dialog</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para>
+In the top part of the dialog you can choose a font for displaying. In the
+lower part you can choose colors for the different parts of a mathematical
+expression.
+</para>
+<para>
+The settings will be saved on &kbruch;'s termination and restored on the next
+startup.
+</para>
+</sect1>
+
+</chapter>
+
+<chapter id="exercises">
+<title>Exercises</title>
+
+<sect1 id="exer_fraction">
+<title>Exercise Fraction Task</title>
+
+<para>In this exercise you have to solve a given task. Therefor you have to
+enter numerator and denominator. The difficulty of the generated task can be
+adjusted by the task parameters described below.
+</para>
+
+<sect2 id="task_paras">
 <title>Task Parameters</title>
 <para>
 There are 3 parameters which influence the difficulty of the generated
@@ -182,9 +290,9 @@ before generating a new one.
 The chosen parameters will be saved on &kbruch;'s termination and restored
 on next startup.
 </para>
-</sect1>
+</sect2>
 
-<sect1 id="solve_task">
+<sect2 id="solve_task">
 <title>Solving Tasks</title>
 <para>
 After you have solved a given task, you need to enter the result into the two
@@ -192,14 +300,14 @@ input boxes. In the upper box you enter the numerator and in the lower
 box the denominator.
 </para>
 <para>
-If the result is negative, you can enter a minus sign in front of the
-numerator or denominator. If the result is 0, you can leave both boxes empty.
+If the result is negative, you can enter a minus sign in front of the numerator
+or denominator. If the result is 0, just type a 0 in the numerator input field.
 If the result has a denominator of 1, you can leave the lower box empty.
 </para>
 <para>
 After you have entered the result you should click the <guibutton>Check
 Task</guibutton> button below the input boxes. &kbruch; will check your input
-and present the correct result. Therefore the main screen changes a little, as
+and present the correct result. Therefore the screen changes a little, as
 you can see in the screenshot:
 </para>
 <screenshot>
@@ -216,7 +324,7 @@ you can see in the screenshot:
 <para>
 This task was solved correctly. The correct value is shown in 2 different
 forms. The second form just in front of the word <guilabel>CORRECT</guilabel>
-is only used in some countries and must be read as 4 + 1/4 in the given case.
+is only used in some countries and must be read as 2 + 1/5 in the given case.
 </para>
 <note>
 <para>
@@ -243,94 +351,11 @@ To continue with the next task, click on the <guimenu>Next Task</guimenu>
 button. If you want to change the parameters for the next task please do this
 before clicking on the <guimenu>Next Task</guimenu> button.
 </para>
+
+</sect2>
+
 </sect1>
 
-<sect1 id="statistics">
-<title>Statistical Part</title>
-<para>
-In this part of the main screen you can see:	
-<itemizedlist>
-	<listitem><para>
-		how many tasks have been solved
-	</para></listitem>
-	<listitem><para>
-		how many tasks have been solved correctly
-	</para></listitem>
-	<listitem><para>
-		how many tasks have been solved incorrectly
-	</para></listitem>
-</itemizedlist>
-</para>
-<para>
-You can reset the statistics by clicking on the <guimenu>Reset</guimenu> button
-under the figures.
-</para>
-<para>
-The statistics will be saved on &kbruch;'s termination and restored on next
-startup.
-</para>
-</sect1>
-
-</chapter>
-
-<chapter id="config">
-<title>The Text Interface and Generator Mode</title>
-<para>
-&kbruch; offers a text interface as well. You can start this interface directly
-from a shell:
-</para>
-<para>
-	<userinput><command>kbruch</command> <option>-t</option></userinput>
-</para>
-<para>
-or
-</para>
-<para>
-	<userinput><command>kbruch</command> <option>--text</option></userinput>
-</para>
-<screenshot>
-<screeninfo>Main Menu</screeninfo>
-<mediaobject>
-  <imageobject>
-		<imagedata fileref="text_main.png" format="PNG"/>
-  </imageobject>
-  <textobject>
-    <phrase>Main Menu</phrase>
-  </textobject>
-</mediaobject>
-</screenshot>
-<para>
-If you are a teacher you may be interested to generate a lot of complicated
-tasks. For this purpose &kbruch; provides a generator mode. You can only call
-it from a command line:
-</para>
-<para>
-	<userinput><command>kbruch</command> <option>-g</option></userinput>
-</para>
-<para>
-or
-</para>
-<para>
-	<userinput><command>kbruch</command> <option>--generate</option></userinput>
-</para>
-<screenshot>
-<screeninfo>Generator Mode</screeninfo>
-<mediaobject>
-  <imageobject>
-		<imagedata fileref="generator.png" format="PNG"/>
-  </imageobject>
-  <textobject>
-    <phrase>Generator Mode</phrase>
-  </textobject>
-</mediaobject>
-</screenshot>
-<para>
-As shown in the screenshot, you can stop the generator mode by
-pressing <keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>.
-It is not possible to influence the task generator. You cannot set parameters
-like the number of terms, maximum main denominator size or which operations
-should be used.
-</para>
 </chapter>
 
 <chapter id="credits">
@@ -345,37 +370,15 @@ Program and documentation Copyright, 2001-2004 Sebastian Stein
 <para>Thank you goes to:</para>
 
 <itemizedlist>
-	<listitem><para>
-		Anne-Marie Mahfouf for managing the &kde; Edu project
-	</para></listitem>
-	<listitem><para>
-		Klas Kalass for helping design the interface
-	</para></listitem>
-	<listitem><para>
-		Eva Brucherseifer for writing
-		<application>KMath</application> (&kbruch;'s GUI is
-		based on this work)
-	</para></listitem>
-	<listitem><para>
-		Dominique Devriese for bug fixing
-	</para></listitem>
-	<listitem><para>
-		<ulink url="http://www.net-tex.de/">Stefan Schumacher</ulink> for testing
-		a very early version
-	</para></listitem>
-	<listitem><para>
-		<ulink url="http://www.guckes.net/">Sven Guckes</ulink> for testing the
-		text interface
-	</para></listitem>
-	<listitem><para>
-		David Faure for helping with &kde; <acronym>CVS</acronym> and &kde; Bugzilla
-	</para></listitem>
-	<listitem><para>
-		Robert Gogolok for helping with &kde; <acronym>CVS</acronym>
-	</para></listitem>
-	<listitem><para>
-		John Kesson for proof reading the handbook
-	</para></listitem>
+	<listitem><para>Anne-Marie Mahfouf for managing the &kde; Edu project</para></listitem>
+	<listitem><para>Klas Kalass for helping design the interface</para></listitem>
+	<listitem><para>Eva Brucherseifer for writing <application>KMath</application> (&kbruch;'s GUI is based on this work)</para></listitem>
+	<listitem><para>Dominique Devriese for bug fixing</para></listitem>
+	<listitem><para><ulink url="http://www.net-tex.de/">Stefan Schumacher</ulink> for testing a very early version</para></listitem>
+	<listitem><para><ulink url="http://www.guckes.net/">Sven Guckes</ulink> for testing the text interface (which has been removed)</para></listitem>
+	<listitem><para>David Faure for helping with &kde; <acronym>CVS</acronym> and &kde; Bugzilla</para></listitem>
+	<listitem><para>Robert Gogolok for helping with &kde; <acronym>CVS</acronym></para></listitem>
+	<listitem><para>John Kesson for proof reading the handbook</para></listitem>
 </itemizedlist>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
@@ -407,8 +410,7 @@ In order to successfully use &kbruch;, you need &kde; > 3.1 .
 on <ulink url="http://edu.kde.org/kbruch/">the &kbruch; home page</ulink>
 and it is part of the &kde; Edu project</para>
 
-<para>You can find a list of changes in the file ChangeLog in the
-distribution of &kbruch; or see the <acronym>CVS</acronym> commit
+<para>You can find a list of changes in the <acronym>CVS</acronym> commit
 messages.</para>
 
 </sect1>
