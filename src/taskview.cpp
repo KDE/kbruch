@@ -491,7 +491,8 @@ void TaskView::newLayout()
 
 	numer_edit->setFocus();
 
-        baseWidget->show();
+	// show the whole layout
+	baseWidget->show();
 
 	return;
 }
