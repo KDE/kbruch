@@ -27,8 +27,6 @@
 #define HOMEPAGE "http://edu.kde.org/kbruch/"
 #define DATE "[2004-02-18]"
 
-#include "primzahl.h"
-#include "ratio.h"
 #include "task.h"
 #include "mainqtwidget.h"
 
@@ -39,8 +37,6 @@
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
-#include <klocale.h>
-#include <qfont.h>
 #include <kglobalsettings.h>
 
 static const char description[] =

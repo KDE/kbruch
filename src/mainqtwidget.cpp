@@ -21,20 +21,16 @@
 #include <kaccel.h>
 #include <kapplication.h>
 #include <kdebug.h>
-#include <kmenubar.h>
-#include <kpopupmenu.h>
 #include <kaction.h>
-#include <kstdaction.h>
 #include <klocale.h>
 
 #include <qsplitter.h>
-#include <qcombobox.h>
 #include <qlabel.h>
 
 #include "taskview.h"
 #include "statisticsview.h"
 
-#include <settingsclass.h>
+#include "settingsclass.h"
 
 /* ------ public member functions ------ */
 

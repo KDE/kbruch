@@ -24,16 +24,11 @@
 #include <kapplication.h>
 
 /* these includes are needed for Qt support */
-#include <qabstractlayout.h>
-#include <qcombobox.h>
-#include <qfont.h>
-#include <qgrid.h>
 #include <qlabel.h>
 #include <qlayout.h>
 #include <qlineedit.h>
 #include <qpushbutton.h>
 #include <qtooltip.h>
-#include <qvbox.h>
 #include <knumvalidator.h>
 
 #include <math.h>

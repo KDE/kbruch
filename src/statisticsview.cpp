@@ -19,18 +19,15 @@
 #include "statisticsview.moc"
 
 /* the includes are needed for Qt support */
-#include <kapplication.h>
-#include <qfont.h>
 #include <qlabel.h>
 #include <qlayout.h>
 #include <qpushbutton.h>
-#include <qvbox.h>
 #include <qtooltip.h>
 
 #include <klocale.h>
 #include <kdebug.h>
 
-#include <settingsclass.h>
+#include "settingsclass.h"
 
 /* constructor */
 StatisticsView::StatisticsView(QWidget * parent, const char * name):

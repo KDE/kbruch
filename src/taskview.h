@@ -21,7 +21,6 @@
 #define _CHECK_TASK	0
 #define _NEXT_TASK	1
 
-#include "ratio.h"
 #include "task.h"
 
 #include <qwidget.h>
