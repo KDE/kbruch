@@ -22,17 +22,6 @@
 </affiliation>
 </author>
 
-<!--
-<othercredit role="developer">
-<firstname>Robert</firstname>
-<surname>Gogolok</surname>
-<affiliation>
-<address><email>mail@robert-gogolok.de</email></address>
-</affiliation>
-<contrib>Developer</contrib>
-</othercredit>
--->
-
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 
 </authorgroup>
@@ -98,59 +87,171 @@ licensed under the &GNU; Public License.
 <chapter id="using-kbruch">
 <title>Using &kbruch;</title>
 
-<para>Here are screenshots of &kbruch; in action:</para>
+<sect1 id="overview">
+<title>Main screen</title>
 
-<!--
-<screenshot>
-<screeninfo>&kbruch; main screen, directly after the start</screeninfo>
-<mediaobject>
-<imageobject>
-<imagedata fileref="screenshot1.png" format="PNG" width="300"/>
-</imageobject>
-<textobject>
-<phrase>&kbruch; main screen</phrase>
-</textobject>
-</mediaobject>
-</screenshot>
--->
-
-<para>You see that using &kbruch; is easy to use and that it is
-usefull for pupil of all ages and also for students and such as
-a small and quick database.</para>
-
-<!--
-<screenshot>
-<screeninfo>&kbruch; can show you which elementshave are
-solid/liquid/vapor at a given temperature.</screeninfo>
-<mediaobject>
-<imageobject>
-<imagedata fileref="screenshot2.png" format="PNG" width="300"/>
-</imageobject>
-<textobject>
-<phrase>the "State of Matter"-Dialog</phrase>
-</textobject>
-<caption>
-</caption>
-</mediaobject>
-</screenshot>
+<para>Here is a screenshot of &kbruch;'s main screen:</para>
 
 <screenshot>
-<screeninfo>&kbruch; with the training option</screeninfo>
+	<screeninfo>&kbruch; main screen, directly after the start</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_main.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase>&kbruch; main screen</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+
+<para>
+All action takes place in this single screen. This ensures that &kbruch; is
+easy to use even for young users! The main screen is seperated into 4 parts:
+<itemizedlist>
+	<listitem><para>
+		the menu bar with the 2 menus <guimenu>Task</guimenu> and
+		<guimenu>Help</guimenu>
+	</para></listitem>
+	<listitem><para>
+		the toolbar, where you can set the difficulty of the generated tasks
+	</para></listitem>
+	<listitem><para>
+		the statistical part, where you can see how many tasks have been solved
+		correctly and at all
+	</para></listitem>
+	<listitem><para>
+		the task part, where you have to enter the result of the given task
+	</para></listitem>
+</itemizedlist>
+</para>
+</sect1>
+
+<sect1 id="task_paras">
+<title>Task Parameters</title>
+<para>
+There are 3 parameters which influence the difficulty of the generated tasks:
+<itemizedlist>
+	<listitem><para>
+		number of terms (at least 2, max. 5)
+	</para></listitem>
+	<listitem><para>
+		max. main denominator (at least 10, max. 50)
+	</para></listitem>
+	<listitem><para>
+		operations, which should be used in the task
+	</para></listitem>
+</itemizedlist>
+</para>
+<para>
+After you have changed the parameters you have to click on the <guimenu>New
+Task</guimenu> button in the toolbar to generate a task which uses the new
+parameters. You can also call this action from the menu bar with
+<menuchoice><guimenu>Task</guimenu><guimenuitem>New
+Task</guimenuitem></menuchoice>.
+</para>
+<para>
+Note, your selection of the max. main denominator will be reseted to a default
+value every time you change the number of terms. So you have to change first
+the number of terms and than select the max. main denominator.
+</para>
+<para>
+If you have not solved the currently given task and call the <guimenu>New
+Task</guimenu> action, the task will be counted as not solved correctly. To
+prevent this you have to change the parameters after you solved the task but
+before generating a new one.
+</para>
+<para>
+The choosen parameters will be saved on &kbruch;'s termination and restored
+on next startup.
+</para>
+</sect1>
+
+<sect1 id="solve_task">
+<title>Solving Tasks</title>
+<para>
+After you have solved a given task, you have to enter the result into the two
+input boxes. In the upper box the numerator has to be entered and in the lower
+box the denominator.
+</para>
+<para>
+If the result is negativ, you can enter the minus sign in front of the
+numerator or denominator. If the result is 0, you can leave both boxes empty.
+If the result has a denominator of 1, you can leave the lower box empty.
+</para>
+<para>
+After you have entered the result you have to click the <guimenu>Check
+Task</guimenu> button below the input boxes. &kbruch; will check your input and
+present the correct result. Therefor the main screen changes a little bit as
+you can see in the screenshot:
+</para>
+<screenshot>
+<screeninfo>Checked Task</screeninfo>
 <mediaobject>
-<imageobject>
-<imagedata fileref="screenshot3.png" format="PNG" width="300"/>
-</imageobject>
-<textobject>
-<phrase>&kbruch; with the training option dialog visible</phrase>
-</textobject>
-<caption><para>Here is a screenshot of &kbruch;'s training dialog.</para> 
-</caption>
+  <imageobject>
+		<imagedata fileref="checked.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase>Checked Task</phrase>
+  </textobject>
 </mediaobject>
 </screenshot>
--->
+<para>
+This task was solved correctly. The correct value is shown in 2 different
+forms. The second form just in front of the word CORRECT is only used in some
+countries and must be read as 4 + 1/4 in the given case.
+</para>
+<para>
+Note, you allways have to enter the result reduced, because most teachers only
+give all points to reduced results. &kbruch; will show you a short message
+like the one in the screenshot below, if you entered the correct result
+unreduced.
+</para>
 
-<para>If you are too good for this world, you can change the
-level.</para>
+<screenshot>
+<screeninfo>Unreduced Result</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="reduced.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase>Unreduced Result</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para>
+To go on with the next task click on the <guimenu>Next Task</guimenu> button.
+If you want to change the parameters for the next task, you have to do this
+before clicking on the <guimenu>Next Task</guimenu> button.
+</para>
+</sect1>
+
+<sect1 id="statistics">
+<title>Statistical Part</title>
+<para>
+In this part of the main screen you can see:	
+<itemizedlist>
+	<listitem><para>
+		how many tasks have been solved at all
+	</para></listitem>
+	<listitem><para>
+		how many tasks have been solved correctly
+	</para></listitem>
+	<listitem><para>
+		how many tasks have not been solved correctly
+	</para></listitem>
+</itemizedlist>
+</para>
+<para>
+You can reset the statistics by clicking on the <guimenu>Reset</guimenu> button
+under the figures.
+</para>
+<para>
+The statistics will be saved on &kbruch;'s termination and restored on next
+startup.
+</para>
+</sect1>
 
 </chapter>
 
@@ -169,7 +270,6 @@ or
 <para>
 	<userinput>kbruch --text</userinput>
 </para>
-<para>
 <screenshot>
 <screeninfo>Main Menu</screeninfo>
 <mediaobject>
@@ -181,6 +281,7 @@ or
   </textobject>
 </mediaobject>
 </screenshot>
+<para>
 If you are a teacher you may be interested to generate a lot of complicate
 tasks. &kbruch; provides for this purpose a generator mode. You can only call
 it from a command line:
@@ -194,7 +295,6 @@ or
 <para>
 	<userinput>kbruch --generate</userinput>
 </para>
-<para>
 <screenshot>
 <screeninfo>Generator Mode</screeninfo>
 <mediaobject>
@@ -206,6 +306,7 @@ or
   </textobject>
 </mediaobject>
 </screenshot>
+<para>
 As shown in the screenshot, you can stop the generator mode by pressing Ctrl+C.
 It is not possible to influence the task generator. You can not set parameters
 like number of terms, maximal main denominator size or which operations should
@@ -222,30 +323,33 @@ Program Copyright, 2001-2003 Sebastian Stein
  <email>kbruch@hpfsc.de</email>
 </para>
 
-<para> Contributors:</para>
+<para>Thank you goes to:</para>
 
 <itemizedlist>
-<listitem><para>
-Eva Brucherseifer for writing KMath (&kbruch;'s GUI is based on this work)
-</para></listitem>
-<listitem><para>
-Dominique Devriese for bug fixing
-</para></listitem>
-<listitem><para>
-<ulink url="http://www.net-tex.de/">Stefan Schumacher</ulink> for testing a very early version
-</para></listitem>
-<listitem><para>
-<ulink url="http://www.guckes.net/">Sven Guckes</ulink> for testing the text interface
-</para></listitem>
-<listitem><para>
-David Faure for helping with KDE CVS and KDE Bugzilla
-</para></listitem>
-<listitem><para>
-Robert Gogolok for helping with KDE CVS
-</para></listitem>
-<listitem><para>
-Anne-Marie Mahfouf for managing the KDE Edu project
-</para></listitem>
+	<listitem><para>
+		Anne-Marie Mahfouf for managing the KDE Edu project
+	</para></listitem>
+	<listitem><para>
+		Eva Brucherseifer for writing KMath (&kbruch;'s GUI is based on this
+		work)
+	</para></listitem>
+	<listitem><para>
+		Dominique Devriese for bug fixing
+	</para></listitem>
+	<listitem><para>
+		<ulink url="http://www.net-tex.de/">Stefan Schumacher</ulink> for testing
+		a very early version
+	</para></listitem>
+	<listitem><para>
+		<ulink url="http://www.guckes.net/">Sven Guckes</ulink> for testing the
+		text interface
+	</para></listitem>
+	<listitem><para>
+		David Faure for helping with KDE CVS and KDE Bugzilla
+	</para></listitem>
+	<listitem><para>
+		Robert Gogolok for helping with KDE CVS
+	</para></listitem>
 </itemizedlist>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
@@ -269,16 +373,16 @@ Anne-Marie Mahfouf for managing the KDE Edu project
 <title>Requirements</title>
 
 <para>
-In order to successfully use &kbruch; (version > 0.3), you need &kde; > 2.0 .
+In order to successfully use &kbruch;, you need &kde; > 3.1 .
 </para>
 
 <para>
 &kbruch; itself can be found
-on <ulink url="http://edu.kde.org/kbruch">The &kbruch; home page</ulink>
+on <ulink url="http://edu.kde.org/kbruch/">The &kbruch; home page</ulink>
 and is part of the KDE-Edu project</para>
 
 <para>You can find a list of changes in the file ChangeLog in the 
-distribution of kbruch</para>
+distribution of kbruch or see the CVS commit messages.</para>
 
 </sect1>
 
