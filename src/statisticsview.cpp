@@ -18,13 +18,17 @@
 #include "statisticsview.h"
 #include "statisticsview.moc"
 
+/* the includes are needed for Qt support */
+#include <kapplication.h>
+#include <qfont.h>
+#include <qlabel.h>
 #include <qlayout.h>
+#include <qpushbutton.h>
+#include <qvbox.h>
+#include <qtooltip.h>
 
-#ifdef DEBUG
-#include <iostream>
-using std::cout;
-using std::endl;
-#endif
+#include <klocale.h>
+#include <kdebug.h>
 
 /* constructor */
 StatisticsView::StatisticsView(QWidget * parent, const char * name):
@@ -34,7 +38,7 @@ StatisticsView::StatisticsView(QWidget * parent, const char * name):
 	QColorGroup cg;
 #ifdef DEBUG
 
-	cout << "constructor StatisticsView()" << endl;
+	kdDebug() << "constructor StatisticsView()" << endl;
 #endif
 
 	/* reset the number of solved tasks */
@@ -118,7 +122,7 @@ StatisticsView::StatisticsView(QWidget * parent, const char * name):
 StatisticsView::~StatisticsView()
 {
 #ifdef DEBUG
-	cout << "destructor StatisticsView()" << endl;
+	kdDebug() << "destructor StatisticsView()" << endl;
 #endif
 
 	/* no need to delete any child widgets, Qt does it by itself */
@@ -130,8 +134,6 @@ void StatisticsView::addCorrect()
 	++count;
 	++correct;
 	(void) calc(); /* repaint the statistics */
-
-	return;
 }
 
 /* called, if a task was solved wrong */
@@ -139,8 +141,6 @@ void StatisticsView::addWrong()
 {
 	++count;
 	(void) calc(); /* repaint the statistics */
-
-	return;
 }
 
 
@@ -173,7 +173,6 @@ void StatisticsView::calc()
 		                 int(double(count - correct) / count * 100));
 		result3Label->setText(new_text);
 	}
-	return;
 }
 
 /* ------ private slots ------ */
@@ -184,5 +183,4 @@ void StatisticsView::resetStatistics()
 	count = 0;
 	correct = 0;
 	(void) calc();
-	return;
 }

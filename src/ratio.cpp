@@ -15,14 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <kdebug.h>
+
 #include "ratio.h"
-
-#include <iostream>
-#include <iomanip>
-
-using std::setw;
-using std::cout;
-using std::endl;
+#include "primzahl.h"
 
 /* ----- public member functions ----- */
 
@@ -34,8 +30,7 @@ ratio::ratio(int pzaehler, int pnenner):zaehler(pzaehler), nenner(pnenner)
 		nenner = 1;
 	reduce(); // kuerzen
 #ifdef DEBUG
-
-	cout << "constructor ratio" << endl;
+	kdDebug() << "constructor ratio" << endl;
 #endif
 }
 
@@ -43,20 +38,20 @@ ratio::ratio(int pzaehler, int pnenner):zaehler(pzaehler), nenner(pnenner)
 ratio::~ratio()
 {
 #ifdef DEBUG
-	cout << "destructor ratio" << endl;
+	kdDebug() << "destructor ratio" << endl;
 #endif
 }
 
 /* displays the ratio on stdout; just for debugging */
-ostream & ratio::display(ostream & str) const
+QTextStream & ratio::display(QTextStream & str) const
 {
 	int weite = str.width();
-	str << setw(weite) << " ";
-	str << setw(5) << zaehler << endl;
-	str << setw(weite) << " ";
+	str << qSetW(5) << " ";
+	str << qSetW(5) << zaehler << endl;
+	str << qSetW(weite) << " ";
 	str << " ----- " << endl;
-	str << setw(weite) << " ";
-	return str << setw(5) << nenner;
+	str << qSetW(weite) << " ";
+	return str << qSetW(5) << nenner;
 }
 
 /* return the numerator */
@@ -76,7 +71,6 @@ void ratio::set_zaehler(int pzaehler)
 {
 	zaehler = pzaehler;
 	reduce();
-	return;
 }
 
 /* set the denominator */
@@ -88,14 +82,12 @@ void ratio::set_nenner(int pnenner)
 
 	nenner = pnenner;
 	reduce();
-	return;
 }
 
 /* set the numerator without reducing */
 void ratio::set_zaehler_ohne_k(int pzaehler)
 {
 	zaehler = pzaehler;
-	return;
 }
 
 /* set the denominator without reducing */
@@ -106,7 +98,6 @@ void ratio::set_nenner_ohne_k(int pnenner)
 		pnenner = 1;
 
 	nenner = pnenner;
-	return;
 }
 
 /* add a ratio to a ratio like c = a + b */
@@ -235,10 +226,10 @@ void ratio::reduce()
 		if (divisor == 0)
 		{
 #ifdef DEBUG
-			cerr << "ratio::reduce() -> divisor == 0 !!!" << endl;
-			cerr << "zaehler: " << zaehler << endl;
-			cerr << "nenner: " << nenner << endl;
-			cin.get();
+			kdDebug() << "ratio::reduce() -> divisor == 0 !!!" << endl;
+			kdDebug() << "zaehler: " << zaehler << endl;
+			kdDebug() << "nenner: " << nenner << endl;
+			// cin.get();
 #endif
 			/* so that the application does not crash with a floating
 			 * point exception; the error should not appear, but in some
@@ -269,7 +260,6 @@ void ratio::reduce()
 		nenner *= -1;
 	if (zaehler == 0)
 		nenner = 1;
-	return;
 }
 
 /* change the sign of the ratio; ratio = ratio * -1 */
@@ -285,7 +275,6 @@ void ratio::change_sign()
 		zaehler *= -1;
 		nenner *= -1;
 	}
-	return;
 }
 
 /* exchange numerator and denominator */
@@ -294,14 +283,13 @@ void ratio::reziproc()
 	int temp = zaehler;
 	zaehler = nenner;
 	nenner = temp;
-	return;
 }
 
 
 /* ------ some prototyps of non class functions ------ */
 
-/* it is possible to code: cout << ratio_object << endl; */
-ostream & operator<<(ostream & str, const ratio & pratio)
+// it is possible to stram ratio_object
+QTextStream & operator<<(QTextStream & str, const ratio & pratio)
 {
 	return pratio.display(str);
 }

@@ -15,11 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <kdebug.h>
 #include "primzahl.h"
-
-#include <iostream>
-using std::cout;
-using std::endl;
 
 /* ----- the global prime number vector ----- */
 UnsignedIntArray primzahl::prim_vector;
@@ -33,7 +30,7 @@ primzahl::primzahl()
 	if (prim_vector.empty())
 	{
 #ifdef DEBUG
-		cout << "prim_vector is still empty" << endl;
+		kdDebug() << "prim_vector is still empty" << endl;
 #endif
 
 		prim_vector.push_back(2);
@@ -41,8 +38,7 @@ primzahl::primzahl()
 	}
 	current_pos = prim_vector.begin();
 #ifdef DEBUG
-
-	cout << "constructor primzahl" << endl;
+	kdDebug() << "constructor primzahl" << endl;
 #endif
 }
 
@@ -50,7 +46,7 @@ primzahl::primzahl()
 primzahl::~primzahl()
 {
 #ifdef DEBUG
-	cout << "destructor primzahl" << endl;
+	kdDebug() << "destructor primzahl" << endl;
 #endif
 }
 
@@ -86,19 +82,19 @@ unsigned int primzahl::get_next()
 }
 
 /* returns the first prime number of the vector */
-unsigned int primzahl::get_first()
+unsigned int primzahl::get_first() const
 {
 	return *prim_vector.begin();
 }
 
 /* returns the last prime number in the vector */
-unsigned int primzahl::get_last()
+unsigned int primzahl::get_last() const
 {
 	return *(prim_vector.end() - 1);
 }
 
 /* returns currently selected prime number */
-unsigned int primzahl::get_current()
+unsigned int primzahl::get_current() const
 {
 	if (current_pos == prim_vector.end() + 1)
 		return get_last();
@@ -109,14 +105,12 @@ unsigned int primzahl::get_current()
 void primzahl::move_first()
 {
 	current_pos = prim_vector.begin();
-	return;
 }
 
 /* set current_pos to the last prime number */
 void primzahl::move_last()
 {
 	current_pos = prim_vector.end() - 1;
-	return;
 }
 
 /* move to the next prime number */
@@ -129,7 +123,6 @@ void primzahl::move_forward()
 		find_next();
 		move_last();
 	}
-	return;
 }
 
 /* move one prime number back */
@@ -139,7 +132,6 @@ void primzahl::move_back()
 	 * of our vector after this function */
 	if (current_pos != prim_vector.begin())
 		--current_pos;
-	return;
 }
 
 /* displays the whole prim_vector on stdout; just for debugging */
@@ -150,10 +142,9 @@ void primzahl::display_all()
 	/* looping through the complete vector */
 	for (current_pos = prim_vector.begin(); current_pos != prim_vector.end();
 	        current_pos++, dummy++)
-		cout << dummy << ": " << *current_pos << endl;
+		kdDebug() << dummy << ": " << *current_pos << endl;
 
 	current_pos = prim_vector.end() - 1;
-	return;
 }
 
 /* ----- private member functions ----- */
@@ -185,5 +176,4 @@ void primzahl::find_next()
 	prim_vector.push_back(new_prim);
 
 	current_pos = prim_vector.end() - 1;
-	return;
 }

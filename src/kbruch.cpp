@@ -18,11 +18,8 @@
 #include "kbruch.h"
 
 #include <iostream>
-#include <iomanip>
-using std::setw;
-using std::cout;
-using std::cin;
-using std::endl;
+
+static QTextStream output(stdout, IO_ReadWrite);
 
 /* show the main menu for a text gui */
 char show_main_txt()
@@ -30,14 +27,14 @@ char show_main_txt()
 	char chrInput;
 
 	CLEAR; /* clear the console */
-	cout << "\tKBruch " << VERSION << " " << DATE << endl;
-	cout << "\n\n\tWhat do you want to do:" << endl;
-	cout << "\n\n\t\t[a]ddition/substraction" << endl;
-	cout << "\n\t\t[m]ultiplication/division" << endl;
-	cout << "\n\t\t[t]ask with all operations (default)" << endl;
-	cout << "\n\t\t[r]ead about the program" << endl;
-	cout << "\n\t\t[e]xit program" << endl;
-	cout << "\n\n\tInput: ";
+	output << "\tKBruch " << VERSION << " " << DATE << endl;
+	output << "\n\n\tWhat do you want to do:" << endl;
+	output << "\n\n\t\t[a]ddition/substraction" << endl;
+	output << "\n\t\t[m]ultiplication/division" << endl;
+	output << "\n\t\t[t]ask with all operations (default)" << endl;
+	output << "\n\t\t[r]ead about the program" << endl;
+	output << "\n\t\t[e]xit program" << endl;
+	output << "\n\n\tInput: ";
 
 	/* check, if the user entered a valid input */
 	if (!(cin >> chrInput).good())
@@ -55,8 +52,8 @@ void ask_parameters_txt(short & nr_ratios, unsigned int & max_md)
 	short tmp_short;
 	unsigned int tmp_ui;
 
-	cout << "\tKBruch " << VERSION << " " << DATE << endl;
-	cout << "\n\n\tEnter number of ratios (between 2 and 5): ";
+	output << "\tKBruch " << VERSION << " " << DATE << endl;
+	output << "\n\n\tEnter number of ratios (between 2 and 5): ";
 
 	/* get the input and check for errors */
 	if (!(cin >> tmp_short).good())
@@ -72,8 +69,8 @@ void ask_parameters_txt(short & nr_ratios, unsigned int & max_md)
 		tmp_short = 5;
 	nr_ratios = tmp_short; /* save the input */
 
-	cout << "\n\n\tEnter the maximum size of the main denominator!";
-	cout << "\n\tIt must be at least " << pow(2, nr_ratios) << ": ";
+	output << "\n\n\tEnter the maximum size of the main denominator!";
+	output << "\n\tIt must be at least " << pow(2, nr_ratios) << ": ";
 
 	/* get the input and check for errors */
 	if (!(cin >> tmp_ui).good())
@@ -105,8 +102,8 @@ short run_task_txt(short add_sub, short mul_div,
 	short wrong = FALSE;
 
 	CLEAR;
-	cout << "\tKBruch " << VERSION << " " << DATE << endl;
-	cout << "\n\n\tSolve the given task: \n" << endl;
+	output << "\tKBruch " << VERSION << " " << DATE << endl;
+	output << "\n\n\tSolve the given task: \n" << endl;
 
 	/* create a new task with the given parameters */
 	klausur.create_task(max_md, nr_ratios, add_sub, mul_div);
@@ -117,12 +114,12 @@ short run_task_txt(short add_sub, short mul_div,
 		klausur.create_task(max_md, nr_ratios, add_sub, mul_div);
 		result = klausur.solve(); /* solve the task */
 if (abs(result.get_zaehler() > 200))
-	cout << "DEBUG MESSAGE zaehler: " << result.get_zaehler() << endl;
+	output << "DEBUG MESSAGE zaehler: " << result.get_zaehler() << endl;
 	} while (abs(result.get_zaehler()) > 200);
 
-	cout << setw(8) << klausur << endl; /* display the task */
+	output << qSetW(8) << klausur << endl; /* display the task */
 
-	cout << "\n\n\tEnter the numerator: ";
+	output << "\n\n\tEnter the numerator: ";
 
 	/* check, if the user entered a valid input */
 	if (!(cin >> int_num).good())
@@ -130,7 +127,7 @@ if (abs(result.get_zaehler() > 200))
 	cin.clear();
 	cin.ignore(INT_MAX, '\n');
 
-	cout << "\n\tEnter the denominator: ";
+	output << "\n\tEnter the denominator: ";
 
 	/* check, if the user entered a valid input */
 	if (!(cin >> int_deno).good())
@@ -158,18 +155,18 @@ if (abs(result.get_zaehler() > 200))
 	if (wrong == TRUE)
 	{
 		CLEAR;
-		cout << "\tKBruch " << VERSION << " " << DATE << endl;
-		cout << "\n\n\tYou entered the wrong result for the task:\n" << endl;
-		cout << setw(8) << klausur << endl; /* display the task */
-		cout << "\n\n\tThe correct result is:\n" << endl;
-		cout << setw(8) << result << endl;
-		cout << "\n\n\tpress ENTER to go on: ";
+		output << "\tKBruch " << VERSION << " " << DATE << endl;
+		output << "\n\n\tYou entered the wrong result for the task:\n" << endl;
+		output << qSetW(8) << klausur << endl; /* display the task */
+		output << "\n\n\tThe correct result is:\n" << endl;
+		output << qSetW(8) << result << endl;
+		output << "\n\n\tpress ENTER to go on: ";
 		cin.ignore(INT_MAX, '\n');
 		cin.clear();
 		return 0;
 	} else {
-		cout << "\n\n\tYes, you entered the correct result." << endl;
-		cout << "\tPress ENTER to go on: ";
+		output << "\n\n\tYes, you entered the correct result." << endl;
+		output << "\tPress ENTER to go on: ";
 		cin.ignore(INT_MAX, '\n');
 		cin.clear();
 		return 1;
@@ -180,11 +177,11 @@ if (abs(result.get_zaehler() > 200))
 void show_about_txt()
 {
 	CLEAR;
-	cout << "\tKBruch " << VERSION << " " << DATE << endl;
-	cout << "\n\t\tDescription: task generator for calculations with fractions";
-	cout << endl << "\n\t\tHomepage: " << HOMEPAGE << endl;
-	cout << "\n\t\tMaintainer: " << MAINTAINER << " <" << MAINTAINER_EMAIL;
-	cout << ">" << endl << "\n\n\tPress ENTER to go on: ";
+	output << "\tKBruch " << VERSION << " " << DATE << endl;
+	output << "\n\t\tDescription: task generator for calculations with fractions";
+	output << endl << "\n\t\tHomepage: " << HOMEPAGE << endl;
+	output << "\n\t\tMaintainer: " << MAINTAINER << " <" << MAINTAINER_EMAIL;
+	output << ">" << endl << "\n\n\tPress ENTER to go on: ";
 	cin.ignore(INT_MAX, '\n');
 	cin.clear();
 	return;
@@ -233,16 +230,16 @@ int gui_konsole(void)
 				count++;
 
 				CLEAR;
-				cout << "\tKBruch " << VERSION << " " << DATE << endl;
-				cout << "\n\n\ttasks so far: \t" << count << endl;
-				cout << "\tcorrect: \t" << correct;
-				cout << "  " << int(double(correct) / count * 100) << "%" << endl;
-				cout << "\tincorrect: \t" << (count - correct);
-				cout << "  " << int(double(count - correct) / count * 100) << "%";
-				cout << "\n\n\t\t[n]ext task (default)" << endl;
-				cout << "\t\t[c]hange parameters" << endl;
-				cout << "\t\t[e]xit program" << endl;
-				cout << "\n\tInput: ";
+				output << "\tKBruch " << VERSION << " " << DATE << endl;
+				output << "\n\n\ttasks so far: \t" << count << endl;
+				output << "\tcorrect: \t" << correct;
+				output << "  " << int(double(correct) / count * 100) << "%" << endl;
+				output << "\tincorrect: \t" << (count - correct);
+				output << "  " << int(double(count - correct) / count * 100) << "%";
+				output << "\n\n\t\t[n]ext task (default)" << endl;
+				output << "\t\t[c]hange parameters" << endl;
+				output << "\t\t[e]xit program" << endl;
+				output << "\n\tInput: ";
 
 				/* check, if the user entered a valid input */
 				if (!(cin >> chrInput2).good())
@@ -322,12 +319,12 @@ int main(int argc, char * argv[])
 					ergebnis = klausur.solve();
 				} while (abs(ergebnis.get_zaehler()) > 200);
 
-				cout << "Task:" << endl;
-				cout << setw(8) << klausur << endl;
-				cout << "Solution:" << endl;
-				cout << setw(8) << ergebnis << endl;
-				cout << "Press ENTER to go on or stop program ";
-				cout << "by pressing Ctrl+C" << endl;
+				output << "Task:" << endl;
+				output << qSetW(8) << klausur << endl;
+				output << "Solution:" << endl;
+				output << qSetW(8) << ergebnis << endl;
+				output << "Press ENTER to go on or stop program ";
+				output << "by pressing Ctrl+C" << endl;
 				cin.get();
 				cin.clear();
 			} while (1);

@@ -20,10 +20,7 @@
 #ifndef BRUCH_H
 #define BRUCH_H
 
-/*#ifdef HAVE_CONFIG_H*/
 #include <config.h>
-/*#else*/
-/*#endif*/
 
 #define MAINTAINER "Sebastian Stein"
 #define MAINTAINER_EMAIL "kbruch@hpfsc.de"
@@ -41,7 +38,7 @@
 #include <math.h>
 
 /* this includes are needed for Qt support */
-#include <kapp.h>
+#include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 #include <klocale.h>

@@ -23,13 +23,9 @@
 #include "ratio.h"
 #include "primzahl.h"
 
-#include <iostream>
-#include <iomanip>
 #include <stdlib.h>
 #include <vector>
 #include <time.h>
-
-using std::ostream;
 
 /** important for add_sub and mul_div */
 #define YES 1
@@ -55,9 +51,9 @@ typedef struct PRIME_FACTOR
 Tprime_factor;
 
 /** we use the vector template class to create 3 dynamic types */
-typedef std::vector<ratio> RatioArray;
-typedef std::vector<short> ShortArray;
-typedef std::vector<Tprime_factor> PrimeFactorArray;
+typedef QValueVector<ratio> RatioArray;
+typedef QValueVector<short> ShortArray;
+typedef QValueVector<Tprime_factor> PrimeFactorArray;
 
 /** class to handle mathematical tasks with ratios
  * naming:
@@ -80,7 +76,7 @@ public:
 	void add_ratio(ratio new_ratio = 0);
 	void add_ratio(int zaehler = 0, int nenner = 1);
 	void add_operation(short operation = ADD);
-	ostream & display(ostream & str);
+	QTextStream & display(QTextStream & str);
 	ratio solve();
 private:
 	/** max. size of main denominator */
@@ -132,6 +128,6 @@ private:
 /* ------ some prototyps of non class functions ------ */
 
 /** it is possible to code: cout << task_object << endl; */
-ostream & operator<<(ostream & str, task & ptask);
+QTextStream & operator<<(QTextStream & str, task & ptask);
 
 #endif

@@ -25,9 +25,11 @@
 #include <kpopupmenu.h>
 #include <kaction.h>
 #include <kstdaction.h>
+#include <klocale.h>
 
 #include <qsplitter.h>
 #include <qcombobox.h>
+#include <qlabel.h>
 
 #include "taskview.h"
 #include "statisticsview.h"

@@ -18,14 +18,7 @@
 #ifndef RATIO_H
 #define RATIO_H
 
-#include "primzahl.h"
-
-#include <iostream>
-#include <iomanip>
-
-using std::ostream;
-
-/*#define DEBUG*/
+#include <qtextstream.h>
 
 /* handling ratios */
 class ratio
@@ -33,7 +26,7 @@ class ratio
 public:
 	ratio(int pzaehler = 0, int pnenner = 1);
 	~ratio();
-	ostream & display(ostream & str) const;
+	QTextStream & display(QTextStream & str) const;
 	int get_zaehler(); // return numerator
 	int get_nenner(); // return denominator
 	void set_zaehler(int pzaehler = 0); // set numerator
@@ -58,6 +51,6 @@ private:
 /* ------ some prototyps of non class functions ------ */
 
 /* it is possible to code: cout << ratio_object << endl; */
-ostream & operator<<(ostream & str, const ratio & pratio);
+QTextStream & operator<<(QTextStream & str, const ratio & pratio);
 
 #endif

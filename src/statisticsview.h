@@ -18,26 +18,20 @@
 #ifndef STATISTICSVIEW_H
 #define STATISTICSVIEW_H
 
-/* the includes are needed for Qt support */
-#include <kapplication.h>
-#include <qwidget.h>
-#include <qfont.h>
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qpushbutton.h>
-#include <qvbox.h>
-#include <klocale.h>
-#include <qtooltip.h>
+class QLabel;
+class QPushButton;
+class QVBoxLayout;
+class QHBoxLayout;
+class QGridLayout;
 
-#ifdef DEBUG
-#include <iostream>
-#endif
+#include <qwidget.h>
 
 /**
   * StatisticsView takes care of the statistics of a test.
   * It saves the number of correct and wrong questions and
   * views its data to the user
   */
+
 class StatisticsView : public QWidget
 {
 	Q_OBJECT

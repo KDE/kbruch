@@ -18,6 +18,24 @@
 #include "taskview.h"
 #include "taskview.moc"
 
+/* this includes are needed for KDE support */
+#include <klocale.h>
+#include <kmessagebox.h>
+#include <kapplication.h>
+
+/* this includes are needed for Qt support */
+#include <qabstractlayout.h>
+#include <qcombobox.h>
+#include <qfont.h>
+#include <qgrid.h>
+#include <qlabel.h>
+#include <qlayout.h>
+#include <qlineedit.h>
+#include <qpushbutton.h>
+#include <qtooltip.h>
+#include <qvbox.h>
+
+
 #include <math.h>
 
 #ifdef DEBUG

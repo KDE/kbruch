@@ -15,22 +15,18 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "task.h"
 #include <math.h>
-#include <iostream>
-#include <iomanip>
 
-using std::setw;
-using std::cout;
-using std::endl;
+#include <kdebug.h>
+
+#include "task.h"
 
 /** constructor of class task */
 task::task()
 {
 	srand(time(NULL));
 #ifdef DEBUG
-
-	cout << "constructor task" << endl;
+	kdDebug() << "constructor task" << endl;
 #endif
 }
 
@@ -38,7 +34,7 @@ task::task()
 task::~task()
 {
 #ifdef DEBUG
-	cout << "destructor task" << endl;
+	kdDebug() << "destructor task" << endl;
 #endif
 }
 
@@ -68,8 +64,7 @@ void task::create_task(unsigned int pmax_md, short pnr_ratios,
 		max_product_length = make_operation(padd_sub, pmul_div, pnr_ratios);
 
 #ifdef DEBUG
-
-		cout << "max_product_length: " << max_product_length << endl;
+		kdDebug() << "max_product_length: " << max_product_length << endl;
 #endif
 		/* later we must be able to find a main denominator;
 		 * so 2 ^ max_product_length couldn't be bigger than the max. denominator */
@@ -77,33 +72,29 @@ void task::create_task(unsigned int pmax_md, short pnr_ratios,
 	while ((unsigned int) pow(2, max_product_length) > pmax_md);
 
 #ifdef DEBUG
-
-	cout << "max_product_length: " << max_product_length << endl;
+	kdDebug() << "max_product_length: " << max_product_length << endl;
 #endif
 
 	/* find a main denominator */
 	main_denominator = make_main_dn(pmax_md, max_product_length);
 
 #ifdef DEBUG
-
-	cout << "after make_main_dn()" << endl;
+	kdDebug() << "after make_main_dn()" << endl;
 #endif
 
 	/* create the ratios' numerators */
 	make_numerators(main_denominator, pnr_ratios);
 
 #ifdef DEBUG
-
-	cout << "after make_numerators()" << endl;
+	kdDebug() << "after make_numerators()" << endl;
 #endif
 
 	/* create the ratios' denominators */
 	make_denominators(main_denominator, pmax_md, pmul_div);
 
 #ifdef DEBUG
-
-	cout << "main deno: " << main_denominator << endl;
-	cout << "prim fakt: " << prim_fac_vector.size() << endl;
+	kdDebug() << "main deno: " << main_denominator << endl;
+	kdDebug() << "prim fakt: " << prim_fac_vector.size() << endl;
 #endif
 
 	return;
@@ -182,7 +173,7 @@ void task::add_operation(short operation)
 }
 
 /** just outputs the whole given task to stdout; for debugging */
-ostream & task::display(ostream & str)
+QTextStream & task::display(QTextStream & str)
 {
 	/* this is our pointer on the ratio_vector, set it to the beginning */
 	RatioArray::iterator ratio_pointer = ratio_vector.begin();
@@ -191,17 +182,17 @@ ostream & task::display(ostream & str)
 	ShortArray::iterator op_pointer = op_vector.begin();
 
 	/* we need this array to look up the fitting chars for the operations */
-	const char a[5] = "+-*/";
+	const char a[] = "+-*/";
 
-	/* check, if a setw() was given to the stream */
+	/* check, if a qSetW() was given to the stream */
 	int weite = str.width();
 	int pweite = weite;
-	str << setw(0);
+	str << qSetW(0);
 
 	/* check, if ratio number and operation number fit together */
 	if (ratio_vector.size() != op_vector.size() + 1)
 	{
-		cout << "Number of ratios and operations do not fit." << endl;
+		kdDebug() << "Number of ratios and operations do not fit." << endl;
 		return str;
 	}
 
@@ -212,7 +203,7 @@ ostream & task::display(ostream & str)
 	for (ratio_pointer = ratio_vector.begin();
 	        ratio_pointer != ratio_vector.end(); ratio_pointer++)
 	{
-		str << setw(5) << ratio_pointer->get_zaehler() << "   ";
+		str << qSetW(5) << ratio_pointer->get_zaehler() << "   ";
 	}
 	str << endl;
 
@@ -237,8 +228,8 @@ ostream & task::display(ostream & str)
 	        ratio_pointer != ratio_vector.end(); ratio_pointer++)
 	{
 		if (ratio_pointer == ratio_vector.end() - 1)
-			return str << setw(5) << ratio_pointer->get_nenner() << "   ";
-		str << setw(5) << ratio_pointer->get_nenner() << "   ";
+			return str << qSetW(5) << ratio_pointer->get_nenner() << "   ";
+		str << qSetW(5) << ratio_pointer->get_nenner() << "   ";
 	}
 	return str;
 }
@@ -260,7 +251,7 @@ ratio task::solve()
 	/* check, if ratio number and operation number fit together */
 	if (ratio_vector.size() != op_vector.size())
 	{
-		cout << "Number of ratios and operations do not fit." << endl;
+		kdDebug() << "Number of ratios and operations do not fit." << endl;
 		return ergebnis;
 	}
 
@@ -304,8 +295,7 @@ ratio task::solve()
 			break;
 
 #ifdef DEBUG
-
-		cout << "Schleifenende" << endl;
+		kdDebug() << "Schleifenende" << endl;
 #endif
 
 	}
@@ -313,7 +303,7 @@ ratio task::solve()
 
 #ifdef DEBUG
 
-	cout << "after do while in solve()" << endl;
+	kdDebug() << "after do while in solve()" << endl;
 #endif
 
 	/* if the last operation was an add/sub we haven't add/subed it until now */
@@ -348,7 +338,7 @@ ratio task::product(RatioArray::iterator & ratio_pointer,
 
 #ifdef DEBUG
 
-	cout << "in product()" << endl;
+	kdDebug() << "in product()" << endl;
 #endif
 
 	++ratio_pointer;
@@ -508,12 +498,12 @@ unsigned short task::prim_factor_nr(int number)
 	}
 #ifdef DEBUG
 	PrimeFactorArray::iterator prim_fac_pointer = prim_fac_vector.begin();
-	cout << "Primfaktoren von: " << number << endl;
+	kdDebug() << "Primfaktoren von: " << number << endl;
 	for (prim_fac_pointer = prim_fac_vector.begin();
 	        prim_fac_pointer != prim_fac_vector.end();
 	        prim_fac_pointer++)
-		cout << (*prim_fac_pointer).factor << endl;
-	cout << "Anzahl: " << prim_fac_vector.size() << endl;
+		kdDebug() << (*prim_fac_pointer).factor << endl;
+	kdDebug() << "Anzahl: " << prim_fac_vector.size() << endl;
 #endif
 
 	return prim_fac_vector.size();
@@ -557,7 +547,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 	/* check, if ratio number and operation number fit together */
 	if (ratio_vector.size() != op_vector.size() + 1)
 	{
-		cout << "Number of ratios and operations do not fit." << endl;
+		kdDebug() << "Number of ratios and operations do not fit." << endl;
 		return;
 	}
 
@@ -701,7 +691,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 /* ------ some prototyps of non class functions ------ */
 
 /** it is possible to code: cout << task_object << endl; */
-ostream & operator<<(ostream & str, task & ptask)
+QTextStream & operator<<(QTextStream & str, task & ptask)
 {
 	return ptask.display(str);
 }

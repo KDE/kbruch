@@ -18,12 +18,9 @@
 #ifndef PRIMZAHL_H
 #define PRIMZAHL_H
 
-/*#define DEBUG*/
+#include <qvaluevector.h>
 
-#include <iostream>
-#include <vector>
-
-typedef std::vector<unsigned int> UnsignedIntArray;
+typedef QValueVector<uint> UnsignedIntArray;
 
 /* class primzahl, handling prime numbers */
 class primzahl
@@ -31,11 +28,11 @@ class primzahl
 public:
 	primzahl();
 	~primzahl();
-	short isPrimeNumber(unsigned int number);
+	short isPrimeNumber(uint number);
 	unsigned int get_next();
-	unsigned int get_first();
-	unsigned int get_last();
-	unsigned int get_current();
+	unsigned int get_first() const;
+	unsigned int get_last() const;
+	unsigned int get_current() const;
 	void move_first();
 	void move_last();
 	void move_forward();

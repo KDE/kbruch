@@ -24,23 +24,14 @@
 #include "ratio.h"
 #include "task.h"
 
-/* this includes are needed for KDE support */
-#include <kapplication.h>
-#include <klocale.h>
-#include <kmessagebox.h>
-
-/* this includes are needed for Qt support */
-#include <qabstractlayout.h>
-#include <qcombobox.h>
-#include <qfont.h>
-#include <qgrid.h>
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qlineedit.h>
-#include <qpushbutton.h>
-#include <qtooltip.h>
-#include <qvbox.h>
 #include <qwidget.h>
+
+class QLabel;
+class QFrame;
+class QGridLayout;
+class QLineEdit;
+class QSpacerItem;
+class QPushButton;
 
 class TaskView : public QWidget
 {
