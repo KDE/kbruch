@@ -1,8 +1,8 @@
 /***************************************************************************
-                          qt_stat.cpp  -  the statistic window
+                          statisticsview.cpp  -  the statistic window
                              -------------------
     begin                : Tue Mar 08 17:20:00 CET 2002
-    copyright            : (C) 2001 - 2002 by Sebastian Stein
+    copyright            : (C) 2001 - 2002 by Sebastian Stein, Eva Brucherseifer
     email                : bruch@hpfsc.de
  ***************************************************************************/
 
@@ -15,28 +15,32 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "qt_stat.h"
-#include "qt_stat.moc"
+#include "statisticsview.h"
+#include "statisticsview.moc"
+
+#include <qlayout.h>
+
 /* constructor */
-qt_stat::qt_stat(QWidget * parent, const char * name):
-	QDialog(parent, name, FALSE, 0)
+StatisticsView::StatisticsView(QWidget * parent, const char * name):
+		QWidget(parent, name)
 {
 	QPalette pal;
 	QColorGroup cg;
 #ifdef DEBUG
-	cout << "constructor qt_stat()" << endl;
+
+	cout << "constructor StatisticsView()" << endl;
 #endif
 
 	/* reset the number of solved tasks */
 	count = correct = 0;
 
 	/* set the caption of the window */
-	setCaption(i18n("Statistics"));
+	//	setCaption(i18n("Statistics"));
 
 	/* add a layout as a base */
 	layout1 = new QVBoxLayout(this);
 	layout1->setSpacing(6);
-	layout1->setMargin(0);
+	layout1->setMargin(6);
 
 	/* create a grid to show the labels */
 	labelGrid = new QGridLayout(layout1, 3, 2);
@@ -49,7 +53,7 @@ qt_stat::qt_stat(QWidget * parent, const char * name):
 	result1Label = new QLabel(this);
 	labelGrid->addWidget(result1Label, 1, 1);
 	QToolTip::add(result1Label,
-				i18n("This is the current total number of solved tasks."));
+	              i18n("This is the current total number of solved tasks."));
 
 	info2Label = new QLabel(this);
 	info2Label->setText(i18n("Correct:"));
@@ -69,7 +73,7 @@ qt_stat::qt_stat(QWidget * parent, const char * name):
 
 	labelGrid->addWidget(result2Label, 2, 1);
 	QToolTip::add(result2Label,
-				i18n("This is the current total number of correctly solved tasks."));
+	              i18n("This is the current total number of correctly solved tasks."));
 
 	info3Label = new QLabel(this);
 	info3Label->setText(i18n("Incorrect:"));
@@ -89,30 +93,33 @@ qt_stat::qt_stat(QWidget * parent, const char * name):
 
 	labelGrid->addWidget(result3Label, 3, 1);
 	QToolTip::add(result3Label,
-				i18n("This is the current total number of unsolved tasks."));
+	              i18n("This is the current total number of unsolved tasks."));
 
 	/* the Reset button */
+	buttonLayout = new QHBoxLayout(layout1);
 	resetBtn = new QPushButton(i18n("&Reset"), this);
-	QObject::connect(resetBtn, SIGNAL(clicked()), this, SLOT(reset_stat()));
-	layout1->addWidget(resetBtn);
+	QObject::connect(resetBtn, SIGNAL(clicked()), this, SLOT(resetStatistics()));
+	buttonLayout->addWidget(resetBtn);
 	QToolTip::add(resetBtn, i18n("Press the button to reset the statistics."));
+	QSpacerItem* spacer = new QSpacerItem(0,0);
+	buttonLayout->addItem(spacer);
 
 	/* calculate the statistics */
 	(void) calc();
 }
 
 /* destructor */
-qt_stat::~qt_stat()
+StatisticsView::~StatisticsView()
 {
 #ifdef DEBUG
-	cout << "destructor qt_stat()" << endl;
+	cout << "destructor StatisticsView()" << endl;
 #endif
 
 	/* no need to delete any child widgets, Qt does it by itself */
 }
 
 /* called, if a task solved correctly */
-void qt_stat::addCorrect()
+void StatisticsView::addCorrect()
 {
 	++count;
 	++correct;
@@ -122,7 +129,7 @@ void qt_stat::addCorrect()
 }
 
 /* called, if a task was solved wrong */
-void qt_stat::addWrong()
+void StatisticsView::addWrong()
 {
 	++count;
 	(void) calc(); /* repaint the statistics */
@@ -134,7 +141,7 @@ void qt_stat::addWrong()
 /* ------ private member functions ------ */
 
 /* recalculates the statistics and changes the corresponding labels */
-void qt_stat::calc()
+void StatisticsView::calc()
 {
 	QString new_text;
 	QString number;
@@ -147,15 +154,17 @@ void qt_stat::calc()
 	{
 		result2Label->setText("- (-%)");
 		result3Label->setText("- (-%)");
-	} else {
+	}
+	else
+	{
 		/* set the correct label */
 		new_text.sprintf("%d (%d %%)", correct,
-												int(double(correct) / count * 100));
+		                 int(double(correct) / count * 100));
 		result2Label->setText(new_text);
 
 		/* set the incorrect label */
 		new_text.sprintf("%d (%d %%)", count - correct,
-											int(double(count - correct) / count * 100));
+		                 int(double(count - correct) / count * 100));
 		result3Label->setText(new_text);
 	}
 	return;
@@ -164,7 +173,7 @@ void qt_stat::calc()
 /* ------ private slots ------ */
 
 /* called by the reset button */
-void qt_stat::reset_stat()
+void StatisticsView::resetStatistics()
 {
 	count = 0;
 	correct = 0;

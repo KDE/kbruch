@@ -28,29 +28,29 @@ typedef std::vector<unsigned int> UnsignedIntArray;
 /* class primzahl, handling prime numbers */
 class primzahl
 {
-	public:
-		primzahl();
-		~primzahl();
-		short isPrimeNumber(unsigned int number);
-		unsigned int get_next();
-		unsigned int get_first();
-		unsigned int get_last();
-		unsigned int get_current();
-		void move_first();
-		void move_last();
-		void move_forward();
-		void move_back();
-		void display_all();
-	private:
-		/* a vector storing all known prime numbers, access for all objects;
-		 * we are using the vector<T> template; so we do not have to think
-		 * about dynamic mem manipulation */
-		static UnsignedIntArray prim_vector;
+public:
+	primzahl();
+	~primzahl();
+	short isPrimeNumber(unsigned int number);
+	unsigned int get_next();
+	unsigned int get_first();
+	unsigned int get_last();
+	unsigned int get_current();
+	void move_first();
+	void move_last();
+	void move_forward();
+	void move_back();
+	void display_all();
+private:
+	/* a vector storing all known prime numbers, access for all objects;
+	 * we are using the vector<T> template; so we do not have to think
+	 * about dynamic mem manipulation */
+	static UnsignedIntArray prim_vector;
 
-		/* current selected prime number */
-		UnsignedIntArray::iterator current_pos;
+	/* current selected prime number */
+	UnsignedIntArray::iterator current_pos;
 
-		/* finds next prime number and adds it to the vector */
-		void find_next();
+	/* finds next prime number and adds it to the vector */
+	void find_next();
 };
 #endif

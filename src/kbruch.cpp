@@ -66,7 +66,7 @@ void ask_parameters_txt(short & nr_ratios, unsigned int & max_md)
 	nr_ratios = tmp_short; /* save the input */
 	
 	cout << "\n\n\tEnter the maximum size of the main denominator!";
-	cout << "\n\tIt must be at least " << high(2, nr_ratios) << ": ";
+	cout << "\n\tIt must be at least " << pow(2, nr_ratios) << ": ";
 
 	/* get the input and check for errors */
 	if (!(cin >> tmp_ui).good())
@@ -76,13 +76,13 @@ void ask_parameters_txt(short & nr_ratios, unsigned int & max_md)
 
 	/* we only allow 2 to 5 ratios per task, we are not able to print more
 	 * on a console in a good form */
-	if (tmp_ui < high(2, nr_ratios))
-		tmp_ui = high(2, nr_ratios);
+	if (tmp_ui < pow(2, nr_ratios))
+		tmp_ui = (unsigned int) pow(2, nr_ratios);
 
 	/* we do not allow the maximum denominator to be more then 4 times
 	 * of the required minimum */
-	if (tmp_ui > 4 * high(2, nr_ratios))
-		tmp_ui = 4 * high(2, nr_ratios);
+	if (tmp_ui > 4 * pow(2, nr_ratios))
+		tmp_ui = 4 * (unsigned int) pow(2, nr_ratios);
 	max_md = tmp_ui; /* save the input */
 
 	return;
@@ -266,7 +266,7 @@ int gui_qt_ini(int argc, char * argv[])
 	 * user */
 	KAboutData aboutData( "kbruch",
 		description,
-		KBRUCH_VERSION,
+		VERSION,
 		I18N_NOOP("KBruch is an application to automatically generate tasks with fractions."),
 		KAboutData::License_GPL,
     	"(c) 2002, Sebastian Stein", 0, "http://edu.kde.org/kbruch/",
@@ -283,7 +283,7 @@ int gui_qt_ini(int argc, char * argv[])
 	/* !! later we should use a bigger one from the libary -> kid's size */
 	bruch.setFont(KGlobalSettings::generalFont());
 
-	gui_qt * bruchApp = new gui_qt();
+	MainQtWidget * bruchApp = new MainQtWidget();
 	bruch.setMainWidget(bruchApp);
 	bruchApp->show();
 

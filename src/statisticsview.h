@@ -1,8 +1,8 @@
 /***************************************************************************
-                          qt_stat.cpp  -  Header File
+                          statisticsview.cpp  -  Header File
                              -------------------
     begin                : Tue Mar 08 17:20:00 CET 2002
-    copyright            : (C) 2001 - 2002 by Sebastian Stein
+    copyright            : (C) 2001 - 2002 by Sebastian Stein, Eva Brucherseifer
     email                : bruch@hpfsc.de
  ***************************************************************************/
 
@@ -15,12 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef QT_STAT_H
-#define QT_STAT_H
+#ifndef STATISTICSVIEW_H
+#define STATISTICSVIEW_H
 
 /* the includes are needed for Qt support */
 #include <kapplication.h>
-#include <qdialog.h>
+#include <qwidget.h>
 #include <qfont.h>
 #include <qlabel.h>
 #include <qlayout.h>
@@ -33,32 +33,47 @@
 #include <iostream.h>
 #endif
 
-class qt_stat : public QDialog
+/**
+  * StatisticsView takes care of the statistics of a test. 
+  * It saves the number of correct and wrong questions and
+  * views its data to the user
+  */
+class StatisticsView : public QWidget
 {
 	Q_OBJECT
 
-	public:
-		qt_stat(QWidget * parent = 0, const char * name = 0);
-		~qt_stat();
-		void addCorrect();
-		void addWrong();
-	private:
-		void calc();
+public:
+	StatisticsView(QWidget * parent = 0, const char * name = 0);
+	~StatisticsView();
 
-		unsigned int count;
-		unsigned int correct;
+public slots:
+	/** increment number of correct answers */
+	void addCorrect();
 
-		QPushButton * resetBtn;
-		QVBoxLayout * layout1;
-		QGridLayout * labelGrid;
-		QLabel * result1Label;
-		QLabel * result2Label;
-		QLabel * result3Label;
-		QLabel * info1Label;
-		QLabel * info2Label;
-		QLabel * info3Label;
-	private slots:
-		void reset_stat();
+	/** increment number of wrong answers */
+	void addWrong();
+
+	/** set statistics to zero. 
+         *  Triggered by internal button or when a new test is started
+         */
+	void resetStatistics();
+private:
+	//! calculate percentages and update view 
+	void calc();
+
+	unsigned int count;
+	unsigned int correct;
+
+	QPushButton * resetBtn;
+	QHBoxLayout * buttonLayout;
+	QVBoxLayout * layout1;
+	QGridLayout * labelGrid;
+	QLabel * result1Label;
+	QLabel * result2Label;
+	QLabel * result3Label;
+	QLabel * info1Label;
+	QLabel * info2Label;
+	QLabel * info3Label;
 };
 
 #endif

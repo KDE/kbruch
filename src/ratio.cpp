@@ -26,17 +26,18 @@ ratio::ratio(int pzaehler, int pnenner):zaehler(pzaehler), nenner(pnenner)
 	if (!nenner)
 		nenner = 1;
 	reduce(); // kuerzen
-	#ifdef DEBUG
-		cout << "constructor ratio" << endl;
-	#endif
+#ifdef DEBUG
+
+	cout << "constructor ratio" << endl;
+#endif
 }
 
 /* destructor */
 ratio::~ratio()
 {
-	#ifdef DEBUG
-		cout << "destructor ratio" << endl;	
-	#endif
+#ifdef DEBUG
+	cout << "destructor ratio" << endl;
+#endif
 }
 
 /* displays the ratio on stdout; just for debugging */
@@ -109,7 +110,7 @@ ratio ratio::operator+(ratio summand)
 
 	/* calculate the numerator */
 	summe.set_zaehler(zaehler * summand.get_nenner()
-											+ summand.get_zaehler() * nenner);	
+	                  + summand.get_zaehler() * nenner);
 
 	/* calculate the denominator */
 	summe.set_nenner(nenner * summand.get_nenner());
@@ -160,7 +161,7 @@ ratio ratio::operator/(ratio divisor)
 	/* go back to the original state */
 	divisor.reziproc();
 
-	return quotient;	
+	return quotient;
 }
 
 /* we need this for initialization during a function prototyp;
@@ -173,15 +174,15 @@ ratio ratio::operator=(int dummy)
 }
 
 /* check, if the ratios are equivalent; -1/2 == 1/-2 -> TRUE */
-int ratio::operator==(ratio right)
+bool ratio::operator==(ratio right)
 {
 	signed short orig_sign = 1, right_sign = 1;
 
 	/* we do not the presign at this point */
 	if (abs(zaehler) != abs(right.get_zaehler()))
-		return FALSE;
+		return false;
 	if (abs(nenner) != abs(right.get_nenner()))
-		return FALSE;
+		return false;
 
 	/* check if the signs of the ratios are equivalent */
 	if (zaehler < 0)
@@ -194,9 +195,9 @@ int ratio::operator==(ratio right)
 		right_sign *= -1;
 
 	if (orig_sign != right_sign)
-		return FALSE;
+		return false;
 
-	return TRUE;
+	return true;
 }
 
 /* ----- private member functions ----- */
@@ -207,7 +208,7 @@ void ratio::reduce()
 	/* we try prime numbers as divisors; I think it is the fastet way to do */
 	primzahl number;
 	short sign_zaehler = 0, sign_nenner = 0;
-	
+
 	/* make the whole ratio positive; save the signs; it is easier to reduce
 	 * the ratio, if it is positive */
 	if (zaehler < 0) // save numerator sign
@@ -222,7 +223,7 @@ void ratio::reduce()
 	}
 
 	for (int divisor = number.get_first();
-			divisor <= zaehler && divisor <= nenner; divisor = number.get_next())
+	        divisor <= zaehler && divisor <= nenner; divisor = number.get_next())
 	{
 		if (divisor == 0)
 		{
@@ -237,7 +238,7 @@ void ratio::reduce()
 			 * cases it does and I do not know why */
 			continue;
 		}
-		
+
 		/* is the prime number a divisor of numerator and denominator? */
 		if ((zaehler % divisor == 0) && (nenner % divisor == 0))
 		{
@@ -275,7 +276,7 @@ void ratio::change_sign()
 	if ((zaehler < 0 && nenner < 0) || (zaehler > 0 && nenner < 0))
 	{
 		zaehler *= -1;
-		nenner *= -1; 
+		nenner *= -1;
 	}
 	return;
 }

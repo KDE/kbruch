@@ -28,24 +28,26 @@ primzahl::primzahl()
 	/* if the vector is empty, we will add the first 2 prime numbers */
 	if (prim_vector.empty())
 	{
-		#ifdef DEBUG
-			cout << "prim_vector is still empty" << endl;
-		#endif
+#ifdef DEBUG
+		cout << "prim_vector is still empty" << endl;
+#endif
+
 		prim_vector.push_back(2);
 		prim_vector.push_back(3);
 	}
 	current_pos = prim_vector.begin();
-	#ifdef DEBUG
-		cout << "constructor primzahl" << endl;
-	#endif
+#ifdef DEBUG
+
+	cout << "constructor primzahl" << endl;
+#endif
 }
 
 /* destructor for class primzahl */
 primzahl::~primzahl()
 {
-	#ifdef DEBUG
-		cout << "destructor primzahl" << endl;
-	#endif
+#ifdef DEBUG
+	cout << "destructor primzahl" << endl;
+#endif
 }
 
 /* check, if the given number is a prime number;
@@ -65,13 +67,15 @@ unsigned int primzahl::get_next()
 {
 	/* if we do not know the next number, we have to find it first */
 	if (current_pos == prim_vector.end() ||
-		++current_pos == prim_vector.end())
+	        ++current_pos == prim_vector.end())
 	{
 		/* we do not know the next prime number, so we have to find it */
 		find_next();
 		move_last();
 		return get_last(); /* return it */
-	} else {
+	}
+	else
+	{
 		/* we know the next prime number, set the pointer on it */
 		return *current_pos; /* return it */
 	}
@@ -116,7 +120,7 @@ void primzahl::move_forward()
 {
 	/* if we are at the end of prim_vector, we have to find a new number */
 	if (current_pos == prim_vector.end() ||
-		++current_pos == prim_vector.end())
+	        ++current_pos == prim_vector.end())
 	{
 		find_next();
 		move_last();
@@ -141,7 +145,7 @@ void primzahl::display_all()
 
 	/* looping through the complete vector */
 	for (current_pos = prim_vector.begin(); current_pos != prim_vector.end();
-					current_pos++, dummy++)
+	        current_pos++, dummy++)
 		cout << dummy << ": " << *current_pos << endl;
 
 	current_pos = prim_vector.end() - 1;
@@ -162,15 +166,16 @@ void primzahl::find_next()
 		new_prim += 2;
 		/* loop as long as we find a divisor for the new number */
 		for (current_pos = prim_vector.begin(); current_pos != prim_vector.end();
-				current_pos++)
+		        current_pos++)
 			if ((new_prim % *current_pos == 0) || (new_prim < *current_pos))
 				break;
 
-		/* if we tried all known numbers and found no divisor, well, 
+		/* if we tried all known numbers and found no divisor, well,
 		 * we are happy to have found a new prime number */
 		if (current_pos == prim_vector.end())
 			break;
-	} while(1);
+	}
+	while(1);
 
 	/* add the new prime number to the vector */
 	prim_vector.push_back(new_prim);

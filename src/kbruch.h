@@ -23,24 +23,24 @@
 /*#ifdef HAVE_CONFIG_H*/
 #include <config.h>
 /*#else*/
-#define KBRUCH_VERSION "0.20"
 /*#endif*/
 
 #define MAINTAINER "Sebastian Stein"
 #define MAINTAINER_EMAIL "kbruch@hpfsc.de"
 #define HOMEPAGE "http://edu.kde.org/kbruch/"
-#define DATE "[2002-05-30]"
+#define DATE "[2003-04-24]"
 
 #include "primzahl.h"
 #include "ratio.h"
 #include "task.h"
-#include "gui_qt.h"
-#include "kbruch.h"
+#include "mainqtwidget.h"
 
 #include <stdlib.h>
 #include <iostream.h>
 #include <iomanip.h>
 #include <limits.h>
+
+#include <math.h>
 
 /* this includes are needed for Qt support */
 #include <kapp.h>
@@ -84,7 +84,7 @@ static KCmdLineOptions options[] =
 #define CLEAR system("cls");
 #endif
 
-class gui_qt;
+class MainQtWidget;
 class task;
 class ratio;
 class primzahl;
