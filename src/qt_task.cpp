@@ -16,6 +16,7 @@
  ***************************************************************************/
 
 #include "qt_task.h"
+#include "qt_task.moc"
 
 
 /* ----- static members ----- */
@@ -396,7 +397,7 @@ void qt_task::okBtnClicked()
 			/* maybe the entered ratio was not reduced */
 			entered_result.reduce();
 			if (entered_result == result)
-				KMessageBox::information(this, 
+				KMessageBox::information(this,
 									i18n("You entered the correct result, but not reduced.\nAlways enter your results as reduced. This task will be counted as not correctly solved."), i18n("KBruch"));
 			/* change the statistics -> add wrong solved task */
 			stats->addWrong();

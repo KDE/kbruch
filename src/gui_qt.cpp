@@ -16,6 +16,7 @@
  ***************************************************************************/
 
 #include "gui_qt.h"
+#include "gui_qt.moc"
 
 
 /* ------ public member functions ------ */
@@ -34,7 +35,7 @@ gui_qt::gui_qt(QWidget * parent, const char * name): QVBox(parent, name),
 			i18n("Tasks with addition and subtraction will be generated"));
 	QObject::connect(addsubBtn, SIGNAL(clicked()), this,
 												SLOT(showQt_Para_addsub()));
-	
+
 	/* mul/div button */
 	muldivBtn = new QPushButton(i18n("&Multiplication && Division"), this);
 	QToolTip::add(muldivBtn,

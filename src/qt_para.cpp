@@ -16,6 +16,7 @@
  ***************************************************************************/
 
 #include "qt_para.h"
+#include "qt_para.moc"
 
 /* constructor */
 qt_para::qt_para(QWidget * parent, const char * name,
@@ -51,7 +52,7 @@ qt_para::qt_para(QWidget * parent, const char * name,
 	QToolTip::add(termComBox, i18n("Select the total number of terms for the task."));
 	QObject::connect(termComBox, SIGNAL(activated(int)),
 													this, SLOT(term_nr_changed(int)));
-	
+
 	/* the label above the max. main denominator combo box */
 	denoLabelHBox = new QHBoxLayout(layout1);
 	denoLabel = new QLabel(i18n("Select maximum size of the main denominator:"),
@@ -69,7 +70,7 @@ qt_para::qt_para(QWidget * parent, const char * name,
 	denoComHBox->addStretch(10);
 	QToolTip::add(denoComBox,
 					i18n("Select the maximum size of the main denominator"));
-	
+
 	/* insert a horizontal grid to arange the buttons side by side */
 	buttonHBox = new QHBoxLayout(layout1);
 

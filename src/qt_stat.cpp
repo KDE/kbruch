@@ -16,7 +16,7 @@
  ***************************************************************************/
 
 #include "qt_stat.h"
-
+#include "qt_stat.moc"
 /* constructor */
 qt_stat::qt_stat(QWidget * parent, const char * name):
 	QDialog(parent, name, FALSE, 0)
