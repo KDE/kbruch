@@ -17,7 +17,7 @@
 <firstname>Sebastian</firstname>
 <surname>Stein</surname>
 <affiliation>
-<address><email>kbruch@hpfsc.de</email></address>
+<address><email>seb.kde@hpfsc.de</email></address>
 </affiliation>
 </author>
 
@@ -26,13 +26,13 @@
 </authorgroup>
 
 <copyright>
-<year>2001-2003</year>
+<year>2001-2004</year>
 <holder>Sebastian Stein</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2003-09-22</date>
+<date>2004-02-18</date>
 <releaseinfo>3.1.91</releaseinfo>
 
 <abstract>
@@ -338,8 +338,8 @@ should be used.
 <title>Credits and License</title>
 <para>&kbruch;</para>
 <para>
-Program and documentation Copyright, 2001-2003 Sebastian Stein
- <email>kbruch@hpfsc.de</email>
+Program and documentation Copyright, 2001-2004 Sebastian Stein
+ <email>seb.kde@hpfsc.de</email>
 </para>
 
 <para>Thank you goes to:</para>
