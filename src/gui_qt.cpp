@@ -30,7 +30,6 @@ gui_qt::gui_qt(QWidget * parent, const char * name): QVBox(parent, name),
 
 	/* add/sub button */
 	addsubBtn = new QPushButton(i18n("&Addition and Subtraction"), this);
-	addsubBtn->setFont(QFont("helvetica", 10));
 	QToolTip::add(addsubBtn,
 			i18n("Tasks with addition and subtraction will be generated"));
 	QObject::connect(addsubBtn, SIGNAL(clicked()), this,
@@ -38,7 +37,6 @@ gui_qt::gui_qt(QWidget * parent, const char * name): QVBox(parent, name),
 	
 	/* mul/div button */
 	muldivBtn = new QPushButton(i18n("&Multiplication and Division"), this);
-	muldivBtn->setFont(QFont("helvetica", 10));
 	QToolTip::add(muldivBtn,
 			i18n("Tasks with multiplication and division will be generated"));
 	QObject::connect(muldivBtn, SIGNAL(clicked()), this,
@@ -46,7 +44,6 @@ gui_qt::gui_qt(QWidget * parent, const char * name): QVBox(parent, name),
 
 	/* add/sub/mul/div button */
 	allBtn = new QPushButton(i18n("M&ixed"), this);
-	allBtn->setFont(QFont("helvetica", 10));
 	allBtn->resize(100, 50);
 	QToolTip::add(allBtn,
 			i18n("Tasks with all 4 operations will be generated"));
@@ -54,7 +51,6 @@ gui_qt::gui_qt(QWidget * parent, const char * name): QVBox(parent, name),
 
 	/* help button */
 	helpBtn = new QPushButton(i18n("&Help"), this);
-	helpBtn->setFont(QFont("helvetica", 10));
 	QToolTip::add(helpBtn, i18n("Press the button to open the handbook"));
 	QObject::connect(helpBtn, SIGNAL(clicked()), this, SLOT(slotShowBook()));
 

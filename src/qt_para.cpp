@@ -27,8 +27,6 @@ qt_para::qt_para(QWidget * parent, const char * name,
 	cout << "constructor qt_para()" << endl;
 #endif
 
-	setFont(QFont("helvetica", 12));
-
 	/* add a layout as a base */
 	layout1 = new QVBoxLayout(this);
 	layout1->setSpacing(6);
@@ -37,14 +35,12 @@ qt_para::qt_para(QWidget * parent, const char * name,
 	/* the label above the number of ratios combo box */
 	termLabelHBox = new QHBoxLayout(layout1);
 	termLabel = new QLabel(i18n("Select number of ratios for the task"), this);
-	termLabel->setFont(QFont("helvetica", 10));
 	termLabelHBox->addWidget(termLabel);
 	termLabelHBox->addStretch(10);
 
 	/* insert a ComboBox where the user can select the number of ratios */
 	termComHBox = new QHBoxLayout(layout1);
 	termComBox = new QComboBox(this);
-	termComBox->setFont(QFont("helvetica", 10));
 	termComBox->insertItem("2", -1);
 	termComBox->insertItem("3", -1);
 	termComBox->insertItem("4", -1);
@@ -60,7 +56,6 @@ qt_para::qt_para(QWidget * parent, const char * name,
 	denoLabelHBox = new QHBoxLayout(layout1);
 	denoLabel = new QLabel(i18n("Select maximum size of the main denominator"),
 																								this);
-	denoLabel->setFont(QFont("helvetica", 10));
 	denoLabelHBox->addWidget(denoLabel);
 	denoLabelHBox->addStretch(10);
 
@@ -68,7 +63,6 @@ qt_para::qt_para(QWidget * parent, const char * name,
 	 * main denominator */
 	denoComHBox = new QHBoxLayout(layout1);
 	denoComBox = new QComboBox(this);
-	denoComBox->setFont(QFont("helvetica", 10));
 	setdenoComBox(0); /* calls a function which adds the items to the box */
 	denoComBox->setEditable(NO);
 	denoComHBox->addWidget(denoComBox);
@@ -81,7 +75,6 @@ qt_para::qt_para(QWidget * parent, const char * name,
 
 	/* ok button */
 	okBtn = new QPushButton(i18n("&Ok"), this);
-	okBtn->setFont(QFont("helvetica", 10));
 	buttonHBox->addWidget(okBtn);
 	QToolTip::add(okBtn,
 						i18n("Press the button to begin with task generation"));
@@ -89,7 +82,6 @@ qt_para::qt_para(QWidget * parent, const char * name,
 
 	/* back button */
 	backBtn= new QPushButton(i18n("&Cancel"), this);
-	backBtn->setFont(QFont("helvetica", 10));
 	buttonHBox->addWidget(backBtn);
 	QToolTip::add(backBtn,
 							i18n("Press the button to get back to the main menu"));
@@ -100,7 +92,6 @@ qt_para::qt_para(QWidget * parent, const char * name,
 
 	/* help button */
 	helpBtn = new QPushButton(i18n("&Help"), this);
-	helpBtn->setFont(QFont("helvetica", 10));
 	buttonHBox->addWidget(helpBtn);
 	QToolTip::add(helpBtn, i18n("Press the button to open the handbook"));
 	QObject::connect(helpBtn, SIGNAL(clicked()), this, SLOT(slotShowBook()));

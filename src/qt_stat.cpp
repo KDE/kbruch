@@ -30,9 +30,6 @@ qt_stat::qt_stat(QWidget * parent, const char * name):
 	/* reset the number of solved tasks */
 	count = correct = 0;
 
-	/* set a standard font for all members */
-	setFont(QFont("helvetica", 12));
-
 	/* set the caption of the window */
 	setCaption(i18n("Statistics"));
 
