@@ -41,8 +41,6 @@ qt_task::qt_task(QWidget * parent, const char * name,	short padd_sub,
 	cout << "constructor qt_task()" << endl;
 #endif
 
-	setFont(QFont("helvetica", 12));
-
 	/* create a new task */
 	QApplication::setOverrideCursor(waitCursor); /* show the sand clock */
 	current_task.create_task(max_md, nr_ratios, add_sub, mul_div);
@@ -201,7 +199,6 @@ qt_task::qt_task(QWidget * parent, const char * name,	short padd_sub,
 
 	/* ok button */
 	okBtn = new QPushButton(i18n("Ch&eck"), this);
-	okBtn->setFont(QFont("helvetica", 10));
 	buttonHBox->addWidget(okBtn);
 	QToolTip::add(okBtn, i18n("Press the button to check your results"));
 	okBtn->setDefault(TRUE); /* set it as the default button of the widget */
@@ -209,7 +206,6 @@ qt_task::qt_task(QWidget * parent, const char * name,	short padd_sub,
 
 	/* back button */
 	backBtn= new QPushButton(i18n("&Cancel"), this);
-	backBtn->setFont(QFont("helvetica", 10));
 	buttonHBox->addWidget(backBtn);
 	QToolTip::add(backBtn,
 							i18n("Press the button to get back to the main menu"));
@@ -220,7 +216,6 @@ qt_task::qt_task(QWidget * parent, const char * name,	short padd_sub,
 
 	/* help button */
 	helpBtn = new QPushButton(i18n("&Help"), this);
-	helpBtn->setFont(QFont("helvetica", 10));
 	buttonHBox->addWidget(helpBtn);
 	QToolTip::add(helpBtn, i18n("Press the button to open the handbook"));
 	QObject::connect(helpBtn, SIGNAL(clicked()), this, SLOT(slotShowBook()));
@@ -257,7 +252,8 @@ qt_task::~qt_task()
 	we can not do this in the constructor */
 void qt_task::set_position()
 {
-	stats->move(x() + frameGeometry().width() + int(abs((frameGeometry().width() - geometry().width())) / 2) , geometry().y());
+	//stats->move(x() + frameGeometry().width() + int(abs((frameGeometry().width() - geometry().width())) / 2) , geometry().y());
+	stats->move(x() + frameGeometry().width() + 10, geometry().y());
 	return;
 }
 
