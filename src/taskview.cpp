@@ -509,7 +509,7 @@ void TaskView::newLayout()
 	ratioVBoxLayout = new QVBoxLayout(5, "ratioVBoxLayout");
 	taskHBoxLayout->addLayout(ratioVBoxLayout);
 
-	/* 2 labels to show the result reduced; seperated with a line */
+	/* 2 labels to show the result reduced; separated with a line */
 	res_num1_label = new QLabel(baseWidget);
 	ratioVBoxLayout->addWidget(res_num1_label);
 	res_num1_label->setAlignment(Qt::AlignHCenter);
