@@ -436,7 +436,7 @@ void ExerciseFactorize::updateEnteredEdit()
 	uintList::iterator it;
 
 	
-	for (it = m_factorsEntered.begin(); it != m_factorsEntered.end(); it++)
+	for (it = m_factorsEntered.begin(); it != m_factorsEntered.end(); ++it)
 	{
 		// convert the factor into a string
 		str_tmp.setNum(*it);
