@@ -323,7 +323,9 @@ void TaskView::nextTask()
 			op_lab_vek[tmp_counter]->setText("x");
 			break;
 		case DIV :
-			op_lab_vek[tmp_counter]->setText("÷");
+			// there seems to be different division signs around the world
+			// so please translate it to the right one for your country
+			op_lab_vek[tmp_counter]->setText(i18n(":"));
 			break;
 		} /* switch (operation) */
 	} /* for (tmp_counter = 0; tmp_counter < nr_ratios - 1; tmp_counter++) */
@@ -388,7 +390,9 @@ void TaskView::newLayout()
 				op_lab_vek[tmp_counter]->setText("x");
 				break;
 			case DIV :
-				op_lab_vek[tmp_counter]->setText("÷");
+				// there seems to be different division signs around the world
+				// so please translate it to the right one for your country
+				op_lab_vek[tmp_counter]->setText(i18n(":"));
 				break;
 		}
 	}
