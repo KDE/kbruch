@@ -55,13 +55,13 @@ QTextStream & ratio::display(QTextStream & str) const
 }
 
 /* return the numerator */
-int ratio::get_zaehler()
+int ratio::get_zaehler() const
 {
 	return zaehler;
 }
 
 /* return the denominator */
-int ratio::get_nenner()
+int ratio::get_nenner() const
 {
 	return nenner;
 }

@@ -39,10 +39,10 @@ public:
 	QTextStream & display(QTextStream & str) const;
 
 	/** returns the numerator */
-	int get_zaehler();
+	int get_zaehler() const;
 
 	/** returns the denominator */
-	int get_nenner();
+	int get_nenner() const;
 
 	/** set numerator and reduce the ratio */
 	void set_zaehler(int pzaehler = 0);
