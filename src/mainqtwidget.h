@@ -27,6 +27,7 @@ class QLabel;
 
 class ExerciseCompare;
 class ExerciseConvert;
+class ExerciseFactorize;
 class StatisticsView;
 class TaskView;
 
@@ -71,6 +72,10 @@ class MainQtWidget : public KMainWindow
 		/** pointing to the exercise convert rational number; added as page to the
 		 * iconlist */ 
 		ExerciseConvert * m_exerciseConvert;
+
+		/** pointing to the exercise factorize a given number; added as page to
+		 * the iconlist */ 
+		ExerciseFactorize * m_exerciseFactorize;
 		
 		bool m_addSub;
 		bool m_mulDiv;

@@ -1,12 +1,12 @@
 bin_PROGRAMS = kbruch
 
 kbruch_COMPILE_FIRST = version.h
-kbruch_SOURCES = exercisebase.cpp taskvieweroptionsbase.ui task.cpp ratio.cpp taskview.cpp statisticsview.cpp primenumber.cpp kbruch.cpp mainqtwidget.cpp taskwidget.cpp fractionbasewidget.cpp resultwidget.cpp settingsdialog.cpp exercisecompare.cpp ratiowidget.cpp rationalwidget.cpp exerciseconvert.cpp settingsclass.kcfgc
+kbruch_SOURCES = exercisebase.cpp taskvieweroptionsbase.ui task.cpp ratio.cpp taskview.cpp statisticsview.cpp primenumber.cpp kbruch.cpp mainqtwidget.cpp taskwidget.cpp fractionbasewidget.cpp resultwidget.cpp settingsdialog.cpp exercisecompare.cpp ratiowidget.cpp rationalwidget.cpp exerciseconvert.cpp exercisefactorize.cpp settingsclass.kcfgc
 kbruch_LDADD   =  $(LIB_KDEUI)
 # the library search path.
 kbruch_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
-EXTRA_DIST = kbruch.cpp kbruch.h kbruch.desktop hi32-app-kbruch.png hi16-app-kbruch.png lo32-app-kbruch.png lo16-app-kbruch.png mainqtwidget.cpp mainqtwidget.h primenumber.cpp primenumber.h statisticsview.cpp statisticsview.h exercisebase.cpp exercisebase.h taskview.cpp taskview.h ratio.cpp ratio.h task.cpp task.h taskwidget.cpp taskwidget.h fractionbasewidget.cpp fractionbasewidget.h resultwidget.cpp resultwidget.h settingsdialog.cpp settingsdialog.h exercisecompare.cpp exercisecompare.h ratiowidget.cpp ratiowidget.h rationalwidget.cpp rationalwidget.h exerciseconvert.cpp exerciseconvert.h kbruch.rc taskvieweroptionsbase.ui
+EXTRA_DIST = kbruch.cpp kbruch.h kbruch.desktop hi32-app-kbruch.png hi16-app-kbruch.png lo32-app-kbruch.png lo16-app-kbruch.png mainqtwidget.cpp mainqtwidget.h primenumber.cpp primenumber.h statisticsview.cpp statisticsview.h exercisebase.cpp exercisebase.h taskview.cpp taskview.h ratio.cpp ratio.h task.cpp task.h taskwidget.cpp taskwidget.h fractionbasewidget.cpp fractionbasewidget.h resultwidget.cpp resultwidget.h settingsdialog.cpp settingsdialog.h exercisecompare.cpp exercisecompare.h ratiowidget.cpp ratiowidget.h rationalwidget.cpp rationalwidget.h exerciseconvert.cpp exerciseconvert.h exercisefactorize.cpp exercisefactorize.h kbruch.rc taskvieweroptionsbase.ui
 
 xdg_apps_DATA = kbruch.desktop
 kde_kcfg_DATA = kbruch.kcfg

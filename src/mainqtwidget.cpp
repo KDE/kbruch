@@ -36,6 +36,7 @@
 
 #include "exercisecompare.h"
 #include "exerciseconvert.h"
+#include "exercisefactorize.h"
 #include "taskview.h"
 #include "statisticsview.h"
 
@@ -83,6 +84,10 @@ MainQtWidget::MainQtWidget()
 	page = m_exercises->addVBoxPage(i18n("Conversion Task"), "", DesktopIcon("misc"));
 	m_exerciseConvert = new ExerciseConvert((QWidget *) page, "ExerciseConvert");
 
+	// we have the exercise to factorize a given number into prime factors
+	page = m_exercises->addVBoxPage(i18n("Factorization Task"), "", DesktopIcon("misc"));
+	m_exerciseFactorize = new ExerciseFactorize((QWidget *) page, "ExerciseFactorize");
+
 	splitter->setResizeMode(m_statview, QSplitter::FollowSizeHint);
 
 	// we must change the status of the menubar before another page is shown
@@ -96,6 +101,8 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_exerciseCompare, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
 	QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
 	QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
+	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
+	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
 
 	resize(QSize(QMAX(toolBar()->sizeHint().width(), sizeHint().width()), sizeHint().height() + int(0.5 * sizeHint().height())));
 
@@ -253,6 +260,9 @@ void MainQtWidget::NewTask()
 		case 2 :
 					m_exerciseConvert->forceNewTask();
 					break;
+		case 3 :
+					m_exerciseFactorize->forceNewTask();
+					break;
 	}
 
 /* this doesn't seem to work, because pageIndex always returns 0
@@ -409,6 +419,7 @@ void MainQtWidget::slotApplySettings()
 	m_taskview->update();
 	m_exerciseCompare->update();
 	m_exerciseConvert->update();
+	m_exerciseFactorize->update();
 
 	return;
 }
