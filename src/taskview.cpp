@@ -2,7 +2,7 @@
                           taskview.cpp  -  The task window
                              -------------------
     begin                : Tue Feb 08 13:41:00 CET 2002
-    copyright            : (C) 2001 - 2003 by Sebastian Stein
+    copyright            : (C) 2001 - 2004 by Sebastian Stein
     email                : kbruch@hpfsc.de
  ***************************************************************************/
 
@@ -243,7 +243,7 @@ void TaskView::showResult()
 		entered_result.reduce();
 		if (entered_result == result)
 			KMessageBox::information(this,
-			                         i18n("You entered the correct result, but not reduced.\nAlways enter your results as reduced. This task will be counted as not correctly solved."), i18n("KBruch"));
+			                         i18n("You entered the correct result, but not reduced.\nAlways enter your results as reduced. This task will be counted as not correctly solved."));
 	} /* if (entered_result == result) */
 }
 
