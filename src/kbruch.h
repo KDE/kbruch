@@ -20,11 +20,11 @@
 #ifndef BRUCH_H
 #define BRUCH_H
 
-#ifdef HAVE_CONFIG_H
+/*#ifdef HAVE_CONFIG_H*/
 #include <config.h>
-#else
-#define VERSION "0.19"
-#endif
+/*#else*/
+#define KBRUCH_VERSION "0.19"
+/*#endif*/
 
 #define MAINTAINER "Sebastian Stein"
 #define MAINTAINER_EMAIL "bruch@hpfsc.de"
