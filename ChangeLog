@@ -1,5 +1,7 @@
 2002-06-25 Sebastian Stein <kbruch@hpfsc.de>
 
+	* added the handbook and the help buttons calling the fitting chapter
+
 	* added tool tips to all important widgets
 
 	* help buttons now call the fitting section in the handbook
