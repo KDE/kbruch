@@ -2,7 +2,7 @@
                           taskview.cpp  -  Header File
                              -------------------
     begin                : Tue Feb 08 13:42:00 CET 2002
-    copyright            : (C) 2001 - 2003 by Sebastian Stein
+    copyright            : (C) 2001 - 2004 by Sebastian Stein
     email                : seb.kde@hpfsc.de
  ***************************************************************************/
 
@@ -22,17 +22,23 @@
 #define _NEXT_TASK	1
 
 #include "task.h"
+#include "taskwidget.h"
+#include "resultwidget.h"
+
+#ifdef DEBUG
+#include <kdebug.h>
+#endif
 
 #include <qwidget.h>
 
-class QLabel;
-class QFrame;
-class QGridLayout;
-class QHBoxLayout;
-class QLineEdit;
-class QSpacerItem;
-class QPushButton;
 class QVBoxLayout;
+class QHBoxLayout;
+class QGridLayout;
+class QSpacerItem;
+class QLabel;
+class QPushButton;
+class QLineEdit;
+class QFrame;
 
 /*! Constructs a QWidget, which shows the task to the user.
  *  The class also provides input fields, so that the user can enter the result.
@@ -76,30 +82,17 @@ private:
 	unsigned int max_md;
 	short m_currentState;
 
-	QGridLayout * baseGrid;
-	QWidget * baseWidget;
-	QVBoxLayout * realLayout;
-	QHBoxLayout * taskHBoxLayout;
-	QFrame * ratio_line;
-	QFrame * edit_line;
-	QFrame * res1_line;
-	QFrame * res2_line;
-	QLabel * eq1_label;
-	QLabel * eq2_label;
-	QLabel * eq3_label;
-	QLabel * res_num1_label;
-	QLabel * res_num2_label;
-	QLabel * res_deno1_label;
-	QLabel * res_deno2_label;
-	QLabel * res_common_label;
-	QLabel ** numer_lab_vek;
-	QLabel ** deno_lab_vek;
-	QLabel ** op_lab_vek;
-	QLabel * result_label;
-	QLineEdit * numer_edit;
-	QLineEdit * deno_edit;
-	QSpacerItem * spacer_item;
-	QPushButton * m_checkButton;
+	ResultWidget* m_resultWidget;
+	QPushButton* m_checkButton;
+	QLabel* result_label;
+	TaskWidget* m_taskWidget;
+	QLineEdit* numer_edit;
+	QFrame* edit_line;
+	QLineEdit* deno_edit;
+
+	QGridLayout* baseGrid;
+	QWidget* baseWidget;
+	QVBoxLayout* realLayout;
 
 	task current_task;
 	ratio result;
@@ -107,7 +100,6 @@ private:
 
 	void showResult();
 	void nextTask();
-	void newLayout();
 
 private slots:
 	void slotShowBook();

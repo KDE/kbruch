@@ -1,12 +1,12 @@
 bin_PROGRAMS = kbruch
 
 kbruch_COMPILE_FIRST = version.h
-kbruch_SOURCES = task.cpp ratio.cpp taskview.cpp statisticsview.cpp primenumber.cpp kbruch.cpp mainqtwidget.cpp settingsclass.kcfgc
+kbruch_SOURCES = task.cpp ratio.cpp taskview.cpp statisticsview.cpp primenumber.cpp kbruch.cpp mainqtwidget.cpp taskwidget.cpp fractionbasewidget.cpp resultwidget.cpp settingsclass.kcfgc
 kbruch_LDADD   =  $(LIB_KDEUI)
 # the library search path.
 kbruch_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
-EXTRA_DIST = kbruch.cpp kbruch.h kbruch.desktop hi32-app-kbruch.png hi16-app-kbruch.png lo32-app-kbruch.png lo16-app-kbruch.png mainqtwidget.cpp mainqtwidget.h primenumber.cpp primenumber.h statisticsview.cpp statisticsview.h taskview.cpp taskview.h ratio.cpp ratio.h task.cpp task.h kbruch.rc
+EXTRA_DIST = kbruch.cpp kbruch.h kbruch.desktop hi32-app-kbruch.png hi16-app-kbruch.png lo32-app-kbruch.png lo16-app-kbruch.png mainqtwidget.cpp mainqtwidget.h primenumber.cpp primenumber.h statisticsview.cpp statisticsview.h taskview.cpp taskview.h ratio.cpp ratio.h task.cpp task.h taskwidget.cpp taskwidget.h fractionbasewidget.cpp fractionbasewidget.h resultwidget.cpp resultwidget.h kbruch.rc
 
 xdg_apps_DATA = kbruch.desktop
 kde_kcfg_DATA = kbruch.kcfg
