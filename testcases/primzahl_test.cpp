@@ -33,8 +33,10 @@ class primzahl_test
 	{
 	}
 
+	/** test the prime number algorithm */
 	void test_isPrimeNumber()
 	{
+		BOOST_REQUIRE(m_primzahl.isPrimeNumber(0) == 0);
 		BOOST_REQUIRE(m_primzahl.isPrimeNumber(2) == 1);
 		BOOST_REQUIRE(m_primzahl.isPrimeNumber(3) == 1);
 		BOOST_REQUIRE(m_primzahl.isPrimeNumber(4) == 0);
@@ -55,6 +57,33 @@ class primzahl_test
 		BOOST_REQUIRE(m_primzahl.isPrimeNumber(2) == 1);
 	}
 
+	/** test the get_first() function */
+	void test_get_first()
+	{
+		BOOST_REQUIRE(m_primzahl.get_first() == 2);
+	}
+
+	/** test the move and get functions */
+	void test_move_get_func()
+	{
+		m_primzahl.move_first();
+		BOOST_REQUIRE(m_primzahl.get_current() == 2);
+		BOOST_REQUIRE(m_primzahl.get_next() == 3);
+
+		m_primzahl.move_forward();
+		BOOST_REQUIRE(m_primzahl.get_current() == 5);
+
+		m_primzahl.move_back();
+		BOOST_REQUIRE(m_primzahl.get_current() == 3);
+		
+		unsigned int tmp = m_primzahl.get_last();
+		m_primzahl.move_last();
+		BOOST_REQUIRE(m_primzahl.get_current() == tmp);
+
+		m_primzahl.move_forward();
+		BOOST_REQUIRE(m_primzahl.get_last() != tmp);
+	}
+
 	private:
 
 	// instance of primzahl
@@ -73,8 +102,14 @@ class primzahl_test_suite : public test_suite
 		// create the test cases
 		test_case* isPrimeNumber_test_case = BOOST_CLASS_TEST_CASE(
 										&primzahl_test::test_isPrimeNumber, instance );
+		test_case* get_first_test_case = BOOST_CLASS_TEST_CASE(
+										&primzahl_test::test_get_first, instance );
+		test_case* move_get_func_test_case = BOOST_CLASS_TEST_CASE(
+										&primzahl_test::test_move_get_func, instance );
 
 		// add the test cases to the test suite
 		add(isPrimeNumber_test_case);
+		add(get_first_test_case);
+		add(move_get_func_test_case);
 	}
 };
