@@ -107,8 +107,10 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
 	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
 
+#if (KDE_VERSION_MINOR>=3) && (KDE_VERSION_MAJOR>=3)
+#else
 	resize(QSize(QMAX(toolBar()->sizeHint().width(), sizeHint().width()), sizeHint().height()));
-
+#endif
 	// now show the last exercise
 	m_exercises->showPage(SettingsClass::activeExercise());
 	slotAboutToShowPage(m_exercises->pageWidget(m_exercises->activePageIndex()));
@@ -240,7 +242,10 @@ void MainQtWidget::setupActions()
 	QObject::connect(m_OperationBox, SIGNAL(activated(int)), this, SLOT(OperationBoxSlot()));
 	
 #if (KDE_VERSION_MINOR>=3) && (KDE_VERSION_MAJOR>=3)
-	setupGUI();
+	if (!initialGeometrySet())
+		resize( QSize(725, 330).expandedTo(minimumSizeHint()));
+	setupGUI(ToolBar | Keys | StatusBar | Create);
+	setAutoSaveSettings();
 #endif
 }
 
