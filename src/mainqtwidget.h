@@ -82,9 +82,22 @@ class MainQtWidget : public KMainWindow
 		KAction * m_NewTaskAction;
 
 	private slots:
+		/** 
+		 * called to force generation of a new task 
+		 */
 		void NewTask();
+		/** 
+		 *called when the user changes the number of terms in the ComboBox 
+		 */
 		void NrOfTermsBoxSlot();
+		/** 
+		 *called, when the user changes the max. size of the main denominator in
+ 		 * the ComboBox 
+		 */
 		void MaxMainDenominatorBoxSlot();
+		/** 
+		 *called, when the user changes the wished task's operations 
+		 */
 		void OperationBoxSlot();
 
 	protected:
