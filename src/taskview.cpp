@@ -2,7 +2,7 @@
                           taskview.cpp  -  The task window
                              -------------------
     begin                : Tue Feb 08 13:41:00 CET 2002
-    copyright            : (C) 2001 - 2003 by Sebastian Stein
+    copyright            : (C) 2001 - 2004 by Sebastian Stein
     email                : kbruch@hpfsc.de
  ***************************************************************************/
 
@@ -68,7 +68,7 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	// result
 	m_currentState = _CHECK_TASK;
 
-	baseGrid = new QGridLayout(this, 1, 1);
+	baseGrid = new QGridLayout(this, 1, 1, 0, -1, "baseGrid");
 
 	baseWidget = 0;
 
@@ -355,14 +355,14 @@ void TaskView::newLayout()
 
 	/* we have a VBox containing the task at the top and the next button at the
 	 * bottom */
-	realLayout = new QVBoxLayout(baseWidget, 5, 5);
+	realLayout = new QVBoxLayout(baseWidget, 5, 5, "realLayout");
 
 	/* now add a v-spacer */
 	QSpacerItem * v_spacer = new QSpacerItem(1, 1);
 	realLayout->addItem(v_spacer);
 
 	/* create a HBox to show the task */
-	taskHBoxLayout = new QHBoxLayout(baseWidget, 5, 5);
+	taskHBoxLayout = new QHBoxLayout(5, "taskHBoxLayout");
 	realLayout->addLayout(taskHBoxLayout);
 
 	/* create nr_ratios - 1 labels to show the operations of the task */
@@ -408,7 +408,7 @@ void TaskView::newLayout()
 		curr_ratio = current_task.get_ratio_n(tmp_counter);
 
 		// create a new VBox for the whole ratio
-		ratioVBoxLayout = new QVBoxLayout(baseWidget, 5, 5);
+		ratioVBoxLayout = new QVBoxLayout(5, "ratioVBoxLayout");
 		taskHBoxLayout->addLayout(ratioVBoxLayout);
 
 		/* get the numerator of the current ratio and set it as text of a new
@@ -451,7 +451,7 @@ void TaskView::newLayout()
 	}
 
 	// now we add the input fields aligned in a VBox
-	ratioVBoxLayout = new QVBoxLayout(baseWidget, 5, 5);
+	ratioVBoxLayout = new QVBoxLayout(5, "ratioVBoxLayout");
 	taskHBoxLayout->addLayout(ratioVBoxLayout);
         KIntValidator *valnum = new KIntValidator( this );
 	/* add input box so the user can enter numerator */
@@ -479,7 +479,7 @@ void TaskView::newLayout()
 	eq2_label->hide();
 
 	// now we add the labels for the reduced result
-	ratioVBoxLayout = new QVBoxLayout(baseWidget, 5, 5);
+	ratioVBoxLayout = new QVBoxLayout(5, "ratioVBoxLayout");
 	taskHBoxLayout->addLayout(ratioVBoxLayout);
 
 	/* 2 labels to show the result reduced; seperated with a line */
@@ -514,7 +514,7 @@ void TaskView::newLayout()
 	res_common_label->hide();
 
 	// and another VBox for ratio alignment
-	ratioVBoxLayout = new QVBoxLayout(baseWidget, 5, 5);
+	ratioVBoxLayout = new QVBoxLayout(5, "ratioVBoxLayout");
 	taskHBoxLayout->addLayout(ratioVBoxLayout);
 
 	// numerator
@@ -557,13 +557,14 @@ void TaskView::newLayout()
 
 	// now get to the lower part of our real layout
 	// we have only a button, which should be aligned right
-	QHBoxLayout * lowerHBox = new QHBoxLayout(baseWidget, 1, 1);
+	QHBoxLayout * lowerHBox = new QHBoxLayout(1, "lowerHBox");
 	realLayout->addLayout(lowerHBox);
 	lowerHBox->addStretch(100);
 
 	// create a button for checking the current task or getting to the next one
 	m_checkButton = new QPushButton(baseWidget);
 	m_checkButton->setText(i18n("&Check Task"));
+	m_checkButton->setDefault(true); // is the default button of the dialog
 	lowerHBox->addWidget(m_checkButton, 4, 2 * nr_ratios + 8);
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
 
