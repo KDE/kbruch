@@ -31,7 +31,7 @@ char show_main_txt()
 	CLEAR; /* clear the console */
 	output << "\tKBruch " << VERSION << " " << DATE << endl;
 	output << "\n\n\tWhat do you want to do:" << endl;
-	output << "\n\n\t\t[a]ddition/substraction" << endl;
+	output << "\n\n\t\t[a]ddition/subtraction" << endl;
 	output << "\n\t\t[m]ultiplication/division" << endl;
 	output << "\n\t\t[t]ask with all operations (default)" << endl;
 	output << "\n\t\t[r]ead about the program" << endl;
