@@ -122,7 +122,7 @@ void MainQtWidget::setupActions()
 	m_NrOfTermsBox->insertItem("4");
 	m_NrOfTermsBox->insertItem("5");
 	m_NrOfTermsBox->setCurrentItem(m_nrRatios - 2);
-	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of terms"), ALT+Key_T, this, SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsBoxAction"); 
+	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of Terms"), ALT+Key_T, this, SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_NrOfTermsBox, SIGNAL(activated(int)), this, SLOT(NrOfTermsBoxSlot()));
@@ -150,7 +150,7 @@ void MainQtWidget::setupActions()
 		case 50 : m_MaxMainDenominatorBox->setCurrentItem(3);
 					 break;
 	}
-	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal main denominator"), ALT+Key_T, this, SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorBoxAction"); 
+	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal Main Denominator"), ALT+Key_T, this, SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorBoxAction"); 
 
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_MaxMainDenominatorBox, SIGNAL(activated(int)),
