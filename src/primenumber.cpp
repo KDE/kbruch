@@ -189,8 +189,8 @@ void primenumber::find_next()
 		 * we found a prime number, because we only have to test the given 
 		 * number against all known prime numbers smaller square root of the 
 		 * number */
-		if ((*current_pos * *current_pos > new_prim)
-				|| (current_pos == prim_vector.end()))
+		if ((current_pos == prim_vector.end())
+				|| (*current_pos * *current_pos > new_prim))
 			break;
 	}
 	while(1);
