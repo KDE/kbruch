@@ -29,9 +29,11 @@
 class QLabel;
 class QFrame;
 class QGridLayout;
+class QHBoxLayout;
 class QLineEdit;
 class QSpacerItem;
 class QPushButton;
+class QVBoxLayout;
 
 class TaskView : public QWidget
 {
@@ -59,9 +61,10 @@ private:
 private:
 	short m_currentState;
 
-	QGridLayout * taskGrid;
 	QGridLayout * baseGrid;
 	QWidget * baseWidget;
+	QVBoxLayout * realLayout;
+	QHBoxLayout * taskHBoxLayout;
 	QFrame * ratio_line;
 	QFrame * edit_line;
 	QFrame * res1_line;

@@ -338,73 +338,70 @@ void TaskView::newLayout()
 	QString tmp_string; /* use to convert things into strings */
 	short operation; /* this is the unconverted number of an operation */
 
+	// we have a base layout with a base widget
+	// the real layout is added to the base widget
+	// so if we delete the base widget, the real layout and all it's children are
+	// deleted as well
 	if (baseWidget != 0)
 	{
 		baseGrid->remove(baseWidget);
 		delete baseWidget;
 		baseWidget = 0;
 	}
-
 	baseWidget = new QWidget(this);
 	baseGrid->addWidget(baseWidget, 0, 0);
 
-	/* create a grid to show the task */
-	taskGrid = new QGridLayout(baseWidget, 4, 2 * nr_ratios + 9);
-	taskGrid->setSpacing(6);
-	taskGrid->setMargin(6);
+	/* we have a VBox containing the task at the top and the next button at the
+	 * bottom */
+	realLayout = new QVBoxLayout(baseWidget, 5, 5);
 
-	/* add 2 spacers in front and in back of the task */
-	spacer_item = new QSpacerItem(25, 1);
-	taskGrid->addItem(spacer_item, 2, 0); /* in front */
-	spacer_item = new QSpacerItem(25, 1);
-	taskGrid->addItem(spacer_item, 2, 2 * nr_ratios + 8); /* at the end */
+	/* create a HBox to show the task */
+	taskHBoxLayout = new QHBoxLayout(baseWidget, 5, 5);
+	realLayout->addLayout(taskHBoxLayout);
 
-	/* add the lines within the ratios to the grid */
-	for (tmp_counter = 0; tmp_counter < nr_ratios; tmp_counter++)
+	/* create nr_ratios - 1 labels to show the operations of the task */
+	op_lab_vek = new QLabel * [nr_ratios - 1];
+	for (tmp_counter = 0; tmp_counter < nr_ratios - 1; tmp_counter++)
 	{
-		ratio_line = new QFrame(baseWidget);
-		ratio_line->setGeometry(QRect(100, 100, 20, 20));
-		ratio_line->setFrameStyle(QFrame::HLine | QFrame::Sunken);
-		taskGrid->addWidget(ratio_line, 2, 2 * tmp_counter + 1);
+		/* create a new label */
+		op_lab_vek[tmp_counter] = new QLabel(baseWidget);
+		op_lab_vek[tmp_counter]->setAlignment(Qt::AlignVCenter);
+
+		/* get the operation */
+		operation = current_task.get_op_n(tmp_counter);
+
+		/* we have to convert the operation into a string and set the label
+		 * with the fitting sign */
+		switch (operation)
+		{
+			case ADD :
+				op_lab_vek[tmp_counter]->setText("+");
+				break;
+			case SUB :
+				op_lab_vek[tmp_counter]->setText("-");
+				break;
+			case MUL :
+				op_lab_vek[tmp_counter]->setText("x");
+				break;
+			case DIV :
+				op_lab_vek[tmp_counter]->setText(":");
+				break;
+		}
 	}
-
-	/* add a line between the edit boxes */
-	edit_line = new QFrame(baseWidget);
-	edit_line->setGeometry(QRect(100, 100, 20, 20));
-	edit_line->setFrameStyle(QFrame::HLine | QFrame::Sunken);
-	taskGrid->addWidget(edit_line, 2, 2 * nr_ratios + 2);
-
-	/* add 3 labels with the text = */
-	eq1_label = new QLabel(baseWidget);
-	eq1_label->setText("=");
-	taskGrid->addWidget(eq1_label, 2, 2 * nr_ratios + 1);
-
-	eq2_label = new QLabel(baseWidget);
-	eq2_label->setText("=");
-	taskGrid->addWidget(eq2_label, 2, 2 * nr_ratios + 3);
-	eq2_label->hide();
-
-	eq3_label = new QLabel(baseWidget);
-	eq3_label->setText("=");
-	taskGrid->addWidget(eq3_label, 2, 2 * nr_ratios + 5);
-	eq3_label->hide();
-
-	/* add 2 input boxes so the user can enter numerator and denominator */
-	numer_edit = new QLineEdit(baseWidget);
-	taskGrid->addWidget(numer_edit, 1, 2 * nr_ratios + 2);
-	QToolTip::add(numer_edit, i18n("Enter the numerator of your result"));
-	deno_edit = new QLineEdit(baseWidget);
-	taskGrid->addWidget(deno_edit, 3, 2 * nr_ratios + 2);
-	QToolTip::add(deno_edit, i18n("Enter the denominator of your result"));
 
 	/* add 2 * nr_ratios labels to show the numerators and denominators of
 	 * the task */
 	numer_lab_vek = new QLabel * [nr_ratios];
 	deno_lab_vek = new QLabel * [nr_ratios];
+	QVBoxLayout * ratioVBoxLayout;
 	for (tmp_counter = 0; tmp_counter < nr_ratios; tmp_counter++)
 	{
 		/* get the current ratio */
 		curr_ratio = current_task.get_ratio_n(tmp_counter);
+
+		// create a new VBox for the whole ratio
+		ratioVBoxLayout = new QVBoxLayout(baseWidget, 5, 5);
+		taskHBoxLayout->addLayout(ratioVBoxLayout);
 
 		/* get the numerator of the current ratio and set it as text of a new
 		 * label */
@@ -414,7 +411,13 @@ void TaskView::newLayout()
 		numer_lab_vek[tmp_counter]->setText(tmp_string);
 
 		/* add this label to the grid */
-		taskGrid->addWidget(numer_lab_vek[tmp_counter], 1, 2 * tmp_counter + 1);
+		ratioVBoxLayout->addWidget(numer_lab_vek[tmp_counter]);
+
+		// add the line between numerator and denominator
+		ratio_line = new QFrame(baseWidget);
+		ratio_line->setGeometry(QRect(100, 100, 20, 20));
+		ratio_line->setFrameStyle(QFrame::HLine | QFrame::Sunken);
+		ratioVBoxLayout->addWidget(ratio_line);
 
 		/* get the denominator of the current ratio and set it as text of a new
 		 * label */
@@ -424,77 +427,110 @@ void TaskView::newLayout()
 		deno_lab_vek[tmp_counter]->setText(tmp_string);
 
 		/* add this label to the grid */
-		taskGrid->addWidget(deno_lab_vek[tmp_counter], 3, 2 * tmp_counter + 1);
-	}
+		ratioVBoxLayout->addWidget(deno_lab_vek[tmp_counter]);
 
-	/* add nr_ratios - 1 labels to show the operations of the task */
-	op_lab_vek = new QLabel * [nr_ratios - 1];
-	for (tmp_counter = 0; tmp_counter < nr_ratios - 1; tmp_counter++)
-	{
-		/* create a new label */
-		op_lab_vek[tmp_counter] = new QLabel(baseWidget);
-		op_lab_vek[tmp_counter]->setAlignment(Qt::AlignHCenter);
-
-		/* get the operation */
-		operation = current_task.get_op_n(tmp_counter);
-
-		/* we have to convert the operation into a string and set the label
-		 * with the fitting sign */
-		switch (operation)
+		// add the operation after the ratio
+		if (tmp_counter != nr_ratios - 1)
 		{
-		case ADD :
-			op_lab_vek[tmp_counter]->setText("+");
-			break;
-		case SUB :
-			op_lab_vek[tmp_counter]->setText("-");
-			break;
-		case MUL :
-			op_lab_vek[tmp_counter]->setText("*");
-			break;
-		case DIV :
-			op_lab_vek[tmp_counter]->setText("/");
-			break;
+			// insert the operation at this position
+			taskHBoxLayout->addWidget(op_lab_vek[tmp_counter]);
+		} else {
+			// at the end we only have an equal (=) sign
+			eq1_label = new QLabel(baseWidget);
+			eq1_label->setText("=");
+			taskHBoxLayout->addWidget(eq1_label);
 		}
-		taskGrid->addWidget(op_lab_vek[tmp_counter], 2, 2 * tmp_counter + 2);
 	}
+
+	// now we add the input fields aligned in a VBox
+	ratioVBoxLayout = new QVBoxLayout(baseWidget, 5, 5);
+	taskHBoxLayout->addLayout(ratioVBoxLayout);
+
+	/* add input box so the user can enter numerator */
+	numer_edit = new QLineEdit(baseWidget);
+	ratioVBoxLayout->addWidget(numer_edit);
+	QToolTip::add(numer_edit, i18n("Enter the numerator of your result"));
+
+	/* add a line between the edit boxes */
+	edit_line = new QFrame(baseWidget);
+	edit_line->setGeometry(QRect(100, 100, 20, 20));
+	edit_line->setFrameStyle(QFrame::HLine | QFrame::Sunken);
+	ratioVBoxLayout->addWidget(edit_line);
+
+	/* add input box so the user can enter denominator */
+	deno_edit = new QLineEdit(baseWidget);
+	ratioVBoxLayout->addWidget(deno_edit);
+	QToolTip::add(deno_edit, i18n("Enter the denominator of your result"));
+
+	/* next equal sign */
+	eq2_label = new QLabel(baseWidget);
+	eq2_label->setText("=");
+	taskHBoxLayout->addWidget(eq2_label);
+	eq2_label->hide();
+
+	// now we add the labels for the reduced result
+	ratioVBoxLayout = new QVBoxLayout(baseWidget, 5, 5);
+	taskHBoxLayout->addLayout(ratioVBoxLayout);
 
 	/* 2 labels to show the result reduced; seperated with a line */
 	res_num1_label = new QLabel(baseWidget);
-	taskGrid->addWidget(res_num1_label, 1, 2 * nr_ratios + 4);
+	ratioVBoxLayout->addWidget(res_num1_label);
+	res_num1_label->setAlignment(Qt::AlignHCenter);
 	res_num1_label->hide();
 
-	res_deno1_label = new QLabel(baseWidget);
-	taskGrid->addWidget(res_deno1_label, 3, 2 * nr_ratios + 4);
-	res_deno1_label->hide();
-
+	// the line between
 	res1_line = new QFrame(baseWidget);
 	res1_line->setGeometry(QRect(100, 100, 20, 20));
 	res1_line->setFrameStyle(QFrame::HLine | QFrame::Sunken);
-	taskGrid->addWidget(res1_line, 2, 2 * nr_ratios + 4);
+	ratioVBoxLayout->addWidget(res1_line);
 	res1_line->hide();
 
-	/* 3 labels to show the result as: 4 5/6; and a line */
-	res_num2_label = new QLabel(baseWidget);
-	taskGrid->addWidget(res_num2_label, 1, 2 * nr_ratios + 7);
-	res_num2_label->hide();
+	// and the label for the denominator
+	res_deno1_label = new QLabel(baseWidget);
+	ratioVBoxLayout->addWidget(res_deno1_label);
+	res_deno1_label->setAlignment(Qt::AlignHCenter);
+	res_deno1_label->hide();
 
-	res_deno2_label = new QLabel(baseWidget);
-	taskGrid->addWidget(res_deno2_label, 3, 2 * nr_ratios + 7);
-	res_deno2_label->hide();
+	// the last equal sign
+	eq3_label = new QLabel(baseWidget);
+	eq3_label->setText("=");
+	taskHBoxLayout->addWidget(eq3_label);
+	eq3_label->hide();
 
+	/* 3 labels to show the result as: 4 5/6; and a line
+	 * 5/6 is aligned with a VBox */
 	res_common_label = new QLabel(baseWidget);
-	taskGrid->addWidget(res_common_label, 2, 2 * nr_ratios + 6);
+	taskHBoxLayout->addWidget(res_common_label);
 	res_common_label->hide();
 
+	// and another VBox for ratio alignment
+	ratioVBoxLayout = new QVBoxLayout(baseWidget, 5, 5);
+	taskHBoxLayout->addLayout(ratioVBoxLayout);
+
+	// numerator
+	res_num2_label = new QLabel(baseWidget);
+	ratioVBoxLayout->addWidget(res_num2_label);
+	res_num2_label->setAlignment(Qt::AlignHCenter);
+	res_num2_label->hide();
+
+	// line between
 	res2_line = new QFrame(baseWidget);
 	res2_line->setGeometry(QRect(100, 100, 20, 20));
 	res2_line->setFrameStyle(QFrame::HLine | QFrame::Sunken);
-	taskGrid->addWidget(res2_line, 2, 2 * nr_ratios + 7);
+	ratioVBoxLayout->addWidget(res2_line);
 	res2_line->hide();
 
+	// denominator
+	res_deno2_label = new QLabel(baseWidget);
+	ratioVBoxLayout->addWidget(res_deno2_label);
+	res_deno2_label->setAlignment(Qt::AlignHCenter);
+	res_deno2_label->hide();
+
+	// at the end we want to show the user if he solved the task correct or
+	// wrong
 	result_label = new QLabel(baseWidget);
 	result_label->setText(i18n("WRONG"));
-	taskGrid->addWidget(result_label, 2, 2 * nr_ratios + 8);
+	taskHBoxLayout->addWidget(result_label);
 	result_label->hide();
 
 	/* show selected operations */
@@ -505,12 +541,19 @@ void TaskView::newLayout()
 	if (add_sub == YES && mul_div == YES)
 		setCaption(i18n("Task with All 4 Operations"));
 
+	// now get to the lower part of our real layout
+	// we have only a button, which should be aligned right
+	QHBoxLayout * lowerHBox = new QHBoxLayout(baseWidget, 1, 1);
+	realLayout->addLayout(lowerHBox);
+	lowerHBox->addStretch(100);
+
 	// create a button for checking the current task or getting to the next one
 	m_checkButton = new QPushButton(baseWidget);
 	m_checkButton->setText(i18n("&Check Task"));
-	taskGrid->addWidget(m_checkButton, 4, 2 * nr_ratios + 8);
+	lowerHBox->addWidget(m_checkButton, 4, 2 * nr_ratios + 8);
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
 
+	// that the user can start typing without moving the focus
 	numer_edit->setFocus();
 
 	// show the whole layout
