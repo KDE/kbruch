@@ -68,10 +68,12 @@ input and gives feedback.
 You have to enter numerator and denominator. This is the main exercise.
 	</para></listitem>
 	<listitem><para>
-		Comparison - in this exercise you have to compare the size of 2 given ratios.
+		Comparison - in this exercise you have to compare the size of 2 given
+fractions.
 	</para></listitem>
 	<listitem><para>
-		Conversion - in this exercise you have to convert a given number into a ratio.
+		Conversion - in this exercise you have to convert a given number into a
+fraction.
 	</para></listitem>
 	<listitem><para>
 		Factorization - in this exercise you have to factorize a given number into its prime factors.
@@ -131,7 +133,8 @@ parts:
 <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
 	</para></listitem>
 	<listitem><para>
-		the toolbar, where you can set the difficulty for the tasks given in the fraction exercise
+		the toolbar, where you can set the difficulty for the tasks given in the
+		<guimenu>Fraction Task</guimenu> exercise
 	</para></listitem>
 	<listitem><para>
 		the exercise chooser, where you can switch between the different exercises
@@ -163,9 +166,8 @@ counted as not correctly solved.
 You can hide the statistic part by dragging the vertical separator to the
 right.
 </para>
-
 <para>
-If you terminate &kbruch; the current choosen exercise will be saved and
+If you terminate &kbruch; the currently choosen exercise will be saved and
 restored on next startup.
 </para>
 </sect1>
@@ -200,7 +202,9 @@ startup.
 <title>Settings Window</title>
 <para>
 In this part of the main screen you can adjust some general settings for the
-task display.
+task display. To open this dialog use
+<menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure
+&kbruch;</guimenuitem></menuchoice>.
 </para>
 
 <screenshot>
@@ -292,7 +296,7 @@ on next startup.
 </para>
 </sect2>
 
-<sect2 id="solve_task">
+<sect2 id="exer_fraction_solve_task">
 <title>Solving Tasks</title>
 <para>
 After you have solved a given task, you need to enter the result into the two
@@ -351,9 +355,105 @@ To continue with the next task, click on the <guimenu>Next Task</guimenu>
 button. If you want to change the parameters for the next task please do this
 before clicking on the <guimenu>Next Task</guimenu> button.
 </para>
-
 </sect2>
+</sect1>
 
+<sect1 id="exer_compare">
+<title>Exercise Comparison</title>
+
+<para>In this exercise you have to compare 2 given fractions. You have to choose
+the bigger fraction of both by selecting the correct comparison sign.
+</para>
+
+<screenshot>
+<screeninfo>Exercise Comparison</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="compare.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase>Exercise Comparison</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para>After you have choosen the comparison sign click on the <guimenu>Check
+Task</guimenu> button. &kbruch; will
+check your input and present the correct result. After this step you will get
+to the next task by clicking on the <guimenu>Next Task</guimenu> button.
+</para>
+</sect1>
+
+<sect1 id="exer_convert">
+<title>Exercise Conversion</title>
+
+<para>In this exercise you have to convert a given number into a fraction. You
+have to enter numerator and denominator.
+</para>
+
+<screenshot>
+<screeninfo>Exercise Conversion</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="convert.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase>Exercise Conversion</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para>After you have entered the numerator and denominator click on the
+<guimenu>Check Task</guimenu> button. &kbruch; will check your input and
+present the correct result. After this step you will get to the next task by
+clicking on the <guimenu>Next Task</guimenu> button.
+</para>
+
+<note>
+<para>
+Do not forget to enter the result reduced. Unreduced results will be counted as
+solved not correctly.
+</para>
+</note>
+</sect1>
+
+<sect1 id="exer_factorize">
+<title>Exercise Factorization</title>
+
+<para>In this exercise you have to factorize a given number into its prime
+factors. You have to enter all prime factors of the number.
+</para>
+
+<screenshot>
+<screeninfo>Exercise Factorization</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="factorize.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase>Exercise Factorization</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para>You can enter a factor by clicking on the prime <guimenu>factor
+buttons</guimenu>. The currently entered prime factors will be shown in the
+field next to the number to be factorized. You can remove the last entered
+prime factor by clicking on the <guimenu>Remove Last Factor</guimenu> button.
+</para>
+<para>
+After you have entered all prime factors click on the
+<guimenu>Check Task</guimenu> button. &kbruch; will check your input and
+present the correct result. After this step you will get to the next task by
+clicking on the <guimenu>Next Task</guimenu> button.
+</para>
+
+<note>
+<para>
+You have to enter all prime factors even when a prime factor repeats several
+times.
+</para>
+</note>
 </sect1>
 
 </chapter>
