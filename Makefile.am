@@ -2,4 +2,4 @@
 
 SUBDIRS = src
 
-EXTRA_DIST = AUTHORS COPYING ChangeLog INSTALL README TODO kbruch.lsm 
+EXTRA_DIST = AUTHORS ChangeLog README TODO kbruch.lsm 
