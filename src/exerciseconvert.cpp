@@ -142,8 +142,8 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 	baseWidget->show();
 
 	// add tooltip and qwhatsthis help to the widget
-	QToolTip::add(this, i18n("In this exercise you have to convert a rational number into a ratio."));
-	QWhatsThis::add(this, i18n("In this exercise you have to convert a given rational number into a ratio by entering numerator and denominator. Do not forget to reduce the result!"));
+	QToolTip::add(this, i18n("In this exercise you have to convert a number into a fraction."));
+	QWhatsThis::add(this, i18n("In this exercise you have to convert a given number into a fraction by entering numerator and denominator. Do not forget to reduce the result!"));
 }
 
 /* destructor */

@@ -130,8 +130,8 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 	baseWidget->show();
 
 	// add tooltip and qwhatsthis help to the widget
-	QToolTip::add(this, i18n("In this exercise you have to compare 2 given ratios."));
-	QWhatsThis::add(this, i18n("In this exercise you have to compare 2 given ratios by choosing the correct comparison sign. You can change the comparison sign by just clicking on the button showing the sign."));
+	QToolTip::add(this, i18n("In this exercise you have to compare 2 given fractions."));
+	QWhatsThis::add(this, i18n("In this exercise you have to compare 2 given fractions by choosing the correct comparison sign. You can change the comparison sign by just clicking on the button showing the sign."));
 }
 
 /* destructor */
