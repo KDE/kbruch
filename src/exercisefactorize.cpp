@@ -77,6 +77,8 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	m_factorsEnteredEdit = new QLineEdit( this, "m_factorsEnteredEdit" );
 	layout4->addWidget( m_factorsEnteredEdit );
 	m_factorsEnteredEdit->setReadOnly(true);
+	m_factorsEnteredEdit->setEnabled(false);
+	m_factorsEnteredEdit->setPaletteForegroundColor(QColor(0, 0, 0));
 	
 	m_factorsWidget = new FactorizedWidget( this, "m_factorsWidget", m_factorsResult);
 	layout4->addWidget( m_factorsWidget );
