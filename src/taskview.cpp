@@ -260,7 +260,7 @@ void TaskView::showResult()
 		if (deno_edit->text().toInt() == 0)
 		{
 			KMessageBox::information(this,
-			                         i18n("You entered a 0 as denominator. This means a division by zero, which is not allowed. This task will be counted as not correctly solved."));
+			                         i18n("You entered a 0 as the denominator. This means division by zero, which is not allowed. This task will be counted as not correctly solved."));
 		} else {
 			/* maybe the entered ratio was not reduced */
 			entered_result.reduce();
