@@ -490,6 +490,9 @@ void TaskView::newLayout()
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
 
 	numer_edit->setFocus();
+
+        baseWidget->show();
+
 	return;
 }
 
