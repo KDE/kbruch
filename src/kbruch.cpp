@@ -262,6 +262,8 @@ int gui_konsole(void)
 /* to show a Qt GUI */
 int gui_qt_ini(int argc, char * argv[])
 {
+	/* fill the about data; the common KDE about dialog will show it to the
+	 * user */
 	KAboutData aboutData( "kbruch",
 		description,
 		KBRUCH_VERSION,
@@ -271,6 +273,9 @@ int gui_qt_ini(int argc, char * argv[])
 		"kbruch@hpfsc.de");
 	aboutData.addAuthor("Sebastian Stein",0, "kbruch@hpfsc.de");
  	KCmdLineArgs::init( argc, argv, &aboutData );
+
+	/* our own options -t and -g are allready checked before to prevent
+	 * the generation of a KApplication object */
 	KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
 	KApplication bruch;
@@ -291,6 +296,8 @@ int main(int argc, char * argv[])
 	/* check, if we have some command line parameters */
 	for (int count = 1; count < argc; count++)
 	{
+		/* we react on the -t and -g parameter in this place and all other
+		 * parameters are given to the KDE routines to be checked */
 		if (! strcmp(argv[count], "--text") || !strcmp(argv[count], "-t"))
 		{
 			/* start the kbruch in text mode */
@@ -300,7 +307,6 @@ int main(int argc, char * argv[])
 		{
 			task klausur;
 			ratio ergebnis;
-
 			do
 			{
 				do
