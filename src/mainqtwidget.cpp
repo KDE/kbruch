@@ -73,19 +73,19 @@ MainQtWidget::MainQtWidget()
 	// add the pages
 	//
 	// we have the exercise to solve fraction tasks
-	QVBox * page = m_exercises->addVBoxPage(i18n("Fraction Task"), "", DesktopIcon("misc"));
+	QVBox * page = m_exercises->addVBoxPage(i18n("Fraction Task"), "", DesktopIcon("kbruch_exercise_common"));
 	m_taskview = new TaskView((QWidget *) page, "TaskView", m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
 
 	// we have the exercise to compare ratios
-	page = m_exercises->addVBoxPage(i18n("Comparison Task"), "", DesktopIcon("misc"));
+	page = m_exercises->addVBoxPage(i18n("Comparison Task"), "", DesktopIcon("kbruch_exercise_compare"));
 	m_exerciseCompare = new ExerciseCompare((QWidget *) page, "ExerciseCompare");
 
 	// we have the exercise to convert rational numbers into ratios
-	page = m_exercises->addVBoxPage(i18n("Conversion Task"), "", DesktopIcon("misc"));
+	page = m_exercises->addVBoxPage(i18n("Conversion Task"), "", DesktopIcon("kbruch_exercise_conversion"));
 	m_exerciseConvert = new ExerciseConvert((QWidget *) page, "ExerciseConvert");
 
 	// we have the exercise to factorize a given number into prime factors
-	page = m_exercises->addVBoxPage(i18n("Factorization Task"), "", DesktopIcon("misc"));
+	page = m_exercises->addVBoxPage(i18n("Factorization Task"), "", DesktopIcon("kbruch_exercise_factorisation"));
 	m_exerciseFactorize = new ExerciseFactorize((QWidget *) page, "ExerciseFactorize");
 
 	splitter->setResizeMode(m_statview, QSplitter::FollowSizeHint);
