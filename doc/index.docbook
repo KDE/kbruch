@@ -79,7 +79,7 @@ situations.
 </para>
 <para>
 KBruch provides a text interface as well. This means you can use KBruch without
-starting X-Windows. You have to use the -t command line option.
+starting X Window System. You have to use the -t command line option.
 </para>
 <para>
 It is free and licensed under the &GNU; Public License.
