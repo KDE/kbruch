@@ -60,8 +60,7 @@ gui_qt::gui_qt(QWidget * parent, const char * name): QVBox(parent, name),
 	QObject::connect(quitBtn, SIGNAL(clicked()), qApp, SLOT(quit()));
 
 	/* show KBruch - version in the titel of the main widget */
-	QString caption = i18n("KBruch - ");
-	caption += KBRUCH_VERSION;
+	QString caption = i18n("KBruch");
 	setCaption(caption);
 
 	/* fix the size of the main widget with +20% over the minimum */
