@@ -6,67 +6,67 @@
 	<group name="General">
 		<entry type="Int" key="activeExercise">
 			<label>Active exercise.</label>
-			<default>0</default>
 			<whatsthis>Saves the active exercise's type.</whatsthis>
+			<default>0</default>
 		</entry>
 	</group>
 
 	<group name="Task">
 		<entry type="Bool" key="addsub">
 			<label>Enable Addition/Subtraction</label>
-			<default>true</default>
 			<whatsthis>Enable Addition/Subtraction for task generation.</whatsthis>
+			<default>true</default>
 		</entry>
 		<entry type="Bool" key="muldiv">
 			<label>Enable Multiplication/Division</label>
-			<default>false</default>
 			<whatsthis>Enable Multiplication/Division for task generation.</whatsthis>
+			<default>false</default>
 		</entry>
 		<entry type="UInt" key="number_ratios">
 			<label>Number of fractions</label>
-			<default>2</default>
 			<whatsthis>Set the number of fractions for task generation.</whatsthis>
+			<default>2</default>
 		</entry>
 		<entry type="UInt" key="max_main_denominator">
 			<label>Max. main denominator</label>
-			<default>10</default>
 			<whatsthis>Set the maximum value of the main denominator.</whatsthis>
+			<default>10</default>
 		</entry>
 	</group>
 
 	<group name="Statistics">
 		<entry type="Int" key="correct">
 			<label>Number of correctly solved tasks</label>
-			<default>0</default>
 			<whatsthis>Number of correctly solved tasks</whatsthis>
+			<default>0</default>
 		</entry>
 		<entry type="Int" key="count">
 			<label>Number of solved tasks</label>
-			<default>0</default>
 			<whatsthis>Total number of solved tasks</whatsthis>
+			<default>0</default>
 		</entry>
 	</group>
 
 	<group name="TaskViewer">
 		<entry name="numberColor" type="Color">
 			<label>Color of the numbers in the task view</label>
-			<default code="true">Qt::darkGreen</default>
 			<whatsthis>Color of the numbers in the task view</whatsthis>
+			<default code="true">Qt::darkGreen</default>
 		</entry>
 		<entry name="operationColor" type="Color">
 			<label>Color of the operation signs in the task view</label>
-			<default code="true">Qt::blue</default>
 			<whatsthis>Color of the operation signs in the task view</whatsthis>
+			<default code="true">Qt::blue</default>
 		</entry>
 		<entry name="fractionBarColor" type="Color">
 			<label>Color of the fraction bars in the task view</label>
-			<default code="true">Qt::red</default>
 			<whatsthis>Color of the fraction bars in the task view</whatsthis>
+			<default code="true">Qt::red</default>
 		</entry>
 		<entry type="Font" key="taskFont">
 			<label>Font used for the task view</label>
-			<default code="true">KGlobalSettings::generalFont()</default>
 			<whatsthis>Font used for the task view</whatsthis>
+			<default code="true">KGlobalSettings::generalFont()</default>
 		</entry>
 	</group>
 </kcfg>
