@@ -17,11 +17,18 @@
 
 #include "kbruch.h"
 
+#include <iostream>
+#include <iomanip>
+using std::setw;
+using std::cout;
+using std::cin;
+using std::endl;
+
 /* show the main menu for a text gui */
 char show_main_txt()
 {
 	char chrInput;
-	
+
 	CLEAR; /* clear the console */
 	cout << "\tKBruch " << VERSION << " " << DATE << endl;
 	cout << "\n\n\tWhat do you want to do:" << endl;
@@ -64,7 +71,7 @@ void ask_parameters_txt(short & nr_ratios, unsigned int & max_md)
 	if (tmp_short > 5)
 		tmp_short = 5;
 	nr_ratios = tmp_short; /* save the input */
-	
+
 	cout << "\n\n\tEnter the maximum size of the main denominator!";
 	cout << "\n\tIt must be at least " << pow(2, nr_ratios) << ": ";
 
@@ -122,7 +129,7 @@ if (abs(result.get_zaehler() > 200))
 		int_num = 0;
 	cin.clear();
 	cin.ignore(INT_MAX, '\n');
-	
+
 	cout << "\n\tEnter the denominator: ";
 
 	/* check, if the user entered a valid input */
@@ -141,7 +148,7 @@ if (abs(result.get_zaehler() > 200))
 
 	/* check if the user entered the right result */
 	if (int_num != result.get_zaehler() || int_deno != result.get_nenner())
-		wrong = TRUE;	
+		wrong = TRUE;
 
 	/* we accept the result, if it zero, but we do not accept 0/0 */
 	if (int_num == 0 && result.get_zaehler() == 0 && int_deno != 0)
@@ -217,14 +224,14 @@ int gui_konsole(void)
 				mul_div = TRUE;
 			}
 			(void) ask_parameters_txt(nr_ratios, max_md);
-		
+
 			correct = 0;
 			count = 0;
 			do
 			{
 				correct += run_task_txt(add_sub, mul_div, nr_ratios, max_md);
 				count++;
-	
+
 				CLEAR;
 				cout << "\tKBruch " << VERSION << " " << DATE << endl;
 				cout << "\n\n\ttasks so far: \t" << count << endl;
@@ -236,7 +243,7 @@ int gui_konsole(void)
 				cout << "\t\t[c]hange parameters" << endl;
 				cout << "\t\t[e]xit program" << endl;
 				cout << "\n\tInput: ";
-			
+
 				/* check, if the user entered a valid input */
 				if (!(cin >> chrInput2).good())
 					chrInput2 = 'n';

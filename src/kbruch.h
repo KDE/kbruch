@@ -36,8 +36,6 @@
 #include "mainqtwidget.h"
 
 #include <stdlib.h>
-#include <iostream.h>
-#include <iomanip.h>
 #include <limits.h>
 
 #include <math.h>
@@ -53,8 +51,8 @@
 static const char *description =
 	I18N_NOOP("KBruch");
 // INSERT A DESCRIPTION FOR YOUR APPLICATION HERE
-	
-	
+
+
 static KCmdLineOptions options[] =
 {
 	{ "t", 0, 0 },

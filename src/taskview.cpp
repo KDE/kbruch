@@ -20,7 +20,11 @@
 
 #include <math.h>
 
-
+#ifdef DEBUG
+#include <iostream>
+using std::cout;
+using std::endl;
+#endif
 
 /* ----- public member functions ----- */
 

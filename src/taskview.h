@@ -42,11 +42,6 @@
 #include <qvbox.h>
 #include <qwidget.h>
 
-#ifdef DEBUG
-#include <iostream.h>
-#endif
-
-
 class TaskView : public QWidget
 {
 	Q_OBJECT

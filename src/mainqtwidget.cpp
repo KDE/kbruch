@@ -30,7 +30,9 @@
 #include "statisticsview.h"
 
 #ifdef DEBUG
-#include <iostream.h>
+#include <iostream>
+using std::cout;
+using std::endl;
 #endif
 
 
@@ -94,7 +96,7 @@ void MainQtWidget::setupActions()
 	m_NrOfTermsLabelAction = new KWidgetAction(m_NrOfTermsLabel, i18n("Number of terms:"), ALT+Key_T, this, SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsLabelAction");
 
 	// the ComboBox holding possible values for term number
-	m_NrOfTermsBox = new QComboBox(); 
+	m_NrOfTermsBox = new QComboBox();
 	m_NrOfTermsBox->insertItem(i18n("2"));
 	m_NrOfTermsBox->insertItem(i18n("3"));
 	m_NrOfTermsBox->insertItem(i18n("4"));
@@ -109,7 +111,7 @@ void MainQtWidget::setupActions()
 	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Maximal main denominator:"), ALT+Key_T, this, SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorLabelAction");
 
 	// the ComboBox holding possible values for the max. main denominator
-	m_MaxMainDenominatorBox = new QComboBox(); 
+	m_MaxMainDenominatorBox = new QComboBox();
 	m_MaxMainDenominatorBox->insertItem(i18n("10"));
 	m_MaxMainDenominatorBox->insertItem(i18n("20"));
 	m_MaxMainDenominatorBox->insertItem(i18n("30"));
@@ -197,7 +199,7 @@ void MainQtWidget::OperationBoxSlot()
 	int index = m_OperationBox->currentItem(); // get selected item
 
 	// user has selected the operations for the next task, so store it in the
-	// private members 
+	// private members
 	if (index == 0)
 	{
 		m_addSub = true;
