@@ -280,7 +280,7 @@ int gui_qt_ini(int argc, char * argv[])
 	aboutData.addAuthor("Sebastian Stein",0, "kbruch@hpfsc.de");
  	KCmdLineArgs::init( argc, argv, &aboutData );
 
-	/* our own options -t and -g are allready checked before to prevent
+	/* our own options -t and -g are already checked before to prevent
 	 * the generation of a KApplication object */
 	KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 

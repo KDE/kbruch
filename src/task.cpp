@@ -604,7 +604,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 						{
 							tmp_counter++; /* we found a unused factor */
 						}
-						/* we found the factor, which we have choosen randomly */
+						/* we found the factor, which we have chosen randomly */
 						if (tmp_counter > next_fac)
 							break;
 					}
@@ -623,7 +623,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 				while ((*op_pointer == MUL || *op_pointer == DIV)
 				        && (op_pointer != op_vector.end()));
 
-				/* we allways miss to set the last ratio in a mul/div section;
+				/* we always miss to set the last ratio in a mul/div section;
 				 * so we have to fix this here */
 				if (ratio_pointer != ratio_vector.end())
 				{
@@ -643,7 +643,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 						{
 							tmp_counter++; /* we found a unused factor */
 						}
-						/* we found the factor, which we have choosen randomly */
+						/* we found the factor, which we have chosen randomly */
 						if (tmp_counter > next_fac)
 							break;
 					}
