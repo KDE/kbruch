@@ -16,8 +16,9 @@
  ***************************************************************************/
 #include "mainqtwidget.h"
 
+#include <config.h>
+
 #include <kaccel.h>
-#include <kaction.h>
 #include <kapplication.h>
 #include <kdebug.h>
 #include <kmenubar.h>
@@ -31,19 +32,12 @@
 #include "taskview.h"
 #include "statisticsview.h"
 
-#ifdef DEBUG
-#include <iostream>
-using std::cout;
-using std::endl;
-#endif
-
-
 /* ------ public member functions ------ */
 
 MainQtWidget::MainQtWidget()
 {
 #ifdef DEBUG
-	cout << "constructor MainQtWidget" << endl;
+	kdDebug() << "constructor MainQtWidget" << endl;
 #endif
 	setXMLFile("kbruchui.rc");
 
@@ -105,10 +99,10 @@ void MainQtWidget::setupActions()
 
 	// the ComboBox holding possible values for term number
 	m_NrOfTermsBox = new QComboBox();
-	m_NrOfTermsBox->insertItem(i18n("2"));
-	m_NrOfTermsBox->insertItem(i18n("3"));
-	m_NrOfTermsBox->insertItem(i18n("4"));
-	m_NrOfTermsBox->insertItem(i18n("5"));
+	m_NrOfTermsBox->insertItem("2");
+	m_NrOfTermsBox->insertItem("3");
+	m_NrOfTermsBox->insertItem("4");
+	m_NrOfTermsBox->insertItem("5");
 	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of terms"), ALT+Key_T, 
 						 this, SLOT(NrOfTermsBoxSlot()), 
 						 actionCollection(), "NrOfTermsBoxAction");
@@ -124,10 +118,10 @@ void MainQtWidget::setupActions()
 
 	// the ComboBox holding possible values for the max. main denominator
 	m_MaxMainDenominatorBox = new QComboBox();
-	m_MaxMainDenominatorBox->insertItem(i18n("10"));
-	m_MaxMainDenominatorBox->insertItem(i18n("20"));
-	m_MaxMainDenominatorBox->insertItem(i18n("30"));
-	m_MaxMainDenominatorBox->insertItem(i18n("50"));
+	m_MaxMainDenominatorBox->insertItem("10");
+	m_MaxMainDenominatorBox->insertItem("20");
+	m_MaxMainDenominatorBox->insertItem("30");
+	m_MaxMainDenominatorBox->insertItem("50");
 	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal main denominator"), ALT+Key_T, 
 							  this, SLOT(MaxMainDenominatorBoxSlot()), 
 							  actionCollection(), "MaxMainDenominatorBoxAction");
@@ -169,30 +163,30 @@ void MainQtWidget::NewTask()
 void MainQtWidget::NrOfTermsBoxSlot()
 {
 #ifdef DEBUG
-	cout << "MainQtWidget::NrOfTermsBoxSlot()" << endl;
+	kdDebug() << "MainQtWidget::NrOfTermsBoxSlot()" << endl;
 #endif
 	QString curr_nr = m_NrOfTermsBox->currentText();
 	m_MaxMainDenominatorBox->clear();
 
-	if (curr_nr == i18n("2"))
+	if (curr_nr == "2")
 	{
-		m_MaxMainDenominatorBox->insertItem(i18n("10"));
-		m_MaxMainDenominatorBox->insertItem(i18n("20"));
-		m_MaxMainDenominatorBox->insertItem(i18n("30"));
-		m_MaxMainDenominatorBox->insertItem(i18n("50"));
+		m_MaxMainDenominatorBox->insertItem("10");
+		m_MaxMainDenominatorBox->insertItem("20"));
+		m_MaxMainDenominatorBox->insertItem("30");
+		m_MaxMainDenominatorBox->insertItem("50");
 		m_nrRatios = 2;
-	} else if (curr_nr == i18n("3")) {
-		m_MaxMainDenominatorBox->insertItem(i18n("20"));
-		m_MaxMainDenominatorBox->insertItem(i18n("30"));
-		m_MaxMainDenominatorBox->insertItem(i18n("50"));
+	} else if (curr_nr == "3")) {
+		m_MaxMainDenominatorBox->insertItem("20");
+		m_MaxMainDenominatorBox->insertItem("30");
+		m_MaxMainDenominatorBox->insertItem("50");
 		m_nrRatios = 3;
-	} else if (curr_nr == i18n("4")) {
-		m_MaxMainDenominatorBox->insertItem(i18n("20"));
-		m_MaxMainDenominatorBox->insertItem(i18n("30"));
-		m_MaxMainDenominatorBox->insertItem(i18n("50"));
+	} else if (curr_nr == "4") {
+		m_MaxMainDenominatorBox->insertItem("20");
+		m_MaxMainDenominatorBox->insertItem("30");
+		m_MaxMainDenominatorBox->insertItem("50");
 		m_nrRatios = 4;
 	} else {
-		m_MaxMainDenominatorBox->insertItem(i18n("50"));
+		m_MaxMainDenominatorBox->insertItem("50");
 		m_nrRatios = 5;
 	}
 	// set the new task parameters
