@@ -1,3 +1,5 @@
 what is left to do
 
-	* set a greater value for the standard font
+	* use another font size from KGlobalSettings
+
+	* find a better way to align task and statistical window
