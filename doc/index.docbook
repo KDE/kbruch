@@ -201,7 +201,7 @@ startup.
 <sect1 id="settings">
 <title>Settings Window</title>
 <para>
-In this part of the main screen you can adjust some general settings for the
+In this part of the main screen you can adjust some general settings for
 task display. To open this dialog use
 <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure
 &kbruch;</guimenuitem></menuchoice>.
@@ -222,7 +222,8 @@ task display. To open this dialog use
 <para>
 In the top part of the dialog you can choose a font for displaying. In the
 lower part you can choose colors for the different parts of a mathematical
-expression.
+expression. You can set wether to show the mixed number notation in the result.
+This notation is not known everywhere and can be disabled therefore. 
 </para>
 <para>
 The settings will be saved on &kbruch;'s termination and restored on the next
