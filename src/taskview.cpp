@@ -57,6 +57,8 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	cout << "constructor TaskView()" << endl;
 #endif
 
+	curr_nr_ratios = nr_ratios;
+
 	/* create a new task */
 	QApplication::setOverrideCursor(waitCursor); /* show the sand clock */
 	current_task.create_task(max_md, nr_ratios, add_sub, mul_div);
@@ -109,11 +111,7 @@ void TaskView::setTaskParameters(bool padd_sub, bool pmul_div, unsigned int pnr_
 	mul_div = pmul_div;
 	max_md = pmax_md;
 
-	if (nr_ratios != pnr_ratios)
-	{
-		nr_ratios = pnr_ratios;
-		(void) newLayout();
-	}
+	nr_ratios = pnr_ratios;
 
 	return;
 }
@@ -257,6 +255,12 @@ void TaskView::nextTask()
 	ratio curr_ratio; /* to store a ratio of the created task */
 	short operation; /* this is the unconverted number of an operation */
 
+	if (nr_ratios != curr_nr_ratios)
+	{
+		curr_nr_ratios = nr_ratios;
+		(void) newLayout();
+	}
+
 	numer_edit->setEnabled(true);
 	deno_edit->setEnabled(true);
 
@@ -316,10 +320,10 @@ void TaskView::nextTask()
 			op_lab_vek[tmp_counter]->setText("-");
 			break;
 		case MUL :
-			op_lab_vek[tmp_counter]->setText("*");
+			op_lab_vek[tmp_counter]->setText("x");
 			break;
 		case DIV :
-			op_lab_vek[tmp_counter]->setText("/");
+			op_lab_vek[tmp_counter]->setText(i18n(":"));
 			break;
 		} /* switch (operation) */
 	} /* for (tmp_counter = 0; tmp_counter < nr_ratios - 1; tmp_counter++) */

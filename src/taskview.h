@@ -53,6 +53,7 @@ private:
 	bool add_sub;
 	bool mul_div;
 	unsigned int nr_ratios;
+	unsigned int curr_nr_ratios;
 	unsigned int max_md;
 
 private:
