@@ -51,8 +51,12 @@ gui_qt::gui_qt(QWidget * parent, const char * name): QVBox(parent, name),
 
 	/* help button */
 	helpBtn = new QPushButton(i18n("&Help"), this);
-	QToolTip::add(helpBtn, i18n("Press the button to open the handbook"));
-	QObject::connect(helpBtn, SIGNAL(clicked()), this, SLOT(slotShowBook()));
+	//QToolTip::add(helpBtn, i18n("Press the button to open the handbook"));
+	//QObject::connect(helpBtn, SIGNAL(clicked()), this, SLOT(slotShowBook()));
+	KHelpMenu * helpMenu = new KHelpMenu(this,
+						KGlobal::instance()->aboutData(), true);
+	helpBtn->setPopup(helpMenu->menu());
+
 
 	/* exit button */
 	quitBtn = new QPushButton(i18n("E&xit"), this);
