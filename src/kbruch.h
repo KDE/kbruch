@@ -54,7 +54,7 @@ static KCmdLineOptions options[] =
 	{ "text", I18N_NOOP("start text mode user interface"), 0 },
 	{ "g", 0, 0 },
 	{ "generate", I18N_NOOP("generates tasks and solutions without stopping"), 0 },
-	{ 0, 0, 0 }
+	KCmdLineLastOption
 };
 
 /* activate this macro, if you want to build a text gui for MS DOS */
