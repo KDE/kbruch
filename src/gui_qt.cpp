@@ -92,7 +92,6 @@ gui_qt::~gui_qt()
 void gui_qt::slotShowBook()
 {
 	kapp->invokeHelp("");
-//	kapp->invokeHelp("commands");
 	return;
 }
 
