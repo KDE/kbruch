@@ -29,6 +29,7 @@
 #include <qvbox.h>
 #include <klocale.h>
 #include <qtooltip.h>
+#include <khelpmenu.h>
 
 #ifdef DEBUG
 #include <iostream.h>
