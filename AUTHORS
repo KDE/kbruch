@@ -1,10 +1,16 @@
 Codeing
 =======
 
-Sebastian Stein <bruch@hpfsc.de>
+Sebastian Stein <kbruch@hpfsc.de>
 
 Eva Brucherseifer <eva@kde.org>
 (wrote KMath -> KBruch's GUI is based on this work)
+
+
+Bug fixing
+==========
+
+Dominique Devries <dominique.devriese@student.kuleuven.ac.be>
 
 
 Testing
@@ -18,3 +24,4 @@ Thanks
 ======
 
 Robert Gogolok <mail@robert-gogolok.de> for helping with KDE CVS
+David Faure <faure@kde.org> for helping with KDE CVS and KDE Bugzilla

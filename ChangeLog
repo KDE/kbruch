@@ -1,3 +1,11 @@
+2003-04-28 Sebastian Stein <kbruch@hpfsc.de>
+
+	* fixed layout problem with help of Dominique Devries
+
+	* compiler warnings (<iosteam>) removed by Dominique Devries
+
+	* import to KDE Edu CVS by David Faure
+
 2003-04-24 Sebastian Stein <kbruch@hpfsc.de>
 
 	* experiments with the layout problem, but found no solution
