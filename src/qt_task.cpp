@@ -95,8 +95,10 @@ qt_task::qt_task(QWidget * parent, const char * name,	short padd_sub,
 	/* add 2 input boxes so the user can enter numerator and denominator */
 	numer_edit = new QLineEdit(this);
 	taskGrid->addWidget(numer_edit, 1, 2 * nr_ratios + 2);
+	QToolTip::add(numer_edit, i18n("Enter the numerator of your result"));
 	deno_edit = new QLineEdit(this);
 	taskGrid->addWidget(deno_edit, 3, 2 * nr_ratios + 2);
+	QToolTip::add(deno_edit, i18n("Enter the denominator of your result"));
 
 	/* add 2 * nr_ratios labels to show the numerators and denominators of
 	 * the task */
@@ -157,12 +159,10 @@ qt_task::qt_task(QWidget * parent, const char * name,	short padd_sub,
 
 	/* 2 labels to show the result reduced; seperated with a line */
 	res_num1_label = new QLabel(this);
-	//res_num1_label->setText("z1");
 	taskGrid->addWidget(res_num1_label, 1, 2 * nr_ratios + 4);
 	res_num1_label->hide();
 
 	res_deno1_label = new QLabel(this);
-	//res_deno1_label->setText("n1");
 	taskGrid->addWidget(res_deno1_label, 3, 2 * nr_ratios + 4);
 	res_deno1_label->hide();
 
@@ -174,17 +174,14 @@ qt_task::qt_task(QWidget * parent, const char * name,	short padd_sub,
 
 	/* 3 labels to show the result as: 4 5/6; and a line */
 	res_num2_label = new QLabel(this);
-	//res_num2_label->setText("z2");
 	taskGrid->addWidget(res_num2_label, 1, 2 * nr_ratios + 7);
 	res_num2_label->hide();
 
 	res_deno2_label = new QLabel(this);
-	//res_deno2_label->setText("n2");
 	taskGrid->addWidget(res_deno2_label, 3, 2 * nr_ratios + 7);
 	res_deno2_label->hide();
 
 	res_common_label = new QLabel(this);
-	//res_common_label->setText("co");
 	taskGrid->addWidget(res_common_label, 2, 2 * nr_ratios + 6);
 	res_common_label->hide();
 
@@ -206,6 +203,7 @@ qt_task::qt_task(QWidget * parent, const char * name,	short padd_sub,
 	okBtn = new QPushButton(i18n("Ch&eck"), this);
 	okBtn->setFont(QFont("helvetica", 10));
 	buttonHBox->addWidget(okBtn);
+	QToolTip::add(okBtn, i18n("Press the button to check your results"));
 	okBtn->setDefault(TRUE); /* set it as the default button of the widget */
 	QObject::connect(okBtn, SIGNAL(clicked()), this, SLOT(okBtnClicked()));
 
@@ -213,6 +211,8 @@ qt_task::qt_task(QWidget * parent, const char * name,	short padd_sub,
 	backBtn= new QPushButton(i18n("&Cancel"), this);
 	backBtn->setFont(QFont("helvetica", 10));
 	buttonHBox->addWidget(backBtn);
+	QToolTip::add(backBtn,
+							i18n("Press the button to get back to the main menu"));
 	QObject::connect(backBtn, SIGNAL(clicked()), this, SLOT(close()));
 
 	/* the next button should be on the right of the window */
@@ -222,6 +222,7 @@ qt_task::qt_task(QWidget * parent, const char * name,	short padd_sub,
 	helpBtn = new QPushButton(i18n("&Help"), this);
 	helpBtn->setFont(QFont("helvetica", 10));
 	buttonHBox->addWidget(helpBtn);
+	QToolTip::add(helpBtn, i18n("Press the button to open the handbook"));
 
 	/* show selected operations */
 	if (add_sub == YES && mul_div == NO)
@@ -290,6 +291,7 @@ void qt_task::okBtnClicked()
 		/* check the entered result of the given task */
 		isWaitResult = NO;
 		okBtn->setText(i18n("N&ext task"));
+		QToolTip::add(okBtn, i18n("Press the button to get to the next task"));
 		okBtn->setFocus();
 
 		/* solve the task */
@@ -396,6 +398,7 @@ void qt_task::okBtnClicked()
 		/* generate the next task and show it to the user */
 		isWaitResult = YES;
 		okBtn->setText(i18n("Ch&eck"));
+		QToolTip::add(okBtn, i18n("Press the button to check your results"));
 		result_label->hide(); /* do not show the result at the end of the task */
 		res_num1_label->hide(); /* hide the result labels for the last task */
 		res_deno1_label->hide();

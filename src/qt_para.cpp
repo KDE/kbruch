@@ -52,6 +52,7 @@ qt_para::qt_para(QWidget * parent, const char * name,
 	termComBox->setEditable(NO);
 	termComHBox->addWidget(termComBox);
 	termComHBox->addStretch(10);
+	QToolTip::add(termComBox, i18n("Select the count of task's terms"));
 	QObject::connect(termComBox, SIGNAL(activated(int)),
 													this, SLOT(term_nr_changed(int)));
 	
@@ -72,6 +73,8 @@ qt_para::qt_para(QWidget * parent, const char * name,
 	denoComBox->setEditable(NO);
 	denoComHBox->addWidget(denoComBox);
 	denoComHBox->addStretch(10);
+	QToolTip::add(denoComBox,
+					i18n("Select the maximum size of the main denominator"));
 	
 	/* insert a horizontal grid to arange the buttons side by side */
 	buttonHBox = new QHBoxLayout(layout1);
@@ -80,12 +83,16 @@ qt_para::qt_para(QWidget * parent, const char * name,
 	okBtn = new QPushButton(i18n("&Ok"), this);
 	okBtn->setFont(QFont("helvetica", 10));
 	buttonHBox->addWidget(okBtn);
+	QToolTip::add(okBtn,
+						i18n("Press the button to begin with task generation"));
 	QObject::connect(okBtn, SIGNAL(clicked()), this, SLOT(showQt_Task()));
 
 	/* back button */
 	backBtn= new QPushButton(i18n("&Cancel"), this);
 	backBtn->setFont(QFont("helvetica", 10));
 	buttonHBox->addWidget(backBtn);
+	QToolTip::add(backBtn,
+							i18n("Press the button to get back to the main menu"));
 	QObject::connect(backBtn, SIGNAL(clicked()), this, SLOT(close()));
 
 	/* the next button should be on the right of the window */
@@ -95,6 +102,7 @@ qt_para::qt_para(QWidget * parent, const char * name,
 	helpBtn = new QPushButton(i18n("&Help"), this);
 	helpBtn->setFont(QFont("helvetica", 10));
 	buttonHBox->addWidget(helpBtn);
+	QToolTip::add(helpBtn, i18n("Press the button to open the handbook"));
 
 	/* show KBruch - selected operations */
 	if (add_sub == YES && mul_div == NO)

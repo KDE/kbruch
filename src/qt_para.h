@@ -34,6 +34,7 @@
 #include <qpushbutton.h>
 #include <qvbox.h>
 #include <klocale.h>
+#include <qtooltip.h>
 
 #ifdef DEBUG
 #include <iostream.h>
