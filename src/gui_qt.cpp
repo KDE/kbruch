@@ -51,8 +51,9 @@ gui_qt::gui_qt(QWidget * parent, const char * name): QVBox(parent, name),
 
 	/* help button */
 	helpBtn = new QPushButton(i18n("&Help"), this);
-	//QToolTip::add(helpBtn, i18n("Press the button to open the handbook"));
-	//QObject::connect(helpBtn, SIGNAL(clicked()), this, SLOT(slotShowBook()));
+
+	/* add a popup menu to the button; the popup menu is a KHelpMenu with
+	 * the entries like handbook, bug report, about... */
 	KHelpMenu * helpMenu = new KHelpMenu(this,
 						KGlobal::instance()->aboutData(), true);
 	helpBtn->setPopup(helpMenu->menu());
@@ -81,17 +82,6 @@ gui_qt::~gui_qt()
 #endif
 
 	/* no need to delete any child widgets, Qt does it by itself */
-}
-
-
-
-/* ------ public slots ------ */
-
-/* show the KBruch handbook */
-void gui_qt::slotShowBook()
-{
-	kapp->invokeHelp("");
-	return;
 }
 
 
