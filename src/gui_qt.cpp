@@ -31,12 +31,16 @@ gui_qt::gui_qt(QWidget * parent, const char * name): QVBox(parent, name),
 	/* add/sub button */
 	addsubBtn = new QPushButton(i18n("&addition and subtraction"), this);
 	addsubBtn->setFont(QFont("helvetica", 10));
+	QToolTip::add(addsubBtn,
+			i18n("tasks with addition and substraction will be generated"));
 	QObject::connect(addsubBtn, SIGNAL(clicked()), this,
 												SLOT(showQt_Para_addsub()));
 	
 	/* mul/div button */
 	muldivBtn = new QPushButton(i18n("&multiplication and division"), this);
 	muldivBtn->setFont(QFont("helvetica", 10));
+	QToolTip::add(muldivBtn,
+			i18n("tasks with multiplication and division will be generated"));
 	QObject::connect(muldivBtn, SIGNAL(clicked()), this,
 												SLOT(showQt_Para_muldiv()));
 
@@ -44,14 +48,19 @@ gui_qt::gui_qt(QWidget * parent, const char * name): QVBox(parent, name),
 	allBtn = new QPushButton(i18n("m&ixed"), this);
 	allBtn->setFont(QFont("helvetica", 10));
 	allBtn->resize(100, 50);
+	QToolTip::add(allBtn,
+			i18n("tasks with all 4 operations will be generated"));
 	QObject::connect(allBtn, SIGNAL(clicked()), this, SLOT(showQt_Para_all()));
 
 	/* help button */
 	helpBtn = new QPushButton(i18n("&help"), this);
 	helpBtn->setFont(QFont("helvetica", 10));
+	QToolTip::add(helpBtn, i18n("Press the button to open the handbook"));
+	QObject::connect(helpBtn, SIGNAL(clicked()), this, SLOT(slotShowBook()));
 
 	/* exit button */
 	quitBtn = new QPushButton(i18n("E&xit"), this);
+	QToolTip::add(quitBtn, i18n("Terminate KBruch"));
 	QObject::connect(quitBtn, SIGNAL(clicked()), qApp, SLOT(quit()));
 
 	/* show KBruch - version in the titel of the main widget */
@@ -59,8 +68,8 @@ gui_qt::gui_qt(QWidget * parent, const char * name): QVBox(parent, name),
 	caption += KBRUCH_VERSION;
 	setCaption(caption);
 
-	/* fix the size of the main widget with +10% over the minimum */
-	setFixedSize(QSize(minimumSize() * 0.1f));
+	/* fix the size of the main widget with +20% over the minimum */
+	setFixedSize(QSize(minimumSize() * 0.2f));
 
 	addsubBtn->setFocus();
 }
@@ -73,6 +82,18 @@ gui_qt::~gui_qt()
 #endif
 
 	/* no need to delete any child widgets, Qt does it by itself */
+}
+
+
+
+/* ------ public slots ------ */
+
+/* show the KBruch handbook */
+void gui_qt::slotShowBook()
+{
+	kapp->invokeHelp("");
+//	kapp->invokeHelp("commands");
+	return;
 }
 
 
