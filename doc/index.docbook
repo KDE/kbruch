@@ -32,8 +32,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2003-06-02</date>
-<releaseinfo>1.0</releaseinfo>
+<date>2003-09-22</date>
+<releaseinfo>3.1.91</releaseinfo>
 
 <abstract>
 <para>&kbruch; is a small program to generate tasks with fractions. The user
@@ -47,7 +47,7 @@ denominator. The program checks the input and gives feedback.
 <keyword>KDE</keyword>
 <keyword>education</keyword>
 <keyword>fraction</keyword>
-<keyword>mathematic</keyword>
+<keyword>mathematics</keyword>
 <keyword>denominator</keyword>
 <keyword>kbruch</keyword>
 </keywordset>
@@ -64,7 +64,7 @@ The program checks the input and gives feedback.
 </para>
 <para>
 The task generation can be adjusted by using different parameters. The user can
-decide if he wants to solve tasks with addition/substraction and/or
+decide if he wants to solve tasks with addition/subtraction and/or
 multiplication/division.
 </para>
 <para>
@@ -139,19 +139,22 @@ tasks:</para>
 
 <variablelist>
 <varlistentry>
-<term>Number of terms</term>
-<listitem><para>at least 2, and maximum 5</para></listitem>
+<term><guilabel>Terms</guilabel></term>
+<listitem><para>The number of terms (separate fractions) given in each
+task. From 2 to 5, inclusive.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term>Max. main denominator</term>
-<listitem><para>at least 10, maximum 50</para></listitem>
+<term><guilabel>Max. main denominator</guilabel></term>
+<listitem><para>The highest number &kbruch; will use as a denominator in the
+tasks it sets. From a minimum of 10 to a maximum of 50.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term>Operations</term>
-<listitem><para>operations which should be used in the
-task</para></listitem>
+<term><guilabel>Operations</guilabel></term>
+<listitem><para>Operations which should be used in the
+task: <guilabel>Addition/Subtraction</guilabel>,
+<guilabel>Multiplication/Division</guilabel> or <guilabel>All Operations Mixed</guilabel>.</para></listitem>
 </varlistentry>
 </variablelist>
 
@@ -162,11 +165,13 @@ parameters. You can also call this action from the menu bar with
 <menuchoice><guimenu>Task</guimenu><guimenuitem>New
 Task</guimenuitem></menuchoice>.
 </para>
+<note>
 <para>
-Note: your selection of the max. main denominator will be reset to a default
+Your selection of the maximum main denominator will be reset to a default
 value every time you change the number of terms. So you should change the 
-number of terms first and then select the max. main denominator.
+number of terms first and then select the maximum main denominator.
 </para>
+</note>
 <para>
 If you have not solved the current task and call the <guimenu>New
 Task</guimenu> action, the task will be counted as not solved correctly. To
@@ -192,9 +197,9 @@ numerator or denominator. If the result is 0, you can leave both boxes empty.
 If the result has a denominator of 1, you can leave the lower box empty.
 </para>
 <para>
-After you have entered the result you should click the <guimenu>Check
-Task</guimenu> button below the input boxes. &kbruch; will check your input and
-present the correct result. Therefore the main screen changes a little, as
+After you have entered the result you should click the <guibutton>Check
+Task</guibutton> button below the input boxes. &kbruch; will check your input
+and present the correct result. Therefore the main screen changes a little, as
 you can see in the screenshot:
 </para>
 <screenshot>
@@ -210,16 +215,17 @@ you can see in the screenshot:
 </screenshot>
 <para>
 This task was solved correctly. The correct value is shown in 2 different
-forms. The second form just in front of the word CORRECT is only used in some
-countries and must be read as 4 + 1/4 in the given case.
+forms. The second form just in front of the word <guilabel>CORRECT</guilabel>
+is only used in some countries and must be read as 4 + 1/4 in the given case.
 </para>
+<note>
 <para>
-Note: you always have to enter the result reduced, because most teachers only
+You always have to enter the result reduced, because most teachers only
 give all points to reduced results. &kbruch; will show you a short message
 like the one in the screenshot below, if you enter the correct result
 unreduced.
 </para>
-
+</note>
 <screenshot>
 <screeninfo>Unreduced Result</screeninfo>
 <mediaobject>
