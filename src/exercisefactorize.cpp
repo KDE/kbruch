@@ -33,8 +33,8 @@
 
 /* standard C++ library includes */
 #include <stdlib.h>
-#include <time.h>
 
+#include "primenumber.h"
 #include "rationalwidget.h"
 #include "resultwidget.h"
 
@@ -47,9 +47,6 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 #ifdef DEBUG
 	kdDebug() << "constructor ExerciseFactorize()" << endl;
 #endif
-	
-	// init random generator
-	srand(time(NULL));
 
 	/* create a new task */
 	QApplication::setOverrideCursor(waitCursor); /* show the sand clock */
@@ -71,6 +68,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	
 	m_factorsEnteredEdit = new QLineEdit( this, "m_factorsEnteredEdit" );
 	layout4->addWidget( m_factorsEnteredEdit );
+	m_factorsEnteredEdit->setReadOnly(true);
 	
 	m_factorsResultLabel = new QLabel( this, "m_factorsResultLabel" );
 	layout4->addWidget( m_factorsResultLabel );
@@ -134,8 +132,6 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	layout7->addWidget( m_checkButton );
 	layout9->addLayout( layout7 );
 	Form1Layout->addLayout( layout9 );
-
-	// now the text of the different widgets
 
 	// the current task
 	QString tmp_str;
@@ -226,7 +222,29 @@ void ExerciseFactorize::update()
 
 void ExerciseFactorize::createTask()
 {
-	m_taskNumber = 21;
+	uint uint_number;
+	primenumber tmp_primenumber;
+
+	// just pick one number out of the possible numbers to factorize
+	m_taskNumber = possibleTasks[uint((double(rand()) / RAND_MAX) * numberPossibleTasks)];
+	
+	// now get the primefactors of the taskNumber
+	m_factorsResult.clear();
+	uint_number = m_taskNumber;
+	tmp_primenumber.move_first();
+	do
+	{
+		// check if the current primenumber is a divisor
+		if (uint_number % tmp_primenumber.get_current() != 0)
+		{
+			// no, it is not a divisor, go on with next primenumber
+			tmp_primenumber.move_forward();
+		} else {
+			// current primenumber is a divisor
+			m_factorsResult.append(tmp_primenumber.get_current());
+			uint_number = uint(uint_number / tmp_primenumber.get_current());
+		}
+	} while (uint_number != 1);
 
 	return;
 }
@@ -235,10 +253,10 @@ void ExerciseFactorize::createTask()
 		- emits signals if task was solved correctly or wrong */
 void ExerciseFactorize::showResult()
 {
-	QString tmp_str; /* to build a string for a label */
+	QString tmp_str, tmp_str2; /* to build a string for a label */
 	QPalette pal;
 	QColorGroup cg;
-	ratio entered_result;
+	uint uint_result = 0;
 
 	// disable prime factor buttons
 	m_factor2Button->setEnabled(false);
@@ -250,14 +268,35 @@ void ExerciseFactorize::showResult()
 	m_factor17Button->setEnabled(false);
 	m_factor19Button->setEnabled(false);
 
-	// disable this button as well
+	// disable factor removal button as well
 	m_removeLastFactorButton->setEnabled(false);
 
-	// show the result
-	m_factorsResultLabel->setText("= 3 * 7");
+	// show the result, so we have to build the result string
+	for (uint tmp_uint = 0; tmp_uint < m_factorsResult.count(); tmp_uint++)
+	{
+		tmp_str2.setNum(m_factorsResult[tmp_uint]);
+		if (tmp_uint == 0)
+		{
+			tmp_str = "= " + tmp_str2;
+		} else {
+			tmp_str += " * " + tmp_str2;
+		}
+	}
+	m_factorsResultLabel->setText(tmp_str);
 	m_factorsResultLabel->show();
 
-	if (1)
+	// now calculate the product of the prime factors entered by the user
+	for (uint tmp_uint = 0; tmp_uint < m_factorsEntered.count(); tmp_uint++)
+	{
+		if (tmp_uint == 0)
+		{
+			uint_result = m_factorsEntered[0];
+		} else {
+			uint_result *= m_factorsEntered[tmp_uint];
+		}
+	}
+
+	if (uint_result == m_taskNumber)
 	{
 		// emit the signal for correct
 		signalExerciseSolvedCorrect();
@@ -307,7 +346,7 @@ void ExerciseFactorize::nextTask()
 	m_factor17Button->setEnabled(true);
 	m_factor19Button->setEnabled(true);
 
-	// enable this button as well
+	// disable the factor removal button, there are no factors to be removed yet
 	m_removeLastFactorButton->setEnabled(false);
 
 	result_label->hide(); /* do not show the result at the end of the task */
@@ -335,9 +374,6 @@ void ExerciseFactorize::nextTask()
 
 void ExerciseFactorize::addFactor(uint factor)
 {
-#ifdef DEBUG
-	kdDebug() << "addFactor(" << factor << ")" << endl;
-#endif
 	// add the new entered factor
 	m_factorsEntered.append(factor);
 

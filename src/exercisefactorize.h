@@ -44,6 +44,14 @@ class QPushButton;
 // a list containing uints
 typedef QValueList<uint> uintList;
 
+// set a macro how much numbers are given to factorize
+#define numberPossibleTasks 45
+
+// set all possible numbers to factorize
+const uint possibleTasks[numberPossibleTasks] = {4, 6, 8, 9, 10, 12, 14, 15, 16,
+18, 20, 21, 22, 24, 25, 26, 27, 30, 32, 33, 34, 35, 38, 39, 49, 50, 51, 54, 55,
+57, 60, 65, 70, 77, 75, 85, 95, 98, 121, 125, 169, 242, 250, 289, 361};
+
 /*! Construct the exercise widget to factorize a given number
  *
  *  \author Sebastian Stein
