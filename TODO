@@ -1,0 +1,12 @@
+what is left to do
+
+	* I noticed a floating point exception one time, so look for it -> fixed?
+
+	* I do not know if there are any Qt libs left to be replaced by the
+	  KDE ones (qapplication -> kapplication and so on)
+
+	* set a greater value for the standard font
+
+	* add help system
+
+	* port it to KDE 3

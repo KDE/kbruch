@@ -1,0 +1,14 @@
+Begin3
+Title:          KBruch
+Version:        0.19
+Entered-date:   2002-05-05
+Description:    task generator for calculations with fractions
+Keywords:       ratio, fraction, generator
+Author:         Sebastian Stein <bruch@hpfsc.de> 
+Maintained-by:  Sebastian Stein <bruch@hpfsc.de> 
+Primary-site:   http://www.hpfsc.de/bruch/index2.html
+Home-page:      http://www.hpfsc.de/bruch/index2.html
+Original-site:  http://www.hpfsc.de/bruch/
+Platforms:      Linux and other Unices with KDE support
+Copying-policy: GNU Public License
+End

@@ -1,0 +1,129 @@
+2002-05-02 Sebastian Stein <kbruch@hpfsc.de>
+
+	* the statistic window is positionated next to the task window
+
+	* removed English translation of the GUI
+
+	* renamed the project to KBruch
+
+	* version 0.19
+
+2002-04-16 Sebastian Stein <bruch@hpfsc.de>
+
+	* ported it to KDE 2
+
+	* added internationalization support 
+
+	* translated the German version
+
+	* added a English translation to retake all strings from the program
+
+	* version 0.18
+
+
+2002-03-16 Sebastian Stein <bruch@hpfsc.de>
+
+	* first version of the answer and result window (finished in most cases)
+
+	* added the parameter window (with support of dynamic main denominator size)
+
+	* moved the high() function to tool.h
+
+	* added a statistic window
+
+	* maybe fixed the floating point exception
+
+	* version 0.17
+
+
+2002-01-30 Sebastian Stein <bruch@hpfsc.de>
+
+	* fixed autoconf/automake for Qt support (thanks to Kevin Krammer)
+
+	* tried to stabilize the primzahl class
+
+	* coded a better solution for the "press enter for 2 times to go on" messages
+
+	* version 0.16
+
+2002-01-29 Sebastian Stein <bruch@hpfsc.de>
+
+	* added autoconf/automake for Qt support
+
+	* fixed a small bug in bruch.cpp to count correct entered results
+
+	* added the lsm software map
+
+	* added -t and --text to call the text mode user interface
+
+	* started to build the Qt GUI
+
+	* version 0.15
+
+2002-01-25 Sebastian Stein <bruch@hpfsc.de>
+
+	* some finetuning to the text GUI
+
+	* version 0.13 was tested on RedHat 7.1, SuSe Linux 7.2, Slackware Linux 8
+	  SunOS 5.7, FreeBSD 4.4, AIX Unix, MS Windows 2000
+
+	* added a check to autoconf/automake for gcc, so it compiles with -Wall
+
+	* version 0.14
+
+2002-01-24 Sebastian Stein <bruch@hpfsc.de>
+
+	* some finetuning to the task generating
+
+	* added command line options (?, h, help, v, version, d, debug)
+
+	* some bugfixes in the ratio and task class
+
+	* finished the text GUI
+
+	* added the operator<< to class ratio and class task
+
+	* program compiles with MS Visual C++ 6.0 on WIN32
+
+	* version 0.13
+
+2002-01-23 Sebastian Stein <bruch@hpfsc.de>
+
+	* the program now compiles on AIX and SunOS as well
+
+	* added a gui for text mode
+
+	* version 0.12
+
+2002-01-17 Sebastian Stein <bruch@hpfsc.de>
+
+	* the first working version without a gui
+
+	* solves a given task
+
+	* solves a generated task
+
+	* version 0.10
+
+
+2001-11-29 Sebastian Stein <bruch@hpfsc.de>
+
+	* classes are now using vector<T> template
+
+	* class task now solves problems
+
+	* bugfix in class primzahl
+
+
+2001-11-28 Sebastian Stein <bruch@hpfsc.de>
+
+	* started to program
+
+	* implemented class primzahl and ratio
+
+	* started to work on class task
+
+	* added a main program
+
+	* created a basic autoconf/automake system
+

@@ -1,0 +1,12 @@
+# KDE Config File  
+[Desktop Entry]
+Type=Application
+Exec=kbruch -caption "%c" %i %m  
+Icon=kbruch.png
+MiniIcon=kbruch.png
+DocPath=kbruch/index.html
+Comment=
+Comment[de]=
+Terminal=0
+Name=KBruch
+Name[de]=KBruch
