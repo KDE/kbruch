@@ -88,7 +88,7 @@ solve it. The program checks the input and gives a feedback about it.
 <para>
 &kbruch; counts how many tasks were solved at all and how many tasks were
 solved correctly. The statistics are shown to the user, but this part of the
-main window can be hided. The user can reset the statistics at any point.
+main window can be hidden. The user can reset the statistics at any point.
 </para>
 
 <para>
