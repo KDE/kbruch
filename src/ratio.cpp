@@ -177,9 +177,9 @@ bool ratio::operator==(ratio right)
 	signed short orig_sign = 1, right_sign = 1;
 
 	/* we do not the presign at this point */
-	if (abs(zaehler) != abs(right.get_zaehler()))
+	if (QABS(zaehler) != QABS(right.get_zaehler()))
 		return false;
-	if (abs(nenner) != abs(right.get_nenner()))
+	if (QABS(nenner) != QABS(right.get_nenner()))
 		return false;
 
 	/* check if the signs of the ratios are equivalent */

@@ -37,10 +37,10 @@ char show_main_txt()
 	output << "\n\n\tInput: ";
 
 	/* check, if the user entered a valid input */
-	if (!(cin >> chrInput).good())
+	if (!(std::cin >> chrInput).good())
 		chrInput = 'e';
-	cin.clear();
-	cin.ignore(INT_MAX, '\n');
+        std::cin.clear();
+        std::cin.ignore(INT_MAX, '\n');
 
 	return chrInput;
 }
@@ -56,10 +56,10 @@ void ask_parameters_txt(short & nr_ratios, unsigned int & max_md)
 	output << "\n\n\tEnter number of ratios (between 2 and 5): ";
 
 	/* get the input and check for errors */
-	if (!(cin >> tmp_short).good())
+	if (!(std::cin >> tmp_short).good())
 		tmp_short = 2;
-	cin.clear();
-	cin.ignore(INT_MAX, '\n');
+        std::cin.clear();
+        std::cin.ignore(INT_MAX, '\n');
 
 	/* we only allow 2 to 5 ratios per task, we are not able to print more
 	 * on a console in a good form */
@@ -73,10 +73,10 @@ void ask_parameters_txt(short & nr_ratios, unsigned int & max_md)
 	output << "\n\tIt must be at least " << pow(2, nr_ratios) << ": ";
 
 	/* get the input and check for errors */
-	if (!(cin >> tmp_ui).good())
+	if (!(std::cin >> tmp_ui).good())
 		tmp_ui = 2;
-	cin.clear();
-	cin.ignore(INT_MAX, '\n');
+        std::cin.clear();
+        std::cin.ignore(INT_MAX, '\n');
 
 	/* we only allow 2 to 5 ratios per task, we are not able to print more
 	 * on a console in a good form */
@@ -122,18 +122,18 @@ if (abs(result.get_zaehler() > 200))
 	output << "\n\n\tEnter the numerator: ";
 
 	/* check, if the user entered a valid input */
-	if (!(cin >> int_num).good())
+	if (!(std::cin >> int_num).good())
 		int_num = 0;
-	cin.clear();
-	cin.ignore(INT_MAX, '\n');
+        std::cin.clear();
+        std::cin.ignore(INT_MAX, '\n');
 
 	output << "\n\tEnter the denominator: ";
 
 	/* check, if the user entered a valid input */
-	if (!(cin >> int_deno).good())
+	if (!(std::cin >> int_deno).good())
 		int_deno = 1;
-	cin.clear();
-	cin.ignore(INT_MAX, '\n');
+        std::cin.clear();
+        std::cin.ignore(INT_MAX, '\n');
 
 	/* if the result is smaller than 0, the minus must be given
 	 * to the numerator */
@@ -161,14 +161,14 @@ if (abs(result.get_zaehler() > 200))
 		output << "\n\n\tThe correct result is:\n" << endl;
 		output << qSetW(8) << result << endl;
 		output << "\n\n\tpress ENTER to go on: ";
-		cin.ignore(INT_MAX, '\n');
-		cin.clear();
+                std::cin.ignore(INT_MAX, '\n');
+                std::cin.clear();
 		return 0;
 	} else {
 		output << "\n\n\tYes, you entered the correct result." << endl;
 		output << "\tPress ENTER to go on: ";
-		cin.ignore(INT_MAX, '\n');
-		cin.clear();
+                std::cin.ignore(INT_MAX, '\n');
+                std::cin.clear();
 		return 1;
 	}
 }
@@ -182,8 +182,8 @@ void show_about_txt()
 	output << endl << "\n\t\tHomepage: " << HOMEPAGE << endl;
 	output << "\n\t\tMaintainer: " << MAINTAINER << " <" << MAINTAINER_EMAIL;
 	output << ">" << endl << "\n\n\tPress ENTER to go on: ";
-	cin.ignore(INT_MAX, '\n');
-	cin.clear();
+        std::cin.ignore(INT_MAX, '\n');
+        std::cin.clear();
 	return;
 }
 
@@ -242,10 +242,10 @@ int gui_konsole(void)
 				output << "\n\tInput: ";
 
 				/* check, if the user entered a valid input */
-				if (!(cin >> chrInput2).good())
+				if (!(std::cin >> chrInput2).good())
 					chrInput2 = 'n';
-				cin.clear();
-				cin.ignore(INT_MAX, '\n');
+                                std::cin.clear();
+                                std::cin.ignore(INT_MAX, '\n');
 
 				/* check, if the user wants to change the task parameter */
 				if (chrInput2 == 'c' || chrInput2 == 'C')
@@ -325,8 +325,8 @@ int main(int argc, char * argv[])
 				output << qSetW(8) << ergebnis << endl;
 				output << "Press ENTER to go on or stop program ";
 				output << "by pressing Ctrl+C" << endl;
-				cin.get();
-				cin.clear();
+                                std::cin.get();
+                                std::cin.clear();
 			} while (1);
 		}
 	} /* for (...) -> loop through all cmd parameters */
