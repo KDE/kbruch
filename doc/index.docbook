@@ -349,6 +349,9 @@ Program and documentation Copyright, 2001-2003 Sebastian Stein
 		Anne-Marie Mahfouf for managing the &kde; Edu project
 	</para></listitem>
 	<listitem><para>
+		Klas Kalass for helping design the interface
+	</para></listitem>
+	<listitem><para>
 		Eva Brucherseifer for writing
 		<application>KMath</application> (&kbruch;'s GUI is
 		based on this work)
