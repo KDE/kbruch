@@ -1,6 +1,10 @@
 what is left to do
 ==================
 
+	* save/restore the current stats and settings 
+
+	* maybe remove the NEW action
+
 	* maybe use int instead of short because source easier to read
 
 	* maybe split class task in representation, calculate and generation
