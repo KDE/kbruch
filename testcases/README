@@ -1,0 +1,72 @@
+In this directory I will store the testcases for KBruch. A file containing a
+test suite for a "class" has the following file name:
+
+"class"_test.cpp
+
+In this file there is a class (struct) named "class"_test_suite and the class
+containing the test cases. This class is called "class"_test. Every member
+function of the original class is tested in a seperated member function of the
+"class"_test class. Those functions are named
+
+"class"_test::test_"memberFunction"() {...}
+
+Before you can compile it, you have to make symlinks from the source directory
+to this directory. The simplest way is to use the following bash script:
+
+-----SNIP-----
+
+#!/bin/bash
+
+# save the current directory
+#
+current=`pwd`
+
+# delete all symbolic links
+#
+rm `find . -type l`
+
+# now go the source directory
+#
+cd ../src
+
+echo "Createing symlinks to the source files..."
+
+# make a symlink from every *.cpp file to this directory
+#
+for a in `ls *.cpp`
+do
+   ln -s ../src/$a ../testcases/$a
+done
+
+# make a symlink from every *.h file to this directory
+#
+for a in `ls *.h`
+do
+   ln -s ../src/$a ../testcases/$a
+done
+
+# and back to the testcases directory
+#
+cd $current
+
+-----SNIP-----
+
+And you need the boost library installed. I think this will be the hardest
+thing. You can get boost from http://www.boost.org/
+
+If you want to compile the whole tests not under Linux using gcc, you maybe
+have to edit the Makefile.am in this directory to correctly link against
+libboost_unit_test_framework-YOURCOMPILER. Edit the following line in
+Makefile.am:
+
+kbruch_test_LDADD   = -lboost_unit_test_framework-gcc $(LIB_KDEUI)
+
+I hope someone finds a portable way to do this Makefile stuff. Please fix it,
+I'm not a Automake/Autoconf guru!
+
+If you were able to compile it, you can execute the test case program
+kbruch_test from within this directory.
+
+I hope this helps a little bit.
+
+Sebastian Stein <seb.kde@hpfsc.de>
