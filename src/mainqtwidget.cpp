@@ -110,6 +110,7 @@ MainQtWidget::MainQtWidget()
 
 	// now show the last exercise
 	m_exercises->showPage(SettingsClass::activeExercise());
+	slotAboutToShowPage(m_exercises->pageWidget(m_exercises->activePageIndex()));
 }
 
 MainQtWidget::~MainQtWidget()
