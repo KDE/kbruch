@@ -30,6 +30,7 @@
 #include <klocale.h>
 #include <qtooltip.h>
 #include <khelpmenu.h>
+#include <kpopupmenu.h>
 
 #ifdef DEBUG
 #include <iostream.h>
