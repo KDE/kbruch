@@ -125,7 +125,7 @@ void MainQtWidget::readOptions()
 	m_maxMainDenominator = SettingsClass::max_main_denominator();
 
 	/* make sure that we can load config files with corrupted values */
-	if (m_mulDiv == true and pow(2, m_nrRatios) > m_maxMainDenominator)
+	if (m_mulDiv == true && pow(2, m_nrRatios) > m_maxMainDenominator)
 	{
 		m_nrRatios = 2;
 		m_maxMainDenominator = 10;
