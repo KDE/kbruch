@@ -323,7 +323,7 @@ void TaskView::nextTask()
 			op_lab_vek[tmp_counter]->setText("x");
 			break;
 		case DIV :
-			op_lab_vek[tmp_counter]->setText(i18n(":"));
+			op_lab_vek[tmp_counter]->setText(":");
 			break;
 		} /* switch (operation) */
 	} /* for (tmp_counter = 0; tmp_counter < nr_ratios - 1; tmp_counter++) */
@@ -501,7 +501,7 @@ void TaskView::newLayout()
 	if (add_sub == YES && mul_div == NO)
 		setCaption(i18n("Addition & Subtraction Task"));
 	if (add_sub == NO && mul_div == YES)
-		setCaption(i18n("Multiplication & Division Ttask"));
+		setCaption(i18n("Multiplication & Division Task"));
 	if (add_sub == YES && mul_div == YES)
 		setCaption(i18n("Task with All 4 Operations"));
 

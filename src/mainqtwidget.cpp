@@ -84,7 +84,7 @@ MainQtWidget::~MainQtWidget()
 void MainQtWidget::setupActions()
 {
 	// new task action
-	m_NewTaskAction = new KAction(i18n("&New Task"), "filenew", KStdAccel::shortcut(KStdAccel::New), 
+	m_NewTaskAction = new KAction(i18n("&New Task"), "filenew", KStdAccel::shortcut(KStdAccel::New),
 				      this, SLOT(NewTask()), 
 				      actionCollection(), "NewTask");
 
@@ -93,7 +93,7 @@ void MainQtWidget::setupActions()
 
 	// a label just describing the Number of terms ComboBox
 	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0, "kde toolbar widget");
-	m_NrOfTermsLabelAction = new KWidgetAction(m_NrOfTermsLabel, i18n("Terms:"), ALT+Key_T, 
+	m_NrOfTermsLabelAction = new KWidgetAction(m_NrOfTermsLabel, i18n("Terms:"), ALT+Key_T,
 						   this, SLOT(NrOfTermsBoxSlot()), 
 						   actionCollection(), "NrOfTermsLabelAction");
 
@@ -103,7 +103,7 @@ void MainQtWidget::setupActions()
 	m_NrOfTermsBox->insertItem("3");
 	m_NrOfTermsBox->insertItem("4");
 	m_NrOfTermsBox->insertItem("5");
-	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of terms"), ALT+Key_T, 
+	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of terms"), ALT+Key_T,
 						 this, SLOT(NrOfTermsBoxSlot()), 
 						 actionCollection(), "NrOfTermsBoxAction");
 
@@ -111,8 +111,8 @@ void MainQtWidget::setupActions()
 	QObject::connect(m_NrOfTermsBox, SIGNAL(activated(int)), this, SLOT(NrOfTermsBoxSlot()));
 
 	// a label just describing the max. main denominator ComboBox
-	m_MaxMainDenominatorLabel = new QLabel(i18n("Max. Main Denominator:"), 0, "kde toolbar widget");
-	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Max. Main Denominator:"), ALT+Key_T, 
+	m_MaxMainDenominatorLabel = new QLabel(i18n("Max. main denominator:"), 0, "kde toolbar widget");
+	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Max. Main Denominator:"), ALT+Key_T,
 							    this, SLOT(MaxMainDenominatorBoxSlot()), 
 							    actionCollection(), "MaxMainDenominatorLabelAction");
 
@@ -122,7 +122,7 @@ void MainQtWidget::setupActions()
 	m_MaxMainDenominatorBox->insertItem("20");
 	m_MaxMainDenominatorBox->insertItem("30");
 	m_MaxMainDenominatorBox->insertItem("50");
-	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal main denominator"), ALT+Key_T, 
+	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal main denominator"), ALT+Key_T,
 							  this, SLOT(MaxMainDenominatorBoxSlot()), 
 							  actionCollection(), "MaxMainDenominatorBoxAction");
 
