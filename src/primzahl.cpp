@@ -174,8 +174,13 @@ void primzahl::find_next()
 				break;
 
 		/* if we tried all known numbers and found no divisor, well,
-		 * we are happy to have found a new prime number */
-		if (current_pos == prim_vector.end())
+		 * we are happy to have found a new prime number
+		 *
+		 * we found a prime number, because we only have to test the given 
+		 * number against all known prime numbers smaller square root of the 
+		 * number */
+		if ((*current_pos * *current_pos > new_prim)
+				|| (current_pos == prim_vector.end()))
 			break;
 	}
 	while(1);
