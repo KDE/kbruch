@@ -49,12 +49,6 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	// we don't want to start directly on the border, so add the margin
 	int old_x = _MARGIN_X;
 
-	// strings holding numerator, denominator and the operation sign
-//	QString str_numerator, str_denominator, str_operation;
-
-	// operation sign as number
-//	short tmp_operation;
-
 	// start the painter
 	QPainter paint(this);
 
