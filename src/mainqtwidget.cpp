@@ -92,8 +92,8 @@ void MainQtWidget::setupActions()
 	KStdAction::quit(kapp, SLOT(quit()), actionCollection());
 
 	// a label just describing the Number of terms ComboBox
-	m_NrOfTermsLabel = new QLabel(i18n("Number of terms:"), 0);
-	m_NrOfTermsLabelAction = new KWidgetAction(m_NrOfTermsLabel, i18n("Number of terms:"), ALT+Key_T, this, SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsLabelAction");
+	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0);
+	m_NrOfTermsLabelAction = new KWidgetAction(m_NrOfTermsLabel, i18n("Terms:"), ALT+Key_T, this, SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsLabelAction");
 
 	// the ComboBox holding possible values for term number
 	m_NrOfTermsBox = new QComboBox();
@@ -107,8 +107,8 @@ void MainQtWidget::setupActions()
 	QObject::connect(m_NrOfTermsBox, SIGNAL(activated(int)), this, SLOT(NrOfTermsBoxSlot()));
 
 	// a label just describing the max. main denominator ComboBox
-	m_MaxMainDenominatorLabel = new QLabel(i18n("Maximal main denominator:"), 0);
-	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Maximal main denominator:"), ALT+Key_T, this, SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorLabelAction");
+	m_MaxMainDenominatorLabel = new QLabel(i18n("Max. Main Denominator:"), 0);
+	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Max. Main Denominator:"), ALT+Key_T, this, SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorLabelAction");
 
 	// the ComboBox holding possible values for the max. main denominator
 	m_MaxMainDenominatorBox = new QComboBox();
