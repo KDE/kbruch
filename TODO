@@ -1,39 +1,7 @@
 what is left to do
 ==================
 
-	* maybe use int instead of short because source easier to read
-
 	* maybe split class task in representation, calculate and generation
-
-	* (integrate KBruch as part into KMath -> KMath isn't maintained at the
-	   moment)
-
-Klas Kalass wants to set different colors within KBruch
-=======================================================
-
-> Mmh, dann mal ganz konkret, wo waeren individuelle Farben wuenschenswert?
-> Fuer die Operationen, Terme, Bruchstriche?
-Mein Wunsch (ich habe gerade kein kbruch auf diesem Rechner, muss also aus der
-Erinnerung zehren):
- - statistics (linker Bereich):
-   - Hintergrund
-   - Schriftfarbe (alles was jetzt schwarz ist)
-   - Farbe "korrekt"
-   - Farbe "falsch"
-
- - work (rechter Bereich)
-   - Hintergrund (auch Hintergrundfarbe der Editfelder)
-   - Schriftfarbe (alles was jetzt schwarz ist)
-   - Schriftfarbe "korrekt"
-   - Schriftfarbe "falsch"
-
-& evtl. auch die Schriftart einstellbar machen
-
-Mir fällt so spontan nicht ein, warum Operationen, Terme oder Bruchstriche
-individuelle Farben bekommen sollten, es sei denn Du baust einen Lernmodus
-ein, in dem die einzelnen Bestandteile eines Bruches erklärt und benannt
-werden (und dann auch zur besseren Unterscheidbarkeit farbig hervorgehoben
-werden).
 
 feature request
 ===============
@@ -41,5 +9,3 @@ feature request
 - a visual representation of fractions in circles, rectangeles, ... for
 beginners
 - the calculation with 'mixed numbers' like  2 1/3 + 5 1/7 =
-- train actions like   1/3 = 3/9 or   15/45 = 1/3. I don't know the Englisch
-words for this actions.
