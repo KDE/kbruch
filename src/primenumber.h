@@ -1,5 +1,5 @@
 /***************************************************************************
-                          primzahl.h  -  class primzahl
+                          primenumber.h  -  class primenumber
                              -------------------
     begin                : Tue Nov 27 16:40:42 CET 2001
     copyright            : (C) 2001 by Sebastian Stein
@@ -30,14 +30,14 @@ typedef QValueVector<uint> UnsignedIntArray;
  *  algorithm should reduce calculation time and speed up every program using
  *  this prime number class.
  *  \author Sebastian Stein */
-class primzahl
+class primenumber
 {
 public:
 	/** constructor */
-	primzahl();
+	primenumber();
 
 	/** destructor */
-	~primzahl();
+	~primenumber();
 
 	/** returns wether the given number is a prime number */
 	short isPrimeNumber(uint number);

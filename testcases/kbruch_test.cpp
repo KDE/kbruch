@@ -20,7 +20,7 @@
 using boost::unit_test_framework::test_suite;
 
 // the test classes
-#include "primzahl_test.cpp"
+#include "primenumber_test.cpp"
 
 // test program entry point
 test_suite* init_unit_test_suite(int /* argc */, char** /* argv */)
@@ -29,7 +29,7 @@ test_suite* init_unit_test_suite(int /* argc */, char** /* argv */)
 	std::auto_ptr<test_suite> top_test_suite(BOOST_TEST_SUITE("Master test suite"));
 
 	// add test suites to the top test suite
-	top_test_suite->add(new primzahl_test_suite());
+	top_test_suite->add(new primenumber_test_suite());
 
 	return top_test_suite.release();
 }

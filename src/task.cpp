@@ -471,7 +471,7 @@ int task::make_main_dn(unsigned int pmax_md, unsigned short max_product_length)
 unsigned short task::prim_factor_nr(int number)
 {
 	unsigned int tmp_number = number;
-	primzahl primenumber;
+	primenumber primenumber;
 	Tprime_factor prim_fac_struct;
 
 	/* delete all the prime factors of the old main denominator */

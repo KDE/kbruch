@@ -21,7 +21,7 @@
 /*#define DEBUG*/
 
 #include "ratio.h"
-#include "primzahl.h"
+#include "primenumber.h"
 
 #include <stdlib.h>
 #include <vector>

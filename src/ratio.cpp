@@ -18,7 +18,7 @@
 #include <kdebug.h>
 
 #include "ratio.h"
-#include "primzahl.h"
+#include "primenumber.h"
 
 /* ----- public member functions ----- */
 
@@ -204,7 +204,7 @@ bool ratio::operator==(ratio right)
 void ratio::reduce()
 {
 	/* we try prime numbers as divisors; I think it is the fastet way to do */
-	primzahl number;
+	primenumber number;
 	short sign_zaehler = 0, sign_nenner = 0;
 
 	/* make the whole ratio positive; save the signs; it is easier to reduce

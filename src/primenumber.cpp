@@ -1,5 +1,5 @@
 /***************************************************************************
-                          primzahl.cpp  -  source code of class primzahl
+                          primenumber.cpp  -  source code of class primenumber
                              -------------------
     begin                : Tue Nov 27 16:40:42 CET 2001
     copyright            : (C) 2001 by Sebastian Stein
@@ -16,15 +16,15 @@
  ***************************************************************************/
 
 #include <kdebug.h>
-#include "primzahl.h"
+#include "primenumber.h"
 
 /* ----- the global prime number vector ----- */
-UnsignedIntArray primzahl::prim_vector;
+UnsignedIntArray primenumber::prim_vector;
 
 /* ----- public member functions ----- */
 
-/*  constructor for class primzahl */
-primzahl::primzahl()
+/*  constructor for class primenumber */
+primenumber::primenumber()
 {
 	/* if the vector is empty, we will add the first 2 prime numbers */
 	if (prim_vector.empty())
@@ -38,21 +38,21 @@ primzahl::primzahl()
 	}
 	current_pos = prim_vector.begin();
 #ifdef DEBUG
-	kdDebug() << "constructor primzahl" << endl;
+	kdDebug() << "constructor primenumber" << endl;
 #endif
 }
 
-/* destructor for class primzahl */
-primzahl::~primzahl()
+/* destructor for class primenumber */
+primenumber::~primenumber()
 {
 #ifdef DEBUG
-	kdDebug() << "destructor primzahl" << endl;
+	kdDebug() << "destructor primenumber" << endl;
 #endif
 }
 
 /* check, if the given number is a prime number;
  * return 0 if no, 1 if yes */
-short primzahl::isPrimeNumber(uint number)
+short primenumber::isPrimeNumber(uint number)
 {
 	/* 0 is not a prime number */
 	if (number == 0)
@@ -78,7 +78,7 @@ short primzahl::isPrimeNumber(uint number)
 }
 
 /* returns next prime number */
-unsigned int primzahl::get_next()
+unsigned int primenumber::get_next()
 {
 	/* if we do not know the next number, we have to find it first */
 	if (current_pos == prim_vector.end() ||
@@ -97,19 +97,19 @@ unsigned int primzahl::get_next()
 }
 
 /* returns the first prime number of the vector */
-unsigned int primzahl::get_first() const
+unsigned int primenumber::get_first() const
 {
 	return *prim_vector.begin();
 }
 
 /* returns the last prime number in the vector */
-unsigned int primzahl::get_last() const
+unsigned int primenumber::get_last() const
 {
 	return *(prim_vector.end() - 1);
 }
 
 /* returns currently selected prime number */
-unsigned int primzahl::get_current() const
+unsigned int primenumber::get_current() const
 {
 	if (current_pos == prim_vector.end() + 1)
 		return get_last();
@@ -117,19 +117,19 @@ unsigned int primzahl::get_current() const
 }
 
 /* set current_pos to the first prime number */
-void primzahl::move_first()
+void primenumber::move_first()
 {
 	current_pos = prim_vector.begin();
 }
 
 /* set current_pos to the last prime number */
-void primzahl::move_last()
+void primenumber::move_last()
 {
 	current_pos = prim_vector.end() - 1;
 }
 
 /* move to the next prime number */
-void primzahl::move_forward()
+void primenumber::move_forward()
 {
 	/* if we are at the end of prim_vector, we have to find a new number */
 	if (current_pos == prim_vector.end() ||
@@ -141,7 +141,7 @@ void primzahl::move_forward()
 }
 
 /* move one prime number back */
-void primzahl::move_back()
+void primenumber::move_back()
 {
 	/* current_pos must be at least pointing to the first element
 	 * of our vector after this function */
@@ -150,7 +150,7 @@ void primzahl::move_back()
 }
 
 /* displays the whole prim_vector on stdout; just for debugging */
-void primzahl::display_all()
+void primenumber::display_all()
 {
 	unsigned int dummy = 0; // count the numbers
 
@@ -165,7 +165,7 @@ void primzahl::display_all()
 /* ----- private member functions ----- */
 
 /* finds next prime number and adds it to the vector */
-void primzahl::find_next()
+void primenumber::find_next()
 {
 	/* our new prime number, must be bigger then the last one */
 	unsigned int new_prim = *(prim_vector.end() - 1);
