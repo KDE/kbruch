@@ -89,6 +89,9 @@ class MainQtWidget : public KMainWindow
 		void NrOfTermsBoxSlot();
 		void MaxMainDenominatorBoxSlot();
 		void OperationBoxSlot();
+
+	protected:
+		bool queryExit();
 };
 
 #endif // MainQtWidget

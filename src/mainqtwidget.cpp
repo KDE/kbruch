@@ -76,7 +76,6 @@ MainQtWidget::MainQtWidget()
 
 MainQtWidget::~MainQtWidget()
 {
-	writeOptions();
 }
 
 
@@ -264,6 +263,11 @@ void MainQtWidget::OperationBoxSlot()
 
 	// set the new task parameters
 	(void) m_taskview->setTaskParameters(m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
+}
+
+bool MainQtWidget::queryExit()
+{
+	writeOptions();
 }
 
 #include "mainqtwidget.moc"
