@@ -268,6 +268,7 @@ void MainQtWidget::OperationBoxSlot()
 bool MainQtWidget::queryExit()
 {
 	writeOptions();
+	return true;
 }
 
 #include "mainqtwidget.moc"

@@ -17,6 +17,8 @@
 
 #include "kbruch.h"
 
+#include <math.h>
+
 #include <iostream>
 
 static QTextStream output(stdout, IO_ReadWrite);
