@@ -57,8 +57,11 @@ static const char *description =
 	
 static KCmdLineOptions options[] =
 {
-  { 0, 0, 0 }
-  // INSERT YOUR COMMANDLINE OPTIONS HERE
+	{ "t", 0, 0 },
+	{ "text", I18N_NOOP("start text mode user interface"), 0 },
+	{ "g", 0, 0 },
+	{ "generate", I18N_NOOP("generates tasks and solutions without stopping"), 0 },
+	{ 0, 0, 0 }
 };
 
 /* activate this macro, if you want to build a text gui for MS DOS */
