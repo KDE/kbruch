@@ -20,6 +20,7 @@
 
 #include <kaccel.h>
 #include <kapplication.h>
+#include <kconfig.h>
 #include <kdebug.h>
 #include <kmenubar.h>
 #include <kpopupmenu.h>
@@ -41,6 +42,11 @@ MainQtWidget::MainQtWidget()
 #ifdef DEBUG
 	kdDebug() << "constructor MainQtWidget" << endl;
 #endif
+
+	// get the config file
+	m_config = kapp->config();
+	readOptions();
+
 	// creating KActions, used by the kbruchui.rc file
 	setupActions();
 
@@ -52,13 +58,7 @@ MainQtWidget::MainQtWidget()
 	setCentralWidget(splitter);
 
 	// create the statistic view
-	m_statview = new StatisticsView(splitter, "StatisticsView");
-
-	// setting default values for the first task
-	m_addSub = true;
-	m_mulDiv = false;
-	m_nrRatios = 2;
-	m_maxMainDenominator = 10;
+	m_statview = new StatisticsView(splitter, "StatisticsView", m_config);
 
 	// create the task view with the given defaults
 	m_taskview = new TaskView(splitter,"TaskView", m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
@@ -76,10 +76,29 @@ MainQtWidget::MainQtWidget()
 
 MainQtWidget::~MainQtWidget()
 {
+	writeOptions();
 }
 
 
 /* ------ private member functions ------ */
+
+void MainQtWidget::readOptions()
+{
+	m_config->setGroup("Task");
+	m_addSub = m_config->readBoolEntry("addsub", true);
+	m_mulDiv = m_config->readBoolEntry("muldiv", false);
+	m_nrRatios = m_config->readNumEntry("number_ratios", 2);
+	m_maxMainDenominator = m_config->readNumEntry("max_main_denominator", 10);
+}
+
+void MainQtWidget::writeOptions()
+{
+	m_config->setGroup("Task");
+	m_config->writeEntry("addsub", m_addSub);
+	m_config->writeEntry("muldiv", m_mulDiv);
+	m_config->writeEntry("number_ratios", m_nrRatios);
+	m_config->writeEntry("max_main_denominator", m_maxMainDenominator);
+}
 
 void MainQtWidget::setupActions()
 {
@@ -103,9 +122,8 @@ void MainQtWidget::setupActions()
 	m_NrOfTermsBox->insertItem("3");
 	m_NrOfTermsBox->insertItem("4");
 	m_NrOfTermsBox->insertItem("5");
-	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of terms"), ALT+Key_T,
-						 this, SLOT(NrOfTermsBoxSlot()),
-						 actionCollection(), "NrOfTermsBoxAction");
+	m_NrOfTermsBox->setCurrentItem(m_nrRatios - 2);
+	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of terms"), ALT+Key_T, this, SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsBoxAction"); 
 
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_NrOfTermsBox, SIGNAL(activated(int)), this, SLOT(NrOfTermsBoxSlot()));
@@ -122,9 +140,18 @@ void MainQtWidget::setupActions()
 	m_MaxMainDenominatorBox->insertItem("20");
 	m_MaxMainDenominatorBox->insertItem("30");
 	m_MaxMainDenominatorBox->insertItem("50");
-	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal main denominator"), ALT+Key_T,
-							  this, SLOT(MaxMainDenominatorBoxSlot()),
-							  actionCollection(), "MaxMainDenominatorBoxAction");
+	switch (m_maxMainDenominator)
+	{
+		case 10 : m_MaxMainDenominatorBox->setCurrentItem(0);
+					 break;
+		case 20 : m_MaxMainDenominatorBox->setCurrentItem(1);
+					 break;
+		case 30 : m_MaxMainDenominatorBox->setCurrentItem(2);
+					 break;
+		case 50 : m_MaxMainDenominatorBox->setCurrentItem(3);
+					 break;
+	}
+	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal main denominator"), ALT+Key_T, this, SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorBoxAction"); 
 
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_MaxMainDenominatorBox, SIGNAL(activated(int)),
@@ -141,9 +168,15 @@ void MainQtWidget::setupActions()
 	m_OperationBox->insertItem(i18n("Addition/Subtraction"));
 	m_OperationBox->insertItem(i18n("Multiplication/Division"));
 	m_OperationBox->insertItem(i18n("All Operations Mixed"));
-	m_OperationBoxAction = new KWidgetAction(m_OperationBox, i18n("Operations:"), ALT+Key_O,
-						 this, SLOT(OperationBoxSlot()),
-						 actionCollection(), "OperationBoxAction");
+	if (m_addSub == true && m_mulDiv == false)
+	{
+		m_OperationBox->setCurrentItem(0);
+	} else if (m_addSub == false && m_mulDiv == true) {
+		m_OperationBox->setCurrentItem(1);
+	} else if (m_addSub == true && m_mulDiv == true) {
+		m_OperationBox->setCurrentItem(2);
+	}
+	m_OperationBoxAction = new KWidgetAction(m_OperationBox, i18n("Operations:"), ALT+Key_O, this, SLOT(OperationBoxSlot()), actionCollection(), "OperationBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_OperationBox, SIGNAL(activated(int)), this, SLOT(OperationBoxSlot()));

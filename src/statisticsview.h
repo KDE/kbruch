@@ -18,6 +18,8 @@
 #ifndef STATISTICSVIEW_H
 #define STATISTICSVIEW_H
 
+class KConfig;
+
 class QLabel;
 class QPushButton;
 class QVBoxLayout;
@@ -40,7 +42,7 @@ class StatisticsView : public QWidget
 
 public:
 	/** constructor */
-	StatisticsView(QWidget * parent = 0, const char * name = 0);
+	StatisticsView(QWidget * parent = 0, const char * name = 0, KConfig * m_config = 0);
 
 	/** destructor */
 	~StatisticsView();
@@ -62,6 +64,7 @@ private:
 
 	unsigned int count;
 	unsigned int correct;
+	KConfig * m_config;
 
 	QPushButton * resetBtn;
 	QHBoxLayout * buttonLayout;

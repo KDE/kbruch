@@ -19,6 +19,8 @@
 
 #include <kmainwindow.h>
 
+
+class KConfig;
 class KWidgetAction;
 
 class QLabel;
@@ -44,6 +46,12 @@ class MainQtWidget : public KMainWindow
 		~MainQtWidget();
 
 	private:
+		/** read the config file */
+		void readOptions();
+
+		/** read the config file */
+		void writeOptions();
+		
 		/** pointing to the statistics view */
 		StatisticsView * m_statview;
 
@@ -73,6 +81,8 @@ class MainQtWidget : public KMainWindow
 		KWidgetAction * m_OperationLabelAction;
 
 		KAction * m_NewTaskAction;
+
+		KConfig * m_config;
 
 	private slots:
 		void NewTask();

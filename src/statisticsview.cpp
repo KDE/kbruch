@@ -27,13 +27,26 @@
 #include <qvbox.h>
 #include <qtooltip.h>
 
+#include <kconfig.h>
 #include <klocale.h>
 #include <kdebug.h>
 
 /* constructor */
-StatisticsView::StatisticsView(QWidget * parent, const char * name):
-		QWidget(parent, name)
+StatisticsView::StatisticsView(QWidget * parent, const char * name,
+										 KConfig * pConfig):
+		QWidget(parent, name), m_config(pConfig)
 {
+	/* reset the number of solved tasks */
+	if (m_config == 0)
+	{
+		count = correct = 0;
+	} else {
+		// load statistics from config file
+		m_config->setGroup("Statistics");
+		count = m_config->readNumEntry("count", 0);
+		correct = m_config->readNumEntry("correct", 0);
+	}
+
 	QPalette pal;
 	QColorGroup cg;
 #ifdef DEBUG
@@ -41,8 +54,6 @@ StatisticsView::StatisticsView(QWidget * parent, const char * name):
 	kdDebug() << "constructor StatisticsView()" << endl;
 #endif
 
-	/* reset the number of solved tasks */
-	count = correct = 0;
 
 	/* set the caption of the window */
 	//	setCaption(i18n("Statistics"));
@@ -124,6 +135,13 @@ StatisticsView::~StatisticsView()
 #ifdef DEBUG
 	kdDebug() << "destructor StatisticsView()" << endl;
 #endif
+	// save statistics for next run
+	if (m_config != 0)
+	{
+		m_config->setGroup("Statistics");
+		m_config->writeEntry("count", count);
+		m_config->writeEntry("correct", correct);
+	}
 
 	/* no need to delete any child widgets, Qt does it by itself */
 }
