@@ -24,9 +24,6 @@
 /* these includes are needed for Qt support */
 #include <qpainter.h>
 
-/* standard C++ library includes */
-#include <stdlib.h>
-
 #include "settingsclass.h"
 
 FractionBaseWidget::FractionBaseWidget(QWidget * parent = 0, const char * name = 0) :
@@ -72,16 +69,16 @@ void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_p
 	//         11            1
 	// if yes, -- becomes  2 -
 	//         5             5
-	int_numerator = tmp_ratio.get_zaehler();
-	int_denominator = tmp_ratio.get_nenner();
-	if (show_mixed == true && abs(int_numerator) >= abs(int_denominator))
+	int_numerator = tmp_ratio.numerator();
+	int_denominator = tmp_ratio.denominator();
+	if (show_mixed == true && QABS(int_numerator) >= QABS(int_denominator))
 	{
 		// calculate the mixed number
 		int_mixed = int(int_numerator / int_denominator);
 
 		// the negative sign is in front of the mixed number
-		int_numerator = abs(int_numerator);
-		int_denominator = abs(int_denominator);
+		int_numerator = QABS(int_numerator);
+		int_denominator = QABS(int_denominator);
 
 		// we have to reduce the numerator by the mixed number * denominator
 		int_numerator = int_numerator % int_denominator;
@@ -98,7 +95,7 @@ void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_p
 		// don't show the ratio as mixed number
 		str_numerator.setNum(int_numerator);
 		str_denominator.setNum(int_denominator);
-	} // if (show_mixed == true && abs(int_numerator) > abs(int_denominator))
+	} // if (show_mixed == true && QABS(int_numerator) > QABS(int_denominator))
 
 	// get the text width of the current ratio
 	fontWidth = fm.width(str_numerator);

@@ -2,7 +2,7 @@
                           ratio.h  -  class ratio
                              -------------------
     begin                : Tue Nov 27 16:40:42 CET 2001
-    copyright            : (C) 2001 by Sebastian Stein
+    copyright            : (C) 2001-2004 by Sebastian Stein
     email                : seb.kde@hpfsc.de
  ***************************************************************************/
 
@@ -30,7 +30,10 @@ class ratio
 {
 public:
 	/** constructor */
-	ratio(int pzaehler = 0, int pnenner = 1);
+	ratio(int pnumerator = 0, int pdenominator = 1);
+
+	/** copy constructor */
+	ratio(const ratio & copy_ratio);
 
 	/** destructor */
 	~ratio();
@@ -39,25 +42,19 @@ public:
 	QTextStream & display(QTextStream & str) const;
 
 	/** returns the numerator */
-	int get_zaehler() const;
+	int numerator() const;
 
 	/** returns the denominator */
-	int get_nenner() const;
+	int denominator() const;
 
 	/** set numerator and reduce the ratio */
-	void set_zaehler(int pzaehler = 0);
+	void setNumerator(int pnumerator = 0, bool reduce = true);
 
 	/** set denominator and reduce the ratio */
-	void set_nenner(int pnenner = 1);
-
-	/** set numerator without reducing the ratio */
-	void set_zaehler_ohne_k(int pzaehler = 0);
-
-	/** set denominator without reducing the ratio */
-	void set_nenner_ohne_k(int pnenner = 1);
+	void setDenominator(int pdenominator = 1, bool reduce = true);
 
 	/** operator overloading for: c = object + summand */
-	ratio operator+(ratio summand);
+	ratio operator+(ratio addend);
 
 	/** operator overloading for: c = object - subtrahend */
 	ratio operator-(ratio subtrahend);
@@ -74,6 +71,12 @@ public:
 	/** compares the current ratio with a given one */
 	bool operator==(ratio right);
 
+	/** compares the current ratio with a given one */
+	bool operator<(ratio right);
+
+	/** compares the current ratio with a given one */
+	bool operator>(ratio right);
+
 	/** exchange numerator and denominator */
 	void reziproc();
 
@@ -81,10 +84,10 @@ public:
 	void reduce();
 private:
 	/** numerator */
-	int zaehler;
+	int m_numerator;
 
 	/** denominator */
-	int nenner;
+	int m_denominator;
 
 	/** change sign of the ratio */
 	void change_sign();

@@ -106,8 +106,8 @@ void task::set_ratio_n(unsigned short number, int numerator, int denominator)
 	/* do not set something outside our vector */
 	if (number > ratio_vector.size() - 1)
 		number = 0;
-	ratio_vector[number].set_zaehler(numerator); // set numerator
-	ratio_vector[number].set_nenner(denominator); // set denominator
+	ratio_vector[number].setNumerator(numerator); // set numerator
+	ratio_vector[number].setDenominator(denominator); // set denominator
 	return;
 }
 
@@ -117,8 +117,8 @@ void task::set_ratio_n(unsigned short number, ratio fraction)
 	/* do not set something outside our vector */
 	if (number > ratio_vector.size() - 1)
 		number = 0;
-	ratio_vector[number].set_zaehler(fraction.get_zaehler()); // set numerator
-	ratio_vector[number].set_nenner(fraction.get_nenner()); // set denominator
+	ratio_vector[number].setNumerator(fraction.numerator()); // set numerator
+	ratio_vector[number].setDenominator(fraction.denominator()); // set denominator
 	return;
 }
 
@@ -203,7 +203,7 @@ QTextStream & task::display(QTextStream & str)
 	for (ratio_pointer = ratio_vector.begin();
 	        ratio_pointer != ratio_vector.end(); ratio_pointer++)
 	{
-		str << qSetW(5) << ratio_pointer->get_zaehler() << "   ";
+		str << qSetW(5) << ratio_pointer->numerator() << "   ";
 	}
 	str << endl;
 
@@ -228,8 +228,8 @@ QTextStream & task::display(QTextStream & str)
 	        ratio_pointer != ratio_vector.end(); ratio_pointer++)
 	{
 		if (ratio_pointer == ratio_vector.end() - 1)
-			return str << qSetW(5) << ratio_pointer->get_nenner() << "   ";
-		str << qSetW(5) << ratio_pointer->get_nenner() << "   ";
+			return str << qSetW(5) << ratio_pointer->denominator() << "   ";
+		str << qSetW(5) << ratio_pointer->denominator() << "   ";
 	}
 	return str;
 }
@@ -346,7 +346,7 @@ ratio task::product(RatioArray::iterator & ratio_pointer,
 {
 	/* the function's parameters are pointing to the next ratio;
 	 * to the starting point of the product */
-	ratio product(ratio_pointer->get_zaehler(), ratio_pointer->get_nenner());
+	ratio product(ratio_pointer->numerator(), ratio_pointer->denominator());
 
 #ifdef DEBUG
 
@@ -572,7 +572,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 			tmp_deno = int((double(rand()) / RAND_MAX) * pmax_md) + 1;
 		}
 		while (main_denominator % tmp_deno != 0);
-		(*ratio_pointer).set_nenner(tmp_deno);
+		(*ratio_pointer).setDenominator(tmp_deno);
 	}
 
 	/* if the ratio is connected to a mul or div operation, we have to do some
@@ -625,7 +625,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 					(*prim_fac_pointer).flag = USED;
 
 					/* store the factor as our new denominator for this ratio */
-					(*ratio_pointer).set_nenner_ohne_k((*prim_fac_pointer).factor);
+					(*ratio_pointer).setDenominator((*prim_fac_pointer).factor, false);
 					unused_fac--; /* now there is one factor less avaible */
 
 					/* move to the next ratio */
@@ -664,7 +664,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 					(*prim_fac_pointer).flag = USED;
 
 					/* store the factor as our new denominator for this ratio */
-					(*ratio_pointer).set_nenner_ohne_k((*prim_fac_pointer).factor);
+					(*ratio_pointer).setDenominator((*prim_fac_pointer).factor, false);
 					unused_fac--; /* now there is one factor less avaible */
 
 					/* move to the next ratio */

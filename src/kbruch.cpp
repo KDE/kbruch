@@ -117,9 +117,9 @@ short run_task_txt(short add_sub, short mul_div,
 	{
 		klausur.create_task(max_md, nr_ratios, add_sub, mul_div);
 		result = klausur.solve(); /* solve the task */
-if (abs(result.get_zaehler() > 200))
-	output << "DEBUG MESSAGE zaehler: " << result.get_zaehler() << endl;
-	} while (abs(result.get_zaehler()) > 200);
+if (QABS(result.numerator() > 200))
+	output << "DEBUG MESSAGE zaehler: " << result.numerator() << endl;
+	} while (QABS(result.numerator()) > 200);
 
 	output << qSetW(8) << klausur << endl; /* display the task */
 
@@ -148,11 +148,11 @@ if (abs(result.get_zaehler() > 200))
 	}
 
 	/* check if the user entered the right result */
-	if (int_num != result.get_zaehler() || int_deno != result.get_nenner())
+	if (int_num != result.numerator() || int_deno != result.denominator())
 		wrong = TRUE;
 
 	/* we accept the result, if it zero, but we do not accept 0/0 */
-	if (int_num == 0 && result.get_zaehler() == 0 && int_deno != 0)
+	if (int_num == 0 && result.numerator() == 0 && int_deno != 0)
 		wrong = FALSE;
 
 	/* inform the user, if he entered the right value */
@@ -321,7 +321,7 @@ int main(int argc, char * argv[])
 				{
 					klausur.create_task(100, 5, YES, YES);
 					ergebnis = klausur.solve();
-				} while (abs(ergebnis.get_zaehler()) > 200);
+				} while (QABS(ergebnis.numerator()) > 200);
 
 				output << "Task:" << endl;
 				output << qSetW(8) << klausur << endl;

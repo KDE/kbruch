@@ -21,9 +21,6 @@
 /* these includes are needed for Qt support */
 #include <qpainter.h>
 
-/* standard C++ library includes */
-#include <stdlib.h>
-
 ResultWidget::ResultWidget(QWidget * parent = 0, const char * name = 0,
 													const ratio para_result = *new ratio()) :
 			FractionBaseWidget(parent, name), m_result(para_result)
@@ -80,7 +77,7 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	paintMiddle(paint, QString("="), old_x, fm, m_colorOperation);
 	paintRatio(paint, m_result, old_x, fm, false);
 
-	if (abs(m_result.get_zaehler()) >= abs(m_result.get_nenner()))
+	if (QABS(m_result.numerator()) >= QABS(m_result.denominator()))
 	{
 		// result as mixed number
 		paintMiddle(paint, QString("="), old_x, fm, m_colorOperation);

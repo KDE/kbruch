@@ -2,7 +2,7 @@
                           ratio.cpp  -  source code of class ratio
                              -------------------
     begin                : Tue Nov 27 16:40:42 CET 2001
-    copyright            : (C) 2001 by Sebastian Stein
+    copyright            : (C) 2001-2004 by Sebastian Stein
     email                : seb.kde@hpfsc.de
  ***************************************************************************/
 
@@ -23,15 +23,29 @@
 /* ----- public member functions ----- */
 
 /* constructor */
-ratio::ratio(int pzaehler, int pnenner):zaehler(pzaehler), nenner(pnenner)
+ratio::ratio(int pnumerator, int pdenominator):m_numerator(pnumerator), m_denominator(pdenominator)
 {
-	/* denominator is never allowed to be 0 */
-	if (!nenner)
-		nenner = 1;
-	reduce(); // kuerzen
 #ifdef DEBUG
 	kdDebug() << "constructor ratio" << endl;
 #endif
+
+	// denominator is never allowed to be 0
+	if (!m_denominator)
+		m_denominator = 1;
+
+	// reduce the new ratio
+	reduce();
+}
+
+/* copy constructor */
+ratio::ratio(const ratio & copy_ratio)
+{
+#ifdef DEBUG
+	kdDebug() << "copy constructor ratio" << endl;
+#endif
+
+	setNumerator(copy_ratio.numerator(), false);
+	setDenominator(copy_ratio.denominator(), false);
 }
 
 /* destructor */
@@ -45,75 +59,72 @@ ratio::~ratio()
 /* displays the ratio on stdout; just for debugging */
 QTextStream & ratio::display(QTextStream & str) const
 {
-	int weite = str.width();
+	int tmp_width = str.width();
 	str << qSetW(5) << " ";
-	str << qSetW(5) << zaehler << endl;
-	str << qSetW(weite) << " ";
+	str << qSetW(5) << m_numerator << endl;
+	str << qSetW(tmp_width) << " ";
 	str << " ----- " << endl;
-	str << qSetW(weite) << " ";
-	return str << qSetW(5) << nenner;
+	str << qSetW(tmp_width) << " ";
+	return str << qSetW(5) << m_denominator;
 }
 
 /* return the numerator */
-int ratio::get_zaehler() const
+int ratio::numerator() const
 {
-	return zaehler;
+	return m_numerator;
 }
 
 /* return the denominator */
-int ratio::get_nenner() const
+int ratio::denominator() const
 {
-	return nenner;
+	return m_denominator;
 }
 
 /* set the numerator */
-void ratio::set_zaehler(int pzaehler)
+void ratio::setNumerator(int pnumerator, bool reduce_it)
 {
-	zaehler = pzaehler;
-	reduce();
+	m_numerator = pnumerator;
+
+	// check, if we have to reduce the ratio
+	if (reduce_it == true)
+		reduce();
+
+	return;
 }
 
 /* set the denominator */
-void ratio::set_nenner(int pnenner)
+void ratio::setDenominator(int pdenominator, bool reduce_it)
 {
 	/* denominator is not allowed to be 0 */
-	if (!pnenner)
-		pnenner = 1;
+	if (!pdenominator)
+		pdenominator = 1;
 
-	nenner = pnenner;
-	reduce();
-}
+	m_denominator = pdenominator;
 
-/* set the numerator without reducing */
-void ratio::set_zaehler_ohne_k(int pzaehler)
-{
-	zaehler = pzaehler;
-}
+	// check, if we have to reduce the ratio
+	if (reduce_it == true)
+		reduce();
 
-/* set the denominator without reducing */
-void ratio::set_nenner_ohne_k(int pnenner)
-{
-	/* denominator is not allowed to be 0 */
-	if (!pnenner)
-		pnenner = 1;
-
-	nenner = pnenner;
+	return;
 }
 
 /* add a ratio to a ratio like c = a + b */
-ratio ratio::operator+(ratio summand)
+ratio ratio::operator+(ratio addend)
 {
-	/* this object will be returned as the sum */
-	ratio summe(0, 0);
+	// this object will be returned as the sum
+	ratio sum(0, 1);
 
-	/* calculate the numerator */
-	summe.set_zaehler(zaehler * summand.get_nenner()
-	                  + summand.get_zaehler() * nenner);
+	// calculate and set the numerator without reducing
+	sum.setNumerator(m_numerator * addend.denominator()
+                  + addend.numerator() * m_denominator, false);
 
-	/* calculate the denominator */
-	summe.set_nenner(nenner * summand.get_nenner());
+	// calculate and set the denominator without reducing
+	sum.setDenominator(m_denominator * addend.denominator(), false);
 
-	return summe;
+	// reduce the sum
+	sum.reduce();
+
+	return sum;
 }
 
 /* sub a ratio from a ratio like c = a - b */
@@ -136,12 +147,15 @@ ratio ratio::operator-(ratio subtrahend)
 /* mul a ratio with a ratio like c = a * b */
 ratio ratio::operator*(ratio factor)
 {
-	/* this object will be returned as the product */
+	// this object will be returned as the product
 	ratio product(0, 1);
 
-	/* calculate numerator and denominator */
-	product.set_zaehler(zaehler * factor.get_zaehler());
-	product.set_nenner(nenner * factor.get_nenner());
+	// calculate and set numerator and denominator without reducing
+	product.setNumerator(m_numerator * factor.numerator(), false);
+	product.setDenominator(m_denominator * factor.denominator(), false);
+
+	// reduce the product
+	product.reduce();
 
 	return product;
 }
@@ -163,11 +177,12 @@ ratio ratio::operator/(ratio divisor)
 }
 
 /* we need this for initialization during a function prototyp;
- * ratio bruch = 0 */
+ * ratio fraction = 0 */
 ratio ratio::operator=(int dummy)
 {
-	zaehler = dummy;
-	nenner = 1;
+	m_numerator = dummy;
+	m_denominator = 1;
+
 	return *this;
 }
 
@@ -176,26 +191,74 @@ bool ratio::operator==(ratio right)
 {
 	signed short orig_sign = 1, right_sign = 1;
 
-	/* we do not the presign at this point */
-	if (QABS(zaehler) != QABS(right.get_zaehler()))
+	/* we do not check the presign at this point */
+	if (QABS(m_numerator) != QABS(right.numerator()))
 		return false;
-	if (QABS(nenner) != QABS(right.get_nenner()))
+	if (QABS(m_denominator) != QABS(right.denominator()))
 		return false;
 
 	/* check if the signs of the ratios are equivalent */
-	if (zaehler < 0)
+	if (m_numerator < 0)
 		orig_sign = -1;
-	if (nenner < 0)
+	if (m_denominator < 0)
 		orig_sign *= -1;
-	if (right.get_zaehler() < 0)
+	if (right.numerator() < 0)
 		right_sign = -1;
-	if (right.get_nenner() < 0)
+	if (right.denominator() < 0)
 		right_sign *= -1;
 
 	if (orig_sign != right_sign)
 		return false;
 
 	return true;
+}
+
+bool ratio::operator<(ratio right)
+{
+	signed short sign = 1;
+	ratio tmp_ratio = ratio(m_numerator, m_denominator) - right;
+
+	// check for this == right
+	if (tmp_ratio == ratio(0, 1))
+		return false;
+
+	// get the presign of the diff
+	if (tmp_ratio.numerator() < 0)
+		sign = -1;
+	if (tmp_ratio.denominator() < 0)
+		sign *= -1;
+
+	// if the diff is negative, this is smaller then right
+	if (sign > 0)
+	{
+		return false;
+	} else {
+		return true;
+	}
+}
+
+bool ratio::operator>(ratio right)
+{
+	signed short sign = 1;
+	ratio tmp_ratio = ratio(m_numerator, m_denominator) - right;
+
+	// check for this == right
+	if (tmp_ratio == ratio(0, 1))
+		return false;
+
+	// get the presign of the diff
+	if (tmp_ratio.numerator() < 0)
+		sign = -1;
+	if (tmp_ratio.denominator() < 0)
+		sign *= -1;
+
+	// if the diff is positive, this is smaller then right
+	if (sign < 0)
+	{
+		return false;
+	} else {
+		return true;
+	}
 }
 
 /* ----- private member functions ----- */
@@ -205,30 +268,30 @@ void ratio::reduce()
 {
 	/* we try prime numbers as divisors; I think it is the fastet way to do */
 	primenumber number;
-	short sign_zaehler = 0, sign_nenner = 0;
+	short sign_numerator = 0, sign_denominator = 0;
 
 	/* make the whole ratio positive; save the signs; it is easier to reduce
 	 * the ratio, if it is positive */
-	if (zaehler < 0) // save numerator sign
+	if (m_numerator < 0) // save numerator sign
 	{
-		sign_zaehler = 1;
-		zaehler *= -1;
+		sign_numerator = 1;
+		m_numerator *= -1;
 	}
-	if (nenner < 0) // save denominator sign
+	if (m_denominator < 0) // save denominator sign
 	{
-		sign_nenner = 1;
-		nenner *= -1;
+		sign_denominator = 1;
+		m_denominator *= -1;
 	}
 
 	for (int divisor = number.get_first();
-	        divisor <= zaehler && divisor <= nenner; divisor = number.get_next())
+	        divisor <= m_numerator && divisor <= m_denominator; divisor = number.get_next())
 	{
 		if (divisor == 0)
 		{
 #ifdef DEBUG
 			kdDebug() << "ratio::reduce() -> divisor == 0 !!!" << endl;
-			kdDebug() << "zaehler: " << zaehler << endl;
-			kdDebug() << "nenner: " << nenner << endl;
+			kdDebug() << "m_numerator: " << m_numerator << endl;
+			kdDebug() << "m_denominator: " << m_denominator << endl;
 			// cin.get();
 #endif
 			/* so that the application does not crash with a floating
@@ -238,11 +301,12 @@ void ratio::reduce()
 		}
 
 		/* is the prime number a divisor of numerator and denominator? */
-		if ((zaehler % divisor == 0) && (nenner % divisor == 0))
+		if ((m_numerator % divisor == 0) && (m_denominator % divisor == 0))
 		{
 			/* reduce the ratio by the divisor */
-			zaehler /= divisor;
-			nenner /= divisor;
+			m_numerator /= divisor;
+			m_denominator /= divisor;
+
 			/* we have to go recursive, if the 2 is a divisor, because there
 			 * is no way to step one number before 2 -> there is no prime
 			 * number smaller than 2 */
@@ -254,35 +318,44 @@ void ratio::reduce()
 	} // for (unsigned int divisor = number.get_first(); ...
 
 	/* restore the correct signs */
-	if (sign_zaehler)
-		zaehler *= -1;
-	if (sign_nenner)
-		nenner *= -1;
-	if (zaehler == 0)
-		nenner = 1;
-}
+	if (sign_numerator)
+		m_numerator *= -1;
+	if (sign_denominator)
+		m_denominator *= -1;
+	if (m_numerator == 0)
+		m_denominator = 1;
 
-/* change the sign of the ratio; ratio = ratio * -1 */
-void ratio::change_sign()
-{
-	/* this would be enough to change the sign of the ratio */
-	zaehler *= -1;
-
-	/* if numerator and denominator both are negative, make them positive;
-	 * if denominator is negative and numerator positive, exchange the sign */
-	if ((zaehler < 0 && nenner < 0) || (zaehler > 0 && nenner < 0))
-	{
-		zaehler *= -1;
-		nenner *= -1;
-	}
+	return;
 }
 
 /* exchange numerator and denominator */
 void ratio::reziproc()
 {
-	int temp = zaehler;
-	zaehler = nenner;
-	nenner = temp;
+	int temp = m_numerator;
+	m_numerator = m_denominator;
+	m_denominator = temp;
+
+	return;
+}
+
+
+/* ------ private member functions ------ */
+
+/* change the sign of the ratio; ratio = ratio * -1 */
+void ratio::change_sign()
+{
+	/* this would be enough to change the sign of the ratio */
+	m_numerator *= -1;
+
+	/* if numerator and denominator both are negative, make them positive;
+	 * if denominator is negative and numerator positive, exchange the sign */
+	if ((m_numerator < 0 && m_denominator < 0) || (m_numerator > 0 && m_denominator < 0))
+	{
+		m_numerator *= -1;
+		m_denominator *= -1;
+	}
+
+	return;
 }
 
 

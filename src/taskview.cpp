@@ -240,19 +240,19 @@ void TaskView::showResult()
 	if (deno_edit->text().isEmpty() == true)
 		deno_edit->setText("1");
 
-	/* store the entered result to check it */
-	entered_result.set_zaehler_ohne_k(numer_edit->text().toInt());
-	entered_result.set_nenner_ohne_k(deno_edit->text().toInt());
+	/* store the entered result to check it, but without reducing */
+	entered_result.setNumerator(numer_edit->text().toInt(), false);
+	entered_result.setDenominator(deno_edit->text().toInt(), false);
 
 	// check the entered result; 0/1 == 0/5 -> true,
 	// but 0/1 == 0/0 -> false
 	// a 0 for denominator is never allowed (always counted as wrong)
 	//
 	// we have to get the 0 directly from the input field, because
-	// Ratio::set_nenner_ohne_k(0) will set the denominator to 1 to ensure the
-	// Ratio is valid
+	// Ratio::setDenominator(0, false) will set the denominator to 1 to ensure
+	// the Ratio is valid
 	if ( (deno_edit->text().toInt() != 0) && ((entered_result == result) ||
-		  (result.get_zaehler() == 0 && entered_result.get_zaehler() == 0)) )
+		  (result.numerator() == 0 && entered_result.numerator() == 0)) )
 	{
 		// emit the signal for correct
 		signalTaskSolvedCorrect();
@@ -285,10 +285,10 @@ void TaskView::showResult()
 
 		result_label->show(); /* show the result at the end of the task */
 
-		// if the user entered a 0 for the denominator (division by 0)
-		// we have to get the 0 directly from the input field, because
-		// Ratio::set_nenner_ohne_k(0) will set the denominator to 1 to ensure the
-		// Ratio is valid
+		// if the user entered a 0 for the denominator (division by 0) we have to
+		// get the 0 directly from the input field, because
+		// Ratio::setDenominator(0, true) will set the denominator to 1 to ensure
+		// the Ratio is valid
 		if (deno_edit->text().toInt() == 0)
 		{
 			KMessageBox::information(this,
