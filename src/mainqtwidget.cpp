@@ -154,7 +154,7 @@ void MainQtWidget::writeOptions()
 void MainQtWidget::setupActions()
 {
 	// new task action
-	m_NewTaskAction = new KAction(i18n("&New Task"), "filenew", KStdAccel::shortcut(KStdAccel::New),
+	m_NewTaskAction = new KAction(i18n("&New"), "filenew", KStdAccel::shortcut(KStdAccel::New),
 				      this, SLOT(NewTask()),
 				      actionCollection(), "NewTask");
 
@@ -420,14 +420,11 @@ void MainQtWidget::slotPrefs()
 		return;
 
 	//KConfigDialog didn't find an instance of this dialog, so lets create it : 
-	KConfigDialog* configDialog = new KConfigDialog( this, "settings",
-																		SettingsClass::self() );
+	KConfigDialog* configDialog = new KConfigDialog( this, "settings", SettingsClass::self() );
 
 	
-	TaskViewerOptionsBase * taskViewerOptions = new TaskViewerOptionsBase(0,
-																		"TaskViewerOptionsBase");
-	configDialog->addPage(taskViewerOptions, i18n("Task Viewer Settings"),
-																		"TaskViewerOptionsBase");
+	TaskViewerOptionsBase * taskViewerOptions = new TaskViewerOptionsBase(0, "TaskViewerOptionsBase");
+	configDialog->addPage(taskViewerOptions, i18n("Task Viewer Settings"), "colorize");
 
 	// User edited the configuration - update your local copies of the 
 	// configuration data 
