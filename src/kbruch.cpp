@@ -264,13 +264,15 @@ int gui_qt_ini(int argc, char * argv[])
 {
 	KAboutData aboutData( "kbruch", I18N_NOOP("KBruch"),
 		VERSION, description, KAboutData::License_GPL,
-    		"(c) 2002, Sebastian Stein", 0, 0, "bruch@hpfsc.de");
-	aboutData.addAuthor("Sebastian Stein",0, "bruch@hpfsc.de");
+    		"(c) 2002, Sebastian Stein", 0, 0, "kbruch@hpfsc.de");
+	aboutData.addAuthor("Sebastian Stein",0, "kbruch@hpfsc.de");
  	KCmdLineArgs::init( argc, argv, &aboutData );
 	KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
 	KApplication bruch;
-	bruch.setFont(QFont("helvetica", 12));
+
+	/* !! later we should use a bigger one from the libary -> kid's size */
+	bruch.setFont(KGlobalSettings::generalFont());
 
 	gui_qt * bruchApp = new gui_qt();
 	bruch.setMainWidget(bruchApp);

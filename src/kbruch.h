@@ -48,6 +48,7 @@
 #include <kaboutdata.h>
 #include <klocale.h>
 #include <qfont.h>
+#include <kglobalsettings.h>
 
 static const char *description =
 	I18N_NOOP("KBruch");
