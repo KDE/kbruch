@@ -4,11 +4,15 @@ kbruch_SOURCES = tool.cpp task.cpp ratio.cpp qt_task.cpp qt_stat.cpp qt_para.cpp
 kbruch_LDADD   =  $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)  $(LIBSOCKET)
 
 
-EXTRA_DIST = kbruch.cpp kbruch.h kbruch.desktop lo32-app-kbruch.png lo16-app-kbruch.png gui_qt.cpp gui_qt.h primzahl.cpp primzahl.h qt_para.cpp qt_para.h qt_stat.cpp qt_stat.h qt_task.cpp qt_task.h ratio.cpp ratio.h task.cpp task.h tool.cpp tool.h 
+EXTRA_DIST = kbruch.cpp kbruch.h kbruch.desktop hi32-app-kbruch.png hi16-app-kbruch.png lo32-app-kbruch.png lo16-app-kbruch.png gui_qt.cpp gui_qt.h primzahl.cpp primzahl.h qt_para.cpp qt_para.h qt_stat.cpp qt_stat.h qt_task.cpp qt_task.h ratio.cpp ratio.h task.cpp task.h tool.cpp tool.h 
 
 install-data-local:
 	$(mkinstalldirs) $(kde_appsdir)/Applications/
 	$(INSTALL_DATA) $(srcdir)/kbruch.desktop $(kde_appsdir)/Applications/kbruch.desktop
+	$(mkinstalldirs) $(kde_icondir)/hicolor/32x32/apps/
+	$(INSTALL_DATA) $(srcdir)/hi32-app-kbruch.png $(kde_icondir)/hicolor/32x32/apps/kbruch.png
+	$(mkinstalldirs) $(kde_icondir)/hicolor/16x16/apps/
+	$(INSTALL_DATA) $(srcdir)/hi16-app-kbruch.png $(kde_icondir)/hicolor/16x16/apps/kbruch.png
 	$(mkinstalldirs) $(kde_icondir)/locolor/32x32/apps/
 	$(INSTALL_DATA) $(srcdir)/lo32-app-kbruch.png $(kde_icondir)/locolor/32x32/apps/kbruch.png
 	$(mkinstalldirs) $(kde_icondir)/locolor/16x16/apps/
@@ -16,6 +20,8 @@ install-data-local:
 
 uninstall-local:
 	-rm -f $(kde_appsdir)/Applications/kbruch.desktop
+	-rm -f $(kde_icondir)/hicolor/32x32/apps/kbruch.png
+	-rm -f $(kde_icondir)/hicolor/16x16/apps/kbruch.png
 	-rm -f $(kde_icondir)/locolor/32x32/apps/kbruch.png
 	-rm -f $(kde_icondir)/locolor/16x16/apps/kbruch.png
 
