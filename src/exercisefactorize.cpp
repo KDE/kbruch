@@ -37,6 +37,7 @@
 #include "primenumber.h"
 #include "rationalwidget.h"
 #include "resultwidget.h"
+#include "settingsclass.h"
 
 /* ----- public member functions ----- */
 
@@ -44,6 +45,8 @@
 ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 		ExerciseBase(parent, name)
 {
+	QPalette pal;
+	QColorGroup cg;
 #ifdef DEBUG
 	kdDebug() << "constructor ExerciseFactorize()" << endl;
 #endif
@@ -65,6 +68,9 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	
 	m_taskLabel = new QLabel( this, "m_taskLabel" );
 	layout4->addWidget( m_taskLabel );
+
+	m_equalSignLabel = new QLabel( this, "m_equalSignLabel" );
+	layout4->addWidget( m_equalSignLabel );
 	
 	m_factorsEnteredEdit = new QLineEdit( this, "m_factorsEnteredEdit" );
 	layout4->addWidget( m_factorsEnteredEdit );
@@ -72,8 +78,6 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	
 	m_factorsResultLabel = new QLabel( this, "m_factorsResultLabel" );
 	layout4->addWidget( m_factorsResultLabel );
-	spacer1_2 = new QSpacerItem( 26, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
-	layout4->addItem( spacer1_2 );
 	
 	result_label = new QLabel( this, "result_label" );
 	layout4->addWidget( result_label );
@@ -136,7 +140,30 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	// the current task
 	QString tmp_str;
 	tmp_str.setNum(m_taskNumber);
-	m_taskLabel->setText(tmp_str + " = ");
+	m_taskLabel->setText(tmp_str);
+
+	// now set the color for the task label
+	pal = m_taskLabel->palette();
+	cg = pal.active();
+	cg.setColor(QColorGroup::Foreground, SettingsClass::numberColor());
+	pal.setActive(cg);
+	cg = pal.inactive();
+	cg.setColor(QColorGroup::Foreground, SettingsClass::numberColor());
+	pal.setInactive(cg);
+	m_taskLabel->setPalette(pal);
+
+	// the equal sign
+	m_equalSignLabel->setText("=");
+
+	// now set the color for the equal sign
+	pal = m_equalSignLabel->palette();
+	cg = pal.active();
+	cg.setColor(QColorGroup::Foreground, SettingsClass::operationColor());
+	pal.setActive(cg);
+	cg = pal.inactive();
+	cg.setColor(QColorGroup::Foreground, SettingsClass::operationColor());
+	pal.setInactive(cg);
+	m_equalSignLabel->setPalette(pal);
 
 	// the label showing the result, we hide it
 	m_factorsResultLabel->setText(" = ");
@@ -165,7 +192,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	QObject::connect(m_factor19Button, SIGNAL(clicked()), this, SLOT(slotFactor19ButtonClicked()));
 
 	// the remove last factor button
-	m_removeLastFactorButton->setText( i18n( "Remove Last Factor" ) );
+	m_removeLastFactorButton->setText( i18n( "&Remove Last Factor" ) );
 	m_removeLastFactorButton->setEnabled(false);
 	QObject::connect(m_removeLastFactorButton, SIGNAL(clicked()), this, SLOT(slotRemoveLastFactorButtonClicked()));
 
@@ -175,6 +202,15 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 
 	// that the user can start choosing the prime factors
 	m_factor2Button->setFocus();
+
+	// set the tab order
+	setTabOrder(m_factor2Button, m_factor3Button);
+	setTabOrder(m_factor3Button, m_factor5Button);
+	setTabOrder(m_factor5Button, m_factor7Button);
+	setTabOrder(m_factor7Button, m_factor11Button);
+	setTabOrder(m_factor13Button, m_factor17Button);
+	setTabOrder(m_factor17Button, m_factor19Button);
+	setTabOrder(m_factor19Button, m_removeLastFactorButton);
 }
 
 /* destructor */
@@ -422,6 +458,9 @@ void ExerciseFactorize::slotCheckButtonClicked()
 {
 	if (m_currentState == _CHECK_TASK)
 	{
+		// if nothing has been entered by the user, we don't check the result yet
+		if (m_factorsEntered.count() == 0)
+			return;
 		m_currentState = _NEXT_TASK;
 		m_checkButton->setText(i18n("N&ext Task"));
 		(void) showResult();

@@ -89,6 +89,7 @@ private:
 	uintList m_factorsResult;
 
 	QLabel* m_taskLabel;
+	QLabel* m_equalSignLabel;
 	QLineEdit* m_factorsEnteredEdit;
 	QLabel* m_factorsResultLabel;
 	QLabel* result_label;
@@ -119,7 +120,6 @@ protected:
 	QVBoxLayout* layout9;
 	QSpacerItem* spacer4;
 	QHBoxLayout* layout4;
-	QSpacerItem* spacer1_2;
 	QSpacerItem* spacer1;
 	QVBoxLayout* layout2;
 	QGridLayout* layout1;
