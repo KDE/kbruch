@@ -129,7 +129,7 @@ void MainQtWidget::setupActions()
 
 	// a label just describing the max. main denominator ComboBox
 	m_MaxMainDenominatorLabel = new QLabel(i18n("Max. main denominator:"), 0, "kde toolbar widget");
-	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Max. Main Denominator:"), ALT+Key_T,
+	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Max. main denominator:"), ALT+Key_T,
 							    this, SLOT(MaxMainDenominatorBoxSlot()),
 							    actionCollection(), "MaxMainDenominatorLabelAction");
 
