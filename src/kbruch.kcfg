@@ -38,4 +38,27 @@
 			<whatsthis>Total number of solved tasks</whatsthis>
 		</entry>
 	</group>
+
+	<group name="TaskViewer">
+		<entry type="Color" key="numberColor">
+			<label>Color of the numbers in the task view</label>
+			<default code="true">Qt::darkGreen</default>
+			<whatsthis>Color of the numbers in the task view</whatsthis>
+		</entry>
+		<entry type="Color" key="operationColor">
+			<label>Color of the operation signs in the task view</label>
+			<default code="true">Qt::blue</default>
+			<whatsthis>Color of the operation signs in the task view</whatsthis>
+		</entry>
+		<entry type="Color" key="fractionBarColor">
+			<label>Color of the fraction bars in the task view</label>
+			<default code="true">Qt::red</default>
+			<whatsthis>Color of the fraction bars in the task view</whatsthis>
+		</entry>
+		<entry type="Font" key="taskFont">
+			<label>Font used for the task view</label>
+			<default code="true">KGlobalSettings::generalFont()</default>
+			<whatsthis>Font used for the task view</whatsthis>
+		</entry>
+	</group>
 </kcfg>

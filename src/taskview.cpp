@@ -197,6 +197,20 @@ void TaskView::forceNewTask()
 	(void) nextTask();
 }
 
+
+/* ------ public slots ------ */
+
+void TaskView::update()
+{
+	// call update of components
+	m_taskWidget->updateAndRepaint();
+	m_resultWidget->updateAndRepaint();
+
+	// update for itself
+	((QWidget *) this)->update();
+}
+
+
 /* ------ private member functions ------ */
 
 /**	- checks the entered result and compares it to the task's result

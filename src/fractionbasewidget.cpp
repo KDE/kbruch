@@ -27,6 +27,8 @@
 /* standard C++ library includes */
 #include <stdlib.h>
 
+#include "settingsclass.h"
+
 FractionBaseWidget::FractionBaseWidget(QWidget * parent = 0, const char * name = 0) :
 			QWidget(parent, name)
 {
@@ -34,13 +36,8 @@ FractionBaseWidget::FractionBaseWidget(QWidget * parent = 0, const char * name =
 	kdDebug() << "constructor FractionBaseWidget" << endl;
 #endif
 
-	/* set colors */
-	m_colorNumber = Qt::darkGreen;
-	m_colorLine = Qt::red;;
-	m_colorOperation = Qt::blue;
-
-	/* set font */
-	m_font = KGlobalSettings::generalFont();
+	// set colors and font used for task displaying
+	setColorAndFont();
 }
 
 FractionBaseWidget::~FractionBaseWidget()
@@ -48,6 +45,12 @@ FractionBaseWidget::~FractionBaseWidget()
 #ifdef DEBUG
 	kdDebug() << "destructor FractionBaseWidget" << endl;
 #endif
+}
+
+void FractionBaseWidget::updateAndRepaint()
+{
+	setColorAndFont();
+	update();
 }
 
 // virtual
@@ -144,6 +147,22 @@ void FractionBaseWidget::paintMiddle(QPainter & paint, QString paint_str, int & 
 	// move the x position to the right by adding the width used for
 	// painting the string and a margin
 	x_pos += _MARGIN_X + fontWidth;
+
+	return;
+}
+
+void FractionBaseWidget::setColorAndFont()
+{
+	/* set colors */
+	m_colorNumber = SettingsClass::numberColor();
+	m_colorLine = SettingsClass::fractionBarColor();
+	m_colorOperation = SettingsClass::operationColor();
+
+	/* set font */
+	m_font = SettingsClass::taskFont();
+
+	// repaint
+	update();
 
 	return;
 }

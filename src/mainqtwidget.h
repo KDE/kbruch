@@ -96,9 +96,19 @@ class MainQtWidget : public KMainWindow
 		 */
 		void MaxMainDenominatorBoxSlot();
 		/** 
-		 *called, when the user changes the wished task's operations 
+		 * called, when the user changes the wished task's operations 
 		 */
 		void OperationBoxSlot();
+
+		/**
+		 * calls the settings dialog
+		 */
+		void slotPrefs();
+
+		/**
+		 * makes sure, all parts of the UI update to new settings
+		 */
+		void slotApplySettings();
 
 	protected:
 		/** Function is called when user calls termination.

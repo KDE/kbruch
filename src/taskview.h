@@ -66,6 +66,9 @@ public:
 	/** force the creation of a new task */
 	void forceNewTask();
 
+public slots:
+	void update();
+
 signals:
 	/** class emits this signal, if the task was solved correctly by the user */
 	void signalTaskSolvedCorrect();

@@ -35,6 +35,7 @@
 #include "statisticsview.h"
 
 #include "settingsclass.h"
+#include "settingsdialog.h"
 
 /* ------ public member functions ------ */
 
@@ -114,6 +115,9 @@ void MainQtWidget::setupActions()
 
 	// quit action
 	KStdAction::quit(kapp, SLOT(quit()), actionCollection());
+
+	//
+	KStdAction::preferences(this,  SLOT( slotPrefs() ), actionCollection(), "preferences");
 
 	// a label just describing the Number of terms ComboBox
 	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0, "kde toolbar widget");
@@ -306,6 +310,27 @@ void MainQtWidget::OperationBoxSlot()
 
 	// set the new task parameters
 	(void) m_taskview->setTaskParameters(m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
+}
+
+void MainQtWidget::slotPrefs()
+{
+	SettingsDialog * dlg = new SettingsDialog(this);
+	connect(dlg, SIGNAL(configChanged()), this, SLOT(slotApplySettings()));
+
+	dlg->exec();
+
+	delete dlg;
+	dlg = NULL;
+	
+	return;
+}
+
+void MainQtWidget::slotApplySettings()
+{
+	// update the task view
+	m_taskview->update();
+
+	return;
 }
 
 bool MainQtWidget::queryExit()

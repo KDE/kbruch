@@ -44,6 +44,9 @@ public:
 	/** destructor */
 	~FractionBaseWidget();
 
+	/** updates the widget by first getting the settings and then repainting */
+	void updateAndRepaint();	
+
 protected:
 	
 	/* store the different colors */
@@ -62,6 +65,10 @@ protected:
 
 	/** paints a string in the vertical middle (aligned to the operation signs) */
 	void paintMiddle(QPainter & paint, QString paint_str, int & x_pos, QFontMetrics & fm, QColor color);
+
+private:
+	/** sets the font and color; values taken from settingsclass */
+	void setColorAndFont();
 };
 
 #endif
