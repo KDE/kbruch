@@ -235,7 +235,9 @@ void MainQtWidget::setupActions()
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_OperationBox, SIGNAL(activated(int)), this, SLOT(OperationBoxSlot()));
 	
+#if (KDE_VERSION_MINOR>=3) && (KDE_VERSION_MAJOR>=3)
 	setupGUI();
+#endif
 }
 
 
