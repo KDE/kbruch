@@ -281,6 +281,8 @@ class ratio_test
 		BOOST_REQUIRE((ratio_a < ratio_d) == false);
 		BOOST_REQUIRE((ratio_a < ratio_e) == false);
 
+		BOOST_REQUIRE((ratio(5, 8) < ratio(2, 1)) == true);
+
 		return;
 	}
 
