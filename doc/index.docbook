@@ -377,10 +377,12 @@ the bigger fraction of both by selecting the correct comparison sign.
 </mediaobject>
 </screenshot>
 
-<para>After you have chosen the comparison sign click on the <guimenu>Check
-Task</guimenu> button. &kbruch; will
-check your input and present the correct result. After this step you will get
-to the next task by clicking on the <guimenu>Next Task</guimenu> button.
+<para>First choose the correct comparison sign. To toggle the comparison sign,
+you have to click on the button showing the comparison sign. After you have
+chosen the comparison sign click on the <guimenu>Check Task</guimenu> button.
+&kbruch; will check your input and present the correct result. After this step
+you will get to the next task by clicking on the <guimenu>Next Task</guimenu>
+button.
 </para>
 </sect1>
 
@@ -402,6 +404,12 @@ have to enter numerator and denominator.
   </textobject>
 </mediaobject>
 </screenshot>
+
+<para>On the left side of the equal sign in the screenshot above you can see a
+recurring decimal. This means, that the fraction shown as a decimal has a
+repeating part. The repeating part is marked with the small bar above the
+numbers. Those numbers repeat ad infinitum.
+</para>
 
 <para>After you have entered the numerator and denominator click on the
 <guimenu>Check Task</guimenu> button. &kbruch; will check your input and
@@ -448,10 +456,15 @@ present the correct result. After this step you will get to the next task by
 clicking on the <guimenu>Next Task</guimenu> button.
 </para>
 
+<para>In the screenshot at the top of this page you can see a <quote>*</quote>
+between the prime factors. This is the multiplication sign. The product of all
+prime factors must be the number you try to factorize.
+</para>
+
 <note>
 <para>
 You have to enter all prime factors even when a prime factor repeats several
-times.
+times. Example: As prime factors of number 18 you have to enter 2, 3 and 3.
 </para>
 </note>
 </sect1>
