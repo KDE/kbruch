@@ -1,13 +1,9 @@
 what is left to do
 ==================
 
-	* use another font size from KGlobalSettings
-
 	* maybe use int instead of short because source easier to read
 
 	* document classes to be able to use KDoc/doxygen
-
-	* maybe use kdDebug() vor debug messages
 
 	* maybe split class task in representation, calculate and generation
 
