@@ -29,6 +29,8 @@
 #include <qtooltip.h>
 #include <qwhatsthis.h>
 
+#include <math.h>
+
 #include "taskview.h"
 #include "statisticsview.h"
 
@@ -85,6 +87,13 @@ void MainQtWidget::readOptions()
 	m_mulDiv = SettingsClass::muldiv();
 	m_nrRatios = SettingsClass::number_ratios();
 	m_maxMainDenominator = SettingsClass::max_main_denominator();
+
+	/* make sure that we can load config files with corrupted values */
+	if (m_mulDiv == true and pow(2, m_nrRatios) > m_maxMainDenominator)
+	{
+		m_nrRatios = 2;
+		m_maxMainDenominator = 10;
+	}
 }
 
 void MainQtWidget::writeOptions()
@@ -201,36 +210,62 @@ void MainQtWidget::NrOfTermsBoxSlot()
 	QString curr_nr = m_NrOfTermsBox->currentText();
 	m_MaxMainDenominatorBox->clear();
 
-	if (curr_nr == "2")
+	if (m_mulDiv == true)
 	{
+		if (curr_nr == "2")
+		{
+			m_MaxMainDenominatorBox->insertItem("10");
+			m_MaxMainDenominatorBox->insertItem("20");
+			m_MaxMainDenominatorBox->insertItem("30");
+			m_MaxMainDenominatorBox->insertItem("50");
+			m_nrRatios = 2;
+		} else if (curr_nr == "3") {
+			m_MaxMainDenominatorBox->insertItem("20");
+			m_MaxMainDenominatorBox->insertItem("30");
+			m_MaxMainDenominatorBox->insertItem("50");
+			m_nrRatios = 3;
+			if (m_maxMainDenominator < 20)
+			{
+				m_maxMainDenominator = 20;
+				m_MaxMainDenominatorBox->setCurrentItem(0);
+			}
+		} else if (curr_nr == "4") {
+			m_MaxMainDenominatorBox->insertItem("20");
+			m_MaxMainDenominatorBox->insertItem("30");
+			m_MaxMainDenominatorBox->insertItem("50");
+			m_nrRatios = 4;
+			if (m_maxMainDenominator < 20)
+			{
+				m_maxMainDenominator = 20;
+				m_MaxMainDenominatorBox->setCurrentItem(0);
+			}
+		} else {
+			m_MaxMainDenominatorBox->insertItem("50");
+			m_nrRatios = 5;
+			if (m_maxMainDenominator < 50)
+			{
+				m_maxMainDenominator = 50;
+				m_MaxMainDenominatorBox->setCurrentItem(0);
+			}
+		}
+	} else {
+		/* no multiplication or division allowed, so we add the default values */
 		m_MaxMainDenominatorBox->insertItem("10");
 		m_MaxMainDenominatorBox->insertItem("20");
 		m_MaxMainDenominatorBox->insertItem("30");
 		m_MaxMainDenominatorBox->insertItem("50");
-		m_nrRatios = 2;
-	} else if (curr_nr == "3") {
-		m_MaxMainDenominatorBox->insertItem("20");
-		m_MaxMainDenominatorBox->insertItem("30");
-		m_MaxMainDenominatorBox->insertItem("50");
-		m_nrRatios = 3;
-	} else if (curr_nr == "4") {
-		m_MaxMainDenominatorBox->insertItem("20");
-		m_MaxMainDenominatorBox->insertItem("30");
-		m_MaxMainDenominatorBox->insertItem("50");
-		m_nrRatios = 4;
-	} else {
-		m_MaxMainDenominatorBox->insertItem("50");
-		m_nrRatios = 5;
-	}
+		if (curr_nr == "2")
+			m_nrRatios = 2;
+		else if (curr_nr == "3")
+			m_nrRatios = 3;
+		else if (curr_nr == "4")
+			m_nrRatios = 4;
+		else
+			m_nrRatios = 5;
+	} // if (m_mulDiv == true)
+
 	// set the new task parameters
 	(void) m_taskview->setTaskParameters(m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
-	//I think clicking on new task after setting all parameters is the best way
-	//to ensure good usability -> everything else would be hard to explain to the
-	//user!
-	//a change of terms should trigger a new task with the correct terms number
-	//(void) m_taskview->forceNewTask();
-	//TODO (annma suggestion) in that case, the statistic view should stay the
-	//same i.e the non done task should not be counted as wrong
 }
 
 void MainQtWidget::MaxMainDenominatorBoxSlot()
@@ -254,12 +289,21 @@ void MainQtWidget::OperationBoxSlot()
 	{
 		m_addSub = true;
 		m_mulDiv = false;
+
+		/* set the number of terms box and max main denominator box correctly */
+		NrOfTermsBoxSlot();
 	} else if (index == 1) {
 		m_addSub = false;
 		m_mulDiv = true;
+
+		/* set the number of terms box and max main denominator box correctly */
+		NrOfTermsBoxSlot();
 	} else {
 		m_addSub = true;
 		m_mulDiv = true;
+
+		/* set the number of terms box and max main denominator box correctly */
+		NrOfTermsBoxSlot();
 	}
 
 	// set the new task parameters

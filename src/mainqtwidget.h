@@ -87,7 +87,7 @@ class MainQtWidget : public KMainWindow
 		 */
 		void NewTask();
 		/** 
-		 *called when the user changes the number of terms in the ComboBox 
+		 * called when the user changes the number of terms in the ComboBox 
 		 */
 		void NrOfTermsBoxSlot();
 		/** 
