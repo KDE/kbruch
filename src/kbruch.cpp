@@ -275,7 +275,7 @@ int gui_qt_ini(int argc, char * argv[])
 	KAboutData aboutData( "kbruch",
 		description,
 		KBRUCH_VERSION,
-		I18N_NOOP("KBruch is an application to automatically generate tasks with fractions."),
+		I18N_NOOP("Automatically generate tasks with fractions"),
 		KAboutData::License_GPL,
     	"(c) 2002-2004, Sebastian Stein", 0, "http://edu.kde.org/kbruch/",
 		"seb.kde@hpfsc.de");
