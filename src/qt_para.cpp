@@ -34,7 +34,7 @@ qt_para::qt_para(QWidget * parent, const char * name,
 
 	/* the label above the number of ratios combo box */
 	termLabelHBox = new QHBoxLayout(layout1);
-	termLabel = new QLabel(i18n("Select number of ratios for the task"), this);
+	termLabel = new QLabel(i18n("Select number of ratios for the task:"), this);
 	termLabelHBox->addWidget(termLabel);
 	termLabelHBox->addStretch(10);
 
@@ -54,7 +54,7 @@ qt_para::qt_para(QWidget * parent, const char * name,
 	
 	/* the label above the max. main denominator combo box */
 	denoLabelHBox = new QHBoxLayout(layout1);
-	denoLabel = new QLabel(i18n("Select maximum size of the main denominator"),
+	denoLabel = new QLabel(i18n("Select maximum size of the main denominator:"),
 																								this);
 	denoLabelHBox->addWidget(denoLabel);
 	denoLabelHBox->addStretch(10);
@@ -98,11 +98,11 @@ qt_para::qt_para(QWidget * parent, const char * name,
 
 	/* show KBruch - selected operations */
 	if (add_sub == YES && mul_div == NO)
-		setCaption(i18n("set up task with add and sub"));
+		setCaption(i18n("Set up Task with Add & Sub"));
 	if (add_sub == NO && mul_div == YES)
-		setCaption(i18n("set up task with mul and div"));
+		setCaption(i18n("Set up Task with Mul & Div"));
 	if (add_sub == YES && mul_div == YES)
-		setCaption(i18n("set up task with all operations"));
+		setCaption(i18n("Set up Task with All Operations"));
 
 	okBtn->setFocus();
 }

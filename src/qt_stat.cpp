@@ -43,7 +43,7 @@ qt_stat::qt_stat(QWidget * parent, const char * name):
 
 	/* add 6 labels to the grid */
 	info1Label = new QLabel(this);
-	info1Label->setText(i18n("tasks so far:"));
+	info1Label->setText(i18n("Tasks so far:"));
 	labelGrid->addWidget(info1Label, 1, 0);
 
 	result1Label = new QLabel(this);
@@ -52,7 +52,7 @@ qt_stat::qt_stat(QWidget * parent, const char * name):
 				i18n("This is the current total number of solved tasks."));
 
 	info2Label = new QLabel(this);
-	info2Label->setText(i18n("correct:"));
+	info2Label->setText(i18n("Correct:"));
 	labelGrid->addWidget(info2Label, 2, 0);
 
 	result2Label = new QLabel(this);
@@ -72,7 +72,7 @@ qt_stat::qt_stat(QWidget * parent, const char * name):
 				i18n("This is the current total number of correctly solved tasks."));
 
 	info3Label = new QLabel(this);
-	info3Label->setText(i18n("incorrect:"));
+	info3Label->setText(i18n("Incorrect:"));
 	labelGrid->addWidget(info3Label, 3, 0);
 
 	result3Label = new QLabel(this);

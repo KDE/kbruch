@@ -29,14 +29,14 @@ gui_qt::gui_qt(QWidget * parent, const char * name): QVBox(parent, name),
 #endif
 
 	/* add/sub button */
-	addsubBtn = new QPushButton(i18n("&Addition and Subtraction"), this);
+	addsubBtn = new QPushButton(i18n("&Addition && Subtraction"), this);
 	QToolTip::add(addsubBtn,
 			i18n("Tasks with addition and subtraction will be generated"));
 	QObject::connect(addsubBtn, SIGNAL(clicked()), this,
 												SLOT(showQt_Para_addsub()));
 	
 	/* mul/div button */
-	muldivBtn = new QPushButton(i18n("&Multiplication and Division"), this);
+	muldivBtn = new QPushButton(i18n("&Multiplication && Division"), this);
 	QToolTip::add(muldivBtn,
 			i18n("Tasks with multiplication and division will be generated"));
 	QObject::connect(muldivBtn, SIGNAL(clicked()), this,

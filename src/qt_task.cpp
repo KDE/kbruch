@@ -222,11 +222,11 @@ qt_task::qt_task(QWidget * parent, const char * name,	short padd_sub,
 
 	/* show selected operations */
 	if (add_sub == YES && mul_div == NO)
-		setCaption(i18n("addition and subtraction task"));
+		setCaption(i18n("Addition & Subtraction Task"));
 	if (add_sub == NO && mul_div == YES)
-		setCaption(i18n("multiplication and division task"));
+		setCaption(i18n("Multiplication & Division Ttask"));
 	if (add_sub == YES && mul_div == YES)
-		setCaption(i18n("task with all 4 operations"));
+		setCaption(i18n("Task with All 4 Operations"));
 
 	/* show the statistic window; check if we have to create the window
 	 * first, because it is the first call of qt_task */
@@ -299,7 +299,7 @@ void qt_task::okBtnClicked()
 	{
 		/* check the entered result of the given task */
 		isWaitResult = NO;
-		okBtn->setText(i18n("N&ext task"));
+		okBtn->setText(i18n("N&ext Task"));
 		QToolTip::add(okBtn, i18n("Press the button to go to the next task."));
 		okBtn->setFocus();
 
