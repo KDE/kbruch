@@ -17,6 +17,8 @@
 #include "mainqtwidget.h"
 
 #include <kaccel.h>
+#include <kaction.h>
+#include <kapplication.h>
 #include <kdebug.h>
 #include <kmenubar.h>
 #include <kpopupmenu.h>

@@ -21,12 +21,14 @@
 #include <config.h>
 #endif
 
-#include <kapplication.h>
-#include <kaction.h>
 #include <kmainwindow.h>
 
-#include "statisticsview.h"
-#include "taskview.h"
+class KWidgetAction;
+
+class QLabel;
+
+class StatisticsView;
+class TaskView;
 
 class MainQtWidget : public KMainWindow
 {
