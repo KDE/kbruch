@@ -18,8 +18,6 @@
 #ifndef TASK_H
 #define TASK_H
 
-/*#define DEBUG*/
-
 #include "ratio.h"
 #include "primenumber.h"
 
@@ -80,26 +78,26 @@ public:
 	                 short padd_sub = YES, short pmul_div = NO);
 
 	/** set ratio n */
-	void set_ratio_n(unsigned short number = 0, int zaehler = 0,
-	                 int nenner = 1);
+	void set_ratio_n(unsigned short number = 0, int numerator = 0,
+	                 int denominator = 1);
 
 	/** set ratio n */
-	void set_ratio_n(unsigned short number = 0, ratio bruch = 0);
+	void set_ratio_n(unsigned short number = 0, ratio fraction = 0);
 
 	/** returns ration n */
-	ratio get_ratio_n(unsigned short number = 0);
+	ratio get_ratio_n(unsigned short number = 0) const;
 
 	/** set operation n */
 	void set_op_n(unsigned short number = 0, short operation = ADD);
 
 	/** return operation n */
-	short get_op_n(unsigned short number = 0);
+	short get_op_n(unsigned short number = 0) const;
 
 	/** add a ratio to the end of the task */
 	void add_ratio(ratio new_ratio = 0);
 
 	/** add a ratio to the end of the task */
-	void add_ratio(int zaehler = 0, int nenner = 1);
+	void add_ratio(int numerator = 0, int denominator = 1);
 
 	/** add an operation at the end of the task */
 	void add_operation(short operation = ADD);
@@ -109,6 +107,13 @@ public:
 
 	/** solves the task and returns the result as ratio */
 	ratio solve();
+
+	/** returns the number of ratios in the vector */
+	int getNumberOfRatios() const;
+
+	/** returns the number of operations in the vector */
+	int getNumberOfOperations() const;
+
 private:
 	/** max. size of main denominator */
 	int max_md;

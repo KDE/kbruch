@@ -101,29 +101,29 @@ void task::create_task(unsigned int pmax_md, short pnr_ratios,
 }
 
 /** set ratio n in the ratio_vector */
-void task::set_ratio_n(unsigned short number, int zaehler, int nenner)
+void task::set_ratio_n(unsigned short number, int numerator, int denominator)
 {
 	/* do not set something outside our vector */
 	if (number > ratio_vector.size() - 1)
 		number = 0;
-	ratio_vector[number].set_zaehler(zaehler); // set numerator
-	ratio_vector[number].set_nenner(nenner); // set denominator
+	ratio_vector[number].set_zaehler(numerator); // set numerator
+	ratio_vector[number].set_nenner(denominator); // set denominator
 	return;
 }
 
 /** set ratio n in the ratio_vector */
-void task::set_ratio_n(unsigned short number, ratio bruch)
+void task::set_ratio_n(unsigned short number, ratio fraction)
 {
 	/* do not set something outside our vector */
 	if (number > ratio_vector.size() - 1)
 		number = 0;
-	ratio_vector[number].set_zaehler(bruch.get_zaehler()); // set numerator
-	ratio_vector[number].set_nenner(bruch.get_nenner()); // set denominator
+	ratio_vector[number].set_zaehler(fraction.get_zaehler()); // set numerator
+	ratio_vector[number].set_nenner(fraction.get_nenner()); // set denominator
 	return;
 }
 
 /** returns the ratio given by number from the ratio_vector */
-ratio task::get_ratio_n(unsigned short number)
+ratio task::get_ratio_n(unsigned short number) const
 {
 	/* do not set something outside our vector */
 	if (number > ratio_vector.size() - 1)
@@ -142,7 +142,7 @@ void task::set_op_n(unsigned short number, short operation)
 }
 
 /** returns the operation given by number from the op_vector */
-short task::get_op_n(unsigned short number)
+short task::get_op_n(unsigned short number) const
 {
 	/* do not set something outside our vector */
 	if (number > op_vector.size() - 1)
@@ -158,9 +158,9 @@ void task::add_ratio(ratio new_ratio)
 }
 
 /** add a new ratio at the end of the ratio vector */
-void task::add_ratio(int zaehler, int nenner)
+void task::add_ratio(int numerator, int denominator)
 {
-	ratio new_ratio(zaehler, nenner);
+	ratio new_ratio(numerator, denominator);
 	ratio_vector.push_back(new_ratio);
 	return;
 }
@@ -325,6 +325,18 @@ ratio task::solve()
 	ergebnis.reduce();
 
 	return ergebnis; /* return the solution */
+}
+
+/* returns the number of ratios in the vector */
+int task::getNumberOfRatios() const
+{
+	return ratio_vector.count();
+}
+
+/* returns the number of operations in the vector */
+int task::getNumberOfOperations() const
+{
+	return op_vector.count();
 }
 
 /** this function is called by the solving function to compute a given
