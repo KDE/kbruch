@@ -52,7 +52,7 @@ qt_stat::qt_stat(QWidget * parent, const char * name):
 	result1Label = new QLabel(this);
 	labelGrid->addWidget(result1Label, 1, 1);
 	QToolTip::add(result1Label,
-				i18n("This is the count of solved tasks until now"));
+				i18n("This is the current total number of solved tasks."));
 
 	info2Label = new QLabel(this);
 	info2Label->setText(i18n("correct:"));
@@ -72,7 +72,7 @@ qt_stat::qt_stat(QWidget * parent, const char * name):
 
 	labelGrid->addWidget(result2Label, 2, 1);
 	QToolTip::add(result2Label,
-				i18n("This is the count of correctly solved tasks until now"));
+				i18n("This is the current total number of correctly solved tasks."));
 
 	info3Label = new QLabel(this);
 	info3Label->setText(i18n("incorrect:"));
@@ -92,13 +92,13 @@ qt_stat::qt_stat(QWidget * parent, const char * name):
 
 	labelGrid->addWidget(result3Label, 3, 1);
 	QToolTip::add(result3Label,
-				i18n("This is the count of not correctly solved tasks until now"));
+				i18n("This is the current total number of unsolved tasks."));
 
 	/* the Reset button */
 	resetBtn = new QPushButton(i18n("&Reset"), this);
 	QObject::connect(resetBtn, SIGNAL(clicked()), this, SLOT(reset_stat()));
 	layout1->addWidget(resetBtn);
-	QToolTip::add(resetBtn, i18n("Press the button to reset the statistics"));
+	QToolTip::add(resetBtn, i18n("Press the button to reset the statistics."));
 
 	/* calculate the statistics */
 	(void) calc();

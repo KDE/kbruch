@@ -52,7 +52,7 @@ qt_para::qt_para(QWidget * parent, const char * name,
 	termComBox->setEditable(NO);
 	termComHBox->addWidget(termComBox);
 	termComHBox->addStretch(10);
-	QToolTip::add(termComBox, i18n("Select the count of task's terms"));
+	QToolTip::add(termComBox, i18n("Select the total number of terms for the task."));
 	QObject::connect(termComBox, SIGNAL(activated(int)),
 													this, SLOT(term_nr_changed(int)));
 	

@@ -304,7 +304,7 @@ void qt_task::okBtnClicked()
 		/* check the entered result of the given task */
 		isWaitResult = NO;
 		okBtn->setText(i18n("N&ext task"));
-		QToolTip::add(okBtn, i18n("Press the button to get to the next task"));
+		QToolTip::add(okBtn, i18n("Press the button to go to the next task."));
 		okBtn->setFocus();
 
 		/* solve the task */
