@@ -88,14 +88,18 @@ MainQtWidget::~MainQtWidget()
 void MainQtWidget::setupActions()
 {
 	// new task action
-	m_NewTaskAction = new KAction(i18n("&New Task"), "filenew", KStdAccel::shortcut(KStdAccel::New), this, SLOT(NewTask()), actionCollection(), "NewTask");
+	m_NewTaskAction = new KAction(i18n("&New Task"), "filenew", KStdAccel::shortcut(KStdAccel::New), 
+				      this, SLOT(NewTask()), 
+				      actionCollection(), "NewTask");
 
 	// quit action
 	KStdAction::quit(kapp, SLOT(quit()), actionCollection());
 
 	// a label just describing the Number of terms ComboBox
 	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0);
-	m_NrOfTermsLabelAction = new KWidgetAction(m_NrOfTermsLabel, i18n("Terms:"), ALT+Key_T, this, SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsLabelAction");
+	m_NrOfTermsLabelAction = new KWidgetAction(m_NrOfTermsLabel, i18n("Terms:"), ALT+Key_T, 
+						   this, SLOT(NrOfTermsBoxSlot()), 
+						   actionCollection(), "NrOfTermsLabelAction");
 
 	// the ComboBox holding possible values for term number
 	m_NrOfTermsBox = new QComboBox();
@@ -103,14 +107,18 @@ void MainQtWidget::setupActions()
 	m_NrOfTermsBox->insertItem(i18n("3"));
 	m_NrOfTermsBox->insertItem(i18n("4"));
 	m_NrOfTermsBox->insertItem(i18n("5"));
-	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of terms"), ALT+Key_T, this, SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsBoxAction");
+	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of terms"), ALT+Key_T, 
+						 this, SLOT(NrOfTermsBoxSlot()), 
+						 actionCollection(), "NrOfTermsBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_NrOfTermsBox, SIGNAL(activated(int)), this, SLOT(NrOfTermsBoxSlot()));
 
 	// a label just describing the max. main denominator ComboBox
 	m_MaxMainDenominatorLabel = new QLabel(i18n("Max. Main Denominator:"), 0);
-	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Max. Main Denominator:"), ALT+Key_T, this, SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorLabelAction");
+	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Max. Main Denominator:"), ALT+Key_T, 
+							    this, SLOT(MaxMainDenominatorBoxSlot()), 
+							    actionCollection(), "MaxMainDenominatorLabelAction");
 
 	// the ComboBox holding possible values for the max. main denominator
 	m_MaxMainDenominatorBox = new QComboBox();
@@ -118,21 +126,28 @@ void MainQtWidget::setupActions()
 	m_MaxMainDenominatorBox->insertItem(i18n("20"));
 	m_MaxMainDenominatorBox->insertItem(i18n("30"));
 	m_MaxMainDenominatorBox->insertItem(i18n("50"));
-	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal main denominator"), ALT+Key_T, this, SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorBoxAction");
+	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal main denominator"), ALT+Key_T, 
+							  this, SLOT(MaxMainDenominatorBoxSlot()), 
+							  actionCollection(), "MaxMainDenominatorBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
-	QObject::connect(m_MaxMainDenominatorBox, SIGNAL(activated(int)), this, SLOT(MaxMainDenominatorBoxSlot()));
+	QObject::connect(m_MaxMainDenominatorBox, SIGNAL(activated(int)),
+			 this, SLOT(MaxMainDenominatorBoxSlot()));
 
 	// a label just describing the operation ComboBox
 	m_OperationLabel = new QLabel(i18n("Operations:"), 0);
-	m_OperationLabelAction = new KWidgetAction(m_OperationLabel, i18n("Operations:"), ALT+Key_O, this, SLOT(OperationBoxSlot()), actionCollection(), "OperationLabelAction");
+	m_OperationLabelAction = new KWidgetAction(m_OperationLabel, i18n("Operations:"), ALT+Key_O,
+						   this, SLOT(OperationBoxSlot()), 
+						   actionCollection(), "OperationLabelAction");
 
 	// the ComboBox holding possible combinations for operations
 	m_OperationBox = new QComboBox();
 	m_OperationBox->insertItem(i18n("Addition/Subtraction"));
 	m_OperationBox->insertItem(i18n("Multiplication/Division"));
 	m_OperationBox->insertItem(i18n("All Operations Mixed"));
-	m_OperationBoxAction = new KWidgetAction(m_OperationBox, i18n("Operations:"), ALT+Key_O, this, SLOT(OperationBoxSlot()), actionCollection(), "OperationBoxAction");
+	m_OperationBoxAction = new KWidgetAction(m_OperationBox, i18n("Operations:"), ALT+Key_O,
+						 this, SLOT(OperationBoxSlot()), 
+						 actionCollection(), "OperationBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_OperationBox, SIGNAL(activated(int)), this, SLOT(OperationBoxSlot()));
