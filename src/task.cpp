@@ -19,6 +19,8 @@
 
 #include <kdebug.h>
 
+#include <time.h>
+
 #include "task.h"
 
 /** constructor of class task */

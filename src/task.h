@@ -21,9 +21,7 @@
 #include "ratio.h"
 #include "primenumber.h"
 
-#include <stdlib.h>
 #include <vector>
-#include <time.h>
 
 /** important for add_sub and mul_div */
 #define YES 1
