@@ -19,6 +19,9 @@
 
 #include "version.h"
 
+/* standard C++ library includes */
+#include <time.h>
+
 /* these includes are needed for Qt support */
 #include <kapplication.h>
 #include <kcmdlineargs.h>
