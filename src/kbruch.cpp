@@ -262,16 +262,8 @@ int gui_konsole(void)
 /* to show a Qt GUI */
 int gui_qt_ini(int argc, char * argv[])
 {
-	static KCmdLineOptions options[] =
-	{
-		{ "t", 0, 0 },
-		{ "text", I18N_NOOP("start text mode user interface"), 0 },
-		{ "g", 0, 0 },
-		{ "generate", I18N_NOOP("generates tasks and solutions without stopping"), 0 },
-		{ 0, 0, 0 }
-	};
-
-	KAboutData aboutData( "kbruch", I18N_NOOP("KBruch"),
+	KAboutData aboutData( "kbruch",
+		description,
 		KBRUCH_VERSION,
 		I18N_NOOP("KBruch is an application to automatically generate tasks with fractions."),
 		KAboutData::License_GPL,
