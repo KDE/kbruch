@@ -262,9 +262,21 @@ int gui_konsole(void)
 /* to show a Qt GUI */
 int gui_qt_ini(int argc, char * argv[])
 {
+	static KCmdLineOptions options[] =
+	{
+		{ "t", 0, 0 },
+		{ "text", I18N_NOOP("start text mode user interface"), 0 },
+		{ "g", 0, 0 },
+		{ "generate", I18N_NOOP("generates tasks and solutions without stopping"), 0 },
+		{ 0, 0, 0 }
+	};
+
 	KAboutData aboutData( "kbruch", I18N_NOOP("KBruch"),
-		VERSION, description, KAboutData::License_GPL,
-    		"(c) 2002, Sebastian Stein", 0, 0, "kbruch@hpfsc.de");
+		KBRUCH_VERSION,
+		I18N_NOOP("KBruch is an application to automatically generate tasks with fractions."),
+		KAboutData::License_GPL,
+    	"(c) 2002, Sebastian Stein", 0, "http://edu.kde.org/kbruch/",
+		"kbruch@hpfsc.de");
 	aboutData.addAuthor("Sebastian Stein",0, "kbruch@hpfsc.de");
  	KCmdLineArgs::init( argc, argv, &aboutData );
 	KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
@@ -287,29 +299,7 @@ int main(int argc, char * argv[])
 	/* check, if we have some command line parameters */
 	for (int count = 1; count < argc; count++)
 	{
-		if (! strcmp(argv[count], "--version") || ! strcmp(argv[count], "-v"))
-		{
-			/* print version information */
-			cout << "KBruch " << VERSION << " " << DATE << endl;
-			cout << "by " << MAINTAINER << " <" << MAINTAINER_EMAIL << ">" << endl;
-			cout <<  HOMEPAGE << endl;
-			cout << "task generator for calculations with fractions" << endl;
-			cout << "\nThis is free software; see the source for ";
-			cout << "copying conditions. There is NO" << endl;
-			cout << "warranty; not even for MERCHANTABILITY ";
-			cout << "or FITNESS FOR A PARTICULAR PURPOSE." << endl;
-		} else if (! strcmp(argv[count], "--help") || !strcmp(argv[count], "-h")
-						|| ! strcmp(argv[count], "-?"))
-		{
-			/* print help information */
-			cout << "usage: kbruch [options]" << endl;
-			cout << "options:" << endl;
-			cout << "\t-h, -?, --help\t\tShow help about options" << endl;
-			cout << "\t-v, --version\t\tShow version information" << endl;
-			cout << "\t-g, --generate\t\tgenerates tasks and solutions ";
-			cout << "without stopping" << endl;
-			cout << "\t-t, --text\t\tstart text mode user interface" << endl;
-		} else if (! strcmp(argv[count], "--text") || !strcmp(argv[count], "-t"))
+		if (! strcmp(argv[count], "--text") || !strcmp(argv[count], "-t"))
 		{
 			/* start the kbruch in text mode */
 			return gui_konsole();
@@ -336,17 +326,9 @@ int main(int argc, char * argv[])
 				cin.get();
 				cin.clear();
 			} while (1);
-		} else { /* if ... --debug */
-			/* an unknown command line option */
-			cout << "\nunknown command line option: " << argv[count];
-			cout << "\n" << endl;
-		} /* if with cmd parameters */
+		}
 	} /* for (...) -> loop through all cmd parameters */
 
-	/* if we got command line options, we do not start the program */
-	if (argc > 1)
-		return 0;
-
-	/* lets call the Qt GUI */
+	/* lets call the Qt GUI; it will handle all cmd options which are left */
 	return gui_qt_ini(argc, argv);
 }
