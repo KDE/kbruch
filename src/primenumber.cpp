@@ -54,6 +54,9 @@ primenumber::~primenumber()
  * return 0 if no, 1 if yes */
 short primenumber::isPrimeNumber(uint number)
 {
+#ifdef DEBUG
+	kdDebug() << "primenumber::isPrimeNumber(" << number << ")" << endl;
+#endif
 	/* 0 is not a prime number */
 	if (number == 0)
 		return 0;
