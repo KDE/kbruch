@@ -68,7 +68,7 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	// result
 	m_currentState = _CHECK_TASK;
 
-	baseGrid = new QGridLayout(this, 1, 1);
+	baseGrid = new QGridLayout(this, 1, 1, 0, -1, "baseGrid");
 
 	baseWidget = 0;
 
@@ -138,6 +138,8 @@ void TaskView::forceNewTask()
 /**	- checks the entered result and compares it to the task's result
 		- shows the correct result and informs the user if he was right or wrong
 		- if the user entered the result unreduced, he will be informed about it
+		- if the user entered a 0 for the denominator, he will be informed about
+		  it (division by zero)
 		- emits signals if task was solved right or wrong */
 void TaskView::showResult()
 {
@@ -196,15 +198,27 @@ void TaskView::showResult()
 		}
 	}
 
+	// an empty numerator field will be interpreted as 0
+	if (numer_edit->text().isEmpty() == true)
+		numer_edit->setText("0");
+
+	// an empty denominator field will be interpreted as 1
+	if (deno_edit->text().isEmpty() == true)
+		deno_edit->setText("1");
+
 	/* store the entered result to check it */
 	entered_result.set_zaehler_ohne_k(numer_edit->text().toInt());
 	entered_result.set_nenner_ohne_k(deno_edit->text().toInt());
 
-	/* check the entered result; 0/1 == 0/5 -> true,
-	 * but 0/1 == 0/0 -> false */
-	if ((entered_result == result) ||
-	        (result.get_zaehler() == 0 && entered_result.get_zaehler() == 0
-	         && entered_result.get_nenner() != 0))
+	// check the entered result; 0/1 == 0/5 -> true,
+	// but 0/1 == 0/0 -> false
+	// a 0 for denominator is never allowed (always counted as wrong)
+	//
+	// we have to get the 0 directly from the input field, because
+	// Ratio::set_nenner_ohne_k(0) will set the denominator to 1 to ensure the
+	// Ratio is valid
+	if ( (deno_edit->text().toInt() != 0) && ((entered_result == result) ||
+		  (result.get_zaehler() == 0 && entered_result.get_zaehler() == 0)) )
 	{
 		// emit the signal for correct
 		signalTaskSolvedCorrect();
@@ -239,11 +253,21 @@ void TaskView::showResult()
 
 		result_label->show(); /* show the result at the end of the task */
 
-		/* maybe the entered ratio was not reduced */
-		entered_result.reduce();
-		if (entered_result == result)
+		// if the user entered a 0 for the denominator (division by 0)
+		// we have to get the 0 directly from the input field, because
+		// Ratio::set_nenner_ohne_k(0) will set the denominator to 1 to ensure the
+		// Ratio is valid
+		if (deno_edit->text().toInt() == 0)
+		{
 			KMessageBox::information(this,
-			                         i18n("You entered the correct result, but not reduced.\nAlways enter your results as reduced. This task will be counted as not correctly solved."));
+			                         i18n("You entered a 0 as denominator. This means a division by zero, which is not allowed. This task will be counted as not correctly solved."));
+		} else {
+			/* maybe the entered ratio was not reduced */
+			entered_result.reduce();
+			if (entered_result == result)
+				KMessageBox::information(this,
+				                         i18n("You entered the correct result, but not reduced.\nAlways enter your results as reduced. This task will be counted as not correctly solved."));
+		}
 	} /* if (entered_result == result) */
 }
 
@@ -355,14 +379,14 @@ void TaskView::newLayout()
 
 	/* we have a VBox containing the task at the top and the next button at the
 	 * bottom */
-	realLayout = new QVBoxLayout(baseWidget, 5, 5);
+	realLayout = new QVBoxLayout(baseWidget, 5, 5, "realLayout");
 
 	/* now add a v-spacer */
 	QSpacerItem * v_spacer = new QSpacerItem(1, 1);
 	realLayout->addItem(v_spacer);
 
 	/* create a HBox to show the task */
-	taskHBoxLayout = new QHBoxLayout(baseWidget, 5, 5);
+	taskHBoxLayout = new QHBoxLayout(5, "taskHBoxLayout");
 	realLayout->addLayout(taskHBoxLayout);
 
 	/* create nr_ratios - 1 labels to show the operations of the task */
@@ -408,7 +432,7 @@ void TaskView::newLayout()
 		curr_ratio = current_task.get_ratio_n(tmp_counter);
 
 		// create a new VBox for the whole ratio
-		ratioVBoxLayout = new QVBoxLayout(baseWidget, 5, 5);
+		ratioVBoxLayout = new QVBoxLayout(5, "ratioVBoxLayout");
 		taskHBoxLayout->addLayout(ratioVBoxLayout);
 
 		/* get the numerator of the current ratio and set it as text of a new
@@ -451,12 +475,15 @@ void TaskView::newLayout()
 	}
 
 	// now we add the input fields aligned in a VBox
-	ratioVBoxLayout = new QVBoxLayout(baseWidget, 5, 5);
+	ratioVBoxLayout = new QVBoxLayout(5, "ratioVBoxLayout");
 	taskHBoxLayout->addLayout(ratioVBoxLayout);
-        KIntValidator *valnum = new KIntValidator( this );
+
+	// to validate, that the input is an int
+	KIntValidator *valnum = new KIntValidator( this );
+		  
 	/* add input box so the user can enter numerator */
 	numer_edit = new QLineEdit(baseWidget);
-        numer_edit->setValidator( valnum );
+	numer_edit->setValidator( valnum ); // use the int validator
 	ratioVBoxLayout->addWidget(numer_edit);
 	QToolTip::add(numer_edit, i18n("Enter the numerator of your result"));
 
@@ -468,7 +495,7 @@ void TaskView::newLayout()
 
 	/* add input box so the user can enter denominator */
 	deno_edit = new QLineEdit(baseWidget);
-        deno_edit->setValidator( valnum );
+	deno_edit->setValidator( valnum ); // use the int validator
 	ratioVBoxLayout->addWidget(deno_edit);
 	QToolTip::add(deno_edit, i18n("Enter the denominator of your result"));
 
@@ -479,7 +506,7 @@ void TaskView::newLayout()
 	eq2_label->hide();
 
 	// now we add the labels for the reduced result
-	ratioVBoxLayout = new QVBoxLayout(baseWidget, 5, 5);
+	ratioVBoxLayout = new QVBoxLayout(5, "ratioVBoxLayout");
 	taskHBoxLayout->addLayout(ratioVBoxLayout);
 
 	/* 2 labels to show the result reduced; seperated with a line */
@@ -514,7 +541,7 @@ void TaskView::newLayout()
 	res_common_label->hide();
 
 	// and another VBox for ratio alignment
-	ratioVBoxLayout = new QVBoxLayout(baseWidget, 5, 5);
+	ratioVBoxLayout = new QVBoxLayout(5, "ratioVBoxLayout");
 	taskHBoxLayout->addLayout(ratioVBoxLayout);
 
 	// numerator
@@ -557,13 +584,14 @@ void TaskView::newLayout()
 
 	// now get to the lower part of our real layout
 	// we have only a button, which should be aligned right
-	QHBoxLayout * lowerHBox = new QHBoxLayout(baseWidget, 1, 1);
+	QHBoxLayout * lowerHBox = new QHBoxLayout(1, "lowerHBox");
 	realLayout->addLayout(lowerHBox);
 	lowerHBox->addStretch(100);
 
 	// create a button for checking the current task or getting to the next one
 	m_checkButton = new QPushButton(baseWidget);
 	m_checkButton->setText(i18n("&Check Task"));
+	m_checkButton->setDefault(true); // is the default button of the dialog
 	lowerHBox->addWidget(m_checkButton, 4, 2 * nr_ratios + 8);
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
 
