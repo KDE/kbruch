@@ -20,8 +20,10 @@
 
 #include "primzahl.h"
 
-#include <iostream.h>
-#include <iomanip.h>
+#include <iostream>
+#include <iomanip>
+
+using std::ostream;
 
 /*#define DEBUG*/
 

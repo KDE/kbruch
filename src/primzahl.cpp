@@ -17,6 +17,10 @@
 
 #include "primzahl.h"
 
+#include <iostream>
+using std::cout;
+using std::endl;
+
 /* ----- the global prime number vector ----- */
 UnsignedIntArray primzahl::prim_vector;
 

@@ -30,11 +30,11 @@
 #include <qtooltip.h>
 
 #ifdef DEBUG
-#include <iostream.h>
+#include <iostream>
 #endif
 
 /**
-  * StatisticsView takes care of the statistics of a test. 
+  * StatisticsView takes care of the statistics of a test.
   * It saves the number of correct and wrong questions and
   * views its data to the user
   */
@@ -53,12 +53,12 @@ public slots:
 	/** increment number of wrong answers */
 	void addWrong();
 
-	/** set statistics to zero. 
+	/** set statistics to zero.
          *  Triggered by internal button or when a new test is started
          */
 	void resetStatistics();
 private:
-	//! calculate percentages and update view 
+	//! calculate percentages and update view
 	void calc();
 
 	unsigned int count;

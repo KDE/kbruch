@@ -17,6 +17,12 @@
 
 #include "task.h"
 #include <math.h>
+#include <iostream>
+#include <iomanip>
+
+using std::setw;
+using std::cout;
+using std::endl;
 
 /** constructor of class task */
 task::task()
@@ -38,7 +44,7 @@ task::~task()
 
 /** create a task with random ratios and operations; the generated task
  * can be customized by the given parameters:
- * pmax_md: maximum main denominator 
+ * pmax_md: maximum main denominator
  * pnr_ratios: number of ratios -> pnr_ratios - 1 operations
  * padd_sub: if TRUE + and - are allowed operations
  * pmul_div: if TRUE * and / are allowed operations */

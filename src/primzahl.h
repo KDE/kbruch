@@ -20,7 +20,7 @@
 
 /*#define DEBUG*/
 
-#include <iostream.h>
+#include <iostream>
 #include <vector>
 
 typedef std::vector<unsigned int> UnsignedIntArray;

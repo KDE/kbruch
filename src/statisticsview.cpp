@@ -20,6 +20,11 @@
 
 #include <qlayout.h>
 
+#ifdef DEBUG
+#include <iostream>
+using std::cout;
+#endif
+
 /* constructor */
 StatisticsView::StatisticsView(QWidget * parent, const char * name):
 		QWidget(parent, name)

@@ -23,11 +23,13 @@
 #include "ratio.h"
 #include "primzahl.h"
 
-#include <iostream.h>
-#include <iomanip.h>
+#include <iostream>
+#include <iomanip>
 #include <stdlib.h>
 #include <vector>
 #include <time.h>
+
+using std::ostream;
 
 /** important for add_sub and mul_div */
 #define YES 1
@@ -60,7 +62,7 @@ typedef std::vector<Tprime_factor> PrimeFactorArray;
 /** class to handle mathematical tasks with ratios
  * naming:
  * - a ratio corresponds to one exercise
- * - an operation 
+ * - an operation
  */
 class task
 {

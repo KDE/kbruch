@@ -17,6 +17,13 @@
 
 #include "ratio.h"
 
+#include <iostream>
+#include <iomanip>
+
+using std::setw;
+using std::cout;
+using std::endl;
+
 /* ----- public member functions ----- */
 
 /* constructor */
