@@ -111,6 +111,10 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 	taskLineHBoxLayout->addWidget(result_label);
 	result_label->hide();
 
+	// add another spacer in the middle of the VBox
+	v_spacer = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
+	taskLineHBoxLayout->addItem(v_spacer);
+
 	// --- that is the end of the horizontal line ---
 	
 	// add another spacer in the middle of the VBox
@@ -408,6 +412,10 @@ void ExerciseConvert::slotCheckButtonClicked()
 {
 	if (m_currentState == _CHECK_TASK)
 	{
+		// if nothing has been entered by the user, we don't check the result yet
+		if (numer_edit->text().isEmpty() == true && deno_edit->text().isEmpty() ==
+true)
+			return;
 		m_currentState = _NEXT_TASK;
 		m_checkButton->setText(i18n("N&ext Task"));
 		(void) showResult();
