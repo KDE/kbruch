@@ -103,6 +103,7 @@ qt_para::qt_para(QWidget * parent, const char * name,
 	helpBtn->setFont(QFont("helvetica", 10));
 	buttonHBox->addWidget(helpBtn);
 	QToolTip::add(helpBtn, i18n("Press the button to open the handbook"));
+	QObject::connect(helpBtn, SIGNAL(clicked()), this, SLOT(slotShowBook()));
 
 	/* show KBruch - selected operations */
 	if (add_sub == YES && mul_div == NO)
@@ -131,6 +132,16 @@ void qt_para::closeEvent(QCloseEvent * ev_close)
 {
 	ev_close->accept();
 	emit closed();
+}
+
+
+/* ------ public slots ------ */
+
+/* show the KBruch handbook section about the parameter window */
+void qt_para::slotShowBook()
+{
+	kapp->invokeHelp("para-menu");
+	return;
 }
 
 

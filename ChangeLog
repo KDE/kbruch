@@ -2,6 +2,8 @@
 
 	* added tool tips to all important widgets
 
+	* help buttons now call the fitting section in the handbook
+
 2002-05-30 Sebastian Stein <kbruch@hpfsc.de>
 
 	* renamed the project to KBruch

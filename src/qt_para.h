@@ -56,6 +56,8 @@ class qt_para : public QDialog
 		qt_para(QWidget * parent = 0, const char * name = 0,
 			short padd_sub = YES, short pmul_div = NO);
 		~qt_para(); /* destructor */
+	public slots:
+		void slotShowBook();
 	signals:
 		void closed();
 	protected:

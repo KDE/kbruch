@@ -56,6 +56,8 @@ class qt_task : public QDialog
 				short pnr_ratios = 2, unsigned int pmax_md = 10);
 		~qt_task(); /* destructor */
 		void set_position();
+	public slots:
+		void slotShowBook();
 	signals:
 		void closed();
 	protected:

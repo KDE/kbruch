@@ -223,6 +223,7 @@ qt_task::qt_task(QWidget * parent, const char * name,	short padd_sub,
 	helpBtn->setFont(QFont("helvetica", 10));
 	buttonHBox->addWidget(helpBtn);
 	QToolTip::add(helpBtn, i18n("Press the button to open the handbook"));
+	QObject::connect(helpBtn, SIGNAL(clicked()), this, SLOT(slotShowBook()));
 
 	/* show selected operations */
 	if (add_sub == YES && mul_div == NO)
@@ -260,6 +261,17 @@ void qt_task::set_position()
 	return;
 }
 
+
+/* ------ public slots ------ */
+
+/* show the KBruch handbook section about the task window */
+void qt_task::slotShowBook()
+{
+	kapp->invokeHelp("task-menu");
+	return;
+}
+
+
 /* ------ private member functions ------ */
 
 
@@ -273,6 +285,7 @@ void qt_task::closeEvent(QCloseEvent * ev_close)
 	emit closed();
 	return;
 }
+
 
 /* called, if the OK/Go on button was clicked */
 void qt_task::okBtnClicked()
