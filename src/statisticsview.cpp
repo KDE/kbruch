@@ -23,6 +23,7 @@
 #include <qlayout.h>
 #include <qpushbutton.h>
 #include <qtooltip.h>
+#include <qwhatsthis.h>
 
 #include <klocale.h>
 #include <kdebug.h>
@@ -124,6 +125,10 @@ StatisticsView::StatisticsView(QWidget * parent, const char * name):
 
 	/* calculate the statistics */
 	(void) calc();
+
+	// add tooltip and qwhatsthis help to the widget
+	QToolTip::add(this, i18n("This part of the window shows the statistics."));
+	QWhatsThis::add(this, i18n("This part of the window shows the statistics.  Each exercise you do is counted. You can reset the statistics by clicking on the button below. Also, if you do not want to see the statistics, use the vertical bar on the left to reduce the size of this window part."));
 }
 
 /* destructor */

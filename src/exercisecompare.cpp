@@ -27,6 +27,7 @@
 #include <qlayout.h>
 #include <qpushbutton.h>
 #include <qtooltip.h>
+#include <qwhatsthis.h>
 
 /* standard C++ library includes */
 #include <stdlib.h>
@@ -83,6 +84,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 	m_signButtonState = lessThen;
 	taskLineHBoxLayout->addWidget(m_signButton);
 	QObject::connect(m_signButton, SIGNAL(clicked()), this, SLOT(slotSignButtonClicked()));
+	QToolTip::add(m_signButton, i18n("Click on this button to change the comparision sign."));
 
 	// spacer
 	v_spacer = new QSpacerItem(1, 1);
@@ -117,6 +119,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 	m_checkButton = new QPushButton( baseWidget, "m_checkButton" );
 	m_checkButton->setText(i18n("&Check Task"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
+	QToolTip::add(m_checkButton, i18n("Click on this button to check your result."));
 	lowerHBox->addWidget(m_checkButton, 1, Qt::AlignRight);
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
 
@@ -125,6 +128,10 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 
 	// show the whole layout
 	baseWidget->show();
+
+	// add tooltip and qwhatsthis help to the widget
+	QToolTip::add(this, i18n("In this exercise you have to compare 2 given ratios."));
+	QWhatsThis::add(this, i18n("In this exercise you have to compare 2 given ratios by choosing the correct comparision sign. You can change the comparision sign by just clicking on the button showing the sign."));
 }
 
 /* destructor */
@@ -197,8 +204,8 @@ void ExerciseCompare::showResult()
 	QColorGroup cg;
 	bool result = m_firstRatio < m_secondRatio;
 
-kdDebug() << "result: " << result << endl;
-kdDebug() << "m_signButtonState: " << m_signButtonState << endl;
+	// change the tooltip of the check button
+	QToolTip::add(m_checkButton, i18n("Click on this button to get to the next task."));
 
 	if ((m_signButtonState == lessThen && result == true) ||
 		 (m_signButtonState == greaterThen && result == false))
@@ -241,6 +248,9 @@ kdDebug() << "m_signButtonState: " << m_signButtonState << endl;
 /** generate the next task and show it to the user */
 void ExerciseCompare::nextTask()
 {
+	// change the tooltip of the check button
+	QToolTip::add(m_checkButton, i18n("Click on this button to check your result."));
+
 	result_label->hide(); /* do not show the result at the end of the task */
 
 	// reset the signButton

@@ -30,6 +30,7 @@
 #include <qlineedit.h>
 #include <qpushbutton.h>
 #include <qtooltip.h>
+#include <qwhatsthis.h>
 
 /* standard C++ library includes */
 #include <stdlib.h>
@@ -191,14 +192,27 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	QObject::connect(m_factor17Button, SIGNAL(clicked()), this, SLOT(slotFactor17ButtonClicked()));
 	QObject::connect(m_factor19Button, SIGNAL(clicked()), this, SLOT(slotFactor19ButtonClicked()));
 
+	// add tooltips to the factor buttons
+	QToolTip::add(m_factor2Button, i18n("Add prime factor 2."));
+	QToolTip::add(m_factor3Button, i18n("Add prime factor 3."));
+	QToolTip::add(m_factor5Button, i18n("Add prime factor 5."));
+	QToolTip::add(m_factor7Button, i18n("Add prime factor 7."));
+	QToolTip::add(m_factor11Button, i18n("Add prime factor 11."));
+	QToolTip::add(m_factor13Button, i18n("Add prime factor 13."));
+	QToolTip::add(m_factor17Button, i18n("Add prime factor 17."));
+	QToolTip::add(m_factor19Button, i18n("Add prime factor 19."));
+
 	// the remove last factor button
 	m_removeLastFactorButton->setText( i18n( "&Remove Last Factor" ) );
 	m_removeLastFactorButton->setEnabled(false);
 	QObject::connect(m_removeLastFactorButton, SIGNAL(clicked()), this, SLOT(slotRemoveLastFactorButtonClicked()));
+	QToolTip::add(m_removeLastFactorButton, i18n("Removes the last entered prime factor."));
 
 	// the check task button
 	m_checkButton->setText( i18n( "&Check Task" ) );
+	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button won't work if you have not entered a result yet."));
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
+	m_checkButton->setDefault(true); // is the default button of the dialog
 
 	// that the user can start choosing the prime factors
 	m_factor2Button->setFocus();
@@ -211,6 +225,10 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	setTabOrder(m_factor13Button, m_factor17Button);
 	setTabOrder(m_factor17Button, m_factor19Button);
 	setTabOrder(m_factor19Button, m_removeLastFactorButton);
+
+	// add tooltip and qwhatsthis help to the widget
+	QToolTip::add(this, i18n("In this exercise you have to factorize a given number."));
+	QWhatsThis::add(this, i18n("In this exercise you have to factorize a given number. You have to enter all prime factors of the number. You can add a prime factor by clicking on the corresponding button. The choosen prime factors will be shown in the input field. Do not forget to enter all prime factors, even when a prime factor repeats several times!"));
 }
 
 /* destructor */
@@ -294,6 +312,9 @@ void ExerciseFactorize::showResult()
 	QColorGroup cg;
 	uint uint_result = 0;
 
+	// change the tooltip of the check button
+	QToolTip::add(m_checkButton, i18n("Click on this button to get to the next task."));
+
 	// disable prime factor buttons
 	m_factor2Button->setEnabled(false);
 	m_factor3Button->setEnabled(false);
@@ -372,6 +393,9 @@ void ExerciseFactorize::showResult()
 /** generate the next task and show it to the user */
 void ExerciseFactorize::nextTask()
 {
+	// change the tooltip of the check button
+	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button won't work if you have not entered a result yet."));
+
 	// enable prime factor buttons
 	m_factor2Button->setEnabled(true);
 	m_factor3Button->setEnabled(true);

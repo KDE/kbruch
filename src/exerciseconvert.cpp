@@ -30,6 +30,7 @@
 #include <qlineedit.h>
 #include <qpushbutton.h>
 #include <qtooltip.h>
+#include <qwhatsthis.h>
 
 /* standard C++ library includes */
 #include <stdlib.h>
@@ -130,6 +131,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 	m_checkButton = new QPushButton( baseWidget, "m_checkButton" );
 	m_checkButton->setText(i18n("&Check Task"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
+	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button won't work if you have not entered a result yet."));
 	lowerHBox->addWidget(m_checkButton, 1, Qt::AlignRight);
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
 
@@ -138,6 +140,10 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 
 	// show the whole layout
 	baseWidget->show();
+
+	// add tooltip and qwhatsthis help to the widget
+	QToolTip::add(this, i18n("In this exercise you have to convert a rational number into a ratio."));
+	QWhatsThis::add(this, i18n("In this exercise you have to convert a given rational number into a ratio by entering numerator and denominator. Do not forget to reduce the result!"));
 }
 
 /* destructor */
@@ -302,6 +308,9 @@ void ExerciseConvert::showResult()
 	QColorGroup cg;
 	ratio entered_result;
 
+	// change the tooltip of the check button
+	QToolTip::add(m_checkButton, i18n("Click on this button to get to the next task."));
+
 	numer_edit->setEnabled(false);
 	deno_edit->setEnabled(false);
 
@@ -384,6 +393,9 @@ void ExerciseConvert::showResult()
 /** generate the next task and show it to the user */
 void ExerciseConvert::nextTask()
 {
+	// change the tooltip of the check button
+	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button won't work if you have not entered a result yet."));
+
 	numer_edit->setEnabled(true);
 	deno_edit->setEnabled(true);
 

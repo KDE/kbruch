@@ -30,6 +30,7 @@
 #include <qlineedit.h>
 #include <qpushbutton.h>
 #include <qtooltip.h>
+#include <qwhatsthis.h>
 
 /* standard C++ library includes */
 #include <math.h>
@@ -130,6 +131,7 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	m_checkButton = new QPushButton( baseWidget, "m_checkButton" );
 	m_checkButton->setText(i18n("&Check Task"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
+	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button won't work if you have not entered a result yet."));
 	lowerHBox->addWidget(m_checkButton, 1, Qt::AlignRight);
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
 
@@ -142,6 +144,10 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	// show the whole layout
 	m_taskWidget->show();
 	m_resultWidget->hide();
+
+	// add tooltip and qwhatsthis help to the widget
+	QToolTip::add(this, i18n("In this exercise you have to solve a given task with fractions."));
+	QWhatsThis::add(this, i18n("In this exercise you have to solve the generated task. You have to enter numerator and denominator. You can adjust the difficulty of the task with the boxes in the toolbar. Do not forget to reduce the result!"));
 }
 
 /* destructor */
@@ -233,6 +239,9 @@ void TaskView::showResult()
 	QPalette pal;
 	QColorGroup cg;
 
+	// change the tooltip of the check button
+	QToolTip::add(m_checkButton, i18n("Click on this button to get to the next task."));
+
 	numer_edit->setEnabled(false);
 	deno_edit->setEnabled(false);
 
@@ -314,6 +323,9 @@ void TaskView::showResult()
 /** generate the next task and show it to the user */
 void TaskView::nextTask()
 {
+	// change the tooltip of the check button
+	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button won't work if you have not entered a result yet."));
+
 	numer_edit->setEnabled(true);
 	deno_edit->setEnabled(true);
 
