@@ -102,7 +102,7 @@ void RationalWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 
 	// paint a = at the end
 	x_pos += _MARGIN_X;
-	paintMiddle(paint, "=", x_pos, fm, m_colorNumber);
+	paintMiddle(paint, "=", x_pos, fm, m_colorOperation);
 
 	// stop the painter
 	paint.end();
