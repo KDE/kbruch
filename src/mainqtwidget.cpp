@@ -24,6 +24,7 @@
 #include <kdebug.h>
 #include <kiconloader.h>
 #include <kjanuswidget.h>
+#include <kconfigdialog.h>
 #include <klocale.h>
 
 #include <qsplitter.h>
@@ -409,6 +410,26 @@ void MainQtWidget::OperationBoxSlot()
 
 void MainQtWidget::slotPrefs()
 {
+	// do not show dialog twice
+	if (KConfigDialog::showDialog("settings"))
+		return;
+
+	//KConfigDialog didn't find an instance of this dialog, so lets create it : 
+	KConfigDialog* configDialog = new KConfigDialog( this, "settings",
+																		SettingsClass::self() );
+
+	
+	TaskViewerOptionsBase * taskViewerOptions = new TaskViewerOptionsBase(0,
+																		"TaskViewerOptionsBase");
+	configDialog->addPage(taskViewerOptions, i18n("Task Viewer Settings"),
+																		"TaskViewerOptionsBase");
+
+	// User edited the configuration - update your local copies of the 
+	// configuration data 
+	connect(configDialog, SIGNAL(settingsChanged()), this, SLOT(slotApplySettings()) ); 
+ 
+	configDialog->show();
+/*
 	SettingsDialog * dlg = new SettingsDialog(this);
 	connect(dlg, SIGNAL(configChanged()), this, SLOT(slotApplySettings()));
 
@@ -417,6 +438,7 @@ void MainQtWidget::slotPrefs()
 	delete dlg;
 	dlg = NULL;
 	
+*/
 	return;
 }
 
