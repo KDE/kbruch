@@ -1,8 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1.2-Based Variant V1.1//EN"
  "dtd/kdex.dtd" [
-<!ENTITY kappname "&kbruch;"><!-- replace kapp here -->
-  <!ENTITY kbruch "<application>KBruch</application>">
+<!ENTITY kappname "&kbruch;">
 <!ENTITY package "kdeedu">
 <!ENTITY % addindex "IGNORE">
 <!ENTITY % English "INCLUDE"><!-- change language only here -->
@@ -59,9 +58,9 @@ denominator. The program checks the input and gives some feedback.
 <title>Introduction</title>
 
 <para>
-KBruch is a small program to generate tasks with fractions. The user has to
+&kbruch; is a small program to generate tasks with fractions. The user has to
 solve the given task by entering the right value for numerator and denominator.
-The program checks the input and gives a feedback.
+The program checks the input and gives feedback.
 </para>
 <para>
 The task generation can be adjusted by different parameters. The user can
@@ -73,13 +72,13 @@ It is possible to enter the number of ratios and the maximum for the main
 denominator.
 </para>
 <para>
-KBruch is very compact and focuses on the core idea of a task generator. An
+&kbruch; is very compact and focuses on the core idea of a task generator. An
 online help system provides context sensitive help for the different
 situations. 
 </para>
 <para>
-KBruch provides a text interface as well. This means you can use KBruch without
-starting X Window System. You have to use the -t command line option.
+&kbruch; provides a text interface as well. This means you can use &kbruch; without
+starting the &X-Window;. You have to use the <option>-t</option> command line option. 
 </para>
 <para>
 It is free and licensed under the &GNU; Public License.
@@ -109,21 +108,23 @@ It is free and licensed under the &GNU; Public License.
 
 <para>
 All action takes place in this single screen. This ensures that &kbruch; is
-easy to use even for young users! The main screen is seperated into 4 parts:
+easy to use even for young users! The main screen is seperated into 4
+parts:</para>
+
 <itemizedlist>
 	<listitem><para>
-		the menu bar with the 2 menus <guimenu>Task</guimenu> and
-		<guimenu>Help</guimenu>
+		The menu bar with the 2 menus <guimenu>Task</guimenu> and
+		<guimenu>Help</guimenu>.
 	</para></listitem>
 	<listitem><para>
-		the toolbar, where you can set the difficulty of the generated tasks
+		The toolbar, where you can set the difficulty of the generated tasks.
 	</para></listitem>
 	<listitem><para>
-		the statistical part, where you can see how many tasks have been solved
-		correctly and at all
+		The statistical part, where you can see how many tasks have been solved
+		correctly and at all.
 	</para></listitem>
-	<listitem><para>
-		the task part, where you have to enter the result of the given task
+	<listitem><he>
+		The task part, where you have to enter the result of the given task.
 	</para></listitem>
 </itemizedlist>
 </para>
@@ -132,19 +133,27 @@ easy to use even for young users! The main screen is seperated into 4 parts:
 <sect1 id="task_paras">
 <title>Task Parameters</title>
 <para>
-There are 3 parameters which influence the difficulty of the generated tasks:
-<itemizedlist>
-	<listitem><para>
-		number of terms (at least 2, max. 5)
-	</para></listitem>
-	<listitem><para>
-		max. main denominator (at least 10, max. 50)
-	</para></listitem>
-	<listitem><para>
-		operations, which should be used in the task
-	</para></listitem>
-</itemizedlist>
-</para>
+There are 3 parameters which influence the difficulty of the generated
+tasks:</para>
+
+<variablelist>
+<varlistentry>
+<term>Number of terms</term>
+<listitem><para>at least 2, and maximum 5</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Max. main denominator</term>
+<listitem><para>At least 10, maximum 50.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Operations</term>
+<listitem><para>Operations which should be used in the
+task.</para></listitem>
+</varlistentry>
+</variablelist>
+
 <para>
 After you have changed the parameters you have to click on the <guimenu>New
 Task</guimenu> button in the toolbar to generate a task which uses the new
@@ -264,13 +273,13 @@ startup.
 from a shell:
 </para>
 <para>
-	<userinput>kbruch -t</userinput>
+	<userinput><command>kbruch</command> <option>-t</option></userinput>
 </para>
 <para>
 or
 </para>
 <para>
-	<userinput>kbruch --text</userinput>
+	<userinput><command>kbruch</command> <option>--text</option></userinput>
 </para>
 <screenshot>
 <screeninfo>Main Menu</screeninfo>
@@ -289,13 +298,13 @@ tasks. &kbruch; provides for this purpose a generator mode. You can only call
 it from a command line:
 </para>
 <para>
-	<userinput>kbruch -g</userinput>
+	<userinput><command>kbruch</command> <option>-g</option></userinput>
 </para>
 <para>
 or
 </para>
 <para>
-	<userinput>kbruch --generate</userinput>
+	<userinput><command>kbruch</command> <option>--generate</option></userinput>
 </para>
 <screenshot>
 <screeninfo>Generator Mode</screeninfo>
@@ -309,7 +318,8 @@ or
 </mediaobject>
 </screenshot>
 <para>
-As shown in the screenshot, you can stop the generator mode by pressing Ctrl+C.
+As shown in the screenshot, you can stop the generator mode by
+pressing <keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>.
 It is not possible to influence the task generator. You can not set parameters
 like number of terms, maximal main denominator size or which operations should
 be used.
@@ -321,7 +331,7 @@ be used.
 <title>Credits and License</title>
 <para>&kbruch;</para>
 <para>
-Program Copyright, 2001-2003 Sebastian Stein
+Program and documentation Copyright, 2001-2003 Sebastian Stein
  <email>kbruch@hpfsc.de</email>
 </para>
 
@@ -329,11 +339,12 @@ Program Copyright, 2001-2003 Sebastian Stein
 
 <itemizedlist>
 	<listitem><para>
-		Anne-Marie Mahfouf for managing the KDE Edu project
+		Anne-Marie Mahfouf for managing the &kde; Edu project
 	</para></listitem>
 	<listitem><para>
-		Eva Brucherseifer for writing KMath (&kbruch;'s GUI is based on this
-		work)
+		Eva Brucherseifer for writing
+		<application>KMath</application> (&kbruch;'s GUI is
+		based on this work)
 	</para></listitem>
 	<listitem><para>
 		Dominique Devriese for bug fixing
@@ -347,10 +358,10 @@ Program Copyright, 2001-2003 Sebastian Stein
 		text interface
 	</para></listitem>
 	<listitem><para>
-		David Faure for helping with KDE CVS and KDE Bugzilla
+		David Faure for helping with &kde; <acronym>CVS</acronym> and &kde; Bugzilla
 	</para></listitem>
 	<listitem><para>
-		Robert Gogolok for helping with KDE CVS
+		Robert Gogolok for helping with &kde; <acronym>CVS</acronym>
 	</para></listitem>
 </itemizedlist>
 
@@ -381,10 +392,11 @@ In order to successfully use &kbruch;, you need &kde; > 3.1 .
 <para>
 &kbruch; itself can be found
 on <ulink url="http://edu.kde.org/kbruch/">The &kbruch; home page</ulink>
-and is part of the KDE-Edu project</para>
+and is part of the &kde; Edu project</para>
 
-<para>You can find a list of changes in the file ChangeLog in the 
-distribution of kbruch or see the CVS commit messages.</para>
+<para>You can find a list of changes in the file ChangeLog in the
+distribution of &kbruch; or see the <acronym>CVS</acronym> commit
+messages.</para>
 
 </sect1>
 
