@@ -620,8 +620,8 @@ void task::make_denominators(int main_denominator, short pmax_md,
 					ratio_pointer++;
 					op_pointer++;
 				}
-				while ((*op_pointer == MUL || *op_pointer == DIV)
-				        && (op_pointer != op_vector.end()));
+				while ((op_pointer != op_vector.end()) &&
+							(*op_pointer == MUL || *op_pointer == DIV));
 
 				/* we always miss to set the last ratio in a mul/div section;
 				 * so we have to fix this here */
