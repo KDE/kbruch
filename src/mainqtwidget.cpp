@@ -76,6 +76,8 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_taskview, SIGNAL(signalTaskSolvedCorrect()), m_statview, SLOT(addCorrect()));
 	QObject::connect(m_taskview, SIGNAL(signalTaskSolvedWrong()), m_statview, SLOT(addWrong()));
 
+	resize(QSize(QMAX(toolBar()->sizeHint().width(), sizeHint().width()), sizeHint().height()));
+
 }
 
 MainQtWidget::~MainQtWidget()
@@ -96,7 +98,7 @@ void MainQtWidget::setupActions()
 	KStdAction::quit(kapp, SLOT(quit()), actionCollection());
 
 	// a label just describing the Number of terms ComboBox
-	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0);
+	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0, "kde toolbar widget");
 	m_NrOfTermsLabelAction = new KWidgetAction(m_NrOfTermsLabel, i18n("Terms:"), ALT+Key_T, 
 						   this, SLOT(NrOfTermsBoxSlot()), 
 						   actionCollection(), "NrOfTermsLabelAction");
@@ -115,7 +117,7 @@ void MainQtWidget::setupActions()
 	QObject::connect(m_NrOfTermsBox, SIGNAL(activated(int)), this, SLOT(NrOfTermsBoxSlot()));
 
 	// a label just describing the max. main denominator ComboBox
-	m_MaxMainDenominatorLabel = new QLabel(i18n("Max. Main Denominator:"), 0);
+	m_MaxMainDenominatorLabel = new QLabel(i18n("Max. Main Denominator:"), 0, "kde toolbar widget");
 	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Max. Main Denominator:"), ALT+Key_T, 
 							    this, SLOT(MaxMainDenominatorBoxSlot()), 
 							    actionCollection(), "MaxMainDenominatorLabelAction");
@@ -135,7 +137,7 @@ void MainQtWidget::setupActions()
 			 this, SLOT(MaxMainDenominatorBoxSlot()));
 
 	// a label just describing the operation ComboBox
-	m_OperationLabel = new QLabel(i18n("Operations:"), 0);
+	m_OperationLabel = new QLabel(i18n("Operations:"), 0, "kde toolbar widget");
 	m_OperationLabelAction = new KWidgetAction(m_OperationLabel, i18n("Operations:"), ALT+Key_O,
 						   this, SLOT(OperationBoxSlot()), 
 						   actionCollection(), "OperationLabelAction");
