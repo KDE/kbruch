@@ -23,9 +23,9 @@
 			<whatsthis>Enable Multiplication/Division for task generation.</whatsthis>
 		</entry>
 		<entry type="UInt" key="number_ratios">
-			<label>Number of ratios</label>
+			<label>Number of fractions</label>
 			<default>2</default>
-			<whatsthis>Set the number of ratios for task generation.</whatsthis>
+			<whatsthis>Set the number of fractions for task generation.</whatsthis>
 		</entry>
 		<entry type="UInt" key="max_main_denominator">
 			<label>Max. main denominator</label>
