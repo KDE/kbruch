@@ -54,6 +54,10 @@ primzahl::~primzahl()
  * return 0 if no, 1 if yes */
 short primzahl::isPrimeNumber(uint number)
 {
+	/* 0 is not a prime number */
+	if (number == 0)
+		return 0;
+
 	/* jump to the start of the vector */
 	move_first();
 
