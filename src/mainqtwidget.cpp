@@ -106,7 +106,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
 	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
 
-	resize(QSize(QMAX(toolBar()->sizeHint().width(), sizeHint().width()), sizeHint().height() + int(0.5 * sizeHint().height())));
+	resize(QSize(QMAX(toolBar()->sizeHint().width(), sizeHint().width()), sizeHint().height()));
 
 	// now show the last exercise
 	m_exercises->showPage(SettingsClass::activeExercise());
