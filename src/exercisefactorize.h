@@ -32,6 +32,7 @@
 #include "ratio.h"
 
 class ResultWidget;
+class FactorizedWidget;
 
 class QVBoxLayout;
 class QHBoxLayout;
@@ -91,8 +92,10 @@ private:
 	QLabel* m_taskLabel;
 	QLabel* m_equalSignLabel;
 	QLineEdit* m_factorsEnteredEdit;
-	QLabel* m_factorsResultLabel;
+	FactorizedWidget* m_factorsWidget;
 	QLabel* result_label;
+
+	
 
 	// buttons for the different prime factors
 	QPushButton* m_factor2Button;
@@ -121,6 +124,7 @@ protected:
 	QSpacerItem* spacer4;
 	QHBoxLayout* layout4;
 	QSpacerItem* spacer1;
+	QSpacerItem* spacer2;
 	QVBoxLayout* layout2;
 	QGridLayout* layout1;
 	QHBoxLayout* layout7;

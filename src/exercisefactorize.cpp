@@ -35,6 +35,7 @@
 /* standard C++ library includes */
 #include <stdlib.h>
 
+#include "factorizedwidget.h"
 #include "primenumber.h"
 #include "rationalwidget.h"
 #include "resultwidget.h"
@@ -77,55 +78,53 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	layout4->addWidget( m_factorsEnteredEdit );
 	m_factorsEnteredEdit->setReadOnly(true);
 	
-	m_factorsResultLabel = new QLabel( this, "m_factorsResultLabel" );
-	layout4->addWidget( m_factorsResultLabel );
+	m_factorsWidget = new FactorizedWidget( this, "m_factorsWidget", m_factorsResult);
+	layout4->addWidget( m_factorsWidget );
+	m_factorsWidget->hide();
 	
 	result_label = new QLabel( this, "result_label" );
 	layout4->addWidget( result_label );
 	spacer1 = new QSpacerItem( 25, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
 	layout4->addItem( spacer1 );
+
+	layout9->addLayout( layout4 );
+	spacer2 = new QSpacerItem( 20, 21, QSizePolicy::Minimum, QSizePolicy::Expanding );
+	layout9->addItem( spacer2 );
 	
 	layout2 = new QVBoxLayout( 0, 0, 6, "layout2"); 
 	
 	layout1 = new QGridLayout( 0, 1, 1, 0, 6, "layout1"); 
 	
 	m_factor3Button = new QPushButton( this, "m_factor3Button" );
-	
 	layout1->addWidget( m_factor3Button, 0, 1 );
 	
 	m_factor2Button = new QPushButton( this, "m_factor2Button" );
-	
 	layout1->addWidget( m_factor2Button, 0, 0 );
 	
 	m_factor13Button = new QPushButton( this, "m_factor13Button" );
-	
 	layout1->addWidget( m_factor13Button, 1, 1 );
 	
 	m_factor7Button = new QPushButton( this, "m_factor7Button" );
-	
 	layout1->addWidget( m_factor7Button, 0, 3 );
 	
 	m_factor11Button = new QPushButton( this, "m_factor11Button" );
-	
 	layout1->addWidget( m_factor11Button, 1, 0 );
 	
 	m_factor19Button = new QPushButton( this, "m_factor19Button" );
-	
 	layout1->addWidget( m_factor19Button, 1, 3 );
 	
 	m_factor5Button = new QPushButton( this, "m_factor5Button" );
-	
 	layout1->addWidget( m_factor5Button, 0, 2 );
 	
 	m_factor17Button = new QPushButton( this, "m_factor17Button" );
-	
 	layout1->addWidget( m_factor17Button, 1, 2 );
+
 	layout2->addLayout( layout1 );
 	
 	m_removeLastFactorButton = new QPushButton( this, "m_removeLastFactorButton" );
 	layout2->addWidget( m_removeLastFactorButton );
-	layout4->addLayout( layout2 );
-	layout9->addLayout( layout4 );
+	layout9->addLayout( layout2 );
+
 	spacer4 = new QSpacerItem( 20, 21, QSizePolicy::Minimum, QSizePolicy::Expanding );
 	layout9->addItem( spacer4 );
 	
@@ -165,10 +164,6 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	cg.setColor(QColorGroup::Foreground, SettingsClass::operationColor());
 	pal.setInactive(cg);
 	m_equalSignLabel->setPalette(pal);
-
-	// the label showing the result, we hide it
-	m_factorsResultLabel->setText(" = ");
-	m_factorsResultLabel->hide();
 
 	// the wrong/correct label, we hide it
 	result_label->setText(i18n("WRONG"));
@@ -328,19 +323,9 @@ void ExerciseFactorize::showResult()
 	// disable factor removal button as well
 	m_removeLastFactorButton->setEnabled(false);
 
-	// show the result, so we have to build the result string
-	for (uint tmp_uint = 0; tmp_uint < m_factorsResult.count(); tmp_uint++)
-	{
-		tmp_str2.setNum(m_factorsResult[tmp_uint]);
-		if (tmp_uint == 0)
-		{
-			tmp_str = "= " + tmp_str2;
-		} else {
-			tmp_str += " * " + tmp_str2;
-		}
-	}
-	m_factorsResultLabel->setText(tmp_str);
-	m_factorsResultLabel->show();
+	// show the result
+	m_factorsWidget->setFactors(m_factorsResult);
+	m_factorsWidget->show();
 
 	// now calculate the product of the prime factors entered by the user
 	for (uint tmp_uint = 0; tmp_uint < m_factorsEntered.count(); tmp_uint++)
@@ -410,7 +395,7 @@ void ExerciseFactorize::nextTask()
 	m_removeLastFactorButton->setEnabled(false);
 
 	result_label->hide(); /* do not show the result at the end of the task */
-	m_factorsResultLabel->hide();
+	m_factorsWidget->hide();
 
 	/* clear user input */
 	m_factorsEntered.clear();
@@ -427,7 +412,7 @@ void ExerciseFactorize::nextTask()
 	// update the task widget
 	QString tmp_str;
 	tmp_str.setNum(m_taskNumber);
-	m_taskLabel->setText(tmp_str + " = ");
+	m_taskLabel->setText(tmp_str);
 
 	return;
 }
