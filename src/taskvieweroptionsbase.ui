@@ -114,7 +114,7 @@
                             </sizepolicy>
                         </property>
                         <property name="text">
-                            <string>Fraction Bar:</string>
+                            <string>Fraction bar:</string>
                         </property>
                     </widget>
                     <widget class="QLabel" row="1" column="0">
@@ -130,7 +130,7 @@
                             </sizepolicy>
                         </property>
                         <property name="text">
-                            <string>Operation Sign:</string>
+                            <string>Operation sign:</string>
                         </property>
                     </widget>
                     <widget class="KColorButton" row="0" column="1">
