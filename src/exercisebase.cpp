@@ -1,5 +1,5 @@
 /***************************************************************************
-                                exercisebase.h
+                                exercisebase.cpp
                              -------------------
     begin                : 2004/06/03
     copyright            : (C) 2004 by Sebastian Stein

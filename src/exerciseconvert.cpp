@@ -184,6 +184,7 @@ void ExerciseConvert::update()
 {
 	// call update of components
 	m_rationalWidget->updateAndRepaint();
+	m_resultWidget->updateAndRepaint();
 
 	// update for itself
 	((QWidget *) this)->update();

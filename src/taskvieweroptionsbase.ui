@@ -86,7 +86,7 @@
                             </color>
                         </property>
                         <property name="toolTip" stdset="0">
-                            <string>CHange the color of the operation signs</string>
+                            <string>Change the color of the operation signs</string>
                         </property>
                     </widget>
                     <widget class="KColorButton" row="2" column="1">
@@ -141,7 +141,7 @@
                     </widget>
                     <widget class="KColorButton" row="0" column="1">
                         <property name="name">
-                            <cstring>kcfg_numberColor</cstring>
+                            <cstring>numberColor</cstring>
                         </property>
                         <property name="text">
                             <string></string>

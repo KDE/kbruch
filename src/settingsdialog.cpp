@@ -55,7 +55,7 @@ SettingsDialog::~SettingsDialog()
 void SettingsDialog::setValues()
 {
 	// for the task viewer page
-	m_taskViewerOptions->kcfg_numberColor->setColor(SettingsClass::numberColor());
+	m_taskViewerOptions->numberColor->setColor(SettingsClass::numberColor());
 	m_taskViewerOptions->operationColorButton->setColor(SettingsClass::operationColor());
 	m_taskViewerOptions->fractionBarColorButton->setColor(SettingsClass::fractionBarColor());
 	m_taskViewerOptions->fontChooser->setFont(SettingsClass::taskFont());
@@ -95,7 +95,7 @@ void SettingsDialog::applyPage(Page page)
 	switch (page)
 	{
 		case page_taskviewer:
-				SettingsClass::setNumberColor(m_taskViewerOptions->kcfg_numberColor->color());
+				SettingsClass::setNumberColor(m_taskViewerOptions->numberColor->color());
 				SettingsClass::setOperationColor(m_taskViewerOptions->operationColorButton->color());
 				SettingsClass::setFractionBarColor(m_taskViewerOptions->fractionBarColorButton->color());
 				SettingsClass::setTaskFont(m_taskViewerOptions->fontChooser->font());
