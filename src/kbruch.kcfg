@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kcfg SYSTEM "http://www.kde.org/standards/kcfg/1.0/kcfg.dtd">
+<kcfg>
+	<kcfgfile name="kbruchrc"/>
+
+	<group name="Task">
+		<entry type="Bool" key="addsub">
+			<label>enable Addition/Substraction</label>
+			<default>true</default>
+			<whatsthis>Enable Addition/Substraction for task generation.</whatsthis>
+		</entry>
+		<entry type="Bool" key="muldiv">
+			<label>enable Multiplication/Division</label>
+			<default>false</default>
+			<whatsthis>Enable Multiplication/Division for task generation.</whatsthis>
+		</entry>
+		<entry type="UInt" key="number_ratios">
+			<label>number of ratios</label>
+			<default>2</default>
+			<whatsthis>Set the number of ratios for task generation.</whatsthis>
+		</entry>
+		<entry type="UInt" key="max_main_denominator">
+			<label>max. main denominator</label>
+			<default>10</default>
+			<whatsthis>Set the number of ratios for task generation.</whatsthis>
+		</entry>
+	</group>
+
+	<group name="Statistics">
+		<entry type="Int" key="correct">
+			<label>number of correctly solved tasks</label>
+			<default>0</default>
+			<whatsthis>Number of correctly solved tasks.</whatsthis>
+		</entry>
+		<entry type="Int" key="count">
+			<label>number of solved tasks</label>
+			<default>0</default>
+			<whatsthis>Number of solved tasks at all.</whatsthis>
+		</entry>
+	</group>
+</kcfg>

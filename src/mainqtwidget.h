@@ -2,7 +2,7 @@
                           mainqtwidget.h  -  The main Qt/KDE window
                              -------------------
     begin                : Tue Mar 16 00:00:00 CET 2003
-    copyright            : (C) 2003 by Sebastian Stein
+    copyright            : (C) 2003-2004 by Sebastian Stein
     email                : kbruch@hpfsc.de
  ***************************************************************************/
 
@@ -20,7 +20,6 @@
 #include <kmainwindow.h>
 
 
-class KConfig;
 class KWidgetAction;
 
 class QLabel;
@@ -81,8 +80,6 @@ class MainQtWidget : public KMainWindow
 		KWidgetAction * m_OperationLabelAction;
 
 		KAction * m_NewTaskAction;
-
-		KConfig * m_config;
 
 	private slots:
 		void NewTask();

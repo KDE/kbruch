@@ -1,0 +1,4 @@
+File=kbruch.kcfg
+ClassName=SettingsClass
+Singleton=true
+Mutators=true

@@ -2,7 +2,7 @@
                           statisticsview.cpp  -  Header File
                              -------------------
     begin                : Tue Mar 08 17:20:00 CET 2002
-    copyright            : (C) 2001 - 2003 by Sebastian Stein, Eva Brucherseifer
+    copyright            : (C) 2001 - 2004 by Sebastian Stein, Eva Brucherseifer
     email                : kbruch@hpfsc.de
  ***************************************************************************/
 
@@ -17,8 +17,6 @@
 
 #ifndef STATISTICSVIEW_H
 #define STATISTICSVIEW_H
-
-class KConfig;
 
 class QLabel;
 class QPushButton;
@@ -42,7 +40,7 @@ class StatisticsView : public QWidget
 
 public:
 	/** constructor */
-	StatisticsView(QWidget * parent = 0, const char * name = 0, KConfig * m_config = 0);
+	StatisticsView(QWidget * parent = 0, const char * name = 0);
 
 	/** destructor */
 	~StatisticsView();
@@ -62,9 +60,8 @@ private:
 	/** calculate percentages and update view */
 	void calc();
 
-	unsigned int count;
-	unsigned int correct;
-	KConfig * m_config;
+	unsigned int m_count;
+	unsigned int m_correct;
 
 	QPushButton * resetBtn;
 	QHBoxLayout * buttonLayout;

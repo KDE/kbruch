@@ -2,7 +2,7 @@
                           statisticsview.cpp  -  the statistic window
                              -------------------
     begin                : Tue Mar 08 17:20:00 CET 2002
-    copyright            : (C) 2001 - 2002 by Sebastian Stein, Eva Brucherseifer
+    copyright            : (C) 2001 - 2004 by Sebastian Stein, Eva Brucherseifer
     email                : bruch@hpfsc.de
  ***************************************************************************/
 
@@ -27,33 +27,25 @@
 #include <qvbox.h>
 #include <qtooltip.h>
 
-#include <kconfig.h>
 #include <klocale.h>
 #include <kdebug.h>
 
+#include <settingsclass.h>
+
 /* constructor */
-StatisticsView::StatisticsView(QWidget * parent, const char * name,
-										 KConfig * pConfig):
-		QWidget(parent, name), m_config(pConfig)
+StatisticsView::StatisticsView(QWidget * parent, const char * name):
+		QWidget(parent, name), m_count(0), m_correct(0)
 {
-	/* reset the number of solved tasks */
-	if (m_config == 0)
-	{
-		count = correct = 0;
-	} else {
-		// load statistics from config file
-		m_config->setGroup("Statistics");
-		count = m_config->readNumEntry("count", 0);
-		correct = m_config->readNumEntry("correct", 0);
-	}
-
-	QPalette pal;
-	QColorGroup cg;
 #ifdef DEBUG
-
 	kdDebug() << "constructor StatisticsView()" << endl;
 #endif
 
+	// load statistics from config file
+	m_count = SettingsClass::count();
+	m_correct = SettingsClass::correct();
+
+	QPalette pal;
+	QColorGroup cg;
 
 	/* set the caption of the window */
 	//	setCaption(i18n("Statistics"));
@@ -144,13 +136,9 @@ StatisticsView::~StatisticsView()
 	kdDebug() << "destructor StatisticsView()" << endl;
 #endif
 	// save statistics for next run
-	if (m_config != 0)
-	{
-		m_config->setGroup("Statistics");
-		m_config->writeEntry("count", count);
-		m_config->writeEntry("correct", correct);
-                m_config->sync();
-	}
+	SettingsClass::setCount(m_count);
+	SettingsClass::setCorrect(m_correct);
+	SettingsClass::writeConfig();
 
 	/* no need to delete any child widgets, Qt does it by itself */
 }
@@ -158,15 +146,15 @@ StatisticsView::~StatisticsView()
 /* called, if a task solved correctly */
 void StatisticsView::addCorrect()
 {
-	++count;
-	++correct;
+	++m_count;
+	++m_correct;
 	(void) calc(); /* repaint the statistics */
 }
 
 /* called, if a task was solved wrong */
 void StatisticsView::addWrong()
 {
-	++count;
+	++m_count;
 	(void) calc(); /* repaint the statistics */
 }
 
@@ -179,11 +167,11 @@ void StatisticsView::calc()
 	QString new_text;
 	QString number;
 
-	new_text.sprintf("<b>%d</b>", count);
+	new_text.sprintf("<b>%d</b>", m_count);
 	result1Label->setText(new_text);
 
 	/* we have to be careful with division by 0 */
-	if (count == 0)
+	if (m_count == 0)
 	{
 		result2Label->setText("- (-%)");
 		result3Label->setText("- (-%)");
@@ -191,13 +179,13 @@ void StatisticsView::calc()
 	else
 	{
 		/* set the correct label */
-		new_text.sprintf("%d (%d %%)", correct,
-		                 int(double(correct) / count * 100));
+		new_text.sprintf("%d (%d %%)", m_correct,
+		                 int(double(m_correct) / m_count * 100));
 		result2Label->setText(new_text);
 
 		/* set the incorrect label */
-		new_text.sprintf("%d (%d %%)", count - correct,
-		                 int(double(count - correct) / count * 100));
+		new_text.sprintf("%d (%d %%)", m_count - m_correct,
+		                 int(double(m_count - m_correct) / m_count * 100));
 		result3Label->setText(new_text);
 	}
 }
@@ -207,7 +195,7 @@ void StatisticsView::calc()
 /* called by the reset button */
 void StatisticsView::resetStatistics()
 {
-	count = 0;
-	correct = 0;
+	m_count = 0;
+	m_correct = 0;
 	(void) calc();
 }

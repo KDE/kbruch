@@ -2,7 +2,7 @@
                           mainqtwidget.cpp  -  The main Qt/KDE window
                              -------------------
     begin                : Tue Mar 16 00:00:00 CET 2003
-    copyright            : (C) 2003 by Sebastian Stein
+    copyright            : (C) 2003-2004 by Sebastian Stein
     email                : kbruch@hpfsc.de
  ***************************************************************************/
 
@@ -20,7 +20,6 @@
 
 #include <kaccel.h>
 #include <kapplication.h>
-#include <kconfig.h>
 #include <kdebug.h>
 #include <kmenubar.h>
 #include <kpopupmenu.h>
@@ -35,6 +34,8 @@
 #include "taskview.h"
 #include "statisticsview.h"
 
+#include <settingsclass.h>
+
 /* ------ public member functions ------ */
 
 MainQtWidget::MainQtWidget()
@@ -43,8 +44,7 @@ MainQtWidget::MainQtWidget()
 	kdDebug() << "constructor MainQtWidget" << endl;
 #endif
 
-	// get the config file
-	m_config = kapp->config();
+	// get the settings
 	readOptions();
 
 	// creating KActions, used by the kbruchui.rc file
@@ -58,7 +58,7 @@ MainQtWidget::MainQtWidget()
 	setCentralWidget(splitter);
 
 	// create the statistic view
-	m_statview = new StatisticsView(splitter, "StatisticsView", m_config);
+	m_statview = new StatisticsView(splitter, "StatisticsView");
 
 	// create the task view with the given defaults
 	m_taskview = new TaskView(splitter,"TaskView", m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
@@ -83,21 +83,19 @@ MainQtWidget::~MainQtWidget()
 
 void MainQtWidget::readOptions()
 {
-	m_config->setGroup("Task");
-	m_addSub = m_config->readBoolEntry("addsub", true);
-	m_mulDiv = m_config->readBoolEntry("muldiv", false);
-	m_nrRatios = m_config->readNumEntry("number_ratios", 2);
-	m_maxMainDenominator = m_config->readNumEntry("max_main_denominator", 10);
+	m_addSub = SettingsClass::addsub();
+	m_mulDiv = SettingsClass::muldiv();
+	m_nrRatios = SettingsClass::number_ratios();
+	m_maxMainDenominator = SettingsClass::max_main_denominator();
 }
 
 void MainQtWidget::writeOptions()
 {
-	m_config->setGroup("Task");
-	m_config->writeEntry("addsub", m_addSub);
-	m_config->writeEntry("muldiv", m_mulDiv);
-	m_config->writeEntry("number_ratios", m_nrRatios);
-	m_config->writeEntry("max_main_denominator", m_maxMainDenominator);
-        m_config->sync();
+	SettingsClass::setAddsub(m_addSub);
+	SettingsClass::setMuldiv(m_mulDiv);
+	SettingsClass::setNumber_ratios(m_nrRatios);
+	SettingsClass::setMax_main_denominator(m_maxMainDenominator);
+	SettingsClass::writeConfig();
 }
 
 void MainQtWidget::setupActions()

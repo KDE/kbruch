@@ -1,5 +1,5 @@
 bin_PROGRAMS = kbruch
-kbruch_SOURCES = task.cpp ratio.cpp taskview.cpp statisticsview.cpp primzahl.cpp kbruch.cpp mainqtwidget.cpp
+kbruch_SOURCES = task.cpp ratio.cpp taskview.cpp statisticsview.cpp primzahl.cpp kbruch.cpp mainqtwidget.cpp settingsclass.kcfgc
 kbruch_LDADD   =  $(LIB_KDEUI)
 # the library search path.
 kbruch_LDFLAGS = $(all_libraries) $(KDE_RPATH)
@@ -7,6 +7,7 @@ kbruch_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 EXTRA_DIST = kbruch.cpp kbruch.h kbruch.desktop hi32-app-kbruch.png hi16-app-kbruch.png lo32-app-kbruch.png lo16-app-kbruch.png mainqtwidget.cpp mainqtwidget.h primzahl.cpp primzahl.h statisticsview.cpp statisticsview.h taskview.cpp taskview.h ratio.cpp ratio.h task.cpp task.h kbruch.rc
 
 xdg_apps_DATA = kbruch.desktop
+kde_kcfg_DATA = kbruch.kcfg
 
 KDE_ICON = AUTO
 
