@@ -1,4 +1,4 @@
-SUBDIRS = src
+SUBDIRS = src testcases
 
 EXTRA_DIST = AUTHORS ChangeLog README TODO kbruch.lsm VERSION
 
