@@ -3,7 +3,7 @@
                              -------------------
     begin                : Tue Nov 27 16:40:42 CET 2001
     copyright            : (C) 2001 by Sebastian Stein
-    email                : seb.stein@hpfsc.de
+    email                : seb.kde@hpfsc.de
  ***************************************************************************/
 
 /***************************************************************************
@@ -41,11 +41,16 @@
 #define UNUSED 0
 #define USED  	1
 
-/** we need a structure to store a prime factor and a flag to mark the
- * factor as used or unused in the given context */
+/** Structure represents a prime factor.
+ *  Structure stores a prime factor and its usage status. The factor is marked
+ *  as used or unused.
+ **/
 typedef struct PRIME_FACTOR
 {
+	/** the prime factor */
 	int factor;
+
+	/** the status of the prime factor (used or unused) */
 	short flag;
 }
 Tprime_factor;

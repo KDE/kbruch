@@ -1,7 +1,7 @@
 Coding
 =======
 
-Sebastian Stein <kbruch@hpfsc.de>
+Sebastian Stein <seb.kde@hpfsc.de>
 
 Eva Brucherseifer <eva@kde.org>
 (wrote KMath -> KBruch's GUI is based on this work)
@@ -23,6 +23,7 @@ Stefan Schumacher <webmaster@net-tex.de>
 Thanks
 ======
 
+Klas Kalass <klas.kalass@gmx.de> for helping design the interface
 David Faure <faure@kde.org> for helping with KDE CVS and KDE Bugzilla
 Robert Gogolok <mail@robert-gogolok.de> for helping with KDE CVS
 Anne-Marie Mahfouf <annemahfouf@hotmail.com> for managing the KDE Edu project

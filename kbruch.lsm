@@ -1,11 +1,11 @@
 Begin3
 Title:          KBruch
-Version:        0.24
-Entered-date:   2003-04-24
+Version:        3.3-alpha
+Entered-date:   2004-02-18
 Description:    task generator for calculations with fractions
 Keywords:       ratio, fraction, generator, denominator
-Author:         Sebastian Stein <bruch@hpfsc.de> 
-Maintained-by:  Sebastian Stein <bruch@hpfsc.de> 
+Author:         Sebastian Stein <seb.kde@hpfsc.de> 
+Maintained-by:  Sebastian Stein <seb.kde@hpfsc.de> 
 Primary-site:   http://edu.kde.org/kbruch/
 Home-page:      http://edu.kde.org/kbruch/
 Original-site:  http://edu.kde.org/kbruch/

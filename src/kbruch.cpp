@@ -3,7 +3,7 @@
                              -------------------
     begin                : Tue Nov 27 16:40:42 CET 2001
     copyright            : (C) 2001 by Sebastian Stein
-    email                : seb.stein@hpfsc.de
+    email                : seb.kde@hpfsc.de
  ***************************************************************************/
 
 /***************************************************************************
@@ -17,6 +17,8 @@
 
 #include "kbruch.h"
 
+#include "version.h"
+
 #include <math.h>
 
 #include <iostream>
@@ -29,7 +31,7 @@ char show_main_txt()
 	char chrInput;
 
 	CLEAR; /* clear the console */
-	output << "\tKBruch " << VERSION << " " << DATE << endl;
+	output << "\tKBruch " << KBRUCH_VERSION << " " << DATE << endl;
 	output << "\n\n\tWhat do you want to do:" << endl;
 	output << "\n\n\t\t[a]ddition/subtraction" << endl;
 	output << "\n\t\t[m]ultiplication/division" << endl;
@@ -54,7 +56,7 @@ void ask_parameters_txt(short & nr_ratios, unsigned int & max_md)
 	short tmp_short;
 	unsigned int tmp_ui;
 
-	output << "\tKBruch " << VERSION << " " << DATE << endl;
+	output << "\tKBruch " << KBRUCH_VERSION << " " << DATE << endl;
 	output << "\n\n\tEnter number of ratios (between 2 and 5): ";
 
 	/* get the input and check for errors */
@@ -104,7 +106,7 @@ short run_task_txt(short add_sub, short mul_div,
 	short wrong = FALSE;
 
 	CLEAR;
-	output << "\tKBruch " << VERSION << " " << DATE << endl;
+	output << "\tKBruch " << KBRUCH_VERSION << " " << DATE << endl;
 	output << "\n\n\tSolve the given task: \n" << endl;
 
 	/* create a new task with the given parameters */
@@ -157,7 +159,7 @@ if (abs(result.get_zaehler() > 200))
 	if (wrong == TRUE)
 	{
 		CLEAR;
-		output << "\tKBruch " << VERSION << " " << DATE << endl;
+		output << "\tKBruch " << KBRUCH_VERSION << " " << DATE << endl;
 		output << "\n\n\tYou entered the wrong result for the task:\n" << endl;
 		output << qSetW(8) << klausur << endl; /* display the task */
 		output << "\n\n\tThe correct result is:\n" << endl;
@@ -179,7 +181,7 @@ if (abs(result.get_zaehler() > 200))
 void show_about_txt()
 {
 	CLEAR;
-	output << "\tKBruch " << VERSION << " " << DATE << endl;
+	output << "\tKBruch " << KBRUCH_VERSION << " " << DATE << endl;
 	output << "\n\t\tDescription: task generator for calculations with fractions";
 	output << endl << "\n\t\tHomepage: " << HOMEPAGE << endl;
 	output << "\n\t\tMaintainer: " << MAINTAINER << " <" << MAINTAINER_EMAIL;
@@ -232,7 +234,7 @@ int gui_konsole(void)
 				count++;
 
 				CLEAR;
-				output << "\tKBruch " << VERSION << " " << DATE << endl;
+				output << "\tKBruch " << KBRUCH_VERSION << " " << DATE << endl;
 				output << "\n\n\ttasks so far: \t" << count << endl;
 				output << "\tcorrect: \t" << correct;
 				output << "  " << int(double(correct) / count * 100) << "%" << endl;
@@ -272,12 +274,12 @@ int gui_qt_ini(int argc, char * argv[])
 	 * user */
 	KAboutData aboutData( "kbruch",
 		description,
-		VERSION,
+		KBRUCH_VERSION,
 		I18N_NOOP("KBruch is an application to automatically generate tasks with fractions."),
 		KAboutData::License_GPL,
-    	"(c) 2002, Sebastian Stein", 0, "http://edu.kde.org/kbruch/",
-		"kbruch@hpfsc.de");
-	aboutData.addAuthor("Sebastian Stein",0, "kbruch@hpfsc.de");
+    	"(c) 2002-2004, Sebastian Stein", 0, "http://edu.kde.org/kbruch/",
+		"seb.kde@hpfsc.de");
+	aboutData.addAuthor("Sebastian Stein",0, "seb.kde@hpfsc.de");
  	KCmdLineArgs::init( argc, argv, &aboutData );
 
 	/* our own options -t and -g are already checked before to prevent

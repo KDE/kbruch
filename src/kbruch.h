@@ -3,7 +3,7 @@
                              -------------------
     begin                : Tue Nov 27 16:40:42 CET 2001
     copyright            : (C) 2001 by Sebastian Stein
-    email                : seb.stein@hpfsc.de
+    email                : seb.kde@hpfsc.de
  ***************************************************************************/
 
 /***************************************************************************
@@ -23,9 +23,9 @@
 #include <config.h>
 
 #define MAINTAINER "Sebastian Stein"
-#define MAINTAINER_EMAIL "kbruch@hpfsc.de"
+#define MAINTAINER_EMAIL "seb.kde@hpfsc.de"
 #define HOMEPAGE "http://edu.kde.org/kbruch/"
-#define DATE "[2003-04-24]"
+#define DATE "[2004-02-18]"
 
 #include "primzahl.h"
 #include "ratio.h"

@@ -1,4 +1,6 @@
 bin_PROGRAMS = kbruch
+
+kbruch_COMPILE_FIRST = version.h
 kbruch_SOURCES = task.cpp ratio.cpp taskview.cpp statisticsview.cpp primzahl.cpp kbruch.cpp mainqtwidget.cpp settingsclass.kcfgc
 kbruch_LDADD   =  $(LIB_KDEUI)
 # the library search path.
@@ -39,3 +41,9 @@ messages: rc.cpp
 	 $(XGETTEXT) $$LIST -o $(podir)/kbruch.pot; \
 	fi
 
+version.h: $(top_srcdir)/kbruch/VERSION
+	printf "#undef KBRUCH_VERSION\n#define KBRUCH_VERSION \"`cat $(top_srcdir)/kbruch/VERSION`\"\n" > version.h
+
+CLEANFILES = version.h
+
+noinst_HEADERS = version.h

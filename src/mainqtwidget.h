@@ -3,7 +3,7 @@
                              -------------------
     begin                : Tue Mar 16 00:00:00 CET 2003
     copyright            : (C) 2003-2004 by Sebastian Stein
-    email                : kbruch@hpfsc.de
+    email                : seb.kde@hpfsc.de
  ***************************************************************************/
 
 /***************************************************************************
@@ -27,12 +27,12 @@ class QLabel;
 class StatisticsView;
 class TaskView;
 
-/*! Constructs the main window and presents the user interface.
+/** Constructs the main window and presents the user interface.
  *  The window is seperated into 2 sections. In the left section is the
  *  statistic view and in the right section the task view.
  *  \author Sebastian Stein
  *  \author Eva Brucherseifer
- * */
+ **/
 class MainQtWidget : public KMainWindow
 {
 	Q_OBJECT
@@ -88,6 +88,9 @@ class MainQtWidget : public KMainWindow
 		void OperationBoxSlot();
 
 	protected:
+		/** Function is called when user calls termination.
+		 *  Used to save the current statistics and settings before exiting.
+		 **/
 		bool queryExit();
 };
 

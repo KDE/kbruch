@@ -2,3 +2,4 @@ SUBDIRS = src
 
 EXTRA_DIST = AUTHORS ChangeLog README TODO kbruch.lsm VERSION
 
+VERSION:=`cat ${PWD}/VERSION`
