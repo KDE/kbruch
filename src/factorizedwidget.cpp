@@ -21,16 +21,12 @@
 /* these includes are needed for Qt support */
 #include <qpainter.h>
 
-#include <kdebug.h>
-
 FactorizedWidget::FactorizedWidget(QWidget * parent, const char * name, const uintList para_factors) :
 			FractionBaseWidget(parent, name), m_factors(para_factors)
 {
 #ifdef DEBUG
 	kdDebug() << "constructor FactorizedWidget" << endl;
 #endif
-kdDebug() << "para_factors.count: " << para_factors.count() << endl;
-kdDebug() << "m_factors.count: " << m_factors.count() << endl;
 }
 
 FactorizedWidget::~FactorizedWidget()
@@ -42,9 +38,7 @@ FactorizedWidget::~FactorizedWidget()
 
 void FactorizedWidget::setFactors(const uintList para_factors)
 {
-kdDebug() << "para_factors.count: " << para_factors.count() << endl;
 	m_factors = para_factors;
-kdDebug() << "m_factors.count: " << m_factors.count() << endl;
 	update();
 }
 
