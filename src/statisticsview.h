@@ -37,7 +37,10 @@ class StatisticsView : public QWidget
 	Q_OBJECT
 
 public:
+	/** constructor */
 	StatisticsView(QWidget * parent = 0, const char * name = 0);
+
+	/** destructor */
 	~StatisticsView();
 
 public slots:
@@ -48,11 +51,11 @@ public slots:
 	void addWrong();
 
 	/** set statistics to zero.
-         *  Triggered by internal button or when a new test is started
-         */
+	 *  Triggered by internal button or when a new test is started
+	 */
 	void resetStatistics();
 private:
-	//! calculate percentages and update view
+	/** calculate percentages and update view */
 	void calc();
 
 	unsigned int count;
