@@ -3,8 +3,6 @@ what is left to do
 
 	* maybe use int instead of short because source easier to read
 
-	* document classes to be able to use KDoc/doxygen
-
 	* maybe split class task in representation, calculate and generation
 
 	* (integrate KBruch as part into KMath -> KMath isn't maintained at the

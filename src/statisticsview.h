@@ -2,8 +2,8 @@
                           statisticsview.cpp  -  Header File
                              -------------------
     begin                : Tue Mar 08 17:20:00 CET 2002
-    copyright            : (C) 2001 - 2002 by Sebastian Stein, Eva Brucherseifer
-    email                : bruch@hpfsc.de
+    copyright            : (C) 2001 - 2003 by Sebastian Stein, Eva Brucherseifer
+    email                : kbruch@hpfsc.de
  ***************************************************************************/
 
 /***************************************************************************
@@ -26,10 +26,12 @@ class QGridLayout;
 
 #include <qwidget.h>
 
-/**
+/*!
   * StatisticsView takes care of the statistics of a test.
   * It saves the number of correct and wrong questions and
-  * views its data to the user
+  * views its data to the user.
+  * \author Sebastian Stein
+  * \author Eva Brucherseifer
   */
 
 class StatisticsView : public QWidget

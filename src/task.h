@@ -55,28 +55,54 @@ typedef QValueVector<ratio> RatioArray;
 typedef QValueVector<short> ShortArray;
 typedef QValueVector<Tprime_factor> PrimeFactorArray;
 
-/** class to handle mathematical tasks with ratios
- * naming:
- * - a ratio corresponds to one exercise
- * - an operation
- */
+/*! class to handle mathematical tasks with ratios
+ *  naming:
+ *  - a task has at least 2 ratios
+ *  - a task has at least 1 operation
+ *
+ *  \author Sebastian Stein */
 class task
 {
 public:
+	/** constructor */
 	task();
+
+	/** destructor */
 	~task();
+
+	/** automatically generate a new task with the given parameters */
 	void create_task(unsigned int pmax_md = 10, short pnr_ratios = 2,
 	                 short padd_sub = YES, short pmul_div = NO);
+
+	/** set ratio n */
 	void set_ratio_n(unsigned short number = 0, int zaehler = 0,
 	                 int nenner = 1);
+
+	/** set ratio n */
 	void set_ratio_n(unsigned short number = 0, ratio bruch = 0);
+
+	/** returns ration n */
 	ratio get_ratio_n(unsigned short number = 0);
+
+	/** set operation n */
 	void set_op_n(unsigned short number = 0, short operation = ADD);
+
+	/** return operation n */
 	short get_op_n(unsigned short number = 0);
+
+	/** add a ratio to the end of the task */
 	void add_ratio(ratio new_ratio = 0);
+
+	/** add a ratio to the end of the task */
 	void add_ratio(int zaehler = 0, int nenner = 1);
+
+	/** add an operation at the end of the task */
 	void add_operation(short operation = ADD);
+
+	/** display the whole task, mainly for debug */
 	QTextStream & display(QTextStream & str);
+
+	/** solves the task and returns the result as ratio */
 	ratio solve();
 private:
 	/** max. size of main denominator */

@@ -84,23 +84,23 @@ class primzahl;
 
 /* ------ function prototypes ------ */
 
-/* show the main menu for a text gui */
+/** show the main menu for a text gui */
 char show_main_txt();
 
-/* ask for the other parameters needed to generate a task */
+/** ask for the other parameters needed to generate a task */
 void ask_parameters_txt(short & nr_ratios, unsigned int & max_md);
 
-/* generates the next task, asks the user for the result */
+/** generates the next task, asks the user for the result */
 short run_task_txt(short add_sub, short mul_div,
 						short nr_ratios, unsigned int max_md);
 
-/* show some more information about the program */
+/** show some more information about the program */
 void show_about_txt(void);
 
-/* to show a very simple text interface for console users */
+/** to show a very simple text interface for console users */
 int gui_konsole(void);
 
-/* to show a Qt GUI */
+/** to show a Qt GUI */
 int gui_qt_ini(int argc, char * argv[]);
 
 #endif /* ifndef BRUCH_H */

@@ -35,20 +35,38 @@ class QSpacerItem;
 class QPushButton;
 class QVBoxLayout;
 
+/*! Constructs a QWidget, which shows the task to the user. 
+ *  The class also provides input fields, so that the user can enter the result.
+ *  It also controlls the interaction, so that the entered result gets checked
+ *  and a new task can be generated.
+ *  \author Sebastian Stein
+ * */
 class TaskView : public QWidget
 {
 	Q_OBJECT
 
 public:
+	/** constructor */
 	TaskView(QWidget * parent = 0, const char * name = 0,
 	         bool padd_sub = true, bool pmul_div = false,
 	         unsigned int pnr_ratios = 2, unsigned int pmax_md = 10);
-	~TaskView(); /* destructor */
+
+	/** destructor */
+	~TaskView();
+
+	/** set new task parameters, which will be used for the next task to be
+	 * generated */
 	void setTaskParameters(bool padd_sub, bool pmul_div, unsigned int pnr_ratios, unsigned int pmax_md);
+
+	/** force the creation of a new task */
 	void forceNewTask();
 
 signals:
+	/** class emits this signal, if the task was solved correctly by the user */
 	void signalTaskSolvedCorrect();
+
+	/** class emits this signal, if the task was solved not correctly by the user
+	 * */
 	void signalTaskSolvedWrong();
 
 private:
@@ -57,8 +75,6 @@ private:
 	unsigned int nr_ratios;
 	unsigned int curr_nr_ratios;
 	unsigned int max_md;
-
-private:
 	short m_currentState;
 
 	QGridLayout * baseGrid;

@@ -26,17 +26,30 @@ class QLabel;
 class StatisticsView;
 class TaskView;
 
+/*! Constructs the main window and presents the user interface.
+ *  The window is seperated into 2 sections. In the left section is the
+ *  statistic view and in the right section the task view.
+ *  \author Sebastian Stein
+ *  \author Eva Brucherseifer
+ * */
 class MainQtWidget : public KMainWindow
 {
 	Q_OBJECT
 			  
 	public:
+		/** constructor */
 		MainQtWidget();
+
+		/** destructor */
 		~MainQtWidget();
+
+	private:
+		/** pointing to the statistics view */
 		StatisticsView * m_statview;
+
+		/** pointing to the task view */
 		TaskView * m_taskview;
 		
-	private:
 		bool m_addSub;
 		bool m_mulDiv;
 		unsigned int m_nrRatios;
