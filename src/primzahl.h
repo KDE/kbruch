@@ -28,7 +28,8 @@ typedef QValueVector<uint> UnsignedIntArray;
  *  number is stored in the vector. To check if a given number is a prime number
  *  this vector is scanned and if needed new prime numbers are generated. This
  *  algorithm should reduce calculation time and speed up every program using
- *  this prime number class. */
+ *  this prime number class.
+ *  \author Sebastian Stein */
 class primzahl
 {
 public:

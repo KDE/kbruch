@@ -20,37 +20,80 @@
 
 #include <qtextstream.h>
 
-/* handling ratios */
+/** Represents a ratio
+ *  This class represents 1 ratio. There are several functions provided to
+ *  modify the numerator and denominator. It is also possible to calculate with
+ *  objects of the class ratio. Overloaded operation functions are provided for
+ *  this task.
+ *  \author Sebastian Stein */
 class ratio
 {
 public:
+	/** constructor */
 	ratio(int pzaehler = 0, int pnenner = 1);
+
+	/** destructor */
 	~ratio();
+
+	/** returns the ratio as QTextStream object */
 	QTextStream & display(QTextStream & str) const;
-	int get_zaehler(); // return numerator
-	int get_nenner(); // return denominator
-	void set_zaehler(int pzaehler = 0); // set numerator
-	void set_nenner(int pnenner = 1); // set denominator
-	void set_zaehler_ohne_k(int pzaehler = 0); // set numerator without reduce
-	void set_nenner_ohne_k(int pnenner = 1); // set denominator without reduce
-	ratio operator+(ratio summand); // c = object + summand
-	ratio operator-(ratio subtrahend); // c = object - subtrahend
-	ratio operator*(ratio factor); // c = object * factor
-	ratio operator/(ratio divisor); // c = object / divisor
+
+	/** returns the numerator */
+	int get_zaehler();
+
+	/** returns the denominator */
+	int get_nenner();
+
+	/** set numerator and reduce the ratio */
+	void set_zaehler(int pzaehler = 0);
+
+	/** set denominator and reduce the ratio */
+	void set_nenner(int pnenner = 1);
+
+	/** set numerator without reducing the ratio */
+	void set_zaehler_ohne_k(int pzaehler = 0);
+
+	/** set denominator without reducing the ratio */
+	void set_nenner_ohne_k(int pnenner = 1);
+
+	/** operator overloading for: c = object + summand */
+	ratio operator+(ratio summand);
+
+	/** operator overloading for: c = object - subtrahend */
+	ratio operator-(ratio subtrahend);
+
+	/** operator overloading for: c = object * factor */
+	ratio operator*(ratio factor);
+
+	/** operator overloading for: c = object / divisor */
+	ratio operator/(ratio divisor);
+
+	/** set numerator with dummy and denominator = 1 */
 	ratio operator=(int dummy);
+
+	/** compares the current ratio with a given one */
 	bool operator==(ratio right);
-	void reziproc(); // Reziproke bilden
-	void reduce(); // kuerzen
+
+	/** exchange numerator and denominator */
+	void reziproc();
+
+	/** reduce the ratio */
+	void reduce();
 private:
-	int zaehler; // numerator
-	int nenner; // denominator
-	void change_sign(); // Vorzeichen tauschen
+	/** numerator */
+	int zaehler;
+
+	/** denominator */
+	int nenner;
+
+	/** change sign of the ratio */
+	void change_sign();
 }
 ;
 
 /* ------ some prototyps of non class functions ------ */
 
-/* it is possible to code: cout << ratio_object << endl; */
+/** it is possible to code: cout << ratio_object << endl; */
 QTextStream & operator<<(QTextStream & str, const ratio & pratio);
 
 #endif
