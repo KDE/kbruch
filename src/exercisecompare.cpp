@@ -84,7 +84,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 	m_signButtonState = lessThen;
 	taskLineHBoxLayout->addWidget(m_signButton);
 	QObject::connect(m_signButton, SIGNAL(clicked()), this, SLOT(slotSignButtonClicked()));
-	QToolTip::add(m_signButton, i18n("Click on this button to change the comparision sign."));
+	QToolTip::add(m_signButton, i18n("Click on this button to change the comparison sign."));
 
 	// spacer
 	v_spacer = new QSpacerItem(1, 1);
@@ -131,7 +131,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 
 	// add tooltip and qwhatsthis help to the widget
 	QToolTip::add(this, i18n("In this exercise you have to compare 2 given ratios."));
-	QWhatsThis::add(this, i18n("In this exercise you have to compare 2 given ratios by choosing the correct comparision sign. You can change the comparision sign by just clicking on the button showing the sign."));
+	QWhatsThis::add(this, i18n("In this exercise you have to compare 2 given ratios by choosing the correct comparison sign. You can change the comparison sign by just clicking on the button showing the sign."));
 }
 
 /* destructor */
