@@ -7,9 +7,6 @@
     <Separator/>
     <Action name="file_quit"/>
   </Menu>
-  <Menu noMerge="1" name="settings"><text>&amp;Settings</text>
-    <Action name="preferences"/>
-  </Menu>
 </MenuBar>
 <ToolBar noMerge="1" name="mainToolBar" fullWidth="true">
   <text>Main Toolbar</text>

@@ -159,7 +159,7 @@ void MainQtWidget::setupActions()
 	KStdAction::quit(kapp, SLOT(quit()), actionCollection());
 
 	//
-	KStdAction::preferences(this,  SLOT( slotPrefs() ), actionCollection(), "preferences");
+	KStdAction::preferences(this,  SLOT( slotPrefs() ), actionCollection());
 
 	// a label just describing the Number of terms ComboBox
 	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0, "kde toolbar widget");
