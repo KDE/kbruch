@@ -18,12 +18,12 @@
 #include "taskview.h"
 #include "taskview.moc"
 
-/* this includes are needed for KDE support */
+/* these includes are needed for KDE support */
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kapplication.h>
 
-/* this includes are needed for Qt support */
+/* these includes are needed for Qt support */
 #include <qabstractlayout.h>
 #include <qcombobox.h>
 #include <qfont.h>

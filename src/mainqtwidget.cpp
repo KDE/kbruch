@@ -85,7 +85,7 @@ void MainQtWidget::setupActions()
 {
 	// new task action
 	m_NewTaskAction = new KAction(i18n("&New Task"), "filenew", KStdAccel::shortcut(KStdAccel::New),
-				      this, SLOT(NewTask()), 
+				      this, SLOT(NewTask()),
 				      actionCollection(), "NewTask");
 
 	// quit action
@@ -94,7 +94,7 @@ void MainQtWidget::setupActions()
 	// a label just describing the Number of terms ComboBox
 	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0, "kde toolbar widget");
 	m_NrOfTermsLabelAction = new KWidgetAction(m_NrOfTermsLabel, i18n("Terms:"), ALT+Key_T,
-						   this, SLOT(NrOfTermsBoxSlot()), 
+						   this, SLOT(NrOfTermsBoxSlot()),
 						   actionCollection(), "NrOfTermsLabelAction");
 
 	// the ComboBox holding possible values for term number
@@ -104,7 +104,7 @@ void MainQtWidget::setupActions()
 	m_NrOfTermsBox->insertItem("4");
 	m_NrOfTermsBox->insertItem("5");
 	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of terms"), ALT+Key_T,
-						 this, SLOT(NrOfTermsBoxSlot()), 
+						 this, SLOT(NrOfTermsBoxSlot()),
 						 actionCollection(), "NrOfTermsBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
@@ -113,7 +113,7 @@ void MainQtWidget::setupActions()
 	// a label just describing the max. main denominator ComboBox
 	m_MaxMainDenominatorLabel = new QLabel(i18n("Max. main denominator:"), 0, "kde toolbar widget");
 	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Max. Main Denominator:"), ALT+Key_T,
-							    this, SLOT(MaxMainDenominatorBoxSlot()), 
+							    this, SLOT(MaxMainDenominatorBoxSlot()),
 							    actionCollection(), "MaxMainDenominatorLabelAction");
 
 	// the ComboBox holding possible values for the max. main denominator
@@ -123,7 +123,7 @@ void MainQtWidget::setupActions()
 	m_MaxMainDenominatorBox->insertItem("30");
 	m_MaxMainDenominatorBox->insertItem("50");
 	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal main denominator"), ALT+Key_T,
-							  this, SLOT(MaxMainDenominatorBoxSlot()), 
+							  this, SLOT(MaxMainDenominatorBoxSlot()),
 							  actionCollection(), "MaxMainDenominatorBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
@@ -133,7 +133,7 @@ void MainQtWidget::setupActions()
 	// a label just describing the operation ComboBox
 	m_OperationLabel = new QLabel(i18n("Operations:"), 0, "kde toolbar widget");
 	m_OperationLabelAction = new KWidgetAction(m_OperationLabel, i18n("Operations:"), ALT+Key_O,
-						   this, SLOT(OperationBoxSlot()), 
+						   this, SLOT(OperationBoxSlot()),
 						   actionCollection(), "OperationLabelAction");
 
 	// the ComboBox holding possible combinations for operations
@@ -142,7 +142,7 @@ void MainQtWidget::setupActions()
 	m_OperationBox->insertItem(i18n("Multiplication/Division"));
 	m_OperationBox->insertItem(i18n("All Operations Mixed"));
 	m_OperationBoxAction = new KWidgetAction(m_OperationBox, i18n("Operations:"), ALT+Key_O,
-						 this, SLOT(OperationBoxSlot()), 
+						 this, SLOT(OperationBoxSlot()),
 						 actionCollection(), "OperationBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
@@ -191,6 +191,10 @@ void MainQtWidget::NrOfTermsBoxSlot()
 	}
 	// set the new task parameters
 	(void) m_taskview->setTaskParameters(m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
+	//a change of terms should trigger a new task with the correct terms number
+	(void) m_taskview->forceNewTask();
+	//TODO (annma suggestion) in that case, the statistic view should stay the same
+	//i.e the non done task should not be counted as wrong
 }
 
 /** called, when the user changes the max. size of the main denominator in
