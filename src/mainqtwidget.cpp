@@ -223,10 +223,13 @@ void MainQtWidget::NrOfTermsBoxSlot()
 	}
 	// set the new task parameters
 	(void) m_taskview->setTaskParameters(m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
+	//I think clicking on new task after setting all parameters is the best way
+	//to ensure good usability -> everything else would be hard to explain to the
+	//user!
 	//a change of terms should trigger a new task with the correct terms number
-	(void) m_taskview->forceNewTask();
-	//TODO (annma suggestion) in that case, the statistic view should stay the same
-	//i.e the non done task should not be counted as wrong
+	//(void) m_taskview->forceNewTask();
+	//TODO (annma suggestion) in that case, the statistic view should stay the
+	//same i.e the non done task should not be counted as wrong
 }
 
 /** called, when the user changes the max. size of the main denominator in
