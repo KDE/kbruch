@@ -355,6 +355,10 @@ void TaskView::newLayout()
 	 * bottom */
 	realLayout = new QVBoxLayout(baseWidget, 5, 5);
 
+	/* now add a v-spacer */
+	QSpacerItem * v_spacer = new QSpacerItem(1, 1);
+	realLayout->addItem(v_spacer);
+
 	/* create a HBox to show the task */
 	taskHBoxLayout = new QHBoxLayout(baseWidget, 5, 5);
 	realLayout->addLayout(taskHBoxLayout);
@@ -540,6 +544,10 @@ void TaskView::newLayout()
 		setCaption(i18n("Multiplication & Division Task"));
 	if (add_sub == YES && mul_div == YES)
 		setCaption(i18n("Task with All 4 Operations"));
+
+	/* now add a v-spacer */
+	v_spacer = new QSpacerItem(1, 1);
+	realLayout->addItem(v_spacer);
 
 	// now get to the lower part of our real layout
 	// we have only a button, which should be aligned right

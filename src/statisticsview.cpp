@@ -63,6 +63,10 @@ StatisticsView::StatisticsView(QWidget * parent, const char * name,
 	layout1->setSpacing(6);
 	layout1->setMargin(6);
 
+	/* now add a v-spacer */
+	QSpacerItem * v_spacer = new QSpacerItem(1, 1);
+	layout1->addItem(v_spacer);
+
 	/* create a grid to show the labels */
 	labelGrid = new QGridLayout(layout1, 3, 2);
 
@@ -115,6 +119,10 @@ StatisticsView::StatisticsView(QWidget * parent, const char * name,
 	labelGrid->addWidget(result3Label, 3, 1);
 	QToolTip::add(result3Label,
 	              i18n("This is the current total number of unsolved tasks."));
+
+	/* now add a v-spacer */
+	v_spacer = new QSpacerItem(1, 1);
+	layout1->addItem(v_spacer);
 
 	/* the Reset button */
 	buttonLayout = new QHBoxLayout(layout1);
