@@ -196,10 +196,10 @@
                     </rect>
                 </property>
                 <property name="text">
-                    <string>Show result also as a mixed number like 1 2/3.</string>
+                    <string>Show result also as a mixed number, like 1 2/3.</string>
                 </property>
                 <property name="toolTip" stdset="0">
-                    <string>Here you can enable/disable to show the result in the mixed number notation.</string>
+                    <string>Here you can enable/disable showing the result in mixed-number notation.</string>
                 </property>
             </widget>
         </widget>
