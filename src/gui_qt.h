@@ -48,8 +48,6 @@ class gui_qt : public QVBox
 	public:
 		gui_qt(QWidget * parent = 0, const char * name = 0); /* constructor */
 		~gui_qt(); /* destructor */
-	public slots:
-		void slotShowBook();
 	private slots:
 		void showQt_Para_addsub();
 		void showQt_Para_muldiv();
