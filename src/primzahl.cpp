@@ -54,20 +54,23 @@ primzahl::~primzahl()
  * return 0 if no, 1 if yes */
 short primzahl::isPrimeNumber(uint number)
 {
+	/* jump to the start of the vector */
+	move_first();
+
 	/* check, if we can find a divisor */
 	for (unsigned int dummy = get_first(); dummy < number; dummy = get_next())
 	{
 		if ((number % dummy == 0) && (dummy != number))
-			return 0; // we found one
+			return 0; // the number is not a prime number
 
 		/* we found a prime number, because we only have to test the given 
 		 * number against all known prime numbers smaller square root of the 
 		 * number */
 		if (dummy * dummy > number)
-			return 0;
+			return 1;
 	}
 
-	return 1; // we found no one
+	return 1; // the given number is a prime number
 }
 
 /* returns next prime number */
