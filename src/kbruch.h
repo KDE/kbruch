@@ -23,13 +23,13 @@
 /*#ifdef HAVE_CONFIG_H*/
 #include <config.h>
 /*#else*/
-#define KBRUCH_VERSION "0.19"
+#define KBRUCH_VERSION "0.20"
 /*#endif*/
 
 #define MAINTAINER "Sebastian Stein"
-#define MAINTAINER_EMAIL "bruch@hpfsc.de"
-#define HOMEPAGE "http://www.hpfsc.de/bruch/"
-#define DATE "[2002-05-01]"
+#define MAINTAINER_EMAIL "kbruch@hpfsc.de"
+#define HOMEPAGE "http://edu.kde.org/kbruch/"
+#define DATE "[2002-05-30]"
 
 #include "primzahl.h"
 #include "ratio.h"
