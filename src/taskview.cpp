@@ -323,7 +323,7 @@ void TaskView::nextTask()
 			op_lab_vek[tmp_counter]->setText("x");
 			break;
 		case DIV :
-			op_lab_vek[tmp_counter]->setText(":");
+			op_lab_vek[tmp_counter]->setText("÷");
 			break;
 		} /* switch (operation) */
 	} /* for (tmp_counter = 0; tmp_counter < nr_ratios - 1; tmp_counter++) */
@@ -348,7 +348,7 @@ void TaskView::newLayout()
 		delete baseWidget;
 		baseWidget = 0;
 	}
-	baseWidget = new QWidget(this);
+	baseWidget = new QWidget(this, "baseWidget");
 	baseGrid->addWidget(baseWidget, 0, 0);
 
 	/* we have a VBox containing the task at the top and the next button at the
@@ -388,7 +388,7 @@ void TaskView::newLayout()
 				op_lab_vek[tmp_counter]->setText("x");
 				break;
 			case DIV :
-				op_lab_vek[tmp_counter]->setText(":");
+				op_lab_vek[tmp_counter]->setText("÷");
 				break;
 		}
 	}
