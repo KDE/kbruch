@@ -39,7 +39,7 @@
 <abstract>
 <para>&kbruch; is a small program to generate tasks with fractions. The user
 has to solve the given task by entering the right value for numerator and
-denominator. The program checks the input and gives a feedback.
+denominator. The program checks the input and gives some feedback.
 </para>
 	
 </abstract>
@@ -73,14 +73,16 @@ It is possible to enter the number of ratios and the maximum for the main
 denominator.
 </para>
 <para>
-KBruch is very compact and focuses on the core idea of a task generator. A
+KBruch is very compact and focuses on the core idea of a task generator. An
 online help system provides context sensitive help for the different
 situations. 
 </para>
 <para>
 KBruch provides a text interface as well. This means you can use KBruch without
-starting X-Windows. You have to use the -t command line option. It is free and
-licensed under the &GNU; Public License.
+starting X-Windows. You have to use the -t command line option.
+</para>
+<para>
+It is free and licensed under the &GNU; Public License.
 </para>
 </chapter>
 
@@ -151,18 +153,18 @@ parameters. You can also call this action from the menu bar with
 Task</guimenuitem></menuchoice>.
 </para>
 <para>
-Note, your selection of the max. main denominator will be reseted to a default
-value every time you change the number of terms. So you have to change first
-the number of terms and than select the max. main denominator.
+Note, your selection of the max. main denominator will be reset to a default
+value every time you change the number of terms. So you have to first change
+the number of terms and then select the max. main denominator.
 </para>
 <para>
-If you have not solved the currently given task and call the <guimenu>New
+If you have not solved the current task and call the <guimenu>New
 Task</guimenu> action, the task will be counted as not solved correctly. To
 prevent this you have to change the parameters after you solved the task but
 before generating a new one.
 </para>
 <para>
-The choosen parameters will be saved on &kbruch;'s termination and restored
+The chosen parameters will be saved on &kbruch;'s termination and restored
 on next startup.
 </para>
 </sect1>
@@ -175,14 +177,14 @@ input boxes. In the upper box the numerator has to be entered and in the lower
 box the denominator.
 </para>
 <para>
-If the result is negativ, you can enter the minus sign in front of the
+If the result is negative, you can enter the minus sign in front of the
 numerator or denominator. If the result is 0, you can leave both boxes empty.
 If the result has a denominator of 1, you can leave the lower box empty.
 </para>
 <para>
 After you have entered the result you have to click the <guimenu>Check
 Task</guimenu> button below the input boxes. &kbruch; will check your input and
-present the correct result. Therefor the main screen changes a little bit as
+present the correct result. Therefore the main screen changes a little, as
 you can see in the screenshot:
 </para>
 <screenshot>
@@ -202,7 +204,7 @@ forms. The second form just in front of the word CORRECT is only used in some
 countries and must be read as 4 + 1/4 in the given case.
 </para>
 <para>
-Note, you allways have to enter the result reduced, because most teachers only
+Note, you always have to enter the result reduced, because most teachers only
 give all points to reduced results. &kbruch; will show you a short message
 like the one in the screenshot below, if you entered the correct result
 unreduced.
@@ -221,9 +223,9 @@ unreduced.
 </screenshot>
 
 <para>
-To go on with the next task click on the <guimenu>Next Task</guimenu> button.
-If you want to change the parameters for the next task, you have to do this
-before clicking on the <guimenu>Next Task</guimenu> button.
+To continue with the next task, click on the <guimenu>Next Task</guimenu>
+button.  If you want to change the parameters for the next task, you have to do
+this before clicking on the <guimenu>Next Task</guimenu> button.
 </para>
 </sect1>
 
@@ -233,7 +235,7 @@ before clicking on the <guimenu>Next Task</guimenu> button.
 In this part of the main screen you can see:	
 <itemizedlist>
 	<listitem><para>
-		how many tasks have been solved at all
+		how many tasks have been solved
 	</para></listitem>
 	<listitem><para>
 		how many tasks have been solved correctly
