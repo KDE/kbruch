@@ -52,7 +52,7 @@ primzahl::~primzahl()
 
 /* check, if the given number is a prime number;
  * return 0 if no, 1 if yes */
-short primzahl::isPrimeNumber(unsigned int number)
+short primzahl::isPrimeNumber(uint number)
 {
 	/* check, if we can find a divisor */
 	for (unsigned int dummy = get_first(); dummy < number; dummy = get_next())
