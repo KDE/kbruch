@@ -207,6 +207,9 @@ void ExerciseCompare::showResult()
 	// change the tooltip of the check button
 	QToolTip::add(m_checkButton, i18n("Click on this button to get to the next task."));
 
+	// disable sign button
+	m_signButton->setEnabled(false);
+
 	if ((m_signButtonState == lessThen && result == true) ||
 		 (m_signButtonState == greaterThen && result == false))
 	{
@@ -250,6 +253,9 @@ void ExerciseCompare::nextTask()
 {
 	// change the tooltip of the check button
 	QToolTip::add(m_checkButton, i18n("Click on this button to check your result."));
+
+	// enable sign button
+	m_signButton->setEnabled(true);
 
 	result_label->hide(); /* do not show the result at the end of the task */
 
