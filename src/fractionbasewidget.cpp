@@ -50,7 +50,7 @@ void FractionBaseWidget::updateAndRepaint()
 	update();
 }
 
-void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_pos, QFontMetrics & fm, bool show_mixed)
+void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_pos, QFontMetrics & fm, bool show_mixed, bool addMargin)
 {
 	QPen pen = paint.pen(); // get the pen
 	int fontHeight = fm.lineSpacing(); // get the font height
@@ -120,13 +120,16 @@ void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_p
 	
 		// move the x position to the right by adding the width used for painting
 		// the ratio and a margin
-		x_pos += _MARGIN_X + fontWidth;
+		x_pos += fontWidth;
+
+		if (addMargin == true)
+			x_pos += _MARGIN_X;
 	}
 
 	return;
 }
 
-void FractionBaseWidget::paintMiddle(QPainter & paint, QString paint_str, int & x_pos, QFontMetrics & fm, QColor color)
+void FractionBaseWidget::paintMiddle(QPainter & paint, QString paint_str, int & x_pos, QFontMetrics & fm, QColor color, bool addMargin)
 {
 	// get the pen, font height and font width
 	QPen pen = paint.pen();
@@ -140,7 +143,10 @@ void FractionBaseWidget::paintMiddle(QPainter & paint, QString paint_str, int & 
 
 	// move the x position to the right by adding the width used for
 	// painting the string and a margin
-	x_pos += _MARGIN_X + fontWidth;
+	x_pos += fontWidth;
+
+	if (addMargin == true)
+		x_pos += _MARGIN_X;
 
 	return;
 }

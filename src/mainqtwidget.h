@@ -26,6 +26,7 @@ class KWidgetAction;
 class QLabel;
 
 class ExerciseCompare;
+class ExerciseConvert;
 class StatisticsView;
 class TaskView;
 
@@ -66,6 +67,10 @@ class MainQtWidget : public KMainWindow
 		/** pointing to the exercise comparing ratios; added as page to the
 		 * iconlist */ 
 		ExerciseCompare * m_exerciseCompare;
+
+		/** pointing to the exercise convert rational number; added as page to the
+		 * iconlist */ 
+		ExerciseConvert * m_exerciseConvert;
 		
 		bool m_addSub;
 		bool m_mulDiv;

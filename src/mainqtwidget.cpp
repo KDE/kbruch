@@ -35,6 +35,7 @@
 #include <math.h>
 
 #include "exercisecompare.h"
+#include "exerciseconvert.h"
 #include "taskview.h"
 #include "statisticsview.h"
 
@@ -74,9 +75,13 @@ MainQtWidget::MainQtWidget()
 	QVBox * page = m_exercises->addVBoxPage(i18n("Fraction Task"), "", DesktopIcon("misc"));
 	m_taskview = new TaskView((QWidget *) page, "TaskView", m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
 
-	// we have the exercise to solve fraction tasks
+	// we have the exercise to compare ratios
 	page = m_exercises->addVBoxPage(i18n("Comparison Task"), "", DesktopIcon("misc"));
 	m_exerciseCompare = new ExerciseCompare((QWidget *) page, "ExerciseCompare");
+
+	// we have the exercise to convert rational numbers into ratios
+	page = m_exercises->addVBoxPage(i18n("Conversion Task"), "", DesktopIcon("misc"));
+	m_exerciseConvert = new ExerciseConvert((QWidget *) page, "ExerciseConvert");
 
 	splitter->setResizeMode(m_statview, QSplitter::FollowSizeHint);
 
@@ -89,8 +94,10 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_taskview, SIGNAL(signalTaskSolvedWrong()), m_statview, SLOT(addWrong()));
 	QObject::connect(m_exerciseCompare, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
 	QObject::connect(m_exerciseCompare, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
+	QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
+	QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
 
-	resize(QSize(QMAX(toolBar()->sizeHint().width(), sizeHint().width()), sizeHint().height()));
+	resize(QSize(QMAX(toolBar()->sizeHint().width(), sizeHint().width()), sizeHint().height() + int(0.5 * sizeHint().height())));
 
 	// now show the last exercise
 	m_exercises->showPage(SettingsClass::activeExercise());
@@ -231,6 +238,7 @@ void MainQtWidget::NewTask()
 	kdDebug() << "NewTask MainQtWidget" << endl;
 	kdDebug() << "pageIndex(m_taskview): " << m_exercises->pageIndex(m_taskview) << endl;
 	kdDebug() << "pageIndex(m_exerciseCompare): " << m_exercises->pageIndex(m_exerciseCompare) << endl;
+	kdDebug() << "pageIndex(m_exerciseConvert): " << m_exercises->pageIndex(m_exerciseConvert) << endl;
 #endif
 
 	// check which page should generate a new task
@@ -241,6 +249,9 @@ void MainQtWidget::NewTask()
 					break;
 		case 1 :
 					m_exerciseCompare->forceNewTask();
+					break;
+		case 2 :
+					m_exerciseConvert->forceNewTask();
 					break;
 	}
 
@@ -397,6 +408,7 @@ void MainQtWidget::slotApplySettings()
 	// update the task view
 	m_taskview->update();
 	m_exerciseCompare->update();
+	m_exerciseConvert->update();
 
 	return;
 }
@@ -407,6 +419,7 @@ void MainQtWidget::slotAboutToShowPage(QWidget * page)
 	kdDebug() << "slotAboutToShowPage MainQtWidget" << endl;
 	kdDebug() << "pageIndex(m_taskview): " << m_exercises->pageIndex(m_taskview) << endl;
 	kdDebug() << "pageIndex(m_exerciseCompare): " << m_exercises->pageIndex(m_exerciseCompare) << endl;
+	kdDebug() << "pageIndex(m_exerciseConvert): " << m_exercises->pageIndex(m_exerciseConvert) << endl;
 #endif
 
 	// check which page to show
