@@ -74,7 +74,7 @@ qt_para::qt_para(QWidget * parent, const char * name,
 	buttonHBox = new QHBoxLayout(layout1);
 
 	/* ok button */
-	okBtn = new QPushButton(i18n("&Ok"), this);
+	okBtn = new QPushButton(i18n("&OK"), this);
 	buttonHBox->addWidget(okBtn);
 	QToolTip::add(okBtn,
 						i18n("Press the button to begin with task generation"));
