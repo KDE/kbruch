@@ -86,8 +86,6 @@ private:
 	QWidget* baseWidget;
 	QVBoxLayout* realLayout;
 
-	QString number;
-
 	void createTask();
 	void showResult();
 	void nextTask();
