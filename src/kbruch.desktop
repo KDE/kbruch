@@ -1,8 +1,8 @@
-# KDE Config File  
+# KDE Config File
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
-Exec=kbruch -caption "%c" %i %m  
+Exec=kbruch -caption "%c" %i %m
 Icon=kbruch
 DocPath=kbruch/index.html
 GenericName=Exercise Fractions
