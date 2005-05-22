@@ -1,8 +1,8 @@
-# KDE Config File  
+# KDE Config File
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
-Exec=kbruch -caption "%c" %i %m  
+Exec=kbruch -caption "%c" %i %m
 Icon=kbruch
 DocPath=kbruch/index.html
 GenericName=Exercise Fractions
@@ -10,6 +10,7 @@ GenericName[ar]=تمرين على الكسور
 GenericName[bg]=Упражнения с дроби
 GenericName[bs]=Vježbajte razlomke
 GenericName[ca]=Fraccions d'exercici
+GenericName[cs]=Cvičení se zlomky
 GenericName[cy]=Ymarfer Ffracsiynnau
 GenericName[da]=Øvelsesopgaver med brøker
 GenericName[de]=Übe Bruchrechnung
@@ -24,6 +25,7 @@ GenericName[hu]=Törtszámítás-gyakorló
 GenericName[is]=Tugabrotaæfingar
 GenericName[it]=Esercizi con le frazioni
 GenericName[ja]=分数の練習
+GenericName[mk]=Вежбајте дропки
 GenericName[nb]=Brøk-øvelser
 GenericName[nl]=Breuken oefenen
 GenericName[nn]=Brøkøvingar
@@ -62,6 +64,7 @@ Comment[is]=Gera æfingar með tugabrotum
 Comment[it]=Esercizi con le frazioni
 Comment[ja]=分数の実践練習
 Comment[lv]=Praktiskie uzdevumi ar daļām
+Comment[mk]=Вежбајте задачи со дропки
 Comment[ms]=Buat latihan pecahan
 Comment[nb]=Treningsøvelser med brøker
 Comment[nds]=Brookreken öven
