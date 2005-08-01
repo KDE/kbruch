@@ -27,6 +27,10 @@
 #include "exercisebase.h"
 #include "ratio.h"
 #include "ratiowidget.h"
+//Added by qt3to4:
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QGridLayout>
 
 class QGridLayout;
 class QLabel;

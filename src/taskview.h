@@ -31,6 +31,12 @@
 #endif
 
 #include <qwidget.h>
+//Added by qt3to4:
+#include <QLabel>
+#include <QVBoxLayout>
+#include <Q3Frame>
+#include <QHBoxLayout>
+#include <QGridLayout>
 
 
 class QVBoxLayout;
@@ -40,7 +46,7 @@ class QSpacerItem;
 class QLabel;
 class QPushButton;
 class QLineEdit;
-class QFrame;
+class Q3Frame;
 
 /*! Constructs a QWidget, which shows the task to the user.
  *  The class also provides input fields, so that the user can enter the result.
@@ -92,7 +98,7 @@ private:
 	QLabel* result_label;
 	TaskWidget* m_taskWidget;
 	QLineEdit* numer_edit;
-	QFrame* edit_line;
+	Q3Frame* edit_line;
 	QLineEdit* deno_edit;
 
 	QGridLayout* baseGrid;

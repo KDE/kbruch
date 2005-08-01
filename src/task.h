@@ -22,6 +22,8 @@
 #include "primenumber.h"
 
 #include <vector>
+//Added by qt3to4:
+#include <QTextStream>
 
 /** important for add_sub and mul_div */
 #define YES 1
@@ -52,9 +54,9 @@ typedef struct PRIME_FACTOR
 Tprime_factor;
 
 /** we use the vector template class to create 3 dynamic types */
-typedef QValueVector<ratio> RatioArray;
-typedef QValueVector<short> ShortArray;
-typedef QValueVector<Tprime_factor> PrimeFactorArray;
+typedef Q3ValueVector<ratio> RatioArray;
+typedef Q3ValueVector<short> ShortArray;
+typedef Q3ValueVector<Tprime_factor> PrimeFactorArray;
 
 /*! class to handle mathematical tasks with ratios
  *  naming:

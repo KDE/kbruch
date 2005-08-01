@@ -28,6 +28,8 @@
 #include "ratio.h"
 
 #include <qwidget.h>
+//Added by qt3to4:
+#include <QPaintEvent>
 
 
 /*! base class for painting fractions

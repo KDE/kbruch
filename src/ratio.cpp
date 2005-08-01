@@ -19,6 +19,8 @@
 
 #include "ratio.h"
 #include "primenumber.h"
+//Added by qt3to4:
+#include <QTextStream>
 
 /* ----- public member functions ----- */
 

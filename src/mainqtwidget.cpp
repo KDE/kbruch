@@ -30,7 +30,7 @@
 #include <qsplitter.h>
 #include <qlabel.h>
 #include <qtooltip.h>
-#include <qwhatsthis.h>
+
 #include <qwidget.h>
 
 #include <math.h>
@@ -62,13 +62,13 @@ MainQtWidget::MainQtWidget()
 
 	// we split the main view into 2 parts, one for the tasks, one for the
 	// statistics
-	QSplitter* splitter = new QSplitter(QSplitter::Horizontal, this,"QSplitter");
+	QSplitter* splitter = new QSplitter(Qt::Horizontal, this,"QSplitter");
 	setCentralWidget(splitter);
 
 	// the iconlist, where the user can choose the different exercises
 	m_exercises = new KJanusWidget(splitter, "KJanusWidget", KJanusWidget::IconList);
 	QToolTip::add(m_exercises, i18n("Choose another exercise by clicking on an icon."));
-	QWhatsThis::add(m_exercises, i18n("Click on the different icons to choose another exercise. The exercises help you to practice different aspects of calculating with fractions."));
+	m_exercises->setWhatsThis( i18n("Click on the different icons to choose another exercise. The exercises help you to practice different aspects of calculating with fractions."));
 
 	// create the statistic view
 	m_statview = new StatisticsView(splitter, "StatisticsView");
@@ -76,7 +76,7 @@ MainQtWidget::MainQtWidget()
 	// add the pages
 	//
 	// we have the exercise to solve fraction tasks
-	QVBox * page = m_exercises->addVBoxPage(i18n("Fraction Task"), "", DesktopIcon("kbruch_exercise_common"));
+	Q3VBox * page = m_exercises->addVBoxPage(i18n("Fraction Task"), "", DesktopIcon("kbruch_exercise_common"));
 	m_taskview = new TaskView((QWidget *) page, "TaskView", m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
 
 	// we have the exercise to compare ratios
@@ -166,7 +166,7 @@ void MainQtWidget::setupActions()
 
 	// a label just describing the Number of terms ComboBox
 	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0, "kde toolbar widget");
-	m_NrOfTermsLabelAction = new KWidgetAction(m_NrOfTermsLabel, i18n("Terms:"), ALT+Key_E,
+	m_NrOfTermsLabelAction = new KWidgetAction(m_NrOfTermsLabel, i18n("Terms:"), Qt::ALT+Qt::Key_E,
 						   this, SLOT(NrOfTermsBoxSlot()),
 						   actionCollection(), "NrOfTermsLabelAction");
 
@@ -178,15 +178,15 @@ void MainQtWidget::setupActions()
 	m_NrOfTermsBox->insertItem("5");
 	m_NrOfTermsBox->setCurrentItem(m_nrRatios - 2);
 	QToolTip::add( m_NrOfTermsBox, i18n( "The number of terms you want" ) );
-	QWhatsThis::add( m_NrOfTermsBox, i18n( "Choose the number of terms (2, 3, 4 or 5) you want for calculating fractions." ) );
-	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of Terms"), ALT+Key_E, this, SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsBoxAction");
+	m_NrOfTermsBox->setWhatsThis( i18n( "Choose the number of terms (2, 3, 4 or 5) you want for calculating fractions." ) );
+	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of Terms"), Qt::ALT+Qt::Key_E, this, SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_NrOfTermsBox, SIGNAL(activated(int)), this, SLOT(NrOfTermsBoxSlot()));
 
 	// a label just describing the max. main denominator ComboBox
 	m_MaxMainDenominatorLabel = new QLabel(i18n("Max. main denominator:"), 0, "kde toolbar widget");
-	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Max. main denominator:"), ALT+Key_D,
+	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Max. main denominator:"), Qt::ALT+Qt::Key_D,
 							    this, SLOT(MaxMainDenominatorBoxSlot()),
 							    actionCollection(), "MaxMainDenominatorLabelAction");
 
@@ -197,7 +197,7 @@ void MainQtWidget::setupActions()
 	m_MaxMainDenominatorBox->insertItem("30");
 	m_MaxMainDenominatorBox->insertItem("50");
 	QToolTip::add( m_MaxMainDenominatorBox, i18n( "The maximum number you can have as main denominator" ) );
-	QWhatsThis::add( m_MaxMainDenominatorBox, i18n( "Choose the number which will be the maximum for the main denominator: 10, 20, 30, 40 or 50." ) );
+	m_MaxMainDenominatorBox->setWhatsThis( i18n( "Choose the number which will be the maximum for the main denominator: 10, 20, 30, 40 or 50." ) );
 	switch (m_maxMainDenominator)
 	{
 		case 10 : m_MaxMainDenominatorBox->setCurrentItem(0);
@@ -209,7 +209,7 @@ void MainQtWidget::setupActions()
 		case 50 : m_MaxMainDenominatorBox->setCurrentItem(3);
 					 break;
 	}
-	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal Main Denominator"), ALT+Key_D, this, SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorBoxAction");
+	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal Main Denominator"), Qt::ALT+Qt::Key_D, this, SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_MaxMainDenominatorBox, SIGNAL(activated(int)),
@@ -217,7 +217,7 @@ void MainQtWidget::setupActions()
 
 	// a label just describing the operation ComboBox
 	m_OperationLabel = new QLabel(i18n("Operations:"), 0, "kde toolbar widget");
-	m_OperationLabelAction = new KWidgetAction(m_OperationLabel, i18n("Operations:"), ALT+Key_O,
+	m_OperationLabelAction = new KWidgetAction(m_OperationLabel, i18n("Operations:"), Qt::ALT+Qt::Key_O,
 						   this, SLOT(OperationBoxSlot()),
 						   actionCollection(), "OperationLabelAction");
 
@@ -235,8 +235,8 @@ void MainQtWidget::setupActions()
 		m_OperationBox->setCurrentItem(2);
 	}
 	QToolTip::add( m_OperationBox, i18n( "The operations you want" ) );
-	QWhatsThis::add( m_OperationBox, i18n( "Choose the type of operations you want for calculating fractions: Addition/Substraction, Multiplication/Division or All Operations Mixed. If you choose All Operations Mixed, the program will randomly choose addition, substraction, multiplication and/or division." ) );
-	m_OperationBoxAction = new KWidgetAction(m_OperationBox, i18n("Operations:"), ALT+Key_O, this, SLOT(OperationBoxSlot()), actionCollection(), "OperationBoxAction");
+	m_OperationBox->setWhatsThis( i18n( "Choose the type of operations you want for calculating fractions: Addition/Substraction, Multiplication/Division or All Operations Mixed. If you choose All Operations Mixed, the program will randomly choose addition, substraction, multiplication and/or division." ) );
+	m_OperationBoxAction = new KWidgetAction(m_OperationBox, i18n("Operations:"), Qt::ALT+Qt::Key_O, this, SLOT(OperationBoxSlot()), actionCollection(), "OperationBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_OperationBox, SIGNAL(activated(int)), this, SLOT(OperationBoxSlot()));

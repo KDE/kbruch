@@ -26,6 +26,8 @@
 #include "task.h"
 
 #include <qwidget.h>
+//Added by qt3to4:
+#include <QPaintEvent>
 
 /** important for add_sub and mul_div */
 #define YES 1

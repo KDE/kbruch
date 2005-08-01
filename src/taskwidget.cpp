@@ -23,6 +23,8 @@
 
 /* these includes are needed for Qt support */
 #include <qpainter.h>
+//Added by qt3to4:
+#include <QPaintEvent>
 
 TaskWidget::TaskWidget(QWidget * parent = 0, const char * name = 0,
 													const task para_task = *new task()) :

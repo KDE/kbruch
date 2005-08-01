@@ -21,6 +21,8 @@
 /* these includes are needed for Qt support */
 #include <qpainter.h>
 #include <qstring.h>
+//Added by qt3to4:
+#include <QPaintEvent>
 
 RationalWidget::RationalWidget(QWidget * parent, const char * name, const QString pnumber, const uint pperiodStart, const uint pperiodLength):
 			FractionBaseWidget(parent, name), m_number(pnumber),

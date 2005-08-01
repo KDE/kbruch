@@ -20,6 +20,8 @@
 
 /* these includes are needed for Qt support */
 #include <qpainter.h>
+//Added by qt3to4:
+#include <QPaintEvent>
 
 FactorizedWidget::FactorizedWidget(QWidget * parent, const char * name, const uintList para_factors) :
 			FractionBaseWidget(parent, name), m_factors(para_factors)

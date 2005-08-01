@@ -18,6 +18,8 @@
 #define MAINQTWIDGET_H
 
 #include <kmainwindow.h>
+//Added by qt3to4:
+#include <QLabel>
 
 
 class KJanusWidget;

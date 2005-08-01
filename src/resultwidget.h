@@ -26,6 +26,8 @@
 #include "ratio.h"
 
 #include <qwidget.h>
+//Added by qt3to4:
+#include <QPaintEvent>
 
 /*! class to paint the result
  *

@@ -18,9 +18,9 @@
 #ifndef PRIMZAHL_H
 #define PRIMZAHL_H
 
-#include <qvaluevector.h>
+#include <q3valuevector.h>
 
-typedef QValueVector<uint> UnsignedIntArray;
+typedef Q3ValueVector<uint> UnsignedIntArray;
 
 /** Class to handle prime numbers.
  *  The prime numbers are stored in a static vector, so that different instances

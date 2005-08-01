@@ -27,7 +27,11 @@
 #include <qlayout.h>
 #include <qpushbutton.h>
 #include <qtooltip.h>
-#include <qwhatsthis.h>
+
+//Added by qt3to4:
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QGridLayout>
 
 /* standard C++ library includes */
 #include <stdlib.h>
@@ -131,7 +135,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 
 	// add tooltip and qwhatsthis help to the widget
 	QToolTip::add(this, i18n("In this exercise you have to compare 2 given fractions."));
-	QWhatsThis::add(this, i18n("In this exercise you have to compare 2 given fractions by choosing the correct comparison sign. You can change the comparison sign by just clicking on the button showing the sign."));
+	this->setWhatsThis( i18n("In this exercise you have to compare 2 given fractions by choosing the correct comparison sign. You can change the comparison sign by just clicking on the button showing the sign."));
 }
 
 /* destructor */

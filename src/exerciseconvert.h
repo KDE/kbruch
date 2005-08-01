@@ -24,11 +24,16 @@
 
 #include "exercisebase.h"
 #include "ratio.h"
+//Added by qt3to4:
+#include <QLabel>
+#include <QVBoxLayout>
+#include <Q3Frame>
+#include <QGridLayout>
 
 class RationalWidget;
 class ResultWidget;
 
-class QFrame;
+class Q3Frame;
 class QGridLayout;
 class QLabel;
 class QLineEdit;
@@ -76,7 +81,7 @@ private:
 	RationalWidget* m_rationalWidget;
 	ResultWidget* m_resultWidget;
 	QLineEdit* numer_edit;
-	QFrame* edit_line;
+	Q3Frame* edit_line;
 	QLineEdit* deno_edit;
 
 	QPushButton* m_checkButton;

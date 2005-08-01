@@ -30,7 +30,12 @@
 #include <qlineedit.h>
 #include <qpushbutton.h>
 #include <qtooltip.h>
-#include <qwhatsthis.h>
+
+//Added by qt3to4:
+#include <QGridLayout>
+#include <Q3Frame>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
 
 /* standard C++ library includes */
 #include <math.h>
@@ -91,9 +96,9 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	inputLayout->addWidget(numer_edit);
 
 	/* add a line between the edit boxes */
-	edit_line = new QFrame(baseWidget, "edit_line");
+	edit_line = new Q3Frame(baseWidget, "edit_line");
 	edit_line->setGeometry(QRect(100, 100, 20, 20));
-	edit_line->setFrameStyle(QFrame::HLine | QFrame::Sunken);
+	edit_line->setFrameStyle(Q3Frame::HLine | Q3Frame::Sunken);
 	inputLayout->addWidget(edit_line);
 
 	/* add input box so the user can enter denominator */
@@ -147,7 +152,7 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 
 	// add tooltip and qwhatsthis help to the widget
 	QToolTip::add(this, i18n("In this exercise you have to solve a given task with fractions."));
-	QWhatsThis::add(this, i18n("In this exercise you have to solve the generated task. You have to enter numerator and denominator. You can adjust the difficulty of the task with the boxes in the toolbar. Do not forget to reduce the result!"));
+	this->setWhatsThis( i18n("In this exercise you have to solve the generated task. You have to enter numerator and denominator. You can adjust the difficulty of the task with the boxes in the toolbar. Do not forget to reduce the result!"));
 }
 
 /* destructor */

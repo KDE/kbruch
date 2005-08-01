@@ -23,7 +23,11 @@
 #include <qlayout.h>
 #include <qpushbutton.h>
 #include <qtooltip.h>
-#include <qwhatsthis.h>
+
+//Added by qt3to4:
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QGridLayout>
 
 #include <klocale.h>
 #include <kdebug.h>
@@ -99,10 +103,10 @@ StatisticsView::StatisticsView(QWidget * parent, const char * name):
 	/* set red text color for this label */
 	pal = result3Label->palette();
 	cg = pal.active();
-	cg.setColor(QColorGroup::Foreground, QColor(red));
+	cg.setColor(QColorGroup::Foreground, QColor(Qt::red));
 	pal.setActive(cg);
 	cg = pal.inactive();
-	cg.setColor(QColorGroup::Foreground, QColor(red));
+	cg.setColor(QColorGroup::Foreground, QColor(Qt::red));
 	pal.setInactive(cg);
 	result3Label->setPalette(pal);
 
@@ -128,7 +132,7 @@ StatisticsView::StatisticsView(QWidget * parent, const char * name):
 
 	// add tooltip and qwhatsthis help to the widget
 	QToolTip::add(this, i18n("This part of the window shows the statistics."));
-	QWhatsThis::add(this, i18n("This part of the window shows the statistics.  Each exercise you do is counted. You can reset the statistics by clicking on the button below. Also, if you do not want to see the statistics, use the vertical bar on the left to reduce the size of this window part."));
+	this->setWhatsThis( i18n("This part of the window shows the statistics.  Each exercise you do is counted. You can reset the statistics by clicking on the button below. Also, if you do not want to see the statistics, use the vertical bar on the left to reduce the size of this window part."));
 }
 
 /* destructor */

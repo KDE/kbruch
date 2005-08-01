@@ -22,6 +22,8 @@
 #include <time.h>
 
 #include "task.h"
+//Added by qt3to4:
+#include <QTextStream>
 
 /** constructor of class task */
 task::task()

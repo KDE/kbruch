@@ -20,6 +20,8 @@
 
 /* these includes are needed for Qt support */
 #include <qpainter.h>
+//Added by qt3to4:
+#include <QPaintEvent>
 
 #include "settingsclass.h"
 

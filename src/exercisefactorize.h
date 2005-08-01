@@ -24,9 +24,14 @@
 #include <kdebug.h>
 #endif
 
-#include <qvaluelist.h>
+#include <q3valuelist.h>
 #include <qvariant.h>
 #include <qwidget.h>
+//Added by qt3to4:
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QGridLayout>
 
 #include "exercisebase.h"
 #include "ratio.h"
@@ -43,7 +48,7 @@ class QLineEdit;
 class QPushButton;
 
 // a list containing uints
-typedef QValueList<uint> uintList;
+typedef Q3ValueList<uint> uintList;
 
 // set a macro how much numbers are given to factorize
 #define numberPossibleTasks 45
