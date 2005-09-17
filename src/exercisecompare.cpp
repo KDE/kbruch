@@ -47,7 +47,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 #endif
 
 	/* create a new task */
-	QApplication::setOverrideCursor(waitCursor); /* show the sand clock */
+	QApplication::setOverrideCursor(Qt::waitCursor); /* show the sand clock */
 	createTask();
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
@@ -239,10 +239,10 @@ void ExerciseCompare::showResult()
 		result_label->setText(i18n("WRONG"));
 		pal = result_label->palette(); /* set red font color */
 		cg = pal.active();
-		cg.setColor(QColorGroup::Foreground, QColor(red));
+		cg.setColor(QColorGroup::Foreground, QColor(Qt::red));
 		pal.setActive(cg);
 		cg = pal.inactive();
-		cg.setColor(QColorGroup::Foreground, QColor(red));
+		cg.setColor(QColorGroup::Foreground, QColor(Qt::red));
 		pal.setInactive(cg);
 		result_label->setPalette(pal);
 
@@ -268,7 +268,7 @@ void ExerciseCompare::nextTask()
 	m_signButtonState = lessThen;
 
 	/* create a new task */
-	QApplication::setOverrideCursor(waitCursor); /* show the sand clock */
+	QApplication::setOverrideCursor(Qt::waitCursor); /* show the sand clock */
 	createTask();
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 

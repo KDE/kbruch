@@ -55,7 +55,7 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	curr_nr_ratios = nr_ratios;
 
 	/* create a new task */
-	QApplication::setOverrideCursor(waitCursor); /* show the sand clock */
+	QApplication::setOverrideCursor(Qt::waitCursor); /* show the sand clock */
 	current_task.create_task(max_md, nr_ratios, add_sub, mul_div);
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
@@ -298,10 +298,10 @@ void TaskView::showResult()
 		result_label->setText(i18n("WRONG"));
 		pal = result_label->palette(); /* set red font color */
 		cg = pal.active();
-		cg.setColor(QColorGroup::Foreground, QColor(red));
+		cg.setColor(QColorGroup::Foreground, QColor(Qt::red));
 		pal.setActive(cg);
 		cg = pal.inactive();
-		cg.setColor(QColorGroup::Foreground, QColor(red));
+		cg.setColor(QColorGroup::Foreground, QColor(Qt::red));
 		pal.setInactive(cg);
 		result_label->setPalette(pal);
 
@@ -343,7 +343,7 @@ void TaskView::nextTask()
 	numer_edit->setFocus();
 
 	/* create a new task */
-	QApplication::setOverrideCursor(waitCursor); /* show the sand clock */
+	QApplication::setOverrideCursor(Qt::waitCursor); /* show the sand clock */
 	current_task.create_task(max_md, nr_ratios, add_sub, mul_div);
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 

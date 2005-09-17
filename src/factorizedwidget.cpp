@@ -82,12 +82,12 @@ void FactorizedWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 		if (tmpInt == 0)
 		{
 			fontWidth = fm.width("=");
-			paint.drawText(x_pos, 0, fontWidth, fontHeight, AlignCenter, "=");
+			paint.drawText(x_pos, 0, fontWidth, fontHeight, Qt::AlignCenter, "=");
 			x_pos += fontWidth;
 			x_pos += _MARGIN_X;
 		} else {
 			fontWidth = fm.width("*");
-			paint.drawText(x_pos, 0, fontWidth, fontHeight, AlignCenter, "*");
+			paint.drawText(x_pos, 0, fontWidth, fontHeight, Qt::AlignCenter, "*");
 			x_pos += fontWidth;
 			x_pos += _MARGIN_X;
 		}
@@ -99,7 +99,7 @@ void FactorizedWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 		tmpStr.setNum(m_factors[tmpInt]);
 
 		fontWidth = fm.width(tmpStr);
-		paint.drawText(x_pos, 0, fontWidth, fontHeight, AlignCenter, tmpStr);
+		paint.drawText(x_pos, 0, fontWidth, fontHeight, Qt::AlignCenter, tmpStr);
 		x_pos += fontWidth;
 		x_pos += _MARGIN_X;
 	}

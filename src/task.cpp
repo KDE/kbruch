@@ -189,7 +189,7 @@ QTextStream & task::display(QTextStream & str)
 	const char a[] = "+-*/";
 
 	/* check, if a qSetW() was given to the stream */
-	int weite = str.width();
+	int weite = str.fieldWidth();
 	int pweite = weite;
 	str << qSetW(0);
 

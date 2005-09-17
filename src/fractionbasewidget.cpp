@@ -110,13 +110,13 @@ void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_p
 	if (! (int_numerator == 0 && show_mixed == true) )
 	{
 		// paint the numerator
-		paint.drawText(x_pos, 0, fontWidth, fontHeight, AlignCenter, str_numerator);
+		paint.drawText(x_pos, 0, fontWidth, fontHeight, Qt::AlignCenter, str_numerator);
 	
 		// paint the fraction line between numerator and denominator
 		paint.fillRect(x_pos, fontHeight + 4, fontWidth, 2, m_colorLine);
 	
 		// paint the denominator
-		paint.drawText(x_pos, fontHeight + 10, fontWidth, fontHeight, AlignCenter, str_denominator);
+		paint.drawText(x_pos, fontHeight + 10, fontWidth, fontHeight, Qt::AlignCenter, str_denominator);
 	
 		// move the x position to the right by adding the width used for painting
 		// the ratio and a margin
@@ -139,7 +139,7 @@ void FractionBaseWidget::paintMiddle(QPainter & paint, const QString& paint_str,
 	// paint the string
 	pen.setColor(color);
 	paint.setPen(pen);
-	paint.drawText(x_pos, fontHeight + 5 - fontHeight / 2, fontWidth, fontHeight, AlignCenter, paint_str);
+	paint.drawText(x_pos, fontHeight + 5 - fontHeight / 2, fontWidth, fontHeight, Qt::AlignCenter, paint_str);
 
 	// move the x position to the right by adding the width used for
 	// painting the string and a margin

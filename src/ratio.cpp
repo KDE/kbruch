@@ -61,7 +61,7 @@ ratio::~ratio()
 /* displays the ratio on stdout; just for debugging */
 QTextStream & ratio::display(QTextStream & str) const
 {
-	int tmp_width = str.width();
+	int tmp_width = str.fieldWidth();
 	str << qSetW(5) << " ";
 	str << qSetW(5) << m_numerator << endl;
 	str << qSetW(tmp_width) << " ";
