@@ -206,6 +206,14 @@
     </vbox>
 </widget>
 <customwidgets>
+    <customwidget>
+        <class>KColorButton</class>
+        <header location="local">kcolorbutton.h</header>
+    </customwidget>
+    <customwidget>
+        <class>KFontChooser</class>
+        <header location="local">kfontdialog.h</header>
+    </customwidget>
 </customwidgets>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>

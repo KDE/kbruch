@@ -62,12 +62,12 @@ ratio::~ratio()
 QTextStream & ratio::display(QTextStream & str) const
 {
 	int tmp_width = str.fieldWidth();
-	str << qSetW(5) << " ";
-	str << qSetW(5) << m_numerator << endl;
-	str << qSetW(tmp_width) << " ";
+	str << qSetFieldWidth(5) << " ";
+	str << qSetFieldWidth(5) << m_numerator << endl;
+	str << qSetFieldWidth(tmp_width) << " ";
 	str << " ----- " << endl;
-	str << qSetW(tmp_width) << " ";
-	return str << qSetW(5) << m_denominator;
+	str << qSetFieldWidth(tmp_width) << " ";
+	return str << qSetFieldWidth(5) << m_denominator;
 }
 
 /* return the numerator */

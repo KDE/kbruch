@@ -188,10 +188,10 @@ QTextStream & task::display(QTextStream & str)
 	/* we need this array to look up the fitting chars for the operations */
 	const char a[] = "+-*/";
 
-	/* check, if a qSetW() was given to the stream */
+	/* check, if a qSetFieldWidth() was given to the stream */
 	int weite = str.fieldWidth();
 	int pweite = weite;
-	str << qSetW(0);
+	str << qSetFieldWidth(0);
 
 	/* check, if ratio number and operation number fit together */
 	if (ratio_vector.size() != op_vector.size() + 1)
@@ -207,7 +207,7 @@ QTextStream & task::display(QTextStream & str)
 	for (ratio_pointer = ratio_vector.begin();
 	        ratio_pointer != ratio_vector.end(); ratio_pointer++)
 	{
-		str << qSetW(5) << ratio_pointer->numerator() << "   ";
+		str << qSetFieldWidth(5) << ratio_pointer->numerator() << "   ";
 	}
 	str << endl;
 
@@ -232,8 +232,8 @@ QTextStream & task::display(QTextStream & str)
 	        ratio_pointer != ratio_vector.end(); ratio_pointer++)
 	{
 		if (ratio_pointer == ratio_vector.end() - 1)
-			return str << qSetW(5) << ratio_pointer->denominator() << "   ";
-		str << qSetW(5) << ratio_pointer->denominator() << "   ";
+			return str << qSetFieldWidth(5) << ratio_pointer->denominator() << "   ";
+		str << qSetFieldWidth(5) << ratio_pointer->denominator() << "   ";
 	}
 	return str;
 }
