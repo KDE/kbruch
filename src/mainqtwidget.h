@@ -18,13 +18,11 @@
 #define MAINQTWIDGET_H
 
 #include <kmainwindow.h>
-//Added by qt3to4:
-#include <QLabel>
-
 
 class KJanusWidget;
 class KWidgetAction;
 
+class QComboBox;
 class QLabel;
 
 class ExerciseCompare;

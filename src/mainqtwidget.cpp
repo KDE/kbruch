@@ -26,7 +26,9 @@
 #include <kjanuswidget.h>
 #include <kconfigdialog.h>
 #include <klocale.h>
+#include <kvbox.h>
 
+#include <qcombobox.h>
 #include <qsplitter.h>
 #include <qlabel.h>
 #include <qtooltip.h>
@@ -76,7 +78,7 @@ MainQtWidget::MainQtWidget()
 	// add the pages
 	//
 	// we have the exercise to solve fraction tasks
-	Q3VBox * page = m_exercises->addVBoxPage(i18n("Fraction Task"), "", DesktopIcon("kbruch_exercise_common"));
+	KVBox * page = m_exercises->addVBoxPage(i18n("Fraction Task"), "", DesktopIcon("kbruch_exercise_common"));
 	m_taskview = new TaskView((QWidget *) page, "TaskView", m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
 
 	// we have the exercise to compare ratios
