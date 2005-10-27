@@ -54,7 +54,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 #endif
 
 	/* create a new task */
-	QApplication::setOverrideCursor(Qt::waitCursor); /* show the sand clock */
+	QApplication::setOverrideCursor(Qt::WaitCursor); /* show the sand clock */
 	createTask();
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
@@ -414,7 +414,7 @@ void ExerciseConvert::nextTask()
 	numer_edit->setFocus();
 
 	/* create a new task */
-	QApplication::setOverrideCursor(Qt::waitCursor); /* show the sand clock */
+	QApplication::setOverrideCursor(Qt::WaitCursor); /* show the sand clock */
 	createTask();
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 

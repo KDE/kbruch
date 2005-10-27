@@ -47,7 +47,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 #endif
 
 	/* create a new task */
-	QApplication::setOverrideCursor(Qt::waitCursor); /* show the sand clock */
+	QApplication::setOverrideCursor(Qt::WaitCursor); /* show the sand clock */
 	createTask();
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
@@ -268,7 +268,7 @@ void ExerciseCompare::nextTask()
 	m_signButtonState = lessThen;
 
 	/* create a new task */
-	QApplication::setOverrideCursor(Qt::waitCursor); /* show the sand clock */
+	QApplication::setOverrideCursor(Qt::WaitCursor); /* show the sand clock */
 	createTask();
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 

@@ -55,7 +55,7 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	curr_nr_ratios = nr_ratios;
 
 	/* create a new task */
-	QApplication::setOverrideCursor(Qt::waitCursor); /* show the sand clock */
+	QApplication::setOverrideCursor(Qt::WaitCursor); /* show the sand clock */
 	current_task.create_task(max_md, nr_ratios, add_sub, mul_div);
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
@@ -343,7 +343,7 @@ void TaskView::nextTask()
 	numer_edit->setFocus();
 
 	/* create a new task */
-	QApplication::setOverrideCursor(Qt::waitCursor); /* show the sand clock */
+	QApplication::setOverrideCursor(Qt::WaitCursor); /* show the sand clock */
 	current_task.create_task(max_md, nr_ratios, add_sub, mul_div);
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
