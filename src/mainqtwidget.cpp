@@ -68,7 +68,7 @@ MainQtWidget::MainQtWidget()
 	setCentralWidget(splitter);
 
 	// the iconlist, where the user can choose the different exercises
-	m_exercises = new KJanusWidget(splitter, "KJanusWidget", KJanusWidget::IconList);
+	m_exercises = new KJanusWidget(splitter, KJanusWidget::IconList);
 	QToolTip::add(m_exercises, i18n("Choose another exercise by clicking on an icon."));
 	m_exercises->setWhatsThis( i18n("Click on the different icons to choose another exercise. The exercises help you to practice different aspects of calculating with fractions."));
 

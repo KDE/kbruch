@@ -79,7 +79,7 @@ void RationalWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	setMaximumHeight(2 * fontHeight + 10);
 
 	// paint each char one by one
-	for (uint stringPos = 0; stringPos < m_number.length(); stringPos++)
+	for (int stringPos = 0; stringPos < m_number.length(); stringPos++)
 	{
 		// check if the period line starts over the current number
 		if (m_periodLength > 0 && stringPos == m_periodStart && tmp_painting == false)

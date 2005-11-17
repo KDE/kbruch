@@ -329,7 +329,7 @@ void ExerciseFactorize::showResult()
 	m_factorsWidget->show();
 
 	// now calculate the product of the prime factors entered by the user
-	for (uint tmp_uint = 0; tmp_uint < m_factorsEntered.count(); tmp_uint++)
+	for (int tmp_uint = 0; tmp_uint < m_factorsEntered.count(); tmp_uint++)
 	{
 		if (tmp_uint == 0)
 		{

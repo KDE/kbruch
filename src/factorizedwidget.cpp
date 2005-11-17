@@ -73,7 +73,7 @@ void FactorizedWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	QString tmpStr;
 	int fontHeight = fm.lineSpacing(); // get the font height
 
-	for (uint tmpInt = 0; tmpInt < m_factors.count(); tmpInt++)
+	for (int tmpInt = 0; tmpInt < m_factors.count(); tmpInt++)
 	{
 		// set color for operation sign
 		pen.setColor(m_colorOperation);
