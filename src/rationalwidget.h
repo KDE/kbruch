@@ -39,13 +39,13 @@ class RationalWidget : public FractionBaseWidget
 
 public:
 	/** constructor */
-	RationalWidget(QWidget * parent, const char * name, const QString pnumber, const uint pperiodStart = 1, const uint pperiodLength = 0);
+	RationalWidget(QWidget * parent, const char * name, const QString &pnumber, const int pperiodStart = 1, const int pperiodLength = 0);
 
 	/** destructor */
 	~RationalWidget();
 
 	/** set the task to be displayed */
-	void setRational(const QString pnumber, const uint pperiodStart = 1, const uint pperiodLength = 0);
+	void setRational(const QString &pnumber, const int pperiodStart = 1, const int pperiodLength = 0);
 
 private:
 	
@@ -53,10 +53,10 @@ private:
 	QString m_number;
 
 	/** starting of the period */
-	uint m_periodStart;
+	int m_periodStart;
 	
 	/** length of the period */
-	uint m_periodLength;
+	int m_periodLength;
 
 	/** overrideing the paint event of FractionBaseWidget */
 	void paintEvent(QPaintEvent*);

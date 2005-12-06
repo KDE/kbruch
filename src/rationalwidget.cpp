@@ -24,7 +24,7 @@
 //Added by qt3to4:
 #include <QPaintEvent>
 
-RationalWidget::RationalWidget(QWidget * parent, const char * name, const QString pnumber, const uint pperiodStart, const uint pperiodLength):
+RationalWidget::RationalWidget(QWidget * parent, const char * name, const QString &pnumber, const int pperiodStart, const int pperiodLength):
 			FractionBaseWidget(parent, name), m_number(pnumber),
 				m_periodStart(pperiodStart), m_periodLength(pperiodLength)
 {
@@ -40,7 +40,7 @@ RationalWidget::~RationalWidget()
 #endif
 }
 
-void RationalWidget::setRational(const QString pnumber, const uint pperiodStart, const uint pperiodLength)
+void RationalWidget::setRational(const QString &pnumber, const int pperiodStart, const int pperiodLength)
 {
 	m_number = pnumber;
 	m_periodStart = pperiodStart;
