@@ -25,12 +25,10 @@
 #include "fractionbasewidget.h"
 
 #include <qwidget.h>
-//Added by qt3to4:
-#include <Q3ValueList>
 #include <QPaintEvent>
 
 // a list containing uints
-typedef Q3ValueList<uint> uintList;
+typedef QList<uint> uintList;
 
 /*! class to paint the factorization of a number
  *

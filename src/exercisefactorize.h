@@ -48,7 +48,7 @@ class QLineEdit;
 class QPushButton;
 
 // a list containing uints
-typedef Q3ValueList<uint> uintList;
+typedef QList<uint> uintList;
 
 // set a macro how much numbers are given to factorize
 #define numberPossibleTasks 45
