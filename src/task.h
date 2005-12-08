@@ -54,9 +54,9 @@ typedef struct PRIME_FACTOR
 Tprime_factor;
 
 /** we use the vector template class to create 3 dynamic types */
-typedef Q3ValueVector<ratio> RatioArray;
-typedef Q3ValueVector<short> ShortArray;
-typedef Q3ValueVector<Tprime_factor> PrimeFactorArray;
+typedef QVector<ratio> RatioArray;
+typedef QVector<short> ShortArray;
+typedef QVector<Tprime_factor> PrimeFactorArray;
 
 /*! class to handle mathematical tasks with ratios
  *  naming:

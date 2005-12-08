@@ -20,7 +20,7 @@
 
 #include <q3valuevector.h>
 
-typedef Q3ValueVector<uint> UnsignedIntArray;
+typedef QVector<uint> UnsignedIntArray;
 
 /** Class to handle prime numbers.
  *  The prime numbers are stored in a static vector, so that different instances
