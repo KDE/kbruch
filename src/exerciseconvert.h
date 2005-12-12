@@ -27,13 +27,11 @@
 //Added by qt3to4:
 #include <QLabel>
 #include <QVBoxLayout>
-#include <Q3Frame>
 #include <QGridLayout>
 
 class RationalWidget;
 class ResultWidget;
 
-class Q3Frame;
 class QGridLayout;
 class QLabel;
 class QLineEdit;
@@ -81,7 +79,7 @@ private:
 	RationalWidget* m_rationalWidget;
 	ResultWidget* m_resultWidget;
 	QLineEdit* numer_edit;
-	Q3Frame* edit_line;
+	QFrame* edit_line;
 	QLineEdit* deno_edit;
 
 	QPushButton* m_checkButton;

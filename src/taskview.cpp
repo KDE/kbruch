@@ -33,7 +33,6 @@
 
 //Added by qt3to4:
 #include <QGridLayout>
-#include <Q3Frame>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 
@@ -96,9 +95,9 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	inputLayout->addWidget(numer_edit);
 
 	/* add a line between the edit boxes */
-	edit_line = new Q3Frame(baseWidget, "edit_line");
+	edit_line = new QFrame(baseWidget);
 	edit_line->setGeometry(QRect(100, 100, 20, 20));
-	edit_line->setFrameStyle(Q3Frame::HLine | Q3Frame::Sunken);
+	edit_line->setFrameStyle(QFrame::HLine | QFrame::Sunken);
 	inputLayout->addWidget(edit_line);
 
 	/* add input box so the user can enter denominator */

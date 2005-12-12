@@ -34,7 +34,6 @@
 //Added by qt3to4:
 #include <QLabel>
 #include <QVBoxLayout>
-#include <Q3Frame>
 #include <QHBoxLayout>
 #include <QGridLayout>
 
@@ -46,7 +45,6 @@ class QSpacerItem;
 class QLabel;
 class QPushButton;
 class QLineEdit;
-class Q3Frame;
 
 /*! Constructs a QWidget, which shows the task to the user.
  *  The class also provides input fields, so that the user can enter the result.
@@ -98,7 +96,7 @@ private:
 	QLabel* result_label;
 	TaskWidget* m_taskWidget;
 	QLineEdit* numer_edit;
-	Q3Frame* edit_line;
+	QFrame* edit_line;
 	QLineEdit* deno_edit;
 
 	QGridLayout* baseGrid;
