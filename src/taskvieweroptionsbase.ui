@@ -8,207 +8,215 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>486</width>
-            <height>558</height>
+            <width>414</width>
+            <height>550</height>
         </rect>
     </property>
-    <vbox>
+    <grid>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="KFontChooser">
+        <widget class="QLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>kcfg_taskFont</cstring>
+                <cstring>layout2</cstring>
             </property>
-            <property name="sizePolicy">
-                <sizepolicy>
-                    <hsizetype>1</hsizetype>
-                    <vsizetype>3</vsizetype>
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                </sizepolicy>
-            </property>
-            <property name="toolTip" stdset="0">
-                <string>Change the font of the numbers</string>
-            </property>
-        </widget>
-        <widget class="QGroupBox">
-            <property name="name">
-                <cstring>colorGroupBox</cstring>
-            </property>
-            <property name="sizePolicy">
-                <sizepolicy>
-                    <hsizetype>5</hsizetype>
-                    <vsizetype>0</vsizetype>
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                </sizepolicy>
-            </property>
-            <property name="title">
-                <string>Colors</string>
-            </property>
-            <widget class="QLayoutWidget">
+            <vbox>
                 <property name="name">
-                    <cstring>layout7</cstring>
+                    <cstring>unnamed</cstring>
                 </property>
-                <property name="geometry">
-                    <rect>
-                        <x>10</x>
-                        <y>20</y>
-                        <width>230</width>
-                        <height>110</height>
-                    </rect>
-                </property>
-                <grid>
+                <widget class="KFontChooser">
                     <property name="name">
-                        <cstring>unnamed</cstring>
+                        <cstring>kcfg_taskFont</cstring>
                     </property>
-                    <widget class="KColorButton" row="1" column="1">
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>1</hsizetype>
+                            <vsizetype>3</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Change the font of the numbers</string>
+                    </property>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>colorGroupBox</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="title">
+                        <string>Colors</string>
+                    </property>
+                    <widget class="QLayoutWidget">
                         <property name="name">
-                            <cstring>kcfg_operationColor</cstring>
+                            <cstring>layout7</cstring>
                         </property>
-                        <property name="sizePolicy">
-                            <sizepolicy>
-                                <hsizetype>1</hsizetype>
-                                <vsizetype>0</vsizetype>
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>230</width>
+                                <height>110</height>
+                            </rect>
                         </property>
-                        <property name="text">
-                            <string></string>
-                        </property>
-                        <property name="color">
-                            <color>
-                                <red>0</red>
-                                <green>0</green>
-                                <blue>255</blue>
-                            </color>
-                        </property>
-                        <property name="toolTip" stdset="0">
-                            <string>Change the color of the operation signs</string>
-                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="KColorButton" row="1" column="1">
+                                <property name="name">
+                                    <cstring>kcfg_operationColor</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>1</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="text">
+                                    <string></string>
+                                </property>
+                                <property name="color">
+                                    <color>
+                                        <red>0</red>
+                                        <green>0</green>
+                                        <blue>255</blue>
+                                    </color>
+                                </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>Change the color of the operation signs</string>
+                                </property>
+                            </widget>
+                            <widget class="KColorButton" row="2" column="1">
+                                <property name="name">
+                                    <cstring>kcfg_fractionBarColor</cstring>
+                                </property>
+                                <property name="text">
+                                    <string></string>
+                                </property>
+                                <property name="color">
+                                    <color>
+                                        <red>255</red>
+                                        <green>0</green>
+                                        <blue>0</blue>
+                                    </color>
+                                </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>Change the color of the fraction bar</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="2" column="0">
+                                <property name="name">
+                                    <cstring>fractionBarLabel</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>1</hsizetype>
+                                        <vsizetype>5</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="text">
+                                    <string>Fraction bar:</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="1" column="0">
+                                <property name="name">
+                                    <cstring>operationLabel</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>1</hsizetype>
+                                        <vsizetype>5</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="text">
+                                    <string>Operation sign:</string>
+                                </property>
+                            </widget>
+                            <widget class="KColorButton" row="0" column="1">
+                                <property name="name">
+                                    <cstring>kcfg_numberColor</cstring>
+                                </property>
+                                <property name="text">
+                                    <string></string>
+                                </property>
+                                <property name="color">
+                                    <color>
+                                        <red>0</red>
+                                        <green>255</green>
+                                        <blue>0</blue>
+                                    </color>
+                                </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>Change the color of the numbers</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="0" column="0">
+                                <property name="name">
+                                    <cstring>numberLabel</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>1</hsizetype>
+                                        <vsizetype>5</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="text">
+                                    <string>Number:</string>
+                                </property>
+                            </widget>
+                        </grid>
                     </widget>
-                    <widget class="KColorButton" row="2" column="1">
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox2</cstring>
+                    </property>
+                    <property name="title">
+                        <string>General</string>
+                    </property>
+                    <grid>
                         <property name="name">
-                            <cstring>kcfg_fractionBarColor</cstring>
+                            <cstring>unnamed</cstring>
                         </property>
-                        <property name="text">
-                            <string></string>
-                        </property>
-                        <property name="color">
-                            <color>
-                                <red>255</red>
-                                <green>0</green>
-                                <blue>0</blue>
-                            </color>
-                        </property>
-                        <property name="toolTip" stdset="0">
-                            <string>Change the color of the fraction bar</string>
-                        </property>
-                    </widget>
-                    <widget class="QLabel" row="2" column="0">
-                        <property name="name">
-                            <cstring>fractionBarLabel</cstring>
-                        </property>
-                        <property name="sizePolicy">
-                            <sizepolicy>
-                                <hsizetype>1</hsizetype>
-                                <vsizetype>5</vsizetype>
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
-                        </property>
-                        <property name="text">
-                            <string>Fraction bar:</string>
-                        </property>
-                    </widget>
-                    <widget class="QLabel" row="1" column="0">
-                        <property name="name">
-                            <cstring>operationLabel</cstring>
-                        </property>
-                        <property name="sizePolicy">
-                            <sizepolicy>
-                                <hsizetype>1</hsizetype>
-                                <vsizetype>5</vsizetype>
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
-                        </property>
-                        <property name="text">
-                            <string>Operation sign:</string>
-                        </property>
-                    </widget>
-                    <widget class="KColorButton" row="0" column="1">
-                        <property name="name">
-                            <cstring>kcfg_numberColor</cstring>
-                        </property>
-                        <property name="text">
-                            <string></string>
-                        </property>
-                        <property name="color">
-                            <color>
-                                <red>0</red>
-                                <green>255</green>
-                                <blue>0</blue>
-                            </color>
-                        </property>
-                        <property name="toolTip" stdset="0">
-                            <string>Change the color of the numbers</string>
-                        </property>
-                    </widget>
-                    <widget class="QLabel" row="0" column="0">
-                        <property name="name">
-                            <cstring>numberLabel</cstring>
-                        </property>
-                        <property name="sizePolicy">
-                            <sizepolicy>
-                                <hsizetype>1</hsizetype>
-                                <vsizetype>5</vsizetype>
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
-                        </property>
-                        <property name="text">
-                            <string>Number:</string>
-                        </property>
-                    </widget>
-                </grid>
-            </widget>
+                        <widget class="QCheckBox" row="0" column="0">
+                            <property name="name">
+                                <cstring>kcfg_showSpecialRatioNotation</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Show result also as a mixed number, like 1 2/3.</string>
+                            </property>
+                            <property name="toolTip" stdset="0">
+                                <string>Here you can enable/disable showing the result in mixed-number notation.</string>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+            </vbox>
         </widget>
-        <widget class="QGroupBox">
-            <property name="name">
-                <cstring>groupBox2</cstring>
-            </property>
-            <property name="title">
-                <string>General</string>
-            </property>
-            <widget class="QCheckBox">
-                <property name="name">
-                    <cstring>kcfg_showSpecialRatioNotation</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>10</x>
-                        <y>20</y>
-                        <width>440</width>
-                        <height>20</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>Show result also as a mixed number, like 1 2/3.</string>
-                </property>
-                <property name="toolTip" stdset="0">
-                    <string>Here you can enable/disable showing the result in mixed-number notation.</string>
-                </property>
-            </widget>
-        </widget>
-    </vbox>
+    </grid>
 </widget>
 <customwidgets>
 </customwidgets>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
+    <includehint>kfontdialog.h</includehint>
     <includehint>kcolorbutton.h</includehint>
     <includehint>kcolorbutton.h</includehint>
     <includehint>kcolorbutton.h</includehint>

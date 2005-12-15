@@ -40,7 +40,7 @@ int main(int argc, char * argv[])
 		KBRUCH_VERSION,
 		I18N_NOOP("Learn calculating with fractions"),
 		KAboutData::License_GPL,
-    	"(c) 2002-2004, Sebastian Stein", 0, "http://edu.kde.org/kbruch/",
+    	"(c) 2002-2005, Sebastian Stein", 0, "http://edu.kde.org/kbruch/",
 		"seb.kde@hpfsc.de");
 	aboutData.addAuthor("Sebastian Stein",0, "seb.kde@hpfsc.de");
  	KCmdLineArgs::init( argc, argv, &aboutData );
