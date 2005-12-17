@@ -96,7 +96,7 @@ MainQtWidget::MainQtWidget()
 	splitter->setResizeMode(m_statview, QSplitter::FollowSizeHint);
 
 	// we must change the status of the menubar before another page is shown
-	QObject::connect(m_exercises, SIGNAL(aboutToShowPage(QWidget *)), this, SLOT(slotAboutToShowPage(QWidget *)));
+	QObject::connect(m_exercises, SIGNAL(currentPageChanged(QWidget *)), this, SLOT(slotAboutToShowPage(QWidget *)));
 
 	// connect signals of the exercises and StatisticView, so that StatisticView
 	// gets informed about how the user solved a given task (wrong or correct)
