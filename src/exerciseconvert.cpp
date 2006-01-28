@@ -74,11 +74,11 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 
 	// first left is the rational widget
 	m_rationalWidget = new RationalWidget(baseWidget, "m_rationalWidget", m_number, m_periodStart, m_periodLength);
-	taskLineHBoxLayout->addWidget(m_rationalWidget);
+// 	taskLineHBoxLayout->addWidget(m_rationalWidget);
 
 	// now we have the input fields aligned in a VBox
 	QVBoxLayout * inputLayout = new QVBoxLayout(5, "inputLayout");
-	taskLineHBoxLayout->addLayout(inputLayout);
+//	taskLineHBoxLayout->addLayout(inputLayout);
 
 	// to validate, that the input is an int
 	KIntValidator *valnum = new KIntValidator( this );
@@ -103,20 +103,45 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 
 	// next is the result widget
 	m_resultWidget = new ResultWidget(baseWidget, "m_resultWidget", m_result);
-	taskLineHBoxLayout->addWidget(m_resultWidget);
+// 	taskLineHBoxLayout->addWidget(m_resultWidget);
 	m_resultWidget->hide();
 
 	// at the right end we have a label just showing CORRECT or WRONG
 	result_label = new QLabel(baseWidget, "result_lable");
 	result_label->setText(i18n("WRONG"));
-	taskLineHBoxLayout->addWidget(result_label);
+// 	taskLineHBoxLayout->addWidget(result_label);
 	result_label->hide();
 
 	// add another spacer in the middle of the VBox
 	v_spacer = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
-	taskLineHBoxLayout->addItem(v_spacer);
+// 	taskLineHBoxLayout->addItem(v_spacer);
 
 	// --- that is the end of the horizontal line ---
+
+	// in RTL desktops, we still need to allign the
+	// execise to the left. On Qt4, you can set the direction
+	// of the layout to LTR (instead of inherit), but on Qt3
+	// the only way of fixing it is inserting the widgets in reversed
+	// order to the layout.
+	//
+	// if you need help with this feel free to contact me - Diego <elcuco@kde.org> )
+	// This should fix parts of bug #116831
+	if (QApplication::reverseLayout())
+	{
+		taskLineHBoxLayout->addItem(v_spacer);
+		taskLineHBoxLayout->addWidget(result_label);
+		taskLineHBoxLayout->addWidget(m_resultWidget);
+		taskLineHBoxLayout->addLayout(inputLayout);
+		taskLineHBoxLayout->addWidget(m_rationalWidget);
+	}
+	else
+	{
+		taskLineHBoxLayout->addWidget(m_rationalWidget);
+		taskLineHBoxLayout->addLayout(inputLayout);
+		taskLineHBoxLayout->addWidget(m_resultWidget);
+		taskLineHBoxLayout->addWidget(result_label);
+		taskLineHBoxLayout->addItem(v_spacer);
+	}
 	
 	// add another spacer in the middle of the VBox
 	v_spacer = new QSpacerItem(1, 1);

@@ -75,11 +75,9 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 
 	// first left is the task widget
 	m_taskWidget = new TaskWidget(baseWidget, "m_taskWidget", current_task);
-	taskLineHBoxLayout->addWidget(m_taskWidget);
 
 	// now we have the input fields aligned in a VBox
 	QVBoxLayout * inputLayout = new QVBoxLayout(5, "inputLayout");
-	taskLineHBoxLayout->addLayout(inputLayout);
 
 	// to validate, that the input is an int
 	KIntValidator *valnum = new KIntValidator( this );
@@ -104,23 +102,45 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 
 	// next is the result widget
 	m_resultWidget = new ResultWidget(baseWidget, "m_resultWidget", *new ratio());
-	taskLineHBoxLayout->addWidget(m_resultWidget);
 
 	// at the right end we have a label just showing CORRECT or WRONG
 	result_label = new QLabel(baseWidget, "result_label");
 	result_label->setText(i18n("WRONG"));
-	taskLineHBoxLayout->addWidget(result_label);
 	result_label->hide();
 
 	// add another spacer in the middle of the VBox
 	v_spacer = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
-	taskLineHBoxLayout->addItem(v_spacer);
 
 	// --- that is the end of the horizontal line ---
+	// in RTL desktops, we still need to allign the
+	// execise to the left. On Qt4, you can set the direction
+	// of the layout to LTR (instead of inherit), but on Qt3
+	// the only way of fixing it is inserting the widgets in reversed
+	// order to the layout.
+	//
+	// if you need help with this feel free to contact me - Diego <elcuco@kde.org> )
+	// This should fix parts of bug #116831
+	if (QApplication::reverseLayout())
+	{
+		taskLineHBoxLayout->addItem(v_spacer);
+		taskLineHBoxLayout->addWidget(result_label);
+		taskLineHBoxLayout->addWidget(m_resultWidget);
+		taskLineHBoxLayout->addLayout(inputLayout);
+		taskLineHBoxLayout->addWidget(m_taskWidget);
+	}
+	else
+	{
+		taskLineHBoxLayout->addWidget(m_taskWidget);
+		taskLineHBoxLayout->addLayout(inputLayout);
+		taskLineHBoxLayout->addWidget(m_resultWidget);
+		taskLineHBoxLayout->addWidget(result_label);
+		taskLineHBoxLayout->addItem(v_spacer);
+	}
 	
 	// add another spacer in the middle of the VBox
 	v_spacer = new QSpacerItem(1, 1);
 	realLayout->addItem(v_spacer);
+
 
 	// the lower part of the VBox holds just a right aligned button
 	QHBoxLayout * lowerHBox = new QHBoxLayout(1, "lowerHBox");

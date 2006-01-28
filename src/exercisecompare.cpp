@@ -80,7 +80,10 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 
 	// now the button where the user has to choose the comparison sign
 	m_signButton = new QPushButton(baseWidget, "m_signButton");
-	m_signButton->setText("<");
+
+	// RTL BUG, see slotSignButtonClicked() for more information
+	m_signButton->setText( QApplication::reverseLayout()?">":"<");
+
 	m_signButtonState = lessThen;
 	taskLineHBoxLayout->addWidget(m_signButton);
 	QObject::connect(m_signButton, SIGNAL(clicked()), this, SLOT(slotSignButtonClicked()));
@@ -260,7 +263,8 @@ void ExerciseCompare::nextTask()
 	result_label->hide(); /* do not show the result at the end of the task */
 
 	// reset the signButton
-	m_signButton->setText("<");
+	// RTL BUG, see slotSignButtonClicked() for more information
+	m_signButton->setText( QApplication::reverseLayout()?">":"<");
 	m_signButtonState = lessThen;
 
 	/* create a new task */
@@ -295,12 +299,27 @@ void ExerciseCompare::slotCheckButtonClicked()
 
 void ExerciseCompare::slotSignButtonClicked()
 {
+	// in RTL desktops, we still need to allign the
+	// execise to the left. On Qt4, you can set the direction
+	// of the layout to LTR (instead of inherit), but on Qt3
+	// the only way of fixing it is inserting the widgets in reversed
+	// order to the layout.
+	// 
+	// But... as an ugly hack, we can also display the "other" operation
+	// thats damm ugly, but will work as well :)
+	// 
+	// See also taskview.cpp for the same bug.
+	//
+	// (if you need help with this feel free to contact
+	// (me - Diego <elcuco@kde.org> )
+	// This shuold fix parts of bug #116831, 
+
 	if (m_signButtonState == lessThen)
 	{
-		m_signButton->setText(">");
+		m_signButton->setText( QApplication::reverseLayout()?"<":">");
 		m_signButtonState = greaterThen;
 	} else {
-		m_signButton->setText("<");
+		m_signButton->setText( QApplication::reverseLayout()?">":"<");
 		m_signButtonState = lessThen;
 	}
 
