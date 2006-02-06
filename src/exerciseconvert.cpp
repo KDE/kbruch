@@ -49,7 +49,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 		ExerciseBase(parent, name)
 {
 #ifdef DEBUG
-	kdDebug() << "constructor ExerciseConvert()" << endl;
+	kDebug() << "constructor ExerciseConvert()" << endl;
 #endif
 
 	/* create a new task */
@@ -154,7 +154,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 ExerciseConvert::~ExerciseConvert()
 {
 #ifdef DEBUG
-	kdDebug() << "destructor ExerciseConvert()" << endl;
+	kDebug() << "destructor ExerciseConvert()" << endl;
 #endif
 
 	/* no need to delete any child widgets, Qt does it by itself */
@@ -166,7 +166,7 @@ ExerciseConvert::~ExerciseConvert()
 void ExerciseConvert::forceNewTask()
 {
 #ifdef DEBUG
-	kdDebug() << "forceNewTask ExerciseConvert()" << endl;
+	kDebug() << "forceNewTask ExerciseConvert()" << endl;
 #endif
 
 	if (m_currentState == _CHECK_TASK)

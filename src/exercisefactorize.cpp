@@ -54,7 +54,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	QPalette pal;
 	QColorGroup cg;
 #ifdef DEBUG
-	kdDebug() << "constructor ExerciseFactorize()" << endl;
+	kDebug() << "constructor ExerciseFactorize()" << endl;
 #endif
 
 	/* create a new task */
@@ -222,7 +222,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 ExerciseFactorize::~ExerciseFactorize()
 {
 #ifdef DEBUG
-	kdDebug() << "destructor ExerciseFactorize()" << endl;
+	kDebug() << "destructor ExerciseFactorize()" << endl;
 #endif
 
 	/* no need to delete any child widgets, Qt does it by itself */
@@ -234,7 +234,7 @@ ExerciseFactorize::~ExerciseFactorize()
 void ExerciseFactorize::forceNewTask()
 {
 #ifdef DEBUG
-	kdDebug() << "forceNewTask ExerciseFactorize()" << endl;
+	kDebug() << "forceNewTask ExerciseFactorize()" << endl;
 #endif
 
 	if (m_currentState == _CHECK_TASK)
