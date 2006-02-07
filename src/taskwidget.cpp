@@ -31,14 +31,14 @@ TaskWidget::TaskWidget(QWidget * parent = 0, const char * name = 0,
 			FractionBaseWidget(parent, name), m_task(para_task)
 {
 #ifdef DEBUG
-	kdDebug() << "constructor TaskWidget" << endl;
+	kDebug() << "constructor TaskWidget" << endl;
 #endif
 }
 
 TaskWidget::~TaskWidget()
 {
 #ifdef DEBUG
-	kdDebug() << "destructor TaskWidget" << endl;
+	kDebug() << "destructor TaskWidget" << endl;
 #endif
 }
 

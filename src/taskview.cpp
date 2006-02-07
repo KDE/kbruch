@@ -48,7 +48,7 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 		nr_ratios(pnr_ratios), max_md(pmax_md)
 {
 #ifdef DEBUG
-	kdDebug() << "constructor TaskView()" << endl;
+	kDebug() << "constructor TaskView()" << endl;
 #endif
 
 	curr_nr_ratios = nr_ratios;
@@ -158,7 +158,7 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 TaskView::~TaskView()
 {
 #ifdef DEBUG
-	kdDebug() << "destructor TaskView()" << endl;
+	kDebug() << "destructor TaskView()" << endl;
 #endif
 
 	/* no need to delete any child widgets, Qt does it by itself */
@@ -200,7 +200,7 @@ void TaskView::setTaskParameters(bool padd_sub, bool pmul_div, unsigned int pnr_
 void TaskView::forceNewTask()
 {
 #ifdef DEBUG
-	kdDebug() << "forceNewTask TaskView()" << endl;
+	kDebug() << "forceNewTask TaskView()" << endl;
 #endif
 
 	if (m_currentState == _CHECK_TASK)

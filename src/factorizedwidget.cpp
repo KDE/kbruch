@@ -27,14 +27,14 @@ FactorizedWidget::FactorizedWidget(QWidget * parent, const char * name, const ui
 			FractionBaseWidget(parent, name), m_factors(para_factors)
 {
 #ifdef DEBUG
-	kdDebug() << "constructor FactorizedWidget" << endl;
+	kDebug() << "constructor FactorizedWidget" << endl;
 #endif
 }
 
 FactorizedWidget::~FactorizedWidget()
 {
 #ifdef DEBUG
-	kdDebug() << "destructor FactorizedWidget" << endl;
+	kDebug() << "destructor FactorizedWidget" << endl;
 #endif
 }
 

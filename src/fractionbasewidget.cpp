@@ -30,7 +30,7 @@ FractionBaseWidget::FractionBaseWidget(QWidget * parent = 0, const char * name =
 			QWidget(parent, name)
 {
 #ifdef DEBUG
-	kdDebug() << "constructor FractionBaseWidget" << endl;
+	kDebug() << "constructor FractionBaseWidget" << endl;
 #endif
 
 	// set colors and font used for task displaying
@@ -40,7 +40,7 @@ FractionBaseWidget::FractionBaseWidget(QWidget * parent = 0, const char * name =
 FractionBaseWidget::~FractionBaseWidget()
 {
 #ifdef DEBUG
-	kdDebug() << "destructor FractionBaseWidget" << endl;
+	kDebug() << "destructor FractionBaseWidget" << endl;
 #endif
 }
 

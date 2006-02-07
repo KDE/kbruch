@@ -39,7 +39,7 @@ StatisticsView::StatisticsView(QWidget * parent, const char * name):
 		QWidget(parent, name), m_count(0), m_correct(0)
 {
 #ifdef DEBUG
-	kdDebug() << "constructor StatisticsView()" << endl;
+	kDebug() << "constructor StatisticsView()" << endl;
 #endif
 
 	// load statistics from config file
@@ -139,7 +139,7 @@ StatisticsView::StatisticsView(QWidget * parent, const char * name):
 StatisticsView::~StatisticsView()
 {
 #ifdef DEBUG
-	kdDebug() << "destructor StatisticsView()" << endl;
+	kDebug() << "destructor StatisticsView()" << endl;
 #endif
 	// save statistics for next run
 	SettingsClass::setCount(m_count);
