@@ -68,6 +68,7 @@ public:
 	/** destructor */
 	~ExerciseFactorize();
 
+
 	/** force the creation of a new task */
 	void forceNewTask();
 
@@ -110,6 +111,20 @@ private:
 	// button to remove the last entered factor
 	QPushButton* m_removeLastFactorButton;
 	QPushButton* m_checkButton;
+
+
+	//
+	// the following two methods were added to fix
+	// bug #116831 (reverse layout in RTL desktops)
+	// Amit Ramon amit.ramon@kdemail.net
+	//
+
+	/** create the factor widgets layout */
+	QHBoxLayout* createFactorsLayout();
+
+	/** create the (answer) buttons layout */
+	QGridLayout* createButtonsLayout();
+	
 
 	void createTask();
 	void showResult();

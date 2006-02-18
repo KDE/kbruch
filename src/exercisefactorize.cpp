@@ -66,63 +66,23 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 
 	layout9 = new QVBoxLayout( 0, 0, 6, "layout9"); 
 	
-	layout4 = new QHBoxLayout( 0, 0, 6, "layout4"); 
+	// The following method fix the problem in
+	// bug  #116831, reverse order in RTL desktops.
+	// Amit Ramon amit.ramon@kdemail.net
+	layout4 = createFactorsLayout();
+	layout9->addLayout(layout4);
 	
-	m_taskLabel = new QLabel( this, "m_taskLabel" );
-	layout4->addWidget( m_taskLabel );
-
-	m_equalSignLabel = new QLabel( this, "m_equalSignLabel" );
-	layout4->addWidget( m_equalSignLabel );
-	
-	m_factorsEnteredEdit = new QLineEdit( this, "m_factorsEnteredEdit" );
-	layout4->addWidget( m_factorsEnteredEdit );
-	m_factorsEnteredEdit->setReadOnly(true);
-	m_factorsEnteredEdit->setEnabled(false);
-	m_factorsEnteredEdit->setPaletteForegroundColor(QColor(0, 0, 0));
-	
-	m_factorsWidget = new FactorizedWidget( this, "m_factorsWidget", m_factorsResult);
-	layout4->addWidget( m_factorsWidget );
-	m_factorsWidget->hide();
-	
-	result_label = new QLabel( this, "result_label" );
-	layout4->addWidget( result_label );
-	spacer1 = new QSpacerItem( 25, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
-	layout4->addItem( spacer1 );
-
-	layout9->addLayout( layout4 );
 	spacer2 = new QSpacerItem( 20, 21, QSizePolicy::Minimum, QSizePolicy::Expanding );
 	layout9->addItem( spacer2 );
 	
 	layout2 = new QVBoxLayout( 0, 0, 6, "layout2"); 
 	
-	layout1 = new QGridLayout( 0, 1, 1, 0, 6, "layout1"); 
-	
-	m_factor3Button = new QPushButton( this, "m_factor3Button" );
-	layout1->addWidget( m_factor3Button, 0, 1 );
-	
-	m_factor2Button = new QPushButton( this, "m_factor2Button" );
-	layout1->addWidget( m_factor2Button, 0, 0 );
-	
-	m_factor13Button = new QPushButton( this, "m_factor13Button" );
-	layout1->addWidget( m_factor13Button, 1, 1 );
-	
-	m_factor7Button = new QPushButton( this, "m_factor7Button" );
-	layout1->addWidget( m_factor7Button, 0, 3 );
-	
-	m_factor11Button = new QPushButton( this, "m_factor11Button" );
-	layout1->addWidget( m_factor11Button, 1, 0 );
-	
-	m_factor19Button = new QPushButton( this, "m_factor19Button" );
-	layout1->addWidget( m_factor19Button, 1, 3 );
-	
-	m_factor5Button = new QPushButton( this, "m_factor5Button" );
-	layout1->addWidget( m_factor5Button, 0, 2 );
-	
-	m_factor17Button = new QPushButton( this, "m_factor17Button" );
-	layout1->addWidget( m_factor17Button, 1, 2 );
+	// The following method fix the problem in
+	// bug  #116831, reverse order in RTL desktops.
+	// Amit Ramon amit.ramon@kdemail.net
+	layout1 = createButtonsLayout();
+	layout2->addLayout(layout1);
 
-	layout2->addLayout( layout1 );
-	
 	m_removeLastFactorButton = new QPushButton( this, "m_removeLastFactorButton" );
 	layout2->addWidget( m_removeLastFactorButton );
 	layout9->addLayout( layout2 );
@@ -265,6 +225,137 @@ void ExerciseFactorize::update()
 
 
 /* ------ private member functions ------ */
+
+//
+// The following method was added to fix
+// bug #116831 (reverse layout in RTL desktops)
+// Amit Ramon amit.ramon@kdemail.net
+//
+
+/** Create the layout that hold the exercise widgets
+ */
+QHBoxLayout* ExerciseFactorize::createFactorsLayout()
+{
+  // first create all widgets
+  QHBoxLayout* layout = new QHBoxLayout( 0, 0, 6, "layout4"); 
+  
+  m_taskLabel = new QLabel( this, "m_taskLabel" );
+
+  m_equalSignLabel = new QLabel( this, "m_equalSignLabel" );
+
+  m_factorsEnteredEdit = new QLineEdit( this, "m_factorsEnteredEdit" );
+  m_factorsEnteredEdit->setReadOnly(true);
+  m_factorsEnteredEdit->setEnabled(false);
+  m_factorsEnteredEdit->setPaletteForegroundColor(QColor(0, 0, 0));
+	
+  m_factorsWidget =
+    new FactorizedWidget( this, "m_factorsWidget", m_factorsResult);
+
+  m_factorsWidget->hide();
+  
+  result_label = new QLabel( this, "result_label" );
+
+  spacer1 =  new QSpacerItem( 25, 20, QSizePolicy::Expanding,
+				    QSizePolicy::Minimum );
+
+  // now add the widgets to the layout.
+  // if we are in a RTL desktop, add them
+  // in a reverse order
+  if (QApplication::reverseLayout())
+    {
+      layout->addItem( spacer1 );
+      layout->addWidget( result_label );
+      layout->addWidget( m_factorsWidget );
+      layout->addWidget( m_factorsEnteredEdit );
+      layout->addWidget( m_equalSignLabel );
+      layout->addWidget( m_taskLabel );
+    }
+  else
+    {
+      layout->addWidget( m_taskLabel );
+      layout->addWidget( m_equalSignLabel );
+      layout->addWidget( m_factorsEnteredEdit );
+      layout->addWidget( m_factorsWidget );
+      layout->addWidget( result_label );
+      layout->addItem( spacer1 );
+    }
+  
+  return layout;
+}
+
+
+//
+// The following method was added to fix
+// bug #116831 (reverse layout in RTL desktops)
+// Amit Ramon amit.ramon@kdemail.net
+//
+
+/** Create the layout that hold the exercise widgets
+ */
+QGridLayout* ExerciseFactorize::createButtonsLayout()
+{
+  const int _COLS = 4; // number of buttons in each row
+  const int _ROWS = 2; // number of rows
+
+  QGridLayout* layout = new QGridLayout( 0, 1, 1, 0, 6, "layout1"); 
+	
+  // first row buttons
+  m_factor2Button = new QPushButton( this, "m_factor2Button" );
+  m_factor3Button = new QPushButton( this, "m_factor3Button" );
+  m_factor5Button = new QPushButton( this, "m_factor5Button" );
+  m_factor7Button = new QPushButton( this, "m_factor7Button" );
+
+  // second row buttons
+  m_factor11Button = new QPushButton( this, "m_factor11Button" );
+  m_factor13Button = new QPushButton( this, "m_factor13Button" );	
+  m_factor17Button = new QPushButton( this, "m_factor17Button" );
+  m_factor19Button = new QPushButton( this, "m_factor19Button" );
+
+  // temp array to help with adding the buttons
+  // to the grid
+  QPushButton* buttons[_ROWS][_COLS] = 
+    {
+      {
+	m_factor2Button,
+	m_factor3Button,
+	m_factor5Button,
+	m_factor7Button
+      },
+      {
+	m_factor11Button,
+	m_factor13Button,
+	m_factor17Button,
+	m_factor19Button
+      }
+    };
+  
+
+  int buttonIdxStart = 0;
+  int step = 1;
+
+  // if we are in a RTL desktop, this helps adding the
+  // buttons in a reverse order
+  if (QApplication::reverseLayout())
+    {
+      buttonIdxStart = _COLS - 1;
+      step = -1;
+    }
+
+  // now add the buttons to the grid
+  for (int row = 0; row < _ROWS; row++)
+    {
+      int buttonIdx = buttonIdxStart;
+      
+      for (int col = 0; col < _COLS; col++)
+	{
+	  layout->addWidget(buttons[row][buttonIdx], row, col );
+	  buttonIdx += step;
+	}
+    }
+  
+  return layout;
+}
+
 
 void ExerciseFactorize::createTask()
 {
