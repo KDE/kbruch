@@ -386,7 +386,7 @@ void MainQtWidget::OperationBoxSlot()
 	kDebug() << "MainQtWidget::OperationBoxSlot()" << endl;
 #endif
 
-	int index = m_OperationBox->currentItem(); // get selected item
+	int index = m_OperationBox->currentIndex(); // get selected item
 
 	// user has selected the operations for the next task, so store it in the
 	// private members
