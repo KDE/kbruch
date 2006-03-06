@@ -5,7 +5,14 @@ include_directories( ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${CMAKE_CURRENT_SOURCE_D
 
 ########### next target ###############
 
-set(kbruch_SRCS 
+macro(CREATE_VERSION _in_FILE _out_FILE)
+	FILE(READ ${_in_FILE} _contents)
+	FILE(WRITE ${_out_FILE} "#undef KBRUCH_VERSION\n")
+	FILE(APPEND ${_out_FILE} "#define KBRUCH_VERSION ${_contents}")
+endmacro(CREATE_VERSION)
+
+create_version(${CMAKE_SOURCE_DIR}/kbruch/VERSION version.h)
+set(kbruch_SRCS version.h
    exercisebase.cpp 
    task.cpp 
    ratio.cpp 
