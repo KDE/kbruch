@@ -121,7 +121,8 @@ TaskView::TaskView(QWidget * parent, bool padd_sub,
 	taskLineHBoxLayout->addWidget(m_resultWidget);
 
 	// at the right end we have a label just showing CORRECT or WRONG
-	result_label = new QLabel(baseWidget, "result_label");
+	result_label = new QLabel(baseWidget);
+	result_label->setObjectName("result_label");
 	result_label->setText(i18n("WRONG"));
 	taskLineHBoxLayout->addWidget(result_label);
 	result_label->hide();
@@ -142,7 +143,8 @@ TaskView::TaskView(QWidget * parent, bool padd_sub,
 	lowerHBox->addStretch(100);
 
 	// the right aligned button
-	m_checkButton = new QPushButton( baseWidget, "m_checkButton" );
+	m_checkButton = new QPushButton( baseWidget );
+	m_checkButton->setObjectName( "m_checkButton" );
 	m_checkButton->setText(i18n("&Check Task"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
 	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));

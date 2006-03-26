@@ -61,12 +61,16 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	// result
 	m_currentState = _CHECK_TASK;
 
-	baseWidget = new QWidget(this, "baseWidget");
+	baseWidget = new QWidget(this);
+	baseWidget->setObjectName("baseWidget");
 	baseGrid = new QGridLayout(this, 1, 1, 0, -1, "baseGrid"); 
 	baseGrid->addWidget(baseWidget, 0, 0);
 
 	// this is a VBox
-	realLayout = new QVBoxLayout(baseWidget, 5, 5, "realLayout");
+	realLayout = new QVBoxLayout(baseWidget);
+	realLayout->setMargin(5);
+	realLayout->setSpacing(5);
+	realLayout->setObjectName("realLayout");
 
 	// add a spacer at the top of the VBox
 	QSpacerItem * v_spacer = new QSpacerItem(1, 1);
@@ -89,7 +93,8 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	KIntValidator *valnum = new KIntValidator( this );
 
 	/* add input box so the user can enter numerator */
-	numer_edit = new QLineEdit(baseWidget, "numer_edit");
+	numer_edit = new QLineEdit(baseWidget);
+	numer_edit->setObjectName("numer_edit");
 	numer_edit->setValidator( valnum ); // use the int validator
 	numer_edit->setToolTip(i18n("Enter the numerator of your result"));
 	inputLayout->addWidget(numer_edit);
@@ -101,7 +106,8 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	inputLayout->addWidget(edit_line);
 
 	/* add input box so the user can enter denominator */
-	deno_edit = new QLineEdit(baseWidget, "deno_edit");
+	deno_edit = new QLineEdit(baseWidget);
+	deno_edit->setObjectName("deno_edit");
 	deno_edit->setValidator( valnum ); // use the int validator
 	deno_edit->setToolTip(i18n("Enter the denominator of your result"));
 	inputLayout->addWidget(deno_edit);
@@ -113,7 +119,8 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	m_resultWidget->hide();
 
 	// at the right end we have a label just showing CORRECT or WRONG
-	result_label = new QLabel(baseWidget, "result_lable");
+	result_label = new QLabel(baseWidget);
+	result_label->setObjectName("result_lable");
 	result_label->setText(i18n("WRONG"));
 	taskLineHBoxLayout->addWidget(result_label);
 	result_label->hide();
@@ -134,7 +141,8 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	lowerHBox->addStretch(100);
 
 	// the right aligned button
-	m_checkButton = new QPushButton( baseWidget, "m_checkButton" );
+	m_checkButton = new QPushButton( baseWidget );
+	m_checkButton->setObjectName( "m_checkButton" );
 	m_checkButton->setText(i18n("&Check Task"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
 	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));

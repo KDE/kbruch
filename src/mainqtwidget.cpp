@@ -64,7 +64,8 @@ MainQtWidget::MainQtWidget()
 
 	// we split the main view into 2 parts, one for the tasks, one for the
 	// statistics
-	QSplitter* splitter = new QSplitter(Qt::Horizontal, this,"QSplitter");
+	QSplitter* splitter = new QSplitter(Qt::Horizontal, this);
+	splitter->setObjectName("QSplitter");
 	setCentralWidget(splitter);
 
 	// the iconlist, where the user can choose the different exercises
@@ -172,7 +173,8 @@ void MainQtWidget::setupActions()
 	KStdAction::preferences(this,  SLOT( slotPrefs() ), actionCollection());
 
 	// a label just describing the Number of terms ComboBox
-	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0, "kde toolbar widget");
+	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0);
+	m_NrOfTermsLabel->setObjectName("kde toolbar widget");
 	m_NrOfTermsLabelAction = new KWidgetAction(m_NrOfTermsLabel, i18n("Terms:"), Qt::ALT+Qt::Key_E,
 						   this, SLOT(NrOfTermsBoxSlot()),
 						   actionCollection(), "NrOfTermsLabelAction");
@@ -192,7 +194,8 @@ void MainQtWidget::setupActions()
 	QObject::connect(m_NrOfTermsBox, SIGNAL(activated(int)), this, SLOT(NrOfTermsBoxSlot()));
 
 	// a label just describing the max. main denominator ComboBox
-	m_MaxMainDenominatorLabel = new QLabel(i18n("Max. main denominator:"), 0, "kde toolbar widget");
+	m_MaxMainDenominatorLabel = new QLabel(i18n("Max. main denominator:"), 0);
+	m_MaxMainDenominatorLabel->setObjectName("kde toolbar widget");
 	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Max. main denominator:"), Qt::ALT+Qt::Key_D,
 							    this, SLOT(MaxMainDenominatorBoxSlot()),
 							    actionCollection(), "MaxMainDenominatorLabelAction");
@@ -223,7 +226,8 @@ void MainQtWidget::setupActions()
 			 this, SLOT(MaxMainDenominatorBoxSlot()));
 
 	// a label just describing the operation ComboBox
-	m_OperationLabel = new QLabel(i18n("Operations:"), 0, "kde toolbar widget");
+	m_OperationLabel = new QLabel(i18n("Operations:"), 0);
+	m_OperationLabel->setObjectName("kde toolbar widget");
 	m_OperationLabelAction = new KWidgetAction(m_OperationLabel, i18n("Operations:"), Qt::ALT+Qt::Key_O,
 						   this, SLOT(OperationBoxSlot()),
 						   actionCollection(), "OperationLabelAction");

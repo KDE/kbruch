@@ -55,12 +55,16 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	// result
 	m_currentState = _CHECK_TASK;
 
-	baseWidget = new QWidget(this, "baseWidget");
+	baseWidget = new QWidget(this);
+	baseWidget->setObjectName("baseWidget");
 	baseGrid = new QGridLayout(this, 1, 1, 0, -1, "baseGrid"); 
 	baseGrid->addWidget(baseWidget, 0, 0);
 
 	// this is a VBox
-	realLayout = new QVBoxLayout(baseWidget, 5, 5, "realLayout");
+	realLayout = new QVBoxLayout(baseWidget);
+	realLayout->setMargin(5);
+	realLayout->setSpacing(5);
+	realLayout->setObjectName("realLayout");
 
 	// add a spacer at the top of the VBox
 	QSpacerItem * v_spacer = new QSpacerItem(1, 1);
@@ -84,7 +88,8 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	taskLineHBoxLayout->addItem(v_spacer);
 
 	// now the button where the user has to choose the comparison sign
-	m_signButton = new QPushButton(baseWidget, "m_signButton");
+	m_signButton = new QPushButton(baseWidget);
+	m_signButton->setObjectName("m_signButton");
 	m_signButton->setText("<");
 	m_signButtonState = lessThen;
 	taskLineHBoxLayout->addWidget(m_signButton);
@@ -105,7 +110,8 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	taskLineHBoxLayout->addItem(v_spacer);
 
 	// at the right end we have a label just showing CORRECT or WRONG
-	result_label = new QLabel(baseWidget, "result_label");
+	result_label = new QLabel(baseWidget);
+	result_label->setObjectName("result_label");
 	result_label->setText(i18n("WRONG"));
 	taskLineHBoxLayout->addWidget(result_label);
 	result_label->hide();
@@ -122,7 +128,8 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	lowerHBox->addStretch(100);
 
 	// the right aligned button
-	m_checkButton = new QPushButton( baseWidget, "m_checkButton" );
+	m_checkButton = new QPushButton( baseWidget );
+	m_checkButton->setObjectName( "m_checkButton" );
 	m_checkButton->setText(i18n("&Check Task"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
 	m_checkButton->setToolTip(i18n("Click on this button to check your result."));

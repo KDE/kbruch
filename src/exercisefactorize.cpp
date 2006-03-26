@@ -66,19 +66,25 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	// result
 	m_currentState = _CHECK_TASK;
 
-	Form1Layout = new QVBoxLayout( this, 11, 6, "Form1Layout"); 
+	Form1Layout = new QVBoxLayout( this );
+	Form1Layout->setMargin( 11 );
+	Form1Layout->setSpacing( 6 );
+	Form1Layout->setObjectName( "Form1Layout");
 
 	layout9 = new QVBoxLayout( 0, 0, 6, "layout9"); 
 	
 	layout4 = new QHBoxLayout( 0, 0, 6, "layout4"); 
 	
-	m_taskLabel = new QLabel( this, "m_taskLabel" );
+	m_taskLabel = new QLabel( this );
+	m_taskLabel->setObjectName( "m_taskLabel" );
 	layout4->addWidget( m_taskLabel );
 
-	m_equalSignLabel = new QLabel( this, "m_equalSignLabel" );
+	m_equalSignLabel = new QLabel( this );
+	m_equalSignLabel->setObjectName( "m_equalSignLabel" );
 	layout4->addWidget( m_equalSignLabel );
 	
-	m_factorsEnteredEdit = new QLineEdit( this, "m_factorsEnteredEdit" );
+	m_factorsEnteredEdit = new QLineEdit( this );
+	m_factorsEnteredEdit->setObjectName( "m_factorsEnteredEdit" );
 	layout4->addWidget( m_factorsEnteredEdit );
 	m_factorsEnteredEdit->setReadOnly(true);
 	m_factorsEnteredEdit->setEnabled(false);
@@ -89,7 +95,8 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	layout4->addWidget( m_factorsWidget );
 	m_factorsWidget->hide();
 	
-	result_label = new QLabel( this, "result_label" );
+	result_label = new QLabel( this );
+	result_label->setObjectName( "result_label" );
 	layout4->addWidget( result_label );
 	spacer1 = new QSpacerItem( 25, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
 	layout4->addItem( spacer1 );
@@ -102,33 +109,42 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	
 	layout1 = new QGridLayout( 0, 1, 1, 0, 6, "layout1"); 
 	
-	m_factor3Button = new QPushButton( this, "m_factor3Button" );
+	m_factor3Button = new QPushButton( this );
+	m_factor3Button->setObjectName( "m_factor3Button" );
 	layout1->addWidget( m_factor3Button, 0, 1 );
 	
-	m_factor2Button = new QPushButton( this, "m_factor2Button" );
+	m_factor2Button = new QPushButton( this );
+	m_factor2Button->setObjectName( "m_factor2Button" );
 	layout1->addWidget( m_factor2Button, 0, 0 );
 	
-	m_factor13Button = new QPushButton( this, "m_factor13Button" );
+	m_factor13Button = new QPushButton( this );
+	m_factor13Button->setObjectName( "m_factor13Button" );
 	layout1->addWidget( m_factor13Button, 1, 1 );
 	
-	m_factor7Button = new QPushButton( this, "m_factor7Button" );
+	m_factor7Button = new QPushButton( this );
+	m_factor7Button->setObjectName( "m_factor7Button" );
 	layout1->addWidget( m_factor7Button, 0, 3 );
 	
-	m_factor11Button = new QPushButton( this, "m_factor11Button" );
+	m_factor11Button = new QPushButton( this );
+	m_factor11Button->setObjectName( "m_factor11Button" );
 	layout1->addWidget( m_factor11Button, 1, 0 );
 	
-	m_factor19Button = new QPushButton( this, "m_factor19Button" );
+	m_factor19Button = new QPushButton( this );
+	m_factor19Button->setObjectName( "m_factor19Button" );
 	layout1->addWidget( m_factor19Button, 1, 3 );
 	
-	m_factor5Button = new QPushButton( this, "m_factor5Button" );
+	m_factor5Button = new QPushButton( this );
+	m_factor5Button->setObjectName( "m_factor5Button" );
 	layout1->addWidget( m_factor5Button, 0, 2 );
 	
-	m_factor17Button = new QPushButton( this, "m_factor17Button" );
+	m_factor17Button = new QPushButton( this );
+	m_factor17Button->setObjectName( "m_factor17Button" );
 	layout1->addWidget( m_factor17Button, 1, 2 );
 
 	layout2->addLayout( layout1 );
 	
-	m_removeLastFactorButton = new QPushButton( this, "m_removeLastFactorButton" );
+	m_removeLastFactorButton = new QPushButton( this );
+	m_removeLastFactorButton->setObjectName( "m_removeLastFactorButton" );
 	layout2->addWidget( m_removeLastFactorButton );
 	layout9->addLayout( layout2 );
 
@@ -139,7 +155,8 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	spacer3 = new QSpacerItem( 361, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
 	layout7->addItem( spacer3 );
 	
-	m_checkButton = new QPushButton( this, "m_checkButton" );
+	m_checkButton = new QPushButton( this );
+	m_checkButton->setObjectName( "m_checkButton" );
 	layout7->addWidget( m_checkButton );
 	layout9->addLayout( layout7 );
 	Form1Layout->addLayout( layout9 );
@@ -552,7 +569,7 @@ void ExerciseFactorize::slotRemoveLastFactorButtonClicked()
 		--it;
 
 		// remove last item
-		m_factorsEntered.remove(it);
+		m_factorsEntered.erase(it);
 	}
 
 	// if the list is empty, we have to disable the delete button
