@@ -68,7 +68,7 @@ class ExerciseFactorize : public ExerciseBase
 
 public:
 	/** constructor */
-	ExerciseFactorize(QWidget * parent = 0, const char * name = 0);
+	ExerciseFactorize(QWidget * parent = 0);
 
 	/** destructor */
 	~ExerciseFactorize();

@@ -69,29 +69,34 @@ MainQtWidget::MainQtWidget()
 
 	// the iconlist, where the user can choose the different exercises
 	m_exercises = new KJanusWidget(splitter, KJanusWidget::IconList);
-	QToolTip::add(m_exercises, i18n("Choose another exercise by clicking on an icon."));
+	m_exercises->setToolTip(i18n("Choose another exercise by clicking on an icon."));
 	m_exercises->setWhatsThis( i18n("Click on the different icons to choose another exercise. The exercises help you to practice different aspects of calculating with fractions."));
 
 	// create the statistic view
-	m_statview = new StatisticsView(splitter, "StatisticsView");
+	m_statview = new StatisticsView(splitter);
+	m_statview->setObjectName("StatisticsView");
 
 	// add the pages
 	//
 	// we have the exercise to solve fraction tasks
 	KVBox * page = m_exercises->addVBoxPage(i18n("Fraction Task"), "", DesktopIcon("kbruch_exercise_common"));
-	m_taskview = new TaskView((QWidget *) page, "TaskView", m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
+	m_taskview = new TaskView((QWidget *) page, m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
+	m_taskview->setObjectName("TaskView");
 
 	// we have the exercise to compare ratios
 	page = m_exercises->addVBoxPage(i18n("Comparison"), "", DesktopIcon("kbruch_exercise_compare"));
-	m_exerciseCompare = new ExerciseCompare((QWidget *) page, "ExerciseCompare");
+	m_exerciseCompare = new ExerciseCompare((QWidget *) page);
+	m_exerciseCompare->setObjectName("ExerciseCompare");
 
 	// we have the exercise to convert rational numbers into ratios
 	page = m_exercises->addVBoxPage(i18n("Conversion"), "", DesktopIcon("kbruch_exercise_conversion"));
-	m_exerciseConvert = new ExerciseConvert((QWidget *) page, "ExerciseConvert");
+	m_exerciseConvert = new ExerciseConvert((QWidget *) page);
+	m_exerciseConvert->setObjectName("ExerciseConvert");
 
 	// we have the exercise to factorize a given number into prime factors
 	page = m_exercises->addVBoxPage(i18n("Factorization"), "", DesktopIcon("kbruch_exercise_factorisation"));
-	m_exerciseFactorize = new ExerciseFactorize((QWidget *) page, "ExerciseFactorize");
+	m_exerciseFactorize = new ExerciseFactorize((QWidget *) page);
+	m_exerciseFactorize->setObjectName("ExerciseFactorize");
 
 	splitter->setResizeMode(m_statview, QSplitter::FollowSizeHint);
 
@@ -179,7 +184,7 @@ void MainQtWidget::setupActions()
 	m_NrOfTermsBox->insertItem("4");
 	m_NrOfTermsBox->insertItem("5");
 	m_NrOfTermsBox->setCurrentItem(m_nrRatios - 2);
-	QToolTip::add( m_NrOfTermsBox, i18n( "The number of terms you want" ) );
+	m_NrOfTermsBox->setToolTip( i18n( "The number of terms you want" ) );
 	m_NrOfTermsBox->setWhatsThis( i18n( "Choose the number of terms (2, 3, 4 or 5) you want for calculating fractions." ) );
 	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of Terms"), Qt::ALT+Qt::Key_E, this, SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsBoxAction");
 
@@ -198,7 +203,7 @@ void MainQtWidget::setupActions()
 	m_MaxMainDenominatorBox->insertItem("20");
 	m_MaxMainDenominatorBox->insertItem("30");
 	m_MaxMainDenominatorBox->insertItem("50");
-	QToolTip::add( m_MaxMainDenominatorBox, i18n( "The maximum number you can have as main denominator" ) );
+	m_MaxMainDenominatorBox->setToolTip( i18n( "The maximum number you can have as main denominator" ) );
 	m_MaxMainDenominatorBox->setWhatsThis( i18n( "Choose the number which will be the maximum for the main denominator: 10, 20, 30, 40 or 50." ) );
 	switch (m_maxMainDenominator)
 	{
@@ -236,7 +241,7 @@ void MainQtWidget::setupActions()
 	} else if (m_addSub == true && m_mulDiv == true) {
 		m_OperationBox->setCurrentItem(2);
 	}
-	QToolTip::add( m_OperationBox, i18n( "The operations you want" ) );
+	m_OperationBox->setToolTip( i18n( "The operations you want" ) );
 	m_OperationBox->setWhatsThis( i18n( "Choose the type of operations you want for calculating fractions: Addition/Substraction, Multiplication/Division or All Operations Mixed. If you choose All Operations Mixed, the program will randomly choose addition, substraction, multiplication and/or division." ) );
 	m_OperationBoxAction = new KWidgetAction(m_OperationBox, i18n("Operations:"), Qt::ALT+Qt::Key_O, this, SLOT(OperationBoxSlot()), actionCollection(), "OperationBoxAction");
 

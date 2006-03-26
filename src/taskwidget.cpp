@@ -26,9 +26,9 @@
 //Added by qt3to4:
 #include <QPaintEvent>
 
-TaskWidget::TaskWidget(QWidget * parent = 0, const char * name = 0,
+TaskWidget::TaskWidget(QWidget * parent = 0,
 													const task para_task = *new task()) :
-			FractionBaseWidget(parent, name), m_task(para_task)
+			FractionBaseWidget(parent), m_task(para_task)
 {
 #ifdef DEBUG
 	kDebug() << "constructor TaskWidget" << endl;

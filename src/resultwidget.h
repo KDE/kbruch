@@ -38,7 +38,7 @@ class ResultWidget : public FractionBaseWidget
 
 public:
 	/** constructor */
-	ResultWidget(QWidget * parent, const char * name, const ratio para_result);
+	ResultWidget(QWidget * parent, const ratio para_result);
 
 	/** destructor */
 	~ResultWidget();

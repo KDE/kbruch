@@ -39,7 +39,7 @@ class RationalWidget : public FractionBaseWidget
 
 public:
 	/** constructor */
-	RationalWidget(QWidget * parent, const char * name, const QString &pnumber, const int pperiodStart = 1, const int pperiodLength = 0);
+	RationalWidget(QWidget * parent, const QString &pnumber, const int pperiodStart = 1, const int pperiodLength = 0);
 
 	/** destructor */
 	~RationalWidget();

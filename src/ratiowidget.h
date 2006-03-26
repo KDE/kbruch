@@ -38,7 +38,7 @@ class RatioWidget : public FractionBaseWidget
 
 public:
 	/** constructor */
-	RatioWidget(QWidget * parent, const char * name, const ratio para_ratio);
+	RatioWidget(QWidget * parent, const ratio para_ratio);
 
 	/** destructor */
 	~RatioWidget();

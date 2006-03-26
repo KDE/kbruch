@@ -45,8 +45,8 @@
 /* ----- public member functions ----- */
 
 /* constructor */
-ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
-		ExerciseBase(parent, name)
+ExerciseConvert::ExerciseConvert(QWidget * parent):
+		ExerciseBase(parent)
 {
 #ifdef DEBUG
 	kDebug() << "constructor ExerciseConvert()" << endl;
@@ -77,7 +77,8 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 	realLayout->addLayout(taskLineHBoxLayout);
 
 	// first left is the rational widget
-	m_rationalWidget = new RationalWidget(baseWidget, "m_rationalWidget", m_number, m_periodStart, m_periodLength);
+	m_rationalWidget = new RationalWidget(baseWidget, m_number, m_periodStart, m_periodLength);
+	m_rationalWidget->setObjectName("m_rationalWidget");
 	taskLineHBoxLayout->addWidget(m_rationalWidget);
 
 	// now we have the input fields aligned in a VBox
@@ -90,7 +91,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 	/* add input box so the user can enter numerator */
 	numer_edit = new QLineEdit(baseWidget, "numer_edit");
 	numer_edit->setValidator( valnum ); // use the int validator
-	QToolTip::add(numer_edit, i18n("Enter the numerator of your result"));
+	numer_edit->setToolTip(i18n("Enter the numerator of your result"));
 	inputLayout->addWidget(numer_edit);
 
 	/* add a line between the edit boxes */
@@ -102,11 +103,12 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 	/* add input box so the user can enter denominator */
 	deno_edit = new QLineEdit(baseWidget, "deno_edit");
 	deno_edit->setValidator( valnum ); // use the int validator
-	QToolTip::add(deno_edit, i18n("Enter the denominator of your result"));
+	deno_edit->setToolTip(i18n("Enter the denominator of your result"));
 	inputLayout->addWidget(deno_edit);
 
 	// next is the result widget
-	m_resultWidget = new ResultWidget(baseWidget, "m_resultWidget", m_result);
+	m_resultWidget = new ResultWidget(baseWidget, m_result);
+	m_resultWidget->setObjectName("m_resultWidget");
 	taskLineHBoxLayout->addWidget(m_resultWidget);
 	m_resultWidget->hide();
 
@@ -135,7 +137,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 	m_checkButton = new QPushButton( baseWidget, "m_checkButton" );
 	m_checkButton->setText(i18n("&Check Task"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 	lowerHBox->addWidget(m_checkButton, 1, Qt::AlignRight);
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
 
@@ -146,8 +148,8 @@ ExerciseConvert::ExerciseConvert(QWidget * parent, const char * name):
 	baseWidget->show();
 
 	// add tooltip and qwhatsthis help to the widget
-	QToolTip::add(this, i18n("In this exercise you have to convert a number into a fraction."));
-	this->setWhatsThis( i18n("In this exercise you have to convert a given number into a fraction by entering numerator and denominator. Do not forget to reduce the result!"));
+	setToolTip(i18n("In this exercise you have to convert a number into a fraction."));
+	setWhatsThis( i18n("In this exercise you have to convert a given number into a fraction by entering numerator and denominator. Do not forget to reduce the result!"));
 }
 
 /* destructor */
@@ -314,7 +316,7 @@ void ExerciseConvert::showResult()
 	ratio entered_result;
 
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to get to the next task."));
+	m_checkButton->setToolTip(i18n("Click on this button to get to the next task."));
 
 	numer_edit->setEnabled(false);
 	deno_edit->setEnabled(false);
@@ -399,7 +401,7 @@ void ExerciseConvert::showResult()
 void ExerciseConvert::nextTask()
 {
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 
 	numer_edit->setEnabled(true);
 	deno_edit->setEnabled(true);

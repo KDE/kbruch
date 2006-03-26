@@ -23,9 +23,9 @@
 //Added by qt3to4:
 #include <QPaintEvent>
 
-RatioWidget::RatioWidget(QWidget * parent = 0, const char * name = 0,
+RatioWidget::RatioWidget(QWidget * parent = 0,
 													const ratio para_ratio = *new ratio()) :
-			FractionBaseWidget(parent, name), m_ratio(para_ratio)
+			FractionBaseWidget(parent), m_ratio(para_ratio)
 {
 #ifdef DEBUG
 	kDebug() << "constructor RatioWidget" << endl;

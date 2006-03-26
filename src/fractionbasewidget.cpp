@@ -26,8 +26,8 @@
 
 #include "settingsclass.h"
 
-FractionBaseWidget::FractionBaseWidget(QWidget * parent = 0, const char * name = 0) :
-			QWidget(parent, name)
+FractionBaseWidget::FractionBaseWidget(QWidget * parent = 0) :
+			QWidget(parent)
 {
 #ifdef DEBUG
 	kDebug() << "constructor FractionBaseWidget" << endl;

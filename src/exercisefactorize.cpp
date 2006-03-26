@@ -48,8 +48,8 @@
 /* ----- public member functions ----- */
 
 /* constructor */
-ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
-		ExerciseBase(parent, name)
+ExerciseFactorize::ExerciseFactorize(QWidget * parent):
+		ExerciseBase(parent)
 {
 	QPalette pal;
 	QColorGroup cg;
@@ -84,7 +84,8 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	m_factorsEnteredEdit->setEnabled(false);
 	m_factorsEnteredEdit->setPaletteForegroundColor(QColor(0, 0, 0));
 	
-	m_factorsWidget = new FactorizedWidget( this, "m_factorsWidget", m_factorsResult);
+	m_factorsWidget = new FactorizedWidget( this, m_factorsResult);
+	m_factorsWidget->setObjectName("m_factorsWidget");
 	layout4->addWidget( m_factorsWidget );
 	m_factorsWidget->hide();
 	
@@ -180,24 +181,24 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	QObject::connect(m_factor19Button, SIGNAL(clicked()), this, SLOT(slotFactor19ButtonClicked()));
 
 	// add tooltips to the factor buttons
-	QToolTip::add(m_factor2Button, i18n("Add prime factor 2."));
-	QToolTip::add(m_factor3Button, i18n("Add prime factor 3."));
-	QToolTip::add(m_factor5Button, i18n("Add prime factor 5."));
-	QToolTip::add(m_factor7Button, i18n("Add prime factor 7."));
-	QToolTip::add(m_factor11Button, i18n("Add prime factor 11."));
-	QToolTip::add(m_factor13Button, i18n("Add prime factor 13."));
-	QToolTip::add(m_factor17Button, i18n("Add prime factor 17."));
-	QToolTip::add(m_factor19Button, i18n("Add prime factor 19."));
+	m_factor2Button->setToolTip(i18n("Add prime factor 2."));
+	m_factor3Button->setToolTip(i18n("Add prime factor 3."));
+	m_factor5Button->setToolTip(i18n("Add prime factor 5."));
+	m_factor7Button->setToolTip(i18n("Add prime factor 7."));
+	m_factor11Button->setToolTip(i18n("Add prime factor 11."));
+	m_factor13Button->setToolTip(i18n("Add prime factor 13."));
+	m_factor17Button->setToolTip(i18n("Add prime factor 17."));
+	m_factor19Button->setToolTip(i18n("Add prime factor 19."));
 
 	// the remove last factor button
 	m_removeLastFactorButton->setText( i18n( "&Remove Last Factor" ) );
 	m_removeLastFactorButton->setEnabled(false);
 	QObject::connect(m_removeLastFactorButton, SIGNAL(clicked()), this, SLOT(slotRemoveLastFactorButtonClicked()));
-	QToolTip::add(m_removeLastFactorButton, i18n("Removes the last entered prime factor."));
+	m_removeLastFactorButton->setToolTip(i18n("Removes the last entered prime factor."));
 
 	// the check task button
 	m_checkButton->setText( i18n( "&Check Task" ) );
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
 	m_checkButton->setDefault(true); // is the default button of the dialog
 
@@ -214,8 +215,8 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	setTabOrder(m_factor19Button, m_removeLastFactorButton);
 
 	// add tooltip and qwhatsthis help to the widget
-	QToolTip::add(this, i18n("In this exercise you have to factorize a given number."));
-	this->setWhatsThis( i18n("In this exercise you have to factorize a given number. You have to enter all prime factors of the number. You can add a prime factor by clicking on the corresponding button. The chosen prime factors will be shown in the input field. Do not forget to enter all prime factors, even when a prime factor repeats several times!"));
+	setToolTip(i18n("In this exercise you have to factorize a given number."));
+	setWhatsThis( i18n("In this exercise you have to factorize a given number. You have to enter all prime factors of the number. You can add a prime factor by clicking on the corresponding button. The chosen prime factors will be shown in the input field. Do not forget to enter all prime factors, even when a prime factor repeats several times!"));
 }
 
 /* destructor */
@@ -309,7 +310,7 @@ void ExerciseFactorize::showResult()
 	uint uint_result = 0;
 
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to get to the next task."));
+	m_checkButton->setToolTip(i18n("Click on this button to get to the next task."));
 
 	// disable prime factor buttons
 	m_factor2Button->setEnabled(false);
@@ -380,7 +381,7 @@ void ExerciseFactorize::showResult()
 void ExerciseFactorize::nextTask()
 {
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 
 	// enable prime factor buttons
 	m_factor2Button->setEnabled(true);

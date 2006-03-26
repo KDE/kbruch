@@ -49,7 +49,7 @@ class ExerciseConvert : public ExerciseBase
 
 public:
 	/** constructor */
-	ExerciseConvert(QWidget * parent = 0, const char * name = 0);
+	ExerciseConvert(QWidget * parent = 0);
 
 	/** destructor */
 	~ExerciseConvert();

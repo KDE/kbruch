@@ -42,9 +42,9 @@
 /* ----- public member functions ----- */
 
 /* constructor */
-TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
+TaskView::TaskView(QWidget * parent, bool padd_sub,
                   bool pmul_div, unsigned int pnr_ratios, unsigned int pmax_md):
-		ExerciseBase(parent, name), add_sub(padd_sub), mul_div(pmul_div),
+		ExerciseBase(parent), add_sub(padd_sub), mul_div(pmul_div),
 		nr_ratios(pnr_ratios), max_md(pmax_md)
 {
 #ifdef DEBUG
@@ -62,23 +62,30 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	// result
 	m_currentState = _CHECK_TASK;
 
-	baseWidget = new QWidget(this, "baseWidget");
+	baseWidget = new QWidget(this);
+	baseWidget->setObjectName("baseWidget");
 	baseGrid = new QGridLayout(this, 1, 1, 0, -1, "baseGrid"); 
 	baseGrid->addWidget(baseWidget, 0, 0);
 
 	// this is a VBox
-	realLayout = new QVBoxLayout(baseWidget, 5, 5, "realLayout");
+	realLayout = new QVBoxLayout(baseWidget);
+	realLayout->setMargin(5);
+	realLayout->setSpacing(5);
+	realLayout->setObjectName("realLayout");
 
 	// add a spacer at the top of the VBox
 	QSpacerItem * v_spacer = new QSpacerItem(1, 1);
 	realLayout->addItem(v_spacer);
 
 	// now a line holding the task, input fields and result
-	QHBoxLayout * taskLineHBoxLayout = new QHBoxLayout(5, "taskLineHBoxLayout");
+	QHBoxLayout * taskLineHBoxLayout = new QHBoxLayout();
+	taskLineHBoxLayout->setMargin(5);
+	taskLineHBoxLayout->setObjectName("taskLineHBoxLayout");
 	realLayout->addLayout(taskLineHBoxLayout);
 
 	// first left is the task widget
-	m_taskWidget = new TaskWidget(baseWidget, "m_taskWidget", current_task);
+	m_taskWidget = new TaskWidget(baseWidget, current_task);
+	m_taskWidget->setObjectName("m_taskWidget");
 	taskLineHBoxLayout->addWidget(m_taskWidget);
 
 	// now we have the input fields aligned in a VBox
@@ -89,9 +96,10 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	KIntValidator *valnum = new KIntValidator( this );
 
 	/* add input box so the user can enter numerator */
-	numer_edit = new QLineEdit(baseWidget, "numer_edit");
+	numer_edit = new QLineEdit(baseWidget);
+	numer_edit->setObjectName("numer_edit");
 	numer_edit->setValidator( valnum ); // use the int validator
-	QToolTip::add(numer_edit, i18n("Enter the numerator of your result"));
+	numer_edit->setToolTip(i18n("Enter the numerator of your result"));
 	inputLayout->addWidget(numer_edit);
 
 	/* add a line between the edit boxes */
@@ -101,13 +109,15 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	inputLayout->addWidget(edit_line);
 
 	/* add input box so the user can enter denominator */
-	deno_edit = new QLineEdit(baseWidget, "deno_edit");
+	deno_edit = new QLineEdit(baseWidget);
+	deno_edit->setObjectName("deno_edit");
 	deno_edit->setValidator( valnum ); // use the int validator
-	QToolTip::add(deno_edit, i18n("Enter the denominator of your result"));
+	deno_edit->setToolTip(i18n("Enter the denominator of your result"));
 	inputLayout->addWidget(deno_edit);
 
 	// next is the result widget
-	m_resultWidget = new ResultWidget(baseWidget, "m_resultWidget", *new ratio());
+	m_resultWidget = new ResultWidget(baseWidget, *new ratio());
+	m_resultWidget->setObjectName("m_resultWidget");
 	taskLineHBoxLayout->addWidget(m_resultWidget);
 
 	// at the right end we have a label just showing CORRECT or WRONG
@@ -135,7 +145,7 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	m_checkButton = new QPushButton( baseWidget, "m_checkButton" );
 	m_checkButton->setText(i18n("&Check Task"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 	lowerHBox->addWidget(m_checkButton, 1, Qt::AlignRight);
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
 
@@ -150,8 +160,8 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	m_resultWidget->hide();
 
 	// add tooltip and qwhatsthis help to the widget
-	QToolTip::add(this, i18n("In this exercise you have to solve a given task with fractions."));
-	this->setWhatsThis( i18n("In this exercise you have to solve the generated task. You have to enter numerator and denominator. You can adjust the difficulty of the task with the boxes in the toolbar. Do not forget to reduce the result!"));
+	setToolTip(i18n("In this exercise you have to solve a given task with fractions."));
+	setWhatsThis( i18n("In this exercise you have to solve the generated task. You have to enter numerator and denominator. You can adjust the difficulty of the task with the boxes in the toolbar. Do not forget to reduce the result!"));
 }
 
 /* destructor */
@@ -244,7 +254,7 @@ void TaskView::showResult()
 	QColorGroup cg;
 
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to get to the next task."));
+	m_checkButton->setToolTip(i18n("Click on this button to get to the next task."));
 
 	numer_edit->setEnabled(false);
 	deno_edit->setEnabled(false);
@@ -328,7 +338,7 @@ void TaskView::showResult()
 void TaskView::nextTask()
 {
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 
 	numer_edit->setEnabled(true);
 	deno_edit->setEnabled(true);

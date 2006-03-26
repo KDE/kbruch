@@ -23,8 +23,8 @@
 //Added by qt3to4:
 #include <QPaintEvent>
 
-FactorizedWidget::FactorizedWidget(QWidget * parent, const char * name, const uintList para_factors) :
-			FractionBaseWidget(parent, name), m_factors(para_factors)
+FactorizedWidget::FactorizedWidget(QWidget * parent, const uintList para_factors) :
+			FractionBaseWidget(parent), m_factors(para_factors)
 {
 #ifdef DEBUG
 	kDebug() << "constructor FactorizedWidget" << endl;

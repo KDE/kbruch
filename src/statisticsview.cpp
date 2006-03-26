@@ -35,8 +35,8 @@
 #include "settingsclass.h"
 
 /* constructor */
-StatisticsView::StatisticsView(QWidget * parent, const char * name):
-		QWidget(parent, name), m_count(0), m_correct(0)
+StatisticsView::StatisticsView(QWidget * parent):
+		QWidget(parent), m_count(0), m_correct(0)
 {
 #ifdef DEBUG
 	kDebug() << "constructor StatisticsView()" << endl;
@@ -71,7 +71,7 @@ StatisticsView::StatisticsView(QWidget * parent, const char * name):
 
 	result1Label = new QLabel(this);
 	labelGrid->addWidget(result1Label, 1, 1);
-	QToolTip::add(result1Label,
+	result1Label->setToolTip(
 	              i18n("This is the current total number of solved tasks."));
 
 	info2Label = new QLabel(this);
@@ -91,7 +91,7 @@ StatisticsView::StatisticsView(QWidget * parent, const char * name):
 	result2Label->setPalette(pal);
 
 	labelGrid->addWidget(result2Label, 2, 1);
-	QToolTip::add(result2Label,
+	result2Label->setToolTip(
 	              i18n("This is the current total number of correctly solved tasks."));
 
 	info3Label = new QLabel(this);
@@ -111,7 +111,7 @@ StatisticsView::StatisticsView(QWidget * parent, const char * name):
 	result3Label->setPalette(pal);
 
 	labelGrid->addWidget(result3Label, 3, 1);
-	QToolTip::add(result3Label,
+	result3Label->setToolTip(
 	              i18n("This is the current total number of unsolved tasks."));
 
 	/* now add a v-spacer */
@@ -123,7 +123,7 @@ StatisticsView::StatisticsView(QWidget * parent, const char * name):
 	resetBtn = new QPushButton(i18n("&Reset"), this);
 	QObject::connect(resetBtn, SIGNAL(clicked()), this, SLOT(resetStatistics()));
 	buttonLayout->addWidget(resetBtn);
-	QToolTip::add(resetBtn, i18n("Press the button to reset the statistics."));
+	resetBtn->setToolTip(i18n("Press the button to reset the statistics."));
 	QSpacerItem* spacer = new QSpacerItem(0,0);
 	buttonLayout->addItem(spacer);
 
@@ -131,8 +131,8 @@ StatisticsView::StatisticsView(QWidget * parent, const char * name):
 	(void) calc();
 
 	// add tooltip and qwhatsthis help to the widget
-	QToolTip::add(this, i18n("This part of the window shows the statistics."));
-	this->setWhatsThis( i18n("This part of the window shows the statistics.  Each exercise you do is counted. You can reset the statistics by clicking on the button below. Also, if you do not want to see the statistics, use the vertical bar on the left to reduce the size of this window part."));
+	setToolTip(i18n("This part of the window shows the statistics."));
+	setWhatsThis( i18n("This part of the window shows the statistics.  Each exercise you do is counted. You can reset the statistics by clicking on the button below. Also, if you do not want to see the statistics, use the vertical bar on the left to reduce the size of this window part."));
 }
 
 /* destructor */

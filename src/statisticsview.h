@@ -45,7 +45,7 @@ class StatisticsView : public QWidget
 
 public:
 	/** constructor */
-	StatisticsView(QWidget * parent = 0, const char * name = 0);
+	StatisticsView(QWidget * parent = 0);
 
 	/** destructor */
 	~StatisticsView();

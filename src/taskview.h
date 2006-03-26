@@ -58,7 +58,7 @@ class TaskView : public ExerciseBase
 
 public:
 	/** constructor */
-	TaskView(QWidget * parent = 0, const char * name = 0,
+	TaskView(QWidget * parent = 0,
 	         bool padd_sub = true, bool pmul_div = false,
 	         unsigned int pnr_ratios = 2, unsigned int pmax_md = 10);
 

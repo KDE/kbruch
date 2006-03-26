@@ -39,7 +39,7 @@ class FactorizedWidget : public FractionBaseWidget
 
 public:
 	/** constructor */
-	FactorizedWidget(QWidget * parent, const char * name, const uintList para_factors);
+	FactorizedWidget(QWidget * parent, const uintList para_factors);
 
 	/** destructor */
 	~FactorizedWidget();

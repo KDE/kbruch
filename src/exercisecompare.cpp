@@ -39,8 +39,8 @@
 /* ----- public member functions ----- */
 
 /* constructor */
-ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
-		ExerciseBase(parent, name)
+ExerciseCompare::ExerciseCompare(QWidget * parent):
+		ExerciseBase(parent)
 {
 #ifdef DEBUG
 	kDebug() << "constructor ExerciseCompare()" << endl;
@@ -75,7 +75,8 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 	taskLineHBoxLayout->addItem(v_spacer);
 
 	// first the first ratio widget
-	m_firstRatioWidget = new RatioWidget(baseWidget, "m_firstRatioWidget", m_firstRatio);
+	m_firstRatioWidget = new RatioWidget(baseWidget, m_firstRatio);
+	m_firstRatioWidget->setObjectName("m_firstRatioWidget");
 	taskLineHBoxLayout->addWidget(m_firstRatioWidget);
 
 	// spacer
@@ -88,14 +89,15 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 	m_signButtonState = lessThen;
 	taskLineHBoxLayout->addWidget(m_signButton);
 	QObject::connect(m_signButton, SIGNAL(clicked()), this, SLOT(slotSignButtonClicked()));
-	QToolTip::add(m_signButton, i18n("Click on this button to change the comparison sign."));
+	m_signButton->setToolTip(i18n("Click on this button to change the comparison sign."));
 
 	// spacer
 	v_spacer = new QSpacerItem(1, 1);
 	taskLineHBoxLayout->addItem(v_spacer);
 
 	// now the second ratio widget
-	m_secondRatioWidget = new RatioWidget(baseWidget, "m_secondRatioWidget", m_secondRatio);
+	m_secondRatioWidget = new RatioWidget(baseWidget, m_secondRatio);
+	m_secondRatioWidget->setObjectName("m_secondRatioWidget");
 	taskLineHBoxLayout->addWidget(m_secondRatioWidget);
 
 	// spacer
@@ -123,7 +125,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 	m_checkButton = new QPushButton( baseWidget, "m_checkButton" );
 	m_checkButton->setText(i18n("&Check Task"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result."));
+	m_checkButton->setToolTip(i18n("Click on this button to check your result."));
 	lowerHBox->addWidget(m_checkButton, 1, Qt::AlignRight);
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
 
@@ -134,8 +136,8 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 	baseWidget->show();
 
 	// add tooltip and qwhatsthis help to the widget
-	QToolTip::add(this, i18n("In this exercise you have to compare 2 given fractions."));
-	this->setWhatsThis( i18n("In this exercise you have to compare 2 given fractions by choosing the correct comparison sign. You can change the comparison sign by just clicking on the button showing the sign."));
+	setToolTip(i18n("In this exercise you have to compare 2 given fractions."));
+	setWhatsThis( i18n("In this exercise you have to compare 2 given fractions by choosing the correct comparison sign. You can change the comparison sign by just clicking on the button showing the sign."));
 }
 
 /* destructor */
@@ -209,7 +211,7 @@ void ExerciseCompare::showResult()
 	bool result = m_firstRatio < m_secondRatio;
 
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to get to the next task."));
+	m_checkButton->setToolTip(i18n("Click on this button to get to the next task."));
 
 	// disable sign button
 	m_signButton->setEnabled(false);
@@ -256,7 +258,7 @@ void ExerciseCompare::showResult()
 void ExerciseCompare::nextTask()
 {
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result."));
+	m_checkButton->setToolTip(i18n("Click on this button to check your result."));
 
 	// enable sign button
 	m_signButton->setEnabled(true);
