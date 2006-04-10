@@ -106,7 +106,7 @@ void TaskWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 				case DIV :
 					// there seems to be different division signs around the world
 					// so please translate it to the right one for your country
-					str_operation = i18n("division symbol", "/");
+					str_operation = i18nc("division symbol", "/");
 					break;
 			} /* switch (operation) */
 
