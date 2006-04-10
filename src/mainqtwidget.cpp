@@ -18,7 +18,7 @@
 
 #include <config.h>
 
-#include <kaccel.h>
+
 #include <kapplication.h>
 #include <kaction.h>
 #include <kdebug.h>
