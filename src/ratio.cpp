@@ -188,7 +188,7 @@ ratio ratio::operator=(int dummy)
 	return *this;
 }
 
-/* check, if the ratios are equivalent; -1/2 == 1/-2 -> TRUE */
+/* check, if the ratios are equivalent; -1/2 == 1/-2 -> true */
 bool ratio::operator==(ratio right)
 {
 	signed short orig_sign = 1, right_sign = 1;

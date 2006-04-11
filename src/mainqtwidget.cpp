@@ -26,6 +26,7 @@
 #include <kjanuswidget.h>
 #include <kconfigdialog.h>
 #include <klocale.h>
+#include <kstdaccel.h>
 #include <kvbox.h>
 
 #include <qcombobox.h>
@@ -117,7 +118,7 @@ MainQtWidget::MainQtWidget()
 
 #if (KDE_VERSION_MINOR>=3) && (KDE_VERSION_MAJOR>=3)
 #else
-	resize(QSize(QMAX(toolBar()->sizeHint().width(), sizeHint().width()), sizeHint().height()));
+	resize(QSize(qMax(toolBar()->sizeHint().width(), sizeHint().width()), sizeHint().height()));
 #endif
 	// now show the last exercise
 	m_exercises->showPage(SettingsClass::activeExercise());

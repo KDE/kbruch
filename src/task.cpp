@@ -46,8 +46,8 @@ task::~task()
  * can be customized by the given parameters:
  * pmax_md: maximum main denominator
  * pnr_ratios: number of ratios -> pnr_ratios - 1 operations
- * padd_sub: if TRUE + and - are allowed operations
- * pmul_div: if TRUE * and / are allowed operations */
+ * padd_sub: if true + and - are allowed operations
+ * pmul_div: if true * and / are allowed operations */
 void task::create_task(unsigned int pmax_md, short pnr_ratios,
                        short padd_sub, short pmul_div)
 {
