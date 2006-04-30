@@ -83,10 +83,10 @@ StatisticsView::StatisticsView(QWidget * parent):
 	/* set green text color for this label */
 	pal = result2Label->palette();
 	cg = pal.active();
-	cg.setColor(QColorGroup::Foreground, QColor(6, 179, 0));
+	cg.setColor(QPalette::Foreground, QColor(6, 179, 0));
 	pal.setActive(cg);
 	cg = pal.inactive();
-	cg.setColor(QColorGroup::Foreground, QColor(6, 179, 0));
+	cg.setColor(QPalette::Foreground, QColor(6, 179, 0));
 	pal.setInactive(cg);
 	result2Label->setPalette(pal);
 
@@ -103,10 +103,10 @@ StatisticsView::StatisticsView(QWidget * parent):
 	/* set red text color for this label */
 	pal = result3Label->palette();
 	cg = pal.active();
-	cg.setColor(QColorGroup::Foreground, QColor(Qt::red));
+	cg.setColor(QPalette::Foreground, QColor(Qt::red));
 	pal.setActive(cg);
 	cg = pal.inactive();
-	cg.setColor(QColorGroup::Foreground, QColor(Qt::red));
+	cg.setColor(QPalette::Foreground, QColor(Qt::red));
 	pal.setInactive(cg);
 	result3Label->setPalette(pal);
 

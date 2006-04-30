@@ -361,10 +361,10 @@ void ExerciseConvert::showResult()
 		result_label->setText(i18n("CORRECT"));
 		pal = result_label->palette(); /* set green font color */
 		cg = pal.active();
-		cg.setColor(QColorGroup::Foreground, QColor(6, 179, 0));
+		cg.setColor(QPalette::Foreground, QColor(6, 179, 0));
 		pal.setActive(cg);
 		cg = pal.inactive();
-		cg.setColor(QColorGroup::Foreground, QColor(6, 179, 0));
+		cg.setColor(QPalette::Foreground, QColor(6, 179, 0));
 		pal.setInactive(cg);
 		result_label->setPalette(pal);
 		result_label->show(); /* show the result at the end of the task */
@@ -376,10 +376,10 @@ void ExerciseConvert::showResult()
 		result_label->setText(i18n("WRONG"));
 		pal = result_label->palette(); /* set red font color */
 		cg = pal.active();
-		cg.setColor(QColorGroup::Foreground, QColor(Qt::red));
+		cg.setColor(QPalette::Foreground, QColor(Qt::red));
 		pal.setActive(cg);
 		cg = pal.inactive();
-		cg.setColor(QColorGroup::Foreground, QColor(Qt::red));
+		cg.setColor(QPalette::Foreground, QColor(Qt::red));
 		pal.setInactive(cg);
 		result_label->setPalette(pal);
 
