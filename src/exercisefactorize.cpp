@@ -71,10 +71,10 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	Form1Layout->setSpacing( 6 );
 	Form1Layout->setObjectName( "Form1Layout");
 
-	layout9 = new QVBoxLayout( 0, 0, 6, "layout9"); 
-	
-	layout4 = new QHBoxLayout( 0, 0, 6, "layout4"); 
-	
+	layout9 = new QVBoxLayout( 0, 0, 6, "layout9");
+
+	layout4 = new QHBoxLayout( 0, 0, 6, "layout4");
+
 	m_taskLabel = new QLabel( this );
 	m_taskLabel->setObjectName( "m_taskLabel" );
 	layout4->addWidget( m_taskLabel );
@@ -82,19 +82,19 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_equalSignLabel = new QLabel( this );
 	m_equalSignLabel->setObjectName( "m_equalSignLabel" );
 	layout4->addWidget( m_equalSignLabel );
-	
+
 	m_factorsEnteredEdit = new QLineEdit( this );
 	m_factorsEnteredEdit->setObjectName( "m_factorsEnteredEdit" );
 	layout4->addWidget( m_factorsEnteredEdit );
 	m_factorsEnteredEdit->setReadOnly(true);
 	m_factorsEnteredEdit->setEnabled(false);
 	m_factorsEnteredEdit->setPaletteForegroundColor(QColor(0, 0, 0));
-	
+
 	m_factorsWidget = new FactorizedWidget( this, m_factorsResult);
 	m_factorsWidget->setObjectName("m_factorsWidget");
 	layout4->addWidget( m_factorsWidget );
 	m_factorsWidget->hide();
-	
+
 	result_label = new QLabel( this );
 	result_label->setObjectName( "result_label" );
 	layout4->addWidget( result_label );
@@ -104,45 +104,49 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	layout9->addLayout( layout4 );
 	spacer2 = new QSpacerItem( 20, 21, QSizePolicy::Minimum, QSizePolicy::Expanding );
 	layout9->addItem( spacer2 );
-	
-	layout2 = new QVBoxLayout( 0, 0, 6, "layout2"); 
-	
-	layout1 = new QGridLayout( 0, 1, 1, 0, 6, "layout1"); 
-	
+
+	layout2 = new QVBoxLayout();
+        layout2->setSpacing( 6 );
+        layout2->setObjectName( "layout2" );
+
+	layout1 = new QGridLayout();
+        layout1->setSpacing( 6 );
+        layout1->setObjectName( "layout1" );
+
 	m_factor3Button = new QPushButton( this );
 	m_factor3Button->setObjectName( "m_factor3Button" );
 	layout1->addWidget( m_factor3Button, 0, 1 );
-	
+
 	m_factor2Button = new QPushButton( this );
 	m_factor2Button->setObjectName( "m_factor2Button" );
 	layout1->addWidget( m_factor2Button, 0, 0 );
-	
+
 	m_factor13Button = new QPushButton( this );
 	m_factor13Button->setObjectName( "m_factor13Button" );
 	layout1->addWidget( m_factor13Button, 1, 1 );
-	
+
 	m_factor7Button = new QPushButton( this );
 	m_factor7Button->setObjectName( "m_factor7Button" );
 	layout1->addWidget( m_factor7Button, 0, 3 );
-	
+
 	m_factor11Button = new QPushButton( this );
 	m_factor11Button->setObjectName( "m_factor11Button" );
 	layout1->addWidget( m_factor11Button, 1, 0 );
-	
+
 	m_factor19Button = new QPushButton( this );
 	m_factor19Button->setObjectName( "m_factor19Button" );
 	layout1->addWidget( m_factor19Button, 1, 3 );
-	
+
 	m_factor5Button = new QPushButton( this );
 	m_factor5Button->setObjectName( "m_factor5Button" );
 	layout1->addWidget( m_factor5Button, 0, 2 );
-	
+
 	m_factor17Button = new QPushButton( this );
 	m_factor17Button->setObjectName( "m_factor17Button" );
 	layout1->addWidget( m_factor17Button, 1, 2 );
 
 	layout2->addLayout( layout1 );
-	
+
 	m_removeLastFactorButton = new QPushButton( this );
 	m_removeLastFactorButton->setObjectName( "m_removeLastFactorButton" );
 	layout2->addWidget( m_removeLastFactorButton );
@@ -150,11 +154,11 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 
 	spacer4 = new QSpacerItem( 20, 21, QSizePolicy::Minimum, QSizePolicy::Expanding );
 	layout9->addItem( spacer4 );
-	
-	layout7 = new QHBoxLayout( 0, 0, 6, "layout7"); 
+
+	layout7 = new QHBoxLayout( 0, 0, 6, "layout7");
 	spacer3 = new QSpacerItem( 361, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
 	layout7->addItem( spacer3 );
-	
+
 	m_checkButton = new QPushButton( this );
 	m_checkButton->setObjectName( "m_checkButton" );
 	layout7->addWidget( m_checkButton );
@@ -295,7 +299,7 @@ void ExerciseFactorize::createTask()
 
 	// just pick one number out of the possible numbers to factorize
 	m_taskNumber = possibleTasks[uint((double(rand()) / RAND_MAX) * numberPossibleTasks)];
-	
+
 	// now get the primefactors of the taskNumber
 	m_factorsResult.clear();
 	uint_number = m_taskNumber;
@@ -459,7 +463,7 @@ void ExerciseFactorize::updateEnteredEdit()
 	// find the end of the list
 	uintList::iterator it;
 
-	
+
 	for (it = m_factorsEntered.begin(); it != m_factorsEntered.end(); ++it)
 	{
 		// convert the factor into a string
@@ -476,7 +480,7 @@ void ExerciseFactorize::updateEnteredEdit()
 
 	// set the text into the line edit
 	m_factorsEnteredEdit->setText(str_output);
-	
+
 	return;
 }
 

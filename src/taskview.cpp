@@ -64,7 +64,8 @@ TaskView::TaskView(QWidget * parent, bool padd_sub,
 
 	baseWidget = new QWidget(this);
 	baseWidget->setObjectName("baseWidget");
-	baseGrid = new QGridLayout(this, 1, 1, 0, -1, "baseGrid"); 
+	baseGrid = new QGridLayout(this );
+        baseGrid->setObjectName( "baseGrid" );
 	baseGrid->addWidget(baseWidget, 0, 0);
 
 	// this is a VBox
@@ -132,7 +133,7 @@ TaskView::TaskView(QWidget * parent, bool padd_sub,
 	taskLineHBoxLayout->addItem(v_spacer);
 
 	// --- that is the end of the horizontal line ---
-	
+
 	// add another spacer in the middle of the VBox
 	v_spacer = new QSpacerItem(1, 1);
 	realLayout->addItem(v_spacer);

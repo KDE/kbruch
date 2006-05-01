@@ -62,7 +62,8 @@ StatisticsView::StatisticsView(QWidget * parent):
 	layout1->addItem(v_spacer);
 
 	/* create a grid to show the labels */
-	labelGrid = new QGridLayout(layout1, 3, 2);
+	labelGrid = new QGridLayout();
+        layout1->addItem( labelGrid );
 
 	/* add 6 labels to the grid */
 	info1Label = new QLabel(this);
