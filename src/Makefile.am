@@ -35,11 +35,6 @@ METASOURCES = AUTO
 rcdir = $(kde_datadir)/kbruch
 rc_DATA = kbruchui.rc
 
-messages: rc.cpp
-	LIST=`find . -name \*.h -o -name \*.hh -o -name \*.H -o -name \*.hxx -o -name \*.hpp -o -name \*.cpp -o -name \*.cc -o -name \*.cxx -o -name \*.ecpp -o -name \*.C`; \
-	if test -n "$$LIST"; then \
-	 $(XGETTEXT) $$LIST -o $(podir)/kbruch.pot; \
-	fi
 
 version.h: $(top_srcdir)/kbruch/VERSION
 	printf "#undef KBRUCH_VERSION\n#define KBRUCH_VERSION \"`cat $(top_srcdir)/kbruch/VERSION`\"\n" > version.h
