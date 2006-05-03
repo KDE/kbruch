@@ -90,7 +90,9 @@ TaskView::TaskView(QWidget * parent, bool padd_sub,
 	taskLineHBoxLayout->addWidget(m_taskWidget);
 
 	// now we have the input fields aligned in a VBox
-	QVBoxLayout * inputLayout = new QVBoxLayout(5, "inputLayout");
+	QVBoxLayout * inputLayout = new QVBoxLayout();
+	inputLayout->setObjectName("inputLayout");
+	inputLayout->setSpacing(5);
 	taskLineHBoxLayout->addLayout(inputLayout);
 
 	// to validate, that the input is an int
@@ -139,7 +141,9 @@ TaskView::TaskView(QWidget * parent, bool padd_sub,
 	realLayout->addItem(v_spacer);
 
 	// the lower part of the VBox holds just a right aligned button
-	QHBoxLayout * lowerHBox = new QHBoxLayout(1, "lowerHBox");
+	QHBoxLayout * lowerHBox = new QHBoxLayout();
+	lowerHBox->setObjectName("lowerHBox");
+	lowerHBox->setSpacing(1);
 	realLayout->addLayout(lowerHBox);
 	lowerHBox->addStretch(100);
 

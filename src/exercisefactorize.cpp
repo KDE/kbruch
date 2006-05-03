@@ -71,9 +71,15 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	Form1Layout->setSpacing( 6 );
 	Form1Layout->setObjectName( "Form1Layout");
 
-	layout9 = new QVBoxLayout( 0, 0, 6, "layout9");
+	layout9 = new QVBoxLayout();
+	layout9->setObjectName( "layout9" );
+	layout9->setSpacing( 6 );
+	layout9->setMargin( 0 );
 
-	layout4 = new QHBoxLayout( 0, 0, 6, "layout4");
+	layout4 = new QHBoxLayout();
+	layout4->setObjectName( "layout4" );
+	layout4->setSpacing( 6 );
+	layout4->setMargin( 0 );
 
 	m_taskLabel = new QLabel( this );
 	m_taskLabel->setObjectName( "m_taskLabel" );
@@ -155,7 +161,10 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	spacer4 = new QSpacerItem( 20, 21, QSizePolicy::Minimum, QSizePolicy::Expanding );
 	layout9->addItem( spacer4 );
 
-	layout7 = new QHBoxLayout( 0, 0, 6, "layout7");
+	layout7 = new QHBoxLayout();
+	layout7->setObjectName( "layout7" );
+	layout7->setSpacing( 6 );
+	layout7->setMargin( 0 );
 	spacer3 = new QSpacerItem( 361, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
 	layout7->addItem( spacer3 );
 

@@ -72,7 +72,9 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	realLayout->addItem(v_spacer);
 
 	// now a line holding the task, input fields and result
-	QHBoxLayout * taskLineHBoxLayout = new QHBoxLayout(5, "taskLineHBoxLayout");
+	QHBoxLayout * taskLineHBoxLayout = new QHBoxLayout();
+	taskLineHBoxLayout->setObjectName("taskLineHBoxLayout");
+	taskLineHBoxLayout->setSpacing(5);
 	realLayout->addLayout(taskLineHBoxLayout);
 
 	// spacer
@@ -124,7 +126,9 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	realLayout->addItem(v_spacer);
 
 	// the lower part of the VBox holds just a right aligned button
-	QHBoxLayout * lowerHBox = new QHBoxLayout(1, "lowerHBox");
+	QHBoxLayout * lowerHBox = new QHBoxLayout();
+	lowerHBox->setObjectName("lowerHBox");
+	lowerHBox->setSpacing(1);
 	realLayout->addLayout(lowerHBox);
 	lowerHBox->addStretch(100);
 
