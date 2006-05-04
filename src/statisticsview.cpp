@@ -120,7 +120,8 @@ StatisticsView::StatisticsView(QWidget * parent):
 	layout1->addItem(v_spacer);
 
 	/* the Reset button */
-	buttonLayout = new QHBoxLayout(layout1);
+	buttonLayout = new QHBoxLayout();
+	layout1->addItem(buttonLayout);
 	resetBtn = new QPushButton(i18n("&Reset"), this);
 	QObject::connect(resetBtn, SIGNAL(clicked()), this, SLOT(resetStatistics()));
 	buttonLayout->addWidget(resetBtn);
