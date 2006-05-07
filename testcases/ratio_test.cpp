@@ -36,7 +36,7 @@ class ratio_test
 	/** test the constructor of class ratio */
 	void test_constructor()
 	{
-		// check basic initialisation
+		// check basic initialization
 		ratio * ratio_a = new ratio();
 		BOOST_REQUIRE(ratio_a->numerator() == 0);
 		BOOST_REQUIRE(ratio_a->denominator() == 1);

@@ -32,7 +32,7 @@ class StatisticsView;
 class TaskView;
 
 /** Constructs the main window and presents the user interface.
- *  The window is seperated into 2 sections. In the left section is the
+ *  The window is separated into 2 sections. In the left section is the
  *  statistic view and in the right section the task view.
  *  \author Sebastian Stein
  *  \author Eva Brucherseifer

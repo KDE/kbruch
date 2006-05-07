@@ -598,7 +598,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 				        prim_fac_pointer++)
 					(*prim_fac_pointer).flag = UNUSED;
 
-				/* how many prime factors are avaible? */
+				/* how many prime factors are available? */
 				unused_fac = prim_fac_vector.size() - 1;
 
 				/* now loop through this mul/div section until we find a add/sub */
@@ -630,7 +630,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 
 					/* store the factor as our new denominator for this ratio */
 					(*ratio_pointer).setDenominator((*prim_fac_pointer).factor, false);
-					unused_fac--; /* now there is one factor less avaible */
+					unused_fac--; /* now there is one factor less available */
 
 					/* move to the next ratio */
 					ratio_pointer++;
@@ -669,7 +669,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 
 					/* store the factor as our new denominator for this ratio */
 					(*ratio_pointer).setDenominator((*prim_fac_pointer).factor, false);
-					unused_fac--; /* now there is one factor less avaible */
+					unused_fac--; /* now there is one factor less available */
 
 					/* move to the next ratio */
 					ratio_pointer++;
