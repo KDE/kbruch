@@ -69,7 +69,7 @@ void RationalWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	paint.setPen(pen);
 
 	// get the font height; the font height doesn't change while painting
-	QFontMetrics & fm = * new QFontMetrics(paint.fontMetrics());
+	QFontMetrics fm(paint.fontMetrics());
 	int fontHeight = fm.lineSpacing(); // get the font height
 
 	// now we can correctly set the height of the widget
