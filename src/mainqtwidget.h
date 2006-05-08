@@ -20,7 +20,7 @@
 #include <kmainwindow.h>
 
 class KJanusWidget;
-class KWidgetAction;
+class K3WidgetAction;
 
 class QComboBox;
 class QLabel;
@@ -86,18 +86,18 @@ class MainQtWidget : public KMainWindow
 
 		QComboBox * m_NrOfTermsBox;
 		QLabel * m_NrOfTermsLabel;
-		KWidgetAction * m_NrOfTermsBoxAction;
-		KWidgetAction * m_NrOfTermsLabelAction;
+		K3WidgetAction * m_NrOfTermsBoxAction;
+		K3WidgetAction * m_NrOfTermsLabelAction;
 
 		QComboBox * m_MaxMainDenominatorBox;
 		QLabel * m_MaxMainDenominatorLabel;
-		KWidgetAction * m_MaxMainDenominatorBoxAction;
-		KWidgetAction * m_MaxMainDenominatorLabelAction;
+		K3WidgetAction * m_MaxMainDenominatorBoxAction;
+		K3WidgetAction * m_MaxMainDenominatorLabelAction;
 
 		QComboBox * m_OperationBox;
 		QLabel * m_OperationLabel;
-		KWidgetAction * m_OperationBoxAction;
-		KWidgetAction * m_OperationLabelAction;
+		K3WidgetAction * m_OperationBoxAction;
+		K3WidgetAction * m_OperationLabelAction;
 
 		KAction * m_NewTaskAction;
 
