@@ -1,4 +1,3 @@
-kde4_header()
 project(kbruch)
 
 add_subdirectory( src ) 
@@ -10,7 +9,6 @@ add_subdirectory( testcases )
 ########### install files ###############
 
 
-kde4_footer()
 
 
 

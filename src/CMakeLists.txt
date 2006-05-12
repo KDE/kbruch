@@ -1,4 +1,3 @@
-kde4_header()
 
 
 
@@ -55,7 +54,6 @@ install_files( ${DATA_INSTALL_DIR}/kbruch FILES kbruchui.rc )
 
 kde4_install_icons( ${ICON_INSTALL_DIR}  hicolor )
 
-kde4_footer()
 
 
 
