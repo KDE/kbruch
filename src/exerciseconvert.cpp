@@ -164,7 +164,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 
 	// add tooltip and qwhatsthis help to the widget
 	setToolTip(i18n("In this exercise you have to convert a number into a fraction."));
-	setWhatsThis( i18n("In this exercise you have to convert a given number into a fraction by entering numerator and denominator. Do not forget to reduce the result!"));
+	setWhatsThis( i18n("In this exercise you have to convert a given number into a fraction by entering numerator and denominator. Do not forget to reduce the result."));
 }
 
 /* destructor */

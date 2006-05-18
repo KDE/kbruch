@@ -168,7 +168,7 @@ TaskView::TaskView(QWidget * parent, bool padd_sub,
 
 	// add tooltip and qwhatsthis help to the widget
 	setToolTip(i18n("In this exercise you have to solve a given task with fractions."));
-	setWhatsThis( i18n("In this exercise you have to solve the generated task. You have to enter numerator and denominator. You can adjust the difficulty of the task with the boxes in the toolbar. Do not forget to reduce the result!"));
+	setWhatsThis( i18n("In this exercise you have to solve the generated task. You have to enter numerator and denominator. You can adjust the difficulty of the task with the boxes in the toolbar. Do not forget to reduce the result."));
 }
 
 /* destructor */
