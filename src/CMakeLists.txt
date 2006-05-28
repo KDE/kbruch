@@ -13,8 +13,8 @@ endmacro(CREATE_VERSION)
 
 macro_additional_clean_files( ${CMAKE_CURRENT_BINARY_DIR}/version.h )
 
-create_version(${CMAKE_SOURCE_DIR}/kbruch/VERSION version.h)
-set(kbruch_SRCS version.h
+#create_version(${CMAKE_SOURCE_DIR}/kbruch/VERSION version.h)
+set(kbruch_SRCS
    exercisebase.cpp 
    task.cpp 
    ratio.cpp 
