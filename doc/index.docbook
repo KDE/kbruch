@@ -524,7 +524,7 @@ In order to successfully use &kbruch;, you need &kde; > 3.1 .
 on <ulink url="http://edu.kde.org/kbruch/">the &kbruch; home page</ulink>
 and it is part of the &kde; Edu project</para>
 
-<para>You can find a list of changes in the <acronym>CVS</acronym> commit
+<para>You can find a list of changes in the <acronym>SVN</acronym> commit
 messages.</para>
 
 </sect1>
