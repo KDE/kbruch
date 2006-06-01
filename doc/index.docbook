@@ -26,14 +26,14 @@
 </authorgroup>
 
 <copyright>
-<year>2001-2004</year>
+<year>2001-2005</year>
 <holder>Sebastian Stein</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
 
 <date>2004-07-09</date>
-<releaseinfo>3.3</releaseinfo>
+<releaseinfo>3.4</releaseinfo>
 
 <abstract>
 <para>&kbruch; is a small program to practice calculating with fractions.
@@ -58,7 +58,7 @@ input and gives feedback.
 <title>Introduction</title>
 
 <para>
-&kbruch; is a small program to practice calculating with fractions. Therefor
+&kbruch; is a small program to practice calculating with fractions. Therefore
 4 different exercises are offered.
 </para>
 
