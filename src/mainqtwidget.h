@@ -18,8 +18,7 @@
 #define MAINQTWIDGET_H
 
 #include <kmainwindow.h>
-
-class KJanusWidget;
+class KPageView;
 class K3WidgetAction;
 
 class QComboBox;
@@ -59,7 +58,7 @@ class MainQtWidget : public KMainWindow
 		StatisticsView * m_statview;
 
 		/** the iconlist for the different exercises */
-		KJanusWidget * m_exercises;
+		KPageView * m_exercises;
 
 		/** pointing to the exercise solving a task with fractions; added as page
 		 * to the iconlist */

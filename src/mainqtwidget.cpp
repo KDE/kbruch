@@ -23,7 +23,6 @@
 #include <kaction.h>
 #include <kdebug.h>
 #include <kiconloader.h>
-#include <kjanuswidget.h>
 #include <kconfigdialog.h>
 #include <klocale.h>
 #include <kstdaccel.h>
@@ -48,7 +47,7 @@
 #include "statisticsview.h"
 
 #include "settingsclass.h"
-
+#include <kpageview.h>
 /* ------ public member functions ------ */
 
 MainQtWidget::MainQtWidget()
@@ -72,7 +71,7 @@ MainQtWidget::MainQtWidget()
 	setCentralWidget(splitter);
 
 	// the iconlist, where the user can choose the different exercises
-	m_exercises = new KJanusWidget(splitter, KJanusWidget::IconList);
+	m_exercises = new KPageView(splitter, KPageView::List);
 	m_exercises->setToolTip(i18n("Choose another exercise by clicking on an icon."));
 	m_exercises->setWhatsThis( i18n("Click on the different icons to choose another exercise. The exercises help you to practice different aspects of calculating with fractions."));
 
@@ -118,10 +117,6 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
 	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
 
-#if (KDE_VERSION_MINOR>=3) && (KDE_VERSION_MAJOR>=3)
-#else
-	resize(QSize(qMax(toolBar()->sizeHint().width(), sizeHint().width()), sizeHint().height()));
-#endif
 	// now show the last exercise
 	m_exercises->showPage(SettingsClass::activeExercise());
 	slotAboutToShowPage(m_exercises->pageWidget(m_exercises->activePageIndex()));
@@ -254,13 +249,11 @@ void MainQtWidget::setupActions()
 
 	// now connect the ComboBox's signal textChanged() to the slot function
 	QObject::connect(m_OperationBox, SIGNAL(activated(int)), this, SLOT(OperationBoxSlot()));
-	
-#if (KDE_VERSION_MINOR>=3) && (KDE_VERSION_MAJOR>=3)
+
 	if (!initialGeometrySet())
 		resize( QSize(725, 330).expandedTo(minimumSizeHint()));
 	setupGUI(ToolBar | Keys | StatusBar | Create);
 	setAutoSaveSettings();
-#endif
 }
 
 
@@ -270,9 +263,9 @@ void MainQtWidget::NewTask()
 {
 #ifdef DEBUG
 	kDebug() << "NewTask MainQtWidget" << endl;
-	kDebug() << "pageIndex(m_taskview): " << m_exercises->pageIndex(m_taskview) << endl;
-	kDebug() << "pageIndex(m_exerciseCompare): " << m_exercises->pageIndex(m_exerciseCompare) << endl;
-	kDebug() << "pageIndex(m_exerciseConvert): " << m_exercises->pageIndex(m_exerciseConvert) << endl;
+	//kDebug() << "pageIndex(m_taskview): " << m_exercises->pageIndex(m_taskview) << endl;
+	//kDebug() << "pageIndex(m_exerciseCompare): " << m_exercises->pageIndex(m_exerciseCompare) << endl;
+	//kDebug() << "pageIndex(m_exerciseConvert): " << m_exercises->pageIndex(m_exerciseConvert) << endl;
 #endif
 
 	// check which page should generate a new task
@@ -293,7 +286,7 @@ void MainQtWidget::NewTask()
 	}
 
 /* this doesn't seem to work, because pageIndex always returns 0
-	
+
 	if (m_exercises->activePageIndex() == m_exercises->pageIndex(m_taskview))
 	{
 		m_taskview->forceNewTask();
@@ -433,17 +426,17 @@ void MainQtWidget::slotPrefs()
 	if (KConfigDialog::showDialog("settings"))
 		return;
 
-	//KConfigDialog didn't find an instance of this dialog, so lets create it : 
+	//KConfigDialog didn't find an instance of this dialog, so lets create it :
 	KConfigDialog* configDialog = new KConfigDialog( this, "settings", SettingsClass::self() );
 
-	
+
 	TaskViewerOptionsBase * taskViewerOptions = new TaskViewerOptionsBase(0, "TaskViewerOptionsBase");
 	configDialog->addPage(taskViewerOptions, i18n("Task Viewer Settings"), "colorize");
 
-	// User edited the configuration - update your local copies of the 
-	// configuration data 
-	connect(configDialog, SIGNAL(settingsChanged( const QString &)), this, SLOT(slotApplySettings()) ); 
- 
+	// User edited the configuration - update your local copies of the
+	// configuration data
+	connect(configDialog, SIGNAL(settingsChanged( const QString &)), this, SLOT(slotApplySettings()) );
+
 	configDialog->show();
 /*
 	SettingsDialog * dlg = new SettingsDialog(this);
@@ -453,7 +446,7 @@ void MainQtWidget::slotPrefs()
 
 	delete dlg;
 	dlg = NULL;
-	
+
 */
 	return;
 }
@@ -473,9 +466,9 @@ void MainQtWidget::slotAboutToShowPage(QWidget * page)
 {
 #ifdef DEBUG
 	kDebug() << "slotAboutToShowPage MainQtWidget" << endl;
-	kDebug() << "pageIndex(m_taskview): " << m_exercises->pageIndex(m_taskview) << endl;
-	kDebug() << "pageIndex(m_exerciseCompare): " << m_exercises->pageIndex(m_exerciseCompare) << endl;
-	kDebug() << "pageIndex(m_exerciseConvert): " << m_exercises->pageIndex(m_exerciseConvert) << endl;
+	//kDebug() << "pageIndex(m_taskview): " << m_exercises->pageIndex(m_taskview) << endl;
+	//kDebug() << "pageIndex(m_exerciseCompare): " << m_exercises->pageIndex(m_exerciseCompare) << endl;
+	//kDebug() << "pageIndex(m_exerciseConvert): " << m_exercises->pageIndex(m_exerciseConvert) << endl;
 #endif
 
 	// check which page to show
