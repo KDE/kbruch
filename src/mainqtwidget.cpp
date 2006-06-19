@@ -71,7 +71,8 @@ MainQtWidget::MainQtWidget()
 	setCentralWidget(splitter);
 
 	// the iconlist, where the user can choose the different exercises
-	m_exercises = new KPageView(splitter, KPageView::List);
+	m_exercises = new KPageDialog(splitter);
+	m_exercises->setFaceType(KPageDialog::List);
 	m_exercises->setToolTip(i18n("Choose another exercise by clicking on an icon."));
 	m_exercises->setWhatsThis( i18n("Click on the different icons to choose another exercise. The exercises help you to practice different aspects of calculating with fractions."));
 
@@ -82,22 +83,38 @@ MainQtWidget::MainQtWidget()
 	// add the pages
 	//
 	// we have the exercise to solve fraction tasks
-	KVBox * page = m_exercises->addVBoxPage(i18n("Fraction Task"), "", DesktopIcon("kbruch_exercise_common"));
+	KVBox * page = new KVBox();
+	pageItemFraction = new KPageWidgetItem( page, i18n("Fraction Task") );
+	pageItem->setIcon(DesktopIcon("kbruch_exercise_common"));
+	m_exercises->addPage(pageItem);
+
 	m_taskview = new TaskView((QWidget *) page, m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
 	m_taskview->setObjectName("TaskView");
 
 	// we have the exercise to compare ratios
-	page = m_exercises->addVBoxPage(i18n("Comparison"), "", DesktopIcon("kbruch_exercise_compare"));
+    page = new KVBox();
+    pageItemComparison = new KPageWidgetItem( page, i18n("Comparison") );
+    pageItem->setIcon(DesktopIcon("kbruch_exercise_compare"));
+    m_exercises->addPage(pageItem);
+
 	m_exerciseCompare = new ExerciseCompare((QWidget *) page);
 	m_exerciseCompare->setObjectName("ExerciseCompare");
 
 	// we have the exercise to convert rational numbers into ratios
-	page = m_exercises->addVBoxPage(i18n("Conversion"), "", DesktopIcon("kbruch_exercise_conversion"));
+    page = new KVBox();
+    pageItemConversion = new KPageWidgetItem( page, i18n("Conversion") );
+    pageItem->setIcon(DesktopIcon("kbruch_exercise_conversion"));
+    m_exercises->addPage(pageItem);
+	
 	m_exerciseConvert = new ExerciseConvert((QWidget *) page);
 	m_exerciseConvert->setObjectName("ExerciseConvert");
 
 	// we have the exercise to factorize a given number into prime factors
-	page = m_exercises->addVBoxPage(i18n("Factorization"), "", DesktopIcon("kbruch_exercise_factorisation"));
+    page = new KVBox();
+    pageItemFactorization = new KPageWidgetItem( page, i18n("Factorization") );
+    pageItem->setIcon(DesktopIcon("kbruch_exercise_factorisation"));
+    m_exercises->addPage(pageItem);
+
 	m_exerciseFactorize = new ExerciseFactorize((QWidget *) page);
 	m_exerciseFactorize->setObjectName("ExerciseFactorize");
 

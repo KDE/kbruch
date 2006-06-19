@@ -18,7 +18,7 @@
 #define MAINQTWIDGET_H
 
 #include <kmainwindow.h>
-class KPageView;
+class KPageDialog;
 class K3WidgetAction;
 
 class QComboBox;
@@ -29,6 +29,7 @@ class ExerciseConvert;
 class ExerciseFactorize;
 class StatisticsView;
 class TaskView;
+class KPageWidgetItem;
 
 /** Constructs the main window and presents the user interface.
  *  The window is separated into 2 sections. In the left section is the
@@ -58,7 +59,7 @@ class MainQtWidget : public KMainWindow
 		StatisticsView * m_statview;
 
 		/** the iconlist for the different exercises */
-		KPageView * m_exercises;
+		KPageDialog * m_exercises;
 
 		/** pointing to the exercise solving a task with fractions; added as page
 		 * to the iconlist */
@@ -99,6 +100,7 @@ class MainQtWidget : public KMainWindow
 		K3WidgetAction * m_OperationLabelAction;
 
 		KAction * m_NewTaskAction;
+		KPageWidgetItem *pageItemFraction, *pageItemComparison, *pageItemConversion, *pageItemFactorization;
 
 	private slots:
 		/** 
