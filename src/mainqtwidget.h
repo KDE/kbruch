@@ -134,7 +134,7 @@ class MainQtWidget : public KMainWindow
 		/**
 		 * called just before another page is shown
 		 */
-		void slotAboutToShowPage(QWidget * page);
+		void slotAboutToShowPage(KPageWidgetItem *, KPageWidgetItem *);
 
 	protected:
 		/** Function is called when user calls termination.

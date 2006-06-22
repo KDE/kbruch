@@ -85,8 +85,8 @@ MainQtWidget::MainQtWidget()
 	// we have the exercise to solve fraction tasks
 	KVBox * page = new KVBox();
 	pageItemFraction = new KPageWidgetItem( page, i18n("Fraction Task") );
-	pageItem->setIcon(DesktopIcon("kbruch_exercise_common"));
-	m_exercises->addPage(pageItem);
+	pageItemFraction->setIcon(DesktopIcon("kbruch_exercise_common"));
+	m_exercises->addPage(pageItemFraction);
 
 	m_taskview = new TaskView((QWidget *) page, m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
 	m_taskview->setObjectName("TaskView");
@@ -94,8 +94,8 @@ MainQtWidget::MainQtWidget()
 	// we have the exercise to compare ratios
     page = new KVBox();
     pageItemComparison = new KPageWidgetItem( page, i18n("Comparison") );
-    pageItem->setIcon(DesktopIcon("kbruch_exercise_compare"));
-    m_exercises->addPage(pageItem);
+    pageItemComparison->setIcon(DesktopIcon("kbruch_exercise_compare"));
+    m_exercises->addPage(pageItemComparison);
 
 	m_exerciseCompare = new ExerciseCompare((QWidget *) page);
 	m_exerciseCompare->setObjectName("ExerciseCompare");
@@ -103,17 +103,17 @@ MainQtWidget::MainQtWidget()
 	// we have the exercise to convert rational numbers into ratios
     page = new KVBox();
     pageItemConversion = new KPageWidgetItem( page, i18n("Conversion") );
-    pageItem->setIcon(DesktopIcon("kbruch_exercise_conversion"));
-    m_exercises->addPage(pageItem);
-	
+    pageItemConversion->setIcon(DesktopIcon("kbruch_exercise_conversion"));
+    m_exercises->addPage(pageItemConversion);
+
 	m_exerciseConvert = new ExerciseConvert((QWidget *) page);
 	m_exerciseConvert->setObjectName("ExerciseConvert");
 
 	// we have the exercise to factorize a given number into prime factors
     page = new KVBox();
     pageItemFactorization = new KPageWidgetItem( page, i18n("Factorization") );
-    pageItem->setIcon(DesktopIcon("kbruch_exercise_factorisation"));
-    m_exercises->addPage(pageItem);
+    pageItemFactorization->setIcon(DesktopIcon("kbruch_exercise_factorisation"));
+    m_exercises->addPage(pageItemFactorization );
 
 	m_exerciseFactorize = new ExerciseFactorize((QWidget *) page);
 	m_exerciseFactorize->setObjectName("ExerciseFactorize");
@@ -121,7 +121,7 @@ MainQtWidget::MainQtWidget()
 	splitter->setResizeMode(m_statview, QSplitter::FollowSizeHint);
 
 	// we must change the status of the menubar before another page is shown
-	QObject::connect(m_exercises, SIGNAL(currentPageChanged(QWidget *)), this, SLOT(slotAboutToShowPage(QWidget *)));
+	QObject::connect(m_exercises, SIGNAL(currentPageChanged( KPageWidgetItem *, KPageWidgetItem * )), this, SLOT(slotAboutToShowPage(KPageWidgetItem *, KPageWidgetItem *)));
 
 	// connect signals of the exercises and StatisticView, so that StatisticView
 	// gets informed about how the user solved a given task (wrong or correct)
@@ -133,10 +133,12 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
 	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
 	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
-
+#warning "kde4: port it"
+#if 0
 	// now show the last exercise
 	m_exercises->showPage(SettingsClass::activeExercise());
 	slotAboutToShowPage(m_exercises->pageWidget(m_exercises->activePageIndex()));
+#endif
 }
 
 MainQtWidget::~MainQtWidget()
@@ -163,8 +165,10 @@ void MainQtWidget::readOptions()
 
 void MainQtWidget::writeOptions()
 {
+#warning "kde4: port it"
+#if 0
 	SettingsClass::setActiveExercise(m_exercises->activePageIndex());
-
+#endif
 	// save settings for exercise solve task with fractions
 	SettingsClass::setAddsub(m_addSub);
 	SettingsClass::setMuldiv(m_mulDiv);
@@ -286,21 +290,24 @@ void MainQtWidget::NewTask()
 #endif
 
 	// check which page should generate a new task
-	switch (m_exercises->activePageIndex())
-	{
-		case 0 :
-					m_taskview->forceNewTask();
-					break;
-		case 1 :
-					m_exerciseCompare->forceNewTask();
-					break;
-		case 2 :
-					m_exerciseConvert->forceNewTask();
-					break;
-		case 3 :
-					m_exerciseFactorize->forceNewTask();
-					break;
-	}
+        KPageWidgetItem*currentItem = m_exercises->currentPage();
+        if ( currentItem==pageItemFraction )
+        {
+            m_taskview->forceNewTask();
+        }
+        else if( currentItem==pageItemComparison )
+        {
+            m_exerciseCompare->forceNewTask();
+        }
+        else if ( currentItem==pageItemConversion )
+        {
+            m_exerciseConvert->forceNewTask();
+        }
+        else if ( currentItem == pageItemFactorization )
+        {
+            m_exerciseFactorize->forceNewTask();
+        }
+
 
 /* this doesn't seem to work, because pageIndex always returns 0
 
@@ -479,7 +486,7 @@ void MainQtWidget::slotApplySettings()
 	return;
 }
 
-void MainQtWidget::slotAboutToShowPage(QWidget * page)
+void MainQtWidget::slotAboutToShowPage(KPageWidgetItem *current, KPageWidgetItem *before)
 {
 #ifdef DEBUG
 	kDebug() << "slotAboutToShowPage MainQtWidget" << endl;
@@ -489,7 +496,7 @@ void MainQtWidget::slotAboutToShowPage(QWidget * page)
 #endif
 
 	// check which page to show
-	if (m_exercises->pageIndex(page) == m_exercises->pageIndex(m_taskview))
+	if (current ==pageItemFraction)
 	{
 		// exercise solve task with fraction (taskview.h)
 		m_NrOfTermsBox->setEnabled(true);
