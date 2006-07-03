@@ -29,6 +29,7 @@
 #include <kstdaction.h>
 #include <k3widgetaction.h>
 #include <kvbox.h>
+#include <kpagewidgetmodel.h>
 
 #include <qcombobox.h>
 #include <qsplitter.h>
@@ -85,7 +86,7 @@ MainQtWidget::MainQtWidget()
 	// we have the exercise to solve fraction tasks
 	KVBox * page = new KVBox();
 	pageItemFraction = new KPageWidgetItem( page, i18n("Fraction Task") );
-	pageItemFraction->setIcon(DesktopIcon("kbruch_exercise_common"));
+	pageItemFraction->setIcon( KIcon("kbruch_exercise_common"));
 	m_exercises->addPage(pageItemFraction);
 
 	m_taskview = new TaskView((QWidget *) page, m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
@@ -94,7 +95,7 @@ MainQtWidget::MainQtWidget()
 	// we have the exercise to compare ratios
     page = new KVBox();
     pageItemComparison = new KPageWidgetItem( page, i18n("Comparison") );
-    pageItemComparison->setIcon(DesktopIcon("kbruch_exercise_compare"));
+    pageItemComparison->setIcon( KIcon("kbruch_exercise_compare"));
     m_exercises->addPage(pageItemComparison);
 
 	m_exerciseCompare = new ExerciseCompare((QWidget *) page);
@@ -103,7 +104,7 @@ MainQtWidget::MainQtWidget()
 	// we have the exercise to convert rational numbers into ratios
     page = new KVBox();
     pageItemConversion = new KPageWidgetItem( page, i18n("Conversion") );
-    pageItemConversion->setIcon(DesktopIcon("kbruch_exercise_conversion"));
+    pageItemConversion->setIcon( KIcon("kbruch_exercise_conversion"));
     m_exercises->addPage(pageItemConversion);
 
 	m_exerciseConvert = new ExerciseConvert((QWidget *) page);
@@ -112,7 +113,7 @@ MainQtWidget::MainQtWidget()
 	// we have the exercise to factorize a given number into prime factors
     page = new KVBox();
     pageItemFactorization = new KPageWidgetItem( page, i18n("Factorization") );
-    pageItemFactorization->setIcon(DesktopIcon("kbruch_exercise_factorisation"));
+    pageItemFactorization->setIcon( KIcon("kbruch_exercise_factorisation"));
     m_exercises->addPage(pageItemFactorization );
 
 	m_exerciseFactorize = new ExerciseFactorize((QWidget *) page);
