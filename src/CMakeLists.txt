@@ -48,9 +48,9 @@ install_targets(/bin kbruch )
 
 ########### install files ###############
 
-install_files( ${XDG_APPS_DIR} FILES kbruch.desktop )
-install_files( ${KCFG_INSTALL_DIR} FILES kbruch.kcfg )
-install_files( ${DATA_INSTALL_DIR}/kbruch FILES kbruchui.rc )
+install( FILES kbruch.desktop  DESTINATION  ${XDG_APPS_DIR} )
+install( FILES kbruch.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
+install( FILES kbruchui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kbruch )
 
 kde4_install_icons( ${ICON_INSTALL_DIR}  hicolor )
 
