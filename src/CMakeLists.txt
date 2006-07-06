@@ -43,7 +43,7 @@ kde4_add_executable(kbruch ${kbruch_SRCS})
 
 target_link_libraries(kbruch  ${KDE4_KDECORE_LIBS} kdeui )
 
-install_targets(/bin kbruch )
+install(TARGETS kbruch  DESTINATION ${BIN_INSTALL_DIR} )
 
 
 ########### install files ###############
