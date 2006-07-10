@@ -19,7 +19,6 @@
 
 #include <kmainwindow.h>
 class KPageDialog;
-class K3WidgetAction;
 
 class QComboBox;
 class QLabel;
@@ -86,18 +85,18 @@ class MainQtWidget : public KMainWindow
 
 		QComboBox * m_NrOfTermsBox;
 		QLabel * m_NrOfTermsLabel;
-		K3WidgetAction * m_NrOfTermsBoxAction;
-		K3WidgetAction * m_NrOfTermsLabelAction;
+		KAction * m_NrOfTermsBoxAction;
+		KAction * m_NrOfTermsLabelAction;
 
 		QComboBox * m_MaxMainDenominatorBox;
 		QLabel * m_MaxMainDenominatorLabel;
-		K3WidgetAction * m_MaxMainDenominatorBoxAction;
-		K3WidgetAction * m_MaxMainDenominatorLabelAction;
+		KAction * m_MaxMainDenominatorBoxAction;
+		KAction * m_MaxMainDenominatorLabelAction;
 
 		QComboBox * m_OperationBox;
 		QLabel * m_OperationLabel;
-		K3WidgetAction * m_OperationBoxAction;
-		K3WidgetAction * m_OperationLabelAction;
+		KAction * m_OperationBoxAction;
+		KAction * m_OperationLabelAction;
 
 		KAction * m_NewTaskAction;
 		KPageWidgetItem *pageItemFraction, *pageItemComparison, *pageItemConversion, *pageItemFactorization;
