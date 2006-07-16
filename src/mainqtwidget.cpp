@@ -181,9 +181,9 @@ void MainQtWidget::writeOptions()
 void MainQtWidget::setupActions()
 {
 	// new task action
-	m_NewTaskAction = new KAction(i18n("&New"), "filenew", KStdAccel::shortcut(KStdAccel::New),
-				      this, SLOT(NewTask()),
-				      actionCollection(), "NewTask");
+	m_NewTaskAction = new KAction(KIcon("filenew"), i18n("&New"), actionCollection(), "NewTask");
+	connect(m_NewTaskAction, SIGNAL(triggered(bool) ), SLOT(NewTask()));
+	m_NewTaskAction->setShortcut(KStdAccel::shortcut(KStdAccel::New));
 
 	// quit action
 	KStdAction::quit(kapp, SLOT(quit()), actionCollection());
