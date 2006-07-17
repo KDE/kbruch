@@ -201,10 +201,10 @@ void MainQtWidget::setupActions()
 
 	// the ComboBox holding possible values for term number
 	m_NrOfTermsBox = new QComboBox();
-	m_NrOfTermsBox->insertItem("2");
-	m_NrOfTermsBox->insertItem("3");
-	m_NrOfTermsBox->insertItem("4");
-	m_NrOfTermsBox->insertItem("5");
+	m_NrOfTermsBox->addItem("2");
+	m_NrOfTermsBox->addItem("3");
+	m_NrOfTermsBox->addItem("4");
+	m_NrOfTermsBox->addItem("5");
 	m_NrOfTermsBox->setCurrentItem(m_nrRatios - 2);
 	m_NrOfTermsBox->setToolTip( i18n( "The number of terms you want" ) );
 	m_NrOfTermsBox->setWhatsThis( i18n( "Choose the number of terms (2, 3, 4 or 5) you want for calculating fractions." ) );
@@ -226,10 +226,10 @@ void MainQtWidget::setupActions()
 
 	// the ComboBox holding possible values for the max. main denominator
 	m_MaxMainDenominatorBox = new QComboBox(this);
-	m_MaxMainDenominatorBox->insertItem("10");
-	m_MaxMainDenominatorBox->insertItem("20");
-	m_MaxMainDenominatorBox->insertItem("30");
-	m_MaxMainDenominatorBox->insertItem("50");
+	m_MaxMainDenominatorBox->addItem("10");
+	m_MaxMainDenominatorBox->addItem("20");
+	m_MaxMainDenominatorBox->addItem("30");
+	m_MaxMainDenominatorBox->addItem("50");
 	m_MaxMainDenominatorBox->setToolTip( i18n( "The maximum number you can have as main denominator" ) );
 	m_MaxMainDenominatorBox->setWhatsThis( i18n( "Choose the number which will be the maximum for the main denominator: 10, 20, 30, 40 or 50." ) );
 	switch (m_maxMainDenominator)
@@ -262,9 +262,9 @@ void MainQtWidget::setupActions()
 
 	// the ComboBox holding possible combinations for operations
 	m_OperationBox = new QComboBox(this);
-	m_OperationBox->insertItem(i18n("Addition/Subtraction"));
-	m_OperationBox->insertItem(i18n("Multiplication/Division"));
-	m_OperationBox->insertItem(i18n("All Operations Mixed"));
+	m_OperationBox->addItem(i18n("Addition/Subtraction"));
+	m_OperationBox->addItem(i18n("Multiplication/Division"));
+	m_OperationBox->addItem(i18n("All Operations Mixed"));
 	if (m_addSub == true && m_mulDiv == false)
 	{
 		m_OperationBox->setCurrentItem(0);
@@ -362,36 +362,36 @@ void MainQtWidget::NrOfTermsBoxSlot()
 	{
 		if (curr_nr == "2")
 		{
-			m_MaxMainDenominatorBox->insertItem("10");
-			m_MaxMainDenominatorBox->insertItem("20");
-			m_MaxMainDenominatorBox->insertItem("30");
-			m_MaxMainDenominatorBox->insertItem("50");
+			m_MaxMainDenominatorBox->addItem("10");
+			m_MaxMainDenominatorBox->addItem("20");
+			m_MaxMainDenominatorBox->addItem("30");
+			m_MaxMainDenominatorBox->addItem("50");
 			m_nrRatios = 2;
 			m_maxMainDenominator = 10;
 		} else if (curr_nr == "3") {
-			m_MaxMainDenominatorBox->insertItem("20");
-			m_MaxMainDenominatorBox->insertItem("30");
-			m_MaxMainDenominatorBox->insertItem("50");
+			m_MaxMainDenominatorBox->addItem("20");
+			m_MaxMainDenominatorBox->addItem("30");
+			m_MaxMainDenominatorBox->addItem("50");
 			m_nrRatios = 3;
 			m_maxMainDenominator = 20;
 		} else if (curr_nr == "4") {
-			m_MaxMainDenominatorBox->insertItem("20");
-			m_MaxMainDenominatorBox->insertItem("30");
-			m_MaxMainDenominatorBox->insertItem("50");
+			m_MaxMainDenominatorBox->addItem("20");
+			m_MaxMainDenominatorBox->addItem("30");
+			m_MaxMainDenominatorBox->addItem("50");
 			m_nrRatios = 4;
 			m_maxMainDenominator = 20;
 		} else {
-			m_MaxMainDenominatorBox->insertItem("50");
+			m_MaxMainDenominatorBox->addItem("50");
 			m_nrRatios = 5;
 			m_maxMainDenominator = 50;
 		}
 		m_MaxMainDenominatorBox->setCurrentItem(0);
 	} else {
 		/* no multiplication or division allowed, so we add the default values */
-		m_MaxMainDenominatorBox->insertItem("10");
-		m_MaxMainDenominatorBox->insertItem("20");
-		m_MaxMainDenominatorBox->insertItem("30");
-		m_MaxMainDenominatorBox->insertItem("50");
+		m_MaxMainDenominatorBox->addItem("10");
+		m_MaxMainDenominatorBox->addItem("20");
+		m_MaxMainDenominatorBox->addItem("30");
+		m_MaxMainDenominatorBox->addItem("50");
 		if (curr_nr == "2")
 			m_nrRatios = 2;
 		else if (curr_nr == "3")
