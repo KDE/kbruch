@@ -205,7 +205,7 @@ void MainQtWidget::setupActions()
 	m_NrOfTermsBox->addItem("3");
 	m_NrOfTermsBox->addItem("4");
 	m_NrOfTermsBox->addItem("5");
-	m_NrOfTermsBox->setCurrentItem(m_nrRatios - 2);
+	m_NrOfTermsBox->setCurrentIndex(m_nrRatios - 2);
 	m_NrOfTermsBox->setToolTip( i18n( "The number of terms you want" ) );
 	m_NrOfTermsBox->setWhatsThis( i18n( "Choose the number of terms (2, 3, 4 or 5) you want for calculating fractions." ) );
 	m_NrOfTermsBoxAction = new KAction( i18n("Number of Terms"), actionCollection(), "NrOfTermsBoxAction");
@@ -267,11 +267,11 @@ void MainQtWidget::setupActions()
 	m_OperationBox->addItem(i18n("All Operations Mixed"));
 	if (m_addSub == true && m_mulDiv == false)
 	{
-		m_OperationBox->setCurrentItem(0);
+		m_OperationBox->setCurrentIndex(0);
 	} else if (m_addSub == false && m_mulDiv == true) {
-		m_OperationBox->setCurrentItem(1);
+		m_OperationBox->setCurrentIndex(1);
 	} else if (m_addSub == true && m_mulDiv == true) {
-		m_OperationBox->setCurrentItem(2);
+		m_OperationBox->setCurrentIndex(2);
 	}
 	m_OperationBox->setToolTip( i18n( "The operations you want" ) );
 	m_OperationBox->setWhatsThis( i18n( "Choose the type of operations you want for calculating fractions: Addition/Substraction, Multiplication/Division or All Operations Mixed. If you choose All Operations Mixed, the program will randomly choose addition, substraction, multiplication and/or division." ) );
@@ -385,7 +385,7 @@ void MainQtWidget::NrOfTermsBoxSlot()
 			m_nrRatios = 5;
 			m_maxMainDenominator = 50;
 		}
-		m_MaxMainDenominatorBox->setCurrentItem(0);
+		m_MaxMainDenominatorBox->setCurrentIndex(0);
 	} else {
 		/* no multiplication or division allowed, so we add the default values */
 		m_MaxMainDenominatorBox->addItem("10");
