@@ -234,13 +234,13 @@ void MainQtWidget::setupActions()
 	m_MaxMainDenominatorBox->setWhatsThis( i18n( "Choose the number which will be the maximum for the main denominator: 10, 20, 30, 40 or 50." ) );
 	switch (m_maxMainDenominator)
 	{
-		case 10 : m_MaxMainDenominatorBox->setCurrentItem(0);
+		case 10 : m_MaxMainDenominatorBox->setCurrentIndex(0);
 					 break;
-		case 20 : m_MaxMainDenominatorBox->setCurrentItem(1);
+		case 20 : m_MaxMainDenominatorBox->setCurrentIndex(1);
 					 break;
-		case 30 : m_MaxMainDenominatorBox->setCurrentItem(2);
+		case 30 : m_MaxMainDenominatorBox->setCurrentIndex(2);
 					 break;
-		case 50 : m_MaxMainDenominatorBox->setCurrentItem(3);
+		case 50 : m_MaxMainDenominatorBox->setCurrentIndex(3);
 					 break;
 	}
 	m_MaxMainDenominatorBoxAction = new KAction( i18n("Maximal Main Denominator"), actionCollection(), "MaxMainDenominatorBoxAction");
