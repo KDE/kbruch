@@ -41,7 +41,7 @@ kde4_add_kcfg_files(kbruch_SRCS settingsclass.kcfgc )
 
 kde4_add_executable(kbruch ${kbruch_SRCS})
 
-target_link_libraries(kbruch  ${KDE4_KDECORE_LIBS} kdeui )
+target_link_libraries(kbruch  ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} )
 
 install(TARGETS kbruch  DESTINATION ${BIN_INSTALL_DIR} )
 
