@@ -65,7 +65,7 @@ TaskView::TaskView(QWidget * parent, bool padd_sub,
 	baseWidget = new QWidget(this);
 	baseWidget->setObjectName("baseWidget");
 	baseGrid = new QGridLayout(this );
-        baseGrid->setObjectName( "baseGrid" );
+	baseGrid->setObjectName( "baseGrid" );
 	baseGrid->addWidget(baseWidget, 0, 0);
 
 	// this is a VBox
@@ -119,7 +119,7 @@ TaskView::TaskView(QWidget * parent, bool padd_sub,
 	inputLayout->addWidget(deno_edit);
 
 	// next is the result widget
-	m_resultWidget = new ResultWidget(baseWidget, *new ratio());
+	m_resultWidget = new ResultWidget(baseWidget, ratio());
 	m_resultWidget->setObjectName("m_resultWidget");
 	taskLineHBoxLayout->addWidget(m_resultWidget);
 

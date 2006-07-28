@@ -138,7 +138,7 @@ MainQtWidget::MainQtWidget()
 	pageItems[0] = pageItemFraction;
 	pageItems[1] = pageItemComparison;
 	pageItems[2] = pageItemConversion;
-	pageItems[2] = pageItemFactorization;
+	pageItems[3] = pageItemFactorization;
 	
 	// now show the last exercise
 	KPageWidgetItem * currentPage = pageItems[SettingsClass::activeExercise()];

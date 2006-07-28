@@ -24,7 +24,7 @@
 #include <QPaintEvent>
 
 RatioWidget::RatioWidget(QWidget * parent = 0,
-													const ratio para_ratio = *new ratio()) :
+													const ratio para_ratio = ratio()) :
 			FractionBaseWidget(parent), m_ratio(para_ratio)
 {
 #ifdef DEBUG

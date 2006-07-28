@@ -27,7 +27,7 @@
 #include <QPaintEvent>
 
 TaskWidget::TaskWidget(QWidget * parent = 0,
-													const task para_task = *new task()) :
+													const task para_task = task()) :
 			FractionBaseWidget(parent), m_task(para_task)
 {
 #ifdef DEBUG

@@ -26,7 +26,7 @@
 #include "settingsclass.h"
 
 ResultWidget::ResultWidget(QWidget * parent = 0,
-													const ratio para_result = *new ratio()) :
+													const ratio para_result = ratio()) :
 			FractionBaseWidget(parent), m_result(para_result)
 {
 #ifdef DEBUG
