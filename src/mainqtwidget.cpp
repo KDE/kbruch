@@ -48,6 +48,18 @@
 
 #include "settingsclass.h"
 #include <kpageview.h>
+
+#include "ui_taskvieweroptionsbase.h"
+class TaskViewerOptionsBase : public QWidget, public Ui::TaskViewerOptionsBase
+{
+	public:
+		TaskViewerOptionsBase( QWidget * parent ) : QWidget( parent )
+		{
+			setupUi(this);
+		}
+};
+
+
 /* ------ public member functions ------ */
 
 MainQtWidget::MainQtWidget()
@@ -476,7 +488,7 @@ void MainQtWidget::slotPrefs()
 	KConfigDialog* configDialog = new KConfigDialog( this, "settings", SettingsClass::self() );
 
 
-	TaskViewerOptionsBase * taskViewerOptions = new TaskViewerOptionsBase(0, "TaskViewerOptionsBase");
+	TaskViewerOptionsBase * taskViewerOptions = new TaskViewerOptionsBase(0);
 	configDialog->addPage(taskViewerOptions, i18n("Task Viewer Settings"), "colorize");
 
 	// User edited the configuration - update your local copies of the
