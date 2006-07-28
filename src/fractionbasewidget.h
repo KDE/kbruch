@@ -50,6 +50,7 @@ public:
 	void updateAndRepaint();	
 
 protected:
+	virtual QSize minimumSizeHint() const { return QSize( 20, 10 ); }
 	
 	/* store the different colors */
 	QColor m_colorNumber;
