@@ -100,6 +100,7 @@ class MainQtWidget : public KMainWindow
 
 		KAction * m_NewTaskAction;
 		KPageWidgetItem *pageItemFraction, *pageItemComparison, *pageItemConversion, *pageItemFactorization;
+		KPageWidgetItem *pageItems[4]; // same as above, just for mapping from pointer to index
 
 	private slots:
 		/** 
@@ -133,7 +134,7 @@ class MainQtWidget : public KMainWindow
 		/**
 		 * called just before another page is shown
 		 */
-		void slotAboutToShowPage(KPageWidgetItem *, KPageWidgetItem *);
+		void slotAboutToShowPage(KPageWidgetItem *);
 
 	protected:
 		/** Function is called when user calls termination.

@@ -71,13 +71,13 @@ MainQtWidget::MainQtWidget()
 	setCentralWidget(splitter);
 
 	// the iconlist, where the user can choose the different exercises
-	m_exercises = new KPageDialog(splitter);
+	m_exercises = new KPageDialog;
 	m_exercises->setFaceType(KPageDialog::List);
 	m_exercises->setToolTip(i18n("Choose another exercise by clicking on an icon."));
 	m_exercises->setWhatsThis( i18n("Click on the different icons to choose another exercise. The exercises help you to practice different aspects of calculating with fractions."));
 
 	// create the statistic view
-	m_statview = new StatisticsView(splitter);
+	m_statview = new StatisticsView;
 	m_statview->setObjectName("StatisticsView");
 
 	// add the pages
@@ -117,11 +117,12 @@ MainQtWidget::MainQtWidget()
 
 	m_exerciseFactorize = new ExerciseFactorize((QWidget *) page);
 	m_exerciseFactorize->setObjectName("ExerciseFactorize");
-
-	splitter->setResizeMode(m_statview, QSplitter::FollowSizeHint);
+	
+	splitter->addWidget(m_exercises->mainWidget());
+	splitter->addWidget(m_statview);
 
 	// we must change the status of the menubar before another page is shown
-	QObject::connect(m_exercises, SIGNAL(currentPageChanged( KPageWidgetItem *, KPageWidgetItem * )), this, SLOT(slotAboutToShowPage(KPageWidgetItem *, KPageWidgetItem *)));
+	QObject::connect(m_exercises, SIGNAL(currentPageChanged( KPageWidgetItem *, KPageWidgetItem * )), this, SLOT(slotAboutToShowPage(KPageWidgetItem *)));
 
 	// connect signals of the exercises and StatisticView, so that StatisticView
 	// gets informed about how the user solved a given task (wrong or correct)
@@ -133,12 +134,16 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
 	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
 	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
-#warning "kde4: port it"
-#if 0
+	
+	pageItems[0] = pageItemFraction;
+	pageItems[1] = pageItemComparison;
+	pageItems[2] = pageItemConversion;
+	pageItems[2] = pageItemFactorization;
+	
 	// now show the last exercise
-	m_exercises->showPage(SettingsClass::activeExercise());
-	slotAboutToShowPage(m_exercises->pageWidget(m_exercises->activePageIndex()));
-#endif
+	KPageWidgetItem * currentPage = pageItems[SettingsClass::activeExercise()];
+	m_exercises->setCurrentPage( currentPage );
+	slotAboutToShowPage( currentPage );
 }
 
 MainQtWidget::~MainQtWidget()
@@ -165,10 +170,15 @@ void MainQtWidget::readOptions()
 
 void MainQtWidget::writeOptions()
 {
-#warning "kde4: port it"
-#if 0
-	SettingsClass::setActiveExercise(m_exercises->activePageIndex());
-#endif
+	// Get current index
+	int index;
+	for ( index=0; index<4; ++index )
+	{
+		if ( pageItems[index] == m_exercises->currentPage() )
+			break;
+	}
+	SettingsClass::setActiveExercise( index );
+	
 	// save settings for exercise solve task with fractions
 	SettingsClass::setAddsub(m_addSub);
 	SettingsClass::setMuldiv(m_mulDiv);
@@ -498,7 +508,7 @@ void MainQtWidget::slotApplySettings()
 	return;
 }
 
-void MainQtWidget::slotAboutToShowPage(KPageWidgetItem *current, KPageWidgetItem *before)
+void MainQtWidget::slotAboutToShowPage(KPageWidgetItem *current)
 {
 #ifdef DEBUG
 	kDebug() << "slotAboutToShowPage MainQtWidget" << endl;
