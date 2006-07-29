@@ -47,7 +47,6 @@ StatisticsView::StatisticsView(QWidget * parent):
 	m_correct = SettingsClass::correct();
 
 	QPalette pal;
-	QColorGroup cg;
 
 	/* set the caption of the window */
 	//	setCaption(i18n("Statistics"));
@@ -83,12 +82,8 @@ StatisticsView::StatisticsView(QWidget * parent):
 
 	/* set green text color for this label */
 	pal = result2Label->palette();
-	cg = pal.active();
-	cg.setColor(QPalette::Foreground, QColor(6, 179, 0));
-	pal.setActive(cg);
-	cg = pal.inactive();
-	cg.setColor(QPalette::Foreground, QColor(6, 179, 0));
-	pal.setInactive(cg);
+    pal.setColor(QPalette::Active, QPalette::Foreground, QColor(6, 179, 0));
+    pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(6, 179, 0));
 	result2Label->setPalette(pal);
 
 	labelGrid->addWidget(result2Label, 2, 1);
@@ -103,12 +98,8 @@ StatisticsView::StatisticsView(QWidget * parent):
 
 	/* set red text color for this label */
 	pal = result3Label->palette();
-	cg = pal.active();
-	cg.setColor(QPalette::Foreground, QColor(Qt::red));
-	pal.setActive(cg);
-	cg = pal.inactive();
-	cg.setColor(QPalette::Foreground, QColor(Qt::red));
-	pal.setInactive(cg);
+    pal.setColor(QPalette::Active, QPalette::Foreground, QColor(Qt::red));
+    pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(Qt::red));
 	result3Label->setPalette(pal);
 
 	labelGrid->addWidget(result3Label, 3, 1);

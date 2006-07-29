@@ -51,8 +51,6 @@
 ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 		ExerciseBase(parent)
 {
-	QPalette pal;
-	QColorGroup cg;
 #ifdef DEBUG
 	kDebug() << "constructor ExerciseFactorize()" << endl;
 #endif
@@ -94,7 +92,9 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	layout4->addWidget( m_factorsEnteredEdit );
 	m_factorsEnteredEdit->setReadOnly(true);
 	m_factorsEnteredEdit->setEnabled(false);
-	m_factorsEnteredEdit->setPaletteForegroundColor(QColor(0, 0, 0));
+	QPalette pal;
+	pal.setColor( m_factorsEnteredEdit->foregroundRole(), QColor(0, 0, 0) );
+	m_factorsEnteredEdit->setPalette(pal);
 
 	m_factorsWidget = new FactorizedWidget( this, m_factorsResult);
 	m_factorsWidget->setObjectName("m_factorsWidget");
@@ -180,13 +180,17 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_taskLabel->setText(tmp_str);
 
 	// now set the color for the task label
-	m_taskLabel->setPaletteForegroundColor(SettingsClass::numberColor());
+	pal = QPalette();
+	pal.setColor( m_taskLabel->foregroundRole(), SettingsClass::numberColor() );
+	m_taskLabel->setPalette( pal );
 
 	// the equal sign
 	m_equalSignLabel->setText("=");
 
 	// now set the color for the equal sign
-	m_equalSignLabel->setPaletteForegroundColor(SettingsClass::operationColor());
+	pal = QPalette();
+	pal.setColor( m_equalSignLabel->foregroundRole(), SettingsClass::operationColor() );
+	m_equalSignLabel->setPalette( pal );
 
 	// the wrong/correct label, we hide it
 	result_label->setText(i18n("WRONG"));
@@ -286,10 +290,14 @@ void ExerciseFactorize::forceNewTask()
 void ExerciseFactorize::update()
 {
 	// now set the color for the task label
-	m_taskLabel->setPaletteForegroundColor(SettingsClass::numberColor());
+	QPalette pal;
+	pal.setColor( m_taskLabel->foregroundRole(), SettingsClass::numberColor() );
+	m_taskLabel->setPalette( pal );
 
 	// now set the color for the equal sign
-	m_equalSignLabel->setPaletteForegroundColor(SettingsClass::operationColor());
+	pal = QPalette();
+	pal.setColor( m_equalSignLabel->foregroundRole(), SettingsClass::operationColor() );
+	m_equalSignLabel->setPalette( pal );
 
 	// and the factors
 	m_factorsWidget->updateAndRepaint();
@@ -336,7 +344,6 @@ void ExerciseFactorize::showResult()
 {
 	QString tmp_str, tmp_str2; /* to build a string for a label */
 	QPalette pal;
-	QColorGroup cg;
 	uint uint_result = 0;
 
 	// change the tooltip of the check button
@@ -378,12 +385,8 @@ void ExerciseFactorize::showResult()
 		/* yes, the user entered the correct result */
 		result_label->setText(i18n("CORRECT"));
 		pal = result_label->palette(); /* set green font color */
-		cg = pal.active();
-		cg.setColor(QPalette::Foreground, QColor(6, 179, 0));
-		pal.setActive(cg);
-		cg = pal.inactive();
-		cg.setColor(QPalette::Foreground, QColor(6, 179, 0));
-		pal.setInactive(cg);
+        pal.setColor(QPalette::Active, QPalette::Foreground, QColor(6, 179, 0));
+        pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(6, 179, 0));
 		result_label->setPalette(pal);
 	} else {
 		// emit the signal for wrong
@@ -392,12 +395,8 @@ void ExerciseFactorize::showResult()
 		/* no, the user entered the wrong result */
 		result_label->setText(i18n("WRONG"));
 		pal = result_label->palette(); /* set red font color */
-		cg = pal.active();
-		cg.setColor(QPalette::Foreground, QColor(Qt::red));
-		pal.setActive(cg);
-		cg = pal.inactive();
-		cg.setColor(QPalette::Foreground, QColor(Qt::red));
-		pal.setInactive(cg);
+        pal.setColor(QPalette::Active, QPalette::Foreground, QColor(Qt::red));
+        pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(Qt::red));
 		result_label->setPalette(pal);
 
 	} /* if (entered_result == result) */

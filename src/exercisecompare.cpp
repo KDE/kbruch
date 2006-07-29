@@ -219,7 +219,6 @@ void ExerciseCompare::createTask()
 void ExerciseCompare::showResult()
 {
 	QPalette pal;
-	QColorGroup cg;
 	bool result = m_firstRatio < m_secondRatio;
 
 	// change the tooltip of the check button
@@ -237,12 +236,8 @@ void ExerciseCompare::showResult()
 		/* yes, the user entered the correct result */
 		result_label->setText(i18n("CORRECT"));
 		pal = result_label->palette(); /* set green font color */
-		cg = pal.active();
-		cg.setColor(QPalette::Foreground, QColor(6, 179, 0));
-		pal.setActive(cg);
-		cg = pal.inactive();
-		cg.setColor(QPalette::Foreground, QColor(6, 179, 0));
-		pal.setInactive(cg);
+        pal.setColor(QPalette::Active, QPalette::Foreground, QColor(6, 179, 0));
+        pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(6, 179, 0));
 		result_label->setPalette(pal);
 		result_label->show(); /* show the result at the end of the task */
 	} else {
@@ -252,12 +247,8 @@ void ExerciseCompare::showResult()
 		/* no, the user entered the wrong result */
 		result_label->setText(i18n("WRONG"));
 		pal = result_label->palette(); /* set red font color */
-		cg = pal.active();
-		cg.setColor(QPalette::Foreground, QColor(Qt::red));
-		pal.setActive(cg);
-		cg = pal.inactive();
-		cg.setColor(QPalette::Foreground, QColor(Qt::red));
-		pal.setInactive(cg);
+        pal.setColor(QPalette::Active, QPalette::Foreground, QColor(Qt::red));
+        pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(Qt::red));
 		result_label->setPalette(pal);
 
 		result_label->show(); /* show the result at the end of the task */

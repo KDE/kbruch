@@ -68,14 +68,14 @@ void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_p
 	//         5             5
 	int_numerator = tmp_ratio.numerator();
 	int_denominator = tmp_ratio.denominator();
-	if (show_mixed == true && QABS(int_numerator) >= QABS(int_denominator))
+    if (show_mixed == true && qAbs(int_numerator) >= qAbs(int_denominator))
 	{
 		// calculate the mixed number
 		int_mixed = int(int_numerator / int_denominator);
 
 		// the negative sign is in front of the mixed number
-		int_numerator = QABS(int_numerator);
-		int_denominator = QABS(int_denominator);
+        int_numerator = qAbs(int_numerator);
+        int_denominator = qAbs(int_denominator);
 
 		// we have to reduce the numerator by the mixed number * denominator
 		int_numerator = int_numerator % int_denominator;
@@ -92,7 +92,7 @@ void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_p
 		// don't show the ratio as mixed number
 		str_numerator.setNum(int_numerator);
 		str_denominator.setNum(int_denominator);
-	} // if (show_mixed == true && QABS(int_numerator) > QABS(int_denominator))
+    } // if (show_mixed == true && qAbs(int_numerator) > qAbs(int_denominator))
 
 	// get the text width of the current ratio
 	fontWidth = fm.width(str_numerator);

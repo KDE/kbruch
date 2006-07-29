@@ -194,9 +194,9 @@ bool ratio::operator==(ratio right)
 	signed short orig_sign = 1, right_sign = 1;
 
 	/* we do not check the presign at this point */
-	if (QABS(m_numerator) != QABS(right.numerator()))
+    if (qAbs(m_numerator) != qAbs(right.numerator()))
 		return false;
-	if (QABS(m_denominator) != QABS(right.denominator()))
+    if (qAbs(m_denominator) != qAbs(right.denominator()))
 		return false;
 
 	/* check if the signs of the ratios are equivalent */

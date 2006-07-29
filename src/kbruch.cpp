@@ -46,9 +46,9 @@ int main(int argc, char * argv[])
  	KCmdLineArgs::init( argc, argv, &aboutData );
 
 	KApplication kbruch;
+	QObject::connect(kapp, SIGNAL(lastWindowClosed()), kapp, SLOT(quit()));
 
 	MainQtWidget * kbruchApp = new MainQtWidget();
-	kbruch.setMainWidget(kbruchApp);
 	kbruchApp->show();
 
 	/* lets execute the Qt GUI; it will handle all cmd options which are left */

@@ -75,7 +75,7 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	paintMiddle(paint, QString("="), old_x, fm, m_colorOperation);
 	paintRatio(paint, m_result, old_x, fm, false);
 
-	if (SettingsClass::showSpecialRatioNotation() == true && QABS(m_result.numerator()) >= QABS(m_result.denominator()))
+    if (SettingsClass::showSpecialRatioNotation() == true && qAbs(m_result.numerator()) >= qAbs(m_result.denominator()))
 	{
 		// result as mixed number
 		paintMiddle(paint, QString("="), old_x, fm, m_colorOperation);
