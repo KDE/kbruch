@@ -43,7 +43,7 @@
 #include "exerciseconvert.h"
 #include "exercisefactorize.h"
 #include "taskview.h"
-#include "taskvieweroptionsbase.h"
+#include "ui_taskvieweroptionsbase.h"
 #include "statisticsview.h"
 
 #include "settingsclass.h"
