@@ -29,6 +29,7 @@
 #include <kstdaction.h>
 #include <kvbox.h>
 #include <kpagewidgetmodel.h>
+#include <kicon.h>
 
 #include <qcombobox.h>
 #include <qsplitter.h>
