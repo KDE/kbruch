@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
-<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1.2-Based Variant V1.1//EN"
- "dtd/kdex.dtd" [
-<!ENTITY kbruch "<application>KBruch</application>">
-<!ENTITY package "kdeedu">
-<!ENTITY % addindex "IGNORE">
-<!ENTITY % English "INCLUDE"><!-- change language only here -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+ <!ENTITY kbruch "<application>KBruch</application>">
+ <!ENTITY kappname "&kbruch;">
+ <!ENTITY package "kdeedu">
+ <!ENTITY % addindex "IGNORE">
+ <!ENTITY % English "INCLUDE"><!-- change language only here -->
 ]>
 
 <book lang="&language;">
@@ -129,7 +129,7 @@ parts:
 
 <itemizedlist>
 	<listitem><para>
-		the menu bar with the 3 menus <guimenu>Task</guimenu>,
+		the menubar with the 3 menus <guimenu>Task</guimenu>,
 <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
 	</para></listitem>
 	<listitem><para>
@@ -274,7 +274,7 @@ task: <guilabel>Addition/Subtraction</guilabel>,
 <para>
 After you have changed the parameters you have to click on the <guimenu>New
 Task</guimenu> button in the toolbar to generate a task which uses the new
-parameters. You can also call this action from the menu bar with
+parameters. You can also call this action from the menubar with
 <menuchoice><guimenu>Task</guimenu><guimenuitem>New
 Task</guimenuitem></menuchoice>.
 </para>
@@ -484,9 +484,9 @@ Program and documentation Copyright, 2001-2004 Sebastian Stein
 <para>Thank you goes to:</para>
 
 <itemizedlist>
-	<listitem><para>Anne-Marie Mahfouf for managing the &kde; Edu project</para></listitem>
+	<listitem><para>Anne-Marie Mahfouf for managing the &kde;-edu project</para></listitem>
 	<listitem><para>Klas Kalass for helping design the interface</para></listitem>
-	<listitem><para>Eva Brucherseifer for writing <application>KMath</application> (&kbruch;'s GUI is based on this work)</para></listitem>
+	<listitem><para>Eva Brucherseifer for writing <application>KMath</application> (&kbruch;'s &GUI; is based on this work)</para></listitem>
 	<listitem><para>Dominique Devriese for bug fixing</para></listitem>
 	<listitem><para><ulink url="http://www.net-tex.de/">Stefan Schumacher</ulink> for testing a very early version</para></listitem>
 	<listitem><para><ulink url="http://www.guckes.net/">Sven Guckes</ulink> for testing the text interface (which has been removed)</para></listitem>
@@ -522,7 +522,7 @@ In order to successfully use &kbruch;, you need &kde; > 3.1 .
 <para>
 &kbruch; itself can be found
 on <ulink url="http://edu.kde.org/kbruch/">the &kbruch; home page</ulink>
-and it is part of the &kde; Edu project</para>
+and it is part of the &kde;-edu project</para>
 
 <para>You can find a list of changes in the <acronym>CVS</acronym> commit
 messages.</para>
