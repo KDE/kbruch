@@ -5,10 +5,7 @@
 ########### next target ###############
 
 set(kbruch_test_SRCS 
-   task.cpp 
-   ratio.cpp 
    ratio_test.cpp 
-   primenumber.cpp 
    primenumber_test.cpp 
    kbruch_test.cpp )
 
