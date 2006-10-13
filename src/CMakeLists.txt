@@ -34,7 +34,7 @@ set(kbruch_SRCS
    exercisefactorize.cpp 
    factorizedwidget.cpp )
 
-kde4_automoc(${kbruch_SRCS})
+kde4_automoc(kbruch ${kbruch_SRCS})
 
 kde4_add_ui_files(kbruch_SRCS taskvieweroptionsbase.ui )
 
