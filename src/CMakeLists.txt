@@ -9,7 +9,7 @@ macro(CREATE_VERSION _in_FILE _out_FILE)
 	FILE(READ ${_in_FILE} _contents)
 	FILE(WRITE ${_out_FILE} "#undef KBRUCH_VERSION\n")
 	STRING(REGEX REPLACE "\n" "" _contents "${_contents}" )
-	FILE(APPEND ${_out_FILE} "#define KBRUCH_VERSION \"${_contents}\"")
+	FILE(APPEND ${_out_FILE} "#define KBRUCH_VERSION \"${_contents}\"\n")
 endmacro(CREATE_VERSION)
 
 macro_additional_clean_files( ${CMAKE_CURRENT_BINARY_DIR}/version.h )
