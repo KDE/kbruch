@@ -38,7 +38,7 @@ kde4_automoc(kbruch ${kbruch_SRCS})
 
 kde4_add_ui_files(kbruch_SRCS taskvieweroptionsbase.ui )
 
-kde4_add_kcfg_files(kbruch kbruch_SRCS settingsclass.kcfgc )
+kde4_add_kcfg_files(kbruch_SRCS settingsclass.kcfgc )
 
 kde4_add_executable(kbruch ${kbruch_SRCS})
 
