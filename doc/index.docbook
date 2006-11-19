@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
  "dtd/kdex.dtd" [
-<!ENTITY kbruch "<application>KBruch</application>">
+<!ENTITY kappname "&kbruch;">
 <!ENTITY package "kdeedu">
 <!ENTITY % addindex "IGNORE">
 <!ENTITY % English "INCLUDE"><!-- change language only here -->
@@ -129,7 +129,7 @@ parts:
 
 <itemizedlist>
 	<listitem><para>
-		the menu bar with the 3 menus <guimenu>Task</guimenu>,
+		the menubar with the 3 menus <guimenu>Task</guimenu>,
 <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
 	</para></listitem>
 	<listitem><para>
@@ -274,7 +274,7 @@ task: <guilabel>Addition/Subtraction</guilabel>,
 <para>
 After you have changed the parameters you have to click on the <guimenu>New
 Task</guimenu> button in the toolbar to generate a task which uses the new
-parameters. You can also call this action from the menu bar with
+parameters. You can also call this action from the menubar with
 <menuchoice><guimenu>Task</guimenu><guimenuitem>New
 Task</guimenuitem></menuchoice>.
 </para>
