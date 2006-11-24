@@ -219,7 +219,7 @@ void MainQtWidget::setupActions()
 	m_NrOfTermsLabel->setObjectName("kde toolbar widget");
 	m_NrOfTermsLabelAction = new KAction(i18n("Terms:"), actionCollection(), "NrOfTermsLabelAction");
 	connect(m_NrOfTermsLabelAction, SIGNAL(triggered(bool)), SLOT(NrOfTermsBoxSlot()));
-	m_NrOfTermsLabelAction->setShortcut(Qt::ALT+Qt::Key_E);
+	m_NrOfTermsLabelAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_E));
         m_NrOfTermsLabelAction->setDefaultWidget( m_NrOfTermsLabel );
 
 	// the ComboBox holding possible values for term number
@@ -233,7 +233,7 @@ void MainQtWidget::setupActions()
 	m_NrOfTermsBox->setWhatsThis( i18n( "Choose the number of terms (2, 3, 4 or 5) you want for calculating fractions." ) );
 	m_NrOfTermsBoxAction = new KAction( i18n("Number of Terms"), actionCollection(), "NrOfTermsBoxAction");
 	connect(m_NrOfTermsBoxAction, SIGNAL(triggered(bool)), SLOT(NrOfTermsBoxSlot()));
-	m_NrOfTermsBoxAction->setShortcut(Qt::ALT+Qt::Key_E);
+	m_NrOfTermsBoxAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_E));
         m_NrOfTermsBoxAction->setDefaultWidget( m_NrOfTermsBox );
 
 	// now connect the ComboBox's signal textChanged() to the slot function
@@ -244,7 +244,7 @@ void MainQtWidget::setupActions()
 	m_MaxMainDenominatorLabel->setObjectName("kde toolbar widget");
 	m_MaxMainDenominatorLabelAction = new KAction(i18n("Max. main denominator:"), actionCollection(), "MaxMainDenominatorLabelAction");
 	connect(m_MaxMainDenominatorLabelAction, SIGNAL(triggered(bool)), SLOT(MaxMainDenominatorBoxSlot()));
-	m_MaxMainDenominatorLabelAction->setShortcut(Qt::ALT+Qt::Key_D);
+	m_MaxMainDenominatorLabelAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_D));
         m_MaxMainDenominatorLabelAction->setDefaultWidget( m_MaxMainDenominatorLabel );
 
 	// the ComboBox holding possible values for the max. main denominator
@@ -268,7 +268,7 @@ void MainQtWidget::setupActions()
 	}
 	m_MaxMainDenominatorBoxAction = new KAction( i18n("Maximal Main Denominator"), actionCollection(), "MaxMainDenominatorBoxAction");
 	connect(m_MaxMainDenominatorBoxAction, SIGNAL(triggered(bool)), SLOT(MaxMainDenominatorBoxSlot()));
-	m_MaxMainDenominatorBoxAction->setShortcut(Qt::ALT+Qt::Key_D);
+	m_MaxMainDenominatorBoxAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_D));
         m_MaxMainDenominatorBoxAction->setDefaultWidget( m_MaxMainDenominatorBox );
 
 	// now connect the ComboBox's signal textChanged() to the slot function
@@ -280,7 +280,7 @@ void MainQtWidget::setupActions()
 	m_OperationLabel->setObjectName("kde toolbar widget");
 	m_OperationLabelAction = new KAction( i18n("Operations:"), actionCollection(), "OperationLabelAction");
 	connect(m_OperationLabelAction, SIGNAL(triggered(bool)), SLOT(OperationBoxSlot()));
-	m_OperationLabelAction->setShortcut(Qt::ALT+Qt::Key_O);
+	m_OperationLabelAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_O));
         m_OperationLabelAction->setDefaultWidget( m_OperationLabel );
 
 	// the ComboBox holding possible combinations for operations
@@ -300,7 +300,7 @@ void MainQtWidget::setupActions()
 	m_OperationBox->setWhatsThis( i18n( "Choose the type of operations you want for calculating fractions: Addition/Substraction, Multiplication/Division or All Operations Mixed. If you choose All Operations Mixed, the program will randomly choose addition, substraction, multiplication and/or division." ) );
 	m_OperationBoxAction = new KAction(i18n("Operations:"), actionCollection(), "OperationBoxAction");
 	connect(m_OperationBoxAction, SIGNAL(triggered(bool)), SLOT(OperationBoxSlot()));
-	m_OperationBoxAction->setShortcut(Qt::ALT+Qt::Key_O);
+	m_OperationBoxAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_O));
         m_OperationBoxAction->setDefaultWidget( m_OperationBox );
 
 	// now connect the ComboBox's signal textChanged() to the slot function
