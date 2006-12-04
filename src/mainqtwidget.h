@@ -22,6 +22,7 @@ class KPageDialog;
 
 class QComboBox;
 class QLabel;
+class KAction;
 
 class ExerciseCompare;
 class ExerciseConvert;
