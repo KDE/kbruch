@@ -26,7 +26,7 @@
 #include <kconfigdialog.h>
 #include <klocale.h>
 #include <kstdaccel.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
 #include <kvbox.h>
 #include <kpagewidgetmodel.h>
 #include <kicon.h>
@@ -209,10 +209,10 @@ void MainQtWidget::setupActions()
 	m_NewTaskAction->setShortcut(KStdAccel::shortcut(KStdAccel::New));
 
 	// quit action
-	KStdAction::quit(kapp, SLOT(quit()), actionCollection());
+	KStandardAction::quit(kapp, SLOT(quit()), actionCollection());
 
 	//
-	KStdAction::preferences(this,  SLOT( slotPrefs() ), actionCollection());
+	KStandardAction::preferences(this,  SLOT( slotPrefs() ), actionCollection());
 
 	// a label just describing the Number of terms ComboBox
 	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0);
