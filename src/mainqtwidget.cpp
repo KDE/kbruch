@@ -25,7 +25,7 @@
 #include <kiconloader.h>
 #include <kconfigdialog.h>
 #include <klocale.h>
-#include <kstdaccel.h>
+#include <KStandardShortcut>
 #include <kstandardaction.h>
 #include <kvbox.h>
 #include <kpagewidgetmodel.h>
@@ -206,7 +206,7 @@ void MainQtWidget::setupActions()
 	// new task action
 	m_NewTaskAction = new KAction(KIcon("filenew"), i18n("&New"), actionCollection(), "NewTask");
 	connect(m_NewTaskAction, SIGNAL(triggered(bool) ), SLOT(NewTask()));
-	m_NewTaskAction->setShortcut(KStdAccel::shortcut(KStdAccel::New));
+	m_NewTaskAction->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));
 
 	// quit action
 	KStandardAction::quit(kapp, SLOT(quit()), actionCollection());
