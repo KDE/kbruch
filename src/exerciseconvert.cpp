@@ -19,12 +19,13 @@
 #include "exerciseconvert.moc"
 
 /* these includes are needed for KDE support */
-#include <kapplication.h>
+#include <kglobal.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <knumvalidator.h>
 
 /* these includes are needed for Qt support */
+#include <QApplication>
 #include <qlabel.h>
 #include <qlayout.h>
 #include <qlineedit.h>

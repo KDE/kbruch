@@ -25,8 +25,8 @@
 #include <kiconloader.h>
 #include <kconfigdialog.h>
 #include <klocale.h>
-#include <kstdaccel.h>
-#include <kstdaction.h>
+#include <KStandardShortcut>
+#include <kstandardaction.h>
 #include <kvbox.h>
 #include <kpagewidgetmodel.h>
 #include <kicon.h>
@@ -206,13 +206,13 @@ void MainQtWidget::setupActions()
 	// new task action
 	m_NewTaskAction = new KAction(KIcon("filenew"), i18n("&New"), actionCollection(), "NewTask");
 	connect(m_NewTaskAction, SIGNAL(triggered(bool) ), SLOT(NewTask()));
-	m_NewTaskAction->setShortcut(KStdAccel::shortcut(KStdAccel::New));
+	m_NewTaskAction->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));
 
 	// quit action
-	KStdAction::quit(kapp, SLOT(quit()), actionCollection());
+	KStandardAction::quit(kapp, SLOT(quit()), actionCollection());
 
 	//
-	KStdAction::preferences(this,  SLOT( slotPrefs() ), actionCollection());
+	KStandardAction::preferences(this,  SLOT( slotPrefs() ), actionCollection());
 
 	// a label just describing the Number of terms ComboBox
 	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0);
