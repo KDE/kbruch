@@ -26,6 +26,7 @@
 #include <kconfigdialog.h>
 #include <klocale.h>
 #include <KStandardShortcut>
+#include <kactioncollection.h>
 #include <kstandardaction.h>
 #include <kvbox.h>
 #include <kpagewidgetmodel.h>
@@ -204,7 +205,8 @@ void MainQtWidget::writeOptions()
 void MainQtWidget::setupActions()
 {
 	// new task action
-	m_NewTaskAction = new KAction(KIcon("filenew"), i18n("&New"), actionCollection(), "NewTask");
+    m_NewTaskAction  = new KAction(KIcon("filenew"), i18n("&New"), this);
+    actionCollection()->addAction("NewTask", m_NewTaskAction );
 	connect(m_NewTaskAction, SIGNAL(triggered(bool) ), SLOT(NewTask()));
 	m_NewTaskAction->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));
 
@@ -217,7 +219,8 @@ void MainQtWidget::setupActions()
 	// a label just describing the Number of terms ComboBox
 	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0);
 	m_NrOfTermsLabel->setObjectName("kde toolbar widget");
-	m_NrOfTermsLabelAction = new KAction(i18n("Terms:"), actionCollection(), "NrOfTermsLabelAction");
+    m_NrOfTermsLabelAction  = new KAction(i18n("Terms:"), this);
+    actionCollection()->addAction("NrOfTermsLabelAction", m_NrOfTermsLabelAction );
 	connect(m_NrOfTermsLabelAction, SIGNAL(triggered(bool)), SLOT(NrOfTermsBoxSlot()));
 	m_NrOfTermsLabelAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_E));
         m_NrOfTermsLabelAction->setDefaultWidget( m_NrOfTermsLabel );
@@ -231,7 +234,8 @@ void MainQtWidget::setupActions()
 	m_NrOfTermsBox->setCurrentIndex(m_nrRatios - 2);
 	m_NrOfTermsBox->setToolTip( i18n( "The number of terms you want" ) );
 	m_NrOfTermsBox->setWhatsThis( i18n( "Choose the number of terms (2, 3, 4 or 5) you want for calculating fractions." ) );
-	m_NrOfTermsBoxAction = new KAction( i18n("Number of Terms"), actionCollection(), "NrOfTermsBoxAction");
+    m_NrOfTermsBoxAction  = new KAction(i18n("Number of Terms"), this);
+    actionCollection()->addAction("NrOfTermsBoxAction", m_NrOfTermsBoxAction );
 	connect(m_NrOfTermsBoxAction, SIGNAL(triggered(bool)), SLOT(NrOfTermsBoxSlot()));
 	m_NrOfTermsBoxAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_E));
         m_NrOfTermsBoxAction->setDefaultWidget( m_NrOfTermsBox );
@@ -242,7 +246,8 @@ void MainQtWidget::setupActions()
 	// a label just describing the max. main denominator ComboBox
 	m_MaxMainDenominatorLabel = new QLabel(i18n("Max. main denominator:"), 0);
 	m_MaxMainDenominatorLabel->setObjectName("kde toolbar widget");
-	m_MaxMainDenominatorLabelAction = new KAction(i18n("Max. main denominator:"), actionCollection(), "MaxMainDenominatorLabelAction");
+    m_MaxMainDenominatorLabelAction  = new KAction(i18n("Max. main denominator:"), this);
+    actionCollection()->addAction("MaxMainDenominatorLabelAction", m_MaxMainDenominatorLabelAction );
 	connect(m_MaxMainDenominatorLabelAction, SIGNAL(triggered(bool)), SLOT(MaxMainDenominatorBoxSlot()));
 	m_MaxMainDenominatorLabelAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_D));
         m_MaxMainDenominatorLabelAction->setDefaultWidget( m_MaxMainDenominatorLabel );
@@ -266,7 +271,8 @@ void MainQtWidget::setupActions()
 		case 50 : m_MaxMainDenominatorBox->setCurrentIndex(3);
 					 break;
 	}
-	m_MaxMainDenominatorBoxAction = new KAction( i18n("Maximal Main Denominator"), actionCollection(), "MaxMainDenominatorBoxAction");
+    m_MaxMainDenominatorBoxAction  = new KAction(i18n("Maximal Main Denominator"), this);
+    actionCollection()->addAction("MaxMainDenominatorBoxAction", m_MaxMainDenominatorBoxAction );
 	connect(m_MaxMainDenominatorBoxAction, SIGNAL(triggered(bool)), SLOT(MaxMainDenominatorBoxSlot()));
 	m_MaxMainDenominatorBoxAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_D));
         m_MaxMainDenominatorBoxAction->setDefaultWidget( m_MaxMainDenominatorBox );
@@ -278,7 +284,8 @@ void MainQtWidget::setupActions()
 	// a label just describing the operation ComboBox
 	m_OperationLabel = new QLabel(i18n("Operations:"), 0);
 	m_OperationLabel->setObjectName("kde toolbar widget");
-	m_OperationLabelAction = new KAction( i18n("Operations:"), actionCollection(), "OperationLabelAction");
+    m_OperationLabelAction  = new KAction(i18n("Operations:"), this);
+    actionCollection()->addAction("OperationLabelAction", m_OperationLabelAction );
 	connect(m_OperationLabelAction, SIGNAL(triggered(bool)), SLOT(OperationBoxSlot()));
 	m_OperationLabelAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_O));
         m_OperationLabelAction->setDefaultWidget( m_OperationLabel );
@@ -298,7 +305,8 @@ void MainQtWidget::setupActions()
 	}
 	m_OperationBox->setToolTip( i18n( "The operations you want" ) );
 	m_OperationBox->setWhatsThis( i18n( "Choose the type of operations you want for calculating fractions: Addition/Substraction, Multiplication/Division or All Operations Mixed. If you choose All Operations Mixed, the program will randomly choose addition, substraction, multiplication and/or division." ) );
-	m_OperationBoxAction = new KAction(i18n("Operations:"), actionCollection(), "OperationBoxAction");
+    m_OperationBoxAction  = new KAction(i18n("Operations:"), this);
+    actionCollection()->addAction("OperationBoxAction", m_OperationBoxAction );
 	connect(m_OperationBoxAction, SIGNAL(triggered(bool)), SLOT(OperationBoxSlot()));
 	m_OperationBoxAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_O));
         m_OperationBoxAction->setDefaultWidget( m_OperationBox );
