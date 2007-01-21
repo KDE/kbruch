@@ -2,9 +2,6 @@
 
 ########### next target ###############
 
-remove_definitions(-DQT3_SUPPORT_WARNINGS)
-remove_definitions(-DQT3_SUPPORT)
-
 macro(CREATE_VERSION _in_FILE _out_FILE)
 	FILE(READ ${_in_FILE} _contents)
 	FILE(WRITE ${_out_FILE} "#undef KBRUCH_VERSION\n")
