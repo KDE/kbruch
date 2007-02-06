@@ -16,9 +16,6 @@
  ***************************************************************************/
 #include "mainqtwidget.h"
 
-#include <config.h>
-
-
 #include <kapplication.h>
 #include <kaction.h>
 #include <kdebug.h>

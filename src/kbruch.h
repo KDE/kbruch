@@ -20,8 +20,6 @@
 #ifndef BRUCH_H
 #define BRUCH_H
 
-#include <config.h>
-
 /* for the I18N_NOOP macro */
 #include <klocale.h>
 
