@@ -18,7 +18,7 @@
 #ifndef PRIMZAHL_H
 #define PRIMZAHL_H
 
-#include <q3valuevector.h>
+#include <qvector.h>
 
 typedef QVector<uint> UnsignedIntArray;
 

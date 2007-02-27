@@ -24,11 +24,10 @@
 #include <kdebug.h>
 #endif
 
-#include <q3valuelist.h>
 #include <qvariant.h>
 #include <qwidget.h>
-//Added by qt3to4:
 #include <QLabel>
+#include <QList>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QGridLayout>
