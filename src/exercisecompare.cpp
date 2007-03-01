@@ -19,10 +19,10 @@
 #include "exercisecompare.moc"
 
 /* these includes are needed for KDE support */
-#include <kapplication.h>
 #include <klocale.h>
 
 /* these includes are needed for Qt support */
+#include <qapplication.h>
 #include <qlabel.h>
 #include <qlayout.h>
 #include <qpushbutton.h>

@@ -19,7 +19,6 @@
 #include "exercisebase.moc"
 
 /* these includes are needed for KDE support */
-#include <kapplication.h>
 #include <klocale.h>
 
 /* ----- public member functions ----- */

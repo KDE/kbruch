@@ -21,10 +21,10 @@
 /* these includes are needed for KDE support */
 #include <klocale.h>
 #include <kmessagebox.h>
-#include <kapplication.h>
 #include <knumvalidator.h>
 
 /* these includes are needed for Qt support */
+#include <qapplication.h>
 #include <qlabel.h>
 #include <qlayout.h>
 #include <qlineedit.h>
