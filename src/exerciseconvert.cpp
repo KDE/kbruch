@@ -30,7 +30,6 @@
 #include <qlayout.h>
 #include <qlineedit.h>
 #include <qpushbutton.h>
-#include <qtooltip.h>
 
 //Added by qt3to4:
 #include <QGridLayout>

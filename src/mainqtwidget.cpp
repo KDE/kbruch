@@ -32,7 +32,6 @@
 #include <qcombobox.h>
 #include <qsplitter.h>
 #include <qlabel.h>
-#include <qtooltip.h>
 
 #include <qwidget.h>
 
