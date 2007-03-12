@@ -21,6 +21,7 @@
 
 /* standard C++ library includes */
 #include <time.h>
+#include <stdlib.h>
 
 /* these includes are needed for Qt support */
 #include <kapplication.h>
