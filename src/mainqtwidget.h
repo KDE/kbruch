@@ -17,7 +17,7 @@
 #ifndef MAINQTWIDGET_H
 #define MAINQTWIDGET_H
 
-#include <kmainwindow.h>
+#include <kxmlguiwindow.h>
 class KPageDialog;
 
 class QComboBox;
@@ -37,7 +37,7 @@ class KPageWidgetItem;
  *  \author Sebastian Stein
  *  \author Eva Brucherseifer
  **/
-class MainQtWidget : public KMainWindow
+class MainQtWidget : public KXmlGuiWindow
 {
 	Q_OBJECT
 			  
