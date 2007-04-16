@@ -16,7 +16,6 @@
  ***************************************************************************/
 #include "mainqtwidget.h"
 
-#include <kapplication.h>
 #include <kaction.h>
 #include <kdebug.h>
 #include <kiconloader.h>
@@ -28,6 +27,7 @@
 #include <kvbox.h>
 #include <kpagewidgetmodel.h>
 #include <kicon.h>
+#include <kapplication.h>
 
 #include <qcombobox.h>
 #include <qsplitter.h>

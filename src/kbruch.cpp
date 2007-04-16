@@ -23,9 +23,9 @@
 #include <time.h>
 
 /* these includes are needed for Qt support */
-#include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
+#include <kapplication.h>
 
 /* the main program */
 int main(int argc, char * argv[])
