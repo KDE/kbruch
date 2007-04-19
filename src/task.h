@@ -82,7 +82,7 @@ public:
 	                 int denominator = 1);
 
 	/** set ratio n */
-	void set_ratio_n(unsigned short number = 0, ratio fraction = 0);
+	void set_ratio_n(unsigned short number, ratio fraction);
 
 	/** returns ration n */
 	ratio get_ratio_n(unsigned short number = 0) const;
@@ -94,7 +94,7 @@ public:
 	short get_op_n(unsigned short number = 0) const;
 
 	/** add a ratio to the end of the task */
-	void add_ratio(ratio new_ratio = 0);
+	void add_ratio(ratio new_ratio);
 
 	/** add a ratio to the end of the task */
 	void add_ratio(int numerator = 0, int denominator = 1);
