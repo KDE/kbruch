@@ -47,7 +47,6 @@
 #include "settingsclass.h"
 #include <kpageview.h>
 
-#include "ui_taskvieweroptionsbase.h"
 class TaskViewerOptionsBase : public QWidget, public Ui::TaskViewerOptionsBase
 {
 	public:

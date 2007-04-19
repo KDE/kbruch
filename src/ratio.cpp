@@ -15,9 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "ratio.h"
+
 #include <kdebug.h>
 
-#include "ratio.h"
 #include "primenumber.h"
 //Added by qt3to4:
 #include <QTextStream>

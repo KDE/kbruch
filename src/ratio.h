@@ -30,7 +30,7 @@ class ratio
 {
 public:
 	/** constructor */
-	ratio(int pnumerator = 0, int pdenominator = 1);
+	explicit ratio(int pnumerator = 0, int pdenominator = 1);
 
 	/** copy constructor */
 	ratio(const ratio & copy_ratio);

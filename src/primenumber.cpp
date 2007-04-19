@@ -15,8 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <kdebug.h>
 #include "primenumber.h"
+
+#include <kdebug.h>
 
 /* ----- the global prime number vector ----- */
 UnsignedIntArray primenumber::prim_vector;
