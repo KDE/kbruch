@@ -194,7 +194,7 @@ void MainQtWidget::writeOptions()
 	SettingsClass::setNumber_ratios(m_nrRatios);
 	SettingsClass::setMax_main_denominator(m_maxMainDenominator);
 
-	SettingsClass::writeConfig();
+	SettingsClass::self()->writeConfig();
 }
 
 void MainQtWidget::setupActions()

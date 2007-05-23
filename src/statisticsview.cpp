@@ -136,7 +136,7 @@ StatisticsView::~StatisticsView()
 	// save statistics for next run
 	SettingsClass::setCount(m_count);
 	SettingsClass::setCorrect(m_correct);
-	SettingsClass::writeConfig();
+	SettingsClass::self()->writeConfig();
 
 	/* no need to delete any child widgets, Qt does it by itself */
 }
