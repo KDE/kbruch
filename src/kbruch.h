@@ -29,9 +29,6 @@
 static const char description[] =
 	I18N_NOOP("KBruch");
 
-class MainQtWidget;
 class task;
-class ratio;
-class primzahl;
 
 #endif /* ifndef BRUCH_H */

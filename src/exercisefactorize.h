@@ -35,7 +35,6 @@
 #include "exercisebase.h"
 #include "ratio.h"
 
-class ResultWidget;
 class FactorizedWidget;
 
 class QVBoxLayout;

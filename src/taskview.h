@@ -41,7 +41,6 @@
 class QVBoxLayout;
 class QHBoxLayout;
 class QGridLayout;
-class QSpacerItem;
 class QLabel;
 class QPushButton;
 class QLineEdit;
