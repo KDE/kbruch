@@ -67,7 +67,7 @@ protected:
 	void paintRatio(QPainter & paint, ratio tmp_ratio, int & x_pos, QFontMetrics & fm, bool show_mixed, bool addMargin = true);
 
 	/** paints a string in the vertical middle (aligned to the operation signs) */
-	void paintMiddle(QPainter & paint, const QString& paint_str, int & x_pos, QFontMetrics & fm, QColor color, bool addMargin = true);
+	void paintMiddle(QPainter & paint, const QString& paint_str, int & x_pos, QFontMetrics & fm, const QColor &color, bool addMargin = true);
 
 private:
 	/** sets the font and color; values taken from settingsclass */

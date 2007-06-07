@@ -129,7 +129,10 @@ void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_p
 	return;
 }
 
-void FractionBaseWidget::paintMiddle(QPainter & paint, const QString& paint_str, int & x_pos, QFontMetrics & fm, QColor color, bool addMargin)
+void FractionBaseWidget::paintMiddle(QPainter & paint, 
+                                     const QString &paint_str, 
+                                     int & x_pos, QFontMetrics & fm, 
+                                     const QColor &color, bool addMargin)
 {
 	// get the pen, font height and font width
 	QPen pen = paint.pen();
