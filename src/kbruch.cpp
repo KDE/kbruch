@@ -17,7 +17,7 @@
 
 #include "kbruch.h"
 
-#include "version.h"
+#include "kbruch_version.h"
 
 /* standard C++ library includes */
 #include <time.h>
