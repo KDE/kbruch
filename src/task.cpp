@@ -52,7 +52,7 @@ task::~task()
 void task::create_task(unsigned int pmax_md, short pnr_ratios,
                        short padd_sub, short pmul_div)
 {
-	unsigned short max_product_length = 0;
+	unsigned int max_product_length = 0;
 	int main_denominator = 1;
 
 	/* we say that if add/sub and mul/div are not allowed we want a task
