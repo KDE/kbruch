@@ -35,14 +35,14 @@ int main(int argc, char * argv[])
 
 	/* fill the about data; the common KDE about dialog will show it to the
 	 * user */
-	KAboutData aboutData( "kbruch",
-		description,
+	KAboutData aboutData( "kbruch", 0,
+		ki18n(description),
 		KBRUCH_VERSION,
-		I18N_NOOP("Learn calculating with fractions"),
+		ki18n("Learn calculating with fractions"),
 		KAboutData::License_GPL,
-    	"(c) 2002-2004, Sebastian Stein", 0, "http://edu.kde.org/kbruch/",
+    	ki18n("(c) 2002-2004, Sebastian Stein"), KLocalizedString(), "http://edu.kde.org/kbruch/",
 		"seb.kde@hpfsc.de");
-	aboutData.addAuthor("Sebastian Stein",0, "seb.kde@hpfsc.de");
+	aboutData.addAuthor(ki18n("Sebastian Stein"),KLocalizedString(), "seb.kde@hpfsc.de");
  	KCmdLineArgs::init( argc, argv, &aboutData );
 
 	KApplication kbruch;
