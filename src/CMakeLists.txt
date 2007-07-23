@@ -40,7 +40,7 @@ install(TARGETS kbruch  DESTINATION ${BIN_INSTALL_DIR} )
 
 ########### install files ###############
 
-install( FILES kbruch.desktop  DESTINATION  ${XDG_APPS_DIR} )
+install( FILES kbruch.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES kbruch.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 install( FILES kbruchui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kbruch )
 
