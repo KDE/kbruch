@@ -29,14 +29,14 @@ RationalWidget::RationalWidget(QWidget * parent, const QString &pnumber, const i
 				m_periodStart(pperiodStart), m_periodLength(pperiodLength)
 {
 #ifdef DEBUG
-	kDebug() << "constructor RationalWidget" << endl;
+	kDebug() << "constructor RationalWidget";
 #endif
 }
 
 RationalWidget::~RationalWidget()
 {
 #ifdef DEBUG
-	kDebug() << "destructor RationalWidget" << endl;
+	kDebug() << "destructor RationalWidget";
 #endif
 }
 

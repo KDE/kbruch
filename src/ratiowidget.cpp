@@ -28,14 +28,14 @@ RatioWidget::RatioWidget(QWidget * parent = 0,
 			FractionBaseWidget(parent), m_ratio(para_ratio)
 {
 #ifdef DEBUG
-	kDebug() << "constructor RatioWidget" << endl;
+	kDebug() << "constructor RatioWidget";
 #endif
 }
 
 RatioWidget::~RatioWidget()
 {
 #ifdef DEBUG
-	kDebug() << "destructor RatioWidget" << endl;
+	kDebug() << "destructor RatioWidget";
 #endif
 }
 

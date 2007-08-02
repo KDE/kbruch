@@ -30,14 +30,14 @@ ResultWidget::ResultWidget(QWidget * parent = 0,
 			FractionBaseWidget(parent), m_result(para_result)
 {
 #ifdef DEBUG
-	kDebug() << "constructor ResultWidget" << endl;
+	kDebug() << "constructor ResultWidget";
 #endif
 }
 
 ResultWidget::~ResultWidget()
 {
 #ifdef DEBUG
-	kDebug() << "destructor ResultWidget" << endl;
+	kDebug() << "destructor ResultWidget";
 #endif
 }
 

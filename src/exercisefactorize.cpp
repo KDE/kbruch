@@ -51,7 +51,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 		ExerciseBase(parent)
 {
 #ifdef DEBUG
-	kDebug() << "constructor ExerciseFactorize()" << endl;
+	kDebug() << "constructor ExerciseFactorize()";
 #endif
 
 	/* create a new task */
@@ -256,7 +256,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 ExerciseFactorize::~ExerciseFactorize()
 {
 #ifdef DEBUG
-	kDebug() << "destructor ExerciseFactorize()" << endl;
+	kDebug() << "destructor ExerciseFactorize()";
 #endif
 
 	/* no need to delete any child widgets, Qt does it by itself */
@@ -268,7 +268,7 @@ ExerciseFactorize::~ExerciseFactorize()
 void ExerciseFactorize::forceNewTask()
 {
 #ifdef DEBUG
-	kDebug() << "forceNewTask ExerciseFactorize()" << endl;
+	kDebug() << "forceNewTask ExerciseFactorize()";
 #endif
 
 	if (m_currentState == _CHECK_TASK)

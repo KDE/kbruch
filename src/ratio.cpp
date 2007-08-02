@@ -29,7 +29,7 @@
 ratio::ratio(int pnumerator, int pdenominator):m_numerator(pnumerator), m_denominator(pdenominator)
 {
 #ifdef DEBUG
-	kDebug() << "constructor ratio" << endl;
+	kDebug() << "constructor ratio";
 #endif
 
 	// denominator is never allowed to be 0
@@ -44,7 +44,7 @@ ratio::ratio(int pnumerator, int pdenominator):m_numerator(pnumerator), m_denomi
 ratio::ratio(const ratio & copy_ratio)
 {
 #ifdef DEBUG
-	kDebug() << "copy constructor ratio" << endl;
+	kDebug() << "copy constructor ratio";
 #endif
 
 	setNumerator(copy_ratio.numerator(), false);
@@ -55,7 +55,7 @@ ratio::ratio(const ratio & copy_ratio)
 ratio::~ratio()
 {
 #ifdef DEBUG
-	kDebug() << "destructor ratio" << endl;
+	kDebug() << "destructor ratio";
 #endif
 }
 
@@ -292,9 +292,9 @@ void ratio::reduce()
 		if (divisor == 0)
 		{
 #ifdef DEBUG
-			kDebug() << "ratio::reduce() -> divisor == 0 !!!" << endl;
-			kDebug() << "m_numerator: " << m_numerator << endl;
-			kDebug() << "m_denominator: " << m_denominator << endl;
+			kDebug() << "ratio::reduce() -> divisor == 0 !!!";
+			kDebug() << "m_numerator: " << m_numerator;
+			kDebug() << "m_denominator: " << m_denominator;
 			// cin.get();
 #endif
 			/* so that the application does not crash with a floating

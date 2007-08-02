@@ -62,7 +62,7 @@ class TaskViewerOptionsBase : public QWidget, public Ui::TaskViewerOptionsBase
 MainQtWidget::MainQtWidget()
 {
 #ifdef DEBUG
-	kDebug() << "constructor MainQtWidget" << endl;
+	kDebug() << "constructor MainQtWidget";
 #endif
 
 	// get the settings
@@ -321,10 +321,10 @@ void MainQtWidget::setupActions()
 void MainQtWidget::NewTask()
 {
 #ifdef DEBUG
-	kDebug() << "NewTask MainQtWidget" << endl;
-	//kDebug() << "pageIndex(m_taskview): " << m_exercises->pageIndex(m_taskview) << endl;
-	//kDebug() << "pageIndex(m_exerciseCompare): " << m_exercises->pageIndex(m_exerciseCompare) << endl;
-	//kDebug() << "pageIndex(m_exerciseConvert): " << m_exercises->pageIndex(m_exerciseConvert) << endl;
+	kDebug() << "NewTask MainQtWidget";
+	//kDebug() << "pageIndex(m_taskview): " << m_exercises->pageIndex(m_taskview);
+	//kDebug() << "pageIndex(m_exerciseCompare): " << m_exercises->pageIndex(m_exerciseCompare);
+	//kDebug() << "pageIndex(m_exerciseConvert): " << m_exercises->pageIndex(m_exerciseConvert);
 #endif
 
 	// check which page should generate a new task
@@ -379,7 +379,7 @@ void MainQtWidget::NewTask()
 void MainQtWidget::NrOfTermsBoxSlot()
 {
 #ifdef DEBUG
-	kDebug() << "MainQtWidget::NrOfTermsBoxSlot()" << endl;
+	kDebug() << "MainQtWidget::NrOfTermsBoxSlot()";
 #endif
 	QString curr_nr = m_NrOfTermsBox->currentText();
 	m_MaxMainDenominatorBox->clear();
@@ -435,7 +435,7 @@ void MainQtWidget::NrOfTermsBoxSlot()
 void MainQtWidget::MaxMainDenominatorBoxSlot()
 {
 #ifdef DEBUG
-	kDebug() << "MainQtWidget::MaxMainDenominatorBoxSlot()" << endl;
+	kDebug() << "MainQtWidget::MaxMainDenominatorBoxSlot()";
 #endif
 
 	// get the max. size from the ComboBox, convert it to a number and store
@@ -450,7 +450,7 @@ void MainQtWidget::MaxMainDenominatorBoxSlot()
 void MainQtWidget::OperationBoxSlot()
 {
 #ifdef DEBUG
-	kDebug() << "MainQtWidget::OperationBoxSlot()" << endl;
+	kDebug() << "MainQtWidget::OperationBoxSlot()";
 #endif
 
 	int index = m_OperationBox->currentIndex(); // get selected item
@@ -527,10 +527,10 @@ void MainQtWidget::slotApplySettings()
 void MainQtWidget::slotAboutToShowPage(KPageWidgetItem *current)
 {
 #ifdef DEBUG
-	kDebug() << "slotAboutToShowPage MainQtWidget" << endl;
-	//kDebug() << "pageIndex(m_taskview): " << m_exercises->pageIndex(m_taskview) << endl;
-	//kDebug() << "pageIndex(m_exerciseCompare): " << m_exercises->pageIndex(m_exerciseCompare) << endl;
-	//kDebug() << "pageIndex(m_exerciseConvert): " << m_exercises->pageIndex(m_exerciseConvert) << endl;
+	kDebug() << "slotAboutToShowPage MainQtWidget";
+	//kDebug() << "pageIndex(m_taskview): " << m_exercises->pageIndex(m_taskview);
+	//kDebug() << "pageIndex(m_exerciseCompare): " << m_exercises->pageIndex(m_exerciseCompare);
+	//kDebug() << "pageIndex(m_exerciseConvert): " << m_exercises->pageIndex(m_exerciseConvert);
 #endif
 
 	// check which page to show

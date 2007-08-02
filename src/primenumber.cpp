@@ -31,7 +31,7 @@ primenumber::primenumber()
 	if (prim_vector.empty())
 	{
 #ifdef DEBUG
-		kDebug() << "prim_vector is still empty" << endl;
+		kDebug() << "prim_vector is still empty";
 #endif
 
 		prim_vector.push_back(2);
@@ -39,7 +39,7 @@ primenumber::primenumber()
 	}
 	current_pos = prim_vector.begin();
 #ifdef DEBUG
-	kDebug() << "constructor primenumber" << endl;
+	kDebug() << "constructor primenumber";
 #endif
 }
 
@@ -47,7 +47,7 @@ primenumber::primenumber()
 primenumber::~primenumber()
 {
 #ifdef DEBUG
-	kDebug() << "destructor primenumber" << endl;
+	kDebug() << "destructor primenumber";
 #endif
 }
 
@@ -56,7 +56,7 @@ primenumber::~primenumber()
 short primenumber::isPrimeNumber(uint number)
 {
 #ifdef DEBUG
-	kDebug() << "primenumber::isPrimeNumber(" << number << ")" << endl;
+	kDebug() << "primenumber::isPrimeNumber(" << number << ")";
 #endif
 	/* 0 is not a prime number */
 	if (number == 0)
@@ -161,7 +161,7 @@ void primenumber::display_all()
 	/* looping through the complete vector */
 	for (current_pos = prim_vector.begin(); current_pos != prim_vector.end();
 	        current_pos++, dummy++)
-		kDebug() << dummy << ": " << *current_pos << endl;
+		kDebug() << dummy << ": " << *current_pos;
 
 	current_pos = prim_vector.end() - 1;
 }

@@ -31,7 +31,7 @@ task::task()
 {
 	srand(time(NULL));
 #ifdef DEBUG
-	kDebug() << "constructor task" << endl;
+	kDebug() << "constructor task";
 #endif
 }
 
@@ -39,7 +39,7 @@ task::task()
 task::~task()
 {
 #ifdef DEBUG
-	kDebug() << "destructor task" << endl;
+	kDebug() << "destructor task";
 #endif
 }
 
@@ -69,7 +69,7 @@ void task::create_task(unsigned int pmax_md, short pnr_ratios,
 		max_product_length = make_operation(padd_sub, pmul_div, pnr_ratios);
 
 #ifdef DEBUG
-		kDebug() << "1: max_product_length: " << max_product_length << endl;
+		kDebug() << "1: max_product_length: " << max_product_length;
 #endif
 		/* later we must be able to find a main denominator;
 		 * so 2 ^ max_product_length couldn't be bigger than the max. denominator */
@@ -77,29 +77,29 @@ void task::create_task(unsigned int pmax_md, short pnr_ratios,
 	while ((unsigned int) pow(2, max_product_length) > pmax_md);
 
 #ifdef DEBUG
-	kDebug() << "2: max_product_length: " << max_product_length << endl;
+	kDebug() << "2: max_product_length: " << max_product_length;
 #endif
 
 	/* find a main denominator */
 	main_denominator = make_main_dn(pmax_md, max_product_length);
 
 #ifdef DEBUG
-	kDebug() << "after make_main_dn()" << endl;
+	kDebug() << "after make_main_dn()";
 #endif
 
 	/* create the ratios' numerators */
 	make_numerators(main_denominator, pnr_ratios);
 
 #ifdef DEBUG
-	kDebug() << "after make_numerators()" << endl;
+	kDebug() << "after make_numerators()";
 #endif
 
 	/* create the ratios' denominators */
 	make_denominators(main_denominator, pmax_md, pmul_div);
 
 #ifdef DEBUG
-	kDebug() << "main deno: " << main_denominator << endl;
-	kDebug() << "prim fakt: " << prim_fac_vector.size() << endl;
+	kDebug() << "main deno: " << main_denominator;
+	kDebug() << "prim fakt: " << prim_fac_vector.size();
 #endif
 
 	return;
@@ -197,7 +197,7 @@ QTextStream & task::display(QTextStream & str)
 	/* check, if ratio number and operation number fit together */
 	if (ratio_vector.size() != op_vector.size() + 1)
 	{
-		kDebug() << "Number of ratios and operations do not fit." << endl;
+		kDebug() << "Number of ratios and operations do not fit.";
 		return str;
 	}
 
@@ -256,7 +256,7 @@ ratio task::solve()
 	/* check, if ratio number and operation number fit together */
 	if (ratio_vector.size() != op_vector.size())
 	{
-		kDebug() << "Number of ratios and operations do not fit." << endl;
+		kDebug() << "Number of ratios and operations do not fit.";
 		return ergebnis;
 	}
 
@@ -300,7 +300,7 @@ ratio task::solve()
 			break;
 
 #ifdef DEBUG
-		kDebug() << "Schleifenende" << endl;
+		kDebug() << "Schleifenende";
 #endif
 
 	}
@@ -308,7 +308,7 @@ ratio task::solve()
 
 #ifdef DEBUG
 
-	kDebug() << "after do while in solve()" << endl;
+	kDebug() << "after do while in solve()";
 #endif
 
 	/* if the last operation was an add/sub we haven't add/subed it until now */
@@ -355,7 +355,7 @@ ratio task::product(RatioArray::iterator & ratio_pointer,
 
 #ifdef DEBUG
 
-	kDebug() << "in product()" << endl;
+	kDebug() << "in product()";
 #endif
 
 	++ratio_pointer;
@@ -515,12 +515,12 @@ unsigned short task::prim_factor_nr(int number)
 	}
 #ifdef DEBUG
 	PrimeFactorArray::iterator prim_fac_pointer = prim_fac_vector.begin();
-	kDebug() << "Primfaktoren von: " << number << endl;
+	kDebug() << "Primfaktoren von: " << number;
 	for (prim_fac_pointer = prim_fac_vector.begin();
 	        prim_fac_pointer != prim_fac_vector.end();
 	        prim_fac_pointer++)
-		kDebug() << (*prim_fac_pointer).factor << endl;
-	kDebug() << "Anzahl: " << prim_fac_vector.size() << endl;
+		kDebug() << (*prim_fac_pointer).factor;
+	kDebug() << "Anzahl: " << prim_fac_vector.size();
 #endif
 
 	return prim_fac_vector.size();
@@ -564,7 +564,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 	/* check, if ratio number and operation number fit together */
 	if (ratio_vector.size() != op_vector.size() + 1)
 	{
-		kDebug() << "Number of ratios and operations do not fit." << endl;
+		kDebug() << "Number of ratios and operations do not fit.";
 		return;
 	}
 

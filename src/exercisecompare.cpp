@@ -42,7 +42,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 		ExerciseBase(parent)
 {
 #ifdef DEBUG
-	kDebug() << "constructor ExerciseCompare()" << endl;
+	kDebug() << "constructor ExerciseCompare()";
 #endif
 
 	/* create a new task */
@@ -155,7 +155,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 ExerciseCompare::~ExerciseCompare()
 {
 #ifdef DEBUG
-	kDebug() << "destructor ExerciseCompare()" << endl;
+	kDebug() << "destructor ExerciseCompare()";
 #endif
 
 	/* no need to delete any child widgets, Qt does it by itself */
@@ -167,7 +167,7 @@ ExerciseCompare::~ExerciseCompare()
 void ExerciseCompare::forceNewTask()
 {
 #ifdef DEBUG
-	kDebug() << "forceNewTask ExerciseCompare()" << endl;
+	kDebug() << "forceNewTask ExerciseCompare()";
 #endif
 
 	if (m_currentState == _CHECK_TASK)

@@ -28,7 +28,7 @@ ExerciseBase::ExerciseBase(QWidget * parent):
 		QWidget(parent)
 {
 #ifdef DEBUG
-	kDebug() << "constructor ExerciseBase()" << endl;
+	kDebug() << "constructor ExerciseBase()";
 #endif
 }
 
@@ -36,6 +36,6 @@ ExerciseBase::ExerciseBase(QWidget * parent):
 ExerciseBase::~ExerciseBase()
 {
 #ifdef DEBUG
-	kDebug() << "destructor ExerciseBase()" << endl;
+	kDebug() << "destructor ExerciseBase()";
 #endif
 }
