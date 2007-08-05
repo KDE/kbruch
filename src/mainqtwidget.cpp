@@ -200,7 +200,7 @@ void MainQtWidget::writeOptions()
 void MainQtWidget::setupActions()
 {
 	// new task action
-    m_NewTaskAction  = new KAction(KIcon("document-new"), i18n("&New"), this);
+    m_NewTaskAction  = new KAction(KIcon("document-new"), i18nc("@action opens a new task", "&New"), this);
     actionCollection()->addAction("NewTask", m_NewTaskAction );
 	connect(m_NewTaskAction, SIGNAL(triggered(bool) ), SLOT(NewTask()));
 	m_NewTaskAction->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));

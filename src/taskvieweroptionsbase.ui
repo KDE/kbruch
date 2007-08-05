@@ -17,7 +17,7 @@
     <number>6</number>
    </property>
    <item>
-    <widget class="KFontChooser" name="kcfg_taskFont" >
+    <widget class="KFontChooser" native="1" name="kcfg_taskFont" >
      <property name="toolTip" >
       <string>Change the font of the numbers</string>
      </property>
@@ -35,7 +35,33 @@
       <property name="spacing" >
        <number>6</number>
       </property>
-      <item row="0" column="0" colspan="2" >
+      <item row="3" column="0" colspan="3" >
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item rowspan="3" row="0" column="1" >
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>40</width>
+          <height>91</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="0" >
        <widget class="QLabel" name="numberLabel" >
         <property name="sizePolicy" >
          <sizepolicy>
@@ -46,58 +72,24 @@
          </sizepolicy>
         </property>
         <property name="text" >
-         <string>Number:</string>
+         <string>&amp;Number:</string>
+        </property>
+        <property name="buddy" >
+         <cstring>kcfg_numberColor</cstring>
         </property>
        </widget>
       </item>
-      <item row="1" column="0" >
-       <widget class="QLabel" name="operationLabel" >
-        <property name="sizePolicy" >
-         <sizepolicy>
-          <hsizetype>1</hsizetype>
-          <vsizetype>5</vsizetype>
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text" >
-         <string>Operation sign:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0" >
-       <widget class="QLabel" name="fractionBarLabel" >
-        <property name="sizePolicy" >
-         <sizepolicy>
-          <hsizetype>1</hsizetype>
-          <vsizetype>5</vsizetype>
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text" >
-         <string>Fraction bar:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2" >
-       <widget class="KColorButton" name="kcfg_numberColor" >
+      <item row="2" column="2" >
+       <widget class="KColorButton" name="kcfg_fractionBarColor" >
         <property name="toolTip" >
-         <string>Change the color of the numbers</string>
+         <string>Change the color of the fraction bar</string>
         </property>
         <property name="text" >
          <string/>
         </property>
-        <property name="color" >
-         <color>
-          <red>0</red>
-          <green>255</green>
-          <blue>0</blue>
-         </color>
-        </property>
        </widget>
       </item>
-      <item row="1" column="1" colspan="2" >
+      <item row="1" column="2" >
        <widget class="KColorButton" name="kcfg_operationColor" >
         <property name="sizePolicy" >
          <sizepolicy>
@@ -113,29 +105,51 @@
         <property name="text" >
          <string/>
         </property>
-        <property name="color" >
-         <color>
-          <red>0</red>
-          <green>0</green>
-          <blue>255</blue>
-         </color>
-        </property>
        </widget>
       </item>
-      <item row="2" column="1" colspan="2" >
-       <widget class="KColorButton" name="kcfg_fractionBarColor" >
+      <item row="0" column="2" >
+       <widget class="KColorButton" name="kcfg_numberColor" >
         <property name="toolTip" >
-         <string>Change the color of the fraction bar</string>
+         <string>Change the color of the numbers</string>
         </property>
         <property name="text" >
          <string/>
         </property>
-        <property name="color" >
-         <color>
-          <red>255</red>
-          <green>0</green>
-          <blue>0</blue>
-         </color>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="operationLabel" >
+        <property name="sizePolicy" >
+         <sizepolicy>
+          <hsizetype>1</hsizetype>
+          <vsizetype>5</vsizetype>
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text" >
+         <string>&amp;Operation sign:</string>
+        </property>
+        <property name="buddy" >
+         <cstring>kcfg_operationColor</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" >
+       <widget class="QLabel" name="fractionBarLabel" >
+        <property name="sizePolicy" >
+         <sizepolicy>
+          <hsizetype>1</hsizetype>
+          <vsizetype>5</vsizetype>
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text" >
+         <string>&amp;Fraction bar:</string>
+        </property>
+        <property name="buddy" >
+         <cstring>kcfg_fractionBarColor</cstring>
         </property>
        </widget>
       </item>
@@ -160,9 +174,22 @@
          <string>Here you can enable/disable showing the result in mixed-number notation.</string>
         </property>
         <property name="text" >
-         <string>Show result also as a mixed number, like 1 2/3.</string>
+         <string>&amp;Show result also as a mixed number, like 1 2/3.</string>
         </property>
        </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </widget>

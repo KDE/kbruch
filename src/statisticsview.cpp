@@ -74,7 +74,7 @@ StatisticsView::StatisticsView(QWidget * parent):
 	              i18n("This is the current total number of solved tasks."));
 
 	info2Label = new QLabel(this);
-	info2Label->setText(i18n("Correct:"));
+	info2Label->setText(i18nc("@info:status", "Correct:"));
 	labelGrid->addWidget(info2Label, 2, 0);
 
 	result2Label = new QLabel(this);
@@ -90,7 +90,7 @@ StatisticsView::StatisticsView(QWidget * parent):
 	              i18n("This is the current total number of correctly solved tasks."));
 
 	info3Label = new QLabel(this);
-	info3Label->setText(i18n("Incorrect:"));
+	info3Label->setText(i18nc("@info:status", "Incorrect:"));
 	labelGrid->addWidget(info3Label, 3, 0);
 
 	result3Label = new QLabel(this);

@@ -114,7 +114,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	// at the right end we have a label just showing CORRECT or WRONG
 	result_label = new QLabel(baseWidget);
 	result_label->setObjectName("result_label");
-	result_label->setText(i18n("WRONG"));
+	//result_label->setText(i18n("WRONG")); // no need to set this, it's hidden anyway (jpw)
 	taskLineHBoxLayout->addWidget(result_label);
 	result_label->hide();
 
@@ -233,7 +233,7 @@ void ExerciseCompare::showResult()
 		signalExerciseSolvedCorrect();
 
 		/* yes, the user entered the correct result */
-		result_label->setText(i18n("CORRECT"));
+		result_label->setText(i18nc("@info:status", "CORRECT"));
 		pal = result_label->palette(); /* set green font color */
         pal.setColor(QPalette::Active, QPalette::Foreground, QColor(6, 179, 0));
         pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(6, 179, 0));
@@ -244,7 +244,7 @@ void ExerciseCompare::showResult()
 		signalExerciseSolvedWrong();
 
 		/* no, the user entered the wrong result */
-		result_label->setText(i18n("WRONG"));
+		result_label->setText(i18nc("@info:status", "WRONG"));
 		pal = result_label->palette(); /* set red font color */
         pal.setColor(QPalette::Active, QPalette::Foreground, QColor(Qt::red));
         pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(Qt::red));

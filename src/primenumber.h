@@ -15,8 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef PRIMZAHL_H
-#define PRIMZAHL_H
+#ifndef PRIMENUMBER_H
+#define PRIMENUMBER_H
 
 #include <qvector.h>
 
