@@ -22,12 +22,12 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <knumvalidator.h>
+#include <klineedit.h>
 
 /* these includes are needed for Qt support */
 #include <qapplication.h>
 #include <qlabel.h>
 #include <qlayout.h>
-#include <qlineedit.h>
 #include <qpushbutton.h>
 
 //Added by qt3to4:
@@ -98,7 +98,7 @@ TaskView::TaskView(QWidget * parent, bool padd_sub,
 	KIntValidator *valnum = new KIntValidator( this );
 
 	/* add input box so the user can enter numerator */
-	numer_edit = new QLineEdit(baseWidget);
+	numer_edit = new KLineEdit(baseWidget);
 	numer_edit->setObjectName("numer_edit");
 	numer_edit->setValidator( valnum ); // use the int validator
 	numer_edit->setToolTip(i18n("Enter the numerator of your result"));
@@ -111,7 +111,7 @@ TaskView::TaskView(QWidget * parent, bool padd_sub,
 	inputLayout->addWidget(edit_line);
 
 	/* add input box so the user can enter denominator */
-	deno_edit = new QLineEdit(baseWidget);
+	deno_edit = new KLineEdit(baseWidget);
 	deno_edit->setObjectName("deno_edit");
 	deno_edit->setValidator( valnum ); // use the int validator
 	deno_edit->setToolTip(i18n("Enter the denominator of your result"));
@@ -294,7 +294,7 @@ void TaskView::showResult()
 		signalTaskSolvedCorrect();
 
 		/* yes, the user entered the correct result */
-		result_label->setText(i18nc("@info:status", "CORRECT"));
+		result_label->setText(i18nc("@info:status the answer given was correct", "CORRECT"));
 		pal = result_label->palette(); /* set green font color */
         pal.setColor(QPalette::Active, QPalette::Foreground, QColor(6, 179, 0));
         pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(6, 179, 0));
@@ -305,7 +305,7 @@ void TaskView::showResult()
 		signalTaskSolvedWrong();
 
 		/* no, the user entered the wrong result */
-		result_label->setText(i18nc("@info:status", "WRONG"));
+		result_label->setText(i18nc("@info:status the answer given was incorrect", "WRONG"));
 		pal = result_label->palette(); /* set red font color */
         pal.setColor(QPalette::Active, QPalette::Foreground, QColor(Qt::red));
         pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(Qt::red));

@@ -19,6 +19,7 @@
 #include "exercisefactorize.moc"
 
 /* these includes are needed for KDE support */
+#include <klineedit.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <knumvalidator.h>
@@ -27,7 +28,6 @@
 #include <qapplication.h>
 #include <qlabel.h>
 #include <qlayout.h>
-#include <qlineedit.h>
 #include <qpushbutton.h>
 
 //Added by qt3to4:
@@ -86,7 +86,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_equalSignLabel->setObjectName( "m_equalSignLabel" );
 	layout4->addWidget( m_equalSignLabel );
 
-	m_factorsEnteredEdit = new QLineEdit( this );
+	m_factorsEnteredEdit = new KLineEdit( this );
 	m_factorsEnteredEdit->setObjectName( "m_factorsEnteredEdit" );
 	layout4->addWidget( m_factorsEnteredEdit );
 	m_factorsEnteredEdit->setReadOnly(true);
@@ -382,7 +382,7 @@ void ExerciseFactorize::showResult()
 		signalExerciseSolvedCorrect();
 
 		/* yes, the user entered the correct result */
-		result_label->setText(i18nc("@info:status", "CORRECT"));
+		result_label->setText(i18nc("@info:status the answer given was correct", "CORRECT"));
 		pal = result_label->palette(); /* set green font color */
         pal.setColor(QPalette::Active, QPalette::Foreground, QColor(6, 179, 0));
         pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(6, 179, 0));
@@ -392,7 +392,7 @@ void ExerciseFactorize::showResult()
 		signalExerciseSolvedWrong();
 
 		/* no, the user entered the wrong result */
-		result_label->setText(i18nc("@info:status", "WRONG"));
+		result_label->setText(i18nc("@info:status the answer given was incorrect", "WRONG"));
 		pal = result_label->palette(); /* set red font color */
         pal.setColor(QPalette::Active, QPalette::Foreground, QColor(Qt::red));
         pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(Qt::red));

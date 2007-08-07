@@ -37,12 +37,13 @@
 
 class FactorizedWidget;
 
+class KLineEdit;
+
 class QVBoxLayout;
 class QHBoxLayout;
 class QGridLayout;
 class QSpacerItem;
 class QLabel;
-class QLineEdit;
 class QPushButton;
 
 // a list containing uints
@@ -94,7 +95,7 @@ private:
 
 	QLabel* m_taskLabel;
 	QLabel* m_equalSignLabel;
-	QLineEdit* m_factorsEnteredEdit;
+	KLineEdit* m_factorsEnteredEdit;
 	FactorizedWidget* m_factorsWidget;
 	QLabel* result_label;
 

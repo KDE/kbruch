@@ -43,7 +43,8 @@ class QHBoxLayout;
 class QGridLayout;
 class QLabel;
 class QPushButton;
-class QLineEdit;
+
+class KLineEdit;
 
 /*! Constructs a QWidget, which shows the task to the user.
  *  The class also provides input fields, so that the user can enter the result.
@@ -94,9 +95,9 @@ private:
 	QPushButton* m_checkButton;
 	QLabel* result_label;
 	TaskWidget* m_taskWidget;
-	QLineEdit* numer_edit;
+	KLineEdit* numer_edit;
 	QFrame* edit_line;
-	QLineEdit* deno_edit;
+	KLineEdit* deno_edit;
 
 	QGridLayout* baseGrid;
 	QWidget* baseWidget;

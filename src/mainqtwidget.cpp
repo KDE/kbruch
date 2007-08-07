@@ -17,6 +17,7 @@
 #include "mainqtwidget.h"
 
 #include <kaction.h>
+#include <kcombobox.h>
 #include <kdebug.h>
 #include <kiconloader.h>
 #include <kconfigdialog.h>
@@ -29,7 +30,6 @@
 #include <kicon.h>
 #include <kapplication.h>
 
-#include <qcombobox.h>
 #include <qsplitter.h>
 #include <qlabel.h>
 
@@ -221,7 +221,7 @@ void MainQtWidget::setupActions()
         m_NrOfTermsLabelAction->setDefaultWidget( m_NrOfTermsLabel );
 
 	// the ComboBox holding possible values for term number
-	m_NrOfTermsBox = new QComboBox();
+	m_NrOfTermsBox = new KComboBox();
 	m_NrOfTermsBox->addItem("2");
 	m_NrOfTermsBox->addItem("3");
 	m_NrOfTermsBox->addItem("4");
@@ -248,7 +248,7 @@ void MainQtWidget::setupActions()
         m_MaxMainDenominatorLabelAction->setDefaultWidget( m_MaxMainDenominatorLabel );
 
 	// the ComboBox holding possible values for the max. main denominator
-	m_MaxMainDenominatorBox = new QComboBox(this);
+	m_MaxMainDenominatorBox = new KComboBox(this);
 	m_MaxMainDenominatorBox->addItem("10");
 	m_MaxMainDenominatorBox->addItem("20");
 	m_MaxMainDenominatorBox->addItem("30");
@@ -286,7 +286,7 @@ void MainQtWidget::setupActions()
         m_OperationLabelAction->setDefaultWidget( m_OperationLabel );
 
 	// the ComboBox holding possible combinations for operations
-	m_OperationBox = new QComboBox(this);
+	m_OperationBox = new KComboBox(this);
 	m_OperationBox->addItem(i18n("Addition/Subtraction"));
 	m_OperationBox->addItem(i18n("Multiplication/Division"));
 	m_OperationBox->addItem(i18n("All Operations Mixed"));

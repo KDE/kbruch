@@ -32,9 +32,10 @@
 class RationalWidget;
 class ResultWidget;
 
+class KLineEdit;
+
 class QGridLayout;
 class QLabel;
-class QLineEdit;
 class QPushButton;
 class QString;
 class QVBoxLayout;
@@ -78,9 +79,9 @@ private:
 
 	RationalWidget* m_rationalWidget;
 	ResultWidget* m_resultWidget;
-	QLineEdit* numer_edit;
+	KLineEdit* numer_edit;
 	QFrame* edit_line;
-	QLineEdit* deno_edit;
+	KLineEdit* deno_edit;
 
 	QPushButton* m_checkButton;
 	QLabel* result_label;

@@ -18,18 +18,18 @@
 #define MAINQTWIDGET_H
 
 #include <kxmlguiwindow.h>
-class KPageDialog;
-
-class QComboBox;
-class QLabel;
 class KAction;
+class KComboBox;
+class KPageDialog;
+class KPageWidgetItem;
+
+class QLabel;
 
 class ExerciseCompare;
 class ExerciseConvert;
 class ExerciseFactorize;
 class StatisticsView;
 class TaskView;
-class KPageWidgetItem;
 
 /** Constructs the main window and presents the user interface.
  *  The window is separated into 2 sections. In the left section is the
@@ -84,17 +84,17 @@ class MainQtWidget : public KXmlGuiWindow
 
 		void setupActions();
 
-		QComboBox * m_NrOfTermsBox;
+		KComboBox * m_NrOfTermsBox;
 		QLabel * m_NrOfTermsLabel;
 		KAction * m_NrOfTermsBoxAction;
 		KAction * m_NrOfTermsLabelAction;
 
-		QComboBox * m_MaxMainDenominatorBox;
+		KComboBox * m_MaxMainDenominatorBox;
 		QLabel * m_MaxMainDenominatorLabel;
 		KAction * m_MaxMainDenominatorBoxAction;
 		KAction * m_MaxMainDenominatorLabelAction;
 
-		QComboBox * m_OperationBox;
+		KComboBox * m_OperationBox;
 		QLabel * m_OperationLabel;
 		KAction * m_OperationBoxAction;
 		KAction * m_OperationLabelAction;
