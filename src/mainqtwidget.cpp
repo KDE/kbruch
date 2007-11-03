@@ -381,6 +381,7 @@ void MainQtWidget::NrOfTermsBoxSlot()
 #ifdef DEBUG
 	kDebug() << "MainQtWidget::NrOfTermsBoxSlot()";
 #endif
+	int currentMaxDenom = m_MaxMainDenominatorBox->currentText().toInt();
 	QString curr_nr = m_NrOfTermsBox->currentText();
 	m_MaxMainDenominatorBox->clear();
 
@@ -392,40 +393,30 @@ void MainQtWidget::NrOfTermsBoxSlot()
 			m_MaxMainDenominatorBox->addItem("20");
 			m_MaxMainDenominatorBox->addItem("30");
 			m_MaxMainDenominatorBox->addItem("50");
-			m_nrRatios = 2;
-			m_maxMainDenominator = 10;
 		} else if (curr_nr == "3") {
 			m_MaxMainDenominatorBox->addItem("20");
 			m_MaxMainDenominatorBox->addItem("30");
 			m_MaxMainDenominatorBox->addItem("50");
-			m_nrRatios = 3;
-			m_maxMainDenominator = 20;
 		} else if (curr_nr == "4") {
 			m_MaxMainDenominatorBox->addItem("20");
 			m_MaxMainDenominatorBox->addItem("30");
 			m_MaxMainDenominatorBox->addItem("50");
-			m_nrRatios = 4;
-			m_maxMainDenominator = 20;
 		} else {
 			m_MaxMainDenominatorBox->addItem("50");
-			m_nrRatios = 5;
-			m_maxMainDenominator = 50;
 		}
-		m_MaxMainDenominatorBox->setCurrentIndex(0);
+		m_nrRatios = curr_nr.toInt();
+		int index = m_MaxMainDenominatorBox->findText(QString::number(currentMaxDenom));
+		m_MaxMainDenominatorBox->setCurrentIndex(index > -1 ? index : 0);
+		m_maxMainDenominator = m_MaxMainDenominatorBox->currentText().toInt();
 	} else {
 		/* no multiplication or division allowed, so we add the default values */
 		m_MaxMainDenominatorBox->addItem("10");
 		m_MaxMainDenominatorBox->addItem("20");
 		m_MaxMainDenominatorBox->addItem("30");
 		m_MaxMainDenominatorBox->addItem("50");
-		if (curr_nr == "2")
-			m_nrRatios = 2;
-		else if (curr_nr == "3")
-			m_nrRatios = 3;
-		else if (curr_nr == "4")
-			m_nrRatios = 4;
-		else
-			m_nrRatios = 5;
+		int index = m_MaxMainDenominatorBox->findText(QString::number(currentMaxDenom));
+		m_MaxMainDenominatorBox->setCurrentIndex(index > -1 ? index : 0);
+		m_nrRatios = curr_nr.toInt();
 	} // if (m_mulDiv == true)
 
 	// set the new task parameters
