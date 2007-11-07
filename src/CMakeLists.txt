@@ -31,6 +31,14 @@ kde4_add_ui_files(kbruch_SRCS taskvieweroptionsbase.ui )
 
 kde4_add_kcfg_files(kbruch_SRCS settingsclass.kcfgc )
 
+if(MSVC)
+  set(kbruch_SRCS ${kbruch_SRCS} kbruch.rc)
+endif(MSVC)
+
+if(MINGW)
+   KDE_ADD_RESOURCES2(kbruch_SRCS kbruch.rc)
+endif(MINGW)
+
 kde4_add_executable(kbruch ${kbruch_SRCS})
 
 target_link_libraries(kbruch  ${KDE4_KDEUI_LIBS} )
