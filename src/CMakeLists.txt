@@ -31,13 +31,14 @@ kde4_add_ui_files(kbruch_SRCS taskvieweroptionsbase.ui )
 
 kde4_add_kcfg_files(kbruch_SRCS settingsclass.kcfgc )
 
-if(MSVC)
-  set(kbruch_SRCS ${kbruch_SRCS} kbruch.rc)
-endif(MSVC)
-
-if(MINGW)
-   KDE_ADD_RESOURCES2(kbruch_SRCS kbruch.rc)
-endif(MINGW)
+set(kbruch_icons
+    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/16x16/apps/kbruch.png
+    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/32x32/apps/kbruch.png
+    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/48x48/apps/kbruch.png
+    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/64x64/apps/kbruch.png
+    ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/128x128/apps/kbruch.png
+)
+kde4_add_win32_app_icon(kbruch kbruch_SRCS ${kbruch_icons})
 
 kde4_add_executable(kbruch ${kbruch_SRCS})
 
