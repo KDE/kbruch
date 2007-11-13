@@ -38,7 +38,7 @@ set(kbruch_icons
     ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/64x64/apps/kbruch.png
     ${CMAKE_INSTALL_PREFIX}/share/icons/oxygen/128x128/apps/kbruch.png
 )
-kde4_add_win32_app_icon(kbruch kbruch_SRCS ${kbruch_icons})
+kde4_add_win32_app_icon(kbruch_SRCS ${kbruch_icons})
 
 kde4_add_executable(kbruch ${kbruch_SRCS})
 
