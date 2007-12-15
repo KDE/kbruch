@@ -484,7 +484,7 @@ void MainQtWidget::slotPrefs()
 
 
 	TaskViewerOptionsBase * taskViewerOptions = new TaskViewerOptionsBase(0);
-	configDialog->addPage(taskViewerOptions, i18n("Task Viewer"), "colorize");
+	configDialog->addPage(taskViewerOptions, i18n("Task Viewer"), "kbruch");
 
 	// User edited the configuration - update your local copies of the
 	// configuration data
