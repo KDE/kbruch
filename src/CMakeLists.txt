@@ -31,14 +31,7 @@ kde4_add_ui_files(kbruch_SRCS taskvieweroptionsbase.ui )
 
 kde4_add_kcfg_files(kbruch_SRCS settingsclass.kcfgc )
 
-set(kbruch_icons
-    ${KDE4_ICON_DIR}/oxygen/16x16/apps/kbruch.png
-    ${KDE4_ICON_DIR}/oxygen/32x32/apps/kbruch.png
-    ${KDE4_ICON_DIR}/oxygen/48x48/apps/kbruch.png
-    ${KDE4_ICON_DIR}/oxygen/64x64/apps/kbruch.png
-    ${KDE4_ICON_DIR}/oxygen/128x128/apps/kbruch.png
-)
-kde4_add_win32_app_icon(kbruch_SRCS ${kbruch_icons})
+kde4_add_app_icon(kbruch_SRCS "${KDE4_ICON_DIR}/oxygen/*/apps/kbruch.png")
 
 kde4_add_executable(kbruch ${kbruch_SRCS})
 
