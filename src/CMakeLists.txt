@@ -27,7 +27,7 @@ set(kbruch_SRCS
    factorizedwidget.cpp )
 
 
-kde4_add_ui_files(kbruch_SRCS taskvieweroptionsbase.ui )
+kde4_add_ui_files(kbruch_SRCS taskcolorsbase.ui taskgeneralbase.ui taskfontsbase.ui)
 
 kde4_add_kcfg_files(kbruch_SRCS settingsclass.kcfgc )
 

@@ -1,0 +1,117 @@
+<ui version="4.0" >
+ <class>TaskColorsBase</class>
+ <widget class="QWidget" name="TaskColorsBase" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>231</width>
+    <height>139</height>
+   </rect>
+  </property>
+  <layout class="QGridLayout" >
+   <item row="0" column="0" >
+    <widget class="QGroupBox" name="groupBox" >
+     <property name="title" >
+      <string>Colors</string>
+     </property>
+     <layout class="QGridLayout" >
+      <item row="0" column="0" >
+       <widget class="QLabel" name="numberLabel" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text" >
+         <string>&amp;Number:</string>
+        </property>
+        <property name="buddy" >
+         <cstring>kcfg_numberColor</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2" >
+       <widget class="KColorButton" name="kcfg_numberColor" >
+        <property name="toolTip" >
+         <string>Change the color of the numbers</string>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="operationLabel" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text" >
+         <string>&amp;Operation sign:</string>
+        </property>
+        <property name="buddy" >
+         <cstring>kcfg_operationColor</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2" >
+       <widget class="KColorButton" name="kcfg_operationColor" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip" >
+         <string>Change the color of the operation signs</string>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" >
+       <widget class="QLabel" name="fractionBarLabel" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text" >
+         <string>&amp;Fraction bar:</string>
+        </property>
+        <property name="buddy" >
+         <cstring>kcfg_fractionBarColor</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2" >
+       <widget class="KColorButton" name="kcfg_fractionBarColor" >
+        <property name="toolTip" >
+         <string>Change the color of the fraction bar</string>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KColorButton</class>
+   <extends>QPushButton</extends>
+   <header>kcolorbutton.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
