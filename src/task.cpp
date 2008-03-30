@@ -74,7 +74,7 @@ void task::create_task(unsigned int pmax_md, short pnr_ratios,
 		/* later we must be able to find a main denominator;
 		 * so 2 ^ max_product_length couldn't be bigger than the max. denominator */
 	}
-	while ((unsigned int) pow(2, max_product_length) > pmax_md);
+	while ((unsigned int) pow(2.0, (double)max_product_length) > pmax_md);
 
 #ifdef DEBUG
 	kDebug() << "2: max_product_length: " << max_product_length;

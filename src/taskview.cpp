@@ -196,8 +196,8 @@ void TaskView::setTaskParameters(bool padd_sub, bool pmul_div, unsigned int pnr_
 		pnr_ratios = 5;
 
 	// the main denominator must be at least 2^pnr_ratios
-	if (pow(2, pnr_ratios) > pmax_md)
-		pmax_md = (unsigned int) pow(2, pnr_ratios);
+	if (pow(2.0, (double)pnr_ratios) > pmax_md)
+		pmax_md = (unsigned int) pow(2.0, (double)pnr_ratios);
 
 	// so everything seems to be fine, lets set the internal values to the given
 	// ones
