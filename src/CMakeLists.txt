@@ -33,8 +33,8 @@ kde4_add_ui_files(kbruch_SRCS taskcolorsbase.ui taskgeneralbase.ui taskfontsbase
 
 kde4_add_kcfg_files(kbruch_SRCS settingsclass.kcfgc )
 
-kde4_add_app_icon(kbruch_SRCS "${KDE4_ICON_DIR}/oxygen/*/apps/kbruch.png")
-#kde4_add_app_icon(kbruch_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/ox*-apps-kbruch.png")
+#kde4_add_app_icon(kbruch_SRCS "${KDE4_ICON_DIR}/oxygen/*/apps/kbruch.png")
+kde4_add_app_icon(kbruch_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/ox*-apps-kbruch.png")
 
 kde4_add_executable(kbruch ${kbruch_SRCS})
 
