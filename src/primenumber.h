@@ -39,7 +39,7 @@ public:
 	/** destructor */
 	~primenumber();
 
-	/** returns wether the given number is a prime number */
+	/** returns whether the given number is a prime number */
 	short isPrimeNumber(uint number);
 
 	/** returns the next prime number */
