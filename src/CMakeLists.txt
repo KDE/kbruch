@@ -41,7 +41,7 @@ kde4_add_executable(kbruch ${kbruch_SRCS})
 
 target_link_libraries(kbruch  ${KDE4_KDEUI_LIBS} )
 
-install(TARGETS kbruch  DESTINATION ${BIN_INSTALL_DIR} )
+install(TARGETS kbruch  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 
 ########### install files ###############
