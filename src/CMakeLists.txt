@@ -8,6 +8,7 @@ macro_additional_clean_files( ${CMAKE_CURRENT_BINARY_DIR}/kbruch_version.h )
 file(READ ${CMAKE_SOURCE_DIR}/kbruch/VERSION KBRUCH_VERSION )
 string(REGEX REPLACE "\n" "" KBRUCH_VERSION ${KBRUCH_VERSION} )
 configure_file(${CMAKE_SOURCE_DIR}/kbruch/src/kbruch_version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/kbruch_version.h)
+include_directories( ${CMAKE_CURRENT_BINARY_DIR} )
 
 set(kbruch_SRCS
    exercisebase.cpp 
@@ -27,7 +28,6 @@ set(kbruch_SRCS
    exerciseconvert.cpp 
    exercisefactorize.cpp 
    factorizedwidget.cpp )
-
 
 kde4_add_ui_files(kbruch_SRCS taskcolorsbase.ui taskgeneralbase.ui taskfontsbase.ui)
 
