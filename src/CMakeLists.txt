@@ -4,7 +4,10 @@ add_subdirectory( pics )
 
 ########### next target ###############
 
-macro_additional_clean_files( ${CMAKE_CURRENT_BINARY_DIR}/kbruch_version.h )
+# Don't clean the following file, or kbruch will not compiler after
+# "make clean"
+#macro_additional_clean_files( ${CMAKE_CURRENT_BINARY_DIR}/kbruch_version.h )
+
 file(READ ${CMAKE_SOURCE_DIR}/kbruch/VERSION KBRUCH_VERSION )
 string(REGEX REPLACE "\n" "" KBRUCH_VERSION ${KBRUCH_VERSION} )
 configure_file(${CMAKE_SOURCE_DIR}/kbruch/src/kbruch_version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/kbruch_version.h)
