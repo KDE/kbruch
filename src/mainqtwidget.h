@@ -20,7 +20,7 @@
 #include <kxmlguiwindow.h>
 class KAction;
 class KComboBox;
-class KPageDialog;
+class KPageWidget;
 class KPageWidgetItem;
 
 class QLabel;
@@ -59,7 +59,7 @@ class MainQtWidget : public KXmlGuiWindow
 		StatisticsView * m_statview;
 
 		/** the iconlist for the different exercises */
-		KPageDialog * m_exercises;
+		KPageWidget * m_exercises;
 
 		/** pointing to the exercise solving a task with fractions; added as page
 		 * to the iconlist */

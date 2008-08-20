@@ -99,8 +99,8 @@ MainQtWidget::MainQtWidget()
 	setCentralWidget(splitter);
 
 	// the iconlist, where the user can choose the different exercises
-	m_exercises = new KPageDialog;
-	m_exercises->setFaceType(KPageDialog::List);
+	m_exercises = new KPageWidget;
+	m_exercises->setFaceType(KPageWidget::List);
 	m_exercises->setToolTip(i18n("Choose another exercise by clicking on an icon."));
 	m_exercises->setWhatsThis( i18n("Click on the different icons to choose another exercise. The exercises help you to practice different aspects of calculating with fractions."));
 
@@ -146,7 +146,7 @@ MainQtWidget::MainQtWidget()
 	m_exerciseFactorize = new ExerciseFactorize((QWidget *) page);
 	m_exerciseFactorize->setObjectName("ExerciseFactorize");
 	
-	splitter->addWidget(m_exercises->mainWidget());
+	splitter->addWidget(m_exercises);
 	splitter->addWidget(m_statview);
 
 	// we must change the status of the menubar before another page is shown
