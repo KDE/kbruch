@@ -455,8 +455,8 @@ factors. You have to enter all prime factors of the number.
 </screenshot>
 
 <para>You can enter a factor by clicking on the prime factor
-buttons. The currently entered prime factors will be shown in the
-field next to the number to be factorized. You can remove the last entered
+buttons. The <quote>*</quote> sign is automatically inserted, when you click the next 
+prime factor button. You can remove the last entered
 prime factor by clicking on the <guimenu>Remove Last Factor</guimenu> button.
 </para>
 <para>
