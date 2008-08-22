@@ -32,8 +32,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2004-07-09</date>
-<releaseinfo>3.4</releaseinfo>
+<date>2008-08-22</date>
+<releaseinfo>4.0 (&kde; 4.1.2)</releaseinfo>
 
 <abstract>
 <para>&kbruch; is a small program to practice calculating with fractions.
@@ -157,8 +157,8 @@ settings in the toolbar will be enabled, if you have chosen the exercise
 <para>
 You will find an icon to generate a new task in the toolbar as well. This
 action is also available in the menu
-<menuchoice><guimenu>Task</guimenu><guimenuitem>New
-Task</guimenuitem></menuchoice>. This action is always enabled. If you have not
+<menuchoice><guimenu>Task</guimenu><guimenuitem>New</guimenuitem></menuchoice>.
+This action is always enabled. If you have not
 solved the currently given task, a new task is generated and the given task is
 counted as not correctly solved.
 </para>
@@ -201,7 +201,7 @@ startup.
 <sect1 id="settings">
 <title>Settings Window</title>
 <para>
-In this part of the main screen you can adjust some general settings for
+In this dialog you can adjust some general settings for
 task display. To open this dialog use
 <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure
 &kbruch;</guimenuitem></menuchoice>.
@@ -220,10 +220,20 @@ task display. To open this dialog use
 </screenshot>
 
 <para>
-In the top part of the dialog you can choose a font for displaying. In the
-lower part you can choose colors for the different parts of a mathematical
-expression. You can set wether to show the mixed number notation in the result.
-This notation is not known everywhere and can be disabled therefore. 
+There are three tabs to adjust the setting: 
+<itemizedlist>
+	<listitem><para>
+		<guilabel>General</guilabel>: Set wether to show the mixed number notation in the result.
+		This notation is not known everywhere and can be disabled therefore.
+	</para></listitem>
+	<listitem><para>
+		<guilabel>Colors</guilabel>: Choose colors for the different parts of a mathematical
+		expression.
+	</para></listitem>
+	<listitem><para>
+		<guilabel>Fonts</guilabel>: Choose a font for displaying.
+	</para></listitem>
+</itemizedlist>
 </para>
 <para>
 The settings will be saved on &kbruch;'s termination and restored on the next
@@ -272,11 +282,10 @@ task: <guilabel>Addition/Subtraction</guilabel>,
 </variablelist>
 
 <para>
-After you have changed the parameters you have to click on the <guimenu>New
-Task</guimenu> button in the toolbar to generate a task which uses the new
+After you have changed the parameters you have to click on the <guimenu>New</guimenu> 
+button in the toolbar to generate a task which uses the new
 parameters. You can also call this action from the menubar with
-<menuchoice><guimenu>Task</guimenu><guimenuitem>New
-Task</guimenuitem></menuchoice>.
+<menuchoice><guimenu>Task</guimenu><guimenuitem>New</guimenuitem></menuchoice>.
 </para>
 <note>
 <para>
@@ -286,8 +295,8 @@ number of terms first and then select the maximum main denominator.
 </para>
 </note>
 <para>
-If you have not solved the current task and call the <guimenu>New
-Task</guimenu> action, the task will be counted as not solved correctly. To
+If you have not solved the current task and call the <guimenu>New</guimenu> 
+action, the task will be counted as not solved correctly. To
 prevent this you have to change the parameters after you solved the task but
 before generating a new one.
 </para>
@@ -352,9 +361,9 @@ unreduced.
 </screenshot>
 
 <para>
-To continue with the next task, click on the <guimenu>Next Task</guimenu>
+To continue with the next task, click on the <guimenu>New</guimenu>
 button. If you want to change the parameters for the next task please do this
-before clicking on the <guimenu>Next Task</guimenu> button.
+before clicking on the <guimenu>New</guimenu> button.
 </para>
 </sect2>
 </sect1>
@@ -382,7 +391,7 @@ the bigger fraction of both by selecting the correct comparison sign.
 you have to click on the button showing the comparison sign. After you have
 chosen the comparison sign click on the <guimenu>Check Task</guimenu> button.
 &kbruch; will check your input and present the correct result. After this step
-you will get to the next task by clicking on the <guimenu>Next Task</guimenu>
+you will get to the next task by clicking on the <guimenu>New</guimenu>
 button.
 </para>
 </sect1>
@@ -415,7 +424,7 @@ numbers. Those numbers repeat ad infinitum.
 <para>After you have entered the numerator and denominator click on the
 <guimenu>Check Task</guimenu> button. &kbruch; will check your input and
 present the correct result. After this step you will get to the next task by
-clicking on the <guimenu>Next Task</guimenu> button.
+clicking on the <guimenu>New</guimenu> button.
 </para>
 
 <note>
@@ -445,8 +454,8 @@ factors. You have to enter all prime factors of the number.
 </mediaobject>
 </screenshot>
 
-<para>You can enter a factor by clicking on the prime <guimenu>factor
-buttons</guimenu>. The currently entered prime factors will be shown in the
+<para>You can enter a factor by clicking on the prime factor
+buttons. The currently entered prime factors will be shown in the
 field next to the number to be factorized. You can remove the last entered
 prime factor by clicking on the <guimenu>Remove Last Factor</guimenu> button.
 </para>
@@ -454,7 +463,7 @@ prime factor by clicking on the <guimenu>Remove Last Factor</guimenu> button.
 After you have entered all prime factors click on the
 <guimenu>Check Task</guimenu> button. &kbruch; will check your input and
 present the correct result. After this step you will get to the next task by
-clicking on the <guimenu>Next Task</guimenu> button.
+clicking on the <guimenu>New</guimenu> button.
 </para>
 
 <para>In the screenshot at the top of this page you can see a <quote>*</quote>
