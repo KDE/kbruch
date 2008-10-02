@@ -206,7 +206,7 @@ QTextStream & task::display(QTextStream & str)
 
 	/* display all numerators */
 	for (ratio_pointer = ratio_vector.begin();
-	        ratio_pointer != ratio_vector.end(); ratio_pointer++)
+	        ratio_pointer != ratio_vector.end(); ++ratio_pointer)
 	{
 		str << qSetFieldWidth(5) << ratio_pointer->numerator() << "   ";
 	}
@@ -218,7 +218,7 @@ QTextStream & task::display(QTextStream & str)
 
 	/* display all operations */
 	for (op_pointer = op_vector.begin();
-	        op_pointer != op_vector.end(); op_pointer++)
+	        op_pointer != op_vector.end(); ++op_pointer)
 	{
 		str << " ----- " << a[*op_pointer];
 	}
@@ -230,7 +230,7 @@ QTextStream & task::display(QTextStream & str)
 
 	/* display all denominators */
 	for (ratio_pointer = ratio_vector.begin();
-	        ratio_pointer != ratio_vector.end(); ratio_pointer++)
+	        ratio_pointer != ratio_vector.end(); ++ratio_pointer)
 	{
 		if (ratio_pointer == ratio_vector.end() - 1)
 			return str << qSetFieldWidth(5) << ratio_pointer->denominator() << "   ";
@@ -416,7 +416,7 @@ unsigned short task::make_operation(short padd_sub, short pmul_div,
 		/* loop through all operations and add 2, so that the operations
 		 * are interpreted as mul/div and not add/sub */
 		for (op_pointer = op_vector.begin();
-		        op_pointer != op_vector.end(); op_pointer++)
+		        op_pointer != op_vector.end(); ++op_pointer)
 			*op_pointer += 2;
 	}
 
@@ -426,7 +426,7 @@ unsigned short task::make_operation(short padd_sub, short pmul_div,
 
 		/* loop through all operations */
 		for (op_pointer = op_vector.begin();
-		        op_pointer != op_vector.end(); op_pointer++)
+		        op_pointer != op_vector.end(); ++op_pointer)
 		{
 			/* look if we got a mul/div or add/sub */
 			if (*op_pointer == DIV || *op_pointer == MUL)
@@ -518,7 +518,7 @@ unsigned short task::prim_factor_nr(int number)
 	kDebug() << "Primfaktoren von: " << number;
 	for (prim_fac_pointer = prim_fac_vector.begin();
 	        prim_fac_pointer != prim_fac_vector.end();
-	        prim_fac_pointer++)
+	        ++prim_fac_pointer)
 		kDebug() << (*prim_fac_pointer).factor;
 	kDebug() << "Anzahl: " << prim_fac_vector.size();
 #endif
@@ -570,7 +570,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 
 	/* first make all denominators */
 	for (ratio_pointer = ratio_vector.begin();
-	        ratio_pointer != ratio_vector.end(); ratio_pointer++)
+	        ratio_pointer != ratio_vector.end(); ++ratio_pointer)
 	{
 		do
 		{
@@ -596,7 +596,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 				 * reset the prime number structure */
 				for (prim_fac_pointer = prim_fac_vector.begin();
 				        prim_fac_pointer != prim_fac_vector.end();
-				        prim_fac_pointer++)
+				        ++prim_fac_pointer)
 					(*prim_fac_pointer).flag = UNUSED;
 
 				/* how many prime factors are available? */
@@ -615,7 +615,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 					/* check the prime factors, if they are unused */
 					for (prim_fac_pointer = prim_fac_vector.begin();
 					        prim_fac_pointer != prim_fac_vector.end();
-					        prim_fac_pointer++)
+					        ++prim_fac_pointer)
 					{
 						if ((*prim_fac_pointer).flag == UNUSED)
 						{
@@ -654,7 +654,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 					/* check the prime factors, if they are unused */
 					for (prim_fac_pointer = prim_fac_vector.begin();
 					        prim_fac_pointer != prim_fac_vector.end();
-					        prim_fac_pointer++)
+					        ++prim_fac_pointer)
 					{
 						if ((*prim_fac_pointer).flag == UNUSED)
 						{
@@ -691,7 +691,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 		ratio_pointer++;
 
 		for (op_pointer = op_vector.begin(); op_pointer != op_vector.end();
-		        op_pointer++)
+		        ++op_pointer)
 		{
 			if (*op_pointer == DIV)
 			{
