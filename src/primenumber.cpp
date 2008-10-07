@@ -180,7 +180,7 @@ void primenumber::find_next()
 		new_prim += 2;
 		/* loop as long as we find a divisor for the new number */
 		for (current_pos = prim_vector.begin(); current_pos != prim_vector.end();
-		        current_pos++)
+		        ++current_pos)
 			if ((new_prim % *current_pos == 0) || (new_prim < *current_pos))
 				break;
 
