@@ -59,7 +59,8 @@ class TaskView : public ExerciseBase
 public:
 	/** constructor */
 	explicit TaskView(QWidget * parent = 0,
-	         bool padd_sub = true, bool pmul_div = false,
+	         bool padd_add = true, bool padd_div = false,
+	         bool padd_mult = false, bool padd_sub = false,
 	         unsigned int pnr_ratios = 2, unsigned int pmax_md = 10);
 
 	/** destructor */
@@ -67,10 +68,14 @@ public:
 
 	/** set new task parameters, which will be used for the next task to be
 	 * generated */
-	void setTaskParameters(bool padd_sub, bool pmul_div, unsigned int pnr_ratios, unsigned int pmax_md);
+	void setTaskParameters( bool padd_add = true, bool padd_div = false, 
+				bool padd_mult = false, bool padd_sub = false, 
+				unsigned int pnr_ratios = 2, unsigned int pmax_md = 2);
 
 	/** force the creation of a new task */
 	void forceNewTask();
+
+	void forceReduce(bool force);
 
 public slots:
 	void update();
@@ -79,39 +84,54 @@ signals:
 	/** class emits this signal, if the task was solved correctly by the user */
 	void signalTaskSolvedCorrect();
 
+	/** class emits this signal, if the task was skipped by the user */
+	void signalTaskSkipped();
+
 	/** class emits this signal, if the task was solved not correctly by the user
 	 * */
 	void signalTaskSolvedWrong();
 
 private:
-	bool add_sub;
-	bool mul_div;
+	bool m_forceReduce;
+	bool m_addSub;
+	bool m_addAdd;
+	bool m_addMult;
+	bool m_addDiv;
 	unsigned int nr_ratios;
 	unsigned int curr_nr_ratios;
 	unsigned int max_md;
 	short m_currentState;
 
 	ResultWidget* m_resultWidget;
+
 	QPushButton* m_checkButton;
-	QLabel* result_label;
+	QPushButton* m_skipButton;
+
 	TaskWidget* m_taskWidget;
 	KLineEdit* numer_edit;
 	QFrame* edit_line;
 	KLineEdit* deno_edit;
 
+	QGridLayout* checkLayout;
+	QGridLayout* taskLayout;
 	QGridLayout* baseGrid;
-	QWidget* baseWidget;
-	QVBoxLayout* realLayout;
+
+	QWidget * checkWidget;
+	QWidget * taskWidget;
 
 	task current_task;
 	ratio result;
 	ratio entered_result;
+	QFont defaultFont;
 
 	void showResult();
 	void nextTask();
 
 private slots:
 	void slotCheckButtonClicked();
+	void slotSkipButtonClicked();
+	void numeratorReturnPressed(const QString &);
+	void denominatorReturnPressed(const QString &);
 };
 
 #endif

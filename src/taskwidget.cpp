@@ -27,7 +27,7 @@
 #include <QPaintEvent>
 
 TaskWidget::TaskWidget(QWidget * parent = 0,
-													const task para_task = task()) :
+			const task para_task = task()) :
 			FractionBaseWidget(parent), m_task(para_task)
 {
 #ifdef DEBUG
@@ -53,6 +53,7 @@ void TaskWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	// our x position, we paint from left to right;
 	// we don't want to start directly on the border, so add the margin
 	int old_x = _MARGIN_X;
+	int old_y = 0;
 
 	// strings holding numerator, denominator and the operation sign
 	QString str_numerator, str_denominator, str_operation;
@@ -82,7 +83,7 @@ void TaskWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	for (unsigned short tmp_counter = 0; tmp_counter < m_task.getNumberOfRatios(); tmp_counter++)
 	{
 		// get the current ratio and paint it
-		paintRatio(paint, m_task.get_ratio_n(tmp_counter), old_x, fm, false);
+		paintRatio(paint, m_task.get_ratio_n(tmp_counter), old_x, old_y, fm, false);
 
 		// now check if we have another operation to show
 		// if not we will stop showing ratios as well
@@ -111,12 +112,12 @@ void TaskWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 			} /* switch (operation) */
 
 			// paint the operation
-			paintMiddle(paint, str_operation, old_x, fm, m_colorOperation);
+			paintMiddle(paint, str_operation, old_x, old_y, fm, m_colorOperation);
 
 		} else {
 			// no further operations to show, so we always show the = sign at the
 			// end of a task
-			paintMiddle(paint, "=", old_x, fm, m_colorOperation);
+			paintMiddle(paint, "=", old_x, old_y, fm, m_colorOperation);
 
 			break;
 		} // if (tmp_counter < m_task.getNumberOfOperations())

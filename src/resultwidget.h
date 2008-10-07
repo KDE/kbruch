@@ -29,6 +29,13 @@
 //Added by qt3to4:
 #include <QPaintEvent>
 
+class QLabel;
+class QGridLayout;
+class QVBoxLayout;
+
+// a list containing uints
+typedef QList<uint> uintList;
+
 /*! class to paint the result
  *
  *  \author Sebastian Stein */
@@ -37,22 +44,48 @@ class ResultWidget : public FractionBaseWidget
 	Q_OBJECT
 
 public:
-	/** constructor */
+	/** constructors */
 	ResultWidget(QWidget * parent, const ratio para_result);
+	ResultWidget(QWidget * parent, const uintList para_factors);
+	ResultWidget(QWidget * parent);	
 
 	/** destructor */
 	~ResultWidget();
 
 	/** set the task to be displayed */
-	void setResult(const ratio para_result);
+	void setResult(const ratio para_result, int k);
+	void setResult(int k);
+		
+	int KindView();
+	
+	/** set the task to be displayed */
+	void setFactors(const uintList para_factors);	
 
 private:
 	
+	/** the prime factors of the number */
+	uintList m_factors;	
+	
+	QFont defaultFont;
+	
+	QLabel * m_primaryText;
+	QLabel * m_secondaryText;
+
+	QGridLayout * layout;
+
+	// 1 = Correct, 0 = Incorrect (with solution), 2 = Incorrect (without solution), 
+	short m_kindView;
+	
+	short m_ExerciseView;	
+
 	/** the ratio to be displayed */
 	ratio m_result;
 
 	/** overrideing the paint event of FractionBaseWidget */
 	void paintEvent(QPaintEvent*);
+	
+	void Init();	
+	void showResult()	;
 };
 
 #endif

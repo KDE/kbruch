@@ -40,6 +40,21 @@ ratio::ratio(int pnumerator, int pdenominator):m_numerator(pnumerator), m_denomi
 	reduce();
 }
 
+ratio::ratio(int pnumerator, int pdenominator, bool reduce_fraction):m_numerator(pnumerator), m_denominator(pdenominator)
+{
+#ifdef DEBUG
+	kDebug() << "constructor ratio";
+#endif
+
+	// denominator is never allowed to be 0
+	if (!m_denominator)
+		m_denominator = 1;
+
+	// reduce the new ratio
+	if (reduce_fraction)
+		reduce();
+}
+
 /* copy constructor */
 ratio::ratio(const ratio & copy_ratio)
 {

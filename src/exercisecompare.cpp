@@ -35,6 +35,8 @@
 /* standard C++ library includes */
 #include <stdlib.h>
 
+#include "settingsclass.h"
+
 /* ----- public member functions ----- */
 
 /* constructor */
@@ -54,97 +56,91 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	// result
 	m_currentState = _CHECK_TASK;
 
-	baseWidget = new QWidget(this);
-	baseWidget->setObjectName("baseWidget");
-	baseGrid = new QGridLayout( this );
-        baseGrid->setObjectName( "baseGrid");
-	baseGrid->addWidget(baseWidget, 0, 0);
+	QFont defaultFont = SettingsClass::taskFont();
+	defaultFont.setBold( TRUE );
+	defaultFont.setPointSize(12);
 
-	// this is a VBox
-	realLayout = new QVBoxLayout(baseWidget);
-	realLayout->setMargin(5);
-	realLayout->setSpacing(5);
-	realLayout->setObjectName("realLayout");
+	taskWidget = new QWidget(this);
+	taskWidget->setObjectName("taskWidget");
+	checkWidget = new QWidget(this);
+	checkWidget->setObjectName("checkWidget");
+	
+	baseGrid = new QGridLayout(this);
+	baseGrid->setObjectName( "baseGrid" );
+	baseGrid->setColumnStretch(0,1);
 
-	// add a spacer at the top of the VBox
-	QSpacerItem * v_spacer = new QSpacerItem(1, 1);
-	realLayout->addItem(v_spacer);
+	baseGrid->addWidget(taskWidget, 0, 0);
+	baseGrid->addWidget(checkWidget, 0, 1);
+	
+	taskLayout = new QGridLayout(this);
+	taskLayout->setObjectName( "taskLayout" );
+	taskLayout->setRowStretch(0,1);
+	taskLayout->setRowStretch(4,1);
+	taskLayout->setColumnStretch(0,1);
+	taskLayout->setColumnStretch(4,1);
 
-	// now a line holding the task, input fields and result
-	QHBoxLayout * taskLineHBoxLayout = new QHBoxLayout();
-	taskLineHBoxLayout->setObjectName("taskLineHBoxLayout");
-	taskLineHBoxLayout->setSpacing(5);
-	realLayout->addLayout(taskLineHBoxLayout);
-
-	// spacer
-	v_spacer = new QSpacerItem(1, 1);
-	taskLineHBoxLayout->addItem(v_spacer);
+	checkLayout = new QGridLayout(this);
+	checkLayout->setObjectName( "checkLayout" );
+	
 
 	// first the first ratio widget
-	m_firstRatioWidget = new RatioWidget(baseWidget, m_firstRatio);
+	m_firstRatioWidget = new RatioWidget(taskWidget, m_firstRatio);
 	m_firstRatioWidget->setObjectName("m_firstRatioWidget");
-	taskLineHBoxLayout->addWidget(m_firstRatioWidget);
-
-	// spacer
-	v_spacer = new QSpacerItem(1, 1);
-	taskLineHBoxLayout->addItem(v_spacer);
-
-	// now the button where the user has to choose the comparison sign
-	m_signButton = new QPushButton(baseWidget);
-	m_signButton->setObjectName("m_signButton");
-	m_signButton->setText("<");
-	m_signButtonState = lessThen;
-	taskLineHBoxLayout->addWidget(m_signButton);
-	QObject::connect(m_signButton, SIGNAL(clicked()), this, SLOT(slotSignButtonClicked()));
-	m_signButton->setToolTip(i18n("Click on this button to change the comparison sign."));
-
-	// spacer
-	v_spacer = new QSpacerItem(1, 1);
-	taskLineHBoxLayout->addItem(v_spacer);
+	taskLayout->addWidget(m_firstRatioWidget, 1, 1, 3, 1);
 
 	// now the second ratio widget
-	m_secondRatioWidget = new RatioWidget(baseWidget, m_secondRatio);
-	m_secondRatioWidget->setObjectName("m_secondRatioWidget");
-	taskLineHBoxLayout->addWidget(m_secondRatioWidget);
+	m_secondRatioWidget = new RatioWidget(taskWidget, m_secondRatio);
+	m_secondRatioWidget->setObjectName("m_secondRatioWidget");	
+	taskLayout->addWidget(m_secondRatioWidget, 1, 3, 3, 1);
 
-	// spacer
-	v_spacer = new QSpacerItem(1, 1);
-	taskLineHBoxLayout->addItem(v_spacer);
+	m_moreButton = new QPushButton(taskWidget);
+	m_moreButton->setObjectName("m_moreButton");
+	m_moreButton->setText(">");
+	m_moreButton->setFixedSize(74,30);
+	m_moreButton->setFont(defaultFont);	
+	QObject::connect(m_moreButton, SIGNAL(clicked()), this, SLOT(slotMoreButtonClicked()));
+	m_moreButton->setToolTip(i18n("Click on this button to select the more sign."));
+	taskLayout->addWidget(m_moreButton, 1, 2);
+	
+	m_minorButton = new QPushButton(taskWidget);
+	m_minorButton->setObjectName("m_minorButton");
+	m_minorButton->setText("<");
+	m_minorButton->setFixedSize(74,30);	
+	m_minorButton->setFont(defaultFont);		
+	QObject::connect(m_minorButton, SIGNAL(clicked()), this, SLOT(slotMinorButtonClicked()));
+	m_minorButton->setToolTip(i18n("Click on this button to select the minor sign."));
+	taskLayout->addWidget(m_minorButton, 2, 2);
+	
+	m_equalButton = new QPushButton(taskWidget);
+	m_equalButton->setObjectName("m_equalButton");
+	m_equalButton->setText("=");
+	m_equalButton->setFixedSize(74,30);
+	m_equalButton->setFont(defaultFont);			
+	QObject::connect(m_equalButton, SIGNAL(clicked()), this, SLOT(slotEqualButtonClicked()));
+	m_equalButton->setToolTip(i18n("Click on this button to select the equal sign."));
+	taskLayout->addWidget(m_equalButton, 3, 2);
 
-	// at the right end we have a label just showing CORRECT or WRONG
-	result_label = new QLabel(baseWidget);
-	result_label->setObjectName("result_label");
-	//result_label->setText(i18n("WRONG")); // no need to set this, it's hidden anyway (jpw)
-	taskLineHBoxLayout->addWidget(result_label);
-	result_label->hide();
+	m_resultWidget = new ResultWidget(checkWidget);
+	m_resultWidget->setObjectName("m_resultWidget");
+	checkLayout->addWidget(m_resultWidget, 0, 0);
 
-	// --- that is the end of the horizontal line ---
+	defaultFont.setPointSize(10);
 
-	// add another spacer in the middle of the VBox
-	v_spacer = new QSpacerItem(1, 1);
-	realLayout->addItem(v_spacer);
-
-	// the lower part of the VBox holds just a right aligned button
-	QHBoxLayout * lowerHBox = new QHBoxLayout();
-	lowerHBox->setObjectName("lowerHBox");
-	lowerHBox->setSpacing(1);
-	realLayout->addLayout(lowerHBox);
-	lowerHBox->addStretch(100);
-
-	// the right aligned button
-	m_checkButton = new QPushButton( baseWidget );
-	m_checkButton->setObjectName( "m_checkButton" );
-	m_checkButton->setText(i18n("&Check Task"));
-	m_checkButton->setDefault(true); // is the default button of the dialog
-	m_checkButton->setToolTip(i18n("Click on this button to check your result."));
-	lowerHBox->addWidget(m_checkButton, 1, Qt::AlignRight);
-	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
+	m_skipButton = new QPushButton( checkWidget );
+	m_skipButton->setObjectName( "m_skipButton" );
+	m_skipButton->setText(i18n("&Skip"));
+	m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
+	m_skipButton->setFixedSize(74,30);
+	m_skipButton->setFont(defaultFont);		
+	QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
+	checkLayout->addWidget(m_skipButton, 1, 0);	
 
 	// that the user can start typing without moving the focus
-	m_signButton->setFocus();
+	m_equalButton->setFocus();
 
-	// show the whole layout
-	baseWidget->show();
+	setLayout(baseGrid);
+	taskWidget->setLayout(taskLayout);
+  	checkWidget->setLayout(checkLayout);
 
 	// add tooltip and qwhatsthis help to the widget
 	setToolTip(i18n("In this exercise you have to compare 2 given fractions."));
@@ -172,11 +168,10 @@ void ExerciseCompare::forceNewTask()
 
 	if (m_currentState == _CHECK_TASK)
 	{
-		// emit the signal for wrong
-		signalExerciseSolvedWrong();
+		// emit the signal for skipped
+		signalExerciseSkipped();
 	}
 	m_currentState = _CHECK_TASK;
-	m_checkButton->setText(i18n("&Check Task"));
 
 	// generate next task
 	(void) nextTask();
@@ -218,39 +213,35 @@ void ExerciseCompare::createTask()
 void ExerciseCompare::showResult()
 {
 	QPalette pal;
-	bool result = m_firstRatio < m_secondRatio;
+	SignButtonState result;
+	
+	if ( m_firstRatio < m_secondRatio )
+		result = lessThen;
+	else if ( m_firstRatio > m_secondRatio )
+		result = greaterThen;	
+	else
+		result = equalTo;		
 
-	// change the tooltip of the check button
-	m_checkButton->setToolTip(i18n("Click on this button to get to the next task."));
 
 	// disable sign button
-	m_signButton->setEnabled(false);
-
-	if ((m_signButtonState == lessThen && result == true) ||
-		 (m_signButtonState == greaterThen && result == false))
+	m_minorButton->setEnabled(false);
+	m_moreButton->setEnabled(false);
+	m_equalButton->setEnabled(false);
+	
+	if ( m_signButtonState == result )
 	{
 		// emit the signal for correct
 		signalExerciseSolvedCorrect();
 
 		/* yes, the user entered the correct result */
-		result_label->setText(i18nc("@info:status the given answer was correct", "CORRECT"));
-		pal = result_label->palette(); /* set green font color */
-        pal.setColor(QPalette::Active, QPalette::Foreground, QColor(6, 179, 0));
-        pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(6, 179, 0));
-		result_label->setPalette(pal);
-		result_label->show(); /* show the result at the end of the task */
+		m_resultWidget->setResult(1);
 	} else {
 		// emit the signal for wrong
 		signalExerciseSolvedWrong();
 
 		/* no, the user entered the wrong result */
-		result_label->setText(i18nc("@info:status the given answer was incorrect", "WRONG"));
-		pal = result_label->palette(); /* set red font color */
-        pal.setColor(QPalette::Active, QPalette::Foreground, QColor(Qt::red));
-        pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(Qt::red));
-		result_label->setPalette(pal);
-
-		result_label->show(); /* show the result at the end of the task */
+		
+		m_resultWidget->setResult(2);
 	} /* if (entered_result == result) */
 
 	return;
@@ -260,15 +251,15 @@ void ExerciseCompare::showResult()
 void ExerciseCompare::nextTask()
 {
 	// change the tooltip of the check button
-	m_checkButton->setToolTip(i18n("Click on this button to check your result."));
-
+	m_equalButton->setToolTip(i18n("Click on this button to check your result."));
+	m_moreButton->setToolTip(i18n("Click on this button to check your result."));
+	m_minorButton->setToolTip(i18n("Click on this button to check your result."));
 	// enable sign button
-	m_signButton->setEnabled(true);
-
-	result_label->hide(); /* do not show the result at the end of the task */
-
+	m_equalButton->setEnabled(true);
+	m_minorButton->setEnabled(true);
+	m_moreButton->setEnabled(true);
+	
 	// reset the signButton
-	m_signButton->setText("<");
 	m_signButtonState = lessThen;
 
 	/* create a new task */
@@ -285,32 +276,62 @@ void ExerciseCompare::nextTask()
 
 /* ------ private slots ------ */
 
-void ExerciseCompare::slotCheckButtonClicked()
+void ExerciseCompare::slotSkipButtonClicked()
 {
+#ifdef DEBUG
+	kDebug() << "ExerciseCompare::slotSkipButtonClicked()";
+#endif
 	if (m_currentState == _CHECK_TASK)
 	{
-		m_currentState = _NEXT_TASK;
-		m_checkButton->setText(i18n("N&ext Task"));
-		(void) showResult();
+		forceNewTask();		
 	} else {
 		m_currentState = _CHECK_TASK;
-		m_checkButton->setText(i18n("&Check Task"));
-		(void) nextTask();
+		m_skipButton->setText(i18n("&Skip"));		
+		m_resultWidget->setResult( m_firstRatio, -1);		
+		nextTask();
 	}
 
 	return;
 }
 
-void ExerciseCompare::slotSignButtonClicked()
+void ExerciseCompare::slotMinorButtonClicked()
 {
-	if (m_signButtonState == lessThen)
-	{
-		m_signButton->setText(">");
-		m_signButtonState = greaterThen;
-	} else {
-		m_signButton->setText("<");
-		m_signButtonState = lessThen;
-	}
+#ifdef DEBUG
+	kDebug() << "ExerciseCompare::slotMinorButtonClicked()";
+#endif
+	
+	m_currentState = _NEXT_TASK;
+	m_skipButton->setText(i18n("&Next"));	
+	m_signButtonState = lessThen;
+	showResult();
+
+	return;
+}
+
+void ExerciseCompare::slotMoreButtonClicked()
+{
+#ifdef DEBUG
+	kDebug() << "ExerciseCompare::slotMoreButtonClicked()";
+#endif
+
+	m_currentState = _NEXT_TASK;
+	m_skipButton->setText(i18n("&Next"));		
+	m_signButtonState = greaterThen;
+	showResult();
+
+	return;
+}
+
+void ExerciseCompare::slotEqualButtonClicked()
+{
+#ifdef DEBUG
+	kDebug() << "ExerciseCompare::slotEqualButtonClicked()";
+#endif
+
+	m_currentState = _NEXT_TASK;
+	m_skipButton->setText(i18n("&Next"));	
+	m_signButtonState = equalTo;
+	showResult();
 
 	return;
 }

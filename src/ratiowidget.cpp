@@ -50,6 +50,7 @@ void RatioWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	// our x position, we paint from left to right;
 	// we don't want to start directly on the border, so add the margin
 	int x_pos = _MARGIN_X;
+	int y_pos = 0;
 
 	// start the painter
 	QPainter paint(this);
@@ -70,7 +71,7 @@ void RatioWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	setMaximumHeight(2 * fm.lineSpacing() + 10);
 
 	// result as normal ratio
-	paintRatio(paint, m_ratio, x_pos, fm, false);
+	paintRatio(paint, m_ratio, x_pos, y_pos, fm, false);
 
 	// stop the painter
 	paint.end();

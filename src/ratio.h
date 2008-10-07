@@ -32,6 +32,9 @@ public:
 	/** constructor */
 	explicit ratio(int pnumerator = 0, int pdenominator = 1);
 
+	/** constructor with reduce option */
+	ratio(int pnumerator, int pdenominator, bool reduce_fraction);
+
 	/** copy constructor */
 	ratio(const ratio & copy_ratio);
 

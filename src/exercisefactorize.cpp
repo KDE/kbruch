@@ -29,16 +29,19 @@
 #include <qlabel.h>
 #include <qlayout.h>
 #include <qpushbutton.h>
-
+ #include <QToolButton>
+ #include <qpainter.h>
+ 
 //Added by qt3to4:
 #include <QGridLayout>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QKeyEvent>
+#include <QPaintEvent>
 
 /* standard C++ library includes */
 #include <stdlib.h>
 
-#include "factorizedwidget.h"
 #include "primenumber.h"
 #include "rationalwidget.h"
 #include "resultwidget.h"
@@ -63,115 +66,138 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	// result
 	m_currentState = _CHECK_TASK;
 
-	Form1Layout = new QVBoxLayout( this );
-	Form1Layout->setMargin( 11 );
-	Form1Layout->setSpacing( 6 );
-	Form1Layout->setObjectName( "Form1Layout");
+	QFont defaultFont = SettingsClass::taskFont();
+	defaultFont.setBold( TRUE );
+	defaultFont.setPointSize(16);
 
-	layout9 = new QVBoxLayout();
-	layout9->setObjectName( "layout9" );
-	layout9->setSpacing( 6 );
-	layout9->setMargin( 0 );
+	taskWidget = new QWidget(this);
+	taskWidget->setObjectName("taskWidget");
+	checkWidget = new QWidget(this);
+	checkWidget->setObjectName("checkWidget");
+	
+	baseGrid = new QGridLayout(this);
+	baseGrid->setObjectName( "baseGrid" );
+	baseGrid->setColumnStretch(0,1);
 
-	layout4 = new QHBoxLayout();
-	layout4->setObjectName( "layout4" );
-	layout4->setSpacing( 6 );
-	layout4->setMargin( 0 );
+	baseGrid->addWidget(taskWidget, 0, 0);
+	baseGrid->addWidget(checkWidget, 0, 1);
+	
+	taskLayout = new QGridLayout(this);
+	taskLayout->setObjectName( "taskLayout" );
+	taskLayout->setRowStretch(0,1);
+	taskLayout->setRowStretch(6,1);
+	taskLayout->setColumnStretch(0,1);
+	taskLayout->setColumnStretch(7,1);
+
+	checkLayout = new QGridLayout(this);
+	checkLayout->setObjectName( "checkLayout" );
 
 	m_taskLabel = new QLabel( this );
 	m_taskLabel->setObjectName( "m_taskLabel" );
-	layout4->addWidget( m_taskLabel );
+	m_taskLabel->setFont(defaultFont);	
+	taskLayout->addWidget( m_taskLabel, 1, 1 );
 
 	m_equalSignLabel = new QLabel( this );
 	m_equalSignLabel->setObjectName( "m_equalSignLabel" );
-	layout4->addWidget( m_equalSignLabel );
+	m_equalSignLabel->setText("=");
+	m_equalSignLabel->setFont(defaultFont);
+	taskLayout->addWidget( m_equalSignLabel, 1, 2 );
 
 	m_factorsEnteredEdit = new KLineEdit( this );
 	m_factorsEnteredEdit->setObjectName( "m_factorsEnteredEdit" );
-	layout4->addWidget( m_factorsEnteredEdit );
 	m_factorsEnteredEdit->setReadOnly(true);
 	m_factorsEnteredEdit->setEnabled(false);
 	QPalette pal;
 	pal.setColor( m_factorsEnteredEdit->foregroundRole(), QColor(0, 0, 0) );
 	m_factorsEnteredEdit->setPalette(pal);
+	m_factorsEnteredEdit->setFont(defaultFont);
+	m_factorsEnteredEdit->setFixedSize(320,35);	
+	taskLayout->addWidget( m_factorsEnteredEdit, 1, 3, 1, 5 );
 
-	m_factorsWidget = new FactorizedWidget( this, m_factorsResult);
-	m_factorsWidget->setObjectName("m_factorsWidget");
-	layout4->addWidget( m_factorsWidget );
-	m_factorsWidget->hide();
-
-	result_label = new QLabel( this );
-	result_label->setObjectName( "result_label" );
-	layout4->addWidget( result_label );
-	spacer1 = new QSpacerItem( 25, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
-	layout4->addItem( spacer1 );
-
-	layout9->addLayout( layout4 );
-	spacer2 = new QSpacerItem( 20, 21, QSizePolicy::Minimum, QSizePolicy::Expanding );
-	layout9->addItem( spacer2 );
-
-	layout2 = new QVBoxLayout();
-        layout2->setSpacing( 6 );
-        layout2->setObjectName( "layout2" );
-
-	layout1 = new QGridLayout();
-        layout1->setSpacing( 6 );
-        layout1->setObjectName( "layout1" );
-
-	m_factor3Button = new QPushButton( this );
-	m_factor3Button->setObjectName( "m_factor3Button" );
-	layout1->addWidget( m_factor3Button, 0, 1 );
+	defaultFont.setPointSize(10);
 
 	m_factor2Button = new QPushButton( this );
 	m_factor2Button->setObjectName( "m_factor2Button" );
-	layout1->addWidget( m_factor2Button, 0, 0 );
-
-	m_factor13Button = new QPushButton( this );
-	m_factor13Button->setObjectName( "m_factor13Button" );
-	layout1->addWidget( m_factor13Button, 1, 1 );
-
-	m_factor7Button = new QPushButton( this );
-	m_factor7Button->setObjectName( "m_factor7Button" );
-	layout1->addWidget( m_factor7Button, 0, 3 );
-
-	m_factor11Button = new QPushButton( this );
-	m_factor11Button->setObjectName( "m_factor11Button" );
-	layout1->addWidget( m_factor11Button, 1, 0 );
-
-	m_factor19Button = new QPushButton( this );
-	m_factor19Button->setObjectName( "m_factor19Button" );
-	layout1->addWidget( m_factor19Button, 1, 3 );
+	m_factor2Button->setFixedSize(40,35);	
+	m_factor2Button->setFont(defaultFont);
+	taskLayout->addWidget( m_factor2Button, 4, 3 );
+	
+	m_factor3Button = new QPushButton( this );
+	m_factor3Button->setObjectName( "m_factor3Button" );
+	m_factor3Button->setFixedSize(40,35);		
+	m_factor3Button->setFont(defaultFont);
+	taskLayout->addWidget( m_factor3Button, 4, 4 );
 
 	m_factor5Button = new QPushButton( this );
 	m_factor5Button->setObjectName( "m_factor5Button" );
-	layout1->addWidget( m_factor5Button, 0, 2 );
+	m_factor5Button->setFixedSize(40,35);
+	m_factor5Button->setFont(defaultFont);
+	taskLayout->addWidget( m_factor5Button, 4, 5 );
+
+	m_factor7Button = new QPushButton( this );
+	m_factor7Button->setObjectName( "m_factor7Button" );
+	m_factor7Button->setFixedSize(40,35);
+	m_factor7Button->setFont(defaultFont);
+	taskLayout->addWidget( m_factor7Button, 4, 6 );
+
+	m_factor11Button = new QPushButton( this );
+	m_factor11Button->setObjectName( "m_factor11Button" );
+	m_factor11Button->setFixedSize(40,35);
+	m_factor11Button->setFont(defaultFont);
+	taskLayout->addWidget( m_factor11Button, 5, 3 );
+	
+	m_factor13Button = new QPushButton( this );
+	m_factor13Button->setObjectName( "m_factor13Button" );
+	m_factor13Button->setFixedSize(40,35);
+	m_factor13Button->setFont(defaultFont);
+	taskLayout->addWidget( m_factor13Button, 5, 4 );
 
 	m_factor17Button = new QPushButton( this );
 	m_factor17Button->setObjectName( "m_factor17Button" );
-	layout1->addWidget( m_factor17Button, 1, 2 );
+	m_factor17Button->setFixedSize(40,35);
+	m_factor17Button->setFont(defaultFont);
+	taskLayout->addWidget( m_factor17Button, 5, 5 );
 
-	layout2->addLayout( layout1 );
+	m_factor19Button = new QPushButton( this );
+	m_factor19Button->setObjectName( "m_factor19Button" );
+	m_factor19Button->setFixedSize(40,35);
+	m_factor19Button->setFont(defaultFont);
+	taskLayout->addWidget( m_factor19Button, 5, 6 );
 
 	m_removeLastFactorButton = new QPushButton( this );
 	m_removeLastFactorButton->setObjectName( "m_removeLastFactorButton" );
-	layout2->addWidget( m_removeLastFactorButton );
-	layout9->addLayout( layout2 );
+	m_removeLastFactorButton->setFixedSize(80,35);
+	m_removeLastFactorButton->setText("");
+	m_removeLastFactorButton->setIcon(KIcon("kbruch_back_arrow"));//QIcon("/home/kdeedu/kde-dev/kdeedu/kbruch/src/pics/ox22-action-kbruch_back_arrow.png"));
+	m_removeLastFactorButton->setIconSize(QSize(37, 37));
+	taskLayout->addWidget( m_removeLastFactorButton, 3, 5, 1, 2 );
 
-	spacer4 = new QSpacerItem( 20, 21, QSizePolicy::Minimum, QSizePolicy::Expanding );
-	layout9->addItem( spacer4 );
+	defaultFont.setPointSize(10);
 
-	layout7 = new QHBoxLayout();
-	layout7->setObjectName( "layout7" );
-	layout7->setSpacing( 6 );
-	layout7->setMargin( 0 );
-	spacer3 = new QSpacerItem( 361, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
-	layout7->addItem( spacer3 );
+	m_skipButton = new QPushButton( this );
+	m_skipButton->setObjectName( "m_skipButton" );
+	m_skipButton->setText(i18n("&Skip"));
+	m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
+	m_skipButton->setFixedSize(74,30);
+	m_skipButton->setFont(defaultFont);		
+	QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
+	checkLayout->addWidget(m_skipButton, 1, 1);	
 
+	// the check task button
 	m_checkButton = new QPushButton( this );
 	m_checkButton->setObjectName( "m_checkButton" );
-	layout7->addWidget( m_checkButton );
-	layout9->addLayout( layout7 );
-	Form1Layout->addLayout( layout9 );
+	m_checkButton->setText( i18n( "&Check" ) );
+	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
+	m_checkButton->setFixedSize(74,30);
+	m_checkButton->setFont(defaultFont);		
+	checkLayout->addWidget(m_checkButton, 1, 0);			
+	m_checkButton->setDefault(true); // is the default button of the dialog
+
+	// next is the result widget
+	m_resultWidget = new ResultWidget( this,  m_factorsResult );
+	m_resultWidget->setObjectName("m_resultWidget");
+	checkLayout->addWidget(m_resultWidget, 0, 0, 1, 2);
 
 	// the current task
 	QString tmp_str;
@@ -183,17 +209,10 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	pal.setColor( m_taskLabel->foregroundRole(), SettingsClass::numberColor() );
 	m_taskLabel->setPalette( pal );
 
-	// the equal sign
-	m_equalSignLabel->setText("=");
-
 	// now set the color for the equal sign
 	pal = QPalette();
 	pal.setColor( m_equalSignLabel->foregroundRole(), SettingsClass::operationColor() );
 	m_equalSignLabel->setPalette( pal );
-
-	// the wrong/correct label, we hide it
-	//result_label->setText(i18n("WRONG")); // hidden, so no need to set the text (jpw)
-	result_label->hide();
 
 	// the prime factor buttons
 	m_factor2Button->setText( i18n( "2" ) );
@@ -224,28 +243,23 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_factor19Button->setToolTip(i18n("Add prime factor 19."));
 
 	// the remove last factor button
-	m_removeLastFactorButton->setText( i18n( "&Remove Last Factor" ) );
 	m_removeLastFactorButton->setEnabled(false);
 	QObject::connect(m_removeLastFactorButton, SIGNAL(clicked()), this, SLOT(slotRemoveLastFactorButtonClicked()));
 	m_removeLastFactorButton->setToolTip(i18n("Removes the last entered prime factor."));
+	
+	m_factor2Button->setFocusPolicy( Qt::NoFocus );
+	m_factor3Button->setFocusPolicy( Qt::NoFocus );
+	m_factor5Button->setFocusPolicy( Qt::NoFocus );
+	m_factor7Button->setFocusPolicy( Qt::NoFocus );
+	m_factor11Button->setFocusPolicy( Qt::NoFocus );
+	m_factor13Button->setFocusPolicy( Qt::NoFocus );
+	m_factor17Button->setFocusPolicy( Qt::NoFocus );
+	m_factor19Button->setFocusPolicy( Qt::NoFocus );	
+	m_removeLastFactorButton->setFocusPolicy( Qt::NoFocus );	
 
-	// the check task button
-	m_checkButton->setText( i18n( "&Check Task" ) );
-	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
-	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
-	m_checkButton->setDefault(true); // is the default button of the dialog
-
-	// that the user can start choosing the prime factors
-	m_factor2Button->setFocus();
-
-	// set the tab order
-	setTabOrder(m_factor2Button, m_factor3Button);
-	setTabOrder(m_factor3Button, m_factor5Button);
-	setTabOrder(m_factor5Button, m_factor7Button);
-	setTabOrder(m_factor7Button, m_factor11Button);
-	setTabOrder(m_factor13Button, m_factor17Button);
-	setTabOrder(m_factor17Button, m_factor19Button);
-	setTabOrder(m_factor19Button, m_removeLastFactorButton);
+	setLayout(baseGrid);
+	taskWidget->setLayout(taskLayout);
+  	checkWidget->setLayout(checkLayout);
 
 	// add tooltip and qwhatsthis help to the widget
 	setToolTip(i18n("In this exercise you have to factorize a given number."));
@@ -273,11 +287,11 @@ void ExerciseFactorize::forceNewTask()
 
 	if (m_currentState == _CHECK_TASK)
 	{
-		// emit the signal for wrong
-		signalExerciseSolvedWrong();
+		// emit the signal for skipped
+		signalExerciseSkipped();
 	}
 	m_currentState = _CHECK_TASK;
-	m_checkButton->setText(i18n("&Check Task"));
+	m_checkButton->setText(i18n("&Check"));
 
 	// generate next task
 	(void) nextTask();
@@ -299,7 +313,7 @@ void ExerciseFactorize::update()
 	m_equalSignLabel->setPalette( pal );
 
 	// and the factors
-	m_factorsWidget->updateAndRepaint();
+	m_resultWidget->update();
 
 	// update for itself
 	((QWidget *) this)->update();
@@ -346,7 +360,7 @@ void ExerciseFactorize::showResult()
 	uint uint_result = 0;
 
 	// change the tooltip of the check button
-	m_checkButton->setToolTip(i18n("Click on this button to get to the next task."));
+	m_checkButton->setToolTip(i18n("Click on this button to get to the next question."));
 
 	// disable prime factor buttons
 	m_factor2Button->setEnabled(false);
@@ -357,13 +371,13 @@ void ExerciseFactorize::showResult()
 	m_factor13Button->setEnabled(false);
 	m_factor17Button->setEnabled(false);
 	m_factor19Button->setEnabled(false);
+	m_skipButton->setEnabled(false);		
 
 	// disable factor removal button as well
 	m_removeLastFactorButton->setEnabled(false);
 
 	// show the result
-	m_factorsWidget->setFactors(m_factorsResult);
-	m_factorsWidget->show();
+	m_resultWidget->setFactors(m_factorsResult);
 
 	// now calculate the product of the prime factors entered by the user
 	for (int tmp_uint = 0; tmp_uint < m_factorsEntered.count(); tmp_uint++)
@@ -382,25 +396,14 @@ void ExerciseFactorize::showResult()
 		signalExerciseSolvedCorrect();
 
 		/* yes, the user entered the correct result */
-		result_label->setText(i18nc("@info:status the answer given was correct", "CORRECT"));
-		pal = result_label->palette(); /* set green font color */
-        pal.setColor(QPalette::Active, QPalette::Foreground, QColor(6, 179, 0));
-        pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(6, 179, 0));
-		result_label->setPalette(pal);
+		m_resultWidget->setResult( ratio(), 1 );
 	} else {
 		// emit the signal for wrong
 		signalExerciseSolvedWrong();
 
 		/* no, the user entered the wrong result */
-		result_label->setText(i18nc("@info:status the answer given was incorrect", "WRONG"));
-		pal = result_label->palette(); /* set red font color */
-        pal.setColor(QPalette::Active, QPalette::Foreground, QColor(Qt::red));
-        pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(Qt::red));
-		result_label->setPalette(pal);
-
+		m_resultWidget->setResult( ratio(), 0 );
 	} /* if (entered_result == result) */
-
-	result_label->show(); /* show the result at the end of the task */
 
 	return;
 }
@@ -420,12 +423,12 @@ void ExerciseFactorize::nextTask()
 	m_factor13Button->setEnabled(true);
 	m_factor17Button->setEnabled(true);
 	m_factor19Button->setEnabled(true);
+	m_skipButton->setEnabled(true);	
 
 	// disable the factor removal button, there are no factors to be removed yet
 	m_removeLastFactorButton->setEnabled(false);
 
-	result_label->hide(); /* do not show the result at the end of the task */
-	m_factorsWidget->hide();
+	m_resultWidget->setResult( ratio(), -1 );
 
 	/* clear user input */
 	m_factorsEntered.clear();
@@ -501,14 +504,23 @@ void ExerciseFactorize::slotCheckButtonClicked()
 		if (m_factorsEntered.count() == 0)
 			return;
 		m_currentState = _NEXT_TASK;
-		m_checkButton->setText(i18n("N&ext Task"));
+		m_checkButton->setText(i18n("N&ext"));
 		(void) showResult();
 	} else {
 		m_currentState = _CHECK_TASK;
-		m_checkButton->setText(i18n("&Check Task"));
+		m_checkButton->setText(i18n("&Check"));
 		(void) nextTask();
 	}
 
+	// update the line edit
+	updateEnteredEdit();
+
+	return;
+}
+
+void ExerciseFactorize::slotSkipButtonClicked()
+{
+	forceNewTask();
 	// update the line edit
 	updateEnteredEdit();
 
@@ -592,3 +604,79 @@ void ExerciseFactorize::slotRemoveLastFactorButtonClicked()
 
 	return;
 }
+
+/* ------ protected events ------ */
+void ExerciseFactorize::keyPressEvent(QKeyEvent * e)
+{
+	switch (e->key())
+	{
+		case Qt::Key_1:
+			if (m_buffer != 1)
+			{
+				m_buffer = 1;
+			}
+			else
+			{
+				m_buffer = 0;
+				addFactor(11);
+			}
+			break;
+
+		case Qt::Key_2:
+			m_buffer = 0;
+			addFactor(2);
+			break;
+
+		case Qt::Key_3:
+			if (m_buffer != 1)
+			{
+				addFactor(3);
+			}
+			else
+			{
+				addFactor(13);
+			}
+			m_buffer = 0;
+			break;
+
+		case Qt::Key_5:
+			m_buffer = 0;
+			addFactor(5);
+			break;
+
+		case Qt::Key_7:
+			if (m_buffer == 1)
+			{
+				addFactor(17);
+			}
+			else
+			{
+				addFactor(7);
+			}
+			m_buffer = 0;
+			break;
+
+		case Qt::Key_9:
+			if (m_buffer == 1)
+			{
+				addFactor(19);
+			}
+			m_buffer = 0;
+			break;
+
+		case Qt::Key_Return:
+			m_buffer = 0;
+			slotCheckButtonClicked();
+			break;
+
+		case Qt::Key_Backspace:
+			m_buffer = 0;
+			slotRemoveLastFactorButtonClicked();
+			break;
+
+		default:
+			m_buffer = 0;
+			break;
+	}
+}
+

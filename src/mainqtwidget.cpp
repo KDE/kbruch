@@ -29,22 +29,29 @@
 #include <kpagewidgetmodel.h>
 #include <kicon.h>
 #include <kapplication.h>
-
+#include <kstandarddirs.h>
+  
+#include <qlayout.h>
 #include <qsplitter.h>
 #include <qlabel.h>
-
+#include <qcheckbox.h>
 #include <qwidget.h>
-
+#include <qframe.h>
+#include <QToolButton>
+#include <QPushButton>
+ 
 #include <math.h>
 
 #include "exercisecompare.h"
 #include "exerciseconvert.h"
 #include "exercisefactorize.h"
+#include "exercisepercentage.h"
 #include "taskview.h"
 #include "ui_taskgeneralbase.h"
 #include "ui_taskcolorsbase.h"
 #include "ui_taskfontsbase.h"
 #include "statisticsview.h"
+#include "AppMenuWidget.h"
 
 #include "settingsclass.h"
 #include <kpageview.h>
@@ -92,182 +99,182 @@ MainQtWidget::MainQtWidget()
 
 	createGUI(0L);
 
-	// we split the main view into 2 parts, one for the tasks, one for the
-	// statistics
+	
+	QGridLayout * layoutExercises = new QGridLayout();
+	layoutExercises->setObjectName( "layoutExercises" );
+	layoutExercises->setRowStretch(2, 1);
+	QGridLayout * layoutOptions = new QGridLayout();
+	layoutOptions->setObjectName( "layoutOptions" );
+	layoutOptions->setRowStretch(0, 1);
+	layoutOptions->setRowStretch(6, 1);
+	QGridLayout * layoutQuestion = new QGridLayout();
+	layoutQuestion->setObjectName( "layoutQuestion" );
+	layoutQuestion->setColumnMinimumWidth(0, 110);
+	layoutQuestion->setColumnStretch(1, 1);
+	QGridLayout * layoutAnswer = new QGridLayout();
+	layoutAnswer->setObjectName( "layoutAnswer" );
+	layoutAnswer->setColumnMinimumWidth(0, 110);
+	layoutAnswer->setColumnStretch(1, 1);
+	QGridLayout * layoutOperations = new QGridLayout();
+	layoutOperations->setObjectName( "layoutOperations" );
+	layoutOperations->setColumnMinimumWidth(0, 110);
+	layoutOperations->setColumnStretch(1, 1);
+	QGridLayout * layoutSolution = new QGridLayout();
+	layoutSolution->setObjectName( "layoutSolution" );
+	layoutSolution->setColumnMinimumWidth(0, 110);
+	layoutSolution->setColumnStretch(1, 1);
+
 	QSplitter* splitter = new QSplitter(Qt::Horizontal, this);
 	splitter->setObjectName("QSplitter");
 	setCentralWidget(splitter);
 
-	// the iconlist, where the user can choose the different exercises
-	m_exercises = new KPageWidget;
-	m_exercises->setFaceType(KPageWidget::List);
-	m_exercises->setToolTip(i18n("Choose another exercise by clicking on an icon."));
-	m_exercises->setWhatsThis( i18n("Click on the different icons to choose another exercise. The exercises help you to practice different aspects of calculating with fractions."));
+	QWidget * pageExercises = new QWidget();
+	QWidget * pageOptions = new QWidget();
+	pageOptions->setFixedWidth(185);
 
-	// create the statistic view
+	m_QuestionGroup = new QGroupBox(i18n("Question:"), pageOptions);
+	m_AnswerGroup = new QGroupBox(i18n("Answer:"), pageOptions);
+	m_SolutionGroup = new QGroupBox(i18n("Solution:"), pageOptions);
+	m_OperationsGroup = new QGroupBox(i18n("Operations:"), pageOptions);
+
+	m_TitleLabel = new QLabel("Arithmatic", pageExercises);
+	m_TitleLabel->setAlignment(Qt::AlignLeft);
+	defaultFont = SettingsClass::getDefaultFont();
+	defaultFont.setBold( TRUE );
+	defaultFont.setPointSize(defaultFont.pointSize()+2);
+	m_TitleLabel->setFont(defaultFont);
+	m_TitleLabel->setFixedHeight(35);
+	m_TitleLabel->setAlignment(Qt::AlignVCenter);
+
 	m_statview = new StatisticsView;
 	m_statview->setObjectName("StatisticsView");
+	m_statview->setFixedHeight(120);
 
-	// add the pages
-	//
-	// we have the exercise to solve fraction tasks
-	KVBox * page = new KVBox();
-	pageItemFraction = new KPageWidgetItem( page, i18n("Fraction Task") );
-	pageItemFraction->setIcon( KIcon("kbruch_exercise_common"));
-	m_exercises->addPage(pageItemFraction);
+	m_footerline = new QFrame(pageExercises);
+	m_footerline->setGeometry(QRect(pageExercises->width(), 100, 20, 20));
+	m_footerline->setFrameStyle(QFrame::HLine | QFrame::Sunken);
 
-	m_taskview = new TaskView((QWidget *) page, m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
+	m_headerline = new QFrame(pageExercises);
+	m_headerline->setGeometry(QRect(pageExercises->width(), 100, 20, 20));
+	m_headerline->setFrameStyle(QFrame::HLine | QFrame::Sunken);
+
+	m_taskview = new TaskView(pageExercises, m_addAdd, m_addDiv, m_addMult, m_addSub, m_nrRatios, m_maxMainDenominator);
 	m_taskview->setObjectName("TaskView");
+	m_taskview->hide();
 
-	// we have the exercise to compare ratios
-    page = new KVBox();
-    pageItemComparison = new KPageWidgetItem( page, i18n("Comparison") );
-    pageItemComparison->setIcon( KIcon("kbruch_exercise_compare"));
-    m_exercises->addPage(pageItemComparison);
-
-	m_exerciseCompare = new ExerciseCompare((QWidget *) page);
+	m_exerciseCompare = new ExerciseCompare(pageExercises);
 	m_exerciseCompare->setObjectName("ExerciseCompare");
+	m_exerciseCompare->hide();
 
-	// we have the exercise to convert rational numbers into ratios
-    page = new KVBox();
-    pageItemConversion = new KPageWidgetItem( page, i18n("Conversion") );
-    pageItemConversion->setIcon( KIcon("kbruch_exercise_conversion"));
-    m_exercises->addPage(pageItemConversion);
-
-	m_exerciseConvert = new ExerciseConvert((QWidget *) page);
+	m_exerciseConvert = new ExerciseConvert(pageExercises);
 	m_exerciseConvert->setObjectName("ExerciseConvert");
+	m_exerciseConvert->hide();
 
-	// we have the exercise to factorize a given number into prime factors
-    page = new KVBox();
-    pageItemFactorization = new KPageWidgetItem( page, i18n("Factorization") );
-    pageItemFactorization->setIcon( KIcon("kbruch_exercise_factorisation"));
-    m_exercises->addPage(pageItemFactorization );
-
-	m_exerciseFactorize = new ExerciseFactorize((QWidget *) page);
+	m_exerciseFactorize = new ExerciseFactorize(pageExercises);
 	m_exerciseFactorize->setObjectName("ExerciseFactorize");
+	m_exerciseFactorize->hide();
+
+	m_exercisePercentage = new ExercisePercentage(pageExercises);
+	m_exercisePercentage->setObjectName("ExercisePercentage");
+	m_exercisePercentage->hide();
+
+	m_OptionsLabel = new QLabel("Options:", pageOptions);
+	m_OptionsLabel->setObjectName("OptionsLabel");
+	m_OptionsLabel->setFont(defaultFont);
+
+	m_QuestionMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
+	m_QuestionMixedLabel->setObjectName("QuestionMixedLabel");
+	m_QuestionMixedLabel->setAlignment(Qt::AlignRight);
 	
-	splitter->addWidget(m_exercises);
-	splitter->addWidget(m_statview);
+	m_QuestionMixedCheck = new QCheckBox(pageOptions);
+	m_QuestionMixedCheck->setObjectName("QuestionMixedCheck");
+	m_QuestionMixedCheck->setChecked(m_questionMixed);
+	QObject::connect(m_QuestionMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(QuestionMixedCheckSlot()));
 
-	// we must change the status of the menubar before another page is shown
-	QObject::connect(m_exercises, SIGNAL(currentPageChanged( KPageWidgetItem *, KPageWidgetItem * )), this, SLOT(slotAboutToShowPage(KPageWidgetItem *)));
-
-	// connect signals of the exercises and StatisticView, so that StatisticView
-	// gets informed about how the user solved a given task (wrong or correct)
-	QObject::connect(m_taskview, SIGNAL(signalTaskSolvedCorrect()), m_statview, SLOT(addCorrect()));
-	QObject::connect(m_taskview, SIGNAL(signalTaskSolvedWrong()), m_statview, SLOT(addWrong()));
-	QObject::connect(m_exerciseCompare, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
-	QObject::connect(m_exerciseCompare, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
-	QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
-	QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
-	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
-	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
+	m_AnswerMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
+	m_AnswerMixedLabel->setObjectName("AnswerMixedLabel");
+	m_AnswerMixedLabel->setAlignment(Qt::AlignRight);
 	
-	pageItems[0] = pageItemFraction;
-	pageItems[1] = pageItemComparison;
-	pageItems[2] = pageItemConversion;
-	pageItems[3] = pageItemFactorization;
+	m_AnswerMixedCheck = new QCheckBox(pageOptions);
+	m_AnswerMixedCheck->setObjectName("AnswerMixedCheck");
+	m_AnswerMixedCheck->setChecked(m_answerMixed);
+	QObject::connect(m_AnswerMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(AnswerMixedCheckSlot()));
+
+	m_SolutionMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
+	m_SolutionMixedLabel->setObjectName("SolutionMixedLabel");
+	m_SolutionMixedLabel->setAlignment(Qt::AlignRight);
 	
-	// now show the last exercise
-	KPageWidgetItem * currentPage = pageItems[SettingsClass::activeExercise()];
-	m_exercises->setCurrentPage( currentPage );
-	slotAboutToShowPage( currentPage );
-}
+	m_SolutionMixedCheck = new QCheckBox(pageOptions);
+	m_SolutionMixedCheck->setObjectName("SolutionMixedCheck");
+	m_SolutionMixedCheck->setChecked(m_solutionMixed);
+	QObject::connect(m_SolutionMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(SolutionMixedCheckSlot()));
 
-MainQtWidget::~MainQtWidget()
-{
-}
+	m_AdditionLabel = new QLabel(i18n("Addtion:"), pageOptions);
+	m_AdditionLabel->setObjectName("AdditionLabel");
+	m_AdditionLabel->setAlignment(Qt::AlignRight);	
 
+	m_AdditionCheck = new QCheckBox(pageOptions);
+	m_AdditionCheck->setObjectName("AdditionCheck");
+	m_AdditionCheck->setChecked(m_addAdd);
+	QObject::connect(m_AdditionCheck, SIGNAL(stateChanged(int)), this, SLOT(AdditionCheckSlot()));
 
-/* ------ private member functions ------ */
+	m_SubtractionLabel = new QLabel(i18n("Subtraction:"), pageOptions);
+	m_SubtractionLabel->setObjectName("SubtractionLabel");
+	m_SubtractionLabel->setAlignment(Qt::AlignRight);		
 
-void MainQtWidget::readOptions()
-{
-	m_addSub = SettingsClass::addsub();
-	m_mulDiv = SettingsClass::muldiv();
-	m_nrRatios = SettingsClass::number_ratios();
-	m_maxMainDenominator = SettingsClass::max_main_denominator();
+	m_SubtractionCheck = new QCheckBox(pageOptions);
+	m_SubtractionCheck->setObjectName("SubtractionCheck");
+	m_SubtractionCheck->setChecked(m_addSub);
+	QObject::connect(m_SubtractionCheck, SIGNAL(stateChanged(int)), this, SLOT(SubtractionCheckSlot()));
 
-	/* make sure that we can load config files with corrupted values */
-	if (m_mulDiv == true && pow(2.0, (double)m_nrRatios) > m_maxMainDenominator)
-	{
-		m_nrRatios = 2;
-		m_maxMainDenominator = 10;
-	}
-}
+	m_MultiplicationLabel = new QLabel(i18n("Multiplication:"), pageOptions);
+	m_MultiplicationLabel->setObjectName("MultiplicationLabel");
+	m_MultiplicationLabel->setAlignment(Qt::AlignRight);			
 
-void MainQtWidget::writeOptions()
-{
-	// Get current index
-	int index;
-	for ( index=0; index<4; ++index )
-	{
-		if ( pageItems[index] == m_exercises->currentPage() )
-			break;
-	}
-	SettingsClass::setActiveExercise( index );
-	
-	// save settings for exercise solve task with fractions
-	SettingsClass::setAddsub(m_addSub);
-	SettingsClass::setMuldiv(m_mulDiv);
-	SettingsClass::setNumber_ratios(m_nrRatios);
-	SettingsClass::setMax_main_denominator(m_maxMainDenominator);
+	m_MultiplicationCheck = new QCheckBox(pageOptions);
+	m_MultiplicationCheck->setObjectName("MultiplicationCheck");
+	m_MultiplicationCheck->setChecked(m_addMult);
+	QObject::connect(m_MultiplicationCheck, SIGNAL(stateChanged(int)), this, SLOT(MultiplicationCheckSlot()));
 
-	SettingsClass::self()->writeConfig();
-}
+	m_DivisionLabel = new QLabel(i18n("Division:"), pageOptions);
+	m_DivisionLabel->setObjectName("DivisionLabel");
+	m_DivisionLabel->setAlignment(Qt::AlignRight);	
 
-void MainQtWidget::setupActions()
-{
-	// new task action
-    m_NewTaskAction  = new KAction(KIcon("document-new"), i18nc("@action opens a new task", "&New"), this);
-    actionCollection()->addAction("NewTask", m_NewTaskAction );
-	connect(m_NewTaskAction, SIGNAL(triggered(bool) ), SLOT(NewTask()));
-	m_NewTaskAction->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));
+	m_DivisionCheck = new QCheckBox(pageOptions);
+	m_DivisionCheck->setObjectName("DivisionCheck");
+	m_DivisionCheck->setChecked(m_addDiv);
+	QObject::connect(m_DivisionCheck, SIGNAL(stateChanged(int)), this, SLOT(DivisionCheckSlot()));
 
-	// quit action
-	KStandardAction::quit(kapp, SLOT(quit()), actionCollection());
+	m_ReducedLabel = new QLabel(i18n("Reduced form:"), pageOptions);
+	m_ReducedLabel->setObjectName("ReducedLabel");
+	m_ReducedLabel->setAlignment(Qt::AlignRight);		
 
-	//
-	KStandardAction::preferences(this,  SLOT( slotPrefs() ), actionCollection());
+	m_ReducedCheck = new QCheckBox(pageOptions);
+	m_ReducedCheck->setObjectName("ReducedCheck");
+	m_ReducedCheck->setChecked(m_reducedForm);
+	m_taskview->forceReduce(m_reducedForm);
+	QObject::connect(m_ReducedCheck, SIGNAL(stateChanged(int)), this, SLOT(ReducedFormCheckSlot()));
 
-	// a label just describing the Number of terms ComboBox
-	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0);
-	m_NrOfTermsLabel->setObjectName("kde toolbar widget");
-    m_NrOfTermsLabelAction  = new KAction(i18n("Terms:"), this);
-    actionCollection()->addAction("NrOfTermsLabelAction", m_NrOfTermsLabelAction );
-	connect(m_NrOfTermsLabelAction, SIGNAL(triggered(bool)), SLOT(NrOfTermsBoxSlot()));
-	m_NrOfTermsLabelAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_E));
-        m_NrOfTermsLabelAction->setDefaultWidget( m_NrOfTermsLabel );
+	m_NrOfTermsLabel = new QLabel(i18n("Number of terms:"), pageOptions);
+	m_NrOfTermsLabel->setObjectName("NrOfTermsLabel");
+	m_NrOfTermsLabel->setAlignment(Qt::AlignRight);
 
-	// the ComboBox holding possible values for term number
-	m_NrOfTermsBox = new KComboBox();
+	m_NrOfTermsBox = new KComboBox(pageOptions);
 	m_NrOfTermsBox->addItem("2");
 	m_NrOfTermsBox->addItem("3");
 	m_NrOfTermsBox->addItem("4");
 	m_NrOfTermsBox->addItem("5");
 	m_NrOfTermsBox->setCurrentIndex(m_nrRatios - 2);
-	m_NrOfTermsBox->setToolTip( i18n( "The number of terms you want" ) );
-	m_NrOfTermsBox->setWhatsThis( i18n( "Choose the number of terms (2, 3, 4 or 5) you want for calculating fractions." ) );
-    m_NrOfTermsBoxAction  = new KAction(i18n("Number of Terms"), this);
-    actionCollection()->addAction("NrOfTermsBoxAction", m_NrOfTermsBoxAction );
-	connect(m_NrOfTermsBoxAction, SIGNAL(triggered(bool)), SLOT(NrOfTermsBoxSlot()));
-	m_NrOfTermsBoxAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_E));
-        m_NrOfTermsBoxAction->setDefaultWidget( m_NrOfTermsBox );
-
-	// now connect the ComboBox's signal textChanged() to the slot function
+	m_NrOfTermsBox->setToolTip( i18n( "The number of \nterms you want" ) );
+	m_NrOfTermsBox->setWhatsThis( i18n( "Choose the number of terms (2, 3, 4 or 5) you \nwant for calculating fractions." ) );
 	QObject::connect(m_NrOfTermsBox, SIGNAL(activated(int)), this, SLOT(NrOfTermsBoxSlot()));
 
-	// a label just describing the max. main denominator ComboBox
-	m_MaxMainDenominatorLabel = new QLabel(i18n("Max. main denominator:"), 0);
-	m_MaxMainDenominatorLabel->setObjectName("kde toolbar widget");
-    m_MaxMainDenominatorLabelAction  = new KAction(i18n("Max. main denominator:"), this);
-    actionCollection()->addAction("MaxMainDenominatorLabelAction", m_MaxMainDenominatorLabelAction );
-	connect(m_MaxMainDenominatorLabelAction, SIGNAL(triggered(bool)), SLOT(MaxMainDenominatorBoxSlot()));
-	m_MaxMainDenominatorLabelAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_D));
-        m_MaxMainDenominatorLabelAction->setDefaultWidget( m_MaxMainDenominatorLabel );
+	m_MaxMainDenominatorLabel = new QLabel(i18n("Maximum denominator:"), pageOptions);
+	m_MaxMainDenominatorLabel->setObjectName("MaxMainDenominatorLabel");
+	m_MaxMainDenominatorLabel->setAlignment(Qt::AlignRight);
+	m_MaxMainDenominatorLabel->setWordWrap( TRUE );
 
-	// the ComboBox holding possible values for the max. main denominator
-	m_MaxMainDenominatorBox = new KComboBox(this);
+	m_MaxMainDenominatorBox = new KComboBox(pageOptions);
 	m_MaxMainDenominatorBox->addItem("10");
 	m_MaxMainDenominatorBox->addItem("20");
 	m_MaxMainDenominatorBox->addItem("30");
@@ -285,51 +292,196 @@ void MainQtWidget::setupActions()
 		case 50 : m_MaxMainDenominatorBox->setCurrentIndex(3);
 					 break;
 	}
-    m_MaxMainDenominatorBoxAction  = new KAction(i18n("Maximal Main Denominator"), this);
-    actionCollection()->addAction("MaxMainDenominatorBoxAction", m_MaxMainDenominatorBoxAction );
-	connect(m_MaxMainDenominatorBoxAction, SIGNAL(triggered(bool)), SLOT(MaxMainDenominatorBoxSlot()));
-	m_MaxMainDenominatorBoxAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_D));
-        m_MaxMainDenominatorBoxAction->setDefaultWidget( m_MaxMainDenominatorBox );
+	QObject::connect(m_MaxMainDenominatorBox, SIGNAL(activated(int)), this, SLOT(MaxMainDenominatorBoxSlot()));
 
-	// now connect the ComboBox's signal textChanged() to the slot function
-	QObject::connect(m_MaxMainDenominatorBox, SIGNAL(activated(int)),
-			 this, SLOT(MaxMainDenominatorBoxSlot()));
+	
+	layoutExercises->addWidget(m_TitleLabel, 0, 0);
+	layoutExercises->addWidget(m_headerline, 1, 0);
+	layoutExercises->addWidget(m_taskview, 2, 0);
+	layoutExercises->addWidget(m_exerciseCompare, 2, 0);
+	layoutExercises->addWidget(m_exerciseConvert, 2, 0);
+	layoutExercises->addWidget(m_exerciseFactorize, 2, 0);
+	layoutExercises->addWidget(m_exercisePercentage, 2, 0);	
+	layoutExercises->addWidget(m_footerline, 3, 0);
+	layoutExercises->addWidget(m_statview, 4, 0);
 
-	// a label just describing the operation ComboBox
-	m_OperationLabel = new QLabel(i18n("Operations:"), 0);
-	m_OperationLabel->setObjectName("kde toolbar widget");
-    m_OperationLabelAction  = new KAction(i18n("Operations:"), this);
-    actionCollection()->addAction("OperationLabelAction", m_OperationLabelAction );
-	connect(m_OperationLabelAction, SIGNAL(triggered(bool)), SLOT(OperationBoxSlot()));
-	m_OperationLabelAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_O));
-        m_OperationLabelAction->setDefaultWidget( m_OperationLabel );
+	layoutOptions->addWidget(m_OptionsLabel, 1, 0);
+	layoutOptions->addWidget(m_QuestionGroup, 2, 0);
+    	layoutOptions->addWidget(m_AnswerGroup, 3, 0);
+    	layoutOptions->addWidget(m_SolutionGroup, 4, 0);
+    	layoutOptions->addWidget(m_OperationsGroup, 5, 0);
 
-	// the ComboBox holding possible combinations for operations
-	m_OperationBox = new KComboBox(this);
-	m_OperationBox->addItem(i18n("Addition/Subtraction"));
-	m_OperationBox->addItem(i18n("Multiplication/Division"));
-	m_OperationBox->addItem(i18n("All Operations Mixed"));
-	if (m_addSub == true && m_mulDiv == false)
+	layoutQuestion->addWidget(m_QuestionMixedLabel,0,0);
+	layoutQuestion->addWidget(m_QuestionMixedCheck,0,1);
+	layoutQuestion->addWidget(m_NrOfTermsLabel,1,0);
+	layoutQuestion->addWidget(m_NrOfTermsBox,1,1);
+	layoutQuestion->addWidget(m_MaxMainDenominatorLabel,2,0);
+	layoutQuestion->addWidget(m_MaxMainDenominatorBox,2,1);
+	
+	layoutAnswer->addWidget(m_AnswerMixedLabel,0,0);
+	layoutAnswer->addWidget(m_AnswerMixedCheck,0,1);
+	layoutAnswer->addWidget(m_ReducedLabel,1,0);
+	layoutAnswer->addWidget(m_ReducedCheck,1,1);
+
+	layoutSolution->addWidget(m_SolutionMixedLabel,0,0);
+	layoutSolution->addWidget(m_SolutionMixedCheck,0,1);
+
+	layoutOperations->addWidget(m_AdditionLabel,0,0);
+	layoutOperations->addWidget(m_AdditionCheck,0,1);
+	layoutOperations->addWidget(m_SubtractionLabel,1,0);
+	layoutOperations->addWidget(m_SubtractionCheck,1,1);
+	layoutOperations->addWidget(m_MultiplicationLabel,2,0);
+	layoutOperations->addWidget(m_MultiplicationCheck,2,1);
+	layoutOperations->addWidget(m_DivisionLabel,3,0);
+	layoutOperations->addWidget(m_DivisionCheck,3,1);
+
+	m_QuestionGroup->setLayout(layoutQuestion);
+	m_AnswerGroup->setLayout(layoutAnswer);
+	m_SolutionGroup->setLayout(layoutSolution);
+	m_OperationsGroup->setLayout(layoutOperations);
+  	pageOptions->setLayout(layoutOptions);
+  	pageExercises->setLayout(layoutExercises);
+
+	splitter->addWidget(pageOptions);
+	splitter->addWidget(pageExercises);
+
+	// connect signals of the exercises and StatisticView, so that StatisticView
+	// gets informed about how the user solved a given task (wrong or correct)
+	QObject::connect(m_taskview, SIGNAL(signalTaskSolvedCorrect()), m_statview, SLOT(addCorrect()));
+	QObject::connect(m_taskview, SIGNAL(signalTaskSkipped()), m_statview, SLOT(addSkipped()));
+	QObject::connect(m_taskview, SIGNAL(signalTaskSolvedWrong()), m_statview, SLOT(addWrong()));
+	QObject::connect(m_exerciseCompare, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
+	QObject::connect(m_exerciseCompare, SIGNAL(signalExerciseSkipped()), m_statview, SLOT(addSkipped()));
+	QObject::connect(m_exerciseCompare, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
+	QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
+	QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSkipped()), m_statview, SLOT(addSkipped()));
+	QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
+	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
+	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSkipped()), m_statview, SLOT(addSkipped()));
+	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
+	QObject::connect(m_exercisePercentage, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
+	QObject::connect(m_exercisePercentage, SIGNAL(signalExerciseSkipped()), m_statview, SLOT(addSkipped()));
+	QObject::connect(m_exercisePercentage, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
+	
+	// Get and set the page of last exercise
+	selectedTask = (ExerciseType)SettingsClass::activeExercise();
+	switch (selectedTask)
 	{
-		m_OperationBox->setCurrentIndex(0);
-	} else if (m_addSub == false && m_mulDiv == true) {
-		m_OperationBox->setCurrentIndex(1);
-	} else if (m_addSub == true && m_mulDiv == true) {
-		m_OperationBox->setCurrentIndex(2);
-	}
-	m_OperationBox->setToolTip( i18n( "The operations you want" ) );
-	m_OperationBox->setWhatsThis( i18n( "Choose the type of operations you want for calculating fractions: Addition/Substraction, Multiplication/Division or All Operations Mixed. If you choose All Operations Mixed, the program will randomly choose addition, substraction, multiplication and/or division." ) );
-    m_OperationBoxAction  = new KAction(i18n("Operations:"), this);
-    actionCollection()->addAction("OperationBoxAction", m_OperationBoxAction );
-	connect(m_OperationBoxAction, SIGNAL(triggered(bool)), SLOT(OperationBoxSlot()));
-	m_OperationBoxAction->setShortcut(QKeySequence(Qt::ALT+Qt::Key_O));
-        m_OperationBoxAction->setDefaultWidget( m_OperationBox );
+		case Arithmatics:
+			SelectArithmatics();
+			break;
+		case Comparison:
+			SelectComparison();
+			break;
+		case Conversion:
+			SelectConversion();
+			break;
+		case Factorization:
+			SelectFactorization();
+			break;
+		case Percentage:
+			SelectPercentage();
+			break;			
+		default:
+			SelectArithmatics();
+			break;
+	}	
+	move(50, 50);	
+}
 
-	// now connect the ComboBox's signal textChanged() to the slot function
-	QObject::connect(m_OperationBox, SIGNAL(activated(int)), this, SLOT(OperationBoxSlot()));
+MainQtWidget::~MainQtWidget()
+{
+}
+
+/* ------ private member functions ------ */
+
+void MainQtWidget::readOptions()
+{
+#ifdef DEBUG
+	kDebug() << "readOptions MainQtWidget";
+#endif
+
+	m_addSub = SettingsClass::addsub();
+	m_addAdd = SettingsClass::addadd();
+	m_addDiv = SettingsClass::adddiv();
+	m_addMult = SettingsClass::addmult();	
+	
+	m_nrRatios = SettingsClass::number_ratios();
+	m_maxMainDenominator = SettingsClass::max_main_denominator();
+	m_reducedForm = SettingsClass::isForceReduce();
+
+	/* make sure that we can load config files with corrupted values */
+	if ((m_addMult == true && m_addDiv == true) && pow(2.0, (double)m_nrRatios) > m_maxMainDenominator)
+	{
+		m_nrRatios = 2;
+		m_maxMainDenominator = 10;
+	}
+}
+
+void MainQtWidget::writeOptions()
+{
+	SettingsClass::setActiveExercise( selectedTask );
+	
+	// save settings for exercise solve task with fractions
+	SettingsClass::setAddsub(m_addSub);
+	SettingsClass::setAddadd(m_addAdd);
+	SettingsClass::setAdddiv(m_addDiv);
+	SettingsClass::setAddmult(m_addMult);		
+	SettingsClass::setNumber_ratios(m_nrRatios);
+	SettingsClass::setMax_main_denominator(m_maxMainDenominator);
+	SettingsClass::setForceReduce(m_reducedForm);
+	SettingsClass::self()->writeConfig();	
+}
+
+void MainQtWidget::setupActions()
+{
+#ifdef DEBUG
+	kDebug() << "setupActions MainQtWidget";
+#endif
+
+    	m_NewTaskAction  = new KAction(KIcon("document-new"), i18nc("@action opens a new question", "&New"), this);
+    	actionCollection()->addAction("NewTask", m_NewTaskAction );
+	connect(m_NewTaskAction, SIGNAL(triggered(bool) ), SLOT(NewTask()));
+	m_NewTaskAction->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));
+        
+	// back action
+    	m_BackAction  = new KAction(KIcon("document-new"), i18nc("@action go to the main screen", "Back"), this);
+    	actionCollection()->addAction("Back", m_BackAction );
+	connect(m_BackAction, SIGNAL(triggered(bool) ), SLOT(GoBack()));
+
+	// hint action (hide it as it dont exist here)
+    	m_HintAction  = new KAction(KIcon("document-new"), i18nc("@action opens hint", "Hint"), this);
+    	actionCollection()->addAction("Hint", m_HintAction );
+	m_HintAction->setVisible(false);        
+        
+	m_ArithmaticsAction  = new KAction(KIcon("kbruch_exercise_common"), i18nc("Arithmatics Exercise", "Arithmatic"), this);
+    	actionCollection()->addAction("Arithmatic", m_ArithmaticsAction );
+	connect(m_ArithmaticsAction, SIGNAL(triggered(bool) ), SLOT(SelectArithmatics()));
+              
+	m_ComparisonAction  = new KAction(KIcon("kbruch_exercise_compare"), i18nc("Comparision Exercise", "Comparision"), this);
+    	actionCollection()->addAction("Comparision", m_ComparisonAction );
+	connect(m_ComparisonAction, SIGNAL(triggered(bool) ), SLOT(SelectComparison()));
+
+	m_ConversionAction  = new KAction(KIcon("kbruch_exercise_conversion"), i18nc("Conversion Exercise", "Conversion"), this);
+    	actionCollection()->addAction("Conversion", m_ConversionAction );
+	connect(m_ConversionAction, SIGNAL(triggered(bool) ), SLOT(SelectConversion()));
+
+	m_FactorizationAction  = new KAction(KIcon("kbruch_exercise_factorization"), i18nc("Factorization Exercise", "Factorization"), this);
+    	actionCollection()->addAction("Factorization", m_FactorizationAction );
+	connect(m_FactorizationAction, SIGNAL(triggered(bool) ), SLOT(SelectFactorization()));
+
+	m_PercentageAction  = new KAction(KIcon("kbruch_exercise_conversion"), i18nc("Percentage Exercise", "Percentage"), this);
+    	actionCollection()->addAction("Percentage", m_PercentageAction );
+	connect(m_PercentageAction, SIGNAL(triggered(bool) ), SLOT(SelectPercentage()));
+
+	// quit action
+	KStandardAction::quit(kapp, SLOT(quit()), actionCollection());
+
+	KStandardAction::preferences(this,  SLOT( slotPrefs() ), actionCollection());
 
 	if (!initialGeometrySet())
-		resize( QSize(725, 330).expandedTo(minimumSizeHint()));
+		resize( QSize(742, 520).expandedTo(minimumSizeHint()));
+
 	setupGUI(ToolBar | Keys | StatusBar | Create);
 	setAutoSaveSettings();
 }
@@ -341,57 +493,27 @@ void MainQtWidget::NewTask()
 {
 #ifdef DEBUG
 	kDebug() << "NewTask MainQtWidget";
-	//kDebug() << "pageIndex(m_taskview): " << m_exercises->pageIndex(m_taskview);
-	//kDebug() << "pageIndex(m_exerciseCompare): " << m_exercises->pageIndex(m_exerciseCompare);
-	//kDebug() << "pageIndex(m_exerciseConvert): " << m_exercises->pageIndex(m_exerciseConvert);
 #endif
-
 	// check which page should generate a new task
-        KPageWidgetItem*currentItem = m_exercises->currentPage();
-        if ( currentItem==pageItemFraction )
-        {
-            m_taskview->forceNewTask();
-        }
-        else if( currentItem==pageItemComparison )
-        {
-            m_exerciseCompare->forceNewTask();
-        }
-        else if ( currentItem==pageItemConversion )
-        {
-            m_exerciseConvert->forceNewTask();
-        }
-        else if ( currentItem == pageItemFactorization )
-        {
-            m_exerciseFactorize->forceNewTask();
-        }
-
-
-/* this doesn't seem to work, because pageIndex always returns 0
-
-	if (m_exercises->activePageIndex() == m_exercises->pageIndex(m_taskview))
+	switch (selectedTask)
 	{
-		m_taskview->forceNewTask();
-		return;
+		case Arithmatics:
+			m_taskview->forceNewTask();
+			break;
+		case Comparison:
+			m_exerciseCompare->forceNewTask();
+			break;
+		case Conversion:
+			m_exerciseConvert->forceNewTask();
+			break;
+		case Factorization:
+			m_exerciseFactorize->forceNewTask();
+			break;
+		case Percentage:
+			m_exercisePercentage->forceNewTask();
+			break;			
 	}
-	if (m_exercises->activePageIndex() == m_exercises->pageIndex(m_exerciseCompare))
-	{
-		m_exerciseCompare->forceNewTask();
-		return;
-	}
-*/
-
-/* this even do not compile, but I don't know why
-
-	switch (m_exercises->activePageIndex())
-	{
-		case m_exercises->pageIndex(m_taskview):
-					break;
-		case m_exercises->pageIndex(m_exerciseCompare):
-					m_exerciseCompare->forceNewTask();
-					break;
-	}
-*/
-
+	m_statview->resetStatistics();
 	return;
 }
 
@@ -404,7 +526,7 @@ void MainQtWidget::NrOfTermsBoxSlot()
 	QString curr_nr = m_NrOfTermsBox->currentText();
 	m_MaxMainDenominatorBox->clear();
 
-	if (m_mulDiv == true)
+	if (m_addDiv == TRUE || m_addMult == TRUE)
 	{
 		if (curr_nr == "2")
 		{
@@ -436,64 +558,129 @@ void MainQtWidget::NrOfTermsBoxSlot()
 		int index = m_MaxMainDenominatorBox->findText(QString::number(currentMaxDenom));
 		m_MaxMainDenominatorBox->setCurrentIndex(index > -1 ? index : 0);
 		m_nrRatios = curr_nr.toInt();
-	} // if (m_mulDiv == true)
-
+	} 
+	
 	// set the new task parameters
-	(void) m_taskview->setTaskParameters(m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
+	(void) m_taskview->setTaskParameters(m_addAdd, m_addDiv, m_addMult, m_addSub, m_nrRatios, m_maxMainDenominator);
 }
 
 void MainQtWidget::MaxMainDenominatorBoxSlot()
 {
 #ifdef DEBUG
 	kDebug() << "MainQtWidget::MaxMainDenominatorBoxSlot()";
-#endif
-
+#endif	
 	// get the max. size from the ComboBox, convert it to a number and store
 	// it in the private member
 	QString curr_md = m_MaxMainDenominatorBox->currentText();
 	m_maxMainDenominator = curr_md.toUInt();
 
 	// set the new task parameters
-	(void) m_taskview->setTaskParameters(m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
+	(void) m_taskview->setTaskParameters(m_addAdd, m_addDiv, m_addMult, m_addSub, m_nrRatios, m_maxMainDenominator);
 }
 
-void MainQtWidget::OperationBoxSlot()
+void MainQtWidget::AnswerMixedCheckSlot()
 {
 #ifdef DEBUG
-	kDebug() << "MainQtWidget::OperationBoxSlot()";
+	kDebug() << "MainQtWidget::AnswerMixedCheckSlot()";
 #endif
+}
 
-	int index = m_OperationBox->currentIndex(); // get selected item
+void MainQtWidget::SolutionMixedCheckSlot()
+{
+#ifdef DEBUG
+	kDebug() << "MainQtWidget::SolutionMixedCheckSlot()";
+#endif
+}
 
-	// user has selected the operations for the next task, so store it in the
-	// private members
-	if (index == 0)
-	{
-		m_addSub = true;
-		m_mulDiv = false;
+void MainQtWidget::QuestionMixedCheckSlot()
+{
+#ifdef DEBUG
+	kDebug() << "MainQtWidget::QuestionMixedCheckSlot()";
+#endif
+}
 
-		/* set the number of terms box and max main denominator box correctly */
-		NrOfTermsBoxSlot();
-	} else if (index == 1) {
-		m_addSub = false;
-		m_mulDiv = true;
+void MainQtWidget::ReducedFormCheckSlot()
+{
+#ifdef DEBUG
+	kDebug() << "MainQtWidget::ChkReducedFormSlot()";
+#endif
+	m_reducedForm = m_ReducedCheck->isChecked();
+	m_taskview->forceReduce(m_reducedForm);
+}
 
-		/* set the number of terms box and max main denominator box correctly */
-		NrOfTermsBoxSlot();
+void MainQtWidget::AdditionCheckSlot()
+{
+#ifdef DEBUG
+	kDebug() << "MainQtWidget::AdditionCheckSlot()";
+#endif
+	if ( OperationsCheck() == TRUE ) {
+		if (m_AdditionCheck->checkState() == Qt::Checked)
+			m_addAdd = TRUE;
+		else
+			m_addAdd = FALSE;		 
 	} else {
-		m_addSub = true;
-		m_mulDiv = true;
-
-		/* set the number of terms box and max main denominator box correctly */
-		NrOfTermsBoxSlot();
+		m_addAdd = TRUE;
+		m_AdditionCheck->setCheckState(Qt::Checked);
 	}
+	(void) m_taskview->setTaskParameters(m_addAdd, m_addDiv, m_addMult, m_addSub, m_nrRatios, m_maxMainDenominator);		
+}
 
-	// set the new task parameters
-	(void) m_taskview->setTaskParameters(m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
+void MainQtWidget::SubtractionCheckSlot()
+{
+#ifdef DEBUG
+	kDebug() << "MainQtWidget::SubtractionCheckSlot()";
+#endif
+	if ( OperationsCheck() == TRUE ) {
+		if (m_SubtractionCheck->checkState() == Qt::Checked)
+			m_addSub = TRUE;
+		else
+			m_addSub = FALSE;		 
+	} else {
+		m_addSub = TRUE;
+		m_SubtractionCheck->setCheckState(Qt::Checked);
+	}
+	(void) m_taskview->setTaskParameters(m_addAdd, m_addDiv, m_addMult, m_addSub, m_nrRatios, m_maxMainDenominator);		
+}
+
+void MainQtWidget::MultiplicationCheckSlot()
+{
+#ifdef DEBUG
+	kDebug() << "MainQtWidget::MultiplicationCheckSlot()";
+#endif
+	if ( OperationsCheck() == TRUE ) {
+		if (m_MultiplicationCheck->checkState() == Qt::Checked)
+			m_addMult = TRUE;
+		else
+			m_addMult = FALSE;		 
+	} else {
+		m_addMult = TRUE;
+		m_MultiplicationCheck->setCheckState(Qt::Checked);
+	}
+	(void) m_taskview->setTaskParameters(m_addAdd, m_addDiv, m_addMult, m_addSub, m_nrRatios, m_maxMainDenominator);	
+}
+
+void MainQtWidget::DivisionCheckSlot()
+{
+#ifdef DEBUG
+	kDebug() << "MainQtWidget::DivisionCheckSlot()";
+#endif
+	if ( OperationsCheck() == TRUE ) {
+		if (m_DivisionCheck->checkState() == Qt::Checked)
+			m_addDiv = TRUE;
+		else
+			m_addDiv = FALSE;		 
+	} else {
+		m_addDiv = TRUE;
+		m_DivisionCheck->setCheckState(Qt::Checked);
+	}
+	(void) m_taskview->setTaskParameters(m_addAdd, m_addDiv, m_addMult, m_addSub, m_nrRatios, m_maxMainDenominator);	
 }
 
 void MainQtWidget::slotPrefs()
 {
+#ifdef DEBUG
+	kDebug() << "slotPrefs MainQtWidget";
+#endif
 	// do not show dialog twice
 	if (KConfigDialog::showDialog("settings"))
 		return;
@@ -514,21 +701,15 @@ void MainQtWidget::slotPrefs()
 	connect(configDialog, SIGNAL(settingsChanged( const QString &)), this, SLOT(slotApplySettings()) );
         configDialog->setHelp("kbruch/index.html");
 	configDialog->show();
-/*
-	SettingsDialog * dlg = new SettingsDialog(this);
-	connect(dlg, SIGNAL(configChanged()), this, SLOT(slotApplySettings()));
 
-	dlg->exec();
-
-	delete dlg;
-	dlg = NULL;
-
-*/
 	return;
 }
 
 void MainQtWidget::slotApplySettings()
 {
+#ifdef DEBUG
+	kDebug() << "slotApplySettings MainQtWidget";
+#endif
 	// update the task view
 	m_taskview->update();
 	m_exerciseCompare->update();
@@ -538,28 +719,53 @@ void MainQtWidget::slotApplySettings()
 	return;
 }
 
-void MainQtWidget::slotAboutToShowPage(KPageWidgetItem *current)
+void MainQtWidget::slotAboutToShowPage()
 {
 #ifdef DEBUG
 	kDebug() << "slotAboutToShowPage MainQtWidget";
-	//kDebug() << "pageIndex(m_taskview): " << m_exercises->pageIndex(m_taskview);
-	//kDebug() << "pageIndex(m_exerciseCompare): " << m_exercises->pageIndex(m_exerciseCompare);
-	//kDebug() << "pageIndex(m_exerciseConvert): " << m_exercises->pageIndex(m_exerciseConvert);
 #endif
-
 	// check which page to show
-	if (current ==pageItemFraction)
-	{
-		// exercise solve task with fraction (taskview.h)
-		m_NrOfTermsBox->setEnabled(true);
-		m_MaxMainDenominatorBox->setEnabled(true);
-		m_OperationBox->setEnabled(true);
-	} else {
-		m_NrOfTermsBox->setEnabled(false);
-		m_MaxMainDenominatorBox->setEnabled(false);
-		m_OperationBox->setEnabled(false);
-	}
 
+	switch ( selectedTask ) {
+	  case Arithmatics:
+		m_QuestionMixedCheck->setEnabled( TRUE );
+		m_NrOfTermsBox->setEnabled( TRUE );
+		m_MaxMainDenominatorBox->setEnabled( TRUE );		
+		m_AnswerMixedCheck->setEnabled( TRUE );		
+		m_ReducedCheck->setEnabled( TRUE );		
+		m_SolutionMixedCheck->setEnabled( TRUE );		
+		m_SubtractionCheck->setEnabled( TRUE );		
+		m_DivisionCheck->setEnabled( TRUE );		
+		m_MultiplicationCheck->setEnabled( TRUE );		
+		m_AdditionCheck->setEnabled( TRUE );								
+	    break;
+	  case Percentage:	    
+	  case Factorization:	  
+	  case Conversion:
+		m_QuestionMixedCheck->setEnabled( FALSE );
+		m_NrOfTermsBox->setEnabled( FALSE );
+		m_MaxMainDenominatorBox->setEnabled( FALSE );		
+		m_AnswerMixedCheck->setEnabled( FALSE );		
+		m_ReducedCheck->setEnabled( FALSE );		
+		m_SolutionMixedCheck->setEnabled( FALSE );		
+		m_SubtractionCheck->setEnabled( FALSE );		
+		m_DivisionCheck->setEnabled( FALSE );		
+		m_MultiplicationCheck->setEnabled( FALSE );		
+		m_AdditionCheck->setEnabled( FALSE );								
+	    break;
+	  case Comparison:
+		m_QuestionMixedCheck->setEnabled( TRUE );
+		m_NrOfTermsBox->setEnabled( FALSE );
+		m_MaxMainDenominatorBox->setEnabled( FALSE );		
+		m_AnswerMixedCheck->setEnabled( TRUE );		
+		m_ReducedCheck->setEnabled( FALSE );		
+		m_SolutionMixedCheck->setEnabled( TRUE );		
+		m_SubtractionCheck->setEnabled( FALSE );		
+		m_DivisionCheck->setEnabled( FALSE );		
+		m_MultiplicationCheck->setEnabled( FALSE );		
+		m_AdditionCheck->setEnabled( FALSE );	
+	    break;
+	}
 	return;
 }
 
@@ -567,6 +773,103 @@ bool MainQtWidget::queryExit()
 {
 	writeOptions();
 	return true;
+}
+
+void MainQtWidget::SelectPercentage()
+{
+#ifdef DEBUG
+	kDebug() << "SelectPercentage MainQtWidget";
+#endif
+	m_TitleLabel->setText("Percentage");
+	selectedTask = Percentage;
+	m_taskview->hide();
+	m_exerciseCompare->hide();
+	m_exerciseConvert->hide();
+	m_exerciseFactorize->hide();
+	m_exercisePercentage->show();
+	slotAboutToShowPage();
+}
+
+void MainQtWidget::SelectArithmatics()
+{
+#ifdef DEBUG
+	kDebug() << "SelectArithmatics MainQtWidget";
+#endif
+	m_TitleLabel->setText("Arithmatic");
+	selectedTask = Arithmatics;
+	m_taskview->show();
+	m_exerciseCompare->hide();
+	m_exerciseConvert->hide();
+	m_exerciseFactorize->hide();
+	m_exercisePercentage->hide();	
+	slotAboutToShowPage();
+}
+
+void MainQtWidget::SelectComparison()
+{
+#ifdef DEBUG
+	kDebug() << "SelectComparison MainQtWidget";
+#endif
+	m_TitleLabel->setText("Comparison");
+	selectedTask = Comparison;
+	m_taskview->hide();
+	m_exerciseCompare->show();
+	m_exerciseConvert->hide();
+	m_exerciseFactorize->hide();
+	m_exercisePercentage->hide();	
+	slotAboutToShowPage();
+}
+
+void MainQtWidget::SelectConversion()
+{
+#ifdef DEBUG
+	kDebug() << "SelectConversion MainQtWidget";
+#endif
+	m_TitleLabel->setText("Conversion");
+	selectedTask = Conversion;
+	m_taskview->hide();
+	m_exerciseCompare->hide();
+	m_exerciseConvert->show();
+	m_exerciseFactorize->hide();
+	m_exercisePercentage->hide();		
+	slotAboutToShowPage();
+}
+
+void MainQtWidget::SelectFactorization()
+{
+#ifdef DEBUG
+	kDebug() << "SelectFactorization MainQtWidget";
+#endif
+	m_TitleLabel->setText("Factorization");
+	selectedTask = Factorization;
+	m_taskview->hide();
+	m_exerciseCompare->hide();
+	m_exerciseConvert->hide();
+	m_exercisePercentage->hide();		
+	m_exerciseFactorize->show();
+	slotAboutToShowPage();
+}
+
+bool MainQtWidget::OperationsCheck()
+{
+#ifdef DEBUG
+	kDebug() << "MainQtWidget::AdditionCheckSlot()";
+#endif
+
+        if ( m_AdditionCheck->checkState() == Qt::Unchecked &&
+	     m_SubtractionCheck->checkState() == Qt::Unchecked && 
+	     m_DivisionCheck->checkState() == Qt::Unchecked &&
+	     m_MultiplicationCheck->checkState() == Qt::Unchecked )
+		return FALSE;
+	else
+		return TRUE;
+}	     
+
+void MainQtWidget::GoBack()
+{
+	kbruchApp = new AppMenuWidget();
+	kbruchApp->show();
+	close();
 }
 
 #include "mainqtwidget.moc"

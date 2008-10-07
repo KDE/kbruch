@@ -61,13 +61,13 @@ protected:
 	QFont m_font;
 
 	/** overrideing the paint event of QWidget */
-	virtual void paintEvent(QPaintEvent*) = 0;
+	//virtual void paintEvent(QPaintEvent*) = 0;
 
 	/** paints a ratio at the given position */
-	void paintRatio(QPainter & paint, ratio tmp_ratio, int & x_pos, QFontMetrics & fm, bool show_mixed, bool addMargin = true);
+	void paintRatio(QPainter & paint, ratio tmp_ratio, int & x_pos, int & y_pos, QFontMetrics & fm, bool addMargin = true, bool show_mixed = true, bool show_center = false);
 
 	/** paints a string in the vertical middle (aligned to the operation signs) */
-	void paintMiddle(QPainter & paint, const QString& paint_str, int & x_pos, QFontMetrics & fm, const QColor &color, bool addMargin = true);
+	void paintMiddle(QPainter & paint, const QString& paint_str, int & x_pos, int & y_pos, QFontMetrics & fm, const QColor &color, bool addMargin = true);
 
 private:
 	/** sets the font and color; values taken from settingsclass */

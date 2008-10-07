@@ -23,6 +23,7 @@
 #include <kmessagebox.h>
 #include <knumvalidator.h>
 #include <klineedit.h>
+#include <KStandardDirs>
 
 /* these includes are needed for Qt support */
 #include <qapplication.h>
@@ -34,6 +35,9 @@
 #include <QGridLayout>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QtGui>
+
+#include "settingsclass.h"
 
 /* standard C++ library includes */
 #include <math.h>
@@ -41,133 +45,132 @@
 /* ----- public member functions ----- */
 
 /* constructor */
-TaskView::TaskView(QWidget * parent, bool padd_sub,
-                  bool pmul_div, unsigned int pnr_ratios, unsigned int pmax_md):
-		ExerciseBase(parent), add_sub(padd_sub), mul_div(pmul_div),
+TaskView::TaskView(QWidget * parent,
+		 bool padd_add, bool padd_div, bool padd_mult, bool padd_sub,
+		 unsigned int pnr_ratios, unsigned int pmax_md):
+		ExerciseBase(parent), m_addAdd(padd_sub), m_addDiv(padd_div), 
+		m_addMult(padd_mult), m_addSub(padd_sub),
 		nr_ratios(pnr_ratios), max_md(pmax_md)
 {
 #ifdef DEBUG
 	kDebug() << "constructor TaskView()";
 #endif
-
 	curr_nr_ratios = nr_ratios;
 
 	/* create a new task */
 	QApplication::setOverrideCursor(Qt::WaitCursor); /* show the sand clock */
-	current_task.create_task(max_md, nr_ratios, add_sub, mul_div);
+	current_task.create_task(max_md, nr_ratios, m_addAdd, m_addDiv, m_addMult, m_addDiv);
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
+
+	// to validate, that the input is an int
+	KIntValidator *valnum = new KIntValidator( this );
 
 	// the next thing to do on a button click would be to check the entered
 	// result
 	m_currentState = _CHECK_TASK;
 
-	baseWidget = new QWidget(this);
-	baseWidget->setObjectName("baseWidget");
-	baseGrid = new QGridLayout(this );
+	// Create the base of Widget
+	taskWidget = new QWidget(this);
+	taskWidget->setObjectName("taskWidget");
+	checkWidget = new QWidget(this);
+	checkWidget->setObjectName("checkWidget");
+	
+	baseGrid = new QGridLayout(this);
 	baseGrid->setObjectName( "baseGrid" );
-	baseGrid->addWidget(baseWidget, 0, 0);
+	baseGrid->setColumnStretch(0,1);
 
-	// this is a VBox
-	realLayout = new QVBoxLayout(baseWidget);
-	realLayout->setMargin(5);
-	realLayout->setSpacing(5);
-	realLayout->setObjectName("realLayout");
+	baseGrid->addWidget(taskWidget, 0, 0);
+	baseGrid->addWidget(checkWidget, 0, 1);
+	
+	taskLayout = new QGridLayout(this);
+	taskLayout->setObjectName( "taskLayout" );
+	taskLayout->setRowStretch(0,1);
+	taskLayout->setRowStretch(4,1);
+	taskLayout->setColumnStretch(0,1);
+	taskLayout->setColumnStretch(4,1);
 
-	// add a spacer at the top of the VBox
-	QSpacerItem * v_spacer = new QSpacerItem(1, 1);
-	realLayout->addItem(v_spacer);
+	checkLayout = new QGridLayout(this);
+	checkLayout->setObjectName( "checkLayout" );
 
-	// now a line holding the task, input fields and result
-	QHBoxLayout * taskLineHBoxLayout = new QHBoxLayout();
-	taskLineHBoxLayout->setMargin(5);
-	taskLineHBoxLayout->setObjectName("taskLineHBoxLayout");
-	realLayout->addLayout(taskLineHBoxLayout);
-
+	QFont defaultFont = SettingsClass::taskFont();
+	defaultFont.setBold( TRUE );
+	
 	// first left is the task widget
-	m_taskWidget = new TaskWidget(baseWidget, current_task);
+	m_taskWidget = new TaskWidget(taskWidget, current_task);
 	m_taskWidget->setObjectName("m_taskWidget");
-	taskLineHBoxLayout->addWidget(m_taskWidget);
-
-	// now we have the input fields aligned in a VBox
-	QVBoxLayout * inputLayout = new QVBoxLayout();
-	inputLayout->setObjectName("inputLayout");
-	inputLayout->setSpacing(5);
-	taskLineHBoxLayout->addLayout(inputLayout);
-
-	// to validate, that the input is an int
-	KIntValidator *valnum = new KIntValidator( this );
+	taskLayout->addWidget(m_taskWidget, 1, 1, 3, 1);
 
 	/* add input box so the user can enter numerator */
-	numer_edit = new KLineEdit(baseWidget);
+	numer_edit = new KLineEdit(taskWidget);
 	numer_edit->setObjectName("numer_edit");
 	numer_edit->setValidator( valnum ); // use the int validator
 	numer_edit->setToolTip(i18n("Enter the numerator of your result"));
-	inputLayout->addWidget(numer_edit);
+	numer_edit->setFont(defaultFont);
+	numer_edit->setFixedSize(85,42);
+	numer_edit->setAlignment(Qt::AlignHCenter);
+	QObject::connect(numer_edit, SIGNAL(returnPressed(const QString &)), this,
+		SLOT(numeratorReturnPressed(const QString &)));
+	taskLayout->addWidget(numer_edit, 1, 3);
 
 	/* add a line between the edit boxes */
-	edit_line = new QFrame(baseWidget);
+	edit_line = new QFrame(taskWidget);
 	edit_line->setGeometry(QRect(100, 100, 20, 20));
 	edit_line->setFrameStyle(QFrame::HLine | QFrame::Sunken);
-	inputLayout->addWidget(edit_line);
+	taskLayout->addWidget(edit_line, 2, 3);
 
 	/* add input box so the user can enter denominator */
-	deno_edit = new KLineEdit(baseWidget);
+	deno_edit = new KLineEdit(taskWidget);
 	deno_edit->setObjectName("deno_edit");
 	deno_edit->setValidator( valnum ); // use the int validator
 	deno_edit->setToolTip(i18n("Enter the denominator of your result"));
-	inputLayout->addWidget(deno_edit);
-
+	deno_edit->setFont(defaultFont);
+	deno_edit->setFixedSize(85,42);
+	deno_edit->setAlignment(Qt::AlignHCenter);
+	QObject::connect(deno_edit, SIGNAL(returnPressed(const QString &)), this,
+		SLOT(denominatorReturnPressed(const QString &)));
+	taskLayout->addWidget(deno_edit, 3, 3);
+	
 	// next is the result widget
-	m_resultWidget = new ResultWidget(baseWidget, ratio());
+	m_resultWidget = new ResultWidget(checkWidget, ratio());
 	m_resultWidget->setObjectName("m_resultWidget");
-	taskLineHBoxLayout->addWidget(m_resultWidget);
+	checkLayout->addWidget(m_resultWidget, 0, 0, 1, 2);
 
-	// at the right end we have a label just showing CORRECT or WRONG
-	result_label = new QLabel(baseWidget);
-	result_label->setObjectName("result_label");
-	//result_label->setText(i18n("WRONG")); // we don't need this, as it's hidden anyway (jpw)
-	taskLineHBoxLayout->addWidget(result_label);
-	result_label->hide();
-
-	// add another spacer in the middle of the VBox
-	v_spacer = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
-	taskLineHBoxLayout->addItem(v_spacer);
-
-	// --- that is the end of the horizontal line ---
-
-	// add another spacer in the middle of the VBox
-	v_spacer = new QSpacerItem(1, 1);
-	realLayout->addItem(v_spacer);
-
-	// the lower part of the VBox holds just a right aligned button
-	QHBoxLayout * lowerHBox = new QHBoxLayout();
-	lowerHBox->setObjectName("lowerHBox");
-	lowerHBox->setSpacing(1);
-	realLayout->addLayout(lowerHBox);
-	lowerHBox->addStretch(100);
+	defaultFont.setPointSize(10);
 
 	// the right aligned button
-	m_checkButton = new QPushButton( baseWidget );
+	m_checkButton = new QPushButton( checkWidget );
 	m_checkButton->setObjectName( "m_checkButton" );
-	m_checkButton->setText(i18n("&Check Task"));
+	m_checkButton->setText(i18n("&Check"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
 	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
-	lowerHBox->addWidget(m_checkButton, 1, Qt::AlignRight);
+	m_checkButton->setFixedSize(74,30);
+	m_checkButton->setFont(defaultFont);	
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
+	checkLayout->addWidget(m_checkButton, 1, 0);	
+
+	// the right aligned button
+	m_skipButton = new QPushButton( checkWidget );
+	m_skipButton->setObjectName( "m_skipButton" );
+	m_skipButton->setText(i18n("&Skip"));
+	m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
+	m_skipButton->setFixedSize(74,30);
+	m_skipButton->setFont(defaultFont);	
+	QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
+	checkLayout->addWidget(m_skipButton, 1, 1);	
+
+	setLayout(baseGrid);
+	taskWidget->setLayout(taskLayout);
+  	checkWidget->setLayout(checkLayout);
 
 	// that the user can start typing without moving the focus
 	numer_edit->setFocus();
 
 	// show the whole layout
-	baseWidget->show();
-
-	// show the whole layout
 	m_taskWidget->show();
-	m_resultWidget->hide();
 
 	// add tooltip and qwhatsthis help to the widget
-	setToolTip(i18n("In this exercise you have to solve a given task with fractions."));
-	setWhatsThis( i18n("In this exercise you have to solve the generated task. You have to enter numerator and denominator. You can adjust the difficulty of the task with the boxes in the toolbar. Do not forget to reduce the result."));
+	setToolTip(i18n("In this exercise you have to solve a given question with fractions."));
+	setWhatsThis( i18n("In this exercise you have to solve the generated question. You have to enter numerator and denominator. You can adjust the difficulty of the question with the boxes in the toolbar. Do not forget to reduce the result."));
 }
 
 /* destructor */
@@ -180,12 +183,19 @@ TaskView::~TaskView()
 	/* no need to delete any child widgets, Qt does it by itself */
 }
 
+void TaskView::forceReduce(bool force)
+{
+	m_forceReduce = force;
+}
+
 /** the parameters of task generation can be set with this function */
-void TaskView::setTaskParameters(bool padd_sub, bool pmul_div, unsigned int pnr_ratios, unsigned int pmax_md)
+void TaskView::setTaskParameters(bool padd_add, bool padd_div, 
+				bool padd_mult, bool padd_sub, 
+				unsigned int pnr_ratios, unsigned int pmax_md)
 {
 	// at least one operation must be enabled
-	if ((padd_sub == false) && (pmul_div == false))
-		padd_sub = true;
+	if ((padd_add == false) && (padd_div == false) && (padd_mult == false) && (padd_sub == false))
+		padd_add = true;
 
 	// we need at least 2 ratios
 	if (pnr_ratios < 2)
@@ -201,8 +211,10 @@ void TaskView::setTaskParameters(bool padd_sub, bool pmul_div, unsigned int pnr_
 
 	// so everything seems to be fine, lets set the internal values to the given
 	// ones
-	add_sub = padd_sub;
-	mul_div = pmul_div;
+	m_addSub = padd_sub;
+	m_addAdd = padd_add;
+	m_addMult = padd_mult;
+	m_addDiv = padd_div;			
 	max_md = pmax_md;
 
 	nr_ratios = pnr_ratios;
@@ -221,11 +233,11 @@ void TaskView::forceNewTask()
 
 	if (m_currentState == _CHECK_TASK)
 	{
-		// emit the signal for wrong
-		signalTaskSolvedWrong();
+		// emit the signal for skipped
+		signalTaskSkipped();
 	}
 	m_currentState = _CHECK_TASK;
-	m_checkButton->setText(i18n("&Check Task"));
+	m_checkButton->setText(i18n("&Check"));
 
 	// generate next task
 	(void) nextTask();
@@ -233,12 +245,11 @@ void TaskView::forceNewTask()
 
 
 /* ------ public slots ------ */
-
 void TaskView::update()
 {
 	// call update of components
 	m_taskWidget->updateAndRepaint();
-	m_resultWidget->updateAndRepaint();
+	m_resultWidget->update();
 
 	// update for itself
 	((QWidget *) this)->update();
@@ -259,14 +270,13 @@ void TaskView::showResult()
 	QPalette pal;
 
 	// change the tooltip of the check button
-	m_checkButton->setToolTip(i18n("Click on this button to get to the next task."));
+	m_checkButton->setToolTip(i18n("Click on this button to get to the next question."));
 
 	numer_edit->setEnabled(false);
 	deno_edit->setEnabled(false);
+	m_skipButton->setEnabled(false);	
 
 	result = current_task.solve();
-	m_resultWidget->setResult(result);
-	m_resultWidget->show();
 
 	// an empty numerator field will be interpreted as 0
 	if (numer_edit->text().isEmpty() == true)
@@ -280,6 +290,9 @@ void TaskView::showResult()
 	entered_result.setNumerator(numer_edit->text().toInt(), false);
 	entered_result.setDenominator(deno_edit->text().toInt(), false);
 
+	if (!m_forceReduce)
+		entered_result.reduce();
+
 	// check the entered result; 0/1 == 0/5 -> true,
 	// but 0/1 == 0/0 -> false
 	// a 0 for denominator is never allowed (always counted as wrong)
@@ -292,26 +305,11 @@ void TaskView::showResult()
 	{
 		// emit the signal for correct
 		signalTaskSolvedCorrect();
-
-		/* yes, the user entered the correct result */
-		result_label->setText(i18nc("@info:status the answer given was correct", "CORRECT"));
-		pal = result_label->palette(); /* set green font color */
-        pal.setColor(QPalette::Active, QPalette::Foreground, QColor(6, 179, 0));
-        pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(6, 179, 0));
-		result_label->setPalette(pal);
-		result_label->show(); /* show the result at the end of the task */
+		m_resultWidget->setResult(result, 1);
 	} else {
 		// emit the signal for wrong
 		signalTaskSolvedWrong();
-
-		/* no, the user entered the wrong result */
-		result_label->setText(i18nc("@info:status the answer given was incorrect", "WRONG"));
-		pal = result_label->palette(); /* set red font color */
-        pal.setColor(QPalette::Active, QPalette::Foreground, QColor(Qt::red));
-        pal.setColor(QPalette::Inactive, QPalette::Foreground, QColor(Qt::red));
-		result_label->setPalette(pal);
-
-		result_label->show(); /* show the result at the end of the task */
+		m_resultWidget->setResult(result, 0);
 
 		// if the user entered a 0 for the denominator (division by 0) we have to
 		// get the 0 directly from the input field, because
@@ -320,15 +318,16 @@ void TaskView::showResult()
 		if (deno_edit->text().toInt() == 0)
 		{
 			KMessageBox::information(this,
-			                         i18n("You entered a 0 as the denominator. This means division by zero, which is not allowed. This task will be counted as not correctly solved."));
+			                         i18n("You entered a 0 as the denominator. This means division by zero, which is not allowed. This question will be counted as not correctly solved."));
 		} else {
 			/* maybe the entered ratio was not reduced */
 			entered_result.reduce();
 			if (entered_result == result)
 				KMessageBox::information(this,
-				                         i18n("You entered the correct result, but not reduced.\nAlways enter your results as reduced. This task will be counted as not correctly solved."));
+				                         i18n("You entered the correct result, but not reduced.\nAlways enter your results as reduced. This question will be counted as not correctly solved."));
 		}
-	} /* if (entered_result == result) */
+	} 
+	m_resultWidget->show();
 }
 
 /** generate the next task and show it to the user */
@@ -339,10 +338,10 @@ void TaskView::nextTask()
 
 	numer_edit->setEnabled(true);
 	deno_edit->setEnabled(true);
-
-	result_label->hide(); /* do not show the result at the end of the task */
-	m_resultWidget->hide();
-
+	m_skipButton->setEnabled(true);
+	
+	m_resultWidget->setResult( result, -1);
+	
 	/* clear user input */
 	deno_edit->setText("");
 	numer_edit->setText("");
@@ -350,7 +349,7 @@ void TaskView::nextTask()
 
 	/* create a new task */
 	QApplication::setOverrideCursor(Qt::WaitCursor); /* show the sand clock */
-	current_task.create_task(max_md, nr_ratios, add_sub, mul_div);
+	current_task.create_task(max_md, nr_ratios, m_addAdd, m_addDiv, m_addMult, m_addDiv);
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
 	// update the task widget
@@ -358,6 +357,16 @@ void TaskView::nextTask()
 }
 
 /* ------ private slots ------ */
+
+void TaskView::numeratorReturnPressed(const QString &)
+{
+	deno_edit->setFocus();
+}
+
+void TaskView::denominatorReturnPressed(const QString &)
+{
+	slotCheckButtonClicked();
+}
 
 void TaskView::slotCheckButtonClicked()
 {
@@ -368,11 +377,18 @@ void TaskView::slotCheckButtonClicked()
 true)
 			return;
 		m_currentState = _NEXT_TASK;
-		m_checkButton->setText(i18n("N&ext Task"));
+		m_checkButton->setText(i18n("N&ext"));
 		(void) showResult();
 	} else {
 		m_currentState = _CHECK_TASK;
-		m_checkButton->setText(i18n("&Check Task"));
+		m_checkButton->setText(i18n("&Check"));
 		(void) nextTask();
 	}
 }
+
+void TaskView::slotSkipButtonClicked()
+{
+	forceNewTask();
+}
+
+

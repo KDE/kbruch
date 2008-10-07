@@ -75,7 +75,7 @@ public:
 
 	/** automatically generate a new task with the given parameters */
 	void create_task(unsigned int pmax_md = 10, short pnr_ratios = 2,
-	                 short padd_sub = YES, short pmul_div = NO);
+	                 short padd_add = YES, short padd_div = NO, short padd_mult = NO, short padd_sub = NO);
 
 	/** set ratio n */
 	void set_ratio_n(unsigned short number = 0, int numerator = 0,
@@ -121,11 +121,10 @@ private:
 	/** how many ratios should the task have */
 	short nr_ratios;
 
-	/** are add/sub operations allowed */
 	short add_sub;
-
-	/** are mul/div operations allowed */
-	short mul_div;
+	short add_add;
+	short add_mult;
+	short add_div;		
 
 	/** the ratio vector */
 	RatioArray ratio_vector;
@@ -143,8 +142,9 @@ private:
 
 	/** generate the operations randomly; return how many mul or div
 	 * are in one block */
-	unsigned short make_operation(short padd_sub, short pmul_div,
-	                              short pnr_ratios);
+	unsigned short make_operation(short padd_add = YES, short padd_div = NO, 
+				      short padd_mult = NO, short padd_sub = NO,
+	                              short pnr_ratios = 0);
 
 	/** find a denominator for the task */
 	int make_main_dn(unsigned int pmax_md, unsigned short max_product_length);
@@ -156,8 +156,9 @@ private:
 	void make_numerators(int main_denominator, short pnr_ratios);
 
 	/** create the ratios' denominators */
-	void make_denominators(int main_denominator, short pmax_md,
-	                       short pmul_div);
+	void make_denominators(int main_denominator = 0, short pmax_md = 0, 
+			       short padd_add = YES, short padd_div = NO, 
+			       short padd_mult = NO, short padd_sub = NO);
 };
 
 

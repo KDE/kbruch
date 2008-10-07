@@ -65,6 +65,9 @@ signals:
 	/** class emits this signal, if the task was solved correctly by the user */
 	void signalExerciseSolvedCorrect();
 
+	/** class emits this signal, if the task was skipped by the user */
+	void signalExerciseSkipped();
+
 	/** class emits this signal, if the task was solved not correctly by the user
 	 * */
 	void signalExerciseSolvedWrong();
@@ -77,18 +80,21 @@ private:
 	uint m_periodLength;
 	ratio m_result;
 
-	RationalWidget* m_rationalWidget;
-	ResultWidget* m_resultWidget;
-	KLineEdit* numer_edit;
-	QFrame* edit_line;
-	KLineEdit* deno_edit;
+	RationalWidget * m_rationalWidget;
+	ResultWidget * m_resultWidget;
+	KLineEdit * numer_edit;
+	QFrame * edit_line;
+	KLineEdit * deno_edit;
 
 	QPushButton* m_checkButton;
-	QLabel* result_label;
+	QPushButton* m_skipButton;
 
+	QGridLayout* checkLayout;
+	QGridLayout* taskLayout;
 	QGridLayout* baseGrid;
-	QWidget* baseWidget;
-	QVBoxLayout* realLayout;
+
+	QWidget * checkWidget;
+	QWidget * taskWidget;
 
 	void createTask();
 	void showResult();
@@ -96,6 +102,8 @@ private:
 
 private slots:
 	void slotCheckButtonClicked();
+	void slotSkipButtonClicked();	
 };
 
 #endif
+

@@ -50,15 +50,11 @@ task::~task()
  * padd_sub: if true + and - are allowed operations
  * pmul_div: if true * and / are allowed operations */
 void task::create_task(unsigned int pmax_md, short pnr_ratios,
-                       short padd_sub, short pmul_div)
+                       short padd_add, short padd_div, 
+                       short padd_mult, short padd_sub)
 {
 	unsigned int max_product_length = 0;
 	int main_denominator = 1;
-
-	/* we say that if add/sub and mul/div are not allowed we want a task
-	 * for add/sub only */
-	if (padd_sub == NO && pmul_div == NO)
-		padd_sub = YES;
 
 	do
 	{
@@ -66,11 +62,12 @@ void task::create_task(unsigned int pmax_md, short pnr_ratios,
 		ratio_vector.clear();
 
 		/* generate the operations and count the max. mul/div in one block */
-		max_product_length = make_operation(padd_sub, pmul_div, pnr_ratios);
+		max_product_length = make_operation(padd_add, padd_div, padd_mult, padd_sub, pnr_ratios);
 
 #ifdef DEBUG
 		kDebug() << "1: max_product_length: " << max_product_length;
 #endif
+
 		/* later we must be able to find a main denominator;
 		 * so 2 ^ max_product_length couldn't be bigger than the max. denominator */
 	}
@@ -95,7 +92,7 @@ void task::create_task(unsigned int pmax_md, short pnr_ratios,
 #endif
 
 	/* create the ratios' denominators */
-	make_denominators(main_denominator, pmax_md, pmul_div);
+	make_denominators(main_denominator, pmax_md, padd_add, padd_div, padd_mult, padd_sub);
 
 #ifdef DEBUG
 	kDebug() << "main deno: " << main_denominator;
@@ -364,10 +361,13 @@ ratio task::product(RatioArray::iterator & ratio_pointer,
 		switch (*op_pointer)
 		{
 		case ADD :
+			product = product + *ratio_pointer++;
+			++op_pointer;
+			break;
 		case SUB :
-			return product; /* finished */
-
-			/* compute the next step of the product (or div) */
+			product = product - *ratio_pointer++;
+			++op_pointer;
+			break;
 		case MUL :
 			product = product * *ratio_pointer++;
 			++op_pointer;
@@ -387,31 +387,67 @@ ratio task::product(RatioArray::iterator & ratio_pointer,
 
 /** generate the operations randomly; return how many mul or div
  * are in one block */
-unsigned short task::make_operation(short padd_sub, short pmul_div,
+unsigned short task::make_operation(short padd_add, short padd_div, short padd_mult, short padd_sub, 
                                     short pnr_ratios)
 {
 	unsigned short max_product_length = 0;
 	unsigned short operations = 0;
+	unsigned short counter = 0;
 
 	/* this is our pointer on the op_vector, set it to the beginning */
 	ShortArray::iterator op_pointer;
-
-	/* we need this to generate the fitting operations */
-	if (padd_sub == YES)
-		operations += 2;
-	if (pmul_div == YES)
-		operations += 2;
 
 	/* clear the old operations */
 	op_vector.clear();
 
 	/* generate the operations */
-	for (short counter = 0; counter < pnr_ratios - 1; counter++)
-		op_vector.push_back(short((double(rand()) / RAND_MAX) * operations));
+	if (padd_add == YES && padd_div == NO && padd_mult == NO && padd_sub == NO)
+		for (short counter = 0; counter < pnr_ratios - 1; counter++)
+			op_vector.push_back(ADD);
+	else if (padd_div == YES && padd_add == NO && padd_mult == NO && padd_sub == NO)
+		for (short counter = 0; counter < pnr_ratios - 1; counter++)
+			op_vector.push_back(DIV);
+	else if (padd_mult == YES && padd_add == NO && padd_div == NO && padd_sub == NO)
+		for (short counter = 0; counter < pnr_ratios - 1; counter++)
+			op_vector.push_back(MUL);
+	else if (padd_sub == YES && padd_add == NO && padd_div == NO && padd_mult == NO)
+		for (short counter = 0; counter < pnr_ratios - 1; counter++)
+			op_vector.push_back(SUB);
+	else {									
+		do {
+			operations = short((double(rand()) / RAND_MAX) * 3);			
+			switch (operations) {
+				case ADD:
+					if (padd_add == YES) {
+						op_vector.push_back(ADD);
+						counter++;
+					}
+					break;
+				case SUB:
+					if (padd_sub == YES) {
+						op_vector.push_back(SUB);
+						counter++;
+					}
+					break;
+				case DIV:
+					if (padd_div == YES) {
+						op_vector.push_back(DIV);
+						counter++;
+					}
+					break;
+				case  MUL:
+					if (padd_mult == YES) {
+						op_vector.push_back(MUL);
+						counter++;
+					}
+					break;
+			}															
+		} while ( counter < (pnr_ratios - 1) );
+	}
 
 	/* if we only wanted mul/div, operations was 2; but we want values
 	 * for the operations with 2 and 3 so we have to add 2 */
-	if (padd_sub == NO && pmul_div == YES)
+	if ( (padd_mult == YES || padd_div == YES) && (padd_add == NO && padd_sub == NO) )
 	{
 		/* loop through all operations and add 2, so that the operations
 		 * are interpreted as mul/div and not add/sub */
@@ -420,7 +456,7 @@ unsigned short task::make_operation(short padd_sub, short pmul_div,
 			*op_pointer += 2;
 	}
 
-	if (pmul_div == YES)
+	if (padd_mult == YES || padd_div == YES)
 	{
 		short flag_counter = 0;
 
@@ -544,7 +580,8 @@ void task::make_numerators(int main_denominator, short pnr_ratios)
 
 /** create the ratios' denominators */
 void task::make_denominators(int main_denominator, short pmax_md,
-                             short pmul_div)
+                             short padd_add, short padd_div, 
+	                     short padd_mult, short padd_sub)
 {
 	/* this is our pointer on the ratio_vector, set it to the beginning */
 	RatioArray::iterator ratio_pointer = ratio_vector.begin();
@@ -582,7 +619,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 
 	/* if the ratio is connected to a mul or div operation, we have to do some
 	 * extra work and regenerate the denominators */
-	if (pmul_div == YES)
+	if (padd_mult == YES || padd_div == YES)
 	{
 		/* lets loop through all ratios and check, if there is a mul/div
 		 * after the ratio */

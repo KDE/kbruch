@@ -29,6 +29,8 @@ class QVBoxLayout;
 class QHBoxLayout;
 class QGridLayout;
 
+class StatisticsBarWidget;
+
 #include <qwidget.h>
 
 /*!
@@ -39,7 +41,7 @@ class QGridLayout;
   * \author Eva Brucherseifer
   */
 
-class StatisticsView : public QWidget
+class StatisticsView : public QFrame
 {
 	Q_OBJECT
 
@@ -55,6 +57,9 @@ public slots:
 	void addCorrect();
 
 	/** increment number of wrong answers */
+	void addSkipped();
+
+	/** increment number of wrong answers */
 	void addWrong();
 
 	/** set statistics to zero.
@@ -67,17 +72,23 @@ private:
 
 	unsigned int m_count;
 	unsigned int m_correct;
+	unsigned int m_skipped;
 
-	QPushButton * resetBtn;
 	QHBoxLayout * buttonLayout;
 	QVBoxLayout * layout1;
 	QGridLayout * labelGrid;
 	QLabel * result1Label;
 	QLabel * result2Label;
 	QLabel * result3Label;
+	QLabel * result4Label;
 	QLabel * info1Label;
 	QLabel * info2Label;
 	QLabel * info3Label;
+	QLabel * info4Label;
+
+	QFont defaultFont;
+
+	StatisticsBarWidget * statisticsBar;
 };
 
 #endif

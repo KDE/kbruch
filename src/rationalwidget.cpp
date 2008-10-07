@@ -56,6 +56,7 @@ void RationalWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	// our x position, we paint from left to right;
 	// we don't want to start directly on the border, so add the margin
 	int x_pos = _MARGIN_X;
+	int y_pos = 0;
 	int x_startPos = _MARGIN_X;
 	bool tmp_painting = false;
 
@@ -89,7 +90,7 @@ void RationalWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 		}
 
 		// paint the current number (or comma)
-		paintMiddle(paint, QString(m_number[stringPos]), x_pos, fm, m_colorNumber, false);
+		paintMiddle(paint, QString(m_number[stringPos]), x_pos, y_pos, fm, m_colorNumber, false);
 
 		// check if the period line ends over the current number; in this case
 		// draw the period line
@@ -104,7 +105,7 @@ void RationalWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 
 	// paint a = at the end
 	x_pos += _MARGIN_X;
-	paintMiddle(paint, "=", x_pos, fm, m_colorOperation);
+	paintMiddle(paint, "=", x_pos, y_pos, fm, m_colorOperation);
 
 	// stop the painter
 	paint.end();

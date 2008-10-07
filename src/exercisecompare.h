@@ -27,6 +27,7 @@
 #include "exercisebase.h"
 #include "ratio.h"
 #include "ratiowidget.h"
+#include "resultwidget.h"
 //Added by qt3to4:
 #include <QLabel>
 #include <QVBoxLayout>
@@ -67,6 +68,9 @@ signals:
 	/** class emits this signal, if the task was solved correctly by the user */
 	void signalExerciseSolvedCorrect();
 
+	/** class emits this signal, if the task was skipped by the user */
+	void signalExerciseSkipped();
+
 	/** class emits this signal, if the task was solved not correctly by the user
 	 * */
 	void signalExerciseSolvedWrong();
@@ -74,33 +78,43 @@ signals:
 private:
 	short m_currentState;
 
-	RatioWidget* m_firstRatioWidget;
-	RatioWidget* m_secondRatioWidget;
-	QPushButton* m_checkButton;
-	QPushButton* m_signButton;
-	QLabel* result_label;
-
-	QGridLayout* baseGrid;
-	QWidget* baseWidget;
-	QVBoxLayout* realLayout;
+	RatioWidget * m_firstRatioWidget;
+	RatioWidget * m_secondRatioWidget;
+	
+	QPushButton * m_skipButton;
+	QPushButton * m_moreButton;
+	QPushButton * m_minorButton;
+	QPushButton * m_equalButton;
 
 	ratio m_firstRatio;
 	ratio m_secondRatio;
 
+	QGridLayout * checkLayout;
+	QGridLayout * taskLayout;
+	QGridLayout * baseGrid;
+
 	enum SignButtonState
 	{
 		lessThen,
-		greaterThen
+		greaterThen,
+		equalTo
 	};
 	SignButtonState m_signButtonState;
+
+	QWidget * checkWidget;
+	QWidget * taskWidget;
+
+	ResultWidget* m_resultWidget;
 
 	void createTask();
 	void showResult();
 	void nextTask();
 
 private slots:
-	void slotCheckButtonClicked();
-	void slotSignButtonClicked();
+	void slotSkipButtonClicked();
+	void slotMinorButtonClicked();
+	void slotMoreButtonClicked();
+	void slotEqualButtonClicked();
 };
 
 #endif

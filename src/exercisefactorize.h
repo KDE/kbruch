@@ -33,18 +33,20 @@
 #include <QGridLayout>
 
 #include "exercisebase.h"
+#include "resultwidget.h"
 #include "ratio.h"
-
-class FactorizedWidget;
 
 class KLineEdit;
 
+class ResultWidget;
 class QVBoxLayout;
 class QHBoxLayout;
 class QGridLayout;
 class QSpacerItem;
 class QLabel;
 class QPushButton;
+class QToolButton;
+class QKeyEvent;
 
 // a list containing uints
 typedef QList<uint> uintList;
@@ -82,6 +84,9 @@ signals:
 	/** class emits this signal, if the task was solved correctly by the user */
 	void signalExerciseSolvedCorrect();
 
+	/** class emits this signal, if the task was skipped by the user */
+	void signalExerciseSkipped();
+
 	/** class emits this signal, if the task was solved not correctly by the user
 	 * */
 	void signalExerciseSolvedWrong();
@@ -89,31 +94,40 @@ signals:
 private:
 	short m_currentState;
 
+	// Get the last number typped by keyboard for keyboard handler
+	uint m_buffer;
+
 	uint m_taskNumber;
 	uintList m_factorsEntered;
 	uintList m_factorsResult;
 
-	QLabel* m_taskLabel;
-	QLabel* m_equalSignLabel;
-	KLineEdit* m_factorsEnteredEdit;
-	FactorizedWidget* m_factorsWidget;
-	QLabel* result_label;
-
-	
+	QLabel * m_taskLabel;
+	QLabel * m_equalSignLabel;
+	KLineEdit * m_factorsEnteredEdit;	
 
 	// buttons for the different prime factors
-	QPushButton* m_factor2Button;
-	QPushButton* m_factor3Button;
-	QPushButton* m_factor5Button;
-	QPushButton* m_factor7Button;
-	QPushButton* m_factor11Button;
-	QPushButton* m_factor13Button;
-	QPushButton* m_factor17Button;
-	QPushButton* m_factor19Button;
+	QPushButton * m_factor2Button;
+	QPushButton * m_factor3Button;
+	QPushButton * m_factor5Button;
+	QPushButton * m_factor7Button;
+	QPushButton * m_factor11Button;
+	QPushButton * m_factor13Button;
+	QPushButton * m_factor17Button;
+	QPushButton * m_factor19Button;
 
 	// button to remove the last entered factor
-	QPushButton* m_removeLastFactorButton;
-	QPushButton* m_checkButton;
+	QPushButton * m_removeLastFactorButton;
+	QPushButton * m_checkButton;
+	QPushButton * m_skipButton;	
+
+	QGridLayout * checkLayout;
+	QGridLayout * taskLayout;
+	QGridLayout * baseGrid;
+
+	QWidget * checkWidget;
+	QWidget * taskWidget;
+
+	ResultWidget * m_resultWidget;
 
 	void createTask();
 	void showResult();
@@ -122,20 +136,13 @@ private:
 	void addFactor(uint factor);
 	void updateEnteredEdit();
 
+
 protected:
-	QVBoxLayout* Form1Layout;
-	QVBoxLayout* layout9;
-	QSpacerItem* spacer4;
-	QHBoxLayout* layout4;
-	QSpacerItem* spacer1;
-	QSpacerItem* spacer2;
-	QVBoxLayout* layout2;
-	QGridLayout* layout1;
-	QHBoxLayout* layout7;
-	QSpacerItem* spacer3;
+	void keyPressEvent(QKeyEvent * e);
 
 private slots:
 	void slotCheckButtonClicked();
+	void slotSkipButtonClicked();	
 
 	void slotFactor2ButtonClicked();
 	void slotFactor3ButtonClicked();
