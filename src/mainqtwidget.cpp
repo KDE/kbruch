@@ -209,7 +209,7 @@ MainQtWidget::MainQtWidget()
 	m_SolutionMixedCheck->setChecked(m_solutionMixed);
 	QObject::connect(m_SolutionMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(SolutionMixedCheckSlot()));
 
-	m_AdditionLabel = new QLabel(i18n("Addtion:"), pageOptions);
+	m_AdditionLabel = new QLabel(i18n("Addition:"), pageOptions);
 	m_AdditionLabel->setObjectName("AdditionLabel");
 	m_AdditionLabel->setAlignment(Qt::AlignRight);	
 
@@ -454,11 +454,11 @@ void MainQtWidget::setupActions()
     	actionCollection()->addAction("Hint", m_HintAction );
 	m_HintAction->setVisible(false);        
         
-	m_ArithmaticsAction  = new KAction(KIcon("kbruch_exercise_common"), i18nc("Arithmatics Exercise", "Arithmatic"), this);
+	m_ArithmaticsAction  = new KAction(KIcon("kbruch_exercise_common"), i18nc("Arithmetics Exercise", "Arithmatic"), this);
     	actionCollection()->addAction("Arithmatic", m_ArithmaticsAction );
 	connect(m_ArithmaticsAction, SIGNAL(triggered(bool) ), SLOT(SelectArithmatics()));
               
-	m_ComparisonAction  = new KAction(KIcon("kbruch_exercise_compare"), i18nc("Comparision Exercise", "Comparision"), this);
+	m_ComparisonAction  = new KAction(KIcon("kbruch_exercise_compare"), i18nc("Comparison Exercise", "Comparison"), this);
     	actionCollection()->addAction("Comparision", m_ComparisonAction );
 	connect(m_ComparisonAction, SIGNAL(triggered(bool) ), SLOT(SelectComparison()));
 
