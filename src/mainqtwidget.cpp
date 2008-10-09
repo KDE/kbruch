@@ -779,7 +779,7 @@ void MainQtWidget::SelectPercentage()
 #ifdef DEBUG
 	kDebug() << "SelectPercentage MainQtWidget";
 #endif
-	m_TitleLabel->setText("Percentage");
+	m_TitleLabel->setText(i18n("Percentage"));
 	selectedTask = Percentage;
 	m_taskview->hide();
 	m_exerciseCompare->hide();
@@ -794,7 +794,7 @@ void MainQtWidget::SelectArithmetics()
 #ifdef DEBUG
 	kDebug() << "SelectArithmetics MainQtWidget";
 #endif
-	m_TitleLabel->setText("Arithmetic");
+	m_TitleLabel->setText(i18n("Arithmetic"));
 	selectedTask = Arithmetics;
 	m_taskview->show();
 	m_exerciseCompare->hide();
@@ -809,7 +809,7 @@ void MainQtWidget::SelectComparison()
 #ifdef DEBUG
 	kDebug() << "SelectComparison MainQtWidget";
 #endif
-	m_TitleLabel->setText("Comparison");
+	m_TitleLabel->setText(i18n("Comparison"));
 	selectedTask = Comparison;
 	m_taskview->hide();
 	m_exerciseCompare->show();
@@ -824,7 +824,7 @@ void MainQtWidget::SelectConversion()
 #ifdef DEBUG
 	kDebug() << "SelectConversion MainQtWidget";
 #endif
-	m_TitleLabel->setText("Conversion");
+	m_TitleLabel->setText(i18n("Conversion"));
 	selectedTask = Conversion;
 	m_taskview->hide();
 	m_exerciseCompare->hide();
@@ -839,7 +839,7 @@ void MainQtWidget::SelectFactorization()
 #ifdef DEBUG
 	kDebug() << "SelectFactorization MainQtWidget";
 #endif
-	m_TitleLabel->setText("Factorization");
+	m_TitleLabel->setText(i18n("Factorization"));
 	selectedTask = Factorization;
 	m_taskview->hide();
 	m_exerciseCompare->hide();
