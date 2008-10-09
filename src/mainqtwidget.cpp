@@ -408,7 +408,6 @@ void MainQtWidget::readOptions()
 	
 	m_nrRatios = SettingsClass::number_ratios();
 	m_maxMainDenominator = SettingsClass::max_main_denominator();
-	m_reducedForm = SettingsClass::isForceReduce();
 
 	/* make sure that we can load config files with corrupted values */
 	if ((m_addMult == true && m_addDiv == true) && pow(2.0, (double)m_nrRatios) > m_maxMainDenominator)

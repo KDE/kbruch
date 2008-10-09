@@ -56,7 +56,7 @@ public slots:
 	/** increment number of correct answers */
 	void addCorrect();
 
-	/** increment number of wrong answers */
+	/** increment number of skipped answers */
 	void addSkipped();
 
 	/** increment number of wrong answers */

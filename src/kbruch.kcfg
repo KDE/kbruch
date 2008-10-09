@@ -15,10 +15,25 @@
 	</group>
 
 	<group name="Task">
+		<entry type="Bool" key="addadd">
+			<label>Enable Addition</label>
+			<whatsthis>Enable Addition for task generation.</whatsthis>
+			<default>true</default>
+		</entry>
 		<entry type="Bool" key="addsub">
-			<label>Enable Addition/Subtraction</label>
+			<label>Enable Subtraction</label>
 			<whatsthis>Enable Addition/Subtraction for task generation.</whatsthis>
 			<default>true</default>
+		</entry>
+		<entry type="Bool" key="adddiv">
+			<label>Enable Division</label>
+			<whatsthis>Enable Division for task generation.</whatsthis>
+			<default>false</default>
+		</entry>
+		<entry type="Bool" key="addmult">
+			<label>Enable Multiplication</label>
+			<whatsthis>Enable Multiplication for task generation.</whatsthis>
+			<default>false</default>
 		</entry>
 		<entry type="Bool" key="muldiv">
 			<label>Enable Multiplication/Division</label>
@@ -35,6 +50,11 @@
 			<whatsthis>Set the maximum value of the main denominator.</whatsthis>
 			<default>10</default>
 		</entry>
+		<entry type="UInt" key="forceReduce">
+			<label>Force reduce fractions</label>
+			<whatsthis>Force reduce fractions.</whatsthis>
+			<default>false</default>
+		</entry>
 	</group>
 
 	<group name="Statistics">
@@ -46,6 +66,11 @@
 		<entry type="Int" key="count">
 			<label>Number of solved tasks</label>
 			<whatsthis>Total number of solved tasks</whatsthis>
+			<default>0</default>
+		</entry>
+		<entry type="Int" key="skipped">
+			<label>Number of skipped tasks</label>
+			<whatsthis>Number of skipped tasks</whatsthis>
 			<default>0</default>
 		</entry>
 	</group>
@@ -69,6 +94,11 @@
 		<entry type="Font" key="taskFont">
 			<label>Font used for the task view</label>
 			<whatsthis>Font used for the task view</whatsthis>
+			<default code="true">KGlobalSettings::generalFont()</default>
+		</entry>
+		<entry type="Font" key="getDefaultFont">
+			<label>Font used as default font</label>
+			<whatsthis>Font used as default font</whatsthis>
 			<default code="true">KGlobalSettings::generalFont()</default>
 		</entry>
 		<entry type="Bool" key="showSpecialRatioNotation">
