@@ -492,7 +492,7 @@ void FractionRingWidget::resetFraction(bool flag = true)
 	msg += i18n(" of ");
 	msg += QString::number(rRight.denominator());
 	msg += i18n(" painted parts.\n\n");
-	msg += i18n("The 'Multiply' buttom multiply each fraction. Try one of then!");
+	msg += i18n("The 'Multiply' button multiplies each fraction. Try one of them!");
 
 	textMsg->setText(msg);
 

@@ -49,7 +49,7 @@ class QGridLayout;
 
 enum ExerciseType
 {
-	Arithmatics,
+	Arithmetics,
 	Comparison,
 	Conversion,
 	Factorization,
@@ -121,7 +121,7 @@ class MainQtWidget : public KXmlGuiWindow
 		QGroupBox * m_SolutionGroup;
 		QGroupBox * m_OperationsGroup;
 
-		QToolButton * m_ArithmaticsButton;
+		QToolButton * m_ArithmeticsButton;
 		QToolButton * m_ComparisonButton;
 		QToolButton * m_ConversionButton;
 		QToolButton * m_FactorizationButton;
@@ -166,7 +166,7 @@ class MainQtWidget : public KXmlGuiWindow
 		QLabel * m_DivisionLabel;
 			
 		// Menu exercise actions
-		KAction * m_ArithmaticsAction;
+		KAction * m_ArithmeticsAction;
 		KAction * m_ComparisonAction;
 		KAction * m_ConversionAction;
 		KAction * m_FactorizationAction;
@@ -189,7 +189,7 @@ class MainQtWidget : public KXmlGuiWindow
 		/** 
 		 * Tasks selection 
 		 */
-		void SelectArithmatics();
+		void SelectArithmetics();
 		void SelectComparison();
 		void SelectConversion();
 		void SelectFactorization();

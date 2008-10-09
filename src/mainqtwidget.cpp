@@ -137,7 +137,7 @@ MainQtWidget::MainQtWidget()
 	m_SolutionGroup = new QGroupBox(i18n("Solution:"), pageOptions);
 	m_OperationsGroup = new QGroupBox(i18n("Operations:"), pageOptions);
 
-	m_TitleLabel = new QLabel("Arithmatic", pageExercises);
+	m_TitleLabel = new QLabel("Arithmetic", pageExercises);
 	m_TitleLabel->setAlignment(Qt::AlignLeft);
 	defaultFont = SettingsClass::getDefaultFont();
 	defaultFont.setBold( TRUE );
@@ -367,8 +367,8 @@ MainQtWidget::MainQtWidget()
 	selectedTask = (ExerciseType)SettingsClass::activeExercise();
 	switch (selectedTask)
 	{
-		case Arithmatics:
-			SelectArithmatics();
+		case Arithmetics:
+			SelectArithmetics();
 			break;
 		case Comparison:
 			SelectComparison();
@@ -383,7 +383,7 @@ MainQtWidget::MainQtWidget()
 			SelectPercentage();
 			break;			
 		default:
-			SelectArithmatics();
+			SelectArithmetics();
 			break;
 	}	
 	move(50, 50);	
@@ -454,9 +454,9 @@ void MainQtWidget::setupActions()
     	actionCollection()->addAction("Hint", m_HintAction );
 	m_HintAction->setVisible(false);        
         
-	m_ArithmaticsAction  = new KAction(KIcon("kbruch_exercise_common"), i18nc("Arithmetics Exercise", "Arithmatic"), this);
-    	actionCollection()->addAction("Arithmatic", m_ArithmaticsAction );
-	connect(m_ArithmaticsAction, SIGNAL(triggered(bool) ), SLOT(SelectArithmatics()));
+	m_ArithmeticsAction  = new KAction(KIcon("kbruch_exercise_common"), i18nc("Arithmetics Exercise", "Arithmetic"), this);
+    	actionCollection()->addAction("Arithmetic", m_ArithmeticsAction );
+	connect(m_ArithmeticsAction, SIGNAL(triggered(bool) ), SLOT(SelectArithmetics()));
               
 	m_ComparisonAction  = new KAction(KIcon("kbruch_exercise_compare"), i18nc("Comparison Exercise", "Comparison"), this);
     	actionCollection()->addAction("Comparision", m_ComparisonAction );
@@ -497,7 +497,7 @@ void MainQtWidget::NewTask()
 	// check which page should generate a new task
 	switch (selectedTask)
 	{
-		case Arithmatics:
+		case Arithmetics:
 			m_taskview->forceNewTask();
 			break;
 		case Comparison:
@@ -727,7 +727,7 @@ void MainQtWidget::slotAboutToShowPage()
 	// check which page to show
 
 	switch ( selectedTask ) {
-	  case Arithmatics:
+	  case Arithmetics:
 		m_QuestionMixedCheck->setEnabled( TRUE );
 		m_NrOfTermsBox->setEnabled( TRUE );
 		m_MaxMainDenominatorBox->setEnabled( TRUE );		
@@ -790,13 +790,13 @@ void MainQtWidget::SelectPercentage()
 	slotAboutToShowPage();
 }
 
-void MainQtWidget::SelectArithmatics()
+void MainQtWidget::SelectArithmetics()
 {
 #ifdef DEBUG
-	kDebug() << "SelectArithmatics MainQtWidget";
+	kDebug() << "SelectArithmetics MainQtWidget";
 #endif
-	m_TitleLabel->setText("Arithmatic");
-	selectedTask = Arithmatics;
+	m_TitleLabel->setText("Arithmetic");
+	selectedTask = Arithmetics;
 	m_taskview->show();
 	m_exerciseCompare->hide();
 	m_exerciseConvert->hide();
