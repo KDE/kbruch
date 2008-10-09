@@ -444,12 +444,12 @@ void MainQtWidget::setupActions()
 	m_NewTaskAction->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));
         
 	// back action
-    	m_BackAction  = new KAction(KIcon("document-new"), i18nc("@action go to the main screen", "Back"), this);
+    	m_BackAction  = new KAction(KIcon("go-previous"), i18nc("@action go to the main screen", "Back"), this);
     	actionCollection()->addAction("Back", m_BackAction );
 	connect(m_BackAction, SIGNAL(triggered(bool) ), SLOT(GoBack()));
 
 	// hint action (hide it as it dont exist here)
-    	m_HintAction  = new KAction(KIcon("document-new"), i18nc("@action opens hint", "Hint"), this);
+    	m_HintAction  = new KAction(KIcon("games-hint"), i18nc("@action opens hint", "Hint"), this);
     	actionCollection()->addAction("Hint", m_HintAction );
 	m_HintAction->setVisible(false);        
         
