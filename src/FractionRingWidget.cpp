@@ -394,27 +394,24 @@ void FractionRingWidget::slotLeftSpinBoxValueChanged(int value)
 	QString msg;
 	if (checkTask())
 	{
-		msg = i18n("Now the parts of the inside ring and outside ring has");
-		msg += i18n(" the same size, now we can add the fractions!\n\n");
-		msg += i18n("This is called finding the main denominator. ");
-		msg += i18n("The main denominator divide the rings in equal parts.");
+		msg = i18n("Now the parts of the inside ring and outside ring have "
+		           "the same size, and we can add the fractions!\n\n"
+		           "This is called finding the main denominator. "
+		           "The main denominator divides the rings into equal parts.");
 		if (rLeft.denominator() * value != MCM(rLeft.denominator(), rRight.denominator()))
 		{
-			msg += i18n("\n\nThere is a smaller main denominator, can you find it?.");
+			msg += QString("\n\n");
+			msg += i18n("There is a smaller main denominator. Can you find it?");
 		}
 
 		textMsg->setText(msg);
 	}
 	else
 	{
-		msg = i18n("You just multiplied the first fraction by ");
-		msg += QString::number(value);
-		msg += i18n(". Our main goal is to make all parts be the same size.");
-		msg += i18n("Try multiply the first fraction by ");
-		msg += QString::number(rRight.denominator());
-		msg += i18n(" and the second fraction by ");
-		msg += QString::number(rLeft.denominator());
-		msg += i18n(".");
+		msg = i18n("You have just multiplied the first fraction by %1. "
+		           "Our main goal is to make all parts be the same size. "
+		           "Try multiplying the first fraction by %2 and the second fraction by %3.",
+		           value, rRight.denominator(), rLeft.denominator());
 		textMsg->setText(msg);
 	}
 
@@ -429,27 +426,24 @@ void FractionRingWidget::slotRightSpinBoxValueChanged(int value)
 	QString msg;
 	if (checkTask())
 	{
-		msg = i18n("Now the parts of the inside ring and outside ring has");
-		msg += i18n(" the same size, now we can add the fractions!\n\n");
-		msg += i18n("This is called finding the main denominator. ");
-		msg += i18n("The main denominator divide the rings in equal parts.");
+		msg = i18n("Now the parts of the inside ring and outside ring have "
+		           "the same size, and we can add the fractions!\n\n"
+		           "This is called finding the main denominator. "
+		           "The main denominator divides the rings into equal parts.");
 		if (rRight.denominator() * value != MCM(rLeft.denominator(), rRight.denominator()))
 		{
-			msg += i18n("\n\nThere is a smaller main denominator, can you find it?.");
+			msg += QString("\n\n");
+			msg += i18n("There is a smaller main denominator. Can you find it?");
 		}
 
 		textMsg->setText(msg);
 	}
 	else
 	{
-		msg = i18n("You just multiplied the second fraction by ");
-		msg += QString::number(value);
-		msg += i18n(". Our main goal is to make all parts be the same size.");
-		msg += i18n("Try multiply the first fraction by ");
-		msg += QString::number(rRight.denominator());
-		msg += i18n(" and the second fraction by ");
-		msg += QString::number(rLeft.denominator());
-		msg += i18n(".");
+		msg = i18n("You have just multiplied the second fraction by %1. "
+		           "Our main goal is to make all parts be the same size. "
+		           "Try multiplying the first fraction by %2 and the second fraction by %3.",
+		           value, rRight.denominator(), rLeft.denominator());
 		textMsg->setText(msg);
 	}
 
@@ -482,17 +476,17 @@ void FractionRingWidget::resetFraction(bool flag = true)
 	leftSpinBox->setValue(1);
 	rightSpinBox->setValue(1);
 
-	QString msg = i18n("The outside ring represents the left fraction. ");
-	msg += QString::number(rLeft.numerator());
-	msg += i18n(" of ");
-	msg += QString::number(rLeft.denominator());
-	msg += i18n(" painted parts.\n\n");
-	msg += i18n("The inside ring represents the right fraction. ");
-	msg += QString::number(rRight.numerator());
-	msg += i18n(" of ");
-	msg += QString::number(rRight.denominator());
-	msg += i18n(" painted parts.\n\n");
-	msg += i18n("The 'Multiply' button multiplies each fraction. Try one of them!");
+	// NOTE: Inserting denominator as %1, as first number is used to determine plural form,
+	// and in these messages that should be the number next to "...painted parts".
+	QString insert1 = i18ncp("Inserted as %1 in the message below.",
+	                         "%2 of %1 painted parts.", rLeft.denominator(), rLeft.numerator());
+	QString insert2 = i18ncp("Inserted as %2 in the message below.",
+	                         "%2 of %1 painted parts.", rRight.denominator(), rRight.numerator());
+	QString msg = i18nc("%1 and %2 are the two messages translated above.",
+	                    "The outside ring represents the left fraction. %1\n\n"
+	                    "The inside ring represents the right fraction. %2\n\n"
+	                    "The 'Multiply' button multiplies each fraction. Try one of them!",
+	                    insert1, insert2);
 
 	textMsg->setText(msg);
 
