@@ -84,11 +84,10 @@ FractionRingWidget::FractionRingWidget()
 #endif
 	// creating KActions, used by the kbruchui.rc file
 	setupActions();
-	createGUI(0L);
+	createGUI("FractionRingWidgetui.rc");
 
 	layout1 = new QGridLayout();
 	layout1->setObjectName( "layout1" );
-	//layout1->setAlignment(Qt::AlignCenter);
 
 	baseWidget = new QWidget();
 	baseWidget->setObjectName( "baseWidget" );
@@ -221,22 +220,20 @@ void FractionRingWidget::setupActions()
 	kDebug() << "setupActions FractionRingWidget";
 #endif
 	// new task action
-    	m_NewTaskAction  = new KAction(KIcon("document-new"), i18nc("@action opens a new question", "&New"), this);
-    	actionCollection()->addAction("NewTask", m_NewTaskAction );
+   	m_NewTaskAction  = new KAction(KIcon("document-new"), i18nc("@action opens a new question", "&New"), this);
+   	actionCollection()->addAction("NewTask", m_NewTaskAction );
 	connect(m_NewTaskAction, SIGNAL(triggered(bool) ), SLOT(NewTask()));
 	m_NewTaskAction->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));
 
 	// back action
-    	m_BackAction  = new KAction(KIcon("go-previous"), i18nc("@action go to the main screen", "Back"), this);
-    	actionCollection()->addAction("Back", m_BackAction );
+   	m_BackAction  = new KAction(KIcon("go-previous"), i18nc("@action go to the main screen", "Back"), this);
+   	actionCollection()->addAction("Back", m_BackAction );
 	connect(m_BackAction, SIGNAL(triggered(bool) ), SLOT(GoBack()));
 
 	// hint action (hide it as it dont exist here)
-    	m_HintAction  = new KAction(KIcon("games-hint"), i18nc("@action opens hint", "Hint"), this);
-    	actionCollection()->addAction("Hint", m_HintAction );
+   	m_HintAction  = new KAction(KIcon("games-hint"), i18nc("@action opens hint", "Hint"), this);
+   	actionCollection()->addAction("Hint", m_HintAction );
 	connect(m_HintAction, SIGNAL(triggered(bool) ), SLOT(Hint()));
-
-	toolBar("exerciseToolBar")->setVisible(false);
 
 	// quit action
 	KStandardAction::quit(kapp, SLOT(quit()), actionCollection());
@@ -478,9 +475,9 @@ void FractionRingWidget::resetFraction(bool flag = true)
 
 	// NOTE: Inserting denominator as %1, as first number is used to determine plural form,
 	// and in these messages that should be the number next to "...painted parts".
-	QString insert1 = i18ncp("Inserted as %1 in the message below.",
+	QString insert1 = i18nc("Inserted as %1 in the message below.",
 	                         "%2 of %1 painted parts.", rLeft.denominator(), rLeft.numerator());
-	QString insert2 = i18ncp("Inserted as %2 in the message below.",
+	QString insert2 = i18nc("Inserted as %2 in the message below.",
 	                         "%2 of %1 painted parts.", rRight.denominator(), rRight.numerator());
 	QString msg = i18nc("%1 and %2 are the two messages translated above.",
 	                    "The outside ring represents the left fraction. %1\n\n"

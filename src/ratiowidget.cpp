@@ -56,6 +56,8 @@ void RatioWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	QPainter paint(this);
 
 	// ratios and operation signs are painted with the same font
+	m_font.setBold( TRUE );
+	m_font.setPointSize( 24 );
 	paint.setFont(m_font);
 
 	// set the pen for painting

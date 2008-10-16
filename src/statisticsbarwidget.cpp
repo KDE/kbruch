@@ -44,7 +44,7 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent):
 	m_total = 0;
 	setFixedSize(210,82);
 
-	defaultFont = SettingsClass::getDefaultFont();
+	defaultFont = SettingsClass::taskFont();
 	defaultFont.setBold( TRUE );
 	defaultFont.setPointSize(10);
 

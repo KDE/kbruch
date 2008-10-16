@@ -83,7 +83,7 @@ AppMenuWidget::AppMenuWidget()
 	kDebug() << "constructor AppMenuWidget";
 #endif
 	setupActions();
-	createGUI(0L);
+	createGUI("AppMenuWidgetui.rc");
 
 	QString css;
 	css += "QPushButton#m_Freestyle {";
@@ -91,8 +91,7 @@ AppMenuWidget::AppMenuWidget()
 	css +=		"image: url(";
 	css +=		KStandardDirs::locate("data", "kbruch/pics/freestyle_1.png");
 	css +=		");";
-	css +=	"}";	
-	
+	css +=	"}";		
 	css += "QPushButton#m_Freestyle:hover {";
 	css +=		"border: none;";
 	css +=		"image: url(";
@@ -193,25 +192,7 @@ void AppMenuWidget::setupActions()
 #ifdef DEBUG
 	kDebug() << "setupActions FractionRingWidget";
 #endif
-	// new task action
-/*    	m_NewTaskAction  = new KAction(KIcon("document-new"), i18nc("@action opens a new question", "&New"), this);
-    	actionCollection()->addAction("NewTask", m_NewTaskAction );
-	m_NewTaskAction->setEnabled(false);
 
-	// back action
-    	m_BackAction  = new KAction(KIcon("document-new"), i18nc("@action go to the main screen", "Back"), this);
-    	actionCollection()->addAction("Back", m_BackAction );
-	m_BackAction->setEnabled(false);
-
-	// hint action (hide it as it dont exist here)
-    	m_HintAction  = new KAction(KIcon("document-new"), i18nc("@action opens hint", "Hint"), this);
-    	actionCollection()->addAction("Hint", m_HintAction );
-	m_HintAction->setVisible(false);
-
-	toolBar("mainToolBar")->setVisible(false);
-*/
-	toolBar("exerciseToolBar")->setVisible(false);
-	
 	// quit action
 	KStandardAction::quit(kapp, SLOT(quit()), actionCollection());
 

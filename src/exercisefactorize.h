@@ -139,6 +139,8 @@ private:
 
 protected:
 	void keyPressEvent(QKeyEvent * e);
+	void showEvent(QShowEvent * event);
+
 
 private slots:
 	void slotCheckButtonClicked();

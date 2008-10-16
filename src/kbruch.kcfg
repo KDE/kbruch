@@ -50,9 +50,9 @@
 			<whatsthis>Set the maximum value of the main denominator.</whatsthis>
 			<default>10</default>
 		</entry>
-		<entry type="UInt" key="forceReduce">
-			<label>Force reduce fractions</label>
-			<whatsthis>Force reduce fractions.</whatsthis>
+		<entry type="UInt" key="reduceForm">
+			<label>Answer reduced fractions</label>
+			<whatsthis>Set if need be reduced the fractions.</whatsthis>
 			<default>false</default>
 		</entry>
 	</group>
@@ -79,7 +79,7 @@
 		<entry name="numberColor" type="Color">
 			<label>Color of the numbers in the task view</label>
 			<whatsthis>Color of the numbers in the task view</whatsthis>
-			<default code="true">Qt::darkGreen</default>
+			<default code="true">Qt::black</default>
 		</entry>
 		<entry name="operationColor" type="Color">
 			<label>Color of the operation signs in the task view</label>
@@ -89,16 +89,11 @@
 		<entry name="fractionBarColor" type="Color">
 			<label>Color of the fraction bars in the task view</label>
 			<whatsthis>Color of the fraction bars in the task view</whatsthis>
-			<default code="true">Qt::red</default>
+			<default code="true">Qt::black</default>
 		</entry>
 		<entry type="Font" key="taskFont">
 			<label>Font used for the task view</label>
 			<whatsthis>Font used for the task view</whatsthis>
-			<default code="true">KGlobalSettings::generalFont()</default>
-		</entry>
-		<entry type="Font" key="getDefaultFont">
-			<label>Font used as default font</label>
-			<whatsthis>Font used as default font</whatsthis>
 			<default code="true">KGlobalSettings::generalFont()</default>
 		</entry>
 		<entry type="Bool" key="showSpecialRatioNotation">

@@ -49,5 +49,7 @@ install(TARGETS kbruch  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 install( FILES kbruch.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES kbruch.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 install( FILES kbruchui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kbruch )
+install( FILES AppMenuWidgetui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kbruch )
+install( FILES FractionRingWidgetui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kbruch )
 
 kde4_install_icons( ${ICON_INSTALL_DIR} )

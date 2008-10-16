@@ -93,20 +93,19 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	checkLayout->setObjectName( "checkLayout" );
 
 	m_taskLabel = new QLabel( this );
-	m_taskLabel->setObjectName( "m_taskLabel" );
+	m_taskLabel->setObjectName( "taskLabel" );
 	m_taskLabel->setFont(defaultFont);	
 	taskLayout->addWidget( m_taskLabel, 1, 1 );
 
 	m_equalSignLabel = new QLabel( this );
-	m_equalSignLabel->setObjectName( "m_equalSignLabel" );
+	m_equalSignLabel->setObjectName( "equalSignLabel" );
 	m_equalSignLabel->setText("=");
 	m_equalSignLabel->setFont(defaultFont);
 	taskLayout->addWidget( m_equalSignLabel, 1, 2 );
 
 	m_factorsEnteredEdit = new KLineEdit( this );
-	m_factorsEnteredEdit->setObjectName( "m_factorsEnteredEdit" );
+	m_factorsEnteredEdit->setObjectName( "factorsEnteredEdit" );
 	m_factorsEnteredEdit->setReadOnly(true);
-	m_factorsEnteredEdit->setEnabled(false);
 	QPalette pal;
 	pal.setColor( m_factorsEnteredEdit->foregroundRole(), QColor(0, 0, 0) );
 	m_factorsEnteredEdit->setPalette(pal);
@@ -117,60 +116,59 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	defaultFont.setPointSize(10);
 
 	m_factor2Button = new QPushButton( this );
-	m_factor2Button->setObjectName( "m_factor2Button" );
-	m_factor2Button->setFixedSize(40,35);	
+	m_factor2Button->setObjectName( "factor2Button" );
+	m_factor2Button->setFixedSize(50,35);	
 	m_factor2Button->setFont(defaultFont);
 	taskLayout->addWidget( m_factor2Button, 4, 3 );
 	
 	m_factor3Button = new QPushButton( this );
-	m_factor3Button->setObjectName( "m_factor3Button" );
-	m_factor3Button->setFixedSize(40,35);		
+	m_factor3Button->setObjectName( "factor3Button" );
+	m_factor3Button->setFixedSize(50,35);		
 	m_factor3Button->setFont(defaultFont);
 	taskLayout->addWidget( m_factor3Button, 4, 4 );
 
 	m_factor5Button = new QPushButton( this );
-	m_factor5Button->setObjectName( "m_factor5Button" );
-	m_factor5Button->setFixedSize(40,35);
+	m_factor5Button->setObjectName( "factor5Button" );
+	m_factor5Button->setFixedSize(50,35);
 	m_factor5Button->setFont(defaultFont);
 	taskLayout->addWidget( m_factor5Button, 4, 5 );
 
 	m_factor7Button = new QPushButton( this );
-	m_factor7Button->setObjectName( "m_factor7Button" );
-	m_factor7Button->setFixedSize(40,35);
+	m_factor7Button->setObjectName( "factor7Button" );
+	m_factor7Button->setFixedSize(50,35);
 	m_factor7Button->setFont(defaultFont);
 	taskLayout->addWidget( m_factor7Button, 4, 6 );
 
 	m_factor11Button = new QPushButton( this );
-	m_factor11Button->setObjectName( "m_factor11Button" );
-	m_factor11Button->setFixedSize(40,35);
+	m_factor11Button->setObjectName( "factor11Button" );
+	m_factor11Button->setFixedSize(50,35);
 	m_factor11Button->setFont(defaultFont);
 	taskLayout->addWidget( m_factor11Button, 5, 3 );
 	
 	m_factor13Button = new QPushButton( this );
-	m_factor13Button->setObjectName( "m_factor13Button" );
-	m_factor13Button->setFixedSize(40,35);
+	m_factor13Button->setObjectName( "factor13Button" );
+	m_factor13Button->setFixedSize(50,35);
 	m_factor13Button->setFont(defaultFont);
 	taskLayout->addWidget( m_factor13Button, 5, 4 );
 
 	m_factor17Button = new QPushButton( this );
-	m_factor17Button->setObjectName( "m_factor17Button" );
-	m_factor17Button->setFixedSize(40,35);
+	m_factor17Button->setObjectName( "factor17Button" );
+	m_factor17Button->setFixedSize(50,35);
 	m_factor17Button->setFont(defaultFont);
 	taskLayout->addWidget( m_factor17Button, 5, 5 );
 
 	m_factor19Button = new QPushButton( this );
-	m_factor19Button->setObjectName( "m_factor19Button" );
-	m_factor19Button->setFixedSize(40,35);
+	m_factor19Button->setObjectName( "factor19Button" );
+	m_factor19Button->setFixedSize(50,35);
 	m_factor19Button->setFont(defaultFont);
 	taskLayout->addWidget( m_factor19Button, 5, 6 );
 
 	m_removeLastFactorButton = new QPushButton( this );
-	m_removeLastFactorButton->setObjectName( "m_removeLastFactorButton" );
-	m_removeLastFactorButton->setFixedSize(80,35);
-	m_removeLastFactorButton->setText("");
-	m_removeLastFactorButton->setIcon(KIcon("kbruch_back_arrow"));//QIcon("/home/kdeedu/kde-dev/kdeedu/kbruch/src/pics/ox22-action-kbruch_back_arrow.png"));
-	m_removeLastFactorButton->setIconSize(QSize(37, 37));
-	taskLayout->addWidget( m_removeLastFactorButton, 3, 5, 1, 2 );
+	m_removeLastFactorButton->setObjectName( "removeLastFactor" );
+	m_removeLastFactorButton->setFixedSize(115,35);
+	m_removeLastFactorButton->setFont(defaultFont);
+	m_removeLastFactorButton->setText("Backspace");
+	taskLayout->addWidget( m_removeLastFactorButton, 3, 4, 1, 3, Qt::AlignRight );
 
 	defaultFont.setPointSize(10);
 
@@ -178,7 +176,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_skipButton->setObjectName( "m_skipButton" );
 	m_skipButton->setText(i18n("&Skip"));
 	m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
-	m_skipButton->setFixedSize(74,30);
+	m_skipButton->setFixedSize(80,30);
 	m_skipButton->setFont(defaultFont);		
 	QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
 	checkLayout->addWidget(m_skipButton, 1, 1);	
@@ -189,7 +187,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_checkButton->setText( i18n( "&Check" ) );
 	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
-	m_checkButton->setFixedSize(74,30);
+	m_checkButton->setFixedSize(80,30);
 	m_checkButton->setFont(defaultFont);		
 	checkLayout->addWidget(m_checkButton, 1, 0);			
 	m_checkButton->setDefault(true); // is the default button of the dialog
@@ -256,6 +254,8 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_factor17Button->setFocusPolicy( Qt::NoFocus );
 	m_factor19Button->setFocusPolicy( Qt::NoFocus );	
 	m_removeLastFactorButton->setFocusPolicy( Qt::NoFocus );	
+	m_skipButton->setFocusPolicy( Qt::NoFocus );	
+	m_checkButton->setFocusPolicy( Qt::NoFocus );	
 
 	setLayout(baseGrid);
 	taskWidget->setLayout(taskLayout);
@@ -435,7 +435,7 @@ void ExerciseFactorize::nextTask()
 	m_factorsResult.clear();
 	m_factorsEnteredEdit->setText("");
 
-	m_factor2Button->setFocus();
+	m_factorsEnteredEdit->setFocus();
 
 	/* create a new task */
 	QApplication::setOverrideCursor(Qt::WaitCursor); /* show the sand clock */
@@ -680,3 +680,12 @@ void ExerciseFactorize::keyPressEvent(QKeyEvent * e)
 	}
 }
 
+void ExerciseFactorize::showEvent( QShowEvent * event )
+{
+#ifdef DEBUG
+	kDebug() << "ExerciseFactorize::showEvent()";
+#endif
+
+	if ( isVisible() )
+		m_factorsEnteredEdit->setFocus();		
+}

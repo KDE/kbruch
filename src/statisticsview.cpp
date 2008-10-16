@@ -49,7 +49,7 @@ StatisticsView::StatisticsView(QWidget * parent):
 	m_correct = SettingsClass::correct();
 	m_skipped = SettingsClass::skipped();
 
-	defaultFont = SettingsClass::getDefaultFont();
+	defaultFont = SettingsClass::taskFont();
 	defaultFont.setBold( TRUE );
 	defaultFont.setPointSize(28);
 

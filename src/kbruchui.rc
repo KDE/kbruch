@@ -2,7 +2,7 @@
 <kpartgui name="kbruch" version="1">
 <MenuBar>
   <Menu noMerge="0" name="file">
-    <text>&amp;Task</text>
+    <text>&amp;File</text>
     <Action name="NewTask"/>
     <Merge/>
     <Separator/>
@@ -13,9 +13,7 @@
   <Action name="NewTask"/>
   <Action name="Back"/>  
   <Separator/>
-  <Action name="Hint"/>  
-  <Separator/>
-  <Action name="Arithmatic"/>
+  <Action name="Arithmetic"/>
   <Action name="Comparision"/>
   <Action name="Conversion"/>
   <Action name="Factorization"/>

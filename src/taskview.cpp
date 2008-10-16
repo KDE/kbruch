@@ -94,6 +94,7 @@ TaskView::TaskView(QWidget * parent,
 
 	QFont defaultFont = SettingsClass::taskFont();
 	defaultFont.setBold( TRUE );
+	defaultFont.setPointSize( 18 );
 	
 	// first left is the task widget
 	m_taskWidget = new TaskWidget(taskWidget, current_task);
@@ -143,7 +144,7 @@ TaskView::TaskView(QWidget * parent,
 	m_checkButton->setText(i18n("&Check"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
 	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
-	m_checkButton->setFixedSize(74,30);
+	m_checkButton->setFixedSize(80,30);
 	m_checkButton->setFont(defaultFont);	
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
 	checkLayout->addWidget(m_checkButton, 1, 0);	
@@ -153,7 +154,7 @@ TaskView::TaskView(QWidget * parent,
 	m_skipButton->setObjectName( "m_skipButton" );
 	m_skipButton->setText(i18n("&Skip"));
 	m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
-	m_skipButton->setFixedSize(74,30);
+	m_skipButton->setFixedSize(80,30);
 	m_skipButton->setFont(defaultFont);	
 	QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
 	checkLayout->addWidget(m_skipButton, 1, 1);	
