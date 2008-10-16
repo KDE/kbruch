@@ -246,7 +246,7 @@ bool ratio::operator<(ratio right)
 	if (tmp_ratio.denominator() < 0)
 		sign *= -1;
 
-	// if the diff is negative, this is smaller then right
+	// if the diff is negative, this is smaller than right
 	if (sign > 0)
 	{
 		return false;
@@ -270,7 +270,7 @@ bool ratio::operator>(ratio right)
 	if (tmp_ratio.denominator() < 0)
 		sign *= -1;
 
-	// if the diff is positive, this is smaller then right
+	// if the diff is positive, this is smaller than right
 	if (sign < 0)
 	{
 		return false;

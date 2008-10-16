@@ -171,7 +171,7 @@ void primenumber::display_all()
 /* finds next prime number and adds it to the vector */
 void primenumber::find_next()
 {
-	/* our new prime number, must be bigger then the last one */
+	/* our new prime number, must be bigger than the last one */
 	unsigned int new_prim = *(prim_vector.end() - 1);
 
 	do
