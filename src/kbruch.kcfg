@@ -52,7 +52,7 @@
 		</entry>
 		<entry type="UInt" key="reduceForm">
 			<label>Answer reduced fractions</label>
-			<whatsthis>Set if need be reduced the fractions.</whatsthis>
+			<whatsthis>Set if the fractions need to be reduced.</whatsthis>
 			<default>false</default>
 		</entry>
 	</group>
