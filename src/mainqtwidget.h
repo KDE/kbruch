@@ -126,6 +126,7 @@ class MainQtWidget : public KXmlGuiWindow
 		QToolButton * m_ConversionButton;
 		QToolButton * m_FactorizationButton;
 		QToolButton * m_NewTaskButton;
+		QToolButton * m_BackTaskButton;
 		QToolButton * m_PercentageButton;
 		
 		// Question Group
@@ -170,7 +171,8 @@ class MainQtWidget : public KXmlGuiWindow
 		KAction * m_ComparisonAction;
 		KAction * m_ConversionAction;
 		KAction * m_FactorizationAction;
-		KAction * m_NewTaskAction;
+		KAction * m_NewTaskActionMenu;
+		KAction * m_NewTaskActionTool;
 		KAction * m_BackAction;
 		KAction * m_HintAction;
 		KAction * m_PercentageAction;

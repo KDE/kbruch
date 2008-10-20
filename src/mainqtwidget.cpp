@@ -471,6 +471,20 @@ void MainQtWidget::setupActions()
 
 	setStyleSheet(css);
 
+	m_NewTaskButton = new QToolButton( this );
+	m_NewTaskButton->setObjectName("NewTaskButton");
+	m_NewTaskButton->setFixedSize( 84,65 );
+	m_NewTaskButton->setText( "New" );	
+	m_NewTaskButton->setIcon(KIcon("document-new"));
+	m_NewTaskButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+
+	m_BackTaskButton = new QToolButton( this );
+	m_BackTaskButton->setObjectName("BackTaskButton");
+	m_BackTaskButton->setFixedSize( 84,65 );
+	m_BackTaskButton->setText( "Back" );	
+	m_BackTaskButton->setIcon(KIcon("go-previous"));
+	m_BackTaskButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+
 	m_ArithmeticsButton = new QToolButton( this );
 	m_ArithmeticsButton->setObjectName("ArithmeticsButton");
 	m_ArithmeticsButton->setFixedSize( 84,65 );
@@ -496,37 +510,42 @@ void MainQtWidget::setupActions()
 	m_PercentageButton->setFixedSize( 84,65 );
 	m_PercentageButton->setText( "\n\nPercentage" );
 
-   	m_NewTaskAction  = new KAction(KIcon("document-new"), i18nc("@action opens a new question", "&New"), this);
-   	actionCollection()->addAction("NewTask", m_NewTaskAction );
-	connect(m_NewTaskAction, SIGNAL(triggered(bool) ), SLOT(NewTask()));
-	m_NewTaskAction->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));
-        
-	// back action
-   	m_BackAction  = new KAction(KIcon("go-previous"), i18nc("@action go to the main screen", "Back"), this);
-   	actionCollection()->addAction("Back", m_BackAction );
-	connect(m_BackAction, SIGNAL(triggered(bool) ), SLOT(GoBack()));
+   	m_NewTaskActionMenu  = new KAction(KIcon("document-new"), i18nc("@action opens a new question", "&New"), this);
+   	actionCollection()->addAction("NewTaskMenu", m_NewTaskActionMenu );
+	connect(m_NewTaskActionMenu, SIGNAL(triggered(bool) ), SLOT(NewTask()));
+	m_NewTaskActionMenu->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));
 
-	m_ArithmeticsAction  = new KAction(KIcon("kbruch_exercise_common"), i18nc("Arithmetics Exercise", "Arithmetic"), this);
+   	m_NewTaskActionTool  = new KAction(i18nc("@action opens a new question", "&New"), this);
+   	actionCollection()->addAction("NewTaskTool", m_NewTaskActionTool );
+	connect(m_NewTaskButton, SIGNAL(clicked()), SLOT(NewTask()));
+    m_NewTaskActionTool->setDefaultWidget( m_NewTaskButton );
+        
+   	m_BackAction  = new KAction(i18nc("@action go to the main screen", "Back"), this);
+   	actionCollection()->addAction("Back", m_BackAction );
+	connect(m_BackTaskButton, SIGNAL(clicked()), SLOT(GoBack()));
+    m_BackAction->setDefaultWidget( m_BackTaskButton );
+
+	m_ArithmeticsAction  = new KAction(i18nc("Arithmetics Exercise", "Arithmetic"), this);
    	actionCollection()->addAction("Arithmetic", m_ArithmeticsAction );
 	connect(m_ArithmeticsButton, SIGNAL(clicked()), SLOT(SelectArithmetics()));
     m_ArithmeticsAction->setDefaultWidget( m_ArithmeticsButton );
                   
-	m_ComparisonAction  = new KAction(KIcon("kbruch_exercise_compare"), i18nc("Comparision Exercise", "Comparision"), this);
+	m_ComparisonAction  = new KAction(i18nc("Comparision Exercise", "Comparision"), this);
    	actionCollection()->addAction("Comparision", m_ComparisonAction );
 	connect(m_ComparisonButton, SIGNAL(clicked()), SLOT(SelectComparison()));
     m_ComparisonAction->setDefaultWidget( m_ComparisonButton );
         
-	m_ConversionAction  = new KAction(KIcon("kbruch_exercise_conversion"), i18nc("Conversion Exercise", "Conversion"), this);
+	m_ConversionAction  = new KAction(i18nc("Conversion Exercise", "Conversion"), this);
    	actionCollection()->addAction("Conversion", m_ConversionAction );
 	connect(m_ConversionButton, SIGNAL(clicked()), SLOT(SelectConversion()));
     m_ConversionAction->setDefaultWidget( m_ConversionButton );
         
-	m_FactorizationAction  = new KAction(KIcon("kbruch_exercise_factorization"), i18nc("Factorization Exercise", "Factorization"), this);
+	m_FactorizationAction  = new KAction(i18nc("Factorization Exercise", "Factorization"), this);
    	actionCollection()->addAction("Factorization", m_FactorizationAction );
 	connect(m_FactorizationButton, SIGNAL(clicked()), SLOT(SelectFactorization()));
     m_FactorizationAction->setDefaultWidget( m_FactorizationButton );
         
-	m_PercentageAction  = new KAction(KIcon("kbruch_exercise_conversion"), i18nc("Percentage Exercise", "Percentage"), this);
+	m_PercentageAction  = new KAction(i18nc("Percentage Exercise", "Percentage"), this);
    	actionCollection()->addAction("Percentage", m_PercentageAction );
 	connect(m_PercentageButton, SIGNAL(clicked()), SLOT(SelectPercentage()));
     m_PercentageAction->setDefaultWidget( m_PercentageButton );
