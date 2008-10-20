@@ -132,6 +132,9 @@ private slots:
 	void slotSkipButtonClicked();
 	void numeratorReturnPressed(const QString &);
 	void denominatorReturnPressed(const QString &);
+
+protected:
+	void showEvent ( QShowEvent * event );
 };
 
 #endif

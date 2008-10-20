@@ -123,7 +123,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	deno_edit->setAlignment(Qt::AlignHCenter);
 	deno_edit->setFont(defaultFont);	
 	QObject::connect(deno_edit, SIGNAL(returnPressed(const QString &)), this,
-		SLOT(numeratorReturnPressed(const QString &)));	
+		SLOT(denominatorReturnPressed(const QString &)));	
 	taskLayout->addWidget(deno_edit, 3, 2);
 
 	// next is the result widget
@@ -154,9 +154,6 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
 	checkLayout->addWidget(m_skipButton, 1, 1);	
 
-	// that the user can start typing without moving the focus
-	numer_edit->setFocus();
-
 	setLayout(baseGrid);
 	taskWidget->setLayout(taskLayout);
   	checkWidget->setLayout(checkLayout);
@@ -164,6 +161,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	// add tooltip and qwhatsthis help to the widget
 	setToolTip(i18n("In this exercise you have to convert a number into a fraction."));
 	setWhatsThis( i18n("In this exercise you have to convert a given number into a fraction by entering numerator and denominator. Do not forget to reduce the result."));
+
 }
 
 /* destructor */
@@ -442,4 +440,24 @@ true)
 void ExerciseConvert::slotSkipButtonClicked()
 {
 	forceNewTask();
+}
+
+/* ------ private slots ------ */
+
+void ExerciseConvert::numeratorReturnPressed(const QString &)
+{
+	deno_edit->setFocus();
+}
+
+void ExerciseConvert::denominatorReturnPressed(const QString &)
+{
+	slotCheckButtonClicked();
+}
+
+/* ------ protected events ------ */
+void ExerciseConvert::showEvent ( QShowEvent * event ) {
+
+	// that the user can start typing without moving the focus
+	numer_edit->setFocus();
+
 }

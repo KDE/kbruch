@@ -163,15 +163,13 @@ TaskView::TaskView(QWidget * parent,
 	taskWidget->setLayout(taskLayout);
   	checkWidget->setLayout(checkLayout);
 
-	// that the user can start typing without moving the focus
-	numer_edit->setFocus();
-
-	// show the whole layout
+    // show the whole layout
 	m_taskWidget->show();
 
 	// add tooltip and qwhatsthis help to the widget
 	setToolTip(i18n("In this exercise you have to solve a given question with fractions."));
 	setWhatsThis( i18n("In this exercise you have to solve the generated question. You have to enter numerator and denominator. You can adjust the difficulty of the question with the boxes in the toolbar. Do not forget to reduce the result."));
+
 }
 
 /* destructor */
@@ -392,4 +390,10 @@ void TaskView::slotSkipButtonClicked()
 	forceNewTask();
 }
 
+/* ------ protected events ------ */
+void TaskView::showEvent ( QShowEvent * event ) {
 
+	// that the user can start typing without moving the focus
+	numer_edit->setFocus();
+
+}
