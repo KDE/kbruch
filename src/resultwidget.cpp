@@ -221,7 +221,7 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 
 			if (m_ExerciseView == 1) {
 
-				if (SettingsClass::showSpecialRatioNotation() == true && qAbs(m_result.numerator()) >= qAbs(m_result.denominator()))
+				if (SettingsClass::showSpecialRatioNotation() == true && qAbs(m_result.numerator()) >= qAbs(m_result.denominator()) && m_result.denominator() != 1)
 				{
 					paintRatio(paint, m_result, old_x, old_y, fm, false, true, false);
 					paintMiddle(paint, QString(" or "), old_x, old_y, fm, m_colorOperation);

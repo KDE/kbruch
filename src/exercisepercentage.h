@@ -4,6 +4,8 @@
     begin                : 2008/10/04
     copyright            : (C) 2004 by Sebastian Stein
     email                : seb.kde@hpfsc.de
+
+    copyright            : (C) 2008 by Tiago Porangaba
  ***************************************************************************/
 
 /***************************************************************************
@@ -76,9 +78,6 @@ signals:
 private:
 	short m_currentState;
 
-	QString m_number;
-	uint m_periodStart;
-	uint m_periodLength;
 	ratio m_result;
 
 	QString m_numberPercentage;
@@ -88,10 +87,8 @@ private:
 	QLabel * m_taskLabel;
 
 	RationalWidget * m_rationalWidget;
-	ResultWidget * m_resultWidget;
-	KLineEdit * numer_edit;
-	QFrame * edit_line;
-	KLineEdit * deno_edit;
+	ResultWidget * m_resultWidget;	
+	QFrame * edit_line;	
 	KLineEdit * answer_edit;
 
 	QPushButton* m_checkButton;
@@ -110,7 +107,8 @@ private:
 
 private slots:
 	void slotCheckButtonClicked();
-	void slotSkipButtonClicked();	
+	void slotSkipButtonClicked();
+	void answerReturnPressed(const QString &);		
 };
 
 #endif

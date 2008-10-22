@@ -4,6 +4,8 @@
     begin                : 2004/06/04
     copyright            : (C) 2004 by Sebastian Stein
     email                : seb.kde@hpfsc.de
+
+    copyright            : (C) 2008 by Tiago Porangaba    
  ***************************************************************************/
 
 /***************************************************************************
@@ -63,6 +65,7 @@ ExercisePercentage::ExercisePercentage(QWidget * parent):
 
 	QFont defaultFont = SettingsClass::taskFont();
 	defaultFont.setBold( TRUE );
+	defaultFont.setPointSize(10);	
 
 	// the next thing to do on a button click would be to check the entered
 	// result
@@ -88,19 +91,15 @@ ExercisePercentage::ExercisePercentage(QWidget * parent):
 	taskLayout->setColumnStretch(3,1);
 
 	checkLayout = new QGridLayout(this);
-	checkLayout->setObjectName( "checkLayout" );
-
-	// first left is the rational widget
-	//m_rationalWidget = new RationalWidget(taskWidget, m_number, m_periodStart, m_periodLength);
-	//m_rationalWidget->setObjectName("m_rationalWidget");
-	//taskLayout->addWidget(m_rationalWidget, 1, 1, 3, 1);
+	checkLayout->setObjectName( "checkLayout" );		
 
 	/* Task: percentage question */
+	defaultFont.setPointSize(16);	
 	m_taskLabel = new QLabel( this );
-	m_taskLabel->setObjectName( "m_taskLabel" );
+	m_taskLabel->setObjectName( "m_taskLabel" );	
 	m_taskLabel->setFont(defaultFont);	
 	m_taskLabel->setText(m_numberPercentage + " % of " + m_numberPercentageOf + " = ");
-	taskLayout->addWidget( m_taskLabel, 1, 0);	
+	taskLayout->addWidget( m_taskLabel, 1, 1, 2, 1);	
 
 	/* Input question: result of question */
 	answer_edit = new KLineEdit(taskWidget);
@@ -110,48 +109,17 @@ ExercisePercentage::ExercisePercentage(QWidget * parent):
 	answer_edit->setFixedSize(85,42);
 	answer_edit->setAlignment(Qt::AlignHCenter);
 	answer_edit->setFont(defaultFont);	
-	//QObject::connect(answer_edit, SIGNAL(returnPressed(const QString &)), this,
-	//	SLOT(numeratorReturnPressed(const QString &)));	
-	taskLayout->addWidget(answer_edit, 1, 1);
-
-	/* add input box so the user can enter numerator */
-	//numer_edit = new KLineEdit(taskWidget);
-	//numer_edit->setObjectName("numer_edit");
-	//numer_edit->setValidator( valnum ); // use the int validator
-	//numer_edit->setToolTip(i18n("Enter the numerator of your result"));
-	//numer_edit->setFixedSize(85,42);
-	//numer_edit->setAlignment(Qt::AlignHCenter);
-	//numer_edit->setFont(defaultFont);	
-	//QObject::connect(numer_edit, SIGNAL(returnPressed(const QString &)), this,
-	//	SLOT(numeratorReturnPressed(const QString &)));	
-	//taskLayout->addWidget(numer_edit, 1, 2);
-
-	/* add a line between the edit boxes */
-	//edit_line = new QFrame(taskWidget);
-	//edit_line->setGeometry(QRect(100, 100, 20, 20));
-	//edit_line->setFrameStyle(QFrame::HLine | QFrame::Sunken);
-	//taskLayout->addWidget(edit_line, 2, 2);
-
-	/* add input box so the user can enter denominator */
-	//deno_edit = new KLineEdit(taskWidget);
-	//deno_edit->setObjectName("deno_edit");
-	//deno_edit->setValidator( valnum ); // use the int validator
-	//deno_edit->setToolTip(i18n("Enter the denominator of your result"));
-	//deno_edit->setFixedSize(85,42);
-	//deno_edit->setAlignment(Qt::AlignHCenter);
-	//deno_edit->setFont(defaultFont);	
-	//QObject::connect(deno_edit, SIGNAL(returnPressed(const QString &)), this,
-	//	SLOT(numeratorReturnPressed(const QString &)));	
-	//taskLayout->addWidget(deno_edit, 3, 2);
+	QObject::connect(answer_edit, SIGNAL(returnPressed(const QString &)), this,
+		SLOT(answerReturnPressed(const QString &)));	
+	taskLayout->addWidget(answer_edit, 1, 2, 2, 1);	
 
 	// next is the result widget
 	m_resultWidget = new ResultWidget(checkWidget, m_result);
 	m_resultWidget->setObjectName("m_resultWidget");
 	checkLayout->addWidget(m_resultWidget, 0, 0, 1, 2);
 
-	defaultFont.setPointSize(10);
-
 	// the right aligned button
+	defaultFont.setPointSize(10);	
 	m_checkButton = new QPushButton( checkWidget );
 	m_checkButton->setObjectName( "m_checkButton" );
 	m_checkButton->setText(i18n("&Check"));
@@ -180,10 +148,9 @@ ExercisePercentage::ExercisePercentage(QWidget * parent):
 	taskWidget->setLayout(taskLayout);
   	checkWidget->setLayout(checkLayout);
 
-	// add tooltip and qwhatsthis help to the widget
-        //TODO: change messages below 
+	// add tooltip and qwhatsthis help to the widget        
 	setToolTip(i18n("In this exercise you have to work with percentage questions."));
-	//setWhatsThis( i18n("In this exercise you have to convert a given number into a fraction by entering numerator and denominator. Do not forget to reduce the result."));
+	
 }
 
 /* destructor */
@@ -240,212 +207,119 @@ void ExercisePercentage::createTask()
 	switch(int((double(rand()) / RAND_MAX) * 18 + 1))
 	{
 		case  0 :   
-			//m_number = KGlobal::locale()->formatNumber(0.5, 1);
-			//m_periodStart = 2;
-			//m_periodLength = 0;
-			//m_result = ratio(1, 2);			
+			//m_number = KGlobal::locale()->formatNumber(0.5, 1);			
 			m_numberPercentage = "75";
 			m_numberPercentageOf = "1900";
 			m_resultPercentage = "1425" ;
 			break;
 		case  1 :   
-			//m_number = KGlobal::locale()->formatNumber(0.3, 1);
-			//m_periodStart = 2;
-			//m_periodLength = 1;
-			//m_result = ratio(1, 3);			
+			//m_number = KGlobal::locale()->formatNumber(0.3, 1);			
 			m_numberPercentage = "50";
 			m_numberPercentageOf = "1800";
 			m_resultPercentage = "900" ;
 			break;
 		case  2 :   
-			//m_number = KGlobal::locale()->formatNumber(0.6, 1);
-			//m_periodStart = 2;
-			//m_periodLength = 1;
-			m_result = ratio(2, 3);
+			//m_number = KGlobal::locale()->formatNumber(0.6, 1);				
 			m_numberPercentage = "1";
 			m_numberPercentageOf = "1200";
 			m_resultPercentage = "12" ;
-
-
 			break;
 		case  3 :   
-			m_number = KGlobal::locale()->formatNumber(0.25, 2);
-			m_periodStart = 2;
-			m_periodLength = 0;
-			m_result = ratio(1, 4);
-
+			//m_number = KGlobal::locale()->formatNumber(0.25, 2);
 			m_numberPercentage = "10";
 			m_numberPercentageOf = "900";
 			m_resultPercentage = "90" ;
-
-
 			break;
 		case  4 :   
-			m_number = KGlobal::locale()->formatNumber(0.75, 2);
-			m_periodStart = 2;
-			m_periodLength = 0;
-			m_result = ratio(3, 4);
-
+			//m_number = KGlobal::locale()->formatNumber(0.75, 2);
 			m_numberPercentage = "100";
 			m_numberPercentageOf = "800";
 			m_resultPercentage = "800" ;
-
-
 			break;
 		case  5 :   
-			m_number = KGlobal::locale()->formatNumber(0.2, 1);
-			m_periodStart = 2;
-			m_periodLength = 0;
-			m_result = ratio(1, 5);
-			
+			//m_number = KGlobal::locale()->formatNumber(0.2, 1);				
 			m_numberPercentage = "75";
 			m_numberPercentageOf = "300";
 			m_resultPercentage = "225" ;
-
 			break;
 		case  6 :   
-			m_number = KGlobal::locale()->formatNumber(0.4, 1);
-			m_periodStart = 2;
-			m_periodLength = 0;
-			m_result = ratio(2, 5);
-			
+			//m_number = KGlobal::locale()->formatNumber(0.4, 1);			
 			m_numberPercentage = "10";
 			m_numberPercentageOf = "1500";
 			m_resultPercentage = "150" ;
-
 			break;
 		case  7 :   
-			m_number = KGlobal::locale()->formatNumber(0.6, 1);
-			m_periodStart = 2;
-			m_periodLength = 0;
-			m_result = ratio(3, 5);
-
+			//m_number = KGlobal::locale()->formatNumber(0.6, 1);			
 			m_numberPercentage = "10";
 			m_numberPercentageOf = "100";
 			m_resultPercentage = "10" ;
-
 			break;
 		case  8 :   
-			m_number = KGlobal::locale()->formatNumber(0.8, 1);
-			m_periodStart = 2;
-			m_periodLength = 0;
-			m_result = ratio(4, 5);
-
+			//m_number = KGlobal::locale()->formatNumber(0.8, 1);
 			m_numberPercentage = "25";
 			m_numberPercentageOf = "400";
 			m_resultPercentage = "100" ;
-
 			break;
 		case  9 :
-			m_number = KGlobal::locale()->formatNumber(0.16, 2);
-			m_periodStart = 3;
-			m_periodLength = 1;
-			m_result = ratio(1, 6);
-
+			//m_number = KGlobal::locale()->formatNumber(0.16, 2);
 			m_numberPercentage = "50";
 			m_numberPercentageOf = "800";
 			m_resultPercentage = "400" ;
-
 			break;
 		case 10 :
-			m_number = KGlobal::locale()->formatNumber(0.142857, 6);
-			m_periodStart = 2;
-			m_periodLength = 6;
-			m_result = ratio(1, 7);
-
+			//m_number = KGlobal::locale()->formatNumber(0.142857, 6);
 			m_numberPercentage = "1";
 			m_numberPercentageOf = "400";
 			m_resultPercentage = "1" ;
-
 			break;
 		case 11 :   
-			m_number = KGlobal::locale()->formatNumber(0.125, 3);
-			m_periodStart = 2;
-			m_periodLength = 0;
-			m_result = ratio(1, 8);
-
+			//m_number = KGlobal::locale()->formatNumber(0.125, 3);			
 			m_numberPercentage = "50";
 			m_numberPercentageOf = "600";
 			m_resultPercentage = "300" ;
-
 			break;
 		case 12 :
-			m_number = KGlobal::locale()->formatNumber(0.375, 3);
-			m_periodStart = 2;
-			m_periodLength = 0;
-			m_result = ratio(3, 8);
-
+			//m_number = KGlobal::locale()->formatNumber(0.375, 3);			
 			m_numberPercentage = "100";
 			m_numberPercentageOf = "1300";
 			m_resultPercentage = "1300" ;
-
 			break;
 		case 13 :  
-			m_number = KGlobal::locale()->formatNumber(0.1, 1);
-			m_periodStart = 2;
-			m_periodLength = 1;
-			m_result = ratio(1, 9);
-
+			//m_number = KGlobal::locale()->formatNumber(0.1, 1);			
 			m_numberPercentage = "100";
 			m_numberPercentageOf = "800";
 			m_resultPercentage = "800" ;
-
 			break;
 		case 14 :   
-			m_number = KGlobal::locale()->formatNumber(0.1, 1);
-			m_periodStart = 2;
-			m_periodLength = 0;
-			m_result = ratio(1, 10);
-
+			//m_number = KGlobal::locale()->formatNumber(0.1, 1);	
 			m_numberPercentage = "25";
 			m_numberPercentageOf = "1400";
 			m_resultPercentage = "350" ;
-
 			break;
 		case 15 :   
-			m_number = KGlobal::locale()->formatNumber(0.05, 2);
-			m_periodStart = 2;
-			m_periodLength = 0;
-			m_result = ratio(1, 20);
-
+			//m_number = KGlobal::locale()->formatNumber(0.05, 2);
 			m_numberPercentage = "10";
 			m_numberPercentageOf = "1400";
 			m_resultPercentage = "140" ;
-
 			break;
 		case 16 :   
-			m_number = KGlobal::locale()->formatNumber(0.01, 2);
-			m_periodStart = 2;
-			m_periodLength = 0;
-			m_result = ratio(1, 100);
-
+			//m_number = KGlobal::locale()->formatNumber(0.01, 2);
 			m_numberPercentage = "1";
 			m_numberPercentageOf = "2000";
 			m_resultPercentage = "20" ;
-
 			break;
 		case 17 :   
-			m_number = KGlobal::locale()->formatNumber(0.83, 2);
-			m_periodStart = 3;
-			m_periodLength = 1;
-			m_result = ratio(5, 6);
-
+			//m_number = KGlobal::locale()->formatNumber(0.83, 2);			
 			m_numberPercentage = "75";
 			m_numberPercentageOf = "1000";
 			m_resultPercentage = "750" ;
-
 			break;
 		default :
 		case 18 :   
-			m_number = KGlobal::locale()->formatNumber(0.001, 3);
-			m_periodStart = 2;
-			m_periodLength = 0;
-			m_result = ratio(1, 1000);			
-
+			//m_number = KGlobal::locale()->formatNumber(0.001, 3);			
 			m_numberPercentage = "75";
 			m_numberPercentageOf = "1100";
 			m_resultPercentage = "825" ;
-
 			break;
 	}
 
@@ -464,35 +338,14 @@ void ExercisePercentage::showResult()
 
 	// change the tooltip of the check button
 	m_checkButton->setToolTip(i18n("Click on this button to get to the next question."));
-
-	//numer_edit->setEnabled(false);
-	//deno_edit->setEnabled(false);
+	
 	answer_edit->setEnabled(false);
-	m_skipButton->setEnabled(false);	
-
-	// an empty numerator field will be interpreted as 0
-	//if (numer_edit->text().isEmpty() == true)
-	//	numer_edit->setText("0");
-
-	// an empty denominator field will be interpreted as 1
-	//if (deno_edit->text().isEmpty() == true)
-	//	deno_edit->setText("1");
+	m_skipButton->setEnabled(false);		
 
 	//an empty answer field will be interpreted as 0
 	if (answer_edit->text().isEmpty() == true)
 		answer_edit->setText("0");
-
-	/* store the entered result to check it, but without reducing */
-	//entered_result.setNumerator(numer_edit->text().toInt(), false);
-	//entered_result.setDenominator(deno_edit->text().toInt(), false);
-
-	// check the entered result; 0/1 == 0/5 -> true,
-	// but 0/1 == 0/0 -> false
-	// a 0 for denominator is never allowed (always counted as wrong)
-	//
-	// we have to get the 0 directly from the input field, because
-	// Ratio::setDenominator(0, false) will set the denominator to 1 to ensure
-	// the Ratio is valid
+	
 
 	tmp_result = answer_edit->text().toInt();
 	entered_result.setNumerator(tmp_result, false);
@@ -511,38 +364,6 @@ void ExercisePercentage::showResult()
 		m_resultWidget->setResult(correct_result, 0);
 	}
 
-	//if ( (deno_edit->text().toInt() != 0) && ((entered_result == m_result) ||
-	//	  (m_result.numerator() == 0 && entered_result.numerator() == 0)) )
-	//{
-	//	// emit the signal for correct
-	//	signalExerciseSolvedCorrect();
-
-	//	/* yes, the user entered the correct result */
-	//	m_resultWidget->setResult(m_result, 1);
-	//} else {
-	//	// emit the signal for wrong
-	//	signalExerciseSolvedWrong();
-
-	//	/* no, the user entered the wrong result */
-	//	m_resultWidget->setResult(m_result, 0);
-
-	//	// if the user entered a 0 for the denominator (division by 0) we have to
-	//	// get the 0 directly from the input field, because
-	//	// Ratio::setDenominator(0, true) will set the denominator to 1 to ensure
-	//	// the Ratio is valid
-	//	if (deno_edit->text().toInt() == 0)
-	//	{
-	//		KMessageBox::information(this,
-	//		                         i18n("You entered a 0 as the denominator. This means division by zero, which is not allowed. This question will be counted as not correctly solved."));
-	//	} else {
-	//		/* maybe the entered ratio was not reduced */
-	//		entered_result.reduce();
-	//		if (entered_result == m_result)
-	//			KMessageBox::information(this,
-	//			                         i18n("You entered the correct result, but not reduced.\nAlways enter your results as reduced. This question will be counted as not correctly solved."));
-	//	}
-	//} /* if (entered_result == result) */
-
 	return;
 }
 
@@ -551,28 +372,22 @@ void ExercisePercentage::nextTask()
 {
 	// change the tooltip of the check button
 	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
-
-	//numer_edit->setEnabled(true);
-	//deno_edit->setEnabled(true);
+	
 	answer_edit->setEnabled(true);
 	m_skipButton->setEnabled(true);		
 
 	m_resultWidget->setResult( m_result, -1);
 
-	/* clear user input */
-	//deno_edit->setText("");
-	//numer_edit->setText("");
+	/* clear user input */	
 	answer_edit->setText("");
-	answer_edit->setFocus();
-	//numer_edit->setFocus();
+	answer_edit->setFocus();	
 
 	/* create a new task */
 	QApplication::setOverrideCursor(Qt::WaitCursor); /* show the sand clock */
 	createTask();
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
-	// update the task widget
-	//m_rationalWidget->setRational(m_number, m_periodStart, m_periodLength);
+	// update the task widget	
 	QString tempTask(m_numberPercentage + " % of " + m_numberPercentageOf + " = ");	
 	m_taskLabel->setText(tempTask);
 
@@ -585,9 +400,7 @@ void ExercisePercentage::slotCheckButtonClicked()
 {
 	if (m_currentState == _CHECK_TASK)
 	{
-		// if nothing has been entered by the user, we don't check the result yet
-		//if (numer_edit->text().isEmpty() == true && deno_edit->text().isEmpty() ==
-//true)
+		// if nothing has been entered by the user, we don't check the result yet		
 		if (answer_edit->text().isEmpty() == true)
 			return;
 		m_currentState = _NEXT_TASK;
@@ -605,4 +418,9 @@ void ExercisePercentage::slotCheckButtonClicked()
 void ExercisePercentage::slotSkipButtonClicked()
 {
 	forceNewTask();
+}
+
+void ExercisePercentage::answerReturnPressed(const QString &)
+{
+	slotCheckButtonClicked();
 }
