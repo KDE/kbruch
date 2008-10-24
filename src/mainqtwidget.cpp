@@ -99,7 +99,7 @@ MainQtWidget::MainQtWidget()
 
 	createGUI(0L);
 
-	
+	// Create layout	
 	QGridLayout * layoutExercises = new QGridLayout();
 	layoutExercises->setObjectName( "layoutExercises" );
 	layoutExercises->setRowStretch(2, 1);
@@ -132,12 +132,13 @@ MainQtWidget::MainQtWidget()
 	QWidget * pageOptions = new QWidget();
 	pageOptions->setFixedWidth(185);
 
+	// Create visible components
 	m_QuestionGroup = new QGroupBox(i18n("Question:"), pageOptions);
 	m_AnswerGroup = new QGroupBox(i18n("Answer:"), pageOptions);
 	m_SolutionGroup = new QGroupBox(i18n("Solution:"), pageOptions);
 	m_OperationsGroup = new QGroupBox(i18n("Operations:"), pageOptions);
 
-	m_TitleLabel = new QLabel("Arithmetic", pageExercises);
+	m_TitleLabel = new QLabel(i18n("Arithmetic"), pageExercises);
 	m_TitleLabel->setAlignment(Qt::AlignLeft);
 	defaultFont = SettingsClass::taskFont();
 	defaultFont.setBold( TRUE );
@@ -178,11 +179,13 @@ MainQtWidget::MainQtWidget()
 	m_exercisePercentage->setObjectName("ExercisePercentage");
 	m_exercisePercentage->hide();
 
-	m_OptionsLabel = new QLabel("Options:", pageOptions);
+	m_OptionsLabel = new QLabel(i18n("Options:"), pageOptions);
+	m_OptionsLabel->setToolTip(i18n("Set the options to resolve the exercises."));
 	m_OptionsLabel->setObjectName("OptionsLabel");
 	m_OptionsLabel->setFont(defaultFont);
 
 	m_QuestionMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
+	m_QuestionMixedLabel->setToolTip(i18n("Set if the fractions will appear in mixed form or not in the question expression ( mixed form example: 1 5/4 = 9/4 )."));
 	m_QuestionMixedLabel->setObjectName("QuestionMixedLabel");
 	m_QuestionMixedLabel->setAlignment(Qt::AlignRight);
 	
@@ -192,6 +195,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_QuestionMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(QuestionMixedCheckSlot()));
 
 	m_AnswerMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
+	m_AnswerMixedLabel->setToolTip(i18n("Set if the fractions will appear in mixed form or not in the answer ( mixed form example: 1 5/4 = 9/4 )."));
 	m_AnswerMixedLabel->setObjectName("AnswerMixedLabel");
 	m_AnswerMixedLabel->setAlignment(Qt::AlignRight);
 	
@@ -201,6 +205,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_AnswerMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(AnswerMixedCheckSlot()));
 
 	m_SolutionMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
+	m_SolutionMixedLabel->setToolTip(i18n("Set if the fractions will appear in mixed form or not in the solution ( mixed form example: 1 5/4 = 9/4 )."));
 	m_SolutionMixedLabel->setObjectName("SolutionMixedLabel");
 	m_SolutionMixedLabel->setAlignment(Qt::AlignRight);
 	
@@ -210,6 +215,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_SolutionMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(SolutionMixedCheckSlot()));
 
 	m_AdditionLabel = new QLabel(i18n("Addition:"), pageOptions);
+	m_AdditionLabel->setToolTip(i18n("Check to use addition operator."));
 	m_AdditionLabel->setObjectName("AdditionLabel");
 	m_AdditionLabel->setAlignment(Qt::AlignRight);	
 
@@ -219,6 +225,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_AdditionCheck, SIGNAL(stateChanged(int)), this, SLOT(AdditionCheckSlot()));
 
 	m_SubtractionLabel = new QLabel(i18n("Subtraction:"), pageOptions);
+	m_SubtractionLabel->setToolTip(i18n("Check to use subtraction operator."));
 	m_SubtractionLabel->setObjectName("SubtractionLabel");
 	m_SubtractionLabel->setAlignment(Qt::AlignRight);		
 
@@ -228,6 +235,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_SubtractionCheck, SIGNAL(stateChanged(int)), this, SLOT(SubtractionCheckSlot()));
 
 	m_MultiplicationLabel = new QLabel(i18n("Multiplication:"), pageOptions);
+	m_MultiplicationLabel->setToolTip(i18n("Check to use multiplication operator."));
 	m_MultiplicationLabel->setObjectName("MultiplicationLabel");
 	m_MultiplicationLabel->setAlignment(Qt::AlignRight);			
 
@@ -237,6 +245,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_MultiplicationCheck, SIGNAL(stateChanged(int)), this, SLOT(MultiplicationCheckSlot()));
 
 	m_DivisionLabel = new QLabel(i18n("Division:"), pageOptions);
+	m_DivisionLabel->setToolTip(i18n("Check to use division operator."));
 	m_DivisionLabel->setObjectName("DivisionLabel");
 	m_DivisionLabel->setAlignment(Qt::AlignRight);	
 
@@ -246,6 +255,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_DivisionCheck, SIGNAL(stateChanged(int)), this, SLOT(DivisionCheckSlot()));
 
 	m_ReducedLabel = new QLabel(i18n("Reduced form:"), pageOptions);
+	m_ReducedLabel->setToolTip(i18n("Check to force the ‎will do in the reduced form."));
 	m_ReducedLabel->setObjectName("ReducedLabel");
 	m_ReducedLabel->setAlignment(Qt::AlignRight);		
 
@@ -256,6 +266,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_ReducedCheck, SIGNAL(stateChanged(int)), this, SLOT(ReducedFormCheckSlot()));
 
 	m_NrOfTermsLabel = new QLabel(i18n("Number of terms:"), pageOptions);
+	m_NrOfTermsLabel->setToolTip( i18n( "The number of \nterms you want" ) );
 	m_NrOfTermsLabel->setObjectName("NrOfTermsLabel");
 	m_NrOfTermsLabel->setAlignment(Qt::AlignRight);
 
@@ -474,41 +485,41 @@ void MainQtWidget::setupActions()
 	m_NewTaskButton = new QToolButton( this );
 	m_NewTaskButton->setObjectName("NewTaskButton");
 	m_NewTaskButton->setFixedSize( 84,65 );
-	m_NewTaskButton->setText( "New" );	
+	m_NewTaskButton->setText( i18n("New") );	
 	m_NewTaskButton->setIcon(KIcon("document-new"));
 	m_NewTaskButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
 	m_BackTaskButton = new QToolButton( this );
 	m_BackTaskButton->setObjectName("BackTaskButton");
 	m_BackTaskButton->setFixedSize( 84,65 );
-	m_BackTaskButton->setText( "Back" );	
+	m_BackTaskButton->setText( i18n("Back") );	
 	m_BackTaskButton->setIcon(KIcon("go-previous"));
 	m_BackTaskButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
 	m_ArithmeticsButton = new QToolButton( this );
 	m_ArithmeticsButton->setObjectName("ArithmeticsButton");
 	m_ArithmeticsButton->setFixedSize( 84,65 );
-	m_ArithmeticsButton->setText( "\n\nArithmetics" );	
+	m_ArithmeticsButton->setText( i18n("\n\nArithmetics") );	
 
 	m_ComparisonButton = new QToolButton( this );
 	m_ComparisonButton->setObjectName("ComparisonButton");
 	m_ComparisonButton->setFixedSize( 84,65 );
-	m_ComparisonButton->setText( "\n\nComparison" );	
+	m_ComparisonButton->setText( i18n("\n\nComparison") );	
 
 	m_ConversionButton = new QToolButton( this );
 	m_ConversionButton->setObjectName("ConversionButton");
 	m_ConversionButton->setFixedSize( 84,65 );
-	m_ConversionButton->setText( "\n\nConversion" );	
+	m_ConversionButton->setText( i18n("\n\nConversion") );	
 
 	m_FactorizationButton = new QToolButton( this );
 	m_FactorizationButton->setObjectName("Factorization");
 	m_FactorizationButton->setFixedSize( 84,65 );
-	m_FactorizationButton->setText( "\n\nFactorization" );	
+	m_FactorizationButton->setText( i18n("\n\nFactorization") );	
 
 	m_PercentageButton = new QToolButton( this );
 	m_PercentageButton->setObjectName("Percentage");
 	m_PercentageButton->setFixedSize( 84,65 );
-	m_PercentageButton->setText( "\n\nPercentage" );
+	m_PercentageButton->setText( i18n("\n\nPercentage") );
 
    	m_NewTaskActionMenu  = new KAction(KIcon("document-new"), i18nc("@action opens a new question", "&New"), this);
    	actionCollection()->addAction("NewTaskMenu", m_NewTaskActionMenu );
@@ -518,37 +529,37 @@ void MainQtWidget::setupActions()
    	m_NewTaskActionTool  = new KAction(i18nc("@action opens a new question", "&New"), this);
    	actionCollection()->addAction("NewTaskTool", m_NewTaskActionTool );
 	connect(m_NewTaskButton, SIGNAL(clicked()), SLOT(NewTask()));
-    m_NewTaskActionTool->setDefaultWidget( m_NewTaskButton );
+	m_NewTaskActionTool->setDefaultWidget( m_NewTaskButton );
         
    	m_BackAction  = new KAction(i18nc("@action go to the main screen", "Back"), this);
    	actionCollection()->addAction("Back", m_BackAction );
 	connect(m_BackTaskButton, SIGNAL(clicked()), SLOT(GoBack()));
-    m_BackAction->setDefaultWidget( m_BackTaskButton );
+	m_BackAction->setDefaultWidget( m_BackTaskButton );
 
 	m_ArithmeticsAction  = new KAction(i18nc("Arithmetics Exercise", "Arithmetic"), this);
    	actionCollection()->addAction("Arithmetic", m_ArithmeticsAction );
 	connect(m_ArithmeticsButton, SIGNAL(clicked()), SLOT(SelectArithmetics()));
-    m_ArithmeticsAction->setDefaultWidget( m_ArithmeticsButton );
+	m_ArithmeticsAction->setDefaultWidget( m_ArithmeticsButton );
                   
 	m_ComparisonAction  = new KAction(i18nc("Comparision Exercise", "Comparision"), this);
    	actionCollection()->addAction("Comparision", m_ComparisonAction );
 	connect(m_ComparisonButton, SIGNAL(clicked()), SLOT(SelectComparison()));
-    m_ComparisonAction->setDefaultWidget( m_ComparisonButton );
+	m_ComparisonAction->setDefaultWidget( m_ComparisonButton );
         
 	m_ConversionAction  = new KAction(i18nc("Conversion Exercise", "Conversion"), this);
    	actionCollection()->addAction("Conversion", m_ConversionAction );
 	connect(m_ConversionButton, SIGNAL(clicked()), SLOT(SelectConversion()));
-    m_ConversionAction->setDefaultWidget( m_ConversionButton );
+	m_ConversionAction->setDefaultWidget( m_ConversionButton );
         
 	m_FactorizationAction  = new KAction(i18nc("Factorization Exercise", "Factorization"), this);
    	actionCollection()->addAction("Factorization", m_FactorizationAction );
 	connect(m_FactorizationButton, SIGNAL(clicked()), SLOT(SelectFactorization()));
-    m_FactorizationAction->setDefaultWidget( m_FactorizationButton );
+	m_FactorizationAction->setDefaultWidget( m_FactorizationButton );
         
 	m_PercentageAction  = new KAction(i18nc("Percentage Exercise", "Percentage"), this);
    	actionCollection()->addAction("Percentage", m_PercentageAction );
 	connect(m_PercentageButton, SIGNAL(clicked()), SLOT(SelectPercentage()));
-    m_PercentageAction->setDefaultWidget( m_PercentageButton );
+	m_PercentageAction->setDefaultWidget( m_PercentageButton );
 
 	// quit action
 	KStandardAction::quit(kapp, SLOT(quit()), actionCollection());

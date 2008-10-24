@@ -111,7 +111,7 @@ class MainQtWidget : public KXmlGuiWindow
 		bool m_reducedForm;
 		QFont defaultFont;
 
-		
+		// Visible Components
 		QLabel * m_OptionsLabel;
 		QLabel * m_TitleLabel;
 

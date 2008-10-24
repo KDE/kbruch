@@ -1,4 +1,3 @@
-//
 /***************************************************************************
                           appmenuwidget.h  -  The main Qt/KDE window
                              -------------------
@@ -82,6 +81,7 @@ AppMenuWidget::AppMenuWidget()
 {
 #ifdef DEBUG
 	kDebug() << "constructor AppMenuWidget";
+
 #endif
 	setupActions();
 	createGUI("AppMenuWidgetui.rc");
@@ -116,6 +116,10 @@ AppMenuWidget::AppMenuWidget()
 
 	setStyleSheet(css);
 
+	QFont defaultFont = SettingsClass::taskFont();
+	defaultFont.setBold( TRUE );
+	defaultFont.setPointSize(26);
+
 	layout1 = new QHBoxLayout();
 	layout1->setObjectName( "layout1" );
 	layout1->setAlignment(Qt::AlignCenter);
@@ -135,18 +139,20 @@ AppMenuWidget::AppMenuWidget()
 	labelInfo = new QLabel(this);
 	labelInfo->setObjectName( "labelInfo" );
 	labelInfo->setText(i18n("KBruch modes:"));
+	labelInfo->setFont(defaultFont);
 	gridLayout->addWidget(labelInfo, 0, 0, 1, 2);
 
 	// Freestyle mode ----------------------------
 	m_Freestyle = new QPushButton(this);
 	m_Freestyle->setObjectName( "m_Freestyle" );
-	//m_Freestyle->setToolTip(i18n("Open standard kbruch."));
+	m_Freestyle->setToolTip(i18n("Open standard kbruch."));
 	m_Freestyle->setFixedSize(QSize(150, 197));
 	gridLayout->addWidget(m_Freestyle, 1, 0, Qt::AlignCenter);
 
 	labelFreestyle = new QLabel(this);
 	labelFreestyle->setObjectName( "labelFreestyle" );
 	labelFreestyle->setText(i18n("Freestyle"));
+	labelFreestyle->setFont(defaultFont);
 	gridLayout->addWidget(labelFreestyle, 2, 0, Qt::AlignCenter);
 
 	QObject::connect(m_Freestyle, SIGNAL(clicked()), this, SLOT(slotFreestyleClicked()));
@@ -154,13 +160,14 @@ AppMenuWidget::AppMenuWidget()
 	// Learning mode ----------------------------
 	m_Learning = new QPushButton(this);
 	m_Learning->setObjectName( "m_Learning" );
-	//m_Learning->setToolTip(i18n("Open learning kbruch."));
+	m_Learning->setToolTip(i18n("Open learning kbruch."));
 	m_Learning->setFixedSize(QSize(150, 197));
 	gridLayout->addWidget(m_Learning, 1, 1, Qt::AlignCenter);
 
 	labelLearning = new QLabel(this);
 	labelLearning->setObjectName( "labelLearning" );
 	labelLearning->setText(i18n("Learning"));
+	labelLearning->setFont(defaultFont);
 	gridLayout->addWidget(labelLearning, 2, 1, Qt::AlignCenter);
 
 	QObject::connect(m_Learning, SIGNAL(clicked()), this, SLOT(slotLearningClicked()));

@@ -65,10 +65,9 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	defaultFont.setBold( TRUE );
 	defaultFont.setPointSize( 18 );
 
-	// the next thing to do on a button click would be to check the entered
-	// result
 	m_currentState = _CHECK_TASK;
 
+	// Create layout
 	taskWidget = new QWidget(this);
 	taskWidget->setObjectName("taskWidget");
 	checkWidget = new QWidget(this);
@@ -154,6 +153,9 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
 	checkLayout->addWidget(m_skipButton, 1, 1);	
 
+	m_checkButton->setFocusPolicy( Qt::NoFocus );
+	m_skipButton->setFocusPolicy( Qt::NoFocus );
+
 	setLayout(baseGrid);
 	taskWidget->setLayout(taskLayout);
   	checkWidget->setLayout(checkLayout);
@@ -161,7 +163,6 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	// add tooltip and qwhatsthis help to the widget
 	setToolTip(i18n("In this exercise you have to convert a number into a fraction."));
 	setWhatsThis( i18n("In this exercise you have to convert a given number into a fraction by entering numerator and denominator. Do not forget to reduce the result."));
-
 }
 
 /* destructor */

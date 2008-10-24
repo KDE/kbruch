@@ -81,6 +81,7 @@ private:
 	RatioWidget * m_firstRatioWidget;
 	RatioWidget * m_secondRatioWidget;
 	
+	// Buttons to select the comparison
 	QPushButton * m_skipButton;
 	QPushButton * m_moreButton;
 	QPushButton * m_minorButton;
@@ -89,6 +90,7 @@ private:
 	ratio m_firstRatio;
 	ratio m_secondRatio;
 
+	// Layout Structures
 	QGridLayout * checkLayout;
 	QGridLayout * taskLayout;
 	QGridLayout * baseGrid;

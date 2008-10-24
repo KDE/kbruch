@@ -80,6 +80,7 @@ private:
 	uint m_periodLength;
 	ratio m_result;
 
+	// Visible components
 	RationalWidget * m_rationalWidget;
 	ResultWidget * m_resultWidget;
 	KLineEdit * numer_edit;
@@ -89,6 +90,7 @@ private:
 	QPushButton* m_checkButton;
 	QPushButton* m_skipButton;
 
+	// Layout Structures
 	QGridLayout* checkLayout;
 	QGridLayout* taskLayout;
 	QGridLayout* baseGrid;
@@ -96,6 +98,7 @@ private:
 	QWidget * checkWidget;
 	QWidget * taskWidget;
 
+	// Operation functions
 	void createTask();
 	void showResult();
 	void nextTask();

@@ -94,6 +94,8 @@ signals:
 private:
 	short m_currentState;
 
+	bool m_edit;
+
 	// Get the last number typped by keyboard for keyboard handler
 	uint m_buffer;
 

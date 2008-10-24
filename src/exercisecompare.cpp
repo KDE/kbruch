@@ -47,19 +47,17 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	kDebug() << "constructor ExerciseCompare()";
 #endif
 
-	/* create a new task */
 	QApplication::setOverrideCursor(Qt::WaitCursor); /* show the sand clock */
 	createTask();
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
-	// the next thing to do on a button click would be to check the entered
-	// result
 	m_currentState = _CHECK_TASK;
 
 	QFont defaultFont = SettingsClass::taskFont();
 	defaultFont.setBold( TRUE );
 	defaultFont.setPointSize(12);
 
+	// Create layout
 	taskWidget = new QWidget(this);
 	taskWidget->setObjectName("taskWidget");
 	checkWidget = new QWidget(this);
@@ -82,7 +80,6 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	checkLayout = new QGridLayout(this);
 	checkLayout->setObjectName( "checkLayout" );
 	
-
 	// first the first ratio widget
 	m_firstRatioWidget = new RatioWidget(taskWidget, m_firstRatio);
 	m_firstRatioWidget->setObjectName("m_firstRatioWidget");
@@ -93,9 +90,10 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	m_secondRatioWidget->setObjectName("m_secondRatioWidget");	
 	taskLayout->addWidget(m_secondRatioWidget, 1, 3, 3, 1);
 
+	// Create compare buttons
 	m_moreButton = new QPushButton(taskWidget);
 	m_moreButton->setObjectName("m_moreButton");
-	m_moreButton->setText(">");
+	m_moreButton->setText(i18n(">"));
 	m_moreButton->setFixedSize(74,30);
 	m_moreButton->setFont(defaultFont);	
 	QObject::connect(m_moreButton, SIGNAL(clicked()), this, SLOT(slotMoreButtonClicked()));
@@ -104,7 +102,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	
 	m_minorButton = new QPushButton(taskWidget);
 	m_minorButton->setObjectName("m_minorButton");
-	m_minorButton->setText("<");
+	m_minorButton->setText(i18n("<"));
 	m_minorButton->setFixedSize(74,30);	
 	m_minorButton->setFont(defaultFont);		
 	QObject::connect(m_minorButton, SIGNAL(clicked()), this, SLOT(slotMinorButtonClicked()));
@@ -113,13 +111,14 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	
 	m_equalButton = new QPushButton(taskWidget);
 	m_equalButton->setObjectName("m_equalButton");
-	m_equalButton->setText("=");
+	m_equalButton->setText(i18n("="));
 	m_equalButton->setFixedSize(74,30);
 	m_equalButton->setFont(defaultFont);			
 	QObject::connect(m_equalButton, SIGNAL(clicked()), this, SLOT(slotEqualButtonClicked()));
 	m_equalButton->setToolTip(i18n("Click on this button to select the equal sign."));
 	taskLayout->addWidget(m_equalButton, 3, 2);
 
+	// Create Skip and Check buttons
 	m_resultWidget = new ResultWidget(checkWidget);
 	m_resultWidget->setObjectName("m_resultWidget");
 	checkLayout->addWidget(m_resultWidget, 0, 0);
@@ -134,9 +133,11 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	m_skipButton->setFont(defaultFont);		
 	QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
 	checkLayout->addWidget(m_skipButton, 1, 0);	
-
-	// that the user can start typing without moving the focus
-	m_equalButton->setFocus();
+	
+	m_equalButton->setFocusPolicy( Qt::NoFocus );
+	m_moreButton->setFocusPolicy( Qt::NoFocus );
+	m_minorButton->setFocusPolicy( Qt::NoFocus );
+	m_skipButton->setFocusPolicy( Qt::NoFocus );
 
 	setLayout(baseGrid);
 	taskWidget->setLayout(taskLayout);
@@ -145,6 +146,9 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	// add tooltip and qwhatsthis help to the widget
 	setToolTip(i18n("In this exercise you have to compare 2 given fractions."));
 	setWhatsThis( i18n("In this exercise you have to compare 2 given fractions by choosing the correct comparison sign. You can change the comparison sign by just clicking on the button showing the sign."));
+
+	// that the user can start typing without moving the focus
+	m_equalButton->setFocus();
 }
 
 /* destructor */

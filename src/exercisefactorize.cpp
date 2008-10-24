@@ -257,6 +257,8 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_skipButton->setFocusPolicy( Qt::NoFocus );	
 	m_checkButton->setFocusPolicy( Qt::NoFocus );	
 
+	m_checkButton->setDefault( TRUE );
+
 	setLayout(baseGrid);
 	taskWidget->setLayout(taskLayout);
   	checkWidget->setLayout(checkLayout);
@@ -264,6 +266,8 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	// add tooltip and qwhatsthis help to the widget
 	setToolTip(i18n("In this exercise you have to factorize a given number."));
 	setWhatsThis( i18n("In this exercise you have to factorize a given number. You have to enter all prime factors of the number. You can add a prime factor by clicking on the corresponding button. The chosen prime factors will be shown in the input field. Do not forget to enter all prime factors, even when a prime factor repeats several times."));
+
+	m_edit = TRUE;
 }
 
 /* destructor */
@@ -405,6 +409,8 @@ void ExerciseFactorize::showResult()
 		m_resultWidget->setResult( ratio(), 0 );
 	} /* if (entered_result == result) */
 
+	m_edit = FALSE;
+
 	return;
 }
 
@@ -446,6 +452,8 @@ void ExerciseFactorize::nextTask()
 	QString tmp_str;
 	tmp_str.setNum(m_taskNumber);
 	m_taskLabel->setText(tmp_str);
+
+	m_edit = TRUE;
 
 	return;
 }
@@ -514,7 +522,6 @@ void ExerciseFactorize::slotCheckButtonClicked()
 
 	// update the line edit
 	updateEnteredEdit();
-
 	return;
 }
 
@@ -608,6 +615,9 @@ void ExerciseFactorize::slotRemoveLastFactorButtonClicked()
 /* ------ protected events ------ */
 void ExerciseFactorize::keyPressEvent(QKeyEvent * e)
 {
+	if (m_edit == FALSE)
+		return;
+
 	switch (e->key())
 	{
 		case Qt::Key_1:
@@ -664,14 +674,15 @@ void ExerciseFactorize::keyPressEvent(QKeyEvent * e)
 			m_buffer = 0;
 			break;
 
-		case Qt::Key_Return:
-			m_buffer = 0;
-			slotCheckButtonClicked();
-			break;
-
+		case Qt::Key_Delete:
 		case Qt::Key_Backspace:
 			m_buffer = 0;
 			slotRemoveLastFactorButtonClicked();
+			break;
+
+		case Qt::Key_Return:
+			m_buffer = 0;
+			slotCheckButtonClicked();
 			break;
 
 		default:
@@ -687,5 +698,5 @@ void ExerciseFactorize::showEvent( QShowEvent * event )
 #endif
 
 	if ( isVisible() )
-		m_factorsEnteredEdit->setFocus();		
+		m_factorsEnteredEdit->setFocus();
 }
