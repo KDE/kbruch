@@ -234,6 +234,7 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 				int fontHeight = fm.lineSpacing(); // get the font height
 
 				int tmpWidth = 0;
+				int tmpHeight = 0;
 				for (int tmpInt = 0; tmpInt < m_factors.count(); tmpInt++)
 				{
 					if (tmpInt != 0)
@@ -260,7 +261,7 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 
 					fontWidth = fm.width(tmpStr);
 					paint.drawText(old_x, old_y, fontWidth, fontHeight, Qt::AlignCenter, tmpStr);
-					old_x += fontWidth;					
+					old_x += fontWidth;
 				}
 			}					
 			old_x+=30;

@@ -68,6 +68,8 @@ class MainQtWidget : public KXmlGuiWindow
 		/** destructor */
 		~MainQtWidget();
 
+		static QFont DefaultFont();
+
 	private:
   
 		/** read the config file */

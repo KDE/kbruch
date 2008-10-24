@@ -30,7 +30,8 @@
 #include <kicon.h>
 #include <kapplication.h>
 #include <kstandarddirs.h>
-  
+#include <kglobalsettings.h>
+
 #include <qlayout.h>
 #include <qsplitter.h>
 #include <qlabel.h>
@@ -47,7 +48,6 @@
 #include "exercisefactorize.h"
 #include "exercisepercentage.h"
 #include "taskview.h"
-#include "ui_taskgeneralbase.h"
 #include "ui_taskcolorsbase.h"
 #include "ui_taskfontsbase.h"
 #include "statisticsview.h"
@@ -55,15 +55,6 @@
 
 #include "settingsclass.h"
 #include <kpageview.h>
-
-class TaskGeneral : public QWidget, public Ui::TaskGeneralBase
-{
-	public:
-		TaskGeneral( QWidget * parent ) : QWidget( parent )
-		{
-			setupUi(this);
-		}
-};
 
 class TaskColors : public QWidget, public Ui::TaskColorsBase
 {
@@ -138,11 +129,12 @@ MainQtWidget::MainQtWidget()
 	m_SolutionGroup = new QGroupBox(i18n("Solution:"), pageOptions);
 	m_OperationsGroup = new QGroupBox(i18n("Operations:"), pageOptions);
 
-	m_TitleLabel = new QLabel(i18n("Arithmetic"), pageExercises);
-	m_TitleLabel->setAlignment(Qt::AlignLeft);
 	defaultFont = SettingsClass::taskFont();
 	defaultFont.setBold( TRUE );
-	defaultFont.setPointSize(defaultFont.pointSize()+2);
+	defaultFont.setPointSize( 14 );
+
+	m_TitleLabel = new QLabel(i18n("Arithmetic"), pageExercises);
+	m_TitleLabel->setAlignment(Qt::AlignLeft);
 	m_TitleLabel->setFont(defaultFont);
 	m_TitleLabel->setFixedHeight(35);
 	m_TitleLabel->setAlignment(Qt::AlignVCenter);
@@ -402,6 +394,14 @@ MainQtWidget::MainQtWidget()
 
 MainQtWidget::~MainQtWidget()
 {
+}
+
+QFont MainQtWidget::DefaultFont()
+{
+	QFont defaultFont = KGlobalSettings::generalFont();
+	defaultFont.setPointSize( 24 );
+	defaultFont.setBold( TRUE );
+	return defaultFont;
 }
 
 /* ------ private member functions ------ */
@@ -774,9 +774,6 @@ void MainQtWidget::slotPrefs()
 
 	//KConfigDialog didn't find an instance of this dialog, so lets create it :
 	KConfigDialog* configDialog = new KConfigDialog( this, "settings", SettingsClass::self() );
-
-	TaskGeneral * taskGeneral = new TaskGeneral(0);
-	configDialog->addPage(taskGeneral, i18n("General"), "preferences-desktop-other");
 
 	TaskColors * taskColors = new TaskColors(0);
 	configDialog->addPage(taskColors, i18n("Colors"), "preferences-desktop-color");

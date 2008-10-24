@@ -77,10 +77,6 @@ private slots:
 	void slotFreestyleClicked();
 	void slotLearningClicked();
 	/**
-	* calls the settings dialog
-	*/
-	void slotPrefs();
-	/**
 	* makes sure, all parts of the UI update to new settings
 	*/
 	void slotApplySettings();

@@ -41,7 +41,6 @@
 
 #include "ratio.h"
 #include "FractionPainter.h"
-#include "ui_taskgeneralbase.h"
 #include "ui_taskcolorsbase.h"
 #include "ui_taskfontsbase.h"
 #include "settingsclass.h"
@@ -49,28 +48,10 @@
 #define MARG_LEFT 10
 #define MARG_TOP 70
 
-class TaskGeneral : public QWidget, public Ui::TaskGeneralBase
-{
-	public:
-		TaskGeneral( QWidget * parent ) : QWidget( parent )
-		{
-			setupUi(this);
-		}
-};
-
 class TaskColors : public QWidget, public Ui::TaskColorsBase
 {
 	public:
 		TaskColors( QWidget * parent ) : QWidget( parent )
-		{
-			setupUi(this);
-		}
-};
-
-class TaskFonts : public QWidget, public Ui::TaskFontsBase
-{
-	public:
-		TaskFonts( QWidget * parent ) : QWidget( parent )
 		{
 			setupUi(this);
 		}
@@ -258,14 +239,9 @@ void FractionRingWidget::slotPrefs()
 	//KConfigDialog didn't find an instance of this dialog, so lets create it :
 	KConfigDialog* configDialog = new KConfigDialog( this, "settings", SettingsClass::self() );
 
-	TaskGeneral * taskGeneral = new TaskGeneral(0);
-	configDialog->addPage(taskGeneral, i18n("General"), "preferences-desktop-other");
-
 	TaskColors * taskColors = new TaskColors(0);
 	configDialog->addPage(taskColors, i18n("Colors"), "preferences-desktop-color");
 
-	TaskFonts * taskFonts = new TaskFonts(0);
-	configDialog->addPage(taskFonts, i18n("Fonts"), "preferences-desktop-font");
 	// User edited the configuration - update your local copies of the
 	// configuration data
 	connect(configDialog, SIGNAL(settingsChanged( const QString &)), this, SLOT(slotApplySettings()) );
@@ -280,6 +256,7 @@ void FractionRingWidget::slotApplySettings()
 #ifdef DEBUG
 	kDebug() << "slotApplySettings FractionRingWidget";
 #endif
+	fractionWidget->update();
 	return;
 }
 

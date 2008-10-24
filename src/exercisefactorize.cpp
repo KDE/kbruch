@@ -67,8 +67,6 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_currentState = _CHECK_TASK;
 
 	QFont defaultFont = SettingsClass::taskFont();
-	defaultFont.setBold( TRUE );
-	defaultFont.setPointSize(16);
 
 	taskWidget = new QWidget(this);
 	taskWidget->setObjectName("taskWidget");
@@ -96,6 +94,9 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_taskLabel->setObjectName( "taskLabel" );
 	m_taskLabel->setFont(defaultFont);	
 	taskLayout->addWidget( m_taskLabel, 1, 1 );
+
+	defaultFont.setBold( TRUE );
+	defaultFont.setPointSize(16);
 
 	m_equalSignLabel = new QLabel( this );
 	m_equalSignLabel->setObjectName( "equalSignLabel" );

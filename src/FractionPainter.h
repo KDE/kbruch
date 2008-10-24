@@ -25,7 +25,7 @@
 #endif
 
 #include "ratio.h"
-#include "fractionbasewidget.h"
+#include "ratiowidget.h"
 
 #include <qwidget.h>
 //Added by qt3to4:
@@ -63,6 +63,8 @@ private:
 	ratio rightRatio;
 	int rightMult;
 
+public slots:
+	void update();
 };
 
 #endif

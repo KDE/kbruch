@@ -66,6 +66,8 @@ void FractionPainter::paintWidget(QPainter & paint)
 	int old_y = 0;	
 
 	// ratios and operation signs are painted with the same font
+	m_font.setPointSize( 24 );
+	m_font.setBold( TRUE );
 	paint.setFont(m_font);
 
 	// set the pen for painting
@@ -104,4 +106,14 @@ void FractionPainter::paintWidget(QPainter & paint)
 
 	// the space we needed for painting is the minimum width of the widget
 	setMinimumWidth(old_x);
+}
+
+/* ------ public slots ------ */
+
+void FractionPainter::update()
+{
+	updateAndRepaint();
+
+	// update for itself
+	((QWidget *) this)->update();
 }
