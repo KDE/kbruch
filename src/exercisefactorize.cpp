@@ -168,7 +168,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_removeLastFactorButton->setObjectName( "removeLastFactor" );
 	m_removeLastFactorButton->setFixedSize(115,35);
 	m_removeLastFactorButton->setFont(defaultFont);
-	m_removeLastFactorButton->setText("Backspace");
+	m_removeLastFactorButton->setText(i18n("Backspace"));
 	taskLayout->addWidget( m_removeLastFactorButton, 3, 4, 1, 3, Qt::AlignRight );
 
 	defaultFont.setPointSize(10);

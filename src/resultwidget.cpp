@@ -27,6 +27,7 @@
 #include <QPaintEvent>
 
 #include "settingsclass.h"
+#include <klocale.h>
 
 ResultWidget::ResultWidget(QWidget * parent, const uintList para_factors) :
 			FractionBaseWidget(parent), m_factors(para_factors)
@@ -131,21 +132,21 @@ void ResultWidget::showResult()
 		case 1:
 			m_primaryText->show();
 			m_secondaryText->hide();
-			m_primaryText->setText("Correct!");
+			m_primaryText->setText(i18n("Correct!"));
 			layout->setRowStretch(2,0);
 			layout->setRowStretch(0,1);
 			break;
 		case 0:
 			m_primaryText->show();
 			m_secondaryText->show();
-			m_primaryText->setText("Incorrect!");
+			m_primaryText->setText(i18n("Incorrect!"));
 			layout->setRowStretch(2,1);
 			layout->setRowStretch(0,0);
 			break;
 		case 2:
 			m_primaryText->show();
 			m_secondaryText->hide();
-			m_primaryText->setText("Incorrect!");
+			m_primaryText->setText(i18n("Incorrect!"));
 			layout->setRowStretch(2,0);
 			layout->setRowStretch(0,1);
 			break;			
