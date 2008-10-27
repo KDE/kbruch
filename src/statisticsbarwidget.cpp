@@ -42,7 +42,6 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent):
 	m_correct = 0;
 	m_skipped = 0;
 	m_total = 0;
-	setFixedSize(210,82);
 
 	defaultFont = SettingsClass::taskFont();
 	defaultFont.setBold( TRUE );
@@ -56,7 +55,7 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent):
 	progressPalette.setColor( QPalette::Background, QColor( 192, 234, 194 ) );
 	progressPalette.setColor( QPalette::Highlight, Qt::green );
 	m_correctBar->setPalette( progressPalette );
-	m_correctBar->setBaseSize( 210, 14 );
+	m_correctBar->setMinimumSize( QSize( 210,14 ) );
 	m_correctBar->setRange(0, 100);
 	m_correctBar->setValue(0);
 
@@ -65,7 +64,7 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent):
 	progressPalette.setColor( QPalette::Background, QColor( 234, 192, 192 ) );
 	progressPalette.setColor( QPalette::Highlight, Qt::red );
 	m_incorrectBar->setPalette( progressPalette );
-	m_incorrectBar->setBaseSize( 210, 14 );
+	m_incorrectBar->setMinimumSize( QSize( 210,14 ) );
 	m_incorrectBar->setRange(0, 100);
 	m_incorrectBar->setValue(0);
 
@@ -74,20 +73,23 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent):
 	progressPalette.setColor( QPalette::Background, QColor( 233, 234, 192 ) );
 	progressPalette.setColor( QPalette::Highlight, Qt::yellow );
 	m_skippedBar->setPalette( progressPalette );
-	m_skippedBar->setBaseSize( 210, 14 );
+	m_skippedBar->setMinimumSize( QSize( 210,14 ) );
 	m_skippedBar->setRange(0, 100);
 	m_skippedBar->setValue(0);
 
 	m_correctLabel = new QLabel("0%", this);
 	m_correctLabel->setFont(defaultFont);
+	m_correctLabel->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
 	m_incorrectLabel = new QLabel("0%", this);
 	m_incorrectLabel->setFont(defaultFont);
+	m_incorrectLabel->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
 	m_skippedLabel = new QLabel("0%", this);
 	m_skippedLabel->setFont(defaultFont);
+	m_skippedLabel->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
 
-	barLayout->addWidget(m_correctBar, 0, 0);
-	barLayout->addWidget(m_incorrectBar, 1, 0);
-	barLayout->addWidget(m_skippedBar, 2, 0);
+	barLayout->addWidget(m_correctBar, 0, 0, Qt::AlignVCenter | Qt::AlignLeft);
+	barLayout->addWidget(m_incorrectBar, 1, 0, Qt::AlignVCenter | Qt::AlignLeft);
+	barLayout->addWidget(m_skippedBar, 2, 0, Qt::AlignVCenter | Qt::AlignLeft);
 
 	barLayout->addWidget(m_correctLabel, 0, 1);
 	barLayout->addWidget(m_incorrectLabel, 1, 1);
