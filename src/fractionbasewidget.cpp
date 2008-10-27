@@ -92,7 +92,7 @@ void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_p
 		// don't show the ratio as mixed number
 		str_numerator.setNum(int_numerator);
 		str_denominator.setNum(int_denominator);
-    } // if (show_mixed == true && qAbs(int_numerator) > qAbs(int_denominator))
+    	} // if (show_mixed == true && qAbs(int_numerator) > qAbs(int_denominator))
 
 	// get the text width of the current ratio
 	fontWidth = fm.width(str_numerator);
@@ -107,7 +107,7 @@ void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_p
 	// make sure we don't display something like:   0
 	//                                            7 -
 	//                                              3
-	if (! (int_numerator == 0 && show_mixed == true) )
+	if (! (int_numerator == 0) )
 	{
 		if ( show_center == TRUE )
 			x_pos = 80 - fontWidth/2;

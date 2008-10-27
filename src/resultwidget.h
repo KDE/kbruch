@@ -61,8 +61,10 @@ public:
 	/** set the task to be displayed */
 	void setFactors(const uintList para_factors);	
 
+	void setSolutionMixed(bool value);
+
 private:
-	
+	bool m_solutionMixed;
 	/** the prime factors of the number */
 	uintList m_factors;	
 	

@@ -31,7 +31,7 @@ set(kbruch_SRCS
    FractionPainter.cpp
    FractionRingWidget.cpp )
 
-kde4_add_ui_files(kbruch_SRCS taskcolorsbase.ui taskgeneralbase.ui taskfontsbase.ui)
+kde4_add_ui_files(kbruch_SRCS taskcolorsbase.ui taskfontsbase.ui)
 
 kde4_add_kcfg_files(kbruch_SRCS settingsclass.kcfgc )
 

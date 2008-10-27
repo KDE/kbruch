@@ -75,6 +75,8 @@ void ResultWidget::Init()
 	setMaximumHeight( 213 ); 
 	setMinimumHeight( 213 ); 
 	
+	m_solutionMixed = TRUE;
+
 	m_kindView = -1;
 
 	defaultFont = SettingsClass::taskFont();
@@ -170,6 +172,14 @@ void ResultWidget::setResult(const ratio para_result, int k)
 	showResult();
 }
 
+void ResultWidget::setSolutionMixed(bool value)
+{
+#ifdef DEBUG
+	kDebug() << "ResultWidget::setSolutionMixed";
+#endif
+	m_solutionMixed = value;
+}
+
 void ResultWidget::setResult(int k)
 {
 #ifdef DEBUG
@@ -222,11 +232,11 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 
 			if (m_ExerciseView == 1) {
 
-				if (SettingsClass::showSpecialRatioNotation() == true && qAbs(m_result.numerator()) >= qAbs(m_result.denominator()) && m_result.denominator() != 1)
+				if (SettingsClass::showSpecialRatioNotation() == true && qAbs(m_result.numerator()) >= qAbs(m_result.denominator()) && m_result.denominator() != 1 && m_solutionMixed == true)
 				{
 					paintRatio(paint, m_result, old_x, old_y, fm, false, true, false);
 					paintMiddle(paint, QString(" or "), old_x, old_y, fm, m_colorOperation);
-					paintRatio(paint, m_result, old_x, old_y, fm, true);
+					paintRatio(paint, m_result, old_x, old_y, fm, true, true, false);
 				} else
 					paintRatio(paint, m_result, old_x, old_y, fm, false, true, true);
 			} else {

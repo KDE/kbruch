@@ -254,7 +254,7 @@ MainQtWidget::MainQtWidget()
 	m_ReducedCheck = new QCheckBox(pageOptions);
 	m_ReducedCheck->setObjectName("ReducedCheck");
 	m_ReducedCheck->setChecked(m_reducedForm);
-	m_taskview->forceReduce(m_reducedForm);
+	m_taskview->setReducedForm(m_reducedForm);
 	QObject::connect(m_ReducedCheck, SIGNAL(stateChanged(int)), this, SLOT(ReducedFormCheckSlot()));
 
 	m_NrOfTermsLabel = new QLabel(i18n("Number of terms:"), pageOptions);
@@ -416,9 +416,16 @@ void MainQtWidget::readOptions()
 	m_addAdd = SettingsClass::addadd();
 	m_addDiv = SettingsClass::adddiv();
 	m_addMult = SettingsClass::addmult();	
+
+	m_addMult = SettingsClass::addmult();	
+	m_addMult = SettingsClass::addmult();	
+	m_addMult = SettingsClass::addmult();	
 	
 	m_nrRatios = SettingsClass::number_ratios();
 	m_maxMainDenominator = SettingsClass::max_main_denominator();
+
+	m_reducedForm = SettingsClass::reduceForm();
+	m_solutionMixed = SettingsClass::solutionMixed();
 
 	/* make sure that we can load config files with corrupted values */
 	if ((m_addMult == true && m_addDiv == true) && pow(2.0, (double)m_nrRatios) > m_maxMainDenominator)
@@ -440,6 +447,7 @@ void MainQtWidget::writeOptions()
 	SettingsClass::setNumber_ratios(m_nrRatios);
 	SettingsClass::setMax_main_denominator(m_maxMainDenominator);
 	SettingsClass::setReduceForm(m_reducedForm);
+	SettingsClass::setSolutionMixed(m_solutionMixed);
 	SettingsClass::self()->writeConfig();	
 }
 
@@ -677,6 +685,8 @@ void MainQtWidget::SolutionMixedCheckSlot()
 #ifdef DEBUG
 	kDebug() << "MainQtWidget::SolutionMixedCheckSlot()";
 #endif
+	m_solutionMixed = m_SolutionMixedCheck->isChecked();
+	m_taskview->setSolutionMixed(m_solutionMixed);
 }
 
 void MainQtWidget::QuestionMixedCheckSlot()
@@ -692,7 +702,7 @@ void MainQtWidget::ReducedFormCheckSlot()
 	kDebug() << "MainQtWidget::ChkReducedFormSlot()";
 #endif
 	m_reducedForm = m_ReducedCheck->isChecked();
-	m_taskview->forceReduce(m_reducedForm);
+	m_taskview->setReducedForm(m_reducedForm);
 }
 
 void MainQtWidget::AdditionCheckSlot()

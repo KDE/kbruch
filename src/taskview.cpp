@@ -182,9 +182,24 @@ TaskView::~TaskView()
 	/* no need to delete any child widgets, Qt does it by itself */
 }
 
-void TaskView::forceReduce(bool force)
+void TaskView::setReducedForm(bool value)
 {
-	m_forceReduce = force;
+	m_reducedForm = value;
+}
+
+void TaskView::setSolutionMixed(bool value)
+{
+	m_resultWidget->setSolutionMixed(value);
+}
+
+void TaskView::setQuestionMixed(bool value)
+{
+	m_questionMixed = value;
+}
+
+void TaskView::setAnswerMixed(bool value)
+{
+	m_answerMixed = value;
 }
 
 /** the parameters of task generation can be set with this function */
@@ -289,7 +304,7 @@ void TaskView::showResult()
 	entered_result.setNumerator(numer_edit->text().toInt(), false);
 	entered_result.setDenominator(deno_edit->text().toInt(), false);
 
-	if (!m_forceReduce)
+	if (!m_reducedForm)
 		entered_result.reduce();
 
 	// check the entered result; 0/1 == 0/5 -> true,

@@ -75,7 +75,10 @@ public:
 	/** force the creation of a new task */
 	void forceNewTask();
 
-	void forceReduce(bool force);
+	void setReducedForm(bool value);
+	void setQuestionMixed(bool value);
+	void setSolutionMixed(bool value);
+	void setAnswerMixed(bool value);
 
 public slots:
 	void update();
@@ -92,7 +95,10 @@ signals:
 	void signalTaskSolvedWrong();
 
 private:
-	bool m_forceReduce;
+	bool m_questionMixed;
+	bool m_answerMixed;
+	bool m_solutionMixed;
+	bool m_reducedForm;
 	bool m_addSub;
 	bool m_addAdd;
 	bool m_addMult;
