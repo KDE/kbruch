@@ -204,6 +204,7 @@ MainQtWidget::MainQtWidget()
 	m_SolutionMixedCheck = new QCheckBox(pageOptions);
 	m_SolutionMixedCheck->setObjectName("SolutionMixedCheck");
 	m_SolutionMixedCheck->setChecked(m_solutionMixed);
+	m_taskview->setSolutionMixed(m_solutionMixed);
 	QObject::connect(m_SolutionMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(SolutionMixedCheckSlot()));
 
 	m_AdditionLabel = new QLabel(i18n("Addition:"), pageOptions);
