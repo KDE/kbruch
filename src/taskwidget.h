@@ -56,10 +56,14 @@ public:
 	/** set the task to be displayed */
 	void setTask(const task para_task);
 
+	void setQuestionMixed(bool value);
+
 private:
 	
 	/** the task to be displayed */
 	task m_task;
+
+	bool m_questionMixed;
 
 	/** overrideing the paint event of FractionBaseWidget */
 	void paintEvent(QPaintEvent*);

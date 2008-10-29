@@ -48,6 +48,11 @@ void TaskWidget::setTask(const task para_task)
 	update();
 }
 
+void TaskWidget::setQuestionMixed(bool value)
+{
+	m_questionMixed = value;
+}
+
 void TaskWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 {
 	// our x position, we paint from left to right;
@@ -83,7 +88,7 @@ void TaskWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	for (unsigned short tmp_counter = 0; tmp_counter < m_task.getNumberOfRatios(); tmp_counter++)
 	{
 		// get the current ratio and paint it
-		paintRatio(paint, m_task.get_ratio_n(tmp_counter), old_x, old_y, fm, false);
+		paintRatio(paint, m_task.get_ratio_n(tmp_counter), old_x, old_y, fm, m_questionMixed);
 
 		// now check if we have another operation to show
 		// if not we will stop showing ratios as well

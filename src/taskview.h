@@ -117,6 +117,7 @@ private:
 	KLineEdit* numer_edit;
 	QFrame* edit_line;
 	KLineEdit* deno_edit;
+	KLineEdit* integer_edit;
 
 	QGridLayout* checkLayout;
 	QGridLayout* taskLayout;
@@ -137,6 +138,7 @@ private slots:
 	void slotCheckButtonClicked();
 	void slotSkipButtonClicked();
 	void numeratorReturnPressed(const QString &);
+	void integerReturnPressed(const QString &);
 	void denominatorReturnPressed(const QString &);
 
 protected:

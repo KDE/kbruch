@@ -61,7 +61,6 @@ ratio::ratio(const ratio & copy_ratio)
 #ifdef DEBUG
 	kDebug() << "copy constructor ratio";
 #endif
-
 	setNumerator(copy_ratio.numerator(), false);
 	setDenominator(copy_ratio.denominator(), false);
 }
@@ -355,7 +354,6 @@ void ratio::reziproc()
 
 	return;
 }
-
 
 /* ------ private member functions ------ */
 

@@ -184,6 +184,7 @@ MainQtWidget::MainQtWidget()
 	m_QuestionMixedCheck = new QCheckBox(pageOptions);
 	m_QuestionMixedCheck->setObjectName("QuestionMixedCheck");
 	m_QuestionMixedCheck->setChecked(m_questionMixed);
+	m_taskview->setQuestionMixed(m_questionMixed);
 	QObject::connect(m_QuestionMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(QuestionMixedCheckSlot()));
 
 	m_AnswerMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
@@ -194,6 +195,7 @@ MainQtWidget::MainQtWidget()
 	m_AnswerMixedCheck = new QCheckBox(pageOptions);
 	m_AnswerMixedCheck->setObjectName("AnswerMixedCheck");
 	m_AnswerMixedCheck->setChecked(m_answerMixed);
+	m_taskview->setAnswerMixed(m_answerMixed);
 	QObject::connect(m_AnswerMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(AnswerMixedCheckSlot()));
 
 	m_SolutionMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
@@ -427,6 +429,7 @@ void MainQtWidget::readOptions()
 
 	m_reducedForm = SettingsClass::reduceForm();
 	m_solutionMixed = SettingsClass::solutionMixed();
+	m_questionMixed = SettingsClass::questionMixed();
 
 	/* make sure that we can load config files with corrupted values */
 	if ((m_addMult == true && m_addDiv == true) && pow(2.0, (double)m_nrRatios) > m_maxMainDenominator)
@@ -449,6 +452,7 @@ void MainQtWidget::writeOptions()
 	SettingsClass::setMax_main_denominator(m_maxMainDenominator);
 	SettingsClass::setReduceForm(m_reducedForm);
 	SettingsClass::setSolutionMixed(m_solutionMixed);
+	SettingsClass::setQuestionMixed(m_questionMixed);
 	SettingsClass::self()->writeConfig();	
 }
 
@@ -679,6 +683,8 @@ void MainQtWidget::AnswerMixedCheckSlot()
 #ifdef DEBUG
 	kDebug() << "MainQtWidget::AnswerMixedCheckSlot()";
 #endif
+	m_answerMixed = m_AnswerMixedCheck->isChecked();
+	m_taskview->setAnswerMixed(m_answerMixed);
 }
 
 void MainQtWidget::SolutionMixedCheckSlot()
@@ -695,6 +701,8 @@ void MainQtWidget::QuestionMixedCheckSlot()
 #ifdef DEBUG
 	kDebug() << "MainQtWidget::QuestionMixedCheckSlot()";
 #endif
+	m_questionMixed = m_QuestionMixedCheck->isChecked();
+	m_taskview->setQuestionMixed(m_questionMixed);
 }
 
 void MainQtWidget::ReducedFormCheckSlot()

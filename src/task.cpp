@@ -415,7 +415,7 @@ unsigned short task::make_operation(short padd_add, short padd_div, short padd_m
 			op_vector.push_back(SUB);
 	else {									
 		do {
-			operations = short((double(rand()) / RAND_MAX) * 3);			
+			operations = short((double(rand()) / RAND_MAX) * 4);
 			switch (operations) {
 				case ADD:
 					if (padd_add == YES) {
@@ -440,7 +440,7 @@ unsigned short task::make_operation(short padd_add, short padd_div, short padd_m
 						op_vector.push_back(MUL);
 						counter++;
 					}
-					break;
+					break;				
 			}															
 		} while ( counter < (pnr_ratios - 1) );
 	}

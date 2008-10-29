@@ -87,7 +87,7 @@ TaskView::TaskView(QWidget * parent,
 	taskLayout->setRowStretch(0,1);
 	taskLayout->setRowStretch(4,1);
 	taskLayout->setColumnStretch(0,1);
-	taskLayout->setColumnStretch(4,1);
+	taskLayout->setColumnStretch(5,1);
 
 	checkLayout = new QGridLayout(this);
 	checkLayout->setObjectName( "checkLayout" );
@@ -101,6 +101,19 @@ TaskView::TaskView(QWidget * parent,
 	m_taskWidget->setObjectName("m_taskWidget");
 	taskLayout->addWidget(m_taskWidget, 1, 1, 3, 1);
 
+	/* add input box so the user can enter the integer par of the fraction */
+	integer_edit = new KLineEdit(taskWidget);
+	integer_edit->setObjectName("integer_edit");
+	integer_edit->setValidator( valnum ); // use the int validator
+	integer_edit->setToolTip(i18n("Enter the integer part of the fraction"));
+	integer_edit->setFont(defaultFont);
+	integer_edit->setFixedSize(85,42);
+	integer_edit->setAlignment(Qt::AlignHCenter);
+	QObject::connect(integer_edit, SIGNAL(returnPressed(const QString &)), this,
+		SLOT(integerReturnPressed(const QString &)));
+	taskLayout->addWidget(integer_edit, 1, 3, 3, 1, Qt::AlignVCenter | Qt::AlignRight);
+
+
 	/* add input box so the user can enter numerator */
 	numer_edit = new KLineEdit(taskWidget);
 	numer_edit->setObjectName("numer_edit");
@@ -111,13 +124,13 @@ TaskView::TaskView(QWidget * parent,
 	numer_edit->setAlignment(Qt::AlignHCenter);
 	QObject::connect(numer_edit, SIGNAL(returnPressed(const QString &)), this,
 		SLOT(numeratorReturnPressed(const QString &)));
-	taskLayout->addWidget(numer_edit, 1, 3);
+	taskLayout->addWidget(numer_edit, 1, 4);
 
 	/* add a line between the edit boxes */
 	edit_line = new QFrame(taskWidget);
 	edit_line->setGeometry(QRect(100, 100, 20, 20));
 	edit_line->setFrameStyle(QFrame::HLine | QFrame::Sunken);
-	taskLayout->addWidget(edit_line, 2, 3);
+	taskLayout->addWidget(edit_line, 2, 4);
 
 	/* add input box so the user can enter denominator */
 	deno_edit = new KLineEdit(taskWidget);
@@ -129,7 +142,7 @@ TaskView::TaskView(QWidget * parent,
 	deno_edit->setAlignment(Qt::AlignHCenter);
 	QObject::connect(deno_edit, SIGNAL(returnPressed(const QString &)), this,
 		SLOT(denominatorReturnPressed(const QString &)));
-	taskLayout->addWidget(deno_edit, 3, 3);
+	taskLayout->addWidget(deno_edit, 3, 4);
 	
 	// next is the result widget
 	m_resultWidget = new ResultWidget(checkWidget, ratio());
@@ -169,7 +182,6 @@ TaskView::TaskView(QWidget * parent,
 	// add tooltip and qwhatsthis help to the widget
 	setToolTip(i18n("In this exercise you have to solve a given question with fractions."));
 	setWhatsThis( i18n("In this exercise you have to solve the generated question. You have to enter numerator and denominator. You can adjust the difficulty of the question with the boxes in the toolbar. Do not forget to reduce the result."));
-
 }
 
 /* destructor */
@@ -194,12 +206,13 @@ void TaskView::setSolutionMixed(bool value)
 
 void TaskView::setQuestionMixed(bool value)
 {
-	m_questionMixed = value;
+	m_taskWidget->setQuestionMixed(value);
 }
 
 void TaskView::setAnswerMixed(bool value)
 {
 	m_answerMixed = value;
+	integer_edit->setVisible( value );
 }
 
 /** the parameters of task generation can be set with this function */
@@ -282,15 +295,14 @@ void TaskView::showResult()
 {
 	QString tmp_str; /* to build a string for a label */
 	QPalette pal;
+	bool wrong = false;
 
 	// change the tooltip of the check button
 	m_checkButton->setToolTip(i18n("Click on this button to get to the next question."));
 
 	numer_edit->setEnabled(false);
 	deno_edit->setEnabled(false);
-	m_skipButton->setEnabled(false);	
-
-	result = current_task.solve();
+	integer_edit->setEnabled(false);
 
 	// an empty numerator field will be interpreted as 0
 	if (numer_edit->text().isEmpty() == true)
@@ -300,27 +312,63 @@ void TaskView::showResult()
 	if (deno_edit->text().isEmpty() == true)
 		deno_edit->setText("1");
 
-	/* store the entered result to check it, but without reducing */
-	entered_result.setNumerator(numer_edit->text().toInt(), false);
-	entered_result.setDenominator(deno_edit->text().toInt(), false);
+	result = current_task.solve();
 
-	if (!m_reducedForm)
-		entered_result.reduce();
+	if (m_answerMixed == true) {
 
-	// check the entered result; 0/1 == 0/5 -> true,
-	// but 0/1 == 0/0 -> false
-	// a 0 for denominator is never allowed (always counted as wrong)
-	//
-	// we have to get the 0 directly from the input field, because
-	// Ratio::setDenominator(0, false) will set the denominator to 1 to ensure
-	// the Ratio is valid
-	if ( (deno_edit->text().toInt() != 0) && ((entered_result == result) ||
-		  (result.numerator() == 0 && entered_result.numerator() == 0)) )
-	{
-		// emit the signal for correct
-		signalTaskSolvedCorrect();
-		m_resultWidget->setResult(result, 1);
+		// an empty denominator field will be interpreted as 1
+		if (integer_edit->text().isEmpty() == true)
+			integer_edit->setText("0");
+
+		int int_mixed, int_numerator, int_denominator;
+
+		int_numerator = qAbs(result.numerator());
+		int_denominator = qAbs(result.denominator());
+		int_mixed = 0;
+
+		if (qAbs(result.numerator()) >= qAbs(result.denominator()))
+		{
+			int_mixed = int(result.numerator() / result.denominator());
+			int_numerator = int_numerator % int_denominator;
+		}
+
+		if ( (deno_edit->text().toInt() != 0) && (int_numerator == numer_edit->text().toInt())
+			&& (int_denominator == deno_edit->text().toInt()) 
+			&& (int_mixed == integer_edit->text().toInt()) )
+		{
+			// emit the signal for correct
+			signalTaskSolvedCorrect();
+			m_resultWidget->setResult(result, 1);
+		} else 
+			wrong = true;	
 	} else {
+
+		/* store the entered result to check it, but without reducing */
+		entered_result.setNumerator(numer_edit->text().toInt(), false);
+		entered_result.setDenominator(deno_edit->text().toInt(), false);
+
+		if (!m_reducedForm)
+			entered_result.reduce();
+
+		// check the entered result; 0/1 == 0/5 -> true,
+		// but 0/1 == 0/0 -> false
+		// a 0 for denominator is never allowed (always counted as wrong)
+		//
+		// we have to get the 0 directly from the input field, because
+		// Ratio::setDenominator(0, false) will set the denominator to 1 to ensure
+		// the Ratio is valid
+
+		if ( (deno_edit->text().toInt() != 0) && ((entered_result == result) ||
+			  (result.numerator() == 0 && entered_result.numerator() == 0)) )
+		{
+			// emit the signal for correct
+			signalTaskSolvedCorrect();
+			m_resultWidget->setResult(result, 1);
+		} else 
+			wrong = true;
+	}
+
+	if (wrong == true) {
 		// emit the signal for wrong
 		signalTaskSolvedWrong();
 		m_resultWidget->setResult(result, 0);
@@ -352,6 +400,9 @@ void TaskView::nextTask()
 
 	numer_edit->setEnabled(true);
 	deno_edit->setEnabled(true);
+	integer_edit->setEnabled(true);
+	if ( m_answerMixed == TRUE )
+		integer_edit->setEnabled(true);
 	m_skipButton->setEnabled(true);
 	
 	m_resultWidget->setResult( result, -1);
@@ -359,7 +410,11 @@ void TaskView::nextTask()
 	/* clear user input */
 	deno_edit->setText("");
 	numer_edit->setText("");
-	numer_edit->setFocus();
+	integer_edit->setText("");
+	if ( m_answerMixed == TRUE )
+		integer_edit->setFocus();
+	else
+		numer_edit->setFocus();
 
 	/* create a new task */
 	QApplication::setOverrideCursor(Qt::WaitCursor); /* show the sand clock */
@@ -371,6 +426,12 @@ void TaskView::nextTask()
 }
 
 /* ------ private slots ------ */
+
+void TaskView::integerReturnPressed(const QString &)
+{
+	numer_edit->setFocus();
+}
+
 
 void TaskView::numeratorReturnPressed(const QString &)
 {
@@ -387,8 +448,7 @@ void TaskView::slotCheckButtonClicked()
 	if (m_currentState == _CHECK_TASK)
 	{
 		// if nothing has been entered by the user, we don't check the result yet
-		if (numer_edit->text().isEmpty() == true && deno_edit->text().isEmpty() ==
-true)
+		if (numer_edit->text().isEmpty() == true && deno_edit->text().isEmpty() == true)
 			return;
 		m_currentState = _NEXT_TASK;
 		m_checkButton->setText(i18n("N&ext"));
@@ -409,6 +469,9 @@ void TaskView::slotSkipButtonClicked()
 void TaskView::showEvent ( QShowEvent * event ) {
 
 	// that the user can start typing without moving the focus
-	numer_edit->setFocus();
+	if ( m_answerMixed == TRUE )
+		integer_edit->setFocus();
+	else 
+		numer_edit->setFocus();
 
 }

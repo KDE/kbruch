@@ -85,6 +85,7 @@ public:
 
 	/** reduce the ratio */
 	void reduce();
+
 private:
 	/** numerator */
 	int m_numerator;
