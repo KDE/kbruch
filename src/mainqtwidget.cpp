@@ -956,7 +956,7 @@ void MainQtWidget::SelectFactorization()
 bool MainQtWidget::OperationsCheck()
 {
 #ifdef DEBUG
-	kDebug() << "MainQtWidget::AdditionCheckSlot()";
+	kDebug() << "MainQtWidget::OperationsCheck()";
 #endif
 
         if ( m_AdditionCheck->checkState() == Qt::Unchecked &&

@@ -20,6 +20,7 @@
 
 /* these includes are needed for KDE support */
 #include <klocale.h>
+#include <kdebug.h>
 
 /* these includes are needed for Qt support */
 #include <qpainter.h>
@@ -101,14 +102,18 @@ void TaskWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 			switch (tmp_operation)
 			{
 				case ADD :
+	kDebug() << "+";
 					str_operation = "+";
 					break;
 				case SUB :
+	kDebug() << "-";
 					str_operation = "-";
 					break;
+	kDebug() << "-";
 				case MUL :
 					str_operation = "x";
 					break;
+	kDebug() << "/";
 				case DIV :
 					// there seems to be different division signs around the world
 					// so please translate it to the right one for your country

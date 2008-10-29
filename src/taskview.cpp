@@ -48,7 +48,7 @@
 TaskView::TaskView(QWidget * parent,
 		 bool padd_add, bool padd_div, bool padd_mult, bool padd_sub,
 		 unsigned int pnr_ratios, unsigned int pmax_md):
-		ExerciseBase(parent), m_addAdd(padd_sub), m_addDiv(padd_div), 
+		ExerciseBase(parent), m_addAdd(padd_add), m_addDiv(padd_div), 
 		m_addMult(padd_mult), m_addSub(padd_sub),
 		nr_ratios(pnr_ratios), max_md(pmax_md)
 {
@@ -221,8 +221,8 @@ void TaskView::setTaskParameters(bool padd_add, bool padd_div,
 				unsigned int pnr_ratios, unsigned int pmax_md)
 {
 	// at least one operation must be enabled
-	if ((padd_add == false) && (padd_div == false) && (padd_mult == false) && (padd_sub == false))
-		padd_add = true;
+	//if ((padd_add == false) && (padd_div == false) && (padd_mult == false) && (padd_sub == false))
+	//	padd_add = true;
 
 	// we need at least 2 ratios
 	if (pnr_ratios < 2)
@@ -418,7 +418,8 @@ void TaskView::nextTask()
 
 	/* create a new task */
 	QApplication::setOverrideCursor(Qt::WaitCursor); /* show the sand clock */
-	current_task.create_task(max_md, nr_ratios, m_addAdd, m_addDiv, m_addMult, m_addDiv);
+
+	current_task.create_task(max_md, nr_ratios, m_addAdd, m_addDiv, m_addMult, m_addSub);
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
 	// update the task widget

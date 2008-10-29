@@ -1,4 +1,4 @@
-/***************************************************************************
+op_vector/***************************************************************************
                           task.cpp  -  source code of class task
                              -------------------
     begin                : Tue Nov 27 16:40:42 CET 2001
@@ -47,8 +47,7 @@ task::~task()
  * can be customized by the given parameters:
  * pmax_md: maximum main denominator
  * pnr_ratios: number of ratios -> pnr_ratios - 1 operations
- * padd_sub: if true + and - are allowed operations
- * pmul_div: if true * and / are allowed operations */
+*/
 void task::create_task(unsigned int pmax_md, short pnr_ratios,
                        short padd_add, short padd_div, 
                        short padd_mult, short padd_sub)
@@ -177,6 +176,10 @@ void task::add_operation(short operation)
 /** just outputs the whole given task to stdout; for debugging */
 QTextStream & task::display(QTextStream & str)
 {
+#ifdef DEBUG
+	kDebug() << "task::display()";
+#endif
+
 	/* this is our pointer on the ratio_vector, set it to the beginning */
 	RatioArray::iterator ratio_pointer = ratio_vector.begin();
 
@@ -332,12 +335,18 @@ ratio task::solve()
 /* returns the number of ratios in the vector */
 int task::getNumberOfRatios() const
 {
+#ifdef DEBUG
+	kDebug() << "task::getNumberOfRatios()";
+#endif
 	return ratio_vector.count();
 }
 
 /* returns the number of operations in the vector */
 int task::getNumberOfOperations() const
 {
+#ifdef DEBUG
+	kDebug() << "task::getNumberOfOperations()";
+#endif
 	return op_vector.count();
 }
 
@@ -346,14 +355,12 @@ int task::getNumberOfOperations() const
 ratio task::product(RatioArray::iterator & ratio_pointer,
                     ShortArray::iterator & op_pointer)
 {
+#ifdef DEBUG
+	kDebug() << "task::product()";
+#endif	
 	/* the function's parameters are pointing to the next ratio;
 	 * to the starting point of the product */
 	ratio product(ratio_pointer->numerator(), ratio_pointer->denominator());
-
-#ifdef DEBUG
-
-	kDebug() << "in product()";
-#endif
 
 	++ratio_pointer;
 	do
@@ -390,6 +397,9 @@ ratio task::product(RatioArray::iterator & ratio_pointer,
 unsigned short task::make_operation(short padd_add, short padd_div, short padd_mult, short padd_sub, 
                                     short pnr_ratios)
 {
+#ifdef DEBUG
+	kDebug() << "task::make_operation()";
+#endif
 	unsigned short max_product_length = 0;
 	unsigned short operations = 0;
 	unsigned short counter = 0;
@@ -401,19 +411,23 @@ unsigned short task::make_operation(short padd_add, short padd_div, short padd_m
 	op_vector.clear();
 
 	/* generate the operations */
-	if (padd_add == YES && padd_div == NO && padd_mult == NO && padd_sub == NO)
+	if (padd_add == YES && padd_div == NO && padd_mult == NO && padd_sub == NO) {
+						kDebug() << "11";
 		for (short counter = 0; counter < pnr_ratios - 1; counter++)
 			op_vector.push_back(ADD);
-	else if (padd_div == YES && padd_add == NO && padd_mult == NO && padd_sub == NO)
+	} else if (padd_div == YES && padd_add == NO && padd_mult == NO && padd_sub == NO) {
+						kDebug() << "22";
 		for (short counter = 0; counter < pnr_ratios - 1; counter++)
 			op_vector.push_back(DIV);
-	else if (padd_mult == YES && padd_add == NO && padd_div == NO && padd_sub == NO)
+	} else if (padd_mult == YES && padd_add == NO && padd_div == NO && padd_sub == NO) {
+						kDebug() << "33";
 		for (short counter = 0; counter < pnr_ratios - 1; counter++)
 			op_vector.push_back(MUL);
-	else if (padd_sub == YES && padd_add == NO && padd_div == NO && padd_mult == NO)
+	} else if (padd_sub == YES && padd_add == NO && padd_div == NO && padd_mult == NO) {
+						kDebug() << "44";
 		for (short counter = 0; counter < pnr_ratios - 1; counter++)
 			op_vector.push_back(SUB);
-	else {									
+	} else {	
 		do {
 			operations = short((double(rand()) / RAND_MAX) * 4);
 			switch (operations) {
@@ -421,24 +435,28 @@ unsigned short task::make_operation(short padd_add, short padd_div, short padd_m
 					if (padd_add == YES) {
 						op_vector.push_back(ADD);
 						counter++;
+						kDebug() << "1";
 					}
 					break;
 				case SUB:
 					if (padd_sub == YES) {
 						op_vector.push_back(SUB);
 						counter++;
+						kDebug() << "2";
 					}
 					break;
 				case DIV:
 					if (padd_div == YES) {
 						op_vector.push_back(DIV);
 						counter++;
+						kDebug() << "3";
 					}
 					break;
 				case  MUL:
 					if (padd_mult == YES) {
 						op_vector.push_back(MUL);
 						counter++;
+						kDebug() << "4";
 					}
 					break;				
 			}															
@@ -447,14 +465,16 @@ unsigned short task::make_operation(short padd_add, short padd_div, short padd_m
 
 	/* if we only wanted mul/div, operations was 2; but we want values
 	 * for the operations with 2 and 3 so we have to add 2 */
-	if ( (padd_mult == YES || padd_div == YES) && (padd_add == NO && padd_sub == NO) )
-	{
+	//if ( (padd_mult == YES || padd_div == YES) && (padd_add == NO && padd_sub == NO) )
+//	{
 		/* loop through all operations and add 2, so that the operations
 		 * are interpreted as mul/div and not add/sub */
-		for (op_pointer = op_vector.begin();
-		        op_pointer != op_vector.end(); ++op_pointer)
-			*op_pointer += 2;
-	}
+//		for (op_pointer = op_vector.begin();
+		        //op_pointer != op_vector.end(); ++op_pointer) {
+//						kDebug() << "4";
+			//*op_pointer += 2;
+//}
+//	}
 
 	if (padd_mult == YES || padd_div == YES)
 	{
