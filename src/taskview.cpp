@@ -59,7 +59,7 @@ TaskView::TaskView(QWidget * parent,
 
 	/* create a new task */
 	QApplication::setOverrideCursor(Qt::WaitCursor); /* show the sand clock */
-	current_task.create_task(max_md, nr_ratios, m_addAdd, m_addDiv, m_addMult, m_addDiv);
+	current_task.create_task(max_md, nr_ratios, m_addAdd, m_addDiv, m_addMult, m_addSub);
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
 	// to validate, that the input is an int
