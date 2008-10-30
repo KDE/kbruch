@@ -196,7 +196,7 @@ void AppMenuWidget::slotFreestyleClicked()
 {
 	kbruchApp = new MainQtWidget();
 	kbruchApp->show();
-	close();
+	hide();
 	return;
 }
 
@@ -204,6 +204,6 @@ void AppMenuWidget::slotLearningClicked()
 {
 	fractionRing = new FractionRingWidget();
 	fractionRing->show();
-	close();
+	hide();
 	return;
 }

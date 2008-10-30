@@ -45,6 +45,11 @@ void RatioWidget::setRatio(const ratio para_ratio)
 	update();
 }
 
+void RatioWidget::setQuestionMixed(bool value)
+{
+	m_questionMixed = value;
+}
+
 void RatioWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 {
 	// our x position, we paint from left to right;
@@ -71,7 +76,7 @@ void RatioWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	setMaximumHeight(2 * fm.lineSpacing() + 10);
 
 	// result as normal ratio
-	paintRatio(paint, m_ratio, x_pos, y_pos, fm, false);
+	paintRatio(paint, m_ratio, x_pos, y_pos, fm, m_questionMixed);
 
 	// stop the painter
 	paint.end();

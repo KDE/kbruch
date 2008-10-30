@@ -46,10 +46,15 @@ public:
 	/** set the task to be displayed */
 	void setRatio(const ratio para_ratio);
 
+	void setQuestionMixed(bool value);
+
 private:
 	
 	/** the ratio to be displayed */
 	ratio m_ratio;
+
+	/*identify if the fraction will appear in mixed form or not*/
+	bool m_questionMixed;
 
 	/** overrideing the paint event of FractionBaseWidget */
 	void paintEvent(QPaintEvent*);

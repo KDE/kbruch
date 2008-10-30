@@ -61,6 +61,8 @@ public:
 	/** force the creation of a new task */
 	void forceNewTask();
 
+	void setQuestionMixed(bool value);
+
 public slots:
 	void update();
 
@@ -77,6 +79,8 @@ signals:
 
 private:
 	short m_currentState;
+
+	bool m_questionMixed;
 
 	RatioWidget * m_firstRatioWidget;
 	RatioWidget * m_secondRatioWidget;

@@ -245,7 +245,6 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 				int fontHeight = fm.lineSpacing(); // get the font height
 
 				int tmpWidth = 0;
-				int tmpHeight = 0;
 				for (int tmpInt = 0; tmpInt < m_factors.count(); tmpInt++)
 				{
 					if (tmpInt != 0)

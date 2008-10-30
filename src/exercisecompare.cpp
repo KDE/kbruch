@@ -181,6 +181,11 @@ void ExerciseCompare::forceNewTask()
 	(void) nextTask();
 }
 
+void ExerciseCompare::setQuestionMixed(bool value)
+{
+	m_firstRatioWidget->setQuestionMixed(value);
+	m_secondRatioWidget->setQuestionMixed(value);
+}
 
 /* ------ public slots ------ */
 

@@ -60,9 +60,10 @@ StatisticsView::StatisticsView(QWidget * parent):
 	setLayout(labelGrid);
 
 	labelGrid->setColumnStretch(0,1);
-	labelGrid->setColumnStretch(5,1);
+	labelGrid->setColumnStretch(6,1);
 
-	labelGrid->setColumnMinimumWidth(4,220);
+	labelGrid->setColumnMinimumWidth(5,220);
+	labelGrid->setColumnMinimumWidth(2,30);
 
 	result1Label = new QLabel(this);
 	labelGrid->addWidget(result1Label, 1, 1, 2, 1);
@@ -84,36 +85,36 @@ StatisticsView::StatisticsView(QWidget * parent):
 	info2Label->setText(i18nc("@info:status the number of correct answers", "Correct:"));
 	info2Label->setFont(defaultFont);
 	info2Label->setAlignment(Qt::AlignVCenter | Qt::AlignRight);
-	labelGrid->addWidget(info2Label, 0, 2);	
+	labelGrid->addWidget(info2Label, 0, 3);	
 
 	info4Label = new QLabel(this);
 	info4Label->setText(i18nc("@info:status the number of incorrect answers", "Incorrect:"));
 	info4Label->setFont(defaultFont);
 	info4Label->setAlignment(Qt::AlignVCenter | Qt::AlignRight);
-	labelGrid->addWidget(info4Label, 1, 2);
+	labelGrid->addWidget(info4Label, 1, 3);
 
 	info3Label = new QLabel(this);
 	info3Label->setText(i18nc("@info:status the number of skipped answers", "Skipped:"));
 	info3Label->setFont(defaultFont);
 	info3Label->setAlignment(Qt::AlignVCenter | Qt::AlignRight);
-	labelGrid->addWidget(info3Label, 2, 2);
+	labelGrid->addWidget(info3Label, 2, 3);
 
 	defaultFont.setBold( TRUE );
 
 	result2Label = new QLabel(this);
-	labelGrid->addWidget(result2Label, 0, 3);
+	labelGrid->addWidget(result2Label, 0, 4);
 	result2Label->setFont(defaultFont);
 	result2Label->setToolTip(
 	              i18n("This is the current total number of correctly solved tasks."));
 	
 	result4Label = new QLabel(this);
-	labelGrid->addWidget(result4Label, 1, 3);
+	labelGrid->addWidget(result4Label, 1, 4);
 	result4Label->setFont(defaultFont);
 	result4Label->setToolTip(
 	              i18n("This is the current total number of unsolved tasks."));
 
 	result3Label = new QLabel(this);
-	labelGrid->addWidget(result3Label, 2, 3);
+	labelGrid->addWidget(result3Label, 2, 4);
 	result3Label->setFont(defaultFont);
 	result3Label->setToolTip(
 	              i18n("This is the current total number of skipped tasks."));
@@ -125,8 +126,8 @@ StatisticsView::StatisticsView(QWidget * parent):
 	QBoxLayout * cLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
 
 	statisticsBar = new StatisticsBarWidget(this);
-	labelGrid->addWidget(statisticsBar, 0, 4, 3, 1);
-	labelGrid->addLayout(cLayout,0,4,Qt::AlignCenter);
+	labelGrid->addWidget(statisticsBar, 0, 5, 3, 1);
+	labelGrid->addLayout(cLayout,0,5,Qt::AlignCenter);
 
 	/* calculate the statistics */
 	(void) calc();

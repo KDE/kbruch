@@ -702,7 +702,10 @@ void MainQtWidget::QuestionMixedCheckSlot()
 	kDebug() << "MainQtWidget::QuestionMixedCheckSlot()";
 #endif
 	m_questionMixed = m_QuestionMixedCheck->isChecked();
-	m_taskview->setQuestionMixed(m_questionMixed);
+	if ( selectedTask == Arithmetics )		
+		m_taskview->setQuestionMixed(m_questionMixed);
+	else if ( selectedTask == Comparison )
+		m_exerciseCompare->setQuestionMixed(m_questionMixed);
 }
 
 void MainQtWidget::ReducedFormCheckSlot()
@@ -860,9 +863,9 @@ void MainQtWidget::slotAboutToShowPage()
 		m_QuestionMixedCheck->setEnabled( TRUE );
 		m_NrOfTermsBox->setEnabled( FALSE );
 		m_MaxMainDenominatorBox->setEnabled( FALSE );		
-		m_AnswerMixedCheck->setEnabled( TRUE );		
+		m_AnswerMixedCheck->setEnabled( FALSE );		
 		m_ReducedCheck->setEnabled( FALSE );		
-		m_SolutionMixedCheck->setEnabled( TRUE );		
+		m_SolutionMixedCheck->setEnabled( FALSE );		
 		m_SubtractionCheck->setEnabled( FALSE );		
 		m_DivisionCheck->setEnabled( FALSE );		
 		m_MultiplicationCheck->setEnabled( FALSE );		

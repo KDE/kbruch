@@ -99,10 +99,10 @@ private:
 	bool m_answerMixed;
 	bool m_solutionMixed;
 	bool m_reducedForm;
-	bool m_addSub;
 	bool m_addAdd;
-	bool m_addMult;
 	bool m_addDiv;
+	bool m_addMult;
+	bool m_addSub;
 	unsigned int nr_ratios;
 	unsigned int curr_nr_ratios;
 	unsigned int max_md;
