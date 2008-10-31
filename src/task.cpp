@@ -95,7 +95,7 @@ void task::create_task(unsigned int pmax_md, short pnr_ratios,
 #endif
 
 	/* create the ratios' denominators */
-	make_denominators(main_denominator, pmax_md, padd_add, padd_div, padd_mult, padd_sub);
+	make_denominators(main_denominator, pmax_md, padd_div, padd_mult);
 
 #ifdef DEBUG
 	kDebug() << "main deno: " << main_denominator;
@@ -604,8 +604,7 @@ void task::make_numerators(int main_denominator, short pnr_ratios)
 
 /** create the ratios' denominators */
 void task::make_denominators(int main_denominator, short pmax_md,
-                             short padd_add, short padd_div, 
-	                     short padd_mult, short padd_sub)
+                             short padd_div, short padd_mult)
 {
 	/* this is our pointer on the ratio_vector, set it to the beginning */
 	RatioArray::iterator ratio_pointer = ratio_vector.begin();

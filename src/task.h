@@ -161,8 +161,7 @@ private:
 
 	/** create the ratios' denominators */
 	void make_denominators(int main_denominator = 0, short pmax_md = 0, 
-			       short padd_add = YES, short padd_div = NO, 
-			       short padd_mult = NO, short padd_sub = NO);
+			       short padd_div = NO, short padd_mult = NO);
 };
 
 
