@@ -4,6 +4,8 @@
     begin                : 2008/09/02
     copyright            : (C) 2008 by Danilo Balzaque
     email                : danilo.balzaque@gmail.com
+
+    copyright            : (C) 2008 by Tadeu Araujo, tadeu.araujo@ltia.fc.unesp.br
  ***************************************************************************/
 
 /***************************************************************************

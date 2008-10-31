@@ -1,9 +1,13 @@
 /***************************************************************************
-                          fractionbasewidget.cpp  -  base fraction painting
+                 fractionbasewidget.cpp  -  base fraction painting
                              -------------------
     begin                : 2004/05/30
     copyright            : (C) 2004 by Sebastian Stein
     email                : seb.kde@hpfsc.de
+
+    copyright            : (C) 2008 by Tiago Porangaba, tiago.porangaba@ltia.fc.unesp.br
+    copyright            : (C) 2008 by Tadeu Araujo, tadeu.araujo@ltia.fc.unesp.br
+    copyright            : (C) 2008 by Danilo Balzaque, danilo.balzaque@ltia.fc.unesp.br
  ***************************************************************************/
 
 /***************************************************************************

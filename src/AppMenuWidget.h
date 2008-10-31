@@ -2,8 +2,10 @@
                           appmenuwidget.h  -  The main Qt/KDE window
                              -------------------
     begin                : Tue Sep 16 00:00:00 CET 2008
-    copyright            : (C) 2008 by LTIA
+    copyright            : (C) 2008 by Danilo Balzaque
     email                : danilo.balzaque@ltia.fc.unesp.br
+
+    copyright            : (C) 2008 by Tadeu Araujo, tadeu.araujo@ltia.fc.unesp.br
  ***************************************************************************/
 
 /***************************************************************************

@@ -4,6 +4,10 @@
     begin                : Tue Mar 16 00:00:00 CET 2003
     copyright            : (C) 2003-2004 by Sebastian Stein
     email                : seb.kde@hpfsc.de
+
+    copyright            : (C) 2008 by Tiago Porangaba, tiago.porangaba@ltia.fc.unesp.br
+    copyright            : (C) 2008 by Tadeu Araujo, tadeu.araujo@ltia.fc.unesp.br
+    copyright            : (C) 2008 by Danilo Balzaque, danilo.balzaque@ltia.fc.unesp.br
  ***************************************************************************/
 
 /***************************************************************************

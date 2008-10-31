@@ -1,12 +1,13 @@
-  	//setPalette(QPalette( QColor(255,255,255)));
-  	//setAutoFillBackground(true);
-
 /***************************************************************************
                           statisticsview.cpp  -  the statistic window
                              -------------------
     begin                : Tue Mar 08 17:20:00 CET 2002
     copyright            : (C) 2001 - 2004 by Sebastian Stein, Eva Brucherseifer
     email                : seb.kde@hpfsc.de
+
+    copyright            : (C) 2008 by Tadeu Araujo, tadeu.araujo@ltia.fc.unesp.br
+    copyright            : (C) 2008 by Danilo Balzaque, danilo.balzaque@ltia.fc.unesp.br
+    copyright            : (C) 2008 by Tiago Porangaba, tiago.porangaba@ltia.fc.unesp.br
  ***************************************************************************/
 
 /***************************************************************************

@@ -1,14 +1,13 @@
-//Added by qt3to4:
-#include <QLabel>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QGridLayout>
 /***************************************************************************
                           statisticsview.cpp  -  Header File
                              -------------------
     begin                : Tue Mar 08 17:20:00 CET 2002
     copyright            : (C) 2001 - 2004 by Sebastian Stein, Eva Brucherseifer
     email                : seb.kde@hpfsc.de
+
+    copyright            : (C) 2008 by Tadeu Araujo, tadeu.araujo@ltia.fc.unesp.br
+    copyright            : (C) 2008 by Danilo Balzaque, danilo.balzaque@ltia.fc.unesp.br
+    copyright            : (C) 2008 by Tiago Porangaba, tiago.porangaba@ltia.fc.unesp.br
  ***************************************************************************/
 
 /***************************************************************************
@@ -19,6 +18,12 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
+
+//Added by qt3to4:
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QGridLayout>
 
 #ifndef STATISTICSVIEW_H
 #define STATISTICSVIEW_H

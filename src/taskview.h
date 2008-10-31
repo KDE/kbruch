@@ -4,6 +4,9 @@
     begin                : Tue Feb 08 13:42:00 CET 2002
     copyright            : (C) 2001 - 2004 by Sebastian Stein
     email                : seb.kde@hpfsc.de
+
+    copyright            : (C) 2008 by Tadeu Araujo, tadeu.araujo@ltia.fc.unesp.br
+    copyright            : (C) 2008 by Danilo Balzaque, danilo.balzaque@ltia.fc.unesp.br
  ***************************************************************************/
 
 /***************************************************************************

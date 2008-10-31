@@ -4,6 +4,9 @@
     begin                : 2008/09/18
     copyright            : (C) 2008 by Danilo Balzaque
     email                : danilo.balzaque@ltia.fc.unesp.br
+
+    copyright            : (C) 2008 by Tadeu Araujo, tadeu.araujo@ltia.fc.unesp.br
+    copyright            : (C) 2008 by Tiago Porangaba, tiago.porangaba@ltia.fc.unesp.br
  ***************************************************************************/
 
 /***************************************************************************

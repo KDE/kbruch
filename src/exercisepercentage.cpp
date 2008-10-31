@@ -1,11 +1,9 @@
 /***************************************************************************
-                              exercisepercentage.h
+                              exercisepercentage.cpp
                              -------------------
-    begin                : 2004/06/04
-    copyright            : (C) 2004 by Sebastian Stein
-    email                : seb.kde@hpfsc.de
-
-    copyright            : (C) 2008 by Tiago Porangaba    
+    begin                : 2008/10/10
+    copyright            : (C) 2008 by Tiago Porangaba
+    email                : tiago.porangaba@ltia.fc.unesp.br
  ***************************************************************************/
 
 /***************************************************************************
