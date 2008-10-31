@@ -539,15 +539,20 @@ void MainQtWidget::setupActions()
 	connect(m_NewTaskActionMenu, SIGNAL(triggered(bool) ), SLOT(NewTask()));
 	m_NewTaskActionMenu->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));
 
-   	m_NewTaskActionTool  = new KAction(i18nc("@action opens a new question", "&New"), this);
+   	m_NewTaskActionTool  = new KAction(i18nc("@action opens a new question", "New"), this);
    	actionCollection()->addAction("NewTaskTool", m_NewTaskActionTool );
 	connect(m_NewTaskButton, SIGNAL(clicked()), SLOT(NewTask()));
 	m_NewTaskActionTool->setDefaultWidget( m_NewTaskButton );
         
-   	m_BackAction  = new KAction(i18nc("@action go to the main screen", "Back"), this);
-   	actionCollection()->addAction("Back", m_BackAction );
+   	m_BackActionMenu  = new KAction(KIcon("go-previous"), i18nc("@action go to the main screen", "&Back"), this);
+   	actionCollection()->addAction("BackMenu", m_BackActionMenu );
+	connect(m_BackActionMenu, SIGNAL(triggered(bool) ), SLOT(GoBack()));
+	m_BackActionMenu->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::Back));
+
+   	m_BackActionTool  = new KAction(i18nc("@action go to the main screen", "Back"), this);
+   	actionCollection()->addAction("BackTool", m_BackActionTool );
 	connect(m_BackTaskButton, SIGNAL(clicked()), SLOT(GoBack()));
-	m_BackAction->setDefaultWidget( m_BackTaskButton );
+	m_BackActionTool->setDefaultWidget( m_BackTaskButton );
 
 	m_ArithmeticsAction  = new KAction(i18nc("Arithmetics Exercise", "Arithmetic"), this);
    	actionCollection()->addAction("Arithmetic", m_ArithmeticsAction );

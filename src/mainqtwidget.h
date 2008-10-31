@@ -175,7 +175,8 @@ class MainQtWidget : public KXmlGuiWindow
 		KAction * m_FactorizationAction;
 		KAction * m_NewTaskActionMenu;
 		KAction * m_NewTaskActionTool;
-		KAction * m_BackAction;
+		KAction * m_BackActionTool;
+		KAction * m_BackActionMenu;
 		KAction * m_HintAction;
 		KAction * m_PercentageAction;
 		
