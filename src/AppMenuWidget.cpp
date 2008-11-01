@@ -119,7 +119,7 @@ AppMenuWidget::AppMenuWidget()
 	// Freestyle mode ----------------------------
 	m_Freestyle = new QPushButton(this);
 	m_Freestyle->setObjectName( "m_Freestyle" );
-	m_Freestyle->setToolTip(i18n("Open standard kbruch."));
+	m_Freestyle->setToolTip(i18n("Open standard KBruch"));
 	m_Freestyle->setFixedSize(QSize(150, 197));
 	gridLayout->addWidget(m_Freestyle, 1, 0, Qt::AlignCenter);
 
@@ -134,7 +134,7 @@ AppMenuWidget::AppMenuWidget()
 	// Learning mode ----------------------------
 	m_Learning = new QPushButton(this);
 	m_Learning->setObjectName( "m_Learning" );
-	m_Learning->setToolTip(i18n("Open learning kbruch."));
+	m_Learning->setToolTip(i18n("Open learning KBruch"));
 	m_Learning->setFixedSize(QSize(150, 197));
 	gridLayout->addWidget(m_Learning, 1, 1, Qt::AlignCenter);
 

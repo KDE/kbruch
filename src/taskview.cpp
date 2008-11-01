@@ -159,7 +159,7 @@ TaskView::TaskView(QWidget * parent,
 	m_checkButton->setObjectName( "m_checkButton" );
 	m_checkButton->setText(i18n("&Check"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
-	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+	m_checkButton->setToolTip(i18n("Click this button to check your result. The button will not work if you have not entered a result yet."));
 	m_checkButton->setFixedSize(80,30);
 	m_checkButton->setFont(defaultFont);	
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
@@ -169,7 +169,7 @@ TaskView::TaskView(QWidget * parent,
 	m_skipButton = new QPushButton( checkWidget );
 	m_skipButton->setObjectName( "m_skipButton" );
 	m_skipButton->setText(i18n("&Skip"));
-	m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
+	m_skipButton->setToolTip(i18n("Click this button to skip this question."));
 	m_skipButton->setFixedSize(80,30);
 	m_skipButton->setFont(defaultFont);	
 	QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
@@ -184,7 +184,7 @@ TaskView::TaskView(QWidget * parent,
 
 	// add tooltip and qwhatsthis help to the widget
 	setToolTip(i18n("In this exercise you have to solve a given question with fractions."));
-	setWhatsThis( i18n("In this exercise you have to solve the generated question. You have to enter numerator and denominator. You can adjust the difficulty of the question with the boxes in the toolbar. Do not forget to reduce the result."));
+	setWhatsThis( i18n("In this exercise you have to solve the generated question. You have to enter the numerator and the denominator. You can adjust the difficulty of the question with the boxes in the toolbar. Do not forget to reduce the result."));
 }
 
 /* destructor */
@@ -301,7 +301,7 @@ void TaskView::showResult()
 	bool wrong = false;
 
 	// change the tooltip of the check button
-	m_checkButton->setToolTip(i18n("Click on this button to get to the next question."));
+	m_checkButton->setToolTip(i18n("Click this button to get the next question."));
 
 	numer_edit->setEnabled(false);
 	deno_edit->setEnabled(false);
@@ -383,7 +383,7 @@ void TaskView::showResult()
 		if (deno_edit->text().toInt() == 0)
 		{
 			KMessageBox::information(this,
-			                         i18n("You entered a 0 as the denominator. This means division by zero, which is not allowed. This question will be counted as not correctly solved."));
+			                         i18n("You entered 0 as the denominator. This means division by zero, which is not allowed. This question will be counted as not correctly solved."));
 		} else {
 			/* maybe the entered ratio was not reduced */
 			entered_result.reduce();
@@ -399,7 +399,7 @@ void TaskView::showResult()
 void TaskView::nextTask()
 {
 	// change the tooltip of the check button
-	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+	m_checkButton->setToolTip(i18n("Click this button to check your result. The button will not work if you have not entered a result yet."));
 
 	numer_edit->setEnabled(true);
 	deno_edit->setEnabled(true);
