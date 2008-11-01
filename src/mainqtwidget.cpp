@@ -377,8 +377,8 @@ MainQtWidget::MainQtWidget()
 	selectedTask = (ExerciseType)SettingsClass::activeExercise();
 	switch (selectedTask)
 	{
-		case Arithmetics:
-			SelectArithmetics();
+		case Arithmetic:
+			SelectArithmetic();
 			break;
 		case Comparison:
 			SelectComparison();
@@ -393,7 +393,7 @@ MainQtWidget::MainQtWidget()
 			SelectPercentage();
 			break;			
 		default:
-			SelectArithmetics();
+			SelectArithmetic();
 			break;
 	}	
 	move(50, 50);	
@@ -471,7 +471,7 @@ void MainQtWidget::setupActions()
 	css +=		"background-position: top center;";
 	css +=		"background-repeat: none;";
 	css +=	"}";	
-	css += "QToolButton#ArithmeticsButton {";
+	css += "QToolButton#ArithmeticButton {";
 	css +=		"background-image: url(";
 	css +=		KStandardDirs::locate("data", "kbruch/pics/exercise_arithmetics.png");
 	css +=		");";
@@ -513,10 +513,10 @@ void MainQtWidget::setupActions()
 	m_BackTaskButton->setIcon(KIcon("go-previous"));
 	m_BackTaskButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
-	m_ArithmeticsButton = new QToolButton( this );
-	m_ArithmeticsButton->setObjectName("ArithmeticsButton");
-	m_ArithmeticsButton->setFixedSize( 84,65 );
-	m_ArithmeticsButton->setText( i18n("\n\nArithmetics") );	
+	m_ArithmeticButton = new QToolButton( this );
+	m_ArithmeticButton->setObjectName("ArithmeticButton");
+	m_ArithmeticButton->setFixedSize( 84,65 );
+	m_ArithmeticButton->setText( i18n("\n\nArithmetic") );	
 
 	m_ComparisonButton = new QToolButton( this );
 	m_ComparisonButton->setObjectName("ComparisonButton");
@@ -558,10 +558,10 @@ void MainQtWidget::setupActions()
 	connect(m_BackTaskButton, SIGNAL(clicked()), SLOT(GoBack()));
 	m_BackActionTool->setDefaultWidget( m_BackTaskButton );
 
-	m_ArithmeticsAction  = new KAction(i18nc("Arithmetics Exercise", "Arithmetic"), this);
-   	actionCollection()->addAction("Arithmetic", m_ArithmeticsAction );
-	connect(m_ArithmeticsButton, SIGNAL(clicked()), SLOT(SelectArithmetics()));
-	m_ArithmeticsAction->setDefaultWidget( m_ArithmeticsButton );
+	m_ArithmeticAction  = new KAction(i18nc("Arithmetic Exercise", "Arithmetic"), this);
+   	actionCollection()->addAction("Arithmetic", m_ArithmeticAction );
+	connect(m_ArithmeticButton, SIGNAL(clicked()), SLOT(SelectArithmetic()));
+	m_ArithmeticAction->setDefaultWidget( m_ArithmeticButton );
                   
 	m_ComparisonAction  = new KAction(i18nc("Comparison Exercise", "Comparison"), this);
    	actionCollection()->addAction("Comparison", m_ComparisonAction );
@@ -606,7 +606,7 @@ void MainQtWidget::NewTask()
 	// check which page should generate a new task
 	switch (selectedTask)
 	{
-		case Arithmetics:
+		case Arithmetic:
 			m_taskview->forceNewTask();
 			break;
 		case Comparison:
@@ -711,7 +711,7 @@ void MainQtWidget::QuestionMixedCheckSlot()
 	kDebug() << "MainQtWidget::QuestionMixedCheckSlot()";
 #endif
 	m_questionMixed = m_QuestionMixedCheck->isChecked();
-	if ( selectedTask == Arithmetics )		
+	if ( selectedTask == Arithmetic )		
 		m_taskview->setQuestionMixed(m_questionMixed);
 	else if ( selectedTask == Comparison )
 		m_exerciseCompare->setQuestionMixed(m_questionMixed);
@@ -841,7 +841,7 @@ void MainQtWidget::slotAboutToShowPage()
 	// check which page to show
 
 	switch ( selectedTask ) {
-	  case Arithmetics:
+	  case Arithmetic:
 		m_QuestionMixedCheck->setEnabled( TRUE );
 		m_NrOfTermsBox->setEnabled( TRUE );
 		m_MaxMainDenominatorBox->setEnabled( TRUE );		
@@ -904,13 +904,13 @@ void MainQtWidget::SelectPercentage()
 	slotAboutToShowPage();
 }
 
-void MainQtWidget::SelectArithmetics()
+void MainQtWidget::SelectArithmetic()
 {
 #ifdef DEBUG
-	kDebug() << "SelectArithmetics MainQtWidget";
+	kDebug() << "SelectArithmetic MainQtWidget";
 #endif
 	m_TitleLabel->setText(i18n("Arithmetic"));
-	selectedTask = Arithmetics;
+	selectedTask = Arithmetic;
 	m_taskview->show();
 	m_exerciseCompare->hide();
 	m_exerciseConvert->hide();
