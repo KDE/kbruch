@@ -176,7 +176,7 @@ MainQtWidget::MainQtWidget()
 	m_exercisePercentage->hide();
 
 	m_OptionsLabel = new QLabel(i18n("Options:"), pageOptions);
-	m_OptionsLabel->setToolTip(i18n("Set the options to resolve the exercises."));
+	m_OptionsLabel->setToolTip(i18n("Set the options to solve the exercises."));
 	m_OptionsLabel->setObjectName("OptionsLabel");
 	m_OptionsLabel->setFont(defaultFont);
 
@@ -214,7 +214,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_SolutionMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(SolutionMixedCheckSlot()));
 
 	m_AdditionLabel = new QLabel(i18n("Addition:"), pageOptions);
-	m_AdditionLabel->setToolTip(i18n("Check to use addition operator."));
+	m_AdditionLabel->setToolTip(i18n("Check this to use addition operator."));
 	m_AdditionLabel->setObjectName("AdditionLabel");
 	m_AdditionLabel->setAlignment(Qt::AlignRight);	
 
@@ -224,7 +224,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_AdditionCheck, SIGNAL(stateChanged(int)), this, SLOT(AdditionCheckSlot()));
 
 	m_SubtractionLabel = new QLabel(i18n("Subtraction:"), pageOptions);
-	m_SubtractionLabel->setToolTip(i18n("Check to use subtraction operator."));
+	m_SubtractionLabel->setToolTip(i18n("Check this to use subtraction operator."));
 	m_SubtractionLabel->setObjectName("SubtractionLabel");
 	m_SubtractionLabel->setAlignment(Qt::AlignRight);		
 
@@ -234,7 +234,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_SubtractionCheck, SIGNAL(stateChanged(int)), this, SLOT(SubtractionCheckSlot()));
 
 	m_MultiplicationLabel = new QLabel(i18n("Multiplication:"), pageOptions);
-	m_MultiplicationLabel->setToolTip(i18n("Check to use multiplication operator."));
+	m_MultiplicationLabel->setToolTip(i18n("Check this to use multiplication operator."));
 	m_MultiplicationLabel->setObjectName("MultiplicationLabel");
 	m_MultiplicationLabel->setAlignment(Qt::AlignRight);			
 
@@ -244,7 +244,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_MultiplicationCheck, SIGNAL(stateChanged(int)), this, SLOT(MultiplicationCheckSlot()));
 
 	m_DivisionLabel = new QLabel(i18n("Division:"), pageOptions);
-	m_DivisionLabel->setToolTip(i18n("Check to use division operator."));
+	m_DivisionLabel->setToolTip(i18n("Check this to use division operator."));
 	m_DivisionLabel->setObjectName("DivisionLabel");
 	m_DivisionLabel->setAlignment(Qt::AlignRight);	
 
@@ -254,7 +254,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_DivisionCheck, SIGNAL(stateChanged(int)), this, SLOT(DivisionCheckSlot()));
 
 	m_ReducedLabel = new QLabel(i18n("Reduced form:"), pageOptions);
-	m_ReducedLabel->setToolTip(i18n("Check to force the ‎will do in the reduced form."));
+	m_ReducedLabel->setToolTip(i18n("Check this to force the use of the reduced form."));
 	m_ReducedLabel->setObjectName("ReducedLabel");
 	m_ReducedLabel->setAlignment(Qt::AlignRight);		
 
@@ -563,8 +563,8 @@ void MainQtWidget::setupActions()
 	connect(m_ArithmeticsButton, SIGNAL(clicked()), SLOT(SelectArithmetics()));
 	m_ArithmeticsAction->setDefaultWidget( m_ArithmeticsButton );
                   
-	m_ComparisonAction  = new KAction(i18nc("Comparision Exercise", "Comparision"), this);
-   	actionCollection()->addAction("Comparision", m_ComparisonAction );
+	m_ComparisonAction  = new KAction(i18nc("Comparison Exercise", "Comparison"), this);
+   	actionCollection()->addAction("Comparison", m_ComparisonAction );
 	connect(m_ComparisonButton, SIGNAL(clicked()), SLOT(SelectComparison()));
 	m_ComparisonAction->setDefaultWidget( m_ComparisonButton );
         
