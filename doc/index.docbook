@@ -16,9 +16,7 @@
 <author>
 <firstname>Sebastian</firstname>
 <surname>Stein</surname>
-<affiliation>
-<address><email>seb.kde@hpfsc.de</email></address>
-</affiliation>
+<email>seb.kde@hpfsc.de</email>
 </author>
 
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
@@ -58,8 +56,8 @@ input and gives feedback.
 <title>Introduction</title>
 
 <para>
-&kbruch; is a small program to practice calculating with fractions. Therefore
-4 different exercises are offered.
+&kbruch; is a small program to practice calculating with fractions. Four different exercises 
+are offered as well as a learning mode.
 </para>
 
 <itemizedlist>
@@ -105,13 +103,31 @@ situations.
 <chapter id="using-kbruch">
 <title>Using &kbruch;</title>
 
-<sect1 id="overview">
-<title>Main screen</title>
-
-<para>Here is a screenshot of &kbruch;'s main screen:</para>
+<sect1 id="mode">
+<title>Choosing the mode: learning or exercises</title>
+<para>Here is a screenshot of &kbruch;'s modes: freestyle or learning</para>
 
 <screenshot>
-	<screeninfo>&kbruch; main screen, directly after the start</screeninfo>
+	<screeninfo>&kbruch; mode choices</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_mode.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase>&kbruch; mode choices</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para>Click on one of the picture to choose the mode.</para>
+</sect1>
+
+<sect1 id="overview">
+<title>Main freestyle screen</title>
+
+<para>Here is a screenshot of &kbruch;'s main freestyle screen:</para>
+
+<screenshot>
+	<screeninfo>&kbruch; main screen, directly after the freestyle start</screeninfo>
 	<mediaobject>
 		<imageobject>
 			<imagedata fileref="gui_main.png" format="PNG"/>
@@ -123,7 +139,7 @@ situations.
 </screenshot>
 
 <para>
-All action takes place in this screen. This ensures that &kbruch; is
+All exercises take place in this screen. This ensures that &kbruch; is
 easy to use even for young users! The main screen is separated into 5
 parts:
 
@@ -174,28 +190,43 @@ restored on next startup.
 
 <sect1 id="statistics">
 <title>Statistical Part</title>
+<screenshot>
+	<screeninfo>&kbruch; statistics</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="statistics.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase>&kbruch; statistics</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
 <para>
 In this part of the main screen you can see:	
 <itemizedlist>
 	<listitem><para>
-		how many tasks have been solved
+		on the left, how many tasks have been solved
 	</para></listitem>
 	<listitem><para>
-		how many tasks have been solved correctly
+		on the right, in green, how many tasks have been solved correctly
 	</para></listitem>
 	<listitem><para>
-		how many tasks have been solved incorrectly
+		on the right, in red, how many tasks have been solved incorrectly
+	</para></listitem>
+		<listitem><para>
+		on the right, in orange, how many tasks have been skipped
 	</para></listitem>
 </itemizedlist>
 </para>
-<para>
+<!-- <para>
 You can reset the statistics by clicking on the <guimenu>Reset</guimenu> button
 under the figures.
-</para>
+</para> -->
 <para>
 The statistics will be saved on &kbruch;'s termination and restored on next
 startup.
-</para>
+</para> 
 </sect1>
 
 <sect1 id="settings">
@@ -220,12 +251,12 @@ task display. To open this dialog use
 </screenshot>
 
 <para>
-There are three tabs to adjust the setting: 
+There are two tabs to adjust the setting: 
 <itemizedlist>
-	<listitem><para>
+	<!-- <listitem><para>
 		<guilabel>General</guilabel>: Set wether to show the mixed number notation in the result.
 		This notation is not known everywhere and can be disabled therefore.
-	</para></listitem>
+	</para></listitem> -->
 	<listitem><para>
 		<guilabel>Colors</guilabel>: Choose colors for the different parts of a mathematical
 		expression.
@@ -241,6 +272,22 @@ startup.
 </para>
 </sect1>
 
+<sect1 id="learning-screen">
+<title>Main learning screen</title>
+<screenshot>
+	<screeninfo>&kbruch; learning mode</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="learning.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase>&kbruch; learning mode</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para>
+</para>
+</sect1>
 </chapter>
 
 <chapter id="exercises">
