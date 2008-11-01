@@ -34,8 +34,8 @@
 <releaseinfo>4.0 (&kde; 4.1.2)</releaseinfo>
 
 <abstract>
-<para>&kbruch; is a small program to practice calculating with fractions.
-Different exercises are provided for this purpose. The program checks user's
+<para>&kbruch; is a small program to practice calculating with fractions and percentages.
+Different exercises are provided for this purpose. The program checks the user's
 input and gives feedback.
 </para>
 	
@@ -45,6 +45,7 @@ input and gives feedback.
 <keyword>KDE</keyword>
 <keyword>education</keyword>
 <keyword>fraction</keyword>
+<keyword>percentage</keyword>
 <keyword>mathematics</keyword>
 <keyword>denominator</keyword>
 <keyword>kbruch</keyword>
@@ -56,7 +57,7 @@ input and gives feedback.
 <title>Introduction</title>
 
 <para>
-&kbruch; is a small program to practice calculating with fractions. Four different exercises 
+&kbruch; is a small program to practice calculating with fractions. Five different exercises 
 are offered as well as a learning mode.
 </para>
 
@@ -76,6 +77,9 @@ fraction.
 	<listitem><para>
 		Factorization - in this exercise you have to factorize a given number into its prime factors.
 	</para></listitem>
+	<listitem><para>
+		Percentage - in this exercise you have to calculate percentages.
+	</para></listitem>
 </itemizedlist>
 
 <para>
@@ -85,8 +89,8 @@ solve it. The program checks the input and gives a feedback about it.
 
 <para>
 &kbruch; counts how many tasks were solved at all and how many tasks were
-solved correctly. The statistics are shown to the user, but this part of the
-main window can be hidden. The user can reset the statistics at any point.
+solved correctly. The statistics are shown to the user. 
+<!-- The user can reset the statistics at any point.-->
 </para>
 
 <para>
@@ -94,9 +98,7 @@ main window can be hidden. The user can reset the statistics at any point.
 online help system provides context-sensitive help for the different
 situations. 
 </para>
-<para>
-&kbruch; is free and licensed under the &GNU; Public License.
-</para>
+
 </chapter>
 
 
@@ -366,10 +368,9 @@ or denominator. If the result is 0, just type a 0 in the numerator input field.
 If the result has a denominator of 1, you can leave the lower box empty.
 </para>
 <para>
-After you have entered the result you should click the <guibutton>Check
-Task</guibutton> button below the input boxes. &kbruch; will check your input
-and present the correct result. Therefore the screen changes a little, as
-you can see in the screenshot:
+After you have entered the result you should click the <guibutton>Check</guibutton> 
+button below the input boxes. &kbruch; will check your input
+and present the correct result on the right below the <guilabel>Incorrect!</guilabel> string:
 </para>
 <screenshot>
 <screeninfo>Checked Task</screeninfo>
@@ -383,16 +384,15 @@ you can see in the screenshot:
 </mediaobject>
 </screenshot>
 <para>
-This task was solved correctly. The correct value is shown in 2 different
-forms. The second form just in front of the word <guilabel>CORRECT</guilabel>
-is only used in some countries and must be read as 2 + 1/5 in the given case.
+This task was solved incorrectly. The correct value is shown in 2 different
+forms: normal (reduced) and mixed number.
 </para>
 <note>
 <para>
-You always have to enter the result reduced, because most teachers only
-give all points to reduced results. &kbruch; will show you a short message
+If you checked the <guibutton>Reduced form</guibutton> in the Options in the Answers section 
+then you always have to enter the result reduced. &kbruch; will show you a short message
 like the one in the screenshot below, if you enter the correct result
-unreduced.
+unreduced. The answer will then be counted ad incorrect.
 </para>
 </note>
 <screenshot>
@@ -436,9 +436,9 @@ the bigger fraction of both by selecting the correct comparison sign.
 
 <para>First choose the correct comparison sign. To toggle the comparison sign,
 you have to click on the button showing the comparison sign. After you have
-chosen the comparison sign click on the <guimenu>Check Task</guimenu> button.
-&kbruch; will check your input and present the correct result. After this step
-you will get to the next task by clicking on the <guimenu>New</guimenu>
+chosen the comparison sign, the result will show on the right. A green square with <guilabel>Correct</guilabel>
+will tell you that your answer was correct while a red square with <guilabel>Incorrect</guilabel> will indicate that your
+answer was wrong. You will get to the next task by clicking the <guimenu>Next</guimenu>
 button.
 </para>
 </sect1>
