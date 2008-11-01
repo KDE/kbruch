@@ -814,7 +814,6 @@ void MainQtWidget::slotPrefs()
 	// User edited the configuration - update your local copies of the
 	// configuration data
 	connect(configDialog, SIGNAL(settingsChanged( const QString &)), this, SLOT(slotApplySettings()) );
-        configDialog->setHelp("kbruch/index.html");
 	configDialog->show();
 
 	return;
