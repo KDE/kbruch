@@ -15,7 +15,7 @@
   <Action name="BackTool"/>  
   <Separator/>
   <Action name="Arithmetic"/>
-  <Action name="Comparision"/>
+  <Action name="Comparison"/>
   <Action name="Conversion"/>
   <Action name="Factorization"/>
   <Action name="Percentage"/>
