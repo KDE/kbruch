@@ -2,10 +2,6 @@ add_subdirectory( pics )
 
 ########### next target ###############
 
-# Don't clean the following file, or kbruch will not compiler after
-#make clean
-macro_additional_clean_files( ${CMAKE_CURRENT_BINARY_DIR}/kbruch_version.h )
-
 include_directories( ${CMAKE_CURRENT_BINARY_DIR} )
 
 set(kbruch_SRCS
