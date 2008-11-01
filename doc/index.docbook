@@ -63,19 +63,21 @@ are offered as well as a learning mode.
 
 <itemizedlist>
 	<listitem><para>
-		Fraction Task - in this exercise you have to solve a given fraction task.
-You have to enter numerator and denominator. This is the main exercise.
+		Arithmetic - in this exercise you have to solve a given fraction task.
+You have to enter the numerator and the denominator. This is the main exercise.
 	</para></listitem>
 	<listitem><para>
 		Comparison - in this exercise you have to compare the size of 2 given
-fractions.
+fractions, using the symbols <guibutton>&gt;</guibutton>, <guibutton>&lt;</guibutton> 
+or <guibutton>=</guibutton>.
 	</para></listitem>
 	<listitem><para>
 		Conversion - in this exercise you have to convert a given number into a
 fraction.
 	</para></listitem>
 	<listitem><para>
-		Factorization - in this exercise you have to factorize a given number into its prime factors.
+		Factorization - in this exercise you have to factorize a given number 
+		into its prime factors.
 	</para></listitem>
 	<listitem><para>
 		Percentage - in this exercise you have to calculate percentages.
