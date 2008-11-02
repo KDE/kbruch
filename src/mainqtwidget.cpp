@@ -504,6 +504,7 @@ void MainQtWidget::setupActions()
 	m_NewTaskButton->setFixedSize( 84,65 );
 	m_NewTaskButton->setText( i18n("New") );	
 	m_NewTaskButton->setIcon(KIcon("document-new"));
+	m_NewTaskButton->setToolTip(i18n("Reset statistics."));
 	m_NewTaskButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
 	m_BackTaskButton = new QToolButton( this );
@@ -511,6 +512,7 @@ void MainQtWidget::setupActions()
 	m_BackTaskButton->setFixedSize( 84,65 );
 	m_BackTaskButton->setText( i18n("Back") );	
 	m_BackTaskButton->setIcon(KIcon("go-previous"));
+	m_BackTaskButton->setToolTip(i18n("Go back to Modes screen."));
 	m_BackTaskButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
 	m_ArithmeticButton = new QToolButton( this );
