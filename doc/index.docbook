@@ -182,9 +182,8 @@ the toolbar.
 </para>
 <para>
 First you have to choose an exercise in the toolbar. Default is Arithmetic. The
-task part will change according to the chosen task. The
-settings in the toolbar will be enabled, if you have chosen the exercise
-<guimenu>Fraction Task</guimenu>.
+task part will change according to the chosen task. Some settings in the <guilabel>Options</guilabel> section 
+will be enabled, depending on the task you have chosen.
 </para>
 <para>
 You will find an icon to generate a new task in the toolbar as well. This
@@ -241,16 +240,16 @@ in the toolbar or choosing <menuchoice><guimenu>File</guimenu>
 <guimenuitem>New</guimenuitem></menuchoice> in the menubar.
 </para> 
 <para>
-The statistics will be saved on &kbruch;'s termination and restored on next
+The statistics will be saved when &kbruch; is closed and restored on next
 startup.
 </para> 
 </sect1>
 
 <sect1 id="settings">
-<title>Settings Window</title>
+<title>Configuring &kbruch; appearance</title>
 <para>
 In this dialog you can adjust some general settings for
-task display. To open this dialog use
+the task display. To open this dialog use
 <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure
 &kbruch;</guimenuitem></menuchoice>.
 </para>
@@ -275,11 +274,11 @@ There are two tabs to adjust the setting:
 		This notation is not known everywhere and can be disabled therefore.
 	</para></listitem> -->
 	<listitem><para>
-		<guilabel>Colors</guilabel>: Choose colors for the different parts of a mathematical
-		expression.
+		<guilabel>Colors</guilabel>: Choose the colors for the different parts of a mathematical
+		expression: numbers, operational sign, fraction bar.
 	</para></listitem>
 	<listitem><para>
-		<guilabel>Fonts</guilabel>: Choose a font for displaying.
+		<guilabel>Fonts</guilabel>: Choose a font for displaying the task.
 	</para></listitem>
 </itemizedlist>
 </para>
@@ -303,6 +302,7 @@ startup.
 	</mediaobject>
 </screenshot>
 <para>
+Clicking the <guibutton>Hint</guibutton> button toggles the display of the help on the right which explains you how the rings work.
 </para>
 </sect1>
 </chapter>
@@ -313,13 +313,13 @@ startup.
 <sect1 id="exer_fraction">
 <title>Exercise Fraction Task</title>
 
-<para>In this exercise you have to solve a given task. Therefor you have to
-enter numerator and denominator. The difficulty of the generated task can be
-adjusted by the task parameters described below.
+<para>In this exercise you have to solve a given task. Therefore you have to
+enter the numerator and the denominator. The difficulty of the generated task can be
+adjusted by using some options on the left.
 </para>
 
 <sect2 id="task_paras">
-<title>Task Parameters</title>
+<title>Options</title>
 <para>
 There are 3 parameters which influence the difficulty of the generated
 tasks:</para>
@@ -340,8 +340,9 @@ tasks it sets. From a minimum of 10 to a maximum of 50.</para></listitem>
 <varlistentry>
 <term><guilabel>Operations</guilabel></term>
 <listitem><para>Operations which should be used in the
-task: <guilabel>Addition/Subtraction</guilabel>,
-<guilabel>Multiplication/Division</guilabel> or <guilabel>All Operations Mixed</guilabel>.</para></listitem>
+task: <guilabel>Addition</guilabel>, <guilabel>Subtraction</guilabel>,
+<guilabel>Multiplication</guilabel> or <guilabel>Division</guilabel>. Check all operations
+ you want to use.</para></listitem>
 </varlistentry>
 </variablelist>
 
@@ -351,13 +352,13 @@ button in the toolbar to generate a task which uses the new
 parameters. You can also call this action from the menubar with
 <menuchoice><guimenu>Task</guimenu><guimenuitem>New</guimenuitem></menuchoice>.
 </para>
-<note>
+<!--<note>
 <para>
 Your selection of the maximum main denominator will be reset to a default
 value every time you change the number of terms. So you should change the 
 number of terms first and then select the maximum main denominator.
 </para>
-</note>
+</note>-->
 <para>
 If you have not solved the current task and call the <guimenu>New</guimenu> 
 action, the task will be counted as not solved correctly. To
