@@ -504,7 +504,7 @@ void MainQtWidget::setupActions()
 	m_NewTaskButton->setFixedSize( 84,65 );
 	m_NewTaskButton->setText( i18n("New") );	
 	m_NewTaskButton->setIcon(KIcon("document-new"));
-	m_NewTaskButton->setToolTip(i18n("Reset statistics."));
+	m_NewTaskButton->setToolTip(i18n("Reset statistics and set a new task."));
 	m_NewTaskButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
 	m_BackTaskButton = new QToolButton( this );
