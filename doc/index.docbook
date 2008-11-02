@@ -18,7 +18,9 @@
 <surname>Stein</surname>
 <email>seb.kde@hpfsc.de</email>
 </author>
-
+<author>
+&Anne-Marie.Mahfouf;
+</author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 
 </authorgroup>
@@ -27,11 +29,14 @@
 <year>2001-2005</year>
 <holder>Sebastian Stein</holder>
 </copyright>
-
+<copyright>
+<year>2008</year>
+<holder>&Anne-Marie.Mahfouf;</holder>
+</copyright>
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2008-08-22</date>
-<releaseinfo>4.0 (&kde; 4.1.2)</releaseinfo>
+<date>2008-11-02</date>
+<releaseinfo>4.2</releaseinfo>
 
 <abstract>
 <para>&kbruch; is a small program to practice calculating with fractions and percentages.
@@ -57,7 +62,7 @@ input and gives feedback.
 <title>Introduction</title>
 
 <para>
-&kbruch; is a small program to practice calculating with fractions. Five different exercises 
+&kbruch; is a small program to practice calculating with fractions and percentages. Five different exercises 
 are offered as well as a learning mode.
 </para>
 
@@ -72,8 +77,8 @@ fractions, using the symbols <guibutton>&gt;</guibutton>, <guibutton>&lt;</guibu
 or <guibutton>=</guibutton>.
 	</para></listitem>
 	<listitem><para>
-		Conversion - in this exercise you have to convert a given number into a
-fraction.
+		Conversion - in this exercise you have to convert a given number
+into a fraction.
 	</para></listitem>
 	<listitem><para>
 		Factorization - in this exercise you have to factorize a given number 
@@ -85,7 +90,7 @@ fraction.
 </itemizedlist>
 
 <para>
-In all different exercises &kbruch; will generate a task and the user has to
+In each different exercise &kbruch; will generate a task and the user has to
 solve it. The program checks the input and gives a feedback about it.
 </para>
 
@@ -109,7 +114,11 @@ situations.
 
 <sect1 id="mode">
 <title>Choosing the mode: learning or exercises</title>
-<para>Here is a screenshot of &kbruch;'s modes: freestyle or learning</para>
+<para>When you start &kbruch;, it offers you two modes:
+<guilabel>Freestyle</guilabel> which is the training mode and
+<guilabel>Learning</guilabel> where you can understand fractions. Clicking
+one of the pictures will enter the chosen mode. Here is a screenshot of
+&kbruch;'s modes:</para>
 
 <screenshot>
 	<screeninfo>&kbruch; mode choices</screeninfo>
@@ -122,7 +131,7 @@ situations.
 		</textobject>
 	</mediaobject>
 </screenshot>
-<para>Click on one of the picture to choose the mode.</para>
+<para>Click one of the picture to choose the mode.</para>
 </sect1>
 
 <sect1 id="overview">
@@ -149,15 +158,16 @@ parts:
 
 <itemizedlist>
 	<listitem><para>
-		the menubar with the 3 menus <guimenu>Task</guimenu>,
+		the menubar with the 3 menus <guimenu>File</guimenu>,
 <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
 	</para></listitem>
 	<listitem><para>
-		the toolbar, where you can set the difficulty for the tasks given in the
-		<guimenu>Fraction Task</guimenu> exercise
+		the toolbar, where you can switch between the different
+exercises 
 	</para></listitem>
 	<listitem><para>
-		the exercise chooser, where you can switch between the different exercises
+		the <guilabel>Options</guilabel> on the left, where you can
+define the difficulty and various settings for the tasks
 	</para></listitem>
 	<listitem><para>
 		the task part, where you have to enter the result of the given task
@@ -167,25 +177,27 @@ parts:
 		correctly or attempted
 	</para></listitem>
 </itemizedlist>
+At any time, you can go back to Modes using the <guiicon>Back</guiicon> icon in
+the toolbar.
 </para>
 <para>
-First you have to choose an exercise in the exercise chooser on the left side
-of the window. The task part will change according to the chosen task. The
+First you have to choose an exercise in the toolbar. Default is Arithmetic. The
+task part will change according to the chosen task. The
 settings in the toolbar will be enabled, if you have chosen the exercise
 <guimenu>Fraction Task</guimenu>.
 </para>
 <para>
 You will find an icon to generate a new task in the toolbar as well. This
 action is also available in the menu
-<menuchoice><guimenu>Task</guimenu><guimenuitem>New</guimenuitem></menuchoice>.
+<menuchoice><guimenu>File</guimenu><guimenuitem>New</guimenuitem></menuchoice>.
 This action is always enabled. If you have not
 solved the currently given task, a new task is generated and the given task is
 counted as not correctly solved.
 </para>
-<para>
+<!--<para>
 You can hide the statistic part by dragging the vertical separator to the
 right.
-</para>
+</para>-->
 <para>
 If you terminate &kbruch; the currently chosen exercise will be saved and
 restored on next startup.
@@ -223,10 +235,11 @@ In this part of the main screen you can see:
 	</para></listitem>
 </itemizedlist>
 </para>
-<!-- <para>
-You can reset the statistics by clicking on the <guimenu>Reset</guimenu> button
-under the figures.
-</para> -->
+<para>
+You can reset the statistics by clicking on the <guimenu>New</guimenu> button
+in the toolbar or choosing <menuchoice><guimenu>File</guimenu>
+<guimenuitem>New</guimenuitem></menuchoice> in the menubar.
+</para> 
 <para>
 The statistics will be saved on &kbruch;'s termination and restored on next
 startup.
