@@ -394,7 +394,7 @@ forms: normal (reduced) and mixed number.
 If you checked the <guibutton>Reduced form</guibutton> in the Options in the Answers section 
 then you always have to enter the result reduced. &kbruch; will show you a short message
 like the one in the screenshot below, if you enter the correct result
-unreduced. The answer will then be counted ad incorrect.
+unreduced. The answer will then be counted as incorrect.
 </para>
 </note>
 <screenshot>
