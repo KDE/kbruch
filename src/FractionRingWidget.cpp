@@ -40,7 +40,6 @@
 #include <QRectF>
 #include <QString>
 #include <QPushButton>
-#include <QLabel>
 
 #include "ratio.h"
 #include "FractionPainter.h"

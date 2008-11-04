@@ -38,7 +38,6 @@
 #include <QGridLayout>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
-#include <QtGui>
 
 #include "settingsclass.h"
 
