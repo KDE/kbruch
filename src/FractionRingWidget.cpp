@@ -214,7 +214,7 @@ void FractionRingWidget::setupActions()
    	actionCollection()->addAction("Back", m_BackAction );
 	connect(m_BackAction, SIGNAL(triggered(bool) ), SLOT(GoBack()));
 
-	// hint action (hide it as it dont exist here)
+	// hint action (hide it as it doesn't exist here)
    	m_HintAction  = new KAction(KIcon("games-hint"), i18nc("@action opens hint", "Hint"), this);
    	actionCollection()->addAction("Hint", m_HintAction );
 	connect(m_HintAction, SIGNAL(triggered(bool) ), SLOT(Hint()));
