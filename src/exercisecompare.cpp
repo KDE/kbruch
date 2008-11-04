@@ -57,7 +57,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	m_currentState = _CHECK_TASK;
 
 	QFont defaultFont = SettingsClass::taskFont();
-	defaultFont.setBold( TRUE );
+	defaultFont.setBold( true );
 	defaultFont.setPointSize(12);
 
 	// Create layout

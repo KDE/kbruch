@@ -46,13 +46,13 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent):
 	m_total = 0;
 
 	defaultFont = SettingsClass::taskFont();
-	defaultFont.setBold( TRUE );
+	defaultFont.setBold( true );
 	defaultFont.setPointSize(10);
 
 	QGridLayout * barLayout = new QGridLayout();
 
 	m_correctBar = new QProgressBar(this);
-	m_correctBar->setTextVisible( FALSE );
+	m_correctBar->setTextVisible( false );
 	QPalette progressPalette;
 	progressPalette.setColor( QPalette::Background, QColor( 192, 234, 194 ) );
 	progressPalette.setColor( QPalette::Highlight, Qt::green );
@@ -62,7 +62,7 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent):
 	m_correctBar->setValue(0);
 
 	m_incorrectBar = new QProgressBar(this);
-	m_incorrectBar->setTextVisible( FALSE );
+	m_incorrectBar->setTextVisible( false );
 	progressPalette.setColor( QPalette::Background, QColor( 234, 192, 192 ) );
 	progressPalette.setColor( QPalette::Highlight, Qt::red );
 	m_incorrectBar->setPalette( progressPalette );
@@ -71,7 +71,7 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent):
 	m_incorrectBar->setValue(0);
 
 	m_skippedBar = new QProgressBar(this);
-	m_skippedBar->setTextVisible( FALSE );
+	m_skippedBar->setTextVisible( false );
 	progressPalette.setColor( QPalette::Background, QColor( 233, 234, 192 ) );
 	progressPalette.setColor( QPalette::Highlight, Qt::yellow );
 	m_skippedBar->setPalette( progressPalette );

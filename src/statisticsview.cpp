@@ -51,7 +51,7 @@ StatisticsView::StatisticsView(QWidget * parent):
 	m_skipped = SettingsClass::skipped();
 
 	defaultFont = SettingsClass::taskFont();
-	defaultFont.setBold( TRUE );
+	defaultFont.setBold( true );
 	defaultFont.setPointSize(28);
 
 	QPalette pal;
@@ -73,7 +73,7 @@ StatisticsView::StatisticsView(QWidget * parent):
 	result1Label->setToolTip(
 	              i18n("This is the current total number of solved tasks."));
 
-	defaultFont.setBold( FALSE );
+	defaultFont.setBold( false );
 	defaultFont.setPointSize(10);
 
 	info1Label = new QLabel(this);
@@ -100,7 +100,7 @@ StatisticsView::StatisticsView(QWidget * parent):
 	info3Label->setAlignment(Qt::AlignVCenter | Qt::AlignRight);
 	labelGrid->addWidget(info3Label, 2, 3);
 
-	defaultFont.setBold( TRUE );
+	defaultFont.setBold( true );
 
 	result2Label = new QLabel(this);
 	labelGrid->addWidget(result2Label, 0, 4);

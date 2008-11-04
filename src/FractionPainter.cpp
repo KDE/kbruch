@@ -70,7 +70,7 @@ void FractionPainter::paintWidget(QPainter & paint)
 
 	// ratios and operation signs are painted with the same font
 	m_font.setPointSize( 24 );
-	m_font.setBold( TRUE );
+	m_font.setBold( true );
 	paint.setFont(m_font);
 
 	// set the pen for painting

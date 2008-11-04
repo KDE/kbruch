@@ -65,7 +65,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	KIntValidator *valnum = new KIntValidator( this );
 
 	QFont defaultFont = SettingsClass::taskFont();
-	defaultFont.setBold( TRUE );
+	defaultFont.setBold( true );
 	defaultFont.setPointSize( 18 );
 
 	m_currentState = _CHECK_TASK;

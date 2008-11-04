@@ -78,12 +78,12 @@ void ResultWidget::Init()
 	setMaximumHeight( 213 ); 
 	setMinimumHeight( 213 ); 
 	
-	m_solutionMixed = TRUE;
+	m_solutionMixed = true;
 
 	m_kindView = -1;
 
 	defaultFont = SettingsClass::taskFont();
-	defaultFont.setBold( TRUE );
+	defaultFont.setBold( true );
 	
 	QPalette pal = palette();
 	pal.setColor(QPalette::Foreground, Qt::white);

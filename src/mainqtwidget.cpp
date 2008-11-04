@@ -134,7 +134,7 @@ MainQtWidget::MainQtWidget()
 	m_OperationsGroup = new QGroupBox(i18n("Operations:"), pageOptions);
 
 	defaultFont = SettingsClass::taskFont();
-	defaultFont.setBold( TRUE );
+	defaultFont.setBold( true );
 	defaultFont.setPointSize( 14 );
 
 	m_TitleLabel = new QLabel(i18n("Arithmetic"), pageExercises);
@@ -282,7 +282,7 @@ MainQtWidget::MainQtWidget()
 	m_MaxMainDenominatorLabel = new QLabel(i18n("Maximum denominator:"), pageOptions);
 	m_MaxMainDenominatorLabel->setObjectName("MaxMainDenominatorLabel");
 	m_MaxMainDenominatorLabel->setAlignment(Qt::AlignRight);
-	m_MaxMainDenominatorLabel->setWordWrap( TRUE );
+	m_MaxMainDenominatorLabel->setWordWrap( true );
 
 	m_MaxMainDenominatorBox = new KComboBox(pageOptions);
 	m_MaxMainDenominatorBox->addItem("10");
@@ -407,7 +407,7 @@ QFont MainQtWidget::DefaultFont()
 {
 	QFont defaultFont = KGlobalSettings::generalFont();
 	defaultFont.setPointSize( 24 );
-	defaultFont.setBold( TRUE );
+	defaultFont.setBold( true );
 	return defaultFont;
 }
 
@@ -637,7 +637,7 @@ void MainQtWidget::NrOfTermsBoxSlot()
 	QString curr_nr = m_NrOfTermsBox->currentText();
 	m_MaxMainDenominatorBox->clear();
 
-	if (m_addDiv == TRUE || m_addMult == TRUE)
+	if (m_addDiv == true || m_addMult == true)
 	{
 		if (curr_nr == "2")
 		{
@@ -733,13 +733,13 @@ void MainQtWidget::AdditionCheckSlot()
 #ifdef DEBUG
 	kDebug() << "MainQtWidget::AdditionCheckSlot()";
 #endif
-	if ( OperationsCheck() == TRUE ) {
+	if ( OperationsCheck() == true ) {
 		if (m_AdditionCheck->checkState() == Qt::Checked)
-			m_addAdd = TRUE;
+			m_addAdd = true;
 		else
-			m_addAdd = FALSE;		 
+			m_addAdd = false;		 
 	} else {
-		m_addAdd = TRUE;
+		m_addAdd = true;
 		m_AdditionCheck->setCheckState(Qt::Checked);
 	}
 	(void) m_taskview->setTaskParameters(m_addAdd, m_addDiv, m_addMult, m_addSub, m_nrRatios, m_maxMainDenominator);		
@@ -750,13 +750,13 @@ void MainQtWidget::SubtractionCheckSlot()
 #ifdef DEBUG
 	kDebug() << "MainQtWidget::SubtractionCheckSlot()";
 #endif
-	if ( OperationsCheck() == TRUE ) {
+	if ( OperationsCheck() == true ) {
 		if (m_SubtractionCheck->checkState() == Qt::Checked)
-			m_addSub = TRUE;
+			m_addSub = true;
 		else
-			m_addSub = FALSE;		 
+			m_addSub = false;		 
 	} else {
-		m_addSub = TRUE;
+		m_addSub = true;
 		m_SubtractionCheck->setCheckState(Qt::Checked);
 	}
 	(void) m_taskview->setTaskParameters(m_addAdd, m_addDiv, m_addMult, m_addSub, m_nrRatios, m_maxMainDenominator);		
@@ -767,13 +767,13 @@ void MainQtWidget::MultiplicationCheckSlot()
 #ifdef DEBUG
 	kDebug() << "MainQtWidget::MultiplicationCheckSlot()";
 #endif
-	if ( OperationsCheck() == TRUE ) {
+	if ( OperationsCheck() == true ) {
 		if (m_MultiplicationCheck->checkState() == Qt::Checked)
-			m_addMult = TRUE;
+			m_addMult = true;
 		else
-			m_addMult = FALSE;		 
+			m_addMult = false;		 
 	} else {
-		m_addMult = TRUE;
+		m_addMult = true;
 		m_MultiplicationCheck->setCheckState(Qt::Checked);
 	}
 	(void) m_taskview->setTaskParameters(m_addAdd, m_addDiv, m_addMult, m_addSub, m_nrRatios, m_maxMainDenominator);	
@@ -784,13 +784,13 @@ void MainQtWidget::DivisionCheckSlot()
 #ifdef DEBUG
 	kDebug() << "MainQtWidget::DivisionCheckSlot()";
 #endif
-	if ( OperationsCheck() == TRUE ) {
+	if ( OperationsCheck() == true ) {
 		if (m_DivisionCheck->checkState() == Qt::Checked)
-			m_addDiv = TRUE;
+			m_addDiv = true;
 		else
-			m_addDiv = FALSE;		 
+			m_addDiv = false;		 
 	} else {
-		m_addDiv = TRUE;
+		m_addDiv = true;
 		m_DivisionCheck->setCheckState(Qt::Checked);
 	}
 	(void) m_taskview->setTaskParameters(m_addAdd, m_addDiv, m_addMult, m_addSub, m_nrRatios, m_maxMainDenominator);	
@@ -844,42 +844,42 @@ void MainQtWidget::slotAboutToShowPage()
 
 	switch ( selectedTask ) {
 	  case Arithmetic:
-		m_QuestionMixedCheck->setEnabled( TRUE );
-		m_NrOfTermsBox->setEnabled( TRUE );
-		m_MaxMainDenominatorBox->setEnabled( TRUE );		
-		m_AnswerMixedCheck->setEnabled( TRUE );		
-		m_ReducedCheck->setEnabled( TRUE );		
-		m_SolutionMixedCheck->setEnabled( TRUE );		
-		m_SubtractionCheck->setEnabled( TRUE );		
-		m_DivisionCheck->setEnabled( TRUE );		
-		m_MultiplicationCheck->setEnabled( TRUE );		
-		m_AdditionCheck->setEnabled( TRUE );								
+		m_QuestionMixedCheck->setEnabled( true );
+		m_NrOfTermsBox->setEnabled( true );
+		m_MaxMainDenominatorBox->setEnabled( true );		
+		m_AnswerMixedCheck->setEnabled( true );		
+		m_ReducedCheck->setEnabled( true );		
+		m_SolutionMixedCheck->setEnabled( true );		
+		m_SubtractionCheck->setEnabled( true );		
+		m_DivisionCheck->setEnabled( true );		
+		m_MultiplicationCheck->setEnabled( true );		
+		m_AdditionCheck->setEnabled( true );								
 	    break;
 	  case Percentage:	    
 	  case Factorization:	  
 	  case Conversion:
-		m_QuestionMixedCheck->setEnabled( FALSE );
-		m_NrOfTermsBox->setEnabled( FALSE );
-		m_MaxMainDenominatorBox->setEnabled( FALSE );		
-		m_AnswerMixedCheck->setEnabled( FALSE );		
-		m_ReducedCheck->setEnabled( FALSE );		
-		m_SolutionMixedCheck->setEnabled( FALSE );		
-		m_SubtractionCheck->setEnabled( FALSE );		
-		m_DivisionCheck->setEnabled( FALSE );		
-		m_MultiplicationCheck->setEnabled( FALSE );		
-		m_AdditionCheck->setEnabled( FALSE );								
+		m_QuestionMixedCheck->setEnabled( false );
+		m_NrOfTermsBox->setEnabled( false );
+		m_MaxMainDenominatorBox->setEnabled( false );		
+		m_AnswerMixedCheck->setEnabled( false );		
+		m_ReducedCheck->setEnabled( false );		
+		m_SolutionMixedCheck->setEnabled( false );		
+		m_SubtractionCheck->setEnabled( false );		
+		m_DivisionCheck->setEnabled( false );		
+		m_MultiplicationCheck->setEnabled( false );		
+		m_AdditionCheck->setEnabled( false );								
 	    break;
 	  case Comparison:
-		m_QuestionMixedCheck->setEnabled( TRUE );
-		m_NrOfTermsBox->setEnabled( FALSE );
-		m_MaxMainDenominatorBox->setEnabled( FALSE );		
-		m_AnswerMixedCheck->setEnabled( FALSE );		
-		m_ReducedCheck->setEnabled( FALSE );		
-		m_SolutionMixedCheck->setEnabled( FALSE );		
-		m_SubtractionCheck->setEnabled( FALSE );		
-		m_DivisionCheck->setEnabled( FALSE );		
-		m_MultiplicationCheck->setEnabled( FALSE );		
-		m_AdditionCheck->setEnabled( FALSE );	
+		m_QuestionMixedCheck->setEnabled( true );
+		m_NrOfTermsBox->setEnabled( false );
+		m_MaxMainDenominatorBox->setEnabled( false );		
+		m_AnswerMixedCheck->setEnabled( false );		
+		m_ReducedCheck->setEnabled( false );		
+		m_SolutionMixedCheck->setEnabled( false );		
+		m_SubtractionCheck->setEnabled( false );		
+		m_DivisionCheck->setEnabled( false );		
+		m_MultiplicationCheck->setEnabled( false );		
+		m_AdditionCheck->setEnabled( false );	
 	    break;
 	}
 	return;
@@ -976,9 +976,9 @@ bool MainQtWidget::OperationsCheck()
 	     m_SubtractionCheck->checkState() == Qt::Unchecked && 
 	     m_DivisionCheck->checkState() == Qt::Unchecked &&
 	     m_MultiplicationCheck->checkState() == Qt::Unchecked )
-		return FALSE;
+		return false;
 	else
-		return TRUE;
+		return true;
 }	     
 
 void MainQtWidget::GoBack()

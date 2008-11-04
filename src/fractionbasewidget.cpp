@@ -113,7 +113,7 @@ void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_p
 	//                                              3
 	if (! (int_numerator == 0) )
 	{
-		if ( show_center == TRUE )
+		if ( show_center == true )
 			x_pos = 80 - fontWidth/2;
 		if (int_denominator != 1)
 		{

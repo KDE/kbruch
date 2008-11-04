@@ -62,7 +62,7 @@ ExercisePercentage::ExercisePercentage(QWidget * parent):
 	KIntValidator *valnum = new KIntValidator( this );
 
 	QFont defaultFont = SettingsClass::taskFont();
-	defaultFont.setBold( TRUE );
+	defaultFont.setBold( true );
 	defaultFont.setPointSize(10);	
 
 	// the next thing to do on a button click would be to check the entered

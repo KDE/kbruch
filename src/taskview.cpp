@@ -96,7 +96,7 @@ TaskView::TaskView(QWidget * parent,
 	checkLayout->setObjectName( "checkLayout" );
 
 	QFont defaultFont = SettingsClass::taskFont();
-	defaultFont.setBold( TRUE );
+	defaultFont.setBold( true );
 	defaultFont.setPointSize( 18 );
 	
 	// first left is the task widget
@@ -404,7 +404,7 @@ void TaskView::nextTask()
 	numer_edit->setEnabled(true);
 	deno_edit->setEnabled(true);
 	integer_edit->setEnabled(true);
-	if ( m_answerMixed == TRUE )
+	if ( m_answerMixed == true )
 		integer_edit->setEnabled(true);
 	m_skipButton->setEnabled(true);
 	
@@ -414,7 +414,7 @@ void TaskView::nextTask()
 	deno_edit->setText("");
 	numer_edit->setText("");
 	integer_edit->setText("");
-	if ( m_answerMixed == TRUE )
+	if ( m_answerMixed == true )
 		integer_edit->setFocus();
 	else
 		numer_edit->setFocus();
@@ -473,7 +473,7 @@ void TaskView::slotSkipButtonClicked()
 void TaskView::showEvent ( QShowEvent * event ) {
 
 	// that the user can start typing without moving the focus
-	if ( m_answerMixed == TRUE )
+	if ( m_answerMixed == true )
 		integer_edit->setFocus();
 	else 
 		numer_edit->setFocus();

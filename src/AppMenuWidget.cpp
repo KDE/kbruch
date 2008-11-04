@@ -91,7 +91,7 @@ AppMenuWidget::AppMenuWidget()
 	setStyleSheet(css);
 
 	QFont defaultFont = SettingsClass::taskFont();
-	defaultFont.setBold( TRUE );
+	defaultFont.setBold( true );
 	defaultFont.setPointSize(26);
 
 	layout1 = new QHBoxLayout();

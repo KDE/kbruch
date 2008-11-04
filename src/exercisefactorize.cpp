@@ -98,7 +98,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_taskLabel->setFont(defaultFont);	
 	taskLayout->addWidget( m_taskLabel, 1, 1 );
 
-	defaultFont.setBold( TRUE );
+	defaultFont.setBold( true );
 	defaultFont.setPointSize(16);
 
 	m_equalSignLabel = new QLabel( this );
@@ -261,7 +261,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_skipButton->setFocusPolicy( Qt::NoFocus );	
 	m_checkButton->setFocusPolicy( Qt::NoFocus );	
 
-	m_checkButton->setDefault( TRUE );
+	m_checkButton->setDefault( true );
 
 	setLayout(baseGrid);
 	taskWidget->setLayout(taskLayout);
@@ -271,7 +271,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	setToolTip(i18n("In this exercise you have to factorize a given number."));
 	setWhatsThis( i18n("In this exercise you have to factorize a given number. You have to enter all prime factors of the number. You can add a prime factor by clicking on the corresponding button. The chosen prime factors will be shown in the input field. Do not forget to enter all prime factors, even when a prime factor repeats several times."));
 
-	m_edit = TRUE;
+	m_edit = true;
 }
 
 /* destructor */
@@ -413,7 +413,7 @@ void ExerciseFactorize::showResult()
 		m_resultWidget->setResult( ratio(), 0 );
 	} /* if (entered_result == result) */
 
-	m_edit = FALSE;
+	m_edit = false;
 
 	return;
 }
@@ -457,7 +457,7 @@ void ExerciseFactorize::nextTask()
 	tmp_str.setNum(m_taskNumber);
 	m_taskLabel->setText(tmp_str);
 
-	m_edit = TRUE;
+	m_edit = true;
 
 	return;
 }
@@ -619,7 +619,7 @@ void ExerciseFactorize::slotRemoveLastFactorButtonClicked()
 /* ------ protected events ------ */
 void ExerciseFactorize::keyPressEvent(QKeyEvent * e)
 {
-	if (m_edit == FALSE)
+	if (m_edit == false)
 		return;
 
 	switch (e->key())
