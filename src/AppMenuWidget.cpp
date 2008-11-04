@@ -60,33 +60,33 @@ AppMenuWidget::AppMenuWidget()
 	setupActions();
 	createGUI("AppMenuWidgetui.rc");
 
-	QString css;
-	css += "QPushButton#m_Freestyle {";
-	css +=		"border: none;";
-	css +=		"image: url(";
-	css +=		KStandardDirs::locate("data", "kbruch/pics/icon_freestyle_1.png");
-	css +=		");";
-	css +=	"}";		
-	css += "QPushButton#m_Freestyle:hover {";
-	css +=		"border: none;";
-	css +=		"image: url(";
-	css +=		KStandardDirs::locate("data", "kbruch/pics/icon_freestyle.png");
-	css +=		");";
-	css +=	"}";
-	css += "QPushButton#m_Learning {";
-	css +=		"border: none;";
-	css +=		"image: url(";
-	css +=		KStandardDirs::locate("data", "kbruch/pics/icon_learning_1.png");
-	css +=		");";
-	css +=	"}";
-	css += "QPushButton#m_Learning:hover {";
-	css +=		"border: none;";
-	css +=		"image: url(";
-	css +=		KStandardDirs::locate("data", "kbruch/pics/icon_learning.png");
-	css +=		");";
-	css +=	"}";
-	css +=	"QLabel#labelInfo, QLabel#labelFreestyle, QLabel#labelLearning";
-	css +=	"{ font: bold 20px; }";
+	QString css =
+		"QPushButton#m_Freestyle {"
+			"border: none;"
+			"image: url(" +
+			KStandardDirs::locate("data", "kbruch/pics/icon_freestyle_1.png") +
+			");"
+		"}"
+		"QPushButton#m_Freestyle:hover {"
+			"border: none;"
+			"image: url(" +
+			KStandardDirs::locate("data", "kbruch/pics/icon_freestyle.png") +
+			");"
+		"}";
+		"QPushButton#m_Learning {"
+			"border: none;"
+			"image: url(" +
+			KStandardDirs::locate("data", "kbruch/pics/icon_learning_1.png") +
+			");"
+		"}"
+		"QPushButton#m_Learning:hover {"
+			"border: none;"
+			"image: url(" +
+			KStandardDirs::locate("data", "kbruch/pics/icon_learning.png") +
+			");"
+		"}"
+		"QLabel#labelInfo, QLabel#labelFreestyle, QLabel#labelLearning"
+		"{ font: bold 20px; }";
 
 	setStyleSheet(css);
 

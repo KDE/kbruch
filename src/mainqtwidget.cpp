@@ -466,36 +466,36 @@ void MainQtWidget::setupActions()
 	kDebug() << "setupActions MainQtWidget";
 #endif
 
- 	QString css;
-	css += "QToolButton {";
-	css +=		"background-position: top center;";
-	css +=		"background-repeat: none;";
-	css +=	"}";	
-	css += "QToolButton#ArithmeticButton {";
-	css +=		"background-image: url(";
-	css +=		KStandardDirs::locate("data", "kbruch/pics/exercise_arithmetics.png");
-	css +=		");";
-	css +=	"}";
-	css += "QToolButton#ComparisonButton {";
-	css +=		"background-image: url(";
-	css +=		KStandardDirs::locate("data", "kbruch/pics/exercise_compare.png");
-	css +=		");";
-	css +=	"}";
-	css += "QToolButton#ConversionButton {";
-	css +=		"background-image: url(";
-	css +=		KStandardDirs::locate("data", "kbruch/pics/exercise_conversion.png");
-	css +=		");";
-	css +=	"}";
-	css += "QToolButton#Factorization {";
-	css +=		"background-image: url(";
-	css +=		KStandardDirs::locate("data", "kbruch/pics/exercise_factorization.png");
-	css +=		");";
-	css +=	"}";
-	css += "QToolButton#Percentage {";
-	css +=		"background-image: url(";
-	css +=		KStandardDirs::locate("data", "kbruch/pics/exercise_percentage.png");
-	css +=		");";
-	css +=	"}";		
+ 	QString css =
+		"QToolButton {"
+			"background-position: top center;"
+			"background-repeat: none;"
+		"}"
+		"QToolButton#ArithmeticButton {"
+			"background-image: url(" +
+			KStandardDirs::locate("data", "kbruch/pics/exercise_arithmetics.png") +
+			");"
+		"}"
+		"QToolButton#ComparisonButton {"
+			"background-image: url(" +
+			KStandardDirs::locate("data", "kbruch/pics/exercise_compare.png") +
+			");"
+		"}"
+		"QToolButton#ConversionButton {"
+			"background-image: url(" +
+			KStandardDirs::locate("data", "kbruch/pics/exercise_conversion.png") +
+			");"
+		"}"
+		"QToolButton#Factorization {"
+			"background-image: url(" +
+			KStandardDirs::locate("data", "kbruch/pics/exercise_factorization.png") +
+			");"
+		"}"
+		"QToolButton#Percentage {"
+			"background-image: url(" +
+			KStandardDirs::locate("data", "kbruch/pics/exercise_percentage.png") +
+			");"
+		"}";
 
 	setStyleSheet(css);
 
