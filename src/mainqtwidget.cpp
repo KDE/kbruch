@@ -125,7 +125,7 @@ MainQtWidget::MainQtWidget()
 
 	QWidget * pageExercises = new QWidget();
 	QWidget * pageOptions = new QWidget();
-	pageOptions->setFixedWidth(185);
+	//pageOptions->setFixedWidth(185);
 
 	// Create visible components
 	m_QuestionGroup = new QGroupBox(i18n("Question:"), pageOptions);
@@ -501,7 +501,6 @@ void MainQtWidget::setupActions()
 
 	m_NewTaskButton = new QToolButton( this );
 	m_NewTaskButton->setObjectName("NewTaskButton");
-	m_NewTaskButton->setFixedSize( 84,65 );
 	m_NewTaskButton->setText( i18n("New") );	
 	m_NewTaskButton->setIcon(KIcon("document-new"));
 	m_NewTaskButton->setToolTip(i18n("Reset statistics and set a new task."));
@@ -509,7 +508,6 @@ void MainQtWidget::setupActions()
 
 	m_BackTaskButton = new QToolButton( this );
 	m_BackTaskButton->setObjectName("BackTaskButton");
-	m_BackTaskButton->setFixedSize( 84,65 );
 	m_BackTaskButton->setText( i18n("Back") );	
 	m_BackTaskButton->setIcon(KIcon("go-previous"));
 	m_BackTaskButton->setToolTip(i18n("Go back to Modes screen."));
@@ -517,27 +515,22 @@ void MainQtWidget::setupActions()
 
 	m_ArithmeticButton = new QToolButton( this );
 	m_ArithmeticButton->setObjectName("ArithmeticButton");
-	m_ArithmeticButton->setFixedSize( 84,65 );
 	m_ArithmeticButton->setText( i18n("\n\nArithmetic") );	
 
 	m_ComparisonButton = new QToolButton( this );
 	m_ComparisonButton->setObjectName("ComparisonButton");
-	m_ComparisonButton->setFixedSize( 84,65 );
 	m_ComparisonButton->setText( i18n("\n\nComparison") );	
 
 	m_ConversionButton = new QToolButton( this );
 	m_ConversionButton->setObjectName("ConversionButton");
-	m_ConversionButton->setFixedSize( 84,65 );
 	m_ConversionButton->setText( i18n("\n\nConversion") );	
 
 	m_FactorizationButton = new QToolButton( this );
 	m_FactorizationButton->setObjectName("Factorization");
-	m_FactorizationButton->setFixedSize( 84,65 );
 	m_FactorizationButton->setText( i18n("\n\nFactorization") );	
 
 	m_PercentageButton = new QToolButton( this );
 	m_PercentageButton->setObjectName("Percentage");
-	m_PercentageButton->setFixedSize( 84,65 );
 	m_PercentageButton->setText( i18n("\n\nPercentage") );
 
    	m_NewTaskActionMenu  = new KAction(KIcon("document-new"), i18nc("@action opens a new question", "&New"), this);
