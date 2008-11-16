@@ -72,7 +72,7 @@ AppMenuWidget::AppMenuWidget()
 			"image: url(" +
 			KStandardDirs::locate("data", "kbruch/pics/icon_freestyle.png") +
 			");"
-		"}";
+		"}"
 		"QPushButton#m_Learning {"
 			"border: none;"
 			"image: url(" +
