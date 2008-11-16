@@ -180,7 +180,6 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_skipButton->setObjectName( "m_skipButton" );
 	m_skipButton->setText(i18n("&Skip"));
 	m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
-	m_skipButton->setFixedSize(80,30);
 	m_skipButton->setFont(defaultFont);		
 	QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
 	checkLayout->addWidget(m_skipButton, 1, 1);	
@@ -191,7 +190,6 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_checkButton->setText( i18n( "&Check" ) );
 	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
-	m_checkButton->setFixedSize(80,30);
 	m_checkButton->setFont(defaultFont);		
 	checkLayout->addWidget(m_checkButton, 1, 0);			
 	m_checkButton->setDefault(true); // is the default button of the dialog

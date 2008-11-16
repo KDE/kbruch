@@ -132,7 +132,6 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	m_skipButton->setObjectName( "m_skipButton" );
 	m_skipButton->setText(i18n("&Skip"));
 	m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
-	m_skipButton->setFixedSize(80,30);
 	m_skipButton->setFont(defaultFont);		
 	QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
 	checkLayout->addWidget(m_skipButton, 1, 0);	
