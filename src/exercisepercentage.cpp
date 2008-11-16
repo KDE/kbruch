@@ -384,7 +384,7 @@ void ExercisePercentage::nextTask()
 	QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
 	// update the task widget	
-	QString tempTask(m_numberPercentage + " % of " + m_numberPercentageOf + " = ");	
+	QString tempTask = i18nc("%1 percentage of %2", "%1% of %2 = ", m_numberPercentage, m_numberPercentageOf);
 	m_taskLabel->setText(tempTask);
 
 	return;
