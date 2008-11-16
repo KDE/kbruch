@@ -515,23 +515,23 @@ void MainQtWidget::setupActions()
 
 	m_ArithmeticButton = new QToolButton( this );
 	m_ArithmeticButton->setObjectName("ArithmeticButton");
-	m_ArithmeticButton->setText( i18n("\n\nArithmetic") );	
+	m_ArithmeticButton->setText( i18n("\nArithmetic") );	
 
 	m_ComparisonButton = new QToolButton( this );
 	m_ComparisonButton->setObjectName("ComparisonButton");
-	m_ComparisonButton->setText( i18n("\n\nComparison") );	
+	m_ComparisonButton->setText( i18n("\nComparison") );	
 
 	m_ConversionButton = new QToolButton( this );
 	m_ConversionButton->setObjectName("ConversionButton");
-	m_ConversionButton->setText( i18n("\n\nConversion") );	
+	m_ConversionButton->setText( i18n("\nConversion") );	
 
 	m_FactorizationButton = new QToolButton( this );
 	m_FactorizationButton->setObjectName("Factorization");
-	m_FactorizationButton->setText( i18n("\n\nFactorization") );	
+	m_FactorizationButton->setText( i18n("\nFactorization") );	
 
 	m_PercentageButton = new QToolButton( this );
 	m_PercentageButton->setObjectName("Percentage");
-	m_PercentageButton->setText( i18n("\n\nPercentage") );
+	m_PercentageButton->setText( i18n("\nPercentage") );
 
    	m_NewTaskActionMenu  = new KAction(KIcon("document-new"), i18nc("@action opens a new question", "&New"), this);
    	actionCollection()->addAction("NewTaskMenu", m_NewTaskActionMenu );
