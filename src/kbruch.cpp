@@ -46,7 +46,13 @@ int main(int argc, char * argv[])
 		KAboutData::License_GPL,
     	ki18n("(c) 2002-2004, Sebastian Stein"), KLocalizedString(), "http://edu.kde.org/kbruch/",
 		"seb.kde@hpfsc.de");
-	aboutData.addAuthor(ki18n("Sebastian Stein"),KLocalizedString(), "seb.kde@hpfsc.de");
+	aboutData.addAuthor(ki18n("Sebastian Stein"),ki18n("Original Author"),"seb.kde@hpfsc.de");
+	aboutData.addAuthor(ki18n("Paulo Cattai"),ki18n("New interface design and usability improvements"), "paulo.cattai@ltia.fc.unesp.br");
+	aboutData.addAuthor(ki18n("Danilo Balzaque"),ki18n("New interface design and usability improvements"), "danilo.balzaque@ltia.fc.unesp.br");
+	aboutData.addAuthor(ki18n("Roberto Cunha"),ki18n("New interface design and usability improvements"), "roberto.cunha@ltia.fc.unesp.br");
+	aboutData.addAuthor(ki18n("Tadeu Araujo"),ki18n("New interface design and usability improvements"), "tadeu.araujo@ltia.fc.unesp.br");
+	aboutData.addAuthor(ki18n("Tiago Porangaba"),ki18n("New interface design and usability improvements"), "tiago.porangaba@ltia.fc.unesp.br");
+
  	KCmdLineArgs::init( argc, argv, &aboutData );
 
 	KApplication kbruch;
