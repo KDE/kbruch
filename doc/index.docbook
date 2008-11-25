@@ -35,12 +35,12 @@
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2008-11-02</date>
+<date>2008-11-25</date>
 <releaseinfo>4.2</releaseinfo>
 
 <abstract>
 <para>&kbruch; is a small program to practice calculating with fractions and percentages.
-Different exercises are provided for this purpose. The program checks the user's
+Different exercises are provided for this purpose and you can use the learning mode to practise with fractions. The program checks the user's
 input and gives feedback.
 </para>
 	
@@ -180,6 +180,8 @@ define the difficulty and various settings for the tasks
 At any time, you can go back to Modes using the <guiicon>Back</guiicon> icon in
 the toolbar.
 </para>
+<note><para>You can hide the <guilabel>Options</guilabel> section by dragging it to the left.
+</para></note>
 <para>
 First you have to choose an exercise in the toolbar. Default is Arithmetic. The
 task part will change according to the chosen task. Some settings in the <guilabel>Options</guilabel> section 
