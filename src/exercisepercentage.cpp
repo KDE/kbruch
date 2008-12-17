@@ -96,7 +96,7 @@ ExercisePercentage::ExercisePercentage(QWidget * parent):
 	m_taskLabel = new QLabel( this );
 	m_taskLabel->setObjectName( "m_taskLabel" );	
 	m_taskLabel->setFont(defaultFont);	
-	m_taskLabel->setText(m_numberPercentage + " % of " + m_numberPercentageOf + " = ");
+	m_taskLabel->setText(i18nc( "%1 percentage of %2", "%1% of %2 = ", m_numberPercentage ,  m_numberPercentageOf ));
 	taskLayout->addWidget( m_taskLabel, 1, 1, 2, 1);	
 
 	/* Input question: result of question */

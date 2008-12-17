@@ -98,7 +98,7 @@ void ResultWidget::Init()
 	m_primaryText->setFont(defaultFont);
 	m_primaryText->hide();
 
-	m_secondaryText = new QLabel("Solution:",this);
+	m_secondaryText = new QLabel(i18n("Solution:"),this);
 	m_secondaryText->setObjectName("secondaryText");
 	m_secondaryText->setPalette(pal);
 	defaultFont.setPointSize(10);
@@ -238,7 +238,7 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 				if (SettingsClass::showSpecialRatioNotation() == true && qAbs(m_result.numerator()) >= qAbs(m_result.denominator()) && m_result.denominator() != 1 && m_solutionMixed == true)
 				{
 					paintRatio(paint, m_result, old_x, old_y, fm, false, true, false);
-					paintMiddle(paint, QString(" or "), old_x, old_y, fm, m_colorOperation);
+					paintMiddle(paint, QString(i18n(" or ")), old_x, old_y, fm, m_colorOperation);
 					paintRatio(paint, m_result, old_x, old_y, fm, true, true, false);
 				} else
 					paintRatio(paint, m_result, old_x, old_y, fm, false, true, true);
