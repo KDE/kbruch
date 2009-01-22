@@ -433,6 +433,7 @@ void MainQtWidget::readOptions()
 
 	m_reducedForm = SettingsClass::reduceForm();
 	m_solutionMixed = SettingsClass::solutionMixed();
+	m_answerMixed = SettingsClass::answerMixed();
 	m_questionMixed = SettingsClass::questionMixed();
 
 	/* make sure that we can load config files with corrupted values */
@@ -456,6 +457,7 @@ void MainQtWidget::writeOptions()
 	SettingsClass::setMax_main_denominator(m_maxMainDenominator);
 	SettingsClass::setReduceForm(m_reducedForm);
 	SettingsClass::setSolutionMixed(m_solutionMixed);
+	SettingsClass::setAnswerMixed(m_answerMixed);
 	SettingsClass::setQuestionMixed(m_questionMixed);
 	SettingsClass::self()->writeConfig();	
 }
