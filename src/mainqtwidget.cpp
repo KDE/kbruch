@@ -423,10 +423,6 @@ void MainQtWidget::readOptions()
 	m_addAdd = SettingsClass::addadd();
 	m_addDiv = SettingsClass::adddiv();
 	m_addMult = SettingsClass::addmult();	
-
-	m_addMult = SettingsClass::addmult();	
-	m_addMult = SettingsClass::addmult();	
-	m_addMult = SettingsClass::addmult();	
 	
 	m_nrRatios = SettingsClass::number_ratios();
 	m_maxMainDenominator = SettingsClass::max_main_denominator();
