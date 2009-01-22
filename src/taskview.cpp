@@ -449,7 +449,7 @@ void TaskView::slotCheckButtonClicked()
 	if (m_currentState == _CHECK_TASK)
 	{
 		// if nothing has been entered by the user, we don't check the result yet
-		if (numer_edit->text().isEmpty() == true && deno_edit->text().isEmpty() == true)
+		if (numer_edit->text().isEmpty() == true && deno_edit->text().isEmpty() == true && integer_edit->text().isEmpty() == true)
 			return;
 		m_currentState = _NEXT_TASK;
 		m_checkButton->setText(i18n("N&ext"));
