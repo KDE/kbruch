@@ -95,7 +95,7 @@ solve it. The program checks the input and gives a feedback about it.
 </para>
 
 <para>
-&kbruch; counts how many tasks were soe choiceslved at all and how many tasks were
+&kbruch; counts how many tasks were solved at all and how many tasks were
 solved correctly. The statistics are shown to the user. 
 <!-- The user can reset the statistics at any point.-->
 </para>
@@ -183,7 +183,7 @@ the toolbar.
 <note><para>You can hide the <guilabel>Options</guilabel> section by dragging it to the left.
 </para></note>
 <para>
-First you have to choose an exercise in the toolbar. Default is Arithmetic. The
+First you have to choose an exercise in the toolbar. Default is <guilabel>Arithmetic</guilabel>. The
 task part will change according to the chosen task. Some settings in the <guilabel>Options</guilabel> section 
 will be enabled, depending on the task you have chosen.
 </para>
@@ -429,6 +429,9 @@ on next startup.
 After you have solved a given task, you need to enter the result into the three
 input boxes. In the left box you enter the integer part of the fraction, in the 
 upper box the numerator and in the lower box the denominator.
+If the option <guilabel>Mixed number</guilabel> in the <guilabel>Answer</guilabel> 
+section is unchecked, the left box for the integer part of the fraction is hidden. Then you use 
+only the numerator box and the denominator box for your input.
 </para>
 <para>
 If the result is negative, you can enter a minus sign in front of the numerator
@@ -656,8 +659,8 @@ Program and documentation Copyright, 2001-2004 Sebastian Stein
 	<listitem><para>John Kesson for proof reading the handbook</para></listitem>
 </itemizedlist>
 
+<para>New interface design and usability improvements for &kde; 4.1:</para>
 <itemizedlist>
-<title>New interface design and usability improvements for &kde; 4.1:</title>
 <listitem><para>Paulo Cattai<email>paulo.cattai@ltia.fc.unesp.br</email></para></listitem>
 <listitem><para>Danilo Balzaque<email>danilo.balzaque@ltia.fc.unesp.br</email></para></listitem>
 <listitem><para>Roberto Cunha<email>roberto.cunha@ltia.fc.unesp.br</email></para></listitem>
