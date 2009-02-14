@@ -461,7 +461,7 @@ void FractionRingWidget::resetFraction(bool flag = true)
 	QString msg = i18nc("%1 and %2 are the two messages translated above.",
 	                    "The outside ring represents the left fraction. %1\n\n"
 	                    "The inside ring represents the right fraction. %2\n\n"
-	                    "The 'Multiply' button multiplies each fraction. Try one of them!",
+	                    "The 'Multiply' spinboxes multiplies each fraction. Try to change one of the spinbox values!",
 	                    insert1, insert2);
 
 	textMsg->setText(msg);

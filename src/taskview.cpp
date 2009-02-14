@@ -181,7 +181,7 @@ TaskView::TaskView(QWidget * parent,
 
 	// add tooltip and qwhatsthis help to the widget
 	setToolTip(i18n("In this exercise you have to solve a given question with fractions."));
-	setWhatsThis( i18n("In this exercise you have to solve the generated question. You have to enter the numerator and the denominator. You can adjust the difficulty of the question with the boxes in the toolbar. Do not forget to reduce the result."));
+	setWhatsThis( i18n("In this exercise you have to solve the generated question. You have to enter the integer part of the fraction and the numerator and the denominator. You can adjust the difficulty of the question in the options window part. Do not forget to reduce the result, if the use of the reduced form is forced."));
 }
 
 /* destructor */
@@ -386,7 +386,7 @@ void TaskView::showResult()
 			entered_result.reduce();
 			if (entered_result == result)
 				KMessageBox::information(this,
-				                         i18n("You entered the correct result, but not reduced.\nAlways enter your results as reduced. This question will be counted as not correctly solved."));
+				                         i18n("You entered the correct result, but not reduced.\nEnter your results as reduced, if the use of this form is forced in the options. This question will be counted as not correctly solved."));
 		}
 	} 
 	m_resultWidget->show();

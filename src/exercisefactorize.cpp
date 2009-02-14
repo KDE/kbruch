@@ -267,7 +267,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 
 	// add tooltip and qwhatsthis help to the widget
 	setToolTip(i18n("In this exercise you have to factorize a given number."));
-	setWhatsThis( i18n("In this exercise you have to factorize a given number. You have to enter all prime factors of the number. You can add a prime factor by clicking on the corresponding button. The chosen prime factors will be shown in the input field. Do not forget to enter all prime factors, even when a prime factor repeats several times."));
+	setWhatsThis( i18n("In this exercise you have to factorize a given number. You have to enter all prime factors of the number. You can add a prime factor by clicking on the corresponding button. The chosen prime factors will be shown in the input field. Do not forget to enter all prime factors, even when a prime factor repeats several times. Click the 'Backspace' button to remove the last entered prime factor."));
 
 	m_edit = true;
 }

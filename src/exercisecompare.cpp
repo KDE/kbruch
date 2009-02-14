@@ -147,7 +147,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 
 	// add tooltip and qwhatsthis help to the widget
 	setToolTip(i18n("In this exercise you have to compare 2 given fractions."));
-	setWhatsThis( i18n("In this exercise you have to compare 2 given fractions by choosing the correct comparison sign. You can change the comparison sign by just clicking on the button showing the sign."));
+	setWhatsThis( i18n("In this exercise you have to compare 2 given fractions by choosing the correct comparison sign."));
 
 	// that the user can start typing without moving the focus
 	m_equalButton->setFocus();

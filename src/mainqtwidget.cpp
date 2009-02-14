@@ -177,6 +177,7 @@ MainQtWidget::MainQtWidget()
 
 	m_OptionsLabel = new QLabel(i18n("Options:"), pageOptions);
 	m_OptionsLabel->setToolTip(i18n("Set the options to solve the exercises."));
+	m_OptionsLabel->setWhatsThis( i18n("This part of the window shows the options to solve the exercises. Use the handle between the options and main window to change the size of this window part or to hide it by moving the handle to the left border of the main window."));
 	m_OptionsLabel->setObjectName("OptionsLabel");
 	m_OptionsLabel->setFont(defaultFont);
 
