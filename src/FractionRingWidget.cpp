@@ -454,10 +454,12 @@ void FractionRingWidget::resetFraction(bool flag = true)
 
 	// NOTE: Inserting denominator as %1, as first number is used to determine plural form,
 	// and in these messages that should be the number next to "...painted parts".
-	QString insert1 = i18nc("Inserted as %1 in the message below.",
-	                         "%2 of %1 painted parts.", rLeft.denominator(), rLeft.numerator());
-	QString insert2 = i18nc("Inserted as %2 in the message below.",
-	                         "%2 of %1 painted parts.", rRight.denominator(), rRight.numerator());
+	QString insert1 = i18ncp("Inserted as %1 in the message below.",
+	                         "%2 of 1 painted part.", "%2 of %1 painted parts.",
+                                 rLeft.denominator(), rLeft.numerator());
+	QString insert2 = i18ncp("Inserted as %2 in the message below.",
+	                         "%2 of 1 painted part.", "%2 of %1 painted parts.",
+                                 rRight.denominator(), rRight.numerator());
 	QString msg = i18nc("%1 and %2 are the two messages translated above.",
 	                    "The outside ring represents the left fraction. %1\n\n"
 	                    "The inside ring represents the right fraction. %2\n\n"

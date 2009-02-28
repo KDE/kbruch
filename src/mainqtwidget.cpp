@@ -182,7 +182,7 @@ MainQtWidget::MainQtWidget()
 	m_OptionsLabel->setFont(defaultFont);
 
 	m_QuestionMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
-	m_QuestionMixedLabel->setToolTip(i18n("Set if the fractions will appear in mixed number or not in the question expression ( mixed number example: 1 5/4 = 9/4 )."));
+	m_QuestionMixedLabel->setToolTip(i18n("Set if the fractions will appear as mixed numbers or not in the question expression (mixed number example: 1 5/4 = 9/4 )."));
 	m_QuestionMixedLabel->setObjectName("QuestionMixedLabel");
 	m_QuestionMixedLabel->setAlignment(Qt::AlignRight);
 	
@@ -193,7 +193,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_QuestionMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(QuestionMixedCheckSlot()));
 
 	m_AnswerMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
-	m_AnswerMixedLabel->setToolTip(i18n("Set if the fractions will appear in mixed number or not in the answer ( mixed number example: 1 5/4 = 9/4 )."));
+	m_AnswerMixedLabel->setToolTip(i18n("Set if the fractions will appear as mixed numbers or not in the answer (mixed number example: 1 5/4 = 9/4 )."));
 	m_AnswerMixedLabel->setObjectName("AnswerMixedLabel");
 	m_AnswerMixedLabel->setAlignment(Qt::AlignRight);
 	
@@ -204,7 +204,7 @@ MainQtWidget::MainQtWidget()
 	QObject::connect(m_AnswerMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(AnswerMixedCheckSlot()));
 
 	m_SolutionMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
-	m_SolutionMixedLabel->setToolTip(i18n("Set if the fractions will appear in mixed number or not in the solution ( mixed number example: 1 5/4 = 9/4 )."));
+	m_SolutionMixedLabel->setToolTip(i18n("Set if the fractions will appear as mixed numbers or not in the solution (mixed number example: 1 5/4 = 9/4 )."));
 	m_SolutionMixedLabel->setObjectName("SolutionMixedLabel");
 	m_SolutionMixedLabel->setAlignment(Qt::AlignRight);
 	

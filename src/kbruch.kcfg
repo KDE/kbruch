@@ -62,12 +62,12 @@
 		</entry>
 		<entry type="Bool" key="answerMixed">
 			<label>Mixed number</label>
-			<whatsthis>Set if the fractions will need answer in mixed form or not on solution.</whatsthis>
+			<whatsthis>Set if the fractions will need answers in mixed form or not on solution.</whatsthis>
 			<default>true</default>
 		</entry>
 		<entry type="Bool" key="questionMixed">
 			<label>Mixed number</label>
-			<whatsthis>Set if the fractions will appear in mixed form or not on solution.</whatsthis>
+			<whatsthis>Set if the fractions will appear in mixed form or not in questions.</whatsthis>
 			<default>true</default>
 		</entry>
 	</group>

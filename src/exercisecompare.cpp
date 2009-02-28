@@ -100,7 +100,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	m_moreButton->setFixedSize(74,30);
 	m_moreButton->setFont(defaultFont);	
 	QObject::connect(m_moreButton, SIGNAL(clicked()), this, SLOT(slotMoreButtonClicked()));
-	m_moreButton->setToolTip(i18n("Click on this button to select the more sign."));
+	m_moreButton->setToolTip(i18n("Click on this button to select the 'greater than' sign."));
 	taskLayout->addWidget(m_moreButton, 1, 2);
 	
 	m_minorButton = new QPushButton(taskWidget);
@@ -109,7 +109,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	m_minorButton->setFixedSize(74,30);	
 	m_minorButton->setFont(defaultFont);		
 	QObject::connect(m_minorButton, SIGNAL(clicked()), this, SLOT(slotMinorButtonClicked()));
-	m_minorButton->setToolTip(i18n("Click on this button to select the minor sign."));
+	m_minorButton->setToolTip(i18n("Click on this button to select the 'less than' sign."));
 	taskLayout->addWidget(m_minorButton, 2, 2);
 	
 	m_equalButton = new QPushButton(taskWidget);
@@ -118,7 +118,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
 	m_equalButton->setFixedSize(74,30);
 	m_equalButton->setFont(defaultFont);			
 	QObject::connect(m_equalButton, SIGNAL(clicked()), this, SLOT(slotEqualButtonClicked()));
-	m_equalButton->setToolTip(i18n("Click on this button to select the equal sign."));
+	m_equalButton->setToolTip(i18n("Click on this button to select the 'equals' sign."));
 	taskLayout->addWidget(m_equalButton, 3, 2);
 
 	// Create Skip and Check buttons
@@ -146,8 +146,8 @@ ExerciseCompare::ExerciseCompare(QWidget * parent):
   	checkWidget->setLayout(checkLayout);
 
 	// add tooltip and qwhatsthis help to the widget
-	setToolTip(i18n("In this exercise you have to compare 2 given fractions."));
-	setWhatsThis( i18n("In this exercise you have to compare 2 given fractions by choosing the correct comparison sign."));
+	setToolTip(i18n("In this exercise you have to compare two given fractions."));
+	setWhatsThis( i18n("In this exercise you have to compare two given fractions and choose the correct comparison sign."));
 
 	// that the user can start typing without moving the focus
 	m_equalButton->setFocus();
