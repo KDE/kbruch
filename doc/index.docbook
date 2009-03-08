@@ -35,7 +35,7 @@
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2008-11-25</date>
+<date>2009-02-03</date>
 <releaseinfo>4.2</releaseinfo>
 
 <abstract>
@@ -118,7 +118,7 @@ situations.
 <guilabel>Freestyle</guilabel> which is the training mode and
 <guilabel>Learning</guilabel> where you can understand fractions. Clicking
 one of the pictures will enter the chosen mode. Here is a screenshot of
-&kbruch;'s modes:</para>
+&kbruch;'s mode choices:</para>
 
 <screenshot>
 	<screeninfo>&kbruch; mode choices</screeninfo>
@@ -183,7 +183,7 @@ the toolbar.
 <note><para>You can hide the <guilabel>Options</guilabel> section by dragging it to the left.
 </para></note>
 <para>
-First you have to choose an exercise in the toolbar. Default is Arithmetic. The
+First you have to choose an exercise in the toolbar. Default is <guilabel>Arithmetic</guilabel>. The
 task part will change according to the chosen task. Some settings in the <guilabel>Options</guilabel> section 
 will be enabled, depending on the task you have chosen.
 </para>
@@ -192,8 +192,7 @@ You will find an icon to generate a new task in the toolbar as well. This
 action is also available in the menu
 <menuchoice><guimenu>File</guimenu><guimenuitem>New</guimenuitem></menuchoice>.
 This action is always enabled. If you have not
-solved the currently given task, a new task is generated and the given task is
-counted as not correctly solved.
+solved the currently given task, a new task is generated and the statistics are set back.
 </para>
 <!--<para>
 You can hide the statistic part by dragging the vertical separator to the
@@ -313,30 +312,78 @@ Clicking the <guibutton>Hint</guibutton> button toggles the display of the help 
 <title>Exercises</title>
 
 <sect1 id="exer_fraction">
-<title>Exercise Fraction Task</title>
+<title>Exercise Arithmetic</title>
 
 <para>In this exercise you have to solve a given task. Therefore you have to
-enter the numerator and the denominator. The difficulty of the generated task can be
+enter the integer part of a fraction and the numerator and the denominator. The difficulty of the generated task can be
 adjusted by using some options on the left.
 </para>
 
 <sect2 id="task_paras">
 <title>Options</title>
 <para>
-There are 3 parameters which influence the difficulty of the generated
+There are several parameters which influence the difficulty of the generated
 tasks:</para>
 
 <variablelist>
 <varlistentry>
-<term><guilabel>Terms</guilabel></term>
+<term><guilabel>Question</guilabel></term>
+<listitem><para>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Mixed number</guilabel></term>
+<listitem><para>Set if the fractions will appear in mixed number or not in the question expression ( mixed number example: 1 5/4 = 9/4 ).</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Number of terms</guilabel></term>
 <listitem><para>The number of terms (separate fractions) given in each
 task. From 2 to 5, inclusive.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Max. main denominator</guilabel></term>
+<term><guilabel>Maximum denominator</guilabel></term>
 <listitem><para>The highest number &kbruch; will use as the main denominator in the
 tasks it sets. From a minimum of 10 to a maximum of 50.</para></listitem>
+</varlistentry>
+</variablelist>
+
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Answer</guilabel></term>
+<listitem><para>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Mixed number</guilabel></term>
+<listitem><para>Set if the fractions will appear in mixed number or not in the answer ( mixed number example: 1 5/4 = 9/4 ).</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Reduced Form</guilabel></term>
+<listitem><para>Check this to force the use of the reduced form.</para></listitem>
+</varlistentry>
+</variablelist>
+
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Solution</guilabel></term>
+<listitem><para>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Mixed number</guilabel></term>
+<listitem><para>Set if the fractions will appear in mixed number or not in the solution ( mixed number example: 1 5/4 = 9/4 ).</para></listitem>
+</varlistentry>
+
+</variablelist>
+
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -346,6 +393,7 @@ task: <guilabel>Addition</guilabel>, <guilabel>Subtraction</guilabel>,
 <guilabel>Multiplication</guilabel> or <guilabel>Division</guilabel>. Check all operations
  you want to use.</para></listitem>
 </varlistentry>
+
 </variablelist>
 
 <para>
@@ -353,6 +401,8 @@ After you have changed the parameters you have to click on the <guimenu>New</gui
 button in the toolbar to generate a task which uses the new
 parameters. You can also call this action from the menubar with
 <menuchoice><guimenu>Task</guimenu><guimenuitem>New</guimenuitem></menuchoice>.
+This will reset the statitics. To avoid that, click the <guibutton>Next</guibutton> 
+button to proceed with the changed parameters.
 </para>
 <!--<note>
 <para>
@@ -361,12 +411,12 @@ value every time you change the number of terms. So you should change the
 number of terms first and then select the maximum main denominator.
 </para>
 </note>-->
-<para>
+<!--para>
 If you have not solved the current task and call the <guimenu>New</guimenu> 
 action, the task will be counted as not solved correctly. To
 prevent this you have to change the parameters after you solved the task but
 before generating a new one.
-</para>
+</para-->
 <para>
 The chosen parameters will be saved on &kbruch;'s termination and restored
 on next startup.
@@ -376,9 +426,12 @@ on next startup.
 <sect2 id="exer_fraction_solve_task">
 <title>Solving Tasks</title>
 <para>
-After you have solved a given task, you need to enter the result into the two
-input boxes. In the upper box you enter the numerator and in the lower
-box the denominator.
+After you have solved a given task, you need to enter the result into the three
+input boxes. In the left box you enter the integer part of the fraction, in the 
+upper box the numerator and in the lower box the denominator.
+If the option <guilabel>Mixed number</guilabel> in the <guilabel>Answer</guilabel> 
+section is unchecked, the left box for the integer part of the fraction is hidden. Then you use 
+only the numerator box and the denominator box for your input.
 </para>
 <para>
 If the result is negative, you can enter a minus sign in front of the numerator
@@ -407,7 +460,7 @@ forms: normal (reduced) and mixed number.
 </para>
 <note>
 <para>
-If you checked the <guibutton>Reduced form</guibutton> in the Options in the Answers section 
+If you checked the <guibutton>Reduced form</guibutton> in the Options in the <guilabel>Answers</guilabel> section 
 then you always have to enter the result reduced. &kbruch; will show you a short message
 like the one in the screenshot below, if you enter the correct result
 unreduced. The answer will then be counted as incorrect.
@@ -426,9 +479,9 @@ unreduced. The answer will then be counted as incorrect.
 </screenshot>
 
 <para>
-To continue with the next task, click on the <guimenu>New</guimenu>
+To continue with the next task, click on the <guibutton>Next</guibutton>
 button. If you want to change the parameters for the next task please do this
-before clicking on the <guimenu>New</guimenu> button.
+before clicking on the <guibutton>Next</guibutton> button.
 </para>
 </sect2>
 </sect1>
@@ -452,13 +505,14 @@ the bigger fraction of both by selecting the correct comparison sign.
 </mediaobject>
 </screenshot>
 
-<para>First choose the correct comparison sign. To toggle the comparison sign,
-you have to click on the button showing the comparison sign. After you have
+<para>First choose the correct comparison sign. After you have
 chosen the comparison sign, the result will show on the right. A green square with <guilabel>Correct</guilabel>
 will tell you that your answer was correct while a red square with <guilabel>Incorrect</guilabel> will indicate that your
-answer was wrong. You will get to the next task by clicking the <guimenu>Next</guimenu>
+answer was wrong. You will get to the next task by clicking the <guibutton>Next</guibutton>
 button.
 </para>
+
+<para>In this excercise only the option <guilabel>Mixed number</guilabel> is enabled. If checked the fractions will appear in mixed number.</para>
 </sect1>
 
 <sect1 id="exer_convert">
@@ -487,9 +541,9 @@ numbers. Those numbers repeat ad infinitum.
 </para>
 
 <para>After you have entered the numerator and denominator click on the
-<guimenu>Check Task</guimenu> button. &kbruch; will check your input and
+<guibutton>Check</guibutton> button. &kbruch; will check your input and
 present the correct result. After this step you will get to the next task by
-clicking on the <guimenu>New</guimenu> button.
+clicking on the <guibutton>Next</guibutton> button.
 </para>
 
 <note>
@@ -498,6 +552,9 @@ Do not forget to enter the result reduced. Unreduced results will be counted as
 solved not correctly.
 </para>
 </note>
+
+<para>In this excercise all options are disabled.</para>
+
 </sect1>
 
 <sect1 id="exer_factorize">
@@ -522,13 +579,13 @@ factors. You have to enter all prime factors of the number.
 <para>You can enter a factor by clicking on the prime factor
 buttons. The <quote>*</quote> sign is automatically inserted, when you click the next 
 prime factor button. You can remove the last entered
-prime factor by clicking on the <guimenu>Remove Last Factor</guimenu> button.
+prime factor by clicking on the <guibutton>Backspace</guibutton> button.
 </para>
 <para>
 After you have entered all prime factors click on the
-<guimenu>Check Task</guimenu> button. &kbruch; will check your input and
+<guibutton>Check</guibutton> button. &kbruch; will check your input and
 present the correct result. After this step you will get to the next task by
-clicking on the <guimenu>New</guimenu> button.
+clicking on the <guibutton>Next</guibutton> button.
 </para>
 
 <para>In the screenshot at the top of this page you can see a <quote>*</quote>
@@ -542,6 +599,37 @@ You have to enter all prime factors even when a prime factor repeats several
 times. Example: As prime factors of number 18 you have to enter 2, 3 and 3.
 </para>
 </note>
+
+<para>In this excercise all options are disabled.</para>
+
+</sect1>
+
+<sect1 id="exer_percentage">
+<title>Exercise Percentage</title>
+
+<para>In this exercise you have to answer some percentage questions.</para>
+
+<screenshot>
+<screeninfo>Exercise Percentage</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="percentage.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase>Exercise Percentage</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para>
+After you have entered your answer click on the
+<guibutton>Check</guibutton> button. &kbruch; will check your input and
+present the correct result. After this step you will get to the next task by
+clicking on the <guibutton>Next</guibutton> button.
+</para>
+
+<para>In this excercise all options are disabled.</para>
+
 </sect1>
 
 </chapter>
@@ -555,6 +643,8 @@ Program and documentation Copyright, 2001-2004 Sebastian Stein
  <email>seb.kde@hpfsc.de</email>
 </para>
 
+<!-- needs update ???-->
+
 <para>Thank you goes to:</para>
 
 <itemizedlist>
@@ -567,6 +657,15 @@ Program and documentation Copyright, 2001-2004 Sebastian Stein
 	<listitem><para>&David.Faure; for helping with &kde; <acronym>CVS</acronym> and &kde; Bugzilla</para></listitem>
 	<listitem><para>&Robert.Gogolok; for helping with &kde; <acronym>CVS</acronym></para></listitem>
 	<listitem><para>John Kesson for proof reading the handbook</para></listitem>
+</itemizedlist>
+
+<para>New interface design and usability improvements for &kde; 4.1:</para>
+<itemizedlist>
+<listitem><para>Paulo Cattai<email>paulo.cattai@ltia.fc.unesp.br</email></para></listitem>
+<listitem><para>Danilo Balzaque<email>danilo.balzaque@ltia.fc.unesp.br</email></para></listitem>
+<listitem><para>Roberto Cunha<email>roberto.cunha@ltia.fc.unesp.br</email></para></listitem>
+<listitem><para>Tadeu Araujo<email>tadeu.araujo@ltia.fc.unesp.br</email></para></listitem>
+<listitem><para>Tiago Porangaba<email>tiago.porangaba@ltia.fc.unesp.br</email></para></listitem>
 </itemizedlist>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
@@ -590,7 +689,7 @@ Program and documentation Copyright, 2001-2004 Sebastian Stein
 <title>Requirements</title>
 
 <para>
-In order to successfully use &kbruch;, you need &kde; > 3.1 .
+In order to successfully use &kbruch;, you need &kde; > 4.1 .
 </para>
 
 <para>
