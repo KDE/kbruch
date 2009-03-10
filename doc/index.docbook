@@ -40,7 +40,7 @@
 
 <abstract>
 <para>&kbruch; is a small program to practice calculating with fractions and percentages.
-Different exercises are provided for this purpose and you can use the learning mode to practise with fractions. The program checks the user's
+Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's
 input and gives feedback.
 </para>
 	
@@ -401,7 +401,7 @@ After you have changed the parameters you have to click on the <guimenu>New</gui
 button in the toolbar to generate a task which uses the new
 parameters. You can also call this action from the menubar with
 <menuchoice><guimenu>Task</guimenu><guimenuitem>New</guimenuitem></menuchoice>.
-This will reset the statitics. To avoid that, click the <guibutton>Next</guibutton> 
+This will reset the statistics. To avoid that, click the <guibutton>Next</guibutton> 
 button to proceed with the changed parameters.
 </para>
 <!--<note>
@@ -512,7 +512,7 @@ answer was wrong. You will get to the next task by clicking the <guibutton>Next<
 button.
 </para>
 
-<para>In this excercise only the option <guilabel>Mixed number</guilabel> is enabled. If checked the fractions will appear in mixed number.</para>
+<para>In this exercise only the option <guilabel>Mixed number</guilabel> is enabled. If checked the fractions will appear in mixed number.</para>
 </sect1>
 
 <sect1 id="exer_convert">
@@ -553,7 +553,7 @@ solved not correctly.
 </para>
 </note>
 
-<para>In this excercise all options are disabled.</para>
+<para>In this exercise all options are disabled.</para>
 
 </sect1>
 
@@ -600,7 +600,7 @@ times. Example: As prime factors of number 18 you have to enter 2, 3 and 3.
 </para>
 </note>
 
-<para>In this excercise all options are disabled.</para>
+<para>In this exercise all options are disabled.</para>
 
 </sect1>
 
@@ -628,7 +628,7 @@ present the correct result. After this step you will get to the next task by
 clicking on the <guibutton>Next</guibutton> button.
 </para>
 
-<para>In this excercise all options are disabled.</para>
+<para>In this exercise all options are disabled.</para>
 
 </sect1>
 
