@@ -271,7 +271,7 @@ the task display. To open this dialog use
 There are two tabs to adjust the setting: 
 <itemizedlist>
 	<!-- <listitem><para>
-		<guilabel>General</guilabel>: Set wether to show the mixed number notation in the result.
+		<guilabel>General</guilabel>: Set whether to show the mixed number notation in the result.
 		This notation is not known everywhere and can be disabled therefore.
 	</para></listitem> -->
 	<listitem><para>
