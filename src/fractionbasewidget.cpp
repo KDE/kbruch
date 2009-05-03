@@ -111,11 +111,11 @@ void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_p
 	// make sure we don't display something like:   0
 	//                                            7 -
 	//                                              3
-	if (! (int_numerator == 0) )
+	if (! (show_mixed == true && int_numerator == 0) )
 	{
 		if ( show_center == true )
 			x_pos = 80 - fontWidth/2;
-		if (int_denominator != 1)
+		if (! (int_denominator == 1 && show_mixed == false) )
 		{
 			// paint the numerator
 			paint.drawText(x_pos, y_pos, fontWidth, fontHeight, Qt::AlignCenter, str_numerator);
