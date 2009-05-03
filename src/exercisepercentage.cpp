@@ -266,7 +266,7 @@ void ExercisePercentage::createTask()
 			//m_number = KGlobal::locale()->formatNumber(0.142857, 6);
 			m_numberPercentage = "1";
 			m_numberPercentageOf = "400";
-			m_resultPercentage = "1" ;
+			m_resultPercentage = "4" ;
 			break;
 		case 11 :   
 			//m_number = KGlobal::locale()->formatNumber(0.125, 3);			
