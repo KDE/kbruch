@@ -118,6 +118,9 @@ public:
 	/** returns the number of operations in the vector */
 	int getNumberOfOperations() const;
 
+	/** removes all ratios and operations from the given task */
+	void clean();
+
 private:
 	/** max. size of main denominator */
 	int max_md;

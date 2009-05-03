@@ -27,7 +27,6 @@
 
 #include <time.h>
 
-//Added by qt3to4:
 #include <QTextStream>
 
 /** constructor of class task */
@@ -53,7 +52,7 @@ task::~task()
  * pnr_ratios: number of ratios -> pnr_ratios - 1 operations
 */
 void task::create_task(unsigned int pmax_md, short pnr_ratios,
-                       short padd_add, short padd_div, 
+                       short padd_add, short padd_div,
                        short padd_mult, short padd_sub)
 {
 	unsigned int max_product_length = 0;
@@ -62,7 +61,7 @@ void task::create_task(unsigned int pmax_md, short pnr_ratios,
 	do
 	{
 		/* delete a maybe given task */
-		ratio_vector.clear();
+		clean();
 
 		/* generate the operations and count the max. mul/div in one block */
 		max_product_length = make_operation(padd_add, padd_div, padd_mult, padd_sub, pnr_ratios);
@@ -311,7 +310,6 @@ ratio task::solve()
 	while (++op_pointer != op_vector.end());
 
 #ifdef DEBUG
-
 	kDebug() << "after do while in solve()";
 #endif
 
@@ -354,6 +352,18 @@ int task::getNumberOfOperations() const
 	return op_vector.count();
 }
 
+/* removes all ratios and operations from the given task */
+void task::clean()
+{
+#ifdef DEBUG
+	kDebug() << "task::clean()";
+#endif
+	ratio_vector.clear();
+	op_vector.clear();
+
+	return;
+}
+
 /** this function is called by the solving function to compute a given
  * product (or div) and return the solution */
 ratio task::product(RatioArray::iterator & ratio_pointer,
@@ -361,7 +371,7 @@ ratio task::product(RatioArray::iterator & ratio_pointer,
 {
 #ifdef DEBUG
 	kDebug() << "task::product()";
-#endif	
+#endif
 	/* the function's parameters are pointing to the next ratio;
 	 * to the starting point of the product */
 	ratio product(ratio_pointer->numerator(), ratio_pointer->denominator());
@@ -398,7 +408,7 @@ ratio task::product(RatioArray::iterator & ratio_pointer,
 
 /** generate the operations randomly; return how many mul or div
  * are in one block */
-unsigned short task::make_operation(short padd_add, short padd_div, short padd_mult, short padd_sub, 
+unsigned short task::make_operation(short padd_add, short padd_div, short padd_mult, short padd_sub,
                                     short pnr_ratios)
 {
 #ifdef DEBUG
@@ -416,22 +426,18 @@ unsigned short task::make_operation(short padd_add, short padd_div, short padd_m
 
 	/* generate the operations */
 	if (padd_add == YES && padd_div == NO && padd_mult == NO && padd_sub == NO) {
-						kDebug() << "11";
 		for (short counter = 0; counter < pnr_ratios - 1; counter++)
 			op_vector.push_back(ADD);
 	} else if (padd_div == YES && padd_add == NO && padd_mult == NO && padd_sub == NO) {
-						kDebug() << "22";
 		for (short counter = 0; counter < pnr_ratios - 1; counter++)
 			op_vector.push_back(DIV);
 	} else if (padd_mult == YES && padd_add == NO && padd_div == NO && padd_sub == NO) {
-						kDebug() << "33";
 		for (short counter = 0; counter < pnr_ratios - 1; counter++)
 			op_vector.push_back(MUL);
 	} else if (padd_sub == YES && padd_add == NO && padd_div == NO && padd_mult == NO) {
-						kDebug() << "44";
 		for (short counter = 0; counter < pnr_ratios - 1; counter++)
 			op_vector.push_back(SUB);
-	} else {	
+	} else {
 		do {
 			operations = short((double(rand()) / RAND_MAX) * 4);
 			switch (operations) {
@@ -439,46 +445,29 @@ unsigned short task::make_operation(short padd_add, short padd_div, short padd_m
 					if (padd_add == YES) {
 						op_vector.push_back(ADD);
 						counter++;
-						kDebug() << "1";
 					}
 					break;
 				case SUB:
 					if (padd_sub == YES) {
 						op_vector.push_back(SUB);
 						counter++;
-						kDebug() << "2";
 					}
 					break;
 				case DIV:
 					if (padd_div == YES) {
 						op_vector.push_back(DIV);
 						counter++;
-						kDebug() << "3";
 					}
 					break;
 				case  MUL:
 					if (padd_mult == YES) {
 						op_vector.push_back(MUL);
 						counter++;
-						kDebug() << "4";
 					}
-					break;				
-			}															
+					break;
+			}
 		} while ( counter < (pnr_ratios - 1) );
 	}
-
-	/* if we only wanted mul/div, operations was 2; but we want values
-	 * for the operations with 2 and 3 so we have to add 2 */
-	//if ( (padd_mult == YES || padd_div == YES) && (padd_add == NO && padd_sub == NO) )
-//	{
-		/* loop through all operations and add 2, so that the operations
-		 * are interpreted as mul/div and not add/sub */
-//		for (op_pointer = op_vector.begin();
-		        //op_pointer != op_vector.end(); ++op_pointer) {
-//						kDebug() << "4";
-			//*op_pointer += 2;
-//}
-//	}
 
 	if (padd_mult == YES || padd_div == YES)
 	{

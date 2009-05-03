@@ -51,11 +51,11 @@ public:
 	~FractionBaseWidget();
 
 	/** updates the widget by first getting the settings and then repainting */
-	void updateAndRepaint();	
+	void updateAndRepaint();
 
 protected:
 	virtual QSize minimumSizeHint() const { return QSize( 20, 10 ); }
-	
+
 	/* store the different colors */
 	QColor m_colorNumber;
 	QColor m_colorLine;
@@ -64,7 +64,7 @@ protected:
 	/* the font to paint with */
 	QFont m_font;
 
-	/** overrideing the paint event of QWidget */
+	/** overwriting the paint event of QWidget */
 	//virtual void paintEvent(QPaintEvent*) = 0;
 
 	/** paints a ratio at the given position */
@@ -74,7 +74,7 @@ protected:
 	void paintMiddle(QPainter & paint, const QString& paint_str, int & x_pos, int & y_pos, QFontMetrics & fm, const QColor &color, bool addMargin = true);
 
 private:
-	/** sets the font and color; values taken from settingsclass */
+	/** sets the font and color; values taken from settings class */
 	void setColorAndFont();
 };
 
