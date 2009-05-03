@@ -457,7 +457,7 @@ void ExerciseConvert::denominatorReturnPressed(const QString &)
 }
 
 /* ------ protected events ------ */
-void ExerciseConvert::showEvent ( QShowEvent * event ) {
+void ExerciseConvert::showEvent ( QShowEvent * ) {
 
 	// that the user can start typing without moving the focus
 	numer_edit->setFocus();

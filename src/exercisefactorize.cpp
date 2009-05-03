@@ -693,8 +693,7 @@ void ExerciseFactorize::keyPressEvent(QKeyEvent * e)
 	}
 }
 
-void ExerciseFactorize::showEvent( QShowEvent * event )
-{
+void ExerciseFactorize::showEvent( QShowEvent * ) {
 #ifdef DEBUG
 	kDebug() << "ExerciseFactorize::showEvent()";
 #endif

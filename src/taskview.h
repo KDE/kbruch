@@ -71,8 +71,8 @@ public:
 
 	/** set new task parameters, which will be used for the next task to be
 	 * generated */
-	void setTaskParameters( bool padd_add = true, bool padd_div = false, 
-				bool padd_mult = false, bool padd_sub = false, 
+	void setTaskParameters( bool padd_add = true, bool padd_div = false,
+				bool padd_mult = false, bool padd_sub = false,
 				unsigned int pnr_ratios = 2, unsigned int pmax_md = 2);
 
 	/** force the creation of a new task */
@@ -130,7 +130,7 @@ private:
 	QWidget * taskWidget;
 
 	task current_task;
-	ratio result;
+	ratio solution;
 	ratio entered_result;
 	QFont defaultFont;
 

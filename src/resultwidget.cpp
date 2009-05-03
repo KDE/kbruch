@@ -50,7 +50,7 @@ ResultWidget::ResultWidget(QWidget * parent = 0,
 	kDebug() << "constructor ResultWidget";
 #endif
 	Init();
-	m_ExerciseView = 1;	
+	m_ExerciseView = 1;
 }
 
 ResultWidget::ResultWidget(QWidget * parent) :
@@ -74,17 +74,17 @@ void ResultWidget::Init()
 #ifdef DEBUG
 	kDebug() << "ResultWidget::Init()";
 #endif
-	setMinimumWidth( 160 ); 
-	setMaximumHeight( 213 ); 
-	setMinimumHeight( 213 ); 
-	
+	setMinimumWidth( 160 );
+	setMaximumHeight( 213 );
+	setMinimumHeight( 213 );
+
 	m_solutionMixed = true;
 
 	m_kindView = -1;
 
 	defaultFont = SettingsClass::taskFont();
 	defaultFont.setBold( true );
-	
+
 	QPalette pal = palette();
 	pal.setColor(QPalette::Foreground, Qt::white);
 	setPalette(pal);
@@ -154,7 +154,7 @@ void ResultWidget::showResult()
 			m_primaryText->setText(i18n("Incorrect!"));
 			layout->setRowStretch(2,0);
 			layout->setRowStretch(0,1);
-			break;			
+			break;
 		default:
 			setFixedSize( 160, 213 );
 			m_primaryText->hide();
@@ -200,7 +200,7 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	int old_x = 30;
 	int old_y = 123;
 	int fontWidth; // to store the width of the last thing painted
-	
+
 	// start the painter
 	QPainter paint(this);
 
@@ -211,11 +211,11 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 		case 2:
 			paint.setBrush( QColor(191, 0, 0) );
 			paint.drawRoundedRect(2.0, 2.0, 157.0, 209.0, 10, 10);
-			break;	
+			break;
 		case 1:
 			paint.setBrush( QColor(0, 191, 0) );
 			paint.drawRoundedRect(2.0, 2.0, 157.0, 209.0, 10, 10);
-			break;				
+			break;
 		case 0:
 			paint.setBrush( QColor(191,0,0) );
 			paint.drawRoundedRect(2.0, 2.0, width()-3, 209.0, 10, 10); // 2.0, 2.0, 157.0, 209.0, 10, 10
@@ -235,7 +235,10 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 
 			if (m_ExerciseView == 1) {
 
-				if (SettingsClass::showSpecialRatioNotation() == true && qAbs(m_result.numerator()) >= qAbs(m_result.denominator()) && m_result.denominator() != 1 && m_solutionMixed == true)
+				if (SettingsClass::showSpecialRatioNotation() == true &&
+						qAbs(m_result.numerator()) >= qAbs(m_result.denominator()) &&
+						m_result.denominator() != 1 &&
+						m_solutionMixed == true)
 				{
 					paintRatio(paint, m_result, old_x, old_y, fm, false, true, false);
 					paintMiddle(paint, QString(i18n(" or ")), old_x, old_y, fm, m_colorOperation);
@@ -254,13 +257,13 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 					{
 						tmpWidth += fm.width("*");
 					}
-					tmpStr.setNum(m_factors[tmpInt]);					
+					tmpStr.setNum(m_factors[tmpInt]);
 					fontWidth = fm.width(tmpStr);
-					tmpWidth += fontWidth;					
+					tmpWidth += fontWidth;
 				}
-				if (tmpWidth <= 100) 
+				if (tmpWidth <= 100)
 					old_x+= 50 - tmpWidth/2;
-					
+
 				for (int tmpInt = 0; tmpInt < m_factors.count(); tmpInt++)
 				{
 					if (tmpInt != 0)
@@ -276,11 +279,11 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 					paint.drawText(old_x, old_y, fontWidth, fontHeight, Qt::AlignCenter, tmpStr);
 					old_x += fontWidth;
 				}
-			}					
+			}
 			old_x+=30;
 			if (  old_x > 160 )
-				setMinimumWidth(old_x);						
-			break;		
+				setMinimumWidth(old_x);
+			break;
 	}
 	// stop the painter
 	paint.end();

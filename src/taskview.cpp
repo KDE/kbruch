@@ -22,6 +22,7 @@
 #include "taskview.moc"
 
 /* these includes are needed for KDE support */
+#include <kdebug.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <knumvalidator.h>
@@ -50,7 +51,7 @@
 TaskView::TaskView(QWidget * parent,
 		 bool padd_add, bool padd_div, bool padd_mult, bool padd_sub,
 		 unsigned int pnr_ratios, unsigned int pmax_md):
-		ExerciseBase(parent), m_addAdd(padd_add), m_addDiv(padd_div), 
+		ExerciseBase(parent), m_addAdd(padd_add), m_addDiv(padd_div),
 		m_addMult(padd_mult), m_addSub(padd_sub),
 		nr_ratios(pnr_ratios), max_md(pmax_md)
 {
@@ -76,14 +77,14 @@ TaskView::TaskView(QWidget * parent,
 	taskWidget->setObjectName("taskWidget");
 	checkWidget = new QWidget(this);
 	checkWidget->setObjectName("checkWidget");
-	
+
 	baseGrid = new QGridLayout(this);
 	baseGrid->setObjectName( "baseGrid" );
 	baseGrid->setColumnStretch(0,1);
 
 	baseGrid->addWidget(taskWidget, 0, 0);
 	baseGrid->addWidget(checkWidget, 0, 1);
-	
+
 	taskLayout = new QGridLayout(this);
 	taskLayout->setObjectName( "taskLayout" );
 	taskLayout->setRowStretch(0,1);
@@ -97,7 +98,7 @@ TaskView::TaskView(QWidget * parent,
 	QFont defaultFont = SettingsClass::taskFont();
 	defaultFont.setBold( true );
 	defaultFont.setPointSize( 18 );
-	
+
 	// first left is the task widget
 	m_taskWidget = new TaskWidget(taskWidget, current_task);
 	m_taskWidget->setObjectName("m_taskWidget");
@@ -145,7 +146,7 @@ TaskView::TaskView(QWidget * parent,
 	QObject::connect(deno_edit, SIGNAL(returnPressed(const QString &)), this,
 		SLOT(denominatorReturnPressed(const QString &)));
 	taskLayout->addWidget(deno_edit, 3, 4);
-	
+
 	// next is the result widget
 	m_resultWidget = new ResultWidget(checkWidget, ratio());
 	m_resultWidget->setObjectName("m_resultWidget");
@@ -159,18 +160,18 @@ TaskView::TaskView(QWidget * parent,
 	m_checkButton->setText(i18n("&Check"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
 	m_checkButton->setToolTip(i18n("Click this button to check your result. The button will not work if you have not entered a result yet."));
-	m_checkButton->setFont(defaultFont);	
+	m_checkButton->setFont(defaultFont);
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
-	checkLayout->addWidget(m_checkButton, 1, 0);	
+	checkLayout->addWidget(m_checkButton, 1, 0);
 
 	// the right aligned button
 	m_skipButton = new QPushButton( checkWidget );
 	m_skipButton->setObjectName( "m_skipButton" );
 	m_skipButton->setText(i18n("&Skip"));
 	m_skipButton->setToolTip(i18n("Click this button to skip this question."));
-	m_skipButton->setFont(defaultFont);	
+	m_skipButton->setFont(defaultFont);
 	QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
-	checkLayout->addWidget(m_skipButton, 1, 1);	
+	checkLayout->addWidget(m_skipButton, 1, 1);
 
 	setLayout(baseGrid);
 	taskWidget->setLayout(taskLayout);
@@ -216,8 +217,8 @@ void TaskView::setAnswerMixed(bool value)
 }
 
 /** the parameters of task generation can be set with this function */
-void TaskView::setTaskParameters(bool padd_add, bool padd_div, 
-				bool padd_mult, bool padd_sub, 
+void TaskView::setTaskParameters(bool padd_add, bool padd_div,
+				bool padd_mult, bool padd_sub,
 				unsigned int pnr_ratios, unsigned int pmax_md)
 {
 	// at least one operation must be enabled
@@ -241,7 +242,7 @@ void TaskView::setTaskParameters(bool padd_add, bool padd_div,
 	m_addSub = padd_sub;
 	m_addAdd = padd_add;
 	m_addMult = padd_mult;
-	m_addDiv = padd_div;			
+	m_addDiv = padd_div;
 	max_md = pmax_md;
 
 	nr_ratios = pnr_ratios;
@@ -303,75 +304,86 @@ void TaskView::showResult()
 	numer_edit->setEnabled(false);
 	deno_edit->setEnabled(false);
 	integer_edit->setEnabled(false);
+	m_skipButton->setEnabled(false);
 
 	// an empty numerator field will be interpreted as 0
 	if (numer_edit->text().isEmpty() == true)
 		numer_edit->setText("0");
+	int int_numerator = numer_edit->text().toInt();
 
 	// an empty denominator field will be interpreted as 1
 	if (deno_edit->text().isEmpty() == true)
 		deno_edit->setText("1");
+	int int_denominator = deno_edit->text().toInt();
 
-	result = current_task.solve();
-
-	if (m_answerMixed == true) {
-
-		// an empty denominator field will be interpreted as 1
+	// get the par (integer) value in case mixed input is enabled
+	int int_mixed = 0;
+	if (m_answerMixed)
+	{
+		// an empty par (integer) field  will be interpreted as 0
 		if (integer_edit->text().isEmpty() == true)
 			integer_edit->setText("0");
+		int_mixed = integer_edit->text().toInt();
+	}
 
-		int int_mixed, int_numerator, int_denominator;
+	// get the solution for the current task
+	solution = current_task.solve();
 
-		int_numerator = qAbs(result.numerator());
-		int_denominator = qAbs(result.denominator());
-		int_mixed = 0;
+	// calculate the combined numerator and preserve prefix sign
+	int tmp_num = qAbs(int_mixed * int_denominator) + qAbs(int_numerator);
+	if (int_mixed < 0)
+		tmp_num *= -1;
+	if (int_numerator < 0)
+		tmp_num *= -1;
 
-		if (qAbs(result.numerator()) >= qAbs(result.denominator()))
-		{
-			int_mixed = int(result.numerator() / result.denominator());
-			int_numerator = int_numerator % int_denominator;
-		}
+	/* store the entered result to check it, but without reducing it */
+	entered_result.setNumerator(tmp_num, false);
+	entered_result.setDenominator(int_denominator, false);
 
-		if ( (deno_edit->text().toInt() != 0) && (int_numerator == numer_edit->text().toInt())
-			&& (int_denominator == deno_edit->text().toInt()) 
-			&& (int_mixed == integer_edit->text().toInt()) )
-		{
-			// emit the signal for correct
-			signalTaskSolvedCorrect();
-			m_resultWidget->setResult(result, 1);
-		} else 
-			wrong = true;	
-	} else {
+	/* check whether we expect the result in reduced form
+	 * if not, we reduce it for the user
+	 *
+	 * we also have to update some temp variables to be reduced
+	 *
+	 * we don't recalculate the mixed part, because this should not change
+	 * by reducing it */
+	if (!m_reducedForm)
+	{
+		entered_result.reduce();
+		int_numerator = entered_result.numerator() % entered_result.denominator();
+		int_denominator = entered_result.denominator();
 
-		/* store the entered result to check it, but without reducing */
-		entered_result.setNumerator(numer_edit->text().toInt(), false);
-		entered_result.setDenominator(deno_edit->text().toInt(), false);
+	}
 
-		if (!m_reducedForm)
-			entered_result.reduce();
+	/* compare entered result and solution ratio
+	 * if they are equal it still might be that the user didn't entered a mixed result */
+	if (! (entered_result == solution))
+		wrong = true;
 
-		// check the entered result; 0/1 == 0/5 -> true,
-		// but 0/1 == 0/0 -> false
-		// a 0 for denominator is never allowed (always counted as wrong)
-		//
-		// we have to get the 0 directly from the input field, because
-		// Ratio::setDenominator(0, false) will set the denominator to 1 to ensure
-		// the Ratio is valid
+	/* we do not allow entering a denominator of 0 (division by zero!) */
+	if (deno_edit->text().toInt() == 0)
+		wrong = true;
 
-		if ( (deno_edit->text().toInt() != 0) && ((entered_result == result) ||
-			  (result.numerator() == 0 && entered_result.numerator() == 0)) )
-		{
-			// emit the signal for correct
-			signalTaskSolvedCorrect();
-			m_resultWidget->setResult(result, 1);
-		} else 
+	/* now we have to check if the solution was entered as a mixed number if required
+	 *
+	 * we only have to do that in case the answer is not already marked as wrong
+	 *
+	 * fortunately, we don't have to care about the prefix sign, because that is already
+	 * handled above */
+	if (m_answerMixed == true && wrong == false)
+	{
+		int int_solution_mixed = qAbs(int(solution.numerator() / solution.denominator()));
+		int int_solution_numerator = qAbs(solution.numerator() % solution.denominator());
+
+		if (! (int_solution_mixed == qAbs(int_mixed) && int_solution_numerator == qAbs(int_numerator)) )
 			wrong = true;
 	}
 
+	// in case the user entered the wrong result, try to give some hints
 	if (wrong == true) {
 		// emit the signal for wrong
 		signalTaskSolvedWrong();
-		m_resultWidget->setResult(result, 0);
+		m_resultWidget->setResult(solution, 0);
 
 		// if the user entered a 0 for the denominator (division by 0) we have to
 		// get the 0 directly from the input field, because
@@ -383,12 +395,23 @@ void TaskView::showResult()
 			                         i18n("You entered 0 as the denominator. This means division by zero, which is not allowed. This question will be counted as not correctly solved."));
 		} else {
 			/* maybe the entered ratio was not reduced */
-			entered_result.reduce();
-			if (entered_result == result)
+			ratio tmp_result = ratio(entered_result);
+			tmp_result.reduce();
+			if ( (tmp_result == solution) && ! (tmp_result == entered_result) ) {
 				KMessageBox::information(this,
-				                         i18n("You entered the correct result, but not reduced.\nEnter your results as reduced, if the use of this form is forced in the options. This question will be counted as not correctly solved."));
+				                         i18n("You entered the correct result, but not reduced. This question will be counted as not correctly solved."));
+			} else if ( tmp_result == solution && tmp_result == entered_result) {
+				KMessageBox::information(this,
+				                         i18n("You entered the correct result, but not in the mixed number notation. This question will be counted as not correctly solved."));
+			}
 		}
-	} 
+	} else {
+		// emit the signal for correct
+		signalTaskSolvedCorrect();
+		m_resultWidget->setResult(solution, 1);
+
+	}
+
 	m_resultWidget->show();
 }
 
@@ -404,9 +427,9 @@ void TaskView::nextTask()
 	if ( m_answerMixed == true )
 		integer_edit->setEnabled(true);
 	m_skipButton->setEnabled(true);
-	
-	m_resultWidget->setResult( result, -1);
-	
+
+	m_resultWidget->setResult(solution, -1);
+
 	/* clear user input */
 	deno_edit->setText("");
 	numer_edit->setText("");
@@ -467,12 +490,12 @@ void TaskView::slotSkipButtonClicked()
 }
 
 /* ------ protected events ------ */
-void TaskView::showEvent ( QShowEvent * event ) {
+void TaskView::showEvent ( QShowEvent * ) {
 
 	// that the user can start typing without moving the focus
 	if ( m_answerMixed == true )
 		integer_edit->setFocus();
-	else 
+	else
 		numer_edit->setFocus();
 
 }
