@@ -75,14 +75,14 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	taskWidget->setObjectName("taskWidget");
 	checkWidget = new QWidget(this);
 	checkWidget->setObjectName("checkWidget");
-	
+
 	baseGrid = new QGridLayout(this);
 	baseGrid->setObjectName( "baseGrid" );
 	baseGrid->setColumnStretch(0,1);
 
 	baseGrid->addWidget(taskWidget, 0, 0);
 	baseGrid->addWidget(checkWidget, 0, 1);
-	
+
 	taskLayout = new QGridLayout(this);
 	taskLayout->setObjectName( "taskLayout" );
 	taskLayout->setRowStretch(0,1);
@@ -105,9 +105,9 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	numer_edit->setToolTip(i18n("Enter the numerator of your result"));
 	numer_edit->setFixedSize(85,42);
 	numer_edit->setAlignment(Qt::AlignHCenter);
-	numer_edit->setFont(defaultFont);	
+	numer_edit->setFont(defaultFont);
 	QObject::connect(numer_edit, SIGNAL(returnPressed(const QString &)), this,
-		SLOT(numeratorReturnPressed(const QString &)));	
+		SLOT(numeratorReturnPressed(const QString &)));
 	taskLayout->addWidget(numer_edit, 1, 2);
 
 	/* add a line between the edit boxes */
@@ -123,9 +123,9 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	deno_edit->setToolTip(i18n("Enter the denominator of your result"));
 	deno_edit->setFixedSize(85,42);
 	deno_edit->setAlignment(Qt::AlignHCenter);
-	deno_edit->setFont(defaultFont);	
+	deno_edit->setFont(defaultFont);
 	QObject::connect(deno_edit, SIGNAL(returnPressed(const QString &)), this,
-		SLOT(denominatorReturnPressed(const QString &)));	
+		SLOT(denominatorReturnPressed(const QString &)));
 	taskLayout->addWidget(deno_edit, 3, 2);
 
 	// next is the result widget
@@ -141,21 +141,18 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	m_checkButton->setText(i18n("&Check"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
 	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
-	m_checkButton->setFont(defaultFont);		
+	m_checkButton->setFont(defaultFont);
 		QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
-	checkLayout->addWidget(m_checkButton, 1, 0);	
-	
+	checkLayout->addWidget(m_checkButton, 1, 0);
+
 	// the right aligned button
 	m_skipButton = new QPushButton( checkWidget );
 	m_skipButton->setObjectName( "m_skipButton" );
 	m_skipButton->setText(i18n("&Skip"));
 	m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
-	m_skipButton->setFont(defaultFont);		
+	m_skipButton->setFont(defaultFont);
 	QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
-	checkLayout->addWidget(m_skipButton, 1, 1);	
-
-	m_checkButton->setFocusPolicy( Qt::NoFocus );
-	m_skipButton->setFocusPolicy( Qt::NoFocus );
+	checkLayout->addWidget(m_skipButton, 1, 1);
 
 	setLayout(baseGrid);
 	taskWidget->setLayout(taskLayout);
@@ -333,7 +330,7 @@ void ExerciseConvert::showResult()
 
 	numer_edit->setEnabled(false);
 	deno_edit->setEnabled(false);
-	m_skipButton->setEnabled(false);	
+	m_skipButton->setEnabled(false);
 
 	// an empty numerator field will be interpreted as 0
 	if (numer_edit->text().isEmpty() == true)
@@ -397,7 +394,7 @@ void ExerciseConvert::nextTask()
 
 	numer_edit->setEnabled(true);
 	deno_edit->setEnabled(true);
-	m_skipButton->setEnabled(true);		
+	m_skipButton->setEnabled(true);
 
 	m_resultWidget->setResult( m_result, -1);
 
