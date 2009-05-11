@@ -1,11 +1,18 @@
-what is left to do
+Instructions
+============
+
+* Right after task line, put your kde login between parenthesis.
+
+
+What is left to do
 ==================
 
-	* maybe split class task in representation, calculate and generation
+* Maybe split class task in representation, calculate and generation
 
-feature request
+* Become kpercentage tasks not hard-coded (porangaba)
+
+
+Feature Request
 ===============
 
-- a visual representation of fractions in circles, rectangeles, ... for
-beginners
-- the calculation with 'mixed numbers' like  2 1/3 + 5 1/7 =
+* the calculation with 'mixed numbers' like  2 1/3 + 5 1/7 = (?)
