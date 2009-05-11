@@ -103,7 +103,7 @@ void RationalWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 			tmp_painting = false;
 
 			// paint the period line above the numbers
-			paint.fillRect(x_startPos, fontHeight - 3, x_pos - x_startPos, 1, m_colorNumber);
+			paint.fillRect(x_startPos, fontHeight / 2, x_pos - x_startPos, 1, m_colorNumber);
 		}
 	}
 
