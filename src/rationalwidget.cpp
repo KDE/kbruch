@@ -22,6 +22,10 @@
 #include "rationalwidget.h"
 #include "rationalwidget.moc"
 
+/* these includes are needed for KDE support */
+#include <kglobal.h>
+#include <klocale.h>
+
 /* these includes are needed for Qt support */
 #include <qpainter.h>
 #include <qstring.h>
@@ -46,7 +50,7 @@ RationalWidget::~RationalWidget()
 
 void RationalWidget::setRational(const QString &pnumber, const int pperiodStart, const int pperiodLength)
 {
-	m_number = pnumber;
+	m_number = KGlobal::locale()->formatNumber(pnumber, false, -1);
 	m_periodStart = pperiodStart;
 	m_periodLength = pperiodLength;
 
