@@ -154,9 +154,6 @@ ExerciseConvert::ExerciseConvert(QWidget * parent):
 	QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
 	checkLayout->addWidget(m_skipButton, 1, 1);	
 
-	m_checkButton->setFocusPolicy( Qt::NoFocus );
-	m_skipButton->setFocusPolicy( Qt::NoFocus );
-
 	setLayout(baseGrid);
 	taskWidget->setLayout(taskLayout);
   	checkWidget->setLayout(checkLayout);
