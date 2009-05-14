@@ -34,7 +34,7 @@
 #include <qpushbutton.h>
  #include <QToolButton>
  #include <qpainter.h>
- 
+
 //Added by qt3to4:
 #include <QGridLayout>
 #include <QHBoxLayout>
@@ -75,14 +75,14 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	taskWidget->setObjectName("taskWidget");
 	checkWidget = new QWidget(this);
 	checkWidget->setObjectName("checkWidget");
-	
+
 	baseGrid = new QGridLayout(this);
 	baseGrid->setObjectName( "baseGrid" );
 	baseGrid->setColumnStretch(0,1);
 
 	baseGrid->addWidget(taskWidget, 0, 0);
 	baseGrid->addWidget(checkWidget, 0, 1);
-	
+
 	taskLayout = new QGridLayout(this);
 	taskLayout->setObjectName( "taskLayout" );
 	taskLayout->setRowStretch(0,1);
@@ -95,7 +95,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 
 	m_taskLabel = new QLabel( this );
 	m_taskLabel->setObjectName( "taskLabel" );
-	m_taskLabel->setFont(defaultFont);	
+	m_taskLabel->setFont(defaultFont);
 	taskLayout->addWidget( m_taskLabel, 1, 1 );
 
 	defaultFont.setBold( true );
@@ -114,20 +114,20 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	pal.setColor( m_factorsEnteredEdit->foregroundRole(), QColor(0, 0, 0) );
 	m_factorsEnteredEdit->setPalette(pal);
 	m_factorsEnteredEdit->setFont(defaultFont);
-	m_factorsEnteredEdit->setFixedSize(320,35);	
+	m_factorsEnteredEdit->setFixedSize(320,35);
 	taskLayout->addWidget( m_factorsEnteredEdit, 1, 3, 1, 5 );
 
 	defaultFont.setPointSize(10);
 
 	m_factor2Button = new QPushButton( this );
 	m_factor2Button->setObjectName( "factor2Button" );
-	m_factor2Button->setFixedSize(50,35);	
+	m_factor2Button->setFixedSize(50,35);
 	m_factor2Button->setFont(defaultFont);
 	taskLayout->addWidget( m_factor2Button, 4, 3 );
-	
+
 	m_factor3Button = new QPushButton( this );
 	m_factor3Button->setObjectName( "factor3Button" );
-	m_factor3Button->setFixedSize(50,35);		
+	m_factor3Button->setFixedSize(50,35);
 	m_factor3Button->setFont(defaultFont);
 	taskLayout->addWidget( m_factor3Button, 4, 4 );
 
@@ -148,7 +148,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_factor11Button->setFixedSize(50,35);
 	m_factor11Button->setFont(defaultFont);
 	taskLayout->addWidget( m_factor11Button, 5, 3 );
-	
+
 	m_factor13Button = new QPushButton( this );
 	m_factor13Button->setObjectName( "factor13Button" );
 	m_factor13Button->setFixedSize(50,35);
@@ -180,9 +180,9 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_skipButton->setObjectName( "m_skipButton" );
 	m_skipButton->setText(i18n("&Skip"));
 	m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
-	m_skipButton->setFont(defaultFont);		
+	m_skipButton->setFont(defaultFont);
 	QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
-	checkLayout->addWidget(m_skipButton, 1, 1);	
+	checkLayout->addWidget(m_skipButton, 1, 1);
 
 	// the check task button
 	m_checkButton = new QPushButton( this );
@@ -190,9 +190,9 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_checkButton->setText( i18n( "&Check" ) );
 	m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
-	m_checkButton->setFont(defaultFont);		
-	checkLayout->addWidget(m_checkButton, 1, 0);			
+	m_checkButton->setFont(defaultFont);
 	m_checkButton->setDefault(true); // is the default button of the dialog
+	checkLayout->addWidget(m_checkButton, 1, 0);
 
 	// next is the result widget
 	m_resultWidget = new ResultWidget( this,  m_factorsResult );
@@ -246,7 +246,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_removeLastFactorButton->setEnabled(false);
 	QObject::connect(m_removeLastFactorButton, SIGNAL(clicked()), this, SLOT(slotRemoveLastFactorButtonClicked()));
 	m_removeLastFactorButton->setToolTip(i18n("Removes the last entered prime factor."));
-	
+
 	m_factor2Button->setFocusPolicy( Qt::NoFocus );
 	m_factor3Button->setFocusPolicy( Qt::NoFocus );
 	m_factor5Button->setFocusPolicy( Qt::NoFocus );
@@ -254,12 +254,8 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent):
 	m_factor11Button->setFocusPolicy( Qt::NoFocus );
 	m_factor13Button->setFocusPolicy( Qt::NoFocus );
 	m_factor17Button->setFocusPolicy( Qt::NoFocus );
-	m_factor19Button->setFocusPolicy( Qt::NoFocus );	
-	m_removeLastFactorButton->setFocusPolicy( Qt::NoFocus );	
-	m_skipButton->setFocusPolicy( Qt::NoFocus );	
-	m_checkButton->setFocusPolicy( Qt::NoFocus );	
-
-	m_checkButton->setDefault( true );
+	m_factor19Button->setFocusPolicy( Qt::NoFocus );
+	m_removeLastFactorButton->setFocusPolicy( Qt::NoFocus );
 
 	setLayout(baseGrid);
 	taskWidget->setLayout(taskLayout);
@@ -377,7 +373,7 @@ void ExerciseFactorize::showResult()
 	m_factor13Button->setEnabled(false);
 	m_factor17Button->setEnabled(false);
 	m_factor19Button->setEnabled(false);
-	m_skipButton->setEnabled(false);		
+	m_skipButton->setEnabled(false);
 
 	// disable factor removal button as well
 	m_removeLastFactorButton->setEnabled(false);
@@ -431,7 +427,7 @@ void ExerciseFactorize::nextTask()
 	m_factor13Button->setEnabled(true);
 	m_factor17Button->setEnabled(true);
 	m_factor19Button->setEnabled(true);
-	m_skipButton->setEnabled(true);	
+	m_skipButton->setEnabled(true);
 
 	// disable the factor removal button, there are no factors to be removed yet
 	m_removeLastFactorButton->setEnabled(false);
@@ -494,7 +490,7 @@ void ExerciseFactorize::updateEnteredEdit()
 		{
 			str_output = str_tmp;
 		} else {
-			str_output += " * " + str_tmp;
+			str_output += " x " + str_tmp;
 		}
 	}
 
