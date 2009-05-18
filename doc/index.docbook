@@ -333,7 +333,7 @@ tasks:</para>
 <variablelist>
 <varlistentry>
 <term><guilabel>Mixed number</guilabel></term>
-<listitem><para>Set if the fractions will appear in mixed number or not in the question expression ( mixed number example: 1 5/4 = 9/4 ).</para></listitem>
+<listitem><para>Set if the fractions will appear in mixed number or not in the question expression ( mixed number example: 1 4/5 = 9/5 ).</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -359,7 +359,7 @@ tasks it sets. From a minimum of 10 to a maximum of 50.</para></listitem>
 <variablelist>
 <varlistentry>
 <term><guilabel>Mixed number</guilabel></term>
-<listitem><para>Set if the fractions will appear in mixed number or not in the answer ( mixed number example: 1 5/4 = 9/4 ).</para></listitem>
+<listitem><para>Set if the fractions will appear in mixed number or not in the answer ( mixed number example: 1 4/5 = 9/5 ).</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -378,7 +378,7 @@ tasks it sets. From a minimum of 10 to a maximum of 50.</para></listitem>
 <variablelist>
 <varlistentry>
 <term><guilabel>Mixed number</guilabel></term>
-<listitem><para>Set if the fractions will appear in mixed number or not in the solution ( mixed number example: 1 5/4 = 9/4 ).</para></listitem>
+<listitem><para>Set if the fractions will appear in mixed number or not in the solution ( mixed number example: 1 4/5 = 9/5 ).</para></listitem>
 </varlistentry>
 
 </variablelist>
