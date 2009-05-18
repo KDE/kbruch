@@ -333,7 +333,7 @@ tasks:</para>
 <variablelist>
 <varlistentry>
 <term><guilabel>Mixed number</guilabel></term>
-<listitem><para>Set if the fractions will appear in mixed number or not in the question expression ( mixed number example: 1 4/5 = 9/5 ).</para></listitem>
+<listitem><para>Set if the fractions will appear as mixed numbers or not in the question expression ( mixed number example: 1 4/5 = 9/5 ).</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -359,7 +359,7 @@ tasks it sets. From a minimum of 10 to a maximum of 50.</para></listitem>
 <variablelist>
 <varlistentry>
 <term><guilabel>Mixed number</guilabel></term>
-<listitem><para>Set if the fractions will appear in mixed number or not in the answer ( mixed number example: 1 4/5 = 9/5 ).</para></listitem>
+<listitem><para>Set if the fractions will appear as mixed numbers or not in the answer ( mixed number example: 1 4/5 = 9/5 ).</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -378,7 +378,7 @@ tasks it sets. From a minimum of 10 to a maximum of 50.</para></listitem>
 <variablelist>
 <varlistentry>
 <term><guilabel>Mixed number</guilabel></term>
-<listitem><para>Set if the fractions will appear in mixed number or not in the solution ( mixed number example: 1 4/5 = 9/5 ).</para></listitem>
+<listitem><para>Set if the fractions will appear as mixed numbers or not in the solution ( mixed number example: 1 4/5 = 9/5 ).</para></listitem>
 </varlistentry>
 
 </variablelist>
@@ -512,7 +512,7 @@ answer was wrong. You will get to the next task by clicking the <guibutton>Next<
 button.
 </para>
 
-<para>In this exercise only the option <guilabel>Mixed number</guilabel> is enabled. If checked the fractions will appear in mixed number.</para>
+<para>In this exercise only the option <guilabel>Mixed number</guilabel> is enabled. If checked the fractions will appear as mixed numbers.</para>
 </sect1>
 
 <sect1 id="exer_convert">
