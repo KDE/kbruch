@@ -34,7 +34,6 @@
 #include <QGridLayout>
 #include <QHBoxLayout>
 #include <QColor>
-#include <QSpinBox>
 #include <QPushButton>
 #include <QLabel>
 
@@ -49,7 +48,7 @@ class AppMenuWidget;
 class QColor;
 class QLabel;
 class FractionPainter;
-class QSpinBox;
+class KIntSpinBox;
 class QPushButton;
 class QLabel;
 class KTextEdit;
@@ -86,8 +85,8 @@ private:
 
 	QGridLayout * layout1;
 	QGridLayout * gridLayout;
-	QSpinBox * leftSpinBox;
-	QSpinBox * rightSpinBox;
+	KIntSpinBox * leftSpinBox;
+	KIntSpinBox * rightSpinBox;
 	QPushButton * resetButton;
 	KTextEdit * textMsg;
 	QLabel * leftInfoLabel;

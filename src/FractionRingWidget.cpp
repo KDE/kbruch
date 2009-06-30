@@ -21,13 +21,14 @@
 #include "FractionRingWidget.moc"
 
 /* these includes are needed for KDE support */
-#include <klocale.h>
-#include <KTextEdit>
-#include <kactioncollection.h>
-#include <kstandardaction.h>
-#include <kconfigdialog.h>
 #include <KAction>
+#include <kactioncollection.h>
+#include <kconfigdialog.h>
+#include <klocale.h>
+#include <KNumInput>
+#include <kstandardaction.h>
 #include <KStandardShortcut>
+#include <KTextEdit>
 #include <KToolBar>
 
 /* these includes are needed for Qt support */
@@ -128,14 +129,14 @@ FractionRingWidget::FractionRingWidget()
 	gridLayout->addWidget(rightInfoLabel, 1, 1, Qt::AlignCenter);
 
 	// SpinBox -----------------------------------------
-	leftSpinBox = new QSpinBox(this);
+	leftSpinBox = new KIntSpinBox(this);
 	leftSpinBox->setObjectName( "leftSpinBox" );
 	leftSpinBox->setRange(1, 6);
 	leftSpinBox->setMaximumWidth(50);
 	leftSpinBox->setMinimumWidth(50);
 	gridLayout->addWidget(leftSpinBox, 2, 0, Qt::AlignTop | Qt::AlignHCenter);
 
-	rightSpinBox = new QSpinBox(this);
+	rightSpinBox = new KIntSpinBox(this);
 	rightSpinBox->setObjectName( "rightSpinBox" );
 	rightSpinBox->setRange(1, 6);
 	rightSpinBox->setMaximumWidth(50);
