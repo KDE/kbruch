@@ -44,21 +44,11 @@
 
 #include "ratio.h"
 #include "FractionPainter.h"
-#include "ui_taskcolorsbase.h"
 #include "ui_taskfontsbase.h"
 #include "settingsclass.h"
 
 #define MARG_LEFT 10
 #define MARG_TOP 70
-
-class TaskColors : public QWidget, public Ui::TaskColorsBase
-{
-	public:
-		TaskColors( QWidget * parent ) : QWidget( parent )
-		{
-			setupUi(this);
-		}
-};
 
 /* constructor */
 FractionRingWidget::FractionRingWidget()

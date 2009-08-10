@@ -52,22 +52,13 @@
 #include "exercisefactorize.h"
 #include "exercisepercentage.h"
 #include "taskview.h"
-#include "ui_taskcolorsbase.h"
 #include "ui_taskfontsbase.h"
 #include "statisticsview.h"
 #include "AppMenuWidget.h"
+#include "TaskColors.h"
 
 #include "settingsclass.h"
 #include <kpageview.h>
-
-class TaskColors : public QWidget, public Ui::TaskColorsBase
-{
-	public:
-		TaskColors( QWidget * parent ) : QWidget( parent )
-		{
-			setupUi(this);
-		}
-};
 
 class TaskFonts : public QWidget, public Ui::TaskFontsBase
 {
