@@ -46,6 +46,7 @@
 #include "FractionPainter.h"
 #include "ui_taskfontsbase.h"
 #include "settingsclass.h"
+#include "TaskColors.h"
 
 #define MARG_LEFT 10
 #define MARG_TOP 70
