@@ -42,8 +42,8 @@ ResultWidget::ResultWidget(QWidget * parent, const uintList para_factors) :
 	m_ExerciseView = 0;
 }
 
-ResultWidget::ResultWidget(QWidget * parent = 0,
-			const ratio para_result = ratio()) :
+ResultWidget::ResultWidget(QWidget * parent,
+			const ratio para_result) :
 			FractionBaseWidget(parent), m_result(para_result)
 {
 #ifdef DEBUG

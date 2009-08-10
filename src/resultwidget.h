@@ -50,7 +50,7 @@ public:
 	/** constructors */
 	ResultWidget(QWidget * parent, const ratio para_result);
 	ResultWidget(QWidget * parent, const uintList para_factors);
-	ResultWidget(QWidget * parent);	
+	ResultWidget(QWidget * parent = 0);	
 
 	/** destructor */
 	~ResultWidget();
