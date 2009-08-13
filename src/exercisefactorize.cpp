@@ -32,15 +32,11 @@
 #include <qlabel.h>
 #include <qlayout.h>
 #include <qpushbutton.h>
- #include <QToolButton>
- #include <qpainter.h>
+  #include <qpainter.h>
 
 //Added by qt3to4:
 #include <QGridLayout>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
 #include <QKeyEvent>
-#include <QPaintEvent>
 
 /* standard C++ library includes */
 #include <stdlib.h>

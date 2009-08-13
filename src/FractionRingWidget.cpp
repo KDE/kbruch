@@ -29,7 +29,6 @@
 #include <kstandardaction.h>
 #include <KStandardShortcut>
 #include <KTextEdit>
-#include <KToolBar>
 
 /* these includes are needed for Qt support */
 #include <qapplication.h>

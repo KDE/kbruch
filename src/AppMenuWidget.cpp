@@ -28,9 +28,7 @@
 #include <kactioncollection.h>
 #include <kstandardaction.h>
 #include <kconfigdialog.h>
-#include <KAction>
 #include <KStandardShortcut>
-#include <KToolBar>
 
 /* these includes are needed for Qt support */
 #include <qapplication.h>

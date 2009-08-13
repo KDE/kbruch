@@ -26,11 +26,9 @@
 /* these includes are needed for Qt support */
 #include <qapplication.h>
 #include <QProgressBar>
-#include <QVBoxLayout>
 #include <QLabel>
 
 //Added by qt3to4:
-#include <QPainter>
 
 #include "settingsclass.h"
 
