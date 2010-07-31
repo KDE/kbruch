@@ -57,7 +57,7 @@ ratio::~ratio()
 }
 
 /* displays the ratio on stdout; just for debugging */
-QTextStream & ratio::display(QTextStream & str) const
+TQTextStream & ratio::display(TQTextStream & str) const
 {
 	int tmp_width = str.width();
 	str << qSetW(5) << " ";
@@ -362,7 +362,7 @@ void ratio::change_sign()
 /* ------ some prototyps of non class functions ------ */
 
 // it is possible to stram ratio_object
-QTextStream & operator<<(QTextStream & str, const ratio & pratio)
+TQTextStream & operator<<(TQTextStream & str, const ratio & pratio)
 {
 	return pratio.display(str);
 }

@@ -25,7 +25,7 @@
 #include "fractionbasewidget.h"
 #include "ratio.h"
 
-#include <qwidget.h>
+#include <tqwidget.h>
 
 /*! class to paint the ratio
  *
@@ -36,7 +36,7 @@ class RatioWidget : public FractionBaseWidget
 
 public:
 	/** constructor */
-	RatioWidget(QWidget * parent, const char * name, const ratio para_ratio);
+	RatioWidget(TQWidget * parent, const char * name, const ratio para_ratio);
 
 	/** destructor */
 	~RatioWidget();
@@ -50,7 +50,7 @@ private:
 	ratio m_ratio;
 
 	/** overrideing the paint event of FractionBaseWidget */
-	void paintEvent(QPaintEvent*);
+	void paintEvent(TQPaintEvent*);
 };
 
 #endif

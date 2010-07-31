@@ -37,18 +37,18 @@ class RationalWidget : public FractionBaseWidget
 
 public:
 	/** constructor */
-	RationalWidget(QWidget * parent, const char * name, const QString pnumber, const uint pperiodStart = 1, const uint pperiodLength = 0);
+	RationalWidget(TQWidget * parent, const char * name, const TQString pnumber, const uint pperiodStart = 1, const uint pperiodLength = 0);
 
 	/** destructor */
 	~RationalWidget();
 
 	/** set the task to be displayed */
-	void setRational(const QString pnumber, const uint pperiodStart = 1, const uint pperiodLength = 0);
+	void setRational(const TQString pnumber, const uint pperiodStart = 1, const uint pperiodLength = 0);
 
 private:
 	
 	/** the rational number to be displayed */
-	QString m_number;
+	TQString m_number;
 
 	/** starting of the period */
 	uint m_periodStart;
@@ -57,7 +57,7 @@ private:
 	uint m_periodLength;
 
 	/** overrideing the paint event of FractionBaseWidget */
-	void paintEvent(QPaintEvent*);
+	void paintEvent(TQPaintEvent*);
 };
 
 #endif

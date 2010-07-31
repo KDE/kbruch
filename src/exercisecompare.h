@@ -34,9 +34,9 @@ class QPushButton;
 class QVBoxLayout;
 
 
-#include <qwidget.h>
+#include <tqwidget.h>
 
-/*! Constructs a QWidget, which shows the task to the user.
+/*! Constructs a TQWidget, which shows the task to the user.
  *  The class also provides input fields, so that the user can enter the result.
  *  It also controls the interaction, so that the entered result gets checked
  *  and a new task can be generated.
@@ -48,7 +48,7 @@ class ExerciseCompare : public ExerciseBase
 
 public:
 	/** constructor */
-	ExerciseCompare(QWidget * parent = 0, const char * name = 0);
+	ExerciseCompare(TQWidget * parent = 0, const char * name = 0);
 
 	/** destructor */
 	~ExerciseCompare();
@@ -72,13 +72,13 @@ private:
 
 	RatioWidget* m_firstRatioWidget;
 	RatioWidget* m_secondRatioWidget;
-	QPushButton* m_checkButton;
-	QPushButton* m_signButton;
-	QLabel* result_label;
+	TQPushButton* m_checkButton;
+	TQPushButton* m_signButton;
+	TQLabel* result_label;
 
-	QGridLayout* baseGrid;
-	QWidget* baseWidget;
-	QVBoxLayout* realLayout;
+	TQGridLayout* baseGrid;
+	TQWidget* baseWidget;
+	TQVBoxLayout* realLayout;
 
 	ratio m_firstRatio;
 	ratio m_secondRatio;

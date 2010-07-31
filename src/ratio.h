@@ -18,7 +18,7 @@
 #ifndef RATIO_H
 #define RATIO_H
 
-#include <qtextstream.h>
+#include <tqtextstream.h>
 
 /** Represents a ratio
  *  This class represents 1 ratio. There are several functions provided to
@@ -38,8 +38,8 @@ public:
 	/** destructor */
 	~ratio();
 
-	/** returns the ratio as QTextStream object */
-	QTextStream & display(QTextStream & str) const;
+	/** returns the ratio as TQTextStream object */
+	TQTextStream & display(TQTextStream & str) const;
 
 	/** returns the numerator */
 	int numerator() const;
@@ -97,6 +97,6 @@ private:
 /* ------ some prototyps of non class functions ------ */
 
 /** it is possible to code: cout << ratio_object << endl; */
-QTextStream & operator<<(QTextStream & str, const ratio & pratio);
+TQTextStream & operator<<(TQTextStream & str, const ratio & pratio);
 
 #endif

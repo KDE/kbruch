@@ -25,12 +25,12 @@
 #include <knumvalidator.h>
 
 /* these includes are needed for Qt support */
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qlineedit.h>
-#include <qpushbutton.h>
-#include <qtooltip.h>
-#include <qwhatsthis.h>
+#include <tqlabel.h>
+#include <tqlayout.h>
+#include <tqlineedit.h>
+#include <tqpushbutton.h>
+#include <tqtooltip.h>
+#include <tqwhatsthis.h>
 
 /* standard C++ library includes */
 #include <stdlib.h>
@@ -44,27 +44,27 @@
 /* ----- public member functions ----- */
 
 /* constructor */
-ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
+ExerciseFactorize::ExerciseFactorize(TQWidget * parent, const char * name):
 		ExerciseBase(parent, name)
 {
-	QPalette pal;
-	QColorGroup cg;
+	TQPalette pal;
+	TQColorGroup cg;
 #ifdef DEBUG
 	kdDebug() << "constructor ExerciseFactorize()" << endl;
 #endif
 
 	/* create a new task */
-	QApplication::setOverrideCursor(waitCursor); /* show the sand clock */
+	TQApplication::setOverrideCursor(waitCursor); /* show the sand clock */
 	createTask();
-	QApplication::restoreOverrideCursor(); /* show the normal cursor */
+	TQApplication::restoreOverrideCursor(); /* show the normal cursor */
 
 	// the next thing to do on a button click would be to check the entered
 	// result
 	m_currentState = _CHECK_TASK;
 
-	Form1Layout = new QVBoxLayout( this, 11, 6, "Form1Layout"); 
+	Form1Layout = new TQVBoxLayout( this, 11, 6, "Form1Layout"); 
 
-	layout9 = new QVBoxLayout( 0, 0, 6, "layout9"); 
+	layout9 = new TQVBoxLayout( 0, 0, 6, "layout9"); 
 	
 	// The following method fix the problem in
 	// bug  #116831, reverse order in RTL desktops.
@@ -72,10 +72,10 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	layout4 = createFactorsLayout();
 	layout9->addLayout(layout4);
 	
-	spacer2 = new QSpacerItem( 20, 21, QSizePolicy::Minimum, QSizePolicy::Expanding );
+	spacer2 = new TQSpacerItem( 20, 21, TQSizePolicy::Minimum, TQSizePolicy::Expanding );
 	layout9->addItem( spacer2 );
 	
-	layout2 = new QVBoxLayout( 0, 0, 6, "layout2"); 
+	layout2 = new TQVBoxLayout( 0, 0, 6, "layout2"); 
 	
 	// The following method fix the problem in
 	// bug  #116831, reverse order in RTL desktops.
@@ -83,24 +83,24 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	layout1 = createButtonsLayout();
 	layout2->addLayout(layout1);
 
-	m_removeLastFactorButton = new QPushButton( this, "m_removeLastFactorButton" );
+	m_removeLastFactorButton = new TQPushButton( this, "m_removeLastFactorButton" );
 	layout2->addWidget( m_removeLastFactorButton );
 	layout9->addLayout( layout2 );
 
-	spacer4 = new QSpacerItem( 20, 21, QSizePolicy::Minimum, QSizePolicy::Expanding );
+	spacer4 = new TQSpacerItem( 20, 21, TQSizePolicy::Minimum, TQSizePolicy::Expanding );
 	layout9->addItem( spacer4 );
 	
-	layout7 = new QHBoxLayout( 0, 0, 6, "layout7"); 
-	spacer3 = new QSpacerItem( 361, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
+	layout7 = new TQHBoxLayout( 0, 0, 6, "layout7"); 
+	spacer3 = new TQSpacerItem( 361, 20, TQSizePolicy::Expanding, TQSizePolicy::Minimum );
 	layout7->addItem( spacer3 );
 	
-	m_checkButton = new QPushButton( this, "m_checkButton" );
+	m_checkButton = new TQPushButton( this, "m_checkButton" );
 	layout7->addWidget( m_checkButton );
 	layout9->addLayout( layout7 );
 	Form1Layout->addLayout( layout9 );
 
 	// the current task
-	QString tmp_str;
+	TQString tmp_str;
 	tmp_str.setNum(m_taskNumber);
 	m_taskLabel->setText(tmp_str);
 
@@ -126,35 +126,35 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	m_factor13Button->setText( i18n( "13" ) );
 	m_factor17Button->setText( i18n( "17" ) );
 	m_factor19Button->setText( i18n( "19" ) );
-	QObject::connect(m_factor2Button, SIGNAL(clicked()), this, SLOT(slotFactor2ButtonClicked()));
-	QObject::connect(m_factor3Button, SIGNAL(clicked()), this, SLOT(slotFactor3ButtonClicked()));
-	QObject::connect(m_factor5Button, SIGNAL(clicked()), this, SLOT(slotFactor5ButtonClicked()));
-	QObject::connect(m_factor7Button, SIGNAL(clicked()), this, SLOT(slotFactor7ButtonClicked()));
-	QObject::connect(m_factor11Button, SIGNAL(clicked()), this, SLOT(slotFactor11ButtonClicked()));
-	QObject::connect(m_factor13Button, SIGNAL(clicked()), this, SLOT(slotFactor13ButtonClicked()));
-	QObject::connect(m_factor17Button, SIGNAL(clicked()), this, SLOT(slotFactor17ButtonClicked()));
-	QObject::connect(m_factor19Button, SIGNAL(clicked()), this, SLOT(slotFactor19ButtonClicked()));
+	TQObject::connect(m_factor2Button, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotFactor2ButtonClicked()));
+	TQObject::connect(m_factor3Button, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotFactor3ButtonClicked()));
+	TQObject::connect(m_factor5Button, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotFactor5ButtonClicked()));
+	TQObject::connect(m_factor7Button, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotFactor7ButtonClicked()));
+	TQObject::connect(m_factor11Button, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotFactor11ButtonClicked()));
+	TQObject::connect(m_factor13Button, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotFactor13ButtonClicked()));
+	TQObject::connect(m_factor17Button, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotFactor17ButtonClicked()));
+	TQObject::connect(m_factor19Button, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotFactor19ButtonClicked()));
 
 	// add tooltips to the factor buttons
-	QToolTip::add(m_factor2Button, i18n("Add prime factor 2."));
-	QToolTip::add(m_factor3Button, i18n("Add prime factor 3."));
-	QToolTip::add(m_factor5Button, i18n("Add prime factor 5."));
-	QToolTip::add(m_factor7Button, i18n("Add prime factor 7."));
-	QToolTip::add(m_factor11Button, i18n("Add prime factor 11."));
-	QToolTip::add(m_factor13Button, i18n("Add prime factor 13."));
-	QToolTip::add(m_factor17Button, i18n("Add prime factor 17."));
-	QToolTip::add(m_factor19Button, i18n("Add prime factor 19."));
+	TQToolTip::add(m_factor2Button, i18n("Add prime factor 2."));
+	TQToolTip::add(m_factor3Button, i18n("Add prime factor 3."));
+	TQToolTip::add(m_factor5Button, i18n("Add prime factor 5."));
+	TQToolTip::add(m_factor7Button, i18n("Add prime factor 7."));
+	TQToolTip::add(m_factor11Button, i18n("Add prime factor 11."));
+	TQToolTip::add(m_factor13Button, i18n("Add prime factor 13."));
+	TQToolTip::add(m_factor17Button, i18n("Add prime factor 17."));
+	TQToolTip::add(m_factor19Button, i18n("Add prime factor 19."));
 
 	// the remove last factor button
 	m_removeLastFactorButton->setText( i18n( "&Remove Last Factor" ) );
 	m_removeLastFactorButton->setEnabled(false);
-	QObject::connect(m_removeLastFactorButton, SIGNAL(clicked()), this, SLOT(slotRemoveLastFactorButtonClicked()));
-	QToolTip::add(m_removeLastFactorButton, i18n("Removes the last entered prime factor."));
+	TQObject::connect(m_removeLastFactorButton, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotRemoveLastFactorButtonClicked()));
+	TQToolTip::add(m_removeLastFactorButton, i18n("Removes the last entered prime factor."));
 
 	// the check task button
 	m_checkButton->setText( i18n( "&Check Task" ) );
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
-	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
+	TQToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+	TQObject::connect(m_checkButton, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotCheckButtonClicked()));
 	m_checkButton->setDefault(true); // is the default button of the dialog
 
 	// that the user can start choosing the prime factors
@@ -170,8 +170,8 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent, const char * name):
 	setTabOrder(m_factor19Button, m_removeLastFactorButton);
 
 	// add tooltip and qwhatsthis help to the widget
-	QToolTip::add(this, i18n("In this exercise you have to factorize a given number."));
-	QWhatsThis::add(this, i18n("In this exercise you have to factorize a given number. You have to enter all prime factors of the number. You can add a prime factor by clicking on the corresponding button. The chosen prime factors will be shown in the input field. Do not forget to enter all prime factors, even when a prime factor repeats several times!"));
+	TQToolTip::add(this, i18n("In this exercise you have to factorize a given number."));
+	TQWhatsThis::add(this, i18n("In this exercise you have to factorize a given number. You have to enter all prime factors of the number. You can add a prime factor by clicking on the corresponding button. The chosen prime factors will be shown in the input field. Do not forget to enter all prime factors, even when a prime factor repeats several times!"));
 }
 
 /* destructor */
@@ -220,7 +220,7 @@ void ExerciseFactorize::update()
 	m_factorsWidget->updateAndRepaint();
 
 	// update for itself
-	((QWidget *) this)->update();
+	((TQWidget *) this)->update();
 }
 
 
@@ -234,34 +234,34 @@ void ExerciseFactorize::update()
 
 /** Create the layout that hold the exercise widgets
  */
-QHBoxLayout* ExerciseFactorize::createFactorsLayout()
+TQHBoxLayout* ExerciseFactorize::createFactorsLayout()
 {
   // first create all widgets
-  QHBoxLayout* layout = new QHBoxLayout( 0, 0, 6, "layout4"); 
+  TQHBoxLayout* layout = new TQHBoxLayout( 0, 0, 6, "layout4"); 
   
-  m_taskLabel = new QLabel( this, "m_taskLabel" );
+  m_taskLabel = new TQLabel( this, "m_taskLabel" );
 
-  m_equalSignLabel = new QLabel( this, "m_equalSignLabel" );
+  m_equalSignLabel = new TQLabel( this, "m_equalSignLabel" );
 
-  m_factorsEnteredEdit = new QLineEdit( this, "m_factorsEnteredEdit" );
+  m_factorsEnteredEdit = new TQLineEdit( this, "m_factorsEnteredEdit" );
   m_factorsEnteredEdit->setReadOnly(true);
   m_factorsEnteredEdit->setEnabled(false);
-  m_factorsEnteredEdit->setPaletteForegroundColor(QColor(0, 0, 0));
+  m_factorsEnteredEdit->setPaletteForegroundColor(TQColor(0, 0, 0));
 	
   m_factorsWidget =
     new FactorizedWidget( this, "m_factorsWidget", m_factorsResult);
 
   m_factorsWidget->hide();
   
-  result_label = new QLabel( this, "result_label" );
+  result_label = new TQLabel( this, "result_label" );
 
-  spacer1 =  new QSpacerItem( 25, 20, QSizePolicy::Expanding,
-				    QSizePolicy::Minimum );
+  spacer1 =  new TQSpacerItem( 25, 20, TQSizePolicy::Expanding,
+				    TQSizePolicy::Minimum );
 
   // now add the widgets to the layout.
   // if we are in a RTL desktop, add them
   // in a reverse order
-  if (QApplication::reverseLayout())
+  if (TQApplication::reverseLayout())
     {
       layout->addItem( spacer1 );
       layout->addWidget( result_label );
@@ -292,28 +292,28 @@ QHBoxLayout* ExerciseFactorize::createFactorsLayout()
 
 /** Create the layout that hold the exercise widgets
  */
-QGridLayout* ExerciseFactorize::createButtonsLayout()
+TQGridLayout* ExerciseFactorize::createButtonsLayout()
 {
   const int _COLS = 4; // number of buttons in each row
   const int _ROWS = 2; // number of rows
 
-  QGridLayout* layout = new QGridLayout( 0, 1, 1, 0, 6, "layout1"); 
+  TQGridLayout* layout = new TQGridLayout( 0, 1, 1, 0, 6, "layout1"); 
 	
   // first row buttons
-  m_factor2Button = new QPushButton( this, "m_factor2Button" );
-  m_factor3Button = new QPushButton( this, "m_factor3Button" );
-  m_factor5Button = new QPushButton( this, "m_factor5Button" );
-  m_factor7Button = new QPushButton( this, "m_factor7Button" );
+  m_factor2Button = new TQPushButton( this, "m_factor2Button" );
+  m_factor3Button = new TQPushButton( this, "m_factor3Button" );
+  m_factor5Button = new TQPushButton( this, "m_factor5Button" );
+  m_factor7Button = new TQPushButton( this, "m_factor7Button" );
 
   // second row buttons
-  m_factor11Button = new QPushButton( this, "m_factor11Button" );
-  m_factor13Button = new QPushButton( this, "m_factor13Button" );	
-  m_factor17Button = new QPushButton( this, "m_factor17Button" );
-  m_factor19Button = new QPushButton( this, "m_factor19Button" );
+  m_factor11Button = new TQPushButton( this, "m_factor11Button" );
+  m_factor13Button = new TQPushButton( this, "m_factor13Button" );	
+  m_factor17Button = new TQPushButton( this, "m_factor17Button" );
+  m_factor19Button = new TQPushButton( this, "m_factor19Button" );
 
   // temp array to help with adding the buttons
   // to the grid
-  QPushButton* buttons[_ROWS][_COLS] = 
+  TQPushButton* buttons[_ROWS][_COLS] = 
     {
       {
 	m_factor2Button,
@@ -335,7 +335,7 @@ QGridLayout* ExerciseFactorize::createButtonsLayout()
 
   // if we are in a RTL desktop, this helps adding the
   // buttons in a reverse order
-  if (QApplication::reverseLayout())
+  if (TQApplication::reverseLayout())
     {
       buttonIdxStart = _COLS - 1;
       step = -1;
@@ -390,13 +390,13 @@ void ExerciseFactorize::createTask()
 		- emits signals if task was solved correctly or wrong */
 void ExerciseFactorize::showResult()
 {
-	QString tmp_str, tmp_str2; /* to build a string for a label */
-	QPalette pal;
-	QColorGroup cg;
+	TQString tmp_str, tmp_str2; /* to build a string for a label */
+	TQPalette pal;
+	TQColorGroup cg;
 	uint uint_result = 0;
 
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to get to the next task."));
+	TQToolTip::add(m_checkButton, i18n("Click on this button to get to the next task."));
 
 	// disable prime factor buttons
 	m_factor2Button->setEnabled(false);
@@ -435,10 +435,10 @@ void ExerciseFactorize::showResult()
 		result_label->setText(i18n("CORRECT"));
 		pal = result_label->palette(); /* set green font color */
 		cg = pal.active();
-		cg.setColor(QColorGroup::Foreground, QColor(6, 179, 0));
+		cg.setColor(TQColorGroup::Foreground, TQColor(6, 179, 0));
 		pal.setActive(cg);
 		cg = pal.inactive();
-		cg.setColor(QColorGroup::Foreground, QColor(6, 179, 0));
+		cg.setColor(TQColorGroup::Foreground, TQColor(6, 179, 0));
 		pal.setInactive(cg);
 		result_label->setPalette(pal);
 	} else {
@@ -449,10 +449,10 @@ void ExerciseFactorize::showResult()
 		result_label->setText(i18n("WRONG"));
 		pal = result_label->palette(); /* set red font color */
 		cg = pal.active();
-		cg.setColor(QColorGroup::Foreground, QColor(red));
+		cg.setColor(TQColorGroup::Foreground, TQColor(red));
 		pal.setActive(cg);
 		cg = pal.inactive();
-		cg.setColor(QColorGroup::Foreground, QColor(red));
+		cg.setColor(TQColorGroup::Foreground, TQColor(red));
 		pal.setInactive(cg);
 		result_label->setPalette(pal);
 
@@ -467,7 +467,7 @@ void ExerciseFactorize::showResult()
 void ExerciseFactorize::nextTask()
 {
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+	TQToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 
 	// enable prime factor buttons
 	m_factor2Button->setEnabled(true);
@@ -493,12 +493,12 @@ void ExerciseFactorize::nextTask()
 	m_factor2Button->setFocus();
 
 	/* create a new task */
-	QApplication::setOverrideCursor(waitCursor); /* show the sand clock */
+	TQApplication::setOverrideCursor(waitCursor); /* show the sand clock */
 	createTask();
-	QApplication::restoreOverrideCursor(); /* show the normal cursor */
+	TQApplication::restoreOverrideCursor(); /* show the normal cursor */
 
 	// update the task widget
-	QString tmp_str;
+	TQString tmp_str;
 	tmp_str.setNum(m_taskNumber);
 	m_taskLabel->setText(tmp_str);
 
@@ -522,8 +522,8 @@ void ExerciseFactorize::addFactor(uint factor)
 void ExerciseFactorize::updateEnteredEdit()
 {
 	// the string to be shown in the entered edit
-	QString str_output = "";
-	QString str_tmp;
+	TQString str_output = "";
+	TQString str_tmp;
 
 	// find the end of the list
 	uintList::iterator it;

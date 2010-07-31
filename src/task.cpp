@@ -176,7 +176,7 @@ void task::add_operation(short operation)
 }
 
 /** just outputs the whole given task to stdout; for debugging */
-QTextStream & task::display(QTextStream & str)
+TQTextStream & task::display(TQTextStream & str)
 {
 	/* this is our pointer on the ratio_vector, set it to the beginning */
 	RatioArray::iterator ratio_pointer = ratio_vector.begin();
@@ -706,7 +706,7 @@ void task::make_denominators(int main_denominator, short pmax_md,
 /* ------ some prototyps of non class functions ------ */
 
 /** it is possible to code: cout << task_object << endl; */
-QTextStream & operator<<(QTextStream & str, task & ptask)
+TQTextStream & operator<<(TQTextStream & str, task & ptask)
 {
 	return ptask.display(str);
 }

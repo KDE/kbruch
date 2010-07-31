@@ -24,7 +24,7 @@ class QVBoxLayout;
 class QHBoxLayout;
 class QGridLayout;
 
-#include <qwidget.h>
+#include <tqwidget.h>
 
 /*!
   * StatisticsView takes care of the statistics of a test.
@@ -40,7 +40,7 @@ class StatisticsView : public QWidget
 
 public:
 	/** constructor */
-	StatisticsView(QWidget * parent = 0, const char * name = 0);
+	StatisticsView(TQWidget * parent = 0, const char * name = 0);
 
 	/** destructor */
 	~StatisticsView();
@@ -63,16 +63,16 @@ private:
 	unsigned int m_count;
 	unsigned int m_correct;
 
-	QPushButton * resetBtn;
-	QHBoxLayout * buttonLayout;
-	QVBoxLayout * layout1;
-	QGridLayout * labelGrid;
-	QLabel * result1Label;
-	QLabel * result2Label;
-	QLabel * result3Label;
-	QLabel * info1Label;
-	QLabel * info2Label;
-	QLabel * info3Label;
+	TQPushButton * resetBtn;
+	TQHBoxLayout * buttonLayout;
+	TQVBoxLayout * layout1;
+	TQGridLayout * labelGrid;
+	TQLabel * result1Label;
+	TQLabel * result2Label;
+	TQLabel * result3Label;
+	TQLabel * info1Label;
+	TQLabel * info2Label;
+	TQLabel * info3Label;
 };
 
 #endif

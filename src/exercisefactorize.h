@@ -24,9 +24,9 @@
 #include <kdebug.h>
 #endif
 
-#include <qvaluelist.h>
-#include <qvariant.h>
-#include <qwidget.h>
+#include <tqvaluelist.h>
+#include <tqvariant.h>
+#include <tqwidget.h>
 
 #include "exercisebase.h"
 #include "ratio.h"
@@ -43,7 +43,7 @@ class QLineEdit;
 class QPushButton;
 
 // a list containing uints
-typedef QValueList<uint> uintList;
+typedef TQValueList<uint> uintList;
 
 // set a macro how much numbers are given to factorize
 #define numberPossibleTasks 45
@@ -63,7 +63,7 @@ class ExerciseFactorize : public ExerciseBase
 
 public:
 	/** constructor */
-	ExerciseFactorize(QWidget * parent = 0, const char * name = 0);
+	ExerciseFactorize(TQWidget * parent = 0, const char * name = 0);
 
 	/** destructor */
 	~ExerciseFactorize();
@@ -90,27 +90,27 @@ private:
 	uintList m_factorsEntered;
 	uintList m_factorsResult;
 
-	QLabel* m_taskLabel;
-	QLabel* m_equalSignLabel;
-	QLineEdit* m_factorsEnteredEdit;
+	TQLabel* m_taskLabel;
+	TQLabel* m_equalSignLabel;
+	TQLineEdit* m_factorsEnteredEdit;
 	FactorizedWidget* m_factorsWidget;
-	QLabel* result_label;
+	TQLabel* result_label;
 
 	
 
 	// buttons for the different prime factors
-	QPushButton* m_factor2Button;
-	QPushButton* m_factor3Button;
-	QPushButton* m_factor5Button;
-	QPushButton* m_factor7Button;
-	QPushButton* m_factor11Button;
-	QPushButton* m_factor13Button;
-	QPushButton* m_factor17Button;
-	QPushButton* m_factor19Button;
+	TQPushButton* m_factor2Button;
+	TQPushButton* m_factor3Button;
+	TQPushButton* m_factor5Button;
+	TQPushButton* m_factor7Button;
+	TQPushButton* m_factor11Button;
+	TQPushButton* m_factor13Button;
+	TQPushButton* m_factor17Button;
+	TQPushButton* m_factor19Button;
 
 	// button to remove the last entered factor
-	QPushButton* m_removeLastFactorButton;
-	QPushButton* m_checkButton;
+	TQPushButton* m_removeLastFactorButton;
+	TQPushButton* m_checkButton;
 
 
 	//
@@ -120,10 +120,10 @@ private:
 	//
 
 	/** create the factor widgets layout */
-	QHBoxLayout* createFactorsLayout();
+	TQHBoxLayout* createFactorsLayout();
 
 	/** create the (answer) buttons layout */
-	QGridLayout* createButtonsLayout();
+	TQGridLayout* createButtonsLayout();
 	
 
 	void createTask();
@@ -134,16 +134,16 @@ private:
 	void updateEnteredEdit();
 
 protected:
-	QVBoxLayout* Form1Layout;
-	QVBoxLayout* layout9;
-	QSpacerItem* spacer4;
-	QHBoxLayout* layout4;
-	QSpacerItem* spacer1;
-	QSpacerItem* spacer2;
-	QVBoxLayout* layout2;
-	QGridLayout* layout1;
-	QHBoxLayout* layout7;
-	QSpacerItem* spacer3;
+	TQVBoxLayout* Form1Layout;
+	TQVBoxLayout* layout9;
+	TQSpacerItem* spacer4;
+	TQHBoxLayout* layout4;
+	TQSpacerItem* spacer1;
+	TQSpacerItem* spacer2;
+	TQVBoxLayout* layout2;
+	TQGridLayout* layout1;
+	TQHBoxLayout* layout7;
+	TQSpacerItem* spacer3;
 
 private slots:
 	void slotCheckButtonClicked();

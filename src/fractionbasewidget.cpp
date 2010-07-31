@@ -22,12 +22,12 @@
 #include <kglobalsettings.h>
 
 /* these includes are needed for Qt support */
-#include <qpainter.h>
+#include <tqpainter.h>
 
 #include "settingsclass.h"
 
-FractionBaseWidget::FractionBaseWidget(QWidget * parent = 0, const char * name = 0) :
-			QWidget(parent, name)
+FractionBaseWidget::FractionBaseWidget(TQWidget * parent = 0, const char * name = 0) :
+			TQWidget(parent, name)
 {
 #ifdef DEBUG
 	kdDebug() << "constructor FractionBaseWidget" << endl;
@@ -50,14 +50,14 @@ void FractionBaseWidget::updateAndRepaint()
 	update();
 }
 
-void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_pos, QFontMetrics & fm, bool show_mixed, bool addMargin)
+void FractionBaseWidget::paintRatio(TQPainter & paint, ratio tmp_ratio, int & x_pos, TQFontMetrics & fm, bool show_mixed, bool addMargin)
 {
-	QPen pen = paint.pen(); // get the pen
+	TQPen pen = paint.pen(); // get the pen
 	int fontHeight = fm.lineSpacing(); // get the font height
 
 	int int_numerator, int_denominator, int_mixed;
-	QString str_numerator, str_denominator;
-	QString str_mixed;
+	TQString str_numerator, str_denominator;
+	TQString str_mixed;
 
 	int fontWidth; // to store the width of the last thing painted
 	int tmp_int;
@@ -129,10 +129,10 @@ void FractionBaseWidget::paintRatio(QPainter & paint, ratio tmp_ratio, int & x_p
 	return;
 }
 
-void FractionBaseWidget::paintMiddle(QPainter & paint, const QString& paint_str, int & x_pos, QFontMetrics & fm, QColor color, bool addMargin)
+void FractionBaseWidget::paintMiddle(TQPainter & paint, const TQString& paint_str, int & x_pos, TQFontMetrics & fm, TQColor color, bool addMargin)
 {
 	// get the pen, font height and font width
-	QPen pen = paint.pen();
+	TQPen pen = paint.pen();
 	int fontHeight = fm.lineSpacing();
 	int fontWidth = fm.width(paint_str);
 

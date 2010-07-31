@@ -27,7 +27,7 @@
 
 #include "ratio.h"
 
-#include <qwidget.h>
+#include <tqwidget.h>
 
 
 /*! base class for painting fractions
@@ -39,7 +39,7 @@ class FractionBaseWidget : public QWidget
 
 public:
 	/** constructor */
-	FractionBaseWidget(QWidget * parent, const char * name);
+	FractionBaseWidget(TQWidget * parent, const char * name);
 
 	/** destructor */
 	~FractionBaseWidget();
@@ -50,21 +50,21 @@ public:
 protected:
 	
 	/* store the different colors */
-	QColor m_colorNumber;
-	QColor m_colorLine;
-	QColor m_colorOperation;
+	TQColor m_colorNumber;
+	TQColor m_colorLine;
+	TQColor m_colorOperation;
 
 	/* the font to paint with */
-	QFont m_font;
+	TQFont m_font;
 
-	/** overrideing the paint event of QWidget */
-	virtual void paintEvent(QPaintEvent*) = 0;
+	/** overrideing the paint event of TQWidget */
+	virtual void paintEvent(TQPaintEvent*) = 0;
 
 	/** paints a ratio at the given position */
-	void paintRatio(QPainter & paint, ratio tmp_ratio, int & x_pos, QFontMetrics & fm, bool show_mixed, bool addMargin = true);
+	void paintRatio(TQPainter & paint, ratio tmp_ratio, int & x_pos, TQFontMetrics & fm, bool show_mixed, bool addMargin = true);
 
 	/** paints a string in the vertical middle (aligned to the operation signs) */
-	void paintMiddle(QPainter & paint, const QString& paint_str, int & x_pos, QFontMetrics & fm, QColor color, bool addMargin = true);
+	void paintMiddle(TQPainter & paint, const TQString& paint_str, int & x_pos, TQFontMetrics & fm, TQColor color, bool addMargin = true);
 
 private:
 	/** sets the font and color; values taken from settingsclass */

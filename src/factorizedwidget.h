@@ -24,10 +24,10 @@
 
 #include "fractionbasewidget.h"
 
-#include <qwidget.h>
+#include <tqwidget.h>
 
 // a list containing uints
-typedef QValueList<uint> uintList;
+typedef TQValueList<uint> uintList;
 
 /*! class to paint the factorization of a number
  *
@@ -38,7 +38,7 @@ class FactorizedWidget : public FractionBaseWidget
 
 public:
 	/** constructor */
-	FactorizedWidget(QWidget * parent, const char * name, const uintList para_factors);
+	FactorizedWidget(TQWidget * parent, const char * name, const uintList para_factors);
 
 	/** destructor */
 	~FactorizedWidget();
@@ -52,7 +52,7 @@ private:
 	uintList m_factors;
 
 	/** overrideing the paint event of FractionBaseWidget */
-	void paintEvent(QPaintEvent*);
+	void paintEvent(TQPaintEvent*);
 };
 
 #endif

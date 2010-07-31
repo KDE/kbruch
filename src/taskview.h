@@ -30,7 +30,7 @@
 #include <kdebug.h>
 #endif
 
-#include <qwidget.h>
+#include <tqwidget.h>
 
 
 class QVBoxLayout;
@@ -42,7 +42,7 @@ class QPushButton;
 class QLineEdit;
 class QFrame;
 
-/*! Constructs a QWidget, which shows the task to the user.
+/*! Constructs a TQWidget, which shows the task to the user.
  *  The class also provides input fields, so that the user can enter the result.
  *  It also controls the interaction, so that the entered result gets checked
  *  and a new task can be generated.
@@ -54,7 +54,7 @@ class TaskView : public ExerciseBase
 
 public:
 	/** constructor */
-	TaskView(QWidget * parent = 0, const char * name = 0,
+	TaskView(TQWidget * parent = 0, const char * name = 0,
 	         bool padd_sub = true, bool pmul_div = false,
 	         unsigned int pnr_ratios = 2, unsigned int pmax_md = 10);
 
@@ -88,16 +88,16 @@ private:
 	short m_currentState;
 
 	ResultWidget* m_resultWidget;
-	QPushButton* m_checkButton;
-	QLabel* result_label;
+	TQPushButton* m_checkButton;
+	TQLabel* result_label;
 	TaskWidget* m_taskWidget;
-	QLineEdit* numer_edit;
-	QFrame* edit_line;
-	QLineEdit* deno_edit;
+	TQLineEdit* numer_edit;
+	TQFrame* edit_line;
+	TQLineEdit* deno_edit;
 
-	QGridLayout* baseGrid;
-	QWidget* baseWidget;
-	QVBoxLayout* realLayout;
+	TQGridLayout* baseGrid;
+	TQWidget* baseWidget;
+	TQVBoxLayout* realLayout;
 
 	task current_task;
 	ratio result;

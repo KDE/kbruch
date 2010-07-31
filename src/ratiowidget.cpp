@@ -19,9 +19,9 @@
 #include "ratiowidget.moc"
 
 /* these includes are needed for Qt support */
-#include <qpainter.h>
+#include <tqpainter.h>
 
-RatioWidget::RatioWidget(QWidget * parent = 0, const char * name = 0,
+RatioWidget::RatioWidget(TQWidget * parent = 0, const char * name = 0,
 													const ratio para_ratio = *new ratio()) :
 			FractionBaseWidget(parent, name), m_ratio(para_ratio)
 {
@@ -43,25 +43,25 @@ void RatioWidget::setRatio(const ratio para_ratio)
 	update();
 }
 
-void RatioWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
+void RatioWidget::paintEvent(TQPaintEvent* /* p_paintEvent */)
 {
 	// our x position, we paint from left to right;
 	// we don't want to start directly on the border, so add the margin
 	int x_pos = _MARGIN_X;
 
 	// start the painter
-	QPainter paint(this);
+	TQPainter paint(this);
 
 	// ratios and operation signs are painted with the same font
 	paint.setFont(m_font);
 
 	// set the pen for painting
-	QPen pen(Qt::SolidLine);
+	TQPen pen(Qt::SolidLine);
 	pen.setWidth(0);
 	paint.setPen(pen);
 
 	// get the font height; the font height doesn't change while painting
-	QFontMetrics fm(paint.fontMetrics());
+	TQFontMetrics fm(paint.fontMetrics());
 
 	// now we can correctly set the height of the widget
 	setMinimumHeight(2 * fm.lineSpacing() + 10);

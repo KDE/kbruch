@@ -23,11 +23,11 @@
 #include <klocale.h>
 
 /* these includes are needed for Qt support */
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qpushbutton.h>
-#include <qtooltip.h>
-#include <qwhatsthis.h>
+#include <tqlabel.h>
+#include <tqlayout.h>
+#include <tqpushbutton.h>
+#include <tqtooltip.h>
+#include <tqwhatsthis.h>
 
 /* standard C++ library includes */
 #include <stdlib.h>
@@ -35,7 +35,7 @@
 /* ----- public member functions ----- */
 
 /* constructor */
-ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
+ExerciseCompare::ExerciseCompare(TQWidget * parent, const char * name):
 		ExerciseBase(parent, name)
 {
 #ifdef DEBUG
@@ -43,31 +43,31 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 #endif
 
 	/* create a new task */
-	QApplication::setOverrideCursor(waitCursor); /* show the sand clock */
+	TQApplication::setOverrideCursor(waitCursor); /* show the sand clock */
 	createTask();
-	QApplication::restoreOverrideCursor(); /* show the normal cursor */
+	TQApplication::restoreOverrideCursor(); /* show the normal cursor */
 
 	// the next thing to do on a button click would be to check the entered
 	// result
 	m_currentState = _CHECK_TASK;
 
-	baseWidget = new QWidget(this, "baseWidget");
-	baseGrid = new QGridLayout(this, 1, 1, 0, -1, "baseGrid"); 
+	baseWidget = new TQWidget(this, "baseWidget");
+	baseGrid = new TQGridLayout(this, 1, 1, 0, -1, "baseGrid"); 
 	baseGrid->addWidget(baseWidget, 0, 0);
 
 	// this is a VBox
-	realLayout = new QVBoxLayout(baseWidget, 5, 5, "realLayout");
+	realLayout = new TQVBoxLayout(baseWidget, 5, 5, "realLayout");
 
 	// add a spacer at the top of the VBox
-	QSpacerItem * v_spacer = new QSpacerItem(1, 1);
+	TQSpacerItem * v_spacer = new TQSpacerItem(1, 1);
 	realLayout->addItem(v_spacer);
 
 	// now a line holding the task, input fields and result
-	QHBoxLayout * taskLineHBoxLayout = new QHBoxLayout(5, "taskLineHBoxLayout");
+	TQHBoxLayout * taskLineHBoxLayout = new TQHBoxLayout(5, "taskLineHBoxLayout");
 	realLayout->addLayout(taskLineHBoxLayout);
 
 	// spacer
-	v_spacer = new QSpacerItem(1, 1);
+	v_spacer = new TQSpacerItem(1, 1);
 	taskLineHBoxLayout->addItem(v_spacer);
 
 	// first the first ratio widget
@@ -75,22 +75,22 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 	taskLineHBoxLayout->addWidget(m_firstRatioWidget);
 
 	// spacer
-	v_spacer = new QSpacerItem(1, 1);
+	v_spacer = new TQSpacerItem(1, 1);
 	taskLineHBoxLayout->addItem(v_spacer);
 
 	// now the button where the user has to choose the comparison sign
-	m_signButton = new QPushButton(baseWidget, "m_signButton");
+	m_signButton = new TQPushButton(baseWidget, "m_signButton");
 
 	// RTL BUG, see slotSignButtonClicked() for more information
-	m_signButton->setText( QApplication::reverseLayout()?">":"<");
+	m_signButton->setText( TQApplication::reverseLayout()?">":"<");
 
 	m_signButtonState = lessThen;
 	taskLineHBoxLayout->addWidget(m_signButton);
-	QObject::connect(m_signButton, SIGNAL(clicked()), this, SLOT(slotSignButtonClicked()));
-	QToolTip::add(m_signButton, i18n("Click on this button to change the comparison sign."));
+	TQObject::connect(m_signButton, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotSignButtonClicked()));
+	TQToolTip::add(m_signButton, i18n("Click on this button to change the comparison sign."));
 
 	// spacer
-	v_spacer = new QSpacerItem(1, 1);
+	v_spacer = new TQSpacerItem(1, 1);
 	taskLineHBoxLayout->addItem(v_spacer);
 
 	// now the second ratio widget
@@ -98,11 +98,11 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 	taskLineHBoxLayout->addWidget(m_secondRatioWidget);
 
 	// spacer
-	v_spacer = new QSpacerItem(1, 1);
+	v_spacer = new TQSpacerItem(1, 1);
 	taskLineHBoxLayout->addItem(v_spacer);
 
 	// at the right end we have a label just showing CORRECT or WRONG
-	result_label = new QLabel(baseWidget, "result_label");
+	result_label = new TQLabel(baseWidget, "result_label");
 	result_label->setText(i18n("WRONG"));
 	taskLineHBoxLayout->addWidget(result_label);
 	result_label->hide();
@@ -110,21 +110,21 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 	// --- that is the end of the horizontal line ---
 	
 	// add another spacer in the middle of the VBox
-	v_spacer = new QSpacerItem(1, 1);
+	v_spacer = new TQSpacerItem(1, 1);
 	realLayout->addItem(v_spacer);
 
 	// the lower part of the VBox holds just a right aligned button
-	QHBoxLayout * lowerHBox = new QHBoxLayout(1, "lowerHBox");
+	TQHBoxLayout * lowerHBox = new TQHBoxLayout(1, "lowerHBox");
 	realLayout->addLayout(lowerHBox);
 	lowerHBox->addStretch(100);
 
 	// the right aligned button
-	m_checkButton = new QPushButton( baseWidget, "m_checkButton" );
+	m_checkButton = new TQPushButton( baseWidget, "m_checkButton" );
 	m_checkButton->setText(i18n("&Check Task"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result."));
+	TQToolTip::add(m_checkButton, i18n("Click on this button to check your result."));
 	lowerHBox->addWidget(m_checkButton, 1, Qt::AlignRight);
-	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
+	TQObject::connect(m_checkButton, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotCheckButtonClicked()));
 
 	// that the user can start typing without moving the focus
 	m_signButton->setFocus();
@@ -133,8 +133,8 @@ ExerciseCompare::ExerciseCompare(QWidget * parent, const char * name):
 	baseWidget->show();
 
 	// add tooltip and qwhatsthis help to the widget
-	QToolTip::add(this, i18n("In this exercise you have to compare 2 given fractions."));
-	QWhatsThis::add(this, i18n("In this exercise you have to compare 2 given fractions by choosing the correct comparison sign. You can change the comparison sign by just clicking on the button showing the sign."));
+	TQToolTip::add(this, i18n("In this exercise you have to compare 2 given fractions."));
+	TQWhatsThis::add(this, i18n("In this exercise you have to compare 2 given fractions by choosing the correct comparison sign. You can change the comparison sign by just clicking on the button showing the sign."));
 }
 
 /* destructor */
@@ -178,7 +178,7 @@ void ExerciseCompare::update()
 	m_secondRatioWidget->updateAndRepaint();
 
 	// update for itself
-	((QWidget *) this)->update();
+	((TQWidget *) this)->update();
 }
 
 
@@ -203,12 +203,12 @@ void ExerciseCompare::createTask()
 		- emits signals if task was solved correctly or wrong */
 void ExerciseCompare::showResult()
 {
-	QPalette pal;
-	QColorGroup cg;
+	TQPalette pal;
+	TQColorGroup cg;
 	bool result = m_firstRatio < m_secondRatio;
 
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to get to the next task."));
+	TQToolTip::add(m_checkButton, i18n("Click on this button to get to the next task."));
 
 	// disable sign button
 	m_signButton->setEnabled(false);
@@ -223,10 +223,10 @@ void ExerciseCompare::showResult()
 		result_label->setText(i18n("CORRECT"));
 		pal = result_label->palette(); /* set green font color */
 		cg = pal.active();
-		cg.setColor(QColorGroup::Foreground, QColor(6, 179, 0));
+		cg.setColor(TQColorGroup::Foreground, TQColor(6, 179, 0));
 		pal.setActive(cg);
 		cg = pal.inactive();
-		cg.setColor(QColorGroup::Foreground, QColor(6, 179, 0));
+		cg.setColor(TQColorGroup::Foreground, TQColor(6, 179, 0));
 		pal.setInactive(cg);
 		result_label->setPalette(pal);
 		result_label->show(); /* show the result at the end of the task */
@@ -238,10 +238,10 @@ void ExerciseCompare::showResult()
 		result_label->setText(i18n("WRONG"));
 		pal = result_label->palette(); /* set red font color */
 		cg = pal.active();
-		cg.setColor(QColorGroup::Foreground, QColor(red));
+		cg.setColor(TQColorGroup::Foreground, TQColor(red));
 		pal.setActive(cg);
 		cg = pal.inactive();
-		cg.setColor(QColorGroup::Foreground, QColor(red));
+		cg.setColor(TQColorGroup::Foreground, TQColor(red));
 		pal.setInactive(cg);
 		result_label->setPalette(pal);
 
@@ -255,7 +255,7 @@ void ExerciseCompare::showResult()
 void ExerciseCompare::nextTask()
 {
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result."));
+	TQToolTip::add(m_checkButton, i18n("Click on this button to check your result."));
 
 	// enable sign button
 	m_signButton->setEnabled(true);
@@ -264,13 +264,13 @@ void ExerciseCompare::nextTask()
 
 	// reset the signButton
 	// RTL BUG, see slotSignButtonClicked() for more information
-	m_signButton->setText( QApplication::reverseLayout()?">":"<");
+	m_signButton->setText( TQApplication::reverseLayout()?">":"<");
 	m_signButtonState = lessThen;
 
 	/* create a new task */
-	QApplication::setOverrideCursor(waitCursor); /* show the sand clock */
+	TQApplication::setOverrideCursor(waitCursor); /* show the sand clock */
 	createTask();
-	QApplication::restoreOverrideCursor(); /* show the normal cursor */
+	TQApplication::restoreOverrideCursor(); /* show the normal cursor */
 
 	// set the ratio widgets with the new ratios
 	m_firstRatioWidget->setRatio(m_firstRatio);
@@ -316,10 +316,10 @@ void ExerciseCompare::slotSignButtonClicked()
 
 	if (m_signButtonState == lessThen)
 	{
-		m_signButton->setText( QApplication::reverseLayout()?"<":">");
+		m_signButton->setText( TQApplication::reverseLayout()?"<":">");
 		m_signButtonState = greaterThen;
 	} else {
-		m_signButton->setText( QApplication::reverseLayout()?">":"<");
+		m_signButton->setText( TQApplication::reverseLayout()?">":"<");
 		m_signButtonState = lessThen;
 	}
 

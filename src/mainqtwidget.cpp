@@ -27,11 +27,11 @@
 #include <kconfigdialog.h>
 #include <klocale.h>
 
-#include <qsplitter.h>
-#include <qlabel.h>
-#include <qtooltip.h>
-#include <qwhatsthis.h>
-#include <qwidget.h>
+#include <tqsplitter.h>
+#include <tqlabel.h>
+#include <tqtooltip.h>
+#include <tqwhatsthis.h>
+#include <tqwidget.h>
 
 #include <math.h>
 
@@ -62,13 +62,13 @@ MainQtWidget::MainQtWidget()
 
 	// we split the main view into 2 parts, one for the tasks, one for the
 	// statistics
-	QSplitter* splitter = new QSplitter(QSplitter::Horizontal, this,"QSplitter");
+	TQSplitter* splitter = new TQSplitter(TQSplitter::Horizontal, this,"TQSplitter");
 	setCentralWidget(splitter);
 
 	// the iconlist, where the user can choose the different exercises
 	m_exercises = new KJanusWidget(splitter, "KJanusWidget", KJanusWidget::IconList);
-	QToolTip::add(m_exercises, i18n("Choose another exercise by clicking on an icon."));
-	QWhatsThis::add(m_exercises, i18n("Click on the different icons to choose another exercise. The exercises help you to practice different aspects of calculating with fractions."));
+	TQToolTip::add(m_exercises, i18n("Choose another exercise by clicking on an icon."));
+	TQWhatsThis::add(m_exercises, i18n("Click on the different icons to choose another exercise. The exercises help you to practice different aspects of calculating with fractions."));
 
 	// create the statistic view
 	m_statview = new StatisticsView(splitter, "StatisticsView");
@@ -76,40 +76,40 @@ MainQtWidget::MainQtWidget()
 	// add the pages
 	//
 	// we have the exercise to solve fraction tasks
-	QVBox * page = m_exercises->addVBoxPage(i18n("Fraction Task"), "", DesktopIcon("kbruch_exercise_common"));
-	m_taskview = new TaskView((QWidget *) page, "TaskView", m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
+	TQVBox * page = m_exercises->addVBoxPage(i18n("Fraction Task"), "", DesktopIcon("kbruch_exercise_common"));
+	m_taskview = new TaskView((TQWidget *) page, "TaskView", m_addSub, m_mulDiv, m_nrRatios, m_maxMainDenominator);
 
 	// we have the exercise to compare ratios
 	page = m_exercises->addVBoxPage(i18n("Comparison"), "", DesktopIcon("kbruch_exercise_compare"));
-	m_exerciseCompare = new ExerciseCompare((QWidget *) page, "ExerciseCompare");
+	m_exerciseCompare = new ExerciseCompare((TQWidget *) page, "ExerciseCompare");
 
 	// we have the exercise to convert rational numbers into ratios
 	page = m_exercises->addVBoxPage(i18n("Conversion"), "", DesktopIcon("kbruch_exercise_conversion"));
-	m_exerciseConvert = new ExerciseConvert((QWidget *) page, "ExerciseConvert");
+	m_exerciseConvert = new ExerciseConvert((TQWidget *) page, "ExerciseConvert");
 
 	// we have the exercise to factorize a given number into prime factors
 	page = m_exercises->addVBoxPage(i18n("Factorization"), "", DesktopIcon("kbruch_exercise_factorisation"));
-	m_exerciseFactorize = new ExerciseFactorize((QWidget *) page, "ExerciseFactorize");
+	m_exerciseFactorize = new ExerciseFactorize((TQWidget *) page, "ExerciseFactorize");
 
-	splitter->setResizeMode(m_statview, QSplitter::FollowSizeHint);
+	splitter->setResizeMode(m_statview, TQSplitter::FollowSizeHint);
 
 	// we must change the status of the menubar before another page is shown
-	QObject::connect(m_exercises, SIGNAL(aboutToShowPage(QWidget *)), this, SLOT(slotAboutToShowPage(QWidget *)));
+	TQObject::connect(m_exercises, TQT_SIGNAL(aboutToShowPage(TQWidget *)), this, TQT_SLOT(slotAboutToShowPage(TQWidget *)));
 
 	// connect signals of the exercises and StatisticView, so that StatisticView
 	// gets informed about how the user solved a given task (wrong or correct)
-	QObject::connect(m_taskview, SIGNAL(signalTaskSolvedCorrect()), m_statview, SLOT(addCorrect()));
-	QObject::connect(m_taskview, SIGNAL(signalTaskSolvedWrong()), m_statview, SLOT(addWrong()));
-	QObject::connect(m_exerciseCompare, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
-	QObject::connect(m_exerciseCompare, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
-	QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
-	QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
-	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
-	QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
+	TQObject::connect(m_taskview, TQT_SIGNAL(signalTaskSolvedCorrect()), m_statview, TQT_SLOT(addCorrect()));
+	TQObject::connect(m_taskview, TQT_SIGNAL(signalTaskSolvedWrong()), m_statview, TQT_SLOT(addWrong()));
+	TQObject::connect(m_exerciseCompare, TQT_SIGNAL(signalExerciseSolvedCorrect()), m_statview, TQT_SLOT(addCorrect()));
+	TQObject::connect(m_exerciseCompare, TQT_SIGNAL(signalExerciseSolvedWrong()), m_statview, TQT_SLOT(addWrong()));
+	TQObject::connect(m_exerciseConvert, TQT_SIGNAL(signalExerciseSolvedCorrect()), m_statview, TQT_SLOT(addCorrect()));
+	TQObject::connect(m_exerciseConvert, TQT_SIGNAL(signalExerciseSolvedWrong()), m_statview, TQT_SLOT(addWrong()));
+	TQObject::connect(m_exerciseFactorize, TQT_SIGNAL(signalExerciseSolvedCorrect()), m_statview, TQT_SLOT(addCorrect()));
+	TQObject::connect(m_exerciseFactorize, TQT_SIGNAL(signalExerciseSolvedWrong()), m_statview, TQT_SLOT(addWrong()));
 
 #if (KDE_VERSION_MINOR>=3) && (KDE_VERSION_MAJOR>=3)
 #else
-	resize(QSize(QMAX(toolBar()->sizeHint().width(), sizeHint().width()), sizeHint().height()));
+	resize(TQSize(QMAX(toolBar()->sizeHint().width(), sizeHint().width()), sizeHint().height()));
 #endif
 	// now show the last exercise
 	m_exercises->showPage(SettingsClass::activeExercise());
@@ -155,49 +155,49 @@ void MainQtWidget::setupActions()
 {
 	// new task action
 	m_NewTaskAction = new KAction(i18n("&New"), "filenew", KStdAccel::shortcut(KStdAccel::New),
-				      this, SLOT(NewTask()),
+				      this, TQT_SLOT(NewTask()),
 				      actionCollection(), "NewTask");
 
 	// quit action
-	KStdAction::quit(kapp, SLOT(quit()), actionCollection());
+	KStdAction::quit(kapp, TQT_SLOT(quit()), actionCollection());
 
 	//
-	KStdAction::preferences(this,  SLOT( slotPrefs() ), actionCollection());
+	KStdAction::preferences(this,  TQT_SLOT( slotPrefs() ), actionCollection());
 
 	// a label just describing the Number of terms ComboBox
-	m_NrOfTermsLabel = new QLabel(i18n("Terms:"), 0, "kde toolbar widget");
+	m_NrOfTermsLabel = new TQLabel(i18n("Terms:"), 0, "kde toolbar widget");
 	m_NrOfTermsLabelAction = new KWidgetAction(m_NrOfTermsLabel, i18n("Terms:"), ALT+Key_E,
-						   this, SLOT(NrOfTermsBoxSlot()),
+						   this, TQT_SLOT(NrOfTermsBoxSlot()),
 						   actionCollection(), "NrOfTermsLabelAction");
 
 	// the ComboBox holding possible values for term number
-	m_NrOfTermsBox = new QComboBox();
+	m_NrOfTermsBox = new TQComboBox();
 	m_NrOfTermsBox->insertItem("2");
 	m_NrOfTermsBox->insertItem("3");
 	m_NrOfTermsBox->insertItem("4");
 	m_NrOfTermsBox->insertItem("5");
 	m_NrOfTermsBox->setCurrentItem(m_nrRatios - 2);
-	QToolTip::add( m_NrOfTermsBox, i18n( "The number of terms you want" ) );
-	QWhatsThis::add( m_NrOfTermsBox, i18n( "Choose the number of terms (2, 3, 4 or 5) you want for calculating fractions." ) );
-	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of Terms"), ALT+Key_E, this, SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsBoxAction");
+	TQToolTip::add( m_NrOfTermsBox, i18n( "The number of terms you want" ) );
+	TQWhatsThis::add( m_NrOfTermsBox, i18n( "Choose the number of terms (2, 3, 4 or 5) you want for calculating fractions." ) );
+	m_NrOfTermsBoxAction = new KWidgetAction(m_NrOfTermsBox, i18n("Number of Terms"), ALT+Key_E, this, TQT_SLOT(NrOfTermsBoxSlot()), actionCollection(), "NrOfTermsBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
-	QObject::connect(m_NrOfTermsBox, SIGNAL(activated(int)), this, SLOT(NrOfTermsBoxSlot()));
+	TQObject::connect(m_NrOfTermsBox, TQT_SIGNAL(activated(int)), this, TQT_SLOT(NrOfTermsBoxSlot()));
 
 	// a label just describing the max. main denominator ComboBox
-	m_MaxMainDenominatorLabel = new QLabel(i18n("Max. main denominator:"), 0, "kde toolbar widget");
+	m_MaxMainDenominatorLabel = new TQLabel(i18n("Max. main denominator:"), 0, "kde toolbar widget");
 	m_MaxMainDenominatorLabelAction = new KWidgetAction(m_MaxMainDenominatorLabel, i18n("Max. main denominator:"), ALT+Key_D,
-							    this, SLOT(MaxMainDenominatorBoxSlot()),
+							    this, TQT_SLOT(MaxMainDenominatorBoxSlot()),
 							    actionCollection(), "MaxMainDenominatorLabelAction");
 
 	// the ComboBox holding possible values for the max. main denominator
-	m_MaxMainDenominatorBox = new QComboBox(this);
+	m_MaxMainDenominatorBox = new TQComboBox(this);
 	m_MaxMainDenominatorBox->insertItem("10");
 	m_MaxMainDenominatorBox->insertItem("20");
 	m_MaxMainDenominatorBox->insertItem("30");
 	m_MaxMainDenominatorBox->insertItem("50");
-	QToolTip::add( m_MaxMainDenominatorBox, i18n( "The maximum number you can have as main denominator" ) );
-	QWhatsThis::add( m_MaxMainDenominatorBox, i18n( "Choose the number which will be the maximum for the main denominator: 10, 20, 30, 40 or 50." ) );
+	TQToolTip::add( m_MaxMainDenominatorBox, i18n( "The maximum number you can have as main denominator" ) );
+	TQWhatsThis::add( m_MaxMainDenominatorBox, i18n( "Choose the number which will be the maximum for the main denominator: 10, 20, 30, 40 or 50." ) );
 	switch (m_maxMainDenominator)
 	{
 		case 10 : m_MaxMainDenominatorBox->setCurrentItem(0);
@@ -209,20 +209,20 @@ void MainQtWidget::setupActions()
 		case 50 : m_MaxMainDenominatorBox->setCurrentItem(3);
 					 break;
 	}
-	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal Main Denominator"), ALT+Key_D, this, SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorBoxAction");
+	m_MaxMainDenominatorBoxAction = new KWidgetAction(m_MaxMainDenominatorBox, i18n("Maximal Main Denominator"), ALT+Key_D, this, TQT_SLOT(MaxMainDenominatorBoxSlot()), actionCollection(), "MaxMainDenominatorBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
-	QObject::connect(m_MaxMainDenominatorBox, SIGNAL(activated(int)),
-			 this, SLOT(MaxMainDenominatorBoxSlot()));
+	TQObject::connect(m_MaxMainDenominatorBox, TQT_SIGNAL(activated(int)),
+			 this, TQT_SLOT(MaxMainDenominatorBoxSlot()));
 
 	// a label just describing the operation ComboBox
-	m_OperationLabel = new QLabel(i18n("Operations:"), 0, "kde toolbar widget");
+	m_OperationLabel = new TQLabel(i18n("Operations:"), 0, "kde toolbar widget");
 	m_OperationLabelAction = new KWidgetAction(m_OperationLabel, i18n("Operations:"), ALT+Key_O,
-						   this, SLOT(OperationBoxSlot()),
+						   this, TQT_SLOT(OperationBoxSlot()),
 						   actionCollection(), "OperationLabelAction");
 
 	// the ComboBox holding possible combinations for operations
-	m_OperationBox = new QComboBox(this);
+	m_OperationBox = new TQComboBox(this);
 	m_OperationBox->insertItem(i18n("Addition/Subtraction"));
 	m_OperationBox->insertItem(i18n("Multiplication/Division"));
 	m_OperationBox->insertItem(i18n("All Operations Mixed"));
@@ -234,16 +234,16 @@ void MainQtWidget::setupActions()
 	} else if (m_addSub == true && m_mulDiv == true) {
 		m_OperationBox->setCurrentItem(2);
 	}
-	QToolTip::add( m_OperationBox, i18n( "The operations you want" ) );
-	QWhatsThis::add( m_OperationBox, i18n( "Choose the type of operations you want for calculating fractions: Addition/Substraction, Multiplication/Division or All Operations Mixed. If you choose All Operations Mixed, the program will randomly choose addition, substraction, multiplication and/or division." ) );
-	m_OperationBoxAction = new KWidgetAction(m_OperationBox, i18n("Operations:"), ALT+Key_O, this, SLOT(OperationBoxSlot()), actionCollection(), "OperationBoxAction");
+	TQToolTip::add( m_OperationBox, i18n( "The operations you want" ) );
+	TQWhatsThis::add( m_OperationBox, i18n( "Choose the type of operations you want for calculating fractions: Addition/Substraction, Multiplication/Division or All Operations Mixed. If you choose All Operations Mixed, the program will randomly choose addition, substraction, multiplication and/or division." ) );
+	m_OperationBoxAction = new KWidgetAction(m_OperationBox, i18n("Operations:"), ALT+Key_O, this, TQT_SLOT(OperationBoxSlot()), actionCollection(), "OperationBoxAction");
 
 	// now connect the ComboBox's signal textChanged() to the slot function
-	QObject::connect(m_OperationBox, SIGNAL(activated(int)), this, SLOT(OperationBoxSlot()));
+	TQObject::connect(m_OperationBox, TQT_SIGNAL(activated(int)), this, TQT_SLOT(OperationBoxSlot()));
 	
 #if (KDE_VERSION_MINOR>=3) && (KDE_VERSION_MAJOR>=3)
 	if (!initialGeometrySet())
-		resize( QSize(725, 330).expandedTo(minimumSizeHint()));
+		resize( TQSize(725, 330).expandedTo(minimumSizeHint()));
 	setupGUI(ToolBar | Keys | StatusBar | Create);
 	setAutoSaveSettings();
 #endif
@@ -312,7 +312,7 @@ void MainQtWidget::NrOfTermsBoxSlot()
 #ifdef DEBUG
 	kdDebug() << "MainQtWidget::NrOfTermsBoxSlot()" << endl;
 #endif
-	QString curr_nr = m_NrOfTermsBox->currentText();
+	TQString curr_nr = m_NrOfTermsBox->currentText();
 	m_MaxMainDenominatorBox->clear();
 
 	if (m_mulDiv == true)
@@ -371,7 +371,7 @@ void MainQtWidget::MaxMainDenominatorBoxSlot()
 
 	// get the max. size from the ComboBox, convert it to a number and store
 	// it in the private member
-	QString curr_md = m_MaxMainDenominatorBox->currentText();
+	TQString curr_md = m_MaxMainDenominatorBox->currentText();
 	m_maxMainDenominator = curr_md.toUInt();
 
 	// set the new task parameters
@@ -428,12 +428,12 @@ void MainQtWidget::slotPrefs()
 
 	// User edited the configuration - update your local copies of the 
 	// configuration data 
-	connect(configDialog, SIGNAL(settingsChanged()), this, SLOT(slotApplySettings()) ); 
+	connect(configDialog, TQT_SIGNAL(settingsChanged()), this, TQT_SLOT(slotApplySettings()) ); 
  
 	configDialog->show();
 /*
 	SettingsDialog * dlg = new SettingsDialog(this);
-	connect(dlg, SIGNAL(configChanged()), this, SLOT(slotApplySettings()));
+	connect(dlg, TQT_SIGNAL(configChanged()), this, TQT_SLOT(slotApplySettings()));
 
 	dlg->exec();
 
@@ -455,7 +455,7 @@ void MainQtWidget::slotApplySettings()
 	return;
 }
 
-void MainQtWidget::slotAboutToShowPage(QWidget * page)
+void MainQtWidget::slotAboutToShowPage(TQWidget * page)
 {
 #ifdef DEBUG
 	kdDebug() << "slotAboutToShowPage MainQtWidget" << endl;

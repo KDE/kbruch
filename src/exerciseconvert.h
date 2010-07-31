@@ -46,7 +46,7 @@ class ExerciseConvert : public ExerciseBase
 
 public:
 	/** constructor */
-	ExerciseConvert(QWidget * parent = 0, const char * name = 0);
+	ExerciseConvert(TQWidget * parent = 0, const char * name = 0);
 
 	/** destructor */
 	~ExerciseConvert();
@@ -68,23 +68,23 @@ signals:
 private:
 	short m_currentState;
 
-	QString m_number;
+	TQString m_number;
 	uint m_periodStart;
 	uint m_periodLength;
 	ratio m_result;
 
 	RationalWidget* m_rationalWidget;
 	ResultWidget* m_resultWidget;
-	QLineEdit* numer_edit;
-	QFrame* edit_line;
-	QLineEdit* deno_edit;
+	TQLineEdit* numer_edit;
+	TQFrame* edit_line;
+	TQLineEdit* deno_edit;
 
-	QPushButton* m_checkButton;
-	QLabel* result_label;
+	TQPushButton* m_checkButton;
+	TQLabel* result_label;
 
-	QGridLayout* baseGrid;
-	QWidget* baseWidget;
-	QVBoxLayout* realLayout;
+	TQGridLayout* baseGrid;
+	TQWidget* baseWidget;
+	TQVBoxLayout* realLayout;
 
 	void createTask();
 	void showResult();

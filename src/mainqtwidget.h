@@ -84,18 +84,18 @@ class MainQtWidget : public KMainWindow
 
 		void setupActions();
 
-		QComboBox * m_NrOfTermsBox;
-		QLabel * m_NrOfTermsLabel;
+		TQComboBox * m_NrOfTermsBox;
+		TQLabel * m_NrOfTermsLabel;
 		KWidgetAction * m_NrOfTermsBoxAction;
 		KWidgetAction * m_NrOfTermsLabelAction;
 
-		QComboBox * m_MaxMainDenominatorBox;
-		QLabel * m_MaxMainDenominatorLabel;
+		TQComboBox * m_MaxMainDenominatorBox;
+		TQLabel * m_MaxMainDenominatorLabel;
 		KWidgetAction * m_MaxMainDenominatorBoxAction;
 		KWidgetAction * m_MaxMainDenominatorLabelAction;
 
-		QComboBox * m_OperationBox;
-		QLabel * m_OperationLabel;
+		TQComboBox * m_OperationBox;
+		TQLabel * m_OperationLabel;
 		KWidgetAction * m_OperationBoxAction;
 		KWidgetAction * m_OperationLabelAction;
 
@@ -133,7 +133,7 @@ class MainQtWidget : public KMainWindow
 		/**
 		 * called just before another page is shown
 		 */
-		void slotAboutToShowPage(QWidget * page);
+		void slotAboutToShowPage(TQWidget * page);
 
 	protected:
 		/** Function is called when user calls termination.

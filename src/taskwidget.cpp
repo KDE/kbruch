@@ -22,9 +22,9 @@
 #include <klocale.h>
 
 /* these includes are needed for Qt support */
-#include <qpainter.h>
+#include <tqpainter.h>
 
-TaskWidget::TaskWidget(QWidget * parent = 0, const char * name = 0,
+TaskWidget::TaskWidget(TQWidget * parent = 0, const char * name = 0,
 													const task para_task = *new task()) :
 			FractionBaseWidget(parent, name), m_task(para_task)
 {
@@ -46,31 +46,31 @@ void TaskWidget::setTask(const task para_task)
 	update();
 }
 
-void TaskWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
+void TaskWidget::paintEvent(TQPaintEvent* /* p_paintEvent */)
 {
 	// our x position, we paint from left to right;
 	// we don't want to start directly on the border, so add the margin
 	int old_x = _MARGIN_X;
 
 	// strings holding numerator, denominator and the operation sign
-	QString str_numerator, str_denominator, str_operation;
+	TQString str_numerator, str_denominator, str_operation;
 
 	// operation sign as number
 	short tmp_operation;
 
 	// start the painter
-	QPainter paint(this);
+	TQPainter paint(this);
 
 	// ratios and operation signs are painted with the same font
 	paint.setFont(m_font);
 
 	// set the pen for painting
-	QPen pen(Qt::SolidLine);
+	TQPen pen(Qt::SolidLine);
 	pen.setWidth(0);
 	paint.setPen(pen);
 
 	// get the font height; the font height doesn't change while painting
-	QFontMetrics fm(paint.fontMetrics());
+	TQFontMetrics fm(paint.fontMetrics());
 
 	// now we can correctly set the height of the widget
 	setMinimumHeight(2 * fm.lineSpacing() + 10);

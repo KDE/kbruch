@@ -25,7 +25,7 @@
 #include "fractionbasewidget.h"
 #include "task.h"
 
-#include <qwidget.h>
+#include <tqwidget.h>
 
 /** important for add_sub and mul_div */
 #define YES 1
@@ -46,7 +46,7 @@ class TaskWidget : public FractionBaseWidget
 
 public:
 	/** constructor */
-	TaskWidget(QWidget * parent, const char * name, const task para_task);
+	TaskWidget(TQWidget * parent, const char * name, const task para_task);
 
 	/** destructor */
 	~TaskWidget();
@@ -60,7 +60,7 @@ private:
 	task m_task;
 
 	/** overrideing the paint event of FractionBaseWidget */
-	void paintEvent(QPaintEvent*);
+	void paintEvent(TQPaintEvent*);
 };
 
 #endif

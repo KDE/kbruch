@@ -25,12 +25,12 @@
 #include <knumvalidator.h>
 
 /* these includes are needed for Qt support */
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qlineedit.h>
-#include <qpushbutton.h>
-#include <qtooltip.h>
-#include <qwhatsthis.h>
+#include <tqlabel.h>
+#include <tqlayout.h>
+#include <tqlineedit.h>
+#include <tqpushbutton.h>
+#include <tqtooltip.h>
+#include <tqwhatsthis.h>
 
 /* standard C++ library includes */
 #include <math.h>
@@ -38,7 +38,7 @@
 /* ----- public member functions ----- */
 
 /* constructor */
-TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
+TaskView::TaskView(TQWidget * parent, const char * name,	bool padd_sub,
                   bool pmul_div, unsigned int pnr_ratios, unsigned int pmax_md):
 		ExerciseBase(parent, name), add_sub(padd_sub), mul_div(pmul_div),
 		nr_ratios(pnr_ratios), max_md(pmax_md)
@@ -50,66 +50,66 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	curr_nr_ratios = nr_ratios;
 
 	/* create a new task */
-	QApplication::setOverrideCursor(waitCursor); /* show the sand clock */
+	TQApplication::setOverrideCursor(waitCursor); /* show the sand clock */
 	current_task.create_task(max_md, nr_ratios, add_sub, mul_div);
-	QApplication::restoreOverrideCursor(); /* show the normal cursor */
+	TQApplication::restoreOverrideCursor(); /* show the normal cursor */
 
 	// the next thing to do on a button click would be to check the entered
 	// result
 	m_currentState = _CHECK_TASK;
 
-	baseWidget = new QWidget(this, "baseWidget");
-	baseGrid = new QGridLayout(this, 1, 1, 0, -1, "baseGrid"); 
+	baseWidget = new TQWidget(this, "baseWidget");
+	baseGrid = new TQGridLayout(this, 1, 1, 0, -1, "baseGrid"); 
 	baseGrid->addWidget(baseWidget, 0, 0);
 
 	// this is a VBox
-	realLayout = new QVBoxLayout(baseWidget, 5, 5, "realLayout");
+	realLayout = new TQVBoxLayout(baseWidget, 5, 5, "realLayout");
 
 	// add a spacer at the top of the VBox
-	QSpacerItem * v_spacer = new QSpacerItem(1, 1);
+	TQSpacerItem * v_spacer = new TQSpacerItem(1, 1);
 	realLayout->addItem(v_spacer);
 
 	// now a line holding the task, input fields and result
-	QHBoxLayout * taskLineHBoxLayout = new QHBoxLayout(5, "taskLineHBoxLayout");
+	TQHBoxLayout * taskLineHBoxLayout = new TQHBoxLayout(5, "taskLineHBoxLayout");
 	realLayout->addLayout(taskLineHBoxLayout);
 
 	// first left is the task widget
 	m_taskWidget = new TaskWidget(baseWidget, "m_taskWidget", current_task);
 
 	// now we have the input fields aligned in a VBox
-	QVBoxLayout * inputLayout = new QVBoxLayout(5, "inputLayout");
+	TQVBoxLayout * inputLayout = new TQVBoxLayout(5, "inputLayout");
 
 	// to validate, that the input is an int
 	KIntValidator *valnum = new KIntValidator( this );
 
 	/* add input box so the user can enter numerator */
-	numer_edit = new QLineEdit(baseWidget, "numer_edit");
+	numer_edit = new TQLineEdit(baseWidget, "numer_edit");
 	numer_edit->setValidator( valnum ); // use the int validator
-	QToolTip::add(numer_edit, i18n("Enter the numerator of your result"));
+	TQToolTip::add(numer_edit, i18n("Enter the numerator of your result"));
 	inputLayout->addWidget(numer_edit);
 
 	/* add a line between the edit boxes */
-	edit_line = new QFrame(baseWidget, "edit_line");
-	edit_line->setGeometry(QRect(100, 100, 20, 20));
-	edit_line->setFrameStyle(QFrame::HLine | QFrame::Sunken);
+	edit_line = new TQFrame(baseWidget, "edit_line");
+	edit_line->setGeometry(TQRect(100, 100, 20, 20));
+	edit_line->setFrameStyle(TQFrame::HLine | TQFrame::Sunken);
 	inputLayout->addWidget(edit_line);
 
 	/* add input box so the user can enter denominator */
-	deno_edit = new QLineEdit(baseWidget, "deno_edit");
+	deno_edit = new TQLineEdit(baseWidget, "deno_edit");
 	deno_edit->setValidator( valnum ); // use the int validator
-	QToolTip::add(deno_edit, i18n("Enter the denominator of your result"));
+	TQToolTip::add(deno_edit, i18n("Enter the denominator of your result"));
 	inputLayout->addWidget(deno_edit);
 
 	// next is the result widget
 	m_resultWidget = new ResultWidget(baseWidget, "m_resultWidget", *new ratio());
 
 	// at the right end we have a label just showing CORRECT or WRONG
-	result_label = new QLabel(baseWidget, "result_label");
+	result_label = new TQLabel(baseWidget, "result_label");
 	result_label->setText(i18n("WRONG"));
 	result_label->hide();
 
 	// add another spacer in the middle of the VBox
-	v_spacer = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
+	v_spacer = new TQSpacerItem(1, 1, TQSizePolicy::Expanding, TQSizePolicy::Minimum);
 
 	// --- that is the end of the horizontal line ---
 	// in RTL desktops, we still need to allign the
@@ -120,7 +120,7 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	//
 	// if you need help with this feel free to contact me - Diego <elcuco@kde.org> )
 	// This should fix parts of bug #116831
-	if (QApplication::reverseLayout())
+	if (TQApplication::reverseLayout())
 	{
 		taskLineHBoxLayout->addItem(v_spacer);
 		taskLineHBoxLayout->addWidget(result_label);
@@ -138,22 +138,22 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	}
 	
 	// add another spacer in the middle of the VBox
-	v_spacer = new QSpacerItem(1, 1);
+	v_spacer = new TQSpacerItem(1, 1);
 	realLayout->addItem(v_spacer);
 
 
 	// the lower part of the VBox holds just a right aligned button
-	QHBoxLayout * lowerHBox = new QHBoxLayout(1, "lowerHBox");
+	TQHBoxLayout * lowerHBox = new TQHBoxLayout(1, "lowerHBox");
 	realLayout->addLayout(lowerHBox);
 	lowerHBox->addStretch(100);
 
 	// the right aligned button
-	m_checkButton = new QPushButton( baseWidget, "m_checkButton" );
+	m_checkButton = new TQPushButton( baseWidget, "m_checkButton" );
 	m_checkButton->setText(i18n("&Check Task"));
 	m_checkButton->setDefault(true); // is the default button of the dialog
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+	TQToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 	lowerHBox->addWidget(m_checkButton, 1, Qt::AlignRight);
-	QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
+	TQObject::connect(m_checkButton, TQT_SIGNAL(clicked()), this, TQT_SLOT(slotCheckButtonClicked()));
 
 	// that the user can start typing without moving the focus
 	numer_edit->setFocus();
@@ -166,8 +166,8 @@ TaskView::TaskView(QWidget * parent, const char * name,	bool padd_sub,
 	m_resultWidget->hide();
 
 	// add tooltip and qwhatsthis help to the widget
-	QToolTip::add(this, i18n("In this exercise you have to solve a given task with fractions."));
-	QWhatsThis::add(this, i18n("In this exercise you have to solve the generated task. You have to enter numerator and denominator. You can adjust the difficulty of the task with the boxes in the toolbar. Do not forget to reduce the result!"));
+	TQToolTip::add(this, i18n("In this exercise you have to solve a given task with fractions."));
+	TQWhatsThis::add(this, i18n("In this exercise you have to solve the generated task. You have to enter numerator and denominator. You can adjust the difficulty of the task with the boxes in the toolbar. Do not forget to reduce the result!"));
 }
 
 /* destructor */
@@ -241,7 +241,7 @@ void TaskView::update()
 	m_resultWidget->updateAndRepaint();
 
 	// update for itself
-	((QWidget *) this)->update();
+	((TQWidget *) this)->update();
 }
 
 
@@ -255,12 +255,12 @@ void TaskView::update()
 		- emits signals if task was solved right or wrong */
 void TaskView::showResult()
 {
-	QString tmp_str; /* to build a string for a label */
-	QPalette pal;
-	QColorGroup cg;
+	TQString tmp_str; /* to build a string for a label */
+	TQPalette pal;
+	TQColorGroup cg;
 
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to get to the next task."));
+	TQToolTip::add(m_checkButton, i18n("Click on this button to get to the next task."));
 
 	numer_edit->setEnabled(false);
 	deno_edit->setEnabled(false);
@@ -298,10 +298,10 @@ void TaskView::showResult()
 		result_label->setText(i18n("CORRECT"));
 		pal = result_label->palette(); /* set green font color */
 		cg = pal.active();
-		cg.setColor(QColorGroup::Foreground, QColor(6, 179, 0));
+		cg.setColor(TQColorGroup::Foreground, TQColor(6, 179, 0));
 		pal.setActive(cg);
 		cg = pal.inactive();
-		cg.setColor(QColorGroup::Foreground, QColor(6, 179, 0));
+		cg.setColor(TQColorGroup::Foreground, TQColor(6, 179, 0));
 		pal.setInactive(cg);
 		result_label->setPalette(pal);
 		result_label->show(); /* show the result at the end of the task */
@@ -313,10 +313,10 @@ void TaskView::showResult()
 		result_label->setText(i18n("WRONG"));
 		pal = result_label->palette(); /* set red font color */
 		cg = pal.active();
-		cg.setColor(QColorGroup::Foreground, QColor(red));
+		cg.setColor(TQColorGroup::Foreground, TQColor(red));
 		pal.setActive(cg);
 		cg = pal.inactive();
-		cg.setColor(QColorGroup::Foreground, QColor(red));
+		cg.setColor(TQColorGroup::Foreground, TQColor(red));
 		pal.setInactive(cg);
 		result_label->setPalette(pal);
 
@@ -344,7 +344,7 @@ void TaskView::showResult()
 void TaskView::nextTask()
 {
 	// change the tooltip of the check button
-	QToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+	TQToolTip::add(m_checkButton, i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 
 	numer_edit->setEnabled(true);
 	deno_edit->setEnabled(true);
@@ -358,9 +358,9 @@ void TaskView::nextTask()
 	numer_edit->setFocus();
 
 	/* create a new task */
-	QApplication::setOverrideCursor(waitCursor); /* show the sand clock */
+	TQApplication::setOverrideCursor(waitCursor); /* show the sand clock */
 	current_task.create_task(max_md, nr_ratios, add_sub, mul_div);
-	QApplication::restoreOverrideCursor(); /* show the normal cursor */
+	TQApplication::restoreOverrideCursor(); /* show the normal cursor */
 
 	// update the task widget
 	m_taskWidget->setTask((const task) (current_task));

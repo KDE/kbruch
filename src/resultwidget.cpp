@@ -19,11 +19,11 @@
 #include "resultwidget.moc"
 
 /* these includes are needed for Qt support */
-#include <qpainter.h>
+#include <tqpainter.h>
 
 #include "settingsclass.h"
 
-ResultWidget::ResultWidget(QWidget * parent = 0, const char * name = 0,
+ResultWidget::ResultWidget(TQWidget * parent = 0, const char * name = 0,
 													const ratio para_result = *new ratio()) :
 			FractionBaseWidget(parent, name), m_result(para_result)
 {
@@ -45,38 +45,38 @@ void ResultWidget::setResult(const ratio para_result)
 	update();
 }
 
-void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
+void ResultWidget::paintEvent(TQPaintEvent* /* p_paintEvent */)
 {
 	// our x position, we paint from left to right;
 	// we don't want to start directly on the border, so add the margin
 	int old_x = _MARGIN_X;
 
 	// start the painter
-	QPainter paint(this);
+	TQPainter paint(this);
 
 	// ratios and operation signs are painted with the same font
 	paint.setFont(m_font);
 
 	// set the pen for painting
-	QPen pen(Qt::SolidLine);
+	TQPen pen(Qt::SolidLine);
 	pen.setWidth(0);
 	paint.setPen(pen);
 
 	// get the font height; the font height doesn't change while painting
-	QFontMetrics fm(paint.fontMetrics());
+	TQFontMetrics fm(paint.fontMetrics());
 
 	// now we can correctly set the height of the widget
 	setMinimumHeight(2 * fm.lineSpacing() + 10);
 	setMaximumHeight(2 * fm.lineSpacing() + 10);
 
 	// result as normal ratio
-	paintMiddle(paint, QString("="), old_x, fm, m_colorOperation);
+	paintMiddle(paint, TQString("="), old_x, fm, m_colorOperation);
 	paintRatio(paint, m_result, old_x, fm, false);
 
 	if (SettingsClass::showSpecialRatioNotation() == true && QABS(m_result.numerator()) >= QABS(m_result.denominator()))
 	{
 		// result as mixed number
-		paintMiddle(paint, QString("="), old_x, fm, m_colorOperation);
+		paintMiddle(paint, TQString("="), old_x, fm, m_colorOperation);
 		paintRatio(paint, m_result, old_x, fm, true);
 	}
 

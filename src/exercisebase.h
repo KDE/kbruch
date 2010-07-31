@@ -25,9 +25,9 @@
 #include <kdebug.h>
 #endif
 
-#include <qwidget.h>
+#include <tqwidget.h>
 
-/*! Constructs a QWidget.
+/*! Constructs a TQWidget.
  *
  * It is the base class for showing the different exercises.
  *
@@ -39,7 +39,7 @@ class ExerciseBase : public QWidget
 
 public:
 	/** constructor */
-	ExerciseBase(QWidget * parent = 0, const char * name = 0);
+	ExerciseBase(TQWidget * parent = 0, const char * name = 0);
 
 	/** destructor */
 	~ExerciseBase();

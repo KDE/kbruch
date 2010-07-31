@@ -19,9 +19,9 @@
 #include "factorizedwidget.moc"
 
 /* these includes are needed for Qt support */
-#include <qpainter.h>
+#include <tqpainter.h>
 
-FactorizedWidget::FactorizedWidget(QWidget * parent, const char * name, const uintList para_factors) :
+FactorizedWidget::FactorizedWidget(TQWidget * parent, const char * name, const uintList para_factors) :
 			FractionBaseWidget(parent, name), m_factors(para_factors)
 {
 #ifdef DEBUG
@@ -42,7 +42,7 @@ void FactorizedWidget::setFactors(const uintList para_factors)
 	update();
 }
 
-void FactorizedWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
+void FactorizedWidget::paintEvent(TQPaintEvent* /* p_paintEvent */)
 {
 	// our x position, we paint from left to right;
 	// we don't want to start directly on the border, so add the margin
@@ -51,24 +51,24 @@ void FactorizedWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	int fontWidth; // to store the width of the last thing painted
 
 	// start the painter
-	QPainter paint(this);
+	TQPainter paint(this);
 
 	// ratios and operation signs are painted with the same font
 	paint.setFont(m_font);
 
 	// set the pen for painting
-	QPen pen(Qt::SolidLine);
+	TQPen pen(Qt::SolidLine);
 	pen.setWidth(0);
 	paint.setPen(pen);
 
 	// get the font height; the font height doesn't change while painting
-	QFontMetrics  fm(paint.fontMetrics());
+	TQFontMetrics  fm(paint.fontMetrics());
 
 	// now we can correctly set the height of the widget
 	setMinimumHeight(fm.lineSpacing());
 	setMaximumHeight(fm.lineSpacing());
 
-	QString tmpStr;
+	TQString tmpStr;
 	int fontHeight = fm.lineSpacing(); // get the font height
 
 	for (uint tmpInt = 0; tmpInt < m_factors.count(); tmpInt++)

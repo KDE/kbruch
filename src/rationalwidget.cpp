@@ -19,10 +19,10 @@
 #include "rationalwidget.moc"
 
 /* these includes are needed for Qt support */
-#include <qpainter.h>
-#include <qstring.h>
+#include <tqpainter.h>
+#include <tqstring.h>
 
-RationalWidget::RationalWidget(QWidget * parent, const char * name, const QString pnumber, const uint pperiodStart, const uint pperiodLength):
+RationalWidget::RationalWidget(TQWidget * parent, const char * name, const TQString pnumber, const uint pperiodStart, const uint pperiodLength):
 			FractionBaseWidget(parent, name), m_number(pnumber),
 				m_periodStart(pperiodStart), m_periodLength(pperiodLength)
 {
@@ -38,7 +38,7 @@ RationalWidget::~RationalWidget()
 #endif
 }
 
-void RationalWidget::setRational(const QString pnumber, const uint pperiodStart, const uint pperiodLength)
+void RationalWidget::setRational(const TQString pnumber, const uint pperiodStart, const uint pperiodLength)
 {
 	m_number = pnumber;
 	m_periodStart = pperiodStart;
@@ -49,7 +49,7 @@ void RationalWidget::setRational(const QString pnumber, const uint pperiodStart,
 	return;
 }
 
-void RationalWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
+void RationalWidget::paintEvent(TQPaintEvent* /* p_paintEvent */)
 {
 	// our x position, we paint from left to right;
 	// we don't want to start directly on the border, so add the margin
@@ -58,18 +58,18 @@ void RationalWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 	bool tmp_painting = false;
 
 	// start the painter
-	QPainter paint(this);
+	TQPainter paint(this);
 
 	// ratios and operation signs are painted with the same font
 	paint.setFont(m_font);
 
 	// set the pen for painting
-	QPen pen(Qt::SolidLine);
+	TQPen pen(Qt::SolidLine);
 	pen.setWidth(0);
 	paint.setPen(pen);
 
 	// get the font height; the font height doesn't change while painting
-	QFontMetrics fm(paint.fontMetrics());
+	TQFontMetrics fm(paint.fontMetrics());
 	int fontHeight = fm.lineSpacing(); // get the font height
 
 	// now we can correctly set the height of the widget
@@ -87,7 +87,7 @@ void RationalWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 		}
 
 		// paint the current number (or comma)
-		paintMiddle(paint, QString(m_number[stringPos]), x_pos, fm, m_colorNumber, false);
+		paintMiddle(paint, TQString(m_number[stringPos]), x_pos, fm, m_colorNumber, false);
 
 		// check if the period line ends over the current number; in this case
 		// draw the period line

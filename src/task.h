@@ -52,9 +52,9 @@ typedef struct PRIME_FACTOR
 Tprime_factor;
 
 /** we use the vector template class to create 3 dynamic types */
-typedef QValueVector<ratio> RatioArray;
-typedef QValueVector<short> ShortArray;
-typedef QValueVector<Tprime_factor> PrimeFactorArray;
+typedef TQValueVector<ratio> RatioArray;
+typedef TQValueVector<short> ShortArray;
+typedef TQValueVector<Tprime_factor> PrimeFactorArray;
 
 /*! class to handle mathematical tasks with ratios
  *  naming:
@@ -101,7 +101,7 @@ public:
 	void add_operation(short operation = ADD);
 
 	/** display the whole task, mainly for debug */
-	QTextStream & display(QTextStream & str);
+	TQTextStream & display(TQTextStream & str);
 
 	/** solves the task and returns the result as ratio */
 	ratio solve();
@@ -162,6 +162,6 @@ private:
 /* ------ some prototypes of non class functions ------ */
 
 /** it is possible to code: cout << task_object << endl; */
-QTextStream & operator<<(QTextStream & str, task & ptask);
+TQTextStream & operator<<(TQTextStream & str, task & ptask);
 
 #endif
