@@ -18,11 +18,11 @@
 #ifndef STATISTICSVIEW_H
 #define STATISTICSVIEW_H
 
-class QLabel;
-class QPushButton;
-class QVBoxLayout;
-class QHBoxLayout;
-class QGridLayout;
+class TQLabel;
+class TQPushButton;
+class TQVBoxLayout;
+class TQHBoxLayout;
+class TQGridLayout;
 
 #include <tqwidget.h>
 

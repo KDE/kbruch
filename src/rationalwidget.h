@@ -26,7 +26,7 @@
 
 #include "fractionbasewidget.h"
 
-class QString;
+class TQString;
 
 /*! class to paint a rational number
  *

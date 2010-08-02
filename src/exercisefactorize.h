@@ -34,13 +34,13 @@
 class ResultWidget;
 class FactorizedWidget;
 
-class QVBoxLayout;
-class QHBoxLayout;
-class QGridLayout;
-class QSpacerItem;
-class QLabel;
-class QLineEdit;
-class QPushButton;
+class TQVBoxLayout;
+class TQHBoxLayout;
+class TQGridLayout;
+class TQSpacerItem;
+class TQLabel;
+class TQLineEdit;
+class TQPushButton;
 
 // a list containing uints
 typedef TQValueList<uint> uintList;

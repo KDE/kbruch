@@ -28,13 +28,13 @@
 class RationalWidget;
 class ResultWidget;
 
-class QFrame;
-class QGridLayout;
-class QLabel;
-class QLineEdit;
-class QPushButton;
-class QString;
-class QVBoxLayout;
+class TQFrame;
+class TQGridLayout;
+class TQLabel;
+class TQLineEdit;
+class TQPushButton;
+class TQString;
+class TQVBoxLayout;
 
 /*! Construct the exercise widget to convert rational numbers into fractions
  *

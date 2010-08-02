@@ -23,7 +23,7 @@
 class KJanusWidget;
 class KWidgetAction;
 
-class QLabel;
+class TQLabel;
 
 class ExerciseCompare;
 class ExerciseConvert;

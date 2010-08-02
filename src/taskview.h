@@ -33,14 +33,14 @@
 #include <tqwidget.h>
 
 
-class QVBoxLayout;
-class QHBoxLayout;
-class QGridLayout;
-class QSpacerItem;
-class QLabel;
-class QPushButton;
-class QLineEdit;
-class QFrame;
+class TQVBoxLayout;
+class TQHBoxLayout;
+class TQGridLayout;
+class TQSpacerItem;
+class TQLabel;
+class TQPushButton;
+class TQLineEdit;
+class TQFrame;
 
 /*! Constructs a TQWidget, which shows the task to the user.
  *  The class also provides input fields, so that the user can enter the result.

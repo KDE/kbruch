@@ -28,10 +28,10 @@
 #include "ratio.h"
 #include "ratiowidget.h"
 
-class QGridLayout;
-class QLabel;
-class QPushButton;
-class QVBoxLayout;
+class TQGridLayout;
+class TQLabel;
+class TQPushButton;
+class TQVBoxLayout;
 
 
 #include <tqwidget.h>
