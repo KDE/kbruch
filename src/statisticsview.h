@@ -93,6 +93,8 @@ private:
 
 	QFont defaultFont;
 
+	QPushButton * resetButton;
+
 	StatisticsBarWidget * statisticsBar;
 };
 

@@ -128,6 +128,15 @@ StatisticsView::StatisticsView(QWidget * parent):
 	labelGrid->addWidget(statisticsBar, 0, 5, 3, 1);
 	labelGrid->addLayout(cLayout,0,5,Qt::AlignCenter);
 
+	// add reset button and connect
+	resetButton = new QPushButton(this);
+	resetButton->setObjectName("resetButton");
+	resetButton->setText(i18n("&Reset"));
+	resetButton->setToolTip(i18n("Click this button to reset the statistics."));
+	resetButton->setFont(defaultFont);
+	QObject::connect(resetButton, SIGNAL(clicked()), this, SLOT(resetStatistics())); 
+	labelGrid->addWidget(resetButton, 5, 5, Qt::AlignRight); 
+
 	/* calculate the statistics */
 	(void) calc();
 }
@@ -205,7 +214,7 @@ void StatisticsView::calc()
 	}
 }
 
-/* ------ private slots ------ */
+/* ------ public slots ------ */
 
 /* called by the reset button */
 void StatisticsView::resetStatistics()
