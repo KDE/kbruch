@@ -60,6 +60,8 @@ FractionRingWidget::FractionRingWidget()
 	setupActions();
 	createGUI("FractionRingWidgetui.rc");
 
+	setCaption(i18n("Learning"));
+
 	layout1 = new QGridLayout();
 	layout1->setObjectName( "layout1" );
 

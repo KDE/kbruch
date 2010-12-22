@@ -85,6 +85,8 @@ MainQtWidget::MainQtWidget()
 
 	createGUI(0L);
 
+	setCaption(i18n("Freestyle"));
+
 	// Create layout	
 	QGridLayout * layoutExercises = new QGridLayout();
 	layoutExercises->setObjectName( "layoutExercises" );
