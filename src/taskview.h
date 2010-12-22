@@ -80,7 +80,6 @@ public:
 
 	void setReducedForm(bool value);
 	void setQuestionMixed(bool value);
-	void setSolutionMixed(bool value);
 	void setAnswerMixed(bool value);
 
 public slots:

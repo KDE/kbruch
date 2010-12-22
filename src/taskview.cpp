@@ -197,20 +197,22 @@ void TaskView::setReducedForm(bool value)
 	m_reducedForm = value;
 }
 
-void TaskView::setSolutionMixed(bool value)
-{
-	m_resultWidget->setSolutionMixed(value);
-}
-
 void TaskView::setQuestionMixed(bool value)
 {
+#ifdef DEBUG
+	kDebug() << "TaskView::setQuestionMixed()";
+#endif
 	m_taskWidget->setQuestionMixed(value);
 }
 
 void TaskView::setAnswerMixed(bool value)
 {
+#ifdef DEBUG
+	kDebug() << "TaskView::setAnswerMixed()";
+#endif
 	m_answerMixed = value;
 	integer_edit->setVisible( value );
+	m_resultWidget->setAnswerMixed(value);
 }
 
 /** the parameters of task generation can be set with this function */

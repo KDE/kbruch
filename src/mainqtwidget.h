@@ -113,7 +113,6 @@ class MainQtWidget : public KXmlGuiWindow
 		unsigned int m_maxMainDenominator;
 		bool m_questionMixed;
 		bool m_answerMixed;
-		bool m_solutionMixed;
 		bool m_reducedForm;
 		QFont defaultFont;
 
@@ -124,7 +123,6 @@ class MainQtWidget : public KXmlGuiWindow
 
 		QGroupBox * m_QuestionGroup;
 		QGroupBox * m_AnswerGroup;
-		QGroupBox * m_SolutionGroup;
 		QGroupBox * m_OperationsGroup;
 
 		QToolButton * m_ArithmeticButton;
@@ -152,11 +150,6 @@ class MainQtWidget : public KXmlGuiWindow
 
 		QCheckBox * m_ReducedCheck;	
 		QLabel * m_ReducedLabel;
-
-		
-		// Solution group
-		QCheckBox * m_SolutionMixedCheck;
-		QLabel * m_SolutionMixedLabel;
 
 
 		// Operations group
@@ -213,8 +206,6 @@ class MainQtWidget : public KXmlGuiWindow
 		void QuestionMixedCheckSlot();
 		// called, when the user changes the state of mixed number checkbox of answer group
 		void AnswerMixedCheckSlot();
-		// called, when the user changes the state of mixed number checkbox of solution group
-		void SolutionMixedCheckSlot();
 		// called, when the user changes the state of addition task operation
 		void AdditionCheckSlot();
 		// called, when the user changes the state of subtraction task operation

@@ -78,7 +78,7 @@ void ResultWidget::Init()
 	setMaximumHeight( 213 );
 	setMinimumHeight( 213 );
 
-	m_solutionMixed = true;
+	m_answerMixed = true;
 
 	m_kindView = -1;
 
@@ -175,12 +175,12 @@ void ResultWidget::setResult(const ratio para_result, int k)
 	showResult();
 }
 
-void ResultWidget::setSolutionMixed(bool value)
+void ResultWidget::setAnswerMixed(bool value)
 {
 #ifdef DEBUG
-	kDebug() << "ResultWidget::setSolutionMixed";
+	kDebug() << "ResultWidget::setAnswerMixed";
 #endif
-	m_solutionMixed = value;
+	m_answerMixed = value;
 }
 
 void ResultWidget::setResult(int k)
@@ -233,19 +233,19 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 			// get the font height; the font height doesn't change while painting
 			QFontMetrics fm(paint.fontMetrics());
 
+			// m_ExerciseView != 1 only for exercise factorize!
 			if (m_ExerciseView == 1) {
-
 				if (SettingsClass::showSpecialRatioNotation() == true &&
 						qAbs(m_result.numerator()) >= qAbs(m_result.denominator()) &&
 						m_result.denominator() != 1 &&
-						m_solutionMixed == true)
+						m_answerMixed == true)
 				{
-					paintRatio(paint, m_result, old_x, old_y, fm, false, true, false);
-					paintMiddle(paint, QString(i18n(" or ")), old_x, old_y, fm, m_colorOperation);
-					paintRatio(paint, m_result, old_x, old_y, fm, true, true, false);
-				} else
+					paintRatio(paint, m_result, old_x, old_y, fm, true, true, true);
+				} else {
 					paintRatio(paint, m_result, old_x, old_y, fm, false, true, true);
+				}
 			} else {
+				// show solution of a factorization exercise
 				old_y+= 20;
 				QString tmpStr;
 				int fontHeight = fm.lineSpacing(); // get the font height

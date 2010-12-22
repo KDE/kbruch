@@ -105,10 +105,6 @@ MainQtWidget::MainQtWidget()
 	layoutOperations->setObjectName( "layoutOperations" );
 	layoutOperations->setColumnMinimumWidth(0, 110);
 	layoutOperations->setColumnStretch(1, 1);
-	QGridLayout * layoutSolution = new QGridLayout();
-	layoutSolution->setObjectName( "layoutSolution" );
-	layoutSolution->setColumnMinimumWidth(0, 110);
-	layoutSolution->setColumnStretch(1, 1);
 
 	QSplitter* splitter = new QSplitter(Qt::Horizontal, this);
 	splitter->setObjectName("QSplitter");
@@ -121,7 +117,6 @@ MainQtWidget::MainQtWidget()
 	// Create visible components
 	m_QuestionGroup = new QGroupBox(i18n("Question:"), pageOptions);
 	m_AnswerGroup = new QGroupBox(i18n("Answer:"), pageOptions);
-	m_SolutionGroup = new QGroupBox(i18n("Solution:"), pageOptions);
 	m_OperationsGroup = new QGroupBox(i18n("Operations:"), pageOptions);
 
 	defaultFont = SettingsClass::taskFont();
@@ -193,17 +188,6 @@ MainQtWidget::MainQtWidget()
 	m_AnswerMixedCheck->setChecked(m_answerMixed);
 	m_taskview->setAnswerMixed(m_answerMixed);
 	QObject::connect(m_AnswerMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(AnswerMixedCheckSlot()));
-
-	m_SolutionMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
-	m_SolutionMixedLabel->setToolTip(i18n("Set if the fractions will appear as mixed numbers or not in the solution (mixed number example: 1 4/5 = 9/5 )."));
-	m_SolutionMixedLabel->setObjectName("SolutionMixedLabel");
-	m_SolutionMixedLabel->setAlignment(Qt::AlignRight);
-	
-	m_SolutionMixedCheck = new QCheckBox(pageOptions);
-	m_SolutionMixedCheck->setObjectName("SolutionMixedCheck");
-	m_SolutionMixedCheck->setChecked(m_solutionMixed);
-	m_taskview->setSolutionMixed(m_solutionMixed);
-	QObject::connect(m_SolutionMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(SolutionMixedCheckSlot()));
 
 	m_AdditionLabel = new QLabel(i18n("Addition:"), pageOptions);
 	m_AdditionLabel->setToolTip(i18n("Check this to use addition operator."));
@@ -309,9 +293,8 @@ MainQtWidget::MainQtWidget()
 
 	layoutOptions->addWidget(m_OptionsLabel, 1, 0);
 	layoutOptions->addWidget(m_QuestionGroup, 2, 0);
-    	layoutOptions->addWidget(m_AnswerGroup, 3, 0);
-    	layoutOptions->addWidget(m_SolutionGroup, 4, 0);
-    	layoutOptions->addWidget(m_OperationsGroup, 5, 0);
+  	layoutOptions->addWidget(m_AnswerGroup, 3, 0);
+  	layoutOptions->addWidget(m_OperationsGroup, 5, 0);
 
 	layoutQuestion->addWidget(m_QuestionMixedLabel,0,0);
 	layoutQuestion->addWidget(m_QuestionMixedCheck,0,1);
@@ -325,9 +308,6 @@ MainQtWidget::MainQtWidget()
 	layoutAnswer->addWidget(m_ReducedLabel,1,0);
 	layoutAnswer->addWidget(m_ReducedCheck,1,1);
 
-	layoutSolution->addWidget(m_SolutionMixedLabel,0,0);
-	layoutSolution->addWidget(m_SolutionMixedCheck,0,1);
-
 	layoutOperations->addWidget(m_AdditionLabel,0,0);
 	layoutOperations->addWidget(m_AdditionCheck,0,1);
 	layoutOperations->addWidget(m_SubtractionLabel,1,0);
@@ -339,7 +319,6 @@ MainQtWidget::MainQtWidget()
 
 	m_QuestionGroup->setLayout(layoutQuestion);
 	m_AnswerGroup->setLayout(layoutAnswer);
-	m_SolutionGroup->setLayout(layoutSolution);
 	m_OperationsGroup->setLayout(layoutOperations);
   	pageOptions->setLayout(layoutOptions);
   	pageExercises->setLayout(layoutExercises);
@@ -420,7 +399,6 @@ void MainQtWidget::readOptions()
 	m_maxMainDenominator = SettingsClass::max_main_denominator();
 
 	m_reducedForm = SettingsClass::reduceForm();
-	m_solutionMixed = SettingsClass::solutionMixed();
 	m_answerMixed = SettingsClass::answerMixed();
 	m_questionMixed = SettingsClass::questionMixed();
 
@@ -444,7 +422,6 @@ void MainQtWidget::writeOptions()
 	SettingsClass::setNumber_ratios(m_nrRatios);
 	SettingsClass::setMax_main_denominator(m_maxMainDenominator);
 	SettingsClass::setReduceForm(m_reducedForm);
-	SettingsClass::setSolutionMixed(m_solutionMixed);
 	SettingsClass::setAnswerMixed(m_answerMixed);
 	SettingsClass::setQuestionMixed(m_questionMixed);
 	SettingsClass::self()->writeConfig();	
@@ -681,15 +658,6 @@ void MainQtWidget::AnswerMixedCheckSlot()
 	m_taskview->setAnswerMixed(m_answerMixed);
 }
 
-void MainQtWidget::SolutionMixedCheckSlot()
-{
-#ifdef DEBUG
-	kDebug() << "MainQtWidget::SolutionMixedCheckSlot()";
-#endif
-	m_solutionMixed = m_SolutionMixedCheck->isChecked();
-	m_taskview->setSolutionMixed(m_solutionMixed);
-}
-
 void MainQtWidget::QuestionMixedCheckSlot()
 {
 #ifdef DEBUG
@@ -832,7 +800,6 @@ void MainQtWidget::slotAboutToShowPage()
 		m_MaxMainDenominatorBox->setEnabled( true );		
 		m_AnswerMixedCheck->setEnabled( true );		
 		m_ReducedCheck->setEnabled( true );		
-		m_SolutionMixedCheck->setEnabled( true );		
 		m_SubtractionCheck->setEnabled( true );		
 		m_DivisionCheck->setEnabled( true );		
 		m_MultiplicationCheck->setEnabled( true );		
@@ -846,7 +813,6 @@ void MainQtWidget::slotAboutToShowPage()
 		m_MaxMainDenominatorBox->setEnabled( false );		
 		m_AnswerMixedCheck->setEnabled( false );		
 		m_ReducedCheck->setEnabled( false );		
-		m_SolutionMixedCheck->setEnabled( false );		
 		m_SubtractionCheck->setEnabled( false );		
 		m_DivisionCheck->setEnabled( false );		
 		m_MultiplicationCheck->setEnabled( false );		
@@ -858,7 +824,6 @@ void MainQtWidget::slotAboutToShowPage()
 		m_MaxMainDenominatorBox->setEnabled( false );		
 		m_AnswerMixedCheck->setEnabled( false );		
 		m_ReducedCheck->setEnabled( false );		
-		m_SolutionMixedCheck->setEnabled( false );		
 		m_SubtractionCheck->setEnabled( false );		
 		m_DivisionCheck->setEnabled( false );		
 		m_MultiplicationCheck->setEnabled( false );		
