@@ -114,7 +114,6 @@ MainQtWidget::MainQtWidget()
 
 	QWidget * pageExercises = new QWidget();
 	QWidget * pageOptions = new QWidget();
-	//pageOptions->setFixedWidth(185);
 
 	// Create visible components
 	m_QuestionGroup = new QGroupBox(i18n("Question:"), pageOptions);
@@ -322,9 +321,15 @@ MainQtWidget::MainQtWidget()
 	m_QuestionGroup->setLayout(layoutQuestion);
 	m_AnswerGroup->setLayout(layoutAnswer);
 	m_OperationsGroup->setLayout(layoutOperations);
+
+	// set layouts to both parts
   	pageOptions->setLayout(layoutOptions);
   	pageExercises->setLayout(layoutExercises);
 
+	// preventing resizing of left sidebar
+	pageOptions->setFixedWidth(pageOptions->sizeHint().width());
+
+	// add left and right part to the splitter
 	splitter->addWidget(pageOptions);
 	splitter->addWidget(pageExercises);
 
