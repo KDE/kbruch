@@ -112,12 +112,12 @@ FractionRingWidget::FractionRingWidget()
 	// Info Labels -------------------------------------
 	leftInfoLabel = new QLabel(this);
 	leftInfoLabel->setObjectName( "leftInfoLabel" );
-	leftInfoLabel->setText(i18n("Multiply"));
+	leftInfoLabel->setText(i18n("Expand"));
 	gridLayout->addWidget(leftInfoLabel, 1, 0, Qt::AlignCenter);
 
 	rightInfoLabel = new QLabel(this);
 	rightInfoLabel->setObjectName( "rightInfoLabel" );
-	rightInfoLabel->setText(i18n("Multiply"));
+	rightInfoLabel->setText(i18n("Expand"));
 	gridLayout->addWidget(rightInfoLabel, 1, 1, Qt::AlignCenter);
 
 	// SpinBox -----------------------------------------
@@ -377,9 +377,9 @@ void FractionRingWidget::slotLeftSpinBoxValueChanged(int value)
 	}
 	else
 	{
-		msg = i18n("You have just multiplied the first fraction by %1. "
+		msg = i18n("You have just expanded the first fraction by %1. "
 		           "Our main goal is to make all parts be the same size. "
-		           "Try multiplying the first fraction by %2 and the second fraction by %3.",
+		           "Try expanding the first fraction by %2 and the second fraction by %3.",
 		           value, rRight.denominator(), rLeft.denominator());
 		textMsg->setText(msg);
 	}
@@ -409,9 +409,9 @@ void FractionRingWidget::slotRightSpinBoxValueChanged(int value)
 	}
 	else
 	{
-		msg = i18n("You have just multiplied the second fraction by %1. "
+		msg = i18n("You have just expanded the second fraction by %1. "
 		           "Our main goal is to make all parts be the same size. "
-		           "Try multiplying the first fraction by %2 and the second fraction by %3.",
+		           "Try expanding the first fraction by %2 and the second fraction by %3.",
 		           value, rRight.denominator(), rLeft.denominator());
 		textMsg->setText(msg);
 	}
@@ -456,7 +456,7 @@ void FractionRingWidget::resetFraction(bool flag = true)
 	QString msg = i18nc("%1 and %2 are the two messages translated above.",
 	                    "The outside ring represents the left fraction. %1\n\n"
 	                    "The inside ring represents the right fraction. %2\n\n"
-	                    "The 'Multiply' spinboxes multiplies each fraction. Try to change one of the spinbox values!",
+	                    "The 'Expand' spinboxes expand each fraction. Try to change one of the spinbox values!",
 	                    insert1, insert2);
 
 	textMsg->setText(msg);
