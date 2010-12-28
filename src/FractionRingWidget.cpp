@@ -112,12 +112,12 @@ FractionRingWidget::FractionRingWidget()
 	// Info Labels -------------------------------------
 	leftInfoLabel = new QLabel(this);
 	leftInfoLabel->setObjectName( "leftInfoLabel" );
-	leftInfoLabel->setText(i18n("Expand"));
+	leftInfoLabel->setText(i18nc("Expands the ratio shown on the left by the given factor. Please note, expanding is not the same as multiplying. For example, expanding a ratio by 2 basically means multiplying the ratio with 2/2 and not with 2/1!", "Expand"));
 	gridLayout->addWidget(leftInfoLabel, 1, 0, Qt::AlignCenter);
 
 	rightInfoLabel = new QLabel(this);
 	rightInfoLabel->setObjectName( "rightInfoLabel" );
-	rightInfoLabel->setText(i18n("Expand"));
+	rightInfoLabel->setText(i18nc("Expands the ratio shown on the left by the given factor. Please note, expanding is not the same as multiplying. For example, expanding a ratio by 2 basically means multiplying the ratio with 2/2 and not with 2/1!", "Expand"));
 	gridLayout->addWidget(rightInfoLabel, 1, 1, Qt::AlignCenter);
 
 	// SpinBox -----------------------------------------
