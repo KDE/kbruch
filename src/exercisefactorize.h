@@ -21,8 +21,6 @@
 #ifndef EXERCISEFACTORIZE_H
 #define EXERCISEFACTORIZE_H
 
-#define DEBUG
-
 #ifdef DEBUG
 #include <kdebug.h>
 #endif
@@ -38,8 +36,7 @@
 #include "exercisebase.h"
 #include "resultwidget.h"
 #include "ratio.h"
-
-class KLineEdit;
+#include "PrimeFactorsLineEdit.h"
 
 class ResultWidget;
 class QVBoxLayout;
@@ -49,7 +46,6 @@ class QSpacerItem;
 class QLabel;
 class QPushButton;
 class QToolButton;
-class QKeyEvent;
 
 // a list containing uints
 typedef QList<uint> uintList;
@@ -109,7 +105,7 @@ private:
 
     QLabel * m_taskLabel;
     QLabel * m_equalSignLabel;
-    KLineEdit * m_factorsEnteredEdit;
+    PrimeFactorsLineEdit * m_factorsEnteredEdit;
 
     // buttons for the different prime factors
     QPushButton * m_factor2Button;
@@ -144,7 +140,6 @@ private:
 
 
 protected:
-    void keyPressEvent (QKeyEvent * e);
     void showEvent (QShowEvent * event);
 
 

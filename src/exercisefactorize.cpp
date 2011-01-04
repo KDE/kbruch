@@ -22,7 +22,6 @@
 #include "exercisefactorize.moc"
 
 /* these includes are needed for KDE support */
-#include <klineedit.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <knumvalidator.h>
@@ -36,11 +35,11 @@
 
 //Added by qt3to4:
 #include <QGridLayout>
-#include <QKeyEvent>
 
 /* standard C++ library includes */
 #include <stdlib.h>
 
+#include "PrimeFactorsLineEdit.h"
 #include "primenumber.h"
 #include "rationalwidget.h"
 #include "resultwidget.h"
@@ -103,12 +102,11 @@ ExerciseFactorize::ExerciseFactorize (QWidget * parent) :
     m_equalSignLabel->setFont (defaultFont);
     taskLayout->addWidget (m_equalSignLabel, 1, 2);
 
-    m_factorsEnteredEdit = new KLineEdit (this);
+    m_factorsEnteredEdit = new PrimeFactorsLineEdit (this);
     m_factorsEnteredEdit->setObjectName ("factorsEnteredEdit");
-    m_factorsEnteredEdit->setReadOnly (true);
     QPalette pal;
     pal.setColor (m_factorsEnteredEdit->foregroundRole(), QColor (0, 0, 0));
-    m_factorsEnteredEdit->setPalette (pal);
+    //m_factorsEnteredEdit->setPalette (pal);
     m_factorsEnteredEdit->setFont (defaultFont);
     m_factorsEnteredEdit->setFixedSize (320, 35);
     taskLayout->addWidget (m_factorsEnteredEdit, 1, 3, 1, 5);
@@ -594,74 +592,6 @@ void ExerciseFactorize::slotRemoveLastFactorButtonClicked()
     updateEnteredEdit();
 
     return;
-}
-
-/* ------ protected events ------ */
-void ExerciseFactorize::keyPressEvent (QKeyEvent * e)
-{
-    if (m_edit == false)
-        return;
-
-    switch (e->key()) {
-    case Qt::Key_1:
-        if (m_buffer != 1) {
-            m_buffer = 1;
-        } else {
-            m_buffer = 0;
-            addFactor (11);
-        }
-        break;
-
-    case Qt::Key_2:
-        m_buffer = 0;
-        addFactor (2);
-        break;
-
-    case Qt::Key_3:
-        if (m_buffer != 1) {
-            addFactor (3);
-        } else {
-            addFactor (13);
-        }
-        m_buffer = 0;
-        break;
-
-    case Qt::Key_5:
-        m_buffer = 0;
-        addFactor (5);
-        break;
-
-    case Qt::Key_7:
-        if (m_buffer == 1) {
-            addFactor (17);
-        } else {
-            addFactor (7);
-        }
-        m_buffer = 0;
-        break;
-
-    case Qt::Key_9:
-        if (m_buffer == 1) {
-            addFactor (19);
-        }
-        m_buffer = 0;
-        break;
-
-    case Qt::Key_Delete:
-    case Qt::Key_Backspace:
-        m_buffer = 0;
-        slotRemoveLastFactorButtonClicked();
-        break;
-
-    case Qt::Key_Return:
-        m_buffer = 0;
-        slotCheckButtonClicked();
-        break;
-
-    default:
-        m_buffer = 0;
-        break;
-    }
 }
 
 void ExerciseFactorize::showEvent (QShowEvent *)

@@ -5,6 +5,7 @@ add_subdirectory( pics )
 include_directories( ${CMAKE_CURRENT_BINARY_DIR} )
 
 set(kbruch_SRCS
+   PrimeFactorsLineEdit.cpp
    exercisebase.cpp 
    task.cpp 
    ratio.cpp 
