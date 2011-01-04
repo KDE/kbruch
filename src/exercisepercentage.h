@@ -47,66 +47,66 @@ class QVBoxLayout;
  * */
 class ExercisePercentage : public ExerciseBase
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	/** constructor */
-	ExercisePercentage(QWidget * parent = 0);
+    /** constructor */
+    ExercisePercentage (QWidget * parent = 0);
 
-	/** destructor */
-	~ExercisePercentage();
+    /** destructor */
+    ~ExercisePercentage();
 
-	/** force the creation of a new task */
-	void forceNewTask();
+    /** force the creation of a new task */
+    void forceNewTask();
 
 public slots:
-	void update();
+    void update();
 
 signals:
-	/** class emits this signal, if the task was solved correctly by the user */
-	void signalExerciseSolvedCorrect();
+    /** class emits this signal, if the task was solved correctly by the user */
+    void signalExerciseSolvedCorrect();
 
-	/** class emits this signal, if the task was skipped by the user */
-	void signalExerciseSkipped();
+    /** class emits this signal, if the task was skipped by the user */
+    void signalExerciseSkipped();
 
-	/** class emits this signal, if the task was solved not correctly by the user
-	 * */
-	void signalExerciseSolvedWrong();
+    /** class emits this signal, if the task was solved not correctly by the user
+     * */
+    void signalExerciseSolvedWrong();
 
 private:
-	short m_currentState;
+    short m_currentState;
 
-	ratio m_result;
+    ratio m_result;
 
-	QString m_numberPercentage;
-	QString m_numberPercentageOf;
-	QString m_resultPercentage;
+    QString m_numberPercentage;
+    QString m_numberPercentageOf;
+    QString m_resultPercentage;
 
-	QLabel * m_taskLabel;
+    QLabel * m_taskLabel;
 
-	RationalWidget * m_rationalWidget;
-	ResultWidget * m_resultWidget;	
-	QFrame * edit_line;	
-	KLineEdit * answer_edit;
+    RationalWidget * m_rationalWidget;
+    ResultWidget * m_resultWidget;
+    QFrame * edit_line;
+    KLineEdit * answer_edit;
 
-	QPushButton* m_checkButton;
-	QPushButton* m_skipButton;
+    QPushButton* m_checkButton;
+    QPushButton* m_skipButton;
 
-	QGridLayout* checkLayout;
-	QGridLayout* taskLayout;
-	QGridLayout* baseGrid;
+    QGridLayout* checkLayout;
+    QGridLayout* taskLayout;
+    QGridLayout* baseGrid;
 
-	QWidget * checkWidget;
-	QWidget * taskWidget;
+    QWidget * checkWidget;
+    QWidget * taskWidget;
 
-	void createTask();
-	void showResult();
-	void nextTask();
+    void createTask();
+    void showResult();
+    void nextTask();
 
 private slots:
-	void slotCheckButtonClicked();
-	void slotSkipButtonClicked();
-	void answerReturnPressed(const QString &);		
+    void slotCheckButtonClicked();
+    void slotSkipButtonClicked();
+    void answerReturnPressed (const QString &);
 };
 
 #endif

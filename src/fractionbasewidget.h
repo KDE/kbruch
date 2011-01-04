@@ -41,41 +41,43 @@
  *  \author Sebastian Stein */
 class FractionBaseWidget : public QWidget
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	/** constructor */
-	FractionBaseWidget(QWidget * parent);
+    /** constructor */
+    FractionBaseWidget (QWidget * parent);
 
-	/** destructor */
-	~FractionBaseWidget();
+    /** destructor */
+    ~FractionBaseWidget();
 
-	/** updates the widget by first getting the settings and then repainting */
-	void updateAndRepaint();
+    /** updates the widget by first getting the settings and then repainting */
+    void updateAndRepaint();
 
 protected:
-	virtual QSize minimumSizeHint() const { return QSize( 20, 10 ); }
+    virtual QSize minimumSizeHint() const {
+        return QSize (20, 10);
+    }
 
-	/* store the different colors */
-	QColor m_colorNumber;
-	QColor m_colorLine;
-	QColor m_colorOperation;
+    /* store the different colors */
+    QColor m_colorNumber;
+    QColor m_colorLine;
+    QColor m_colorOperation;
 
-	/* the font to paint with */
-	QFont m_font;
+    /* the font to paint with */
+    QFont m_font;
 
-	/** overwriting the paint event of QWidget */
-	//virtual void paintEvent(QPaintEvent*) = 0;
+    /** overwriting the paint event of QWidget */
+    //virtual void paintEvent(QPaintEvent*) = 0;
 
-	/** paints a ratio at the given position */
-	void paintRatio(QPainter & paint, ratio tmp_ratio, int & x_pos, int & y_pos, QFontMetrics & fm, bool addMargin = true, bool show_mixed = true, bool show_center = false);
+    /** paints a ratio at the given position */
+    void paintRatio (QPainter & paint, ratio tmp_ratio, int & x_pos, int & y_pos, QFontMetrics & fm, bool addMargin = true, bool show_mixed = true, bool show_center = false);
 
-	/** paints a string in the vertical middle (aligned to the operation signs) */
-	void paintMiddle(QPainter & paint, const QString& paint_str, int & x_pos, int & y_pos, QFontMetrics & fm, const QColor &color, bool addMargin = true);
+    /** paints a string in the vertical middle (aligned to the operation signs) */
+    void paintMiddle (QPainter & paint, const QString& paint_str, int & x_pos, int & y_pos, QFontMetrics & fm, const QColor &color, bool addMargin = true);
 
 private:
-	/** sets the font and color; values taken from settings class */
-	void setColorAndFont();
+    /** sets the font and color; values taken from settings class */
+    void setColorAndFont();
 };
 
 #endif

@@ -36,34 +36,34 @@ class QLabel;
  * */
 class StatisticsBarWidget : public QWidget
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	/** constructor */
-	StatisticsBarWidget(QWidget * parent = 0);
+    /** constructor */
+    StatisticsBarWidget (QWidget * parent = 0);
 
-	/** destructor */
-	~StatisticsBarWidget();
+    /** destructor */
+    ~StatisticsBarWidget();
 
-	/** Update statisticsBar */
-	void updateBar(int correct, int skipped, int total);
+    /** Update statisticsBar */
+    void updateBar (int correct, int skipped, int total);
 
 protected:
-	
+
 private:
-	int m_correct;
-	int m_skipped;
-	int m_total;
+    int m_correct;
+    int m_skipped;
+    int m_total;
 
-	QFont defaultFont;
+    QFont defaultFont;
 
-	QLabel * m_correctLabel;
-	QLabel * m_skippedLabel;
-	QLabel * m_incorrectLabel;
+    QLabel * m_correctLabel;
+    QLabel * m_skippedLabel;
+    QLabel * m_incorrectLabel;
 
-	QProgressBar * m_correctBar;
-	QProgressBar * m_skippedBar;
-	QProgressBar * m_incorrectBar;
+    QProgressBar * m_correctBar;
+    QProgressBar * m_skippedBar;
+    QProgressBar * m_incorrectBar;
 };
 
 #endif

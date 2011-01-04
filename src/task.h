@@ -41,19 +41,18 @@
 
 /** to mark a prime factor as used or unused */
 #define UNUSED 0
-#define USED  	1
+#define USED    1
 
 /** Structure represents a prime factor.
  *  Structure stores a prime factor and its usage status. The factor is marked
  *  as used or unused.
  **/
-typedef struct PRIME_FACTOR
-{
-	/** the prime factor */
-	int factor;
+typedef struct PRIME_FACTOR {
+    /** the prime factor */
+    int factor;
 
-	/** the status of the prime factor (used or unused) */
-	short flag;
+    /** the status of the prime factor (used or unused) */
+    short flag;
 }
 Tprime_factor;
 
@@ -71,106 +70,106 @@ typedef QVector<Tprime_factor> PrimeFactorArray;
 class task
 {
 public:
-	/** constructor */
-	task();
+    /** constructor */
+    task();
 
-	/** destructor */
-	~task();
+    /** destructor */
+    ~task();
 
-	/** automatically generate a new task with the given parameters */
-	void create_task(unsigned int pmax_md = 10, short pnr_ratios = 2,
-	                 short padd_add = YES, short padd_div = NO, short padd_mult = NO, short padd_sub = NO);
+    /** automatically generate a new task with the given parameters */
+    void create_task (unsigned int pmax_md = 10, short pnr_ratios = 2,
+                      short padd_add = YES, short padd_div = NO, short padd_mult = NO, short padd_sub = NO);
 
-	/** set ratio n */
-	void set_ratio_n(unsigned short number = 0, int numerator = 0,
-	                 int denominator = 1);
+    /** set ratio n */
+    void set_ratio_n (unsigned short number = 0, int numerator = 0,
+                      int denominator = 1);
 
-	/** set ratio n */
-	void set_ratio_n(unsigned short number, ratio fraction);
+    /** set ratio n */
+    void set_ratio_n (unsigned short number, ratio fraction);
 
-	/** returns ration n */
-	ratio get_ratio_n(unsigned short number = 0) const;
+    /** returns ration n */
+    ratio get_ratio_n (unsigned short number = 0) const;
 
-	/** set operation n */
-	void set_op_n(unsigned short number = 0, short operation = ADD);
+    /** set operation n */
+    void set_op_n (unsigned short number = 0, short operation = ADD);
 
-	/** return operation n */
-	short get_op_n(unsigned short number = 0) const;
+    /** return operation n */
+    short get_op_n (unsigned short number = 0) const;
 
-	/** add a ratio to the end of the task */
-	void add_ratio(ratio new_ratio);
+    /** add a ratio to the end of the task */
+    void add_ratio (ratio new_ratio);
 
-	/** add a ratio to the end of the task */
-	void add_ratio(int numerator = 0, int denominator = 1);
+    /** add a ratio to the end of the task */
+    void add_ratio (int numerator = 0, int denominator = 1);
 
-	/** add an operation at the end of the task */
-	void add_operation(short operation = ADD);
+    /** add an operation at the end of the task */
+    void add_operation (short operation = ADD);
 
-	/** display the whole task, mainly for debug */
-	QTextStream & display(QTextStream & str);
+    /** display the whole task, mainly for debug */
+    QTextStream & display (QTextStream & str);
 
-	/** solves the task and returns the result as ratio */
-	ratio solve();
+    /** solves the task and returns the result as ratio */
+    ratio solve();
 
-	/** returns the number of ratios in the vector */
-	int getNumberOfRatios() const;
+    /** returns the number of ratios in the vector */
+    int getNumberOfRatios() const;
 
-	/** returns the number of operations in the vector */
-	int getNumberOfOperations() const;
+    /** returns the number of operations in the vector */
+    int getNumberOfOperations() const;
 
-	/** removes all ratios and operations from the given task */
-	void clean();
+    /** removes all ratios and operations from the given task */
+    void clean();
 
 private:
-	/** max. size of main denominator */
-	int max_md;
+    /** max. size of main denominator */
+    int max_md;
 
-	/** how many ratios should the task have */
-	short nr_ratios;
+    /** how many ratios should the task have */
+    short nr_ratios;
 
-	short add_sub;
-	short add_add;
-	short add_mult;
-	short add_div;		
+    short add_sub;
+    short add_add;
+    short add_mult;
+    short add_div;
 
-	/** the ratio vector */
-	RatioArray ratio_vector;
+    /** the ratio vector */
+    RatioArray ratio_vector;
 
-	/** the operation vector, smaller by one than ratio_vector */
-	ShortArray op_vector;
+    /** the operation vector, smaller by one than ratio_vector */
+    ShortArray op_vector;
 
-	/** the prime factor vector is used to store all prime factors of the
-	 * main denominator */
-	PrimeFactorArray prim_fac_vector;
+    /** the prime factor vector is used to store all prime factors of the
+     * main denominator */
+    PrimeFactorArray prim_fac_vector;
 
-	/** this function is needed by solve() */
-	ratio product(RatioArray::iterator & ratio_pointer,
-	              ShortArray::iterator & op_pointer);
+    /** this function is needed by solve() */
+    ratio product (RatioArray::iterator & ratio_pointer,
+                   ShortArray::iterator & op_pointer);
 
-	/** generate the operations randomly; return how many mul or div
-	 * are in one block */
-	unsigned short make_operation(short padd_add = YES, short padd_div = NO, 
-				      short padd_mult = NO, short padd_sub = NO,
-	                              short pnr_ratios = 0);
+    /** generate the operations randomly; return how many mul or div
+     * are in one block */
+    unsigned short make_operation (short padd_add = YES, short padd_div = NO,
+                                   short padd_mult = NO, short padd_sub = NO,
+                                   short pnr_ratios = 0);
 
-	/** find a denominator for the task */
-	int make_main_dn(unsigned int pmax_md, unsigned short max_product_length);
+    /** find a denominator for the task */
+    int make_main_dn (unsigned int pmax_md, unsigned short max_product_length);
 
-	/** returns the count number's prime factors  */
-	unsigned short prim_factor_nr(int number = 1);
+    /** returns the count number's prime factors  */
+    unsigned short prim_factor_nr (int number = 1);
 
-	/** set the numerators randomly */
-	void make_numerators(int main_denominator, short pnr_ratios);
+    /** set the numerators randomly */
+    void make_numerators (int main_denominator, short pnr_ratios);
 
-	/** create the ratios' denominators */
-	void make_denominators(int main_denominator = 0, short pmax_md = 0, 
-			       short padd_div = NO, short padd_mult = NO);
+    /** create the ratios' denominators */
+    void make_denominators (int main_denominator = 0, short pmax_md = 0,
+                            short padd_div = NO, short padd_mult = NO);
 };
 
 
 /* ------ some prototypes of non class functions ------ */
 
 /** it is possible to code: cout << task_object << endl; */
-QTextStream & operator<<(QTextStream & str, task & ptask);
+QTextStream & operator<< (QTextStream & str, task & ptask);
 
 #endif

@@ -26,66 +26,66 @@
 //Added by qt3to4:
 #include <QPaintEvent>
 
-RatioWidget::RatioWidget(QWidget * parent = 0,
-													const ratio para_ratio = ratio()) :
-			FractionBaseWidget(parent), m_ratio(para_ratio)
+RatioWidget::RatioWidget (QWidget * parent = 0,
+                          const ratio para_ratio = ratio()) :
+    FractionBaseWidget (parent), m_ratio (para_ratio)
 {
 #ifdef DEBUG
-	kDebug() << "constructor RatioWidget";
+    kDebug() << "constructor RatioWidget";
 #endif
 }
 
 RatioWidget::~RatioWidget()
 {
 #ifdef DEBUG
-	kDebug() << "destructor RatioWidget";
+    kDebug() << "destructor RatioWidget";
 #endif
 }
 
-void RatioWidget::setRatio(const ratio para_ratio)
+void RatioWidget::setRatio (const ratio para_ratio)
 {
-	m_ratio = para_ratio;
-	update();
+    m_ratio = para_ratio;
+    update();
 }
 
-void RatioWidget::setQuestionMixed(bool value)
+void RatioWidget::setQuestionMixed (bool value)
 {
-	m_questionMixed = value;
+    m_questionMixed = value;
 }
 
-void RatioWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
+void RatioWidget::paintEvent (QPaintEvent* /* p_paintEvent */)
 {
-	// our x position, we paint from left to right;
-	// we don't want to start directly on the border, so add the margin
-	int x_pos = _MARGIN_X;
-	int y_pos = 0;
+    // our x position, we paint from left to right;
+    // we don't want to start directly on the border, so add the margin
+    int x_pos = _MARGIN_X;
+    int y_pos = 0;
 
-	// start the painter
-	QPainter paint(this);
+    // start the painter
+    QPainter paint (this);
 
-	// ratios and operation signs are painted with the same font
-	paint.setFont(m_font);
+    // ratios and operation signs are painted with the same font
+    paint.setFont (m_font);
 
-	// set the pen for painting
-	QPen pen(Qt::SolidLine);
-	pen.setWidth(0);
-	paint.setPen(pen);
+    // set the pen for painting
+    QPen pen (Qt::SolidLine);
+    pen.setWidth (0);
+    paint.setPen (pen);
 
-	// get the font height; the font height doesn't change while painting
-	QFontMetrics fm (paint.fontMetrics());
+    // get the font height; the font height doesn't change while painting
+    QFontMetrics fm (paint.fontMetrics());
 
-	// now we can correctly set the height of the widget
-	setMinimumHeight(2 * fm.lineSpacing() + 10);
-	setMaximumHeight(2 * fm.lineSpacing() + 10);
+    // now we can correctly set the height of the widget
+    setMinimumHeight (2 * fm.lineSpacing() + 10);
+    setMaximumHeight (2 * fm.lineSpacing() + 10);
 
-	// result as normal ratio
-	paintRatio(paint, m_ratio, x_pos, y_pos, fm, m_questionMixed);
+    // result as normal ratio
+    paintRatio (paint, m_ratio, x_pos, y_pos, fm, m_questionMixed);
 
-	// stop the painter
-	paint.end();
+    // stop the painter
+    paint.end();
 
-	// the space we needed for painting is the minimum width of the widget
-	setMinimumWidth(x_pos);
+    // the space we needed for painting is the minimum width of the widget
+    setMinimumWidth (x_pos);
 
-	return;
+    return;
 }

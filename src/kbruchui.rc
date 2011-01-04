@@ -17,6 +17,7 @@
   <Action name="Arithmetic"/>
   <Action name="Comparison"/>
   <Action name="Conversion"/>
+  <Action name="MixedNumbers"/>
   <Action name="Factorization"/>
   <Action name="Percentage"/>
 </ToolBar>

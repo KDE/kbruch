@@ -35,31 +35,31 @@ class QString;
  *  \author Sebastian Stein */
 class RationalWidget : public FractionBaseWidget
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	/** constructor */
-	RationalWidget(QWidget * parent, const QString &pnumber, const int pperiodStart = 1, const int pperiodLength = 0);
+    /** constructor */
+    RationalWidget (QWidget * parent, const QString &pnumber, const int pperiodStart = 1, const int pperiodLength = 0);
 
-	/** destructor */
-	~RationalWidget();
+    /** destructor */
+    ~RationalWidget();
 
-	/** set the task to be displayed */
-	void setRational(const QString &pnumber, const int pperiodStart = 1, const int pperiodLength = 0);
+    /** set the task to be displayed */
+    void setRational (const QString &pnumber, const int pperiodStart = 1, const int pperiodLength = 0);
 
 private:
-	
-	/** the rational number to be displayed */
-	QString m_number;
 
-	/** starting of the period */
-	int m_periodStart;
-	
-	/** length of the period */
-	int m_periodLength;
+    /** the rational number to be displayed */
+    QString m_number;
 
-	/** overrideing the paint event of FractionBaseWidget */
-	void paintEvent(QPaintEvent*);
+    /** starting of the period */
+    int m_periodStart;
+
+    /** length of the period */
+    int m_periodLength;
+
+    /** overrideing the paint event of FractionBaseWidget */
+    void paintEvent (QPaintEvent*);
 };
 
 #endif

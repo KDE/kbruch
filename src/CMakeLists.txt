@@ -18,6 +18,7 @@ set(kbruch_SRCS
    resultwidget.cpp 
    exercisecompare.cpp 
    exercisepercentage.cpp   
+   ExerciseMixedNumbers.cpp
    ratiowidget.cpp 
    rationalwidget.cpp 
    exerciseconvert.cpp 

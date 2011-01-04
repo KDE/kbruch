@@ -31,7 +31,7 @@
 #include "AppMenuWidget.h"
 
 static const char description[] =
-	I18N_NOOP("KBruch");
+    I18N_NOOP ("KBruch");
 
 class task;
 

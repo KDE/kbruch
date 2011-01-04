@@ -42,32 +42,32 @@ class QPainter;
  * */
 class FractionPainter : public FractionBaseWidget
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	/** constructor */
-	FractionPainter(QWidget * parent);
+    /** constructor */
+    FractionPainter (QWidget * parent);
 
-	/** destructor */
-	~FractionPainter();
+    /** destructor */
+    ~FractionPainter();
 
-	void paintFraction(const QString & str_operation, ratio & leftRatio, int leftMult,
-		ratio & rightRatio, int rightMult);
+    void paintFraction (const QString & str_operation, ratio & leftRatio, int leftMult,
+                        ratio & rightRatio, int rightMult);
 protected:
-	/** Function is called every time the screen need to be painted.
-	 **/
-	void paintEvent(QPaintEvent * event);
-	void paintWidget(QPainter & paint);
+    /** Function is called every time the screen need to be painted.
+     **/
+    void paintEvent (QPaintEvent * event);
+    void paintWidget (QPainter & paint);
 
 private:
-	QString str_operation;
-	ratio leftRatio;
-	int leftMult;
-	ratio rightRatio;
-	int rightMult;
+    QString str_operation;
+    ratio leftRatio;
+    int leftMult;
+    ratio rightRatio;
+    int rightMult;
 
 public slots:
-	void update();
+    void update();
 };
 
 #endif

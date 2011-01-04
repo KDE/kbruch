@@ -60,81 +60,81 @@ class KAction;
  * */
 class FractionRingWidget : public KXmlGuiWindow
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	/** constructor */
-	FractionRingWidget();
+    /** constructor */
+    FractionRingWidget();
 
-	/** destructor */
-	~FractionRingWidget();
+    /** destructor */
+    ~FractionRingWidget();
 
 protected:
-	/** Function is called every time the screen need to be painted.
-	 **/
-	void paintEvent(QPaintEvent * event);
+    /** Function is called every time the screen need to be painted.
+     **/
+    void paintEvent (QPaintEvent * event);
 
-	void resetFraction(bool update);
-	bool checkTask();
-	int MCM(int a, int b);
-	int GCF(int a, int b);
+    void resetFraction (bool update);
+    bool checkTask();
+    int MCM (int a, int b);
+    int GCF (int a, int b);
 
 private:
-	QWidget * baseWidget;
-	QWidget * interfaceWidget;
+    QWidget * baseWidget;
+    QWidget * interfaceWidget;
 
-	QGridLayout * layout1;
-	QGridLayout * gridLayout;
-	KIntSpinBox * leftSpinBox;
-	KIntSpinBox * rightSpinBox;
-	QPushButton * resetButton;
-	KTextEdit * textMsg;
-	QLabel * leftInfoLabel;
-	QLabel * rightInfoLabel;
+    QGridLayout * layout1;
+    QGridLayout * gridLayout;
+    KIntSpinBox * leftSpinBox;
+    KIntSpinBox * rightSpinBox;
+    QPushButton * resetButton;
+    KTextEdit * textMsg;
+    QLabel * leftInfoLabel;
+    QLabel * rightInfoLabel;
 
-	FractionPainter * fractionWidget;
+    FractionPainter * fractionWidget;
 
-	AppMenuWidget * kbruchApp;
+    AppMenuWidget * kbruchApp;
 
-	QColor bgOutsideRing;
-	QColor bgOutsideMold;
-	QColor bgInsideRing;
-	QColor bgInsideMold;
-	QColor bgColor;
-	QColor colorListLeft[5];
-	QColor colorListRight[5];
+    QColor bgOutsideRing;
+    QColor bgOutsideMold;
+    QColor bgInsideRing;
+    QColor bgInsideMold;
+    QColor bgColor;
+    QColor colorListLeft[5];
+    QColor colorListRight[5];
 
-	KAction * m_NewTaskAction;
-	KAction * m_BackAction;
-	KAction * m_HintAction;
+    KAction * m_NewTaskAction;
+    KAction * m_BackAction;
+    KAction * m_HintAction;
 
-	ratio rLeft;
-	ratio rRight;
+    ratio rLeft;
+    ratio rRight;
 
-	int numLeft;
-	int denLeft;
-	int multLeft;
+    int numLeft;
+    int denLeft;
+    int multLeft;
 
-	int numRight;
-	int denRight;
-	int multRight;
+    int numRight;
+    int denRight;
+    int multRight;
 
-	void setupActions();
+    void setupActions();
 
 private slots:
-	void slotLeftSpinBoxValueChanged(int value);
-	void slotRightSpinBoxValueChanged(int value);
-	void NewTask();
-	void Hint();
-	void GoBack();
-	/**
-	* calls the settings dialog
-	*/
-	void slotPrefs();
-	/**
-	* makes sure, all parts of the UI update to new settings
-	*/
-	void slotApplySettings();
+    void slotLeftSpinBoxValueChanged (int value);
+    void slotRightSpinBoxValueChanged (int value);
+    void NewTask();
+    void Hint();
+    void GoBack();
+    /**
+    * calls the settings dialog
+    */
+    void slotPrefs();
+    /**
+    * makes sure, all parts of the UI update to new settings
+    */
+    void slotApplySettings();
 };
 
 #endif

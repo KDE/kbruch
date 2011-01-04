@@ -18,8 +18,8 @@
 #ifndef EXERCISEBASE_H
 #define EXERCISEBASE_H
 
-#define _CHECK_TASK	0
-#define _NEXT_TASK	1
+#define _CHECK_TASK 0
+#define _NEXT_TASK  1
 
 #ifdef DEBUG
 #include <kdebug.h>
@@ -35,17 +35,17 @@
  * */
 class ExerciseBase : public QWidget
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	/** constructor */
-	ExerciseBase(QWidget * parent = 0);
+    /** constructor */
+    ExerciseBase (QWidget * parent = 0);
 
-	/** destructor */
-	~ExerciseBase();
+    /** destructor */
+    ~ExerciseBase();
 
-	/** force the creation of a new task */
-	virtual void forceNewTask() = 0;
+    /** force the creation of a new task */
+    virtual void forceNewTask() = 0;
 };
 
 #endif

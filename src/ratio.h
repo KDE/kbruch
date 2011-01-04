@@ -32,78 +32,88 @@
 class ratio
 {
 public:
-	/** constructor */
-	explicit ratio(int pnumerator = 0, int pdenominator = 1);
+    /** constructor */
+    explicit ratio (int pnumerator = 0, int pdenominator = 1);
 
-	/** constructor with reduce option */
-	ratio(int pnumerator, int pdenominator, bool reduce_fraction);
+    /** constructor with reduce option */
+    ratio (int pnumerator, int pdenominator, bool reduce_fraction);
 
-	/** copy constructor */
-	ratio(const ratio & copy_ratio);
+    /** copy constructor */
+    ratio (const ratio & copy_ratio);
 
-	/** destructor */
-	~ratio();
+    /** destructor */
+    ~ratio();
 
-	/** returns the ratio as QTextStream object */
-	QTextStream & display(QTextStream & str) const;
+    /** returns the ratio as QTextStream object */
+    QTextStream & display (QTextStream & str) const;
 
-	/** returns the numerator */
-	int numerator() const;
+    /** returns the numerator */
+    int numerator() const;
 
-	/** returns the denominator */
-	int denominator() const;
+    /** returns the denominator */
+    int denominator() const;
 
-	/** set numerator and reduce the ratio */
-	void setNumerator(int pnumerator = 0, bool reduce = true);
+    /** set numerator and reduce the ratio */
+    void setNumerator (int pnumerator = 0, bool reduce = true);
 
-	/** set denominator and reduce the ratio */
-	void setDenominator(int pdenominator = 1, bool reduce = true);
+    /** set denominator and reduce the ratio */
+    void setDenominator (int pdenominator = 1, bool reduce = true);
 
-	/** operator overloading for: c = object + summand */
-	ratio operator+(ratio addend);
+    /** set both numerator and denominator;
+     *  reducing will be done after numerator and denominator were set!
+     */
+    void setRatio (int pnumerator, int pdenominator, bool reduce = true);
 
-	/** operator overloading for: c = object - subtrahend */
-	ratio operator-(ratio subtrahend);
+    /** set new ratio using mixed numbers;
+     *  reducing will be done after numerator and denominator were set!
+     */
+    void setRatio (int pinteger, int pnumerator, int pdenominator, bool reduce = true);
 
-	/** operator overloading for: c = object * factor */
-	ratio operator*(ratio factor);
+    /** operator overloading for: c = object + summand */
+    ratio operator+ (ratio addend);
 
-	/** operator overloading for: c = object / divisor */
-	ratio operator/(ratio divisor);
+    /** operator overloading for: c = object - subtrahend */
+    ratio operator- (ratio subtrahend);
 
-	/** set numerator with dummy and denominator = 1 */
-	ratio operator=(int dummy);
+    /** operator overloading for: c = object * factor */
+    ratio operator* (ratio factor);
 
-	/** compares the current ratio with a given one */
-	bool operator==(ratio right);
+    /** operator overloading for: c = object / divisor */
+    ratio operator/ (ratio divisor);
 
-	/** compares the current ratio with a given one */
-	bool operator<(ratio right);
+    /** set numerator with dummy and denominator = 1 */
+    ratio operator= (int dummy);
 
-	/** compares the current ratio with a given one */
-	bool operator>(ratio right);
+    /** compares the current ratio with a given one */
+    bool operator== (ratio right);
 
-	/** exchange numerator and denominator */
-	void reziproc();
+    /** compares the current ratio with a given one */
+    bool operator< (ratio right);
 
-	/** reduce the ratio */
-	void reduce();
+    /** compares the current ratio with a given one */
+    bool operator> (ratio right);
+
+    /** exchange numerator and denominator */
+    void reziproc();
+
+    /** reduce the ratio */
+    void reduce();
 
 private:
-	/** numerator */
-	int m_numerator;
+    /** numerator */
+    int m_numerator;
 
-	/** denominator */
-	int m_denominator;
+    /** denominator */
+    int m_denominator;
 
-	/** change sign of the ratio */
-	void change_sign();
+    /** change sign of the ratio */
+    void change_sign();
 }
 ;
 
 /* ------ some prototyps of non class functions ------ */
 
 /** it is possible to code: cout << ratio_object << endl; */
-QTextStream & operator<<(QTextStream & str, const ratio & pratio);
+QTextStream & operator<< (QTextStream & str, const ratio & pratio);
 
 #endif

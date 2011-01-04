@@ -32,34 +32,34 @@
 #include <kapplication.h>
 
 /* the main program */
-int main(int argc, char * argv[])
+int main (int argc, char * argv[])
 {
-	// init random generator
-	srand(time(NULL));
+    // init random generator
+    srand (time (NULL));
 
-	/* fill the about data; the common KDE about dialog will show it to the
-	 * user */
-	KAboutData aboutData( "kbruch", 0,
-		ki18n(description),
-		KBRUCH_VERSION,
-		ki18n("Learn calculating with fractions"),
-		KAboutData::License_GPL,
-    	ki18n("(c) 2002-2011, Sebastian Stein"), KLocalizedString(), "http://edu.kde.org/kbruch/");
-	aboutData.addAuthor(ki18n("Sebastian Stein"),ki18n("Current maintainer, original author"),"seb.kde@hpfsc.de");
-	aboutData.addAuthor(ki18n("Paulo Cattai"),ki18n("New interface design and usability improvements"), "paulo.cattai@ltia.fc.unesp.br");
-	aboutData.addAuthor(ki18n("Danilo Balzaque"),ki18n("New interface design and usability improvements"), "danilo.balzaque@ltia.fc.unesp.br");
-	aboutData.addAuthor(ki18n("Roberto Cunha"),ki18n("New interface design and usability improvements"), "roberto.cunha@ltia.fc.unesp.br");
-	aboutData.addAuthor(ki18n("Tadeu Araujo"),ki18n("New interface design and usability improvements"), "tadeu.araujo@ltia.fc.unesp.br");
-	aboutData.addAuthor(ki18n("Tiago Porangaba"),ki18n("New interface design and usability improvements"), "tiago.porangaba@ltia.fc.unesp.br");
+    /* fill the about data; the common KDE about dialog will show it to the
+     * user */
+    KAboutData aboutData ("kbruch", 0,
+                          ki18n (description),
+                          KBRUCH_VERSION,
+                          ki18n ("Learn calculating with fractions"),
+                          KAboutData::License_GPL,
+                          ki18n ("(c) 2002-2011, Sebastian Stein"), KLocalizedString(), "http://edu.kde.org/kbruch/");
+    aboutData.addAuthor (ki18n ("Sebastian Stein"), ki18n ("Current maintainer, original author"), "seb.kde@hpfsc.de");
+    aboutData.addAuthor (ki18n ("Paulo Cattai"), ki18n ("New interface design and usability improvements"), "paulo.cattai@ltia.fc.unesp.br");
+    aboutData.addAuthor (ki18n ("Danilo Balzaque"), ki18n ("New interface design and usability improvements"), "danilo.balzaque@ltia.fc.unesp.br");
+    aboutData.addAuthor (ki18n ("Roberto Cunha"), ki18n ("New interface design and usability improvements"), "roberto.cunha@ltia.fc.unesp.br");
+    aboutData.addAuthor (ki18n ("Tadeu Araujo"), ki18n ("New interface design and usability improvements"), "tadeu.araujo@ltia.fc.unesp.br");
+    aboutData.addAuthor (ki18n ("Tiago Porangaba"), ki18n ("New interface design and usability improvements"), "tiago.porangaba@ltia.fc.unesp.br");
 
- 	KCmdLineArgs::init( argc, argv, &aboutData );
+    KCmdLineArgs::init (argc, argv, &aboutData);
 
-	KApplication kbruch;
-	QObject::connect(kapp, SIGNAL(lastWindowClosed()), kapp, SLOT(quit()));
+    KApplication kbruch;
+    QObject::connect (kapp, SIGNAL (lastWindowClosed()), kapp, SLOT (quit()));
 
-	AppMenuWidget * kbruchApp = new AppMenuWidget();
-	kbruchApp->show();
+    AppMenuWidget * kbruchApp = new AppMenuWidget();
+    kbruchApp->show();
 
-	/* lets execute the Qt GUI; it will handle all cmd options which are left */
-	return kbruch.exec();
+    /* lets execute the Qt GUI; it will handle all cmd options which are left */
+    return kbruch.exec();
 }

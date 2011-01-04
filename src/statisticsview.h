@@ -48,54 +48,54 @@ class StatisticsBarWidget;
 
 class StatisticsView : public QFrame
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	/** constructor */
-	StatisticsView(QWidget * parent = 0);
+    /** constructor */
+    StatisticsView (QWidget * parent = 0);
 
-	/** destructor */
-	~StatisticsView();
+    /** destructor */
+    ~StatisticsView();
 
 public slots:
-	/** increment number of correct answers */
-	void addCorrect();
+    /** increment number of correct answers */
+    void addCorrect();
 
-	/** increment number of skipped answers */
-	void addSkipped();
+    /** increment number of skipped answers */
+    void addSkipped();
 
-	/** increment number of wrong answers */
-	void addWrong();
+    /** increment number of wrong answers */
+    void addWrong();
 
-	/** set statistics to zero.
-	 *  Triggered by internal button or when a new test is started
-	 */
-	void resetStatistics();
+    /** set statistics to zero.
+     *  Triggered by internal button or when a new test is started
+     */
+    void resetStatistics();
 private:
-	/** calculate percentages and update view */
-	void calc();
+    /** calculate percentages and update view */
+    void calc();
 
-	unsigned int m_count;
-	unsigned int m_correct;
-	unsigned int m_skipped;
+    unsigned int m_count;
+    unsigned int m_correct;
+    unsigned int m_skipped;
 
-	QHBoxLayout * buttonLayout;
-	QVBoxLayout * layout1;
-	QGridLayout * labelGrid;
-	QLabel * result1Label;
-	QLabel * result2Label;
-	QLabel * result3Label;
-	QLabel * result4Label;
-	QLabel * info1Label;
-	QLabel * info2Label;
-	QLabel * info3Label;
-	QLabel * info4Label;
+    QHBoxLayout * buttonLayout;
+    QVBoxLayout * layout1;
+    QGridLayout * labelGrid;
+    QLabel * result1Label;
+    QLabel * result2Label;
+    QLabel * result3Label;
+    QLabel * result4Label;
+    QLabel * info1Label;
+    QLabel * info2Label;
+    QLabel * info3Label;
+    QLabel * info4Label;
 
-	QFont defaultFont;
+    QFont defaultFont;
 
-	QPushButton * resetButton;
+    QPushButton * resetButton;
 
-	StatisticsBarWidget * statisticsBar;
+    StatisticsBarWidget * statisticsBar;
 };
 
 #endif

@@ -44,53 +44,53 @@ typedef QList<uint> uintList;
  *  \author Sebastian Stein */
 class ResultWidget : public FractionBaseWidget
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	/** constructors */
-	ResultWidget(QWidget * parent, const ratio para_result);
-	ResultWidget(QWidget * parent, const uintList para_factors);
-	ResultWidget(QWidget * parent = 0);	
+    /** constructors */
+    ResultWidget (QWidget * parent, const ratio para_result);
+    ResultWidget (QWidget * parent, const uintList para_factors);
+    ResultWidget (QWidget * parent = 0);
 
-	/** destructor */
-	~ResultWidget();
+    /** destructor */
+    ~ResultWidget();
 
-	/** set the task to be displayed */
-	void setResult(const ratio para_result, int k);
-	void setResult(int k);
-		
-	int KindView();
-	
-	/** set the task to be displayed */
-	void setFactors(const uintList para_factors);	
+    /** set the task to be displayed */
+    void setResult (const ratio para_result, int k);
+    void setResult (int k);
 
-	void setAnswerMixed(bool value);
+    int KindView();
+
+    /** set the task to be displayed */
+    void setFactors (const uintList para_factors);
+
+    void setAnswerMixed (bool value);
 
 private:
-	bool m_answerMixed;
-	/** the prime factors of the number */
-	uintList m_factors;	
-	
-	QFont defaultFont;
-	
-	QLabel * m_primaryText;
-	QLabel * m_secondaryText;
+    bool m_answerMixed;
+    /** the prime factors of the number */
+    uintList m_factors;
 
-	QGridLayout * layout;
+    QFont defaultFont;
 
-	// 1 = Correct, 0 = Incorrect (with solution), 2 = Incorrect (without solution), 
-	short m_kindView;
-	
-	short m_ExerciseView;	
+    QLabel * m_primaryText;
+    QLabel * m_secondaryText;
 
-	/** the ratio to be displayed */
-	ratio m_result;
+    QGridLayout * layout;
 
-	/** overrideing the paint event of FractionBaseWidget */
-	void paintEvent(QPaintEvent*);
-	
-	void Init();	
-	void showResult()	;
+    // 1 = Correct, 0 = Incorrect (with solution), 2 = Incorrect (without solution),
+    short m_kindView;
+
+    short m_ExerciseView;
+
+    /** the ratio to be displayed */
+    ratio m_result;
+
+    /** overrideing the paint event of FractionBaseWidget */
+    void paintEvent (QPaintEvent*);
+
+    void Init();
+    void showResult()   ;
 };
 
 #endif

@@ -33,51 +33,51 @@ typedef QVector<uint> UnsignedIntArray;
 class primenumber
 {
 public:
-	/** constructor */
-	primenumber();
+    /** constructor */
+    primenumber();
 
-	/** destructor */
-	~primenumber();
+    /** destructor */
+    ~primenumber();
 
-	/** returns whether the given number is a prime number */
-	short isPrimeNumber(uint number);
+    /** returns whether the given number is a prime number */
+    short isPrimeNumber (uint number);
 
-	/** returns the next prime number */
-	unsigned int get_next();
+    /** returns the next prime number */
+    unsigned int get_next();
 
-	/** returns the first prime number */
-	unsigned int get_first() const;
+    /** returns the first prime number */
+    unsigned int get_first() const;
 
-	/** return the last known prime number */
-	unsigned int get_last() const;
+    /** return the last known prime number */
+    unsigned int get_last() const;
 
-	/** returns the current prime number */
-	unsigned int get_current() const;
+    /** returns the current prime number */
+    unsigned int get_current() const;
 
-	/** moves the internal pointer to the first prime number */
-	void move_first();
+    /** moves the internal pointer to the first prime number */
+    void move_first();
 
-	/** moves the internal pointer to the last prime number */
-	void move_last();
+    /** moves the internal pointer to the last prime number */
+    void move_last();
 
-	/** moves the internal pointer to the next prime number */
-	void move_forward();
+    /** moves the internal pointer to the next prime number */
+    void move_forward();
 
-	/** moves the internal pointer to the previous prime number */
-	void move_back();
+    /** moves the internal pointer to the previous prime number */
+    void move_back();
 
-	/** Displays all known prime numbers, mainly used for debugging. */
-	void display_all();
+    /** Displays all known prime numbers, mainly used for debugging. */
+    void display_all();
 private:
-	/** a vector storing all known prime numbers, access for all objects;
-	 * we are using the vector<T> template; so we do not have to think
-	 * about dynamic mem manipulation */
-	static UnsignedIntArray prim_vector;
+    /** a vector storing all known prime numbers, access for all objects;
+     * we are using the vector<T> template; so we do not have to think
+     * about dynamic mem manipulation */
+    static UnsignedIntArray prim_vector;
 
-	/** current selected prime number */
-	UnsignedIntArray::iterator current_pos;
+    /** current selected prime number */
+    UnsignedIntArray::iterator current_pos;
 
-	/** finds next prime number and adds it to the vector */
-	void find_next();
+    /** finds next prime number and adds it to the vector */
+    void find_next();
 };
 #endif

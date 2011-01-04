@@ -44,44 +44,44 @@ class KAction;
  **/
 class AppMenuWidget : public KXmlGuiWindow
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	/** constructor */
-	AppMenuWidget();
+    /** constructor */
+    AppMenuWidget();
 
-	/** destructor */
-	~AppMenuWidget();
+    /** destructor */
+    ~AppMenuWidget();
 
 private:
-	QWidget * baseWidget;
-	QWidget * interfaceWidget;
+    QWidget * baseWidget;
+    QWidget * interfaceWidget;
 
-	QHBoxLayout * layout1;
-	QGridLayout * gridLayout;
+    QHBoxLayout * layout1;
+    QGridLayout * gridLayout;
 
-	QPushButton * m_Freestyle;
-	QLabel * labelFreestyle;
-	QPushButton * m_Learning;
-	QLabel * labelLearning;
-	QLabel * labelInfo;
+    QPushButton * m_Freestyle;
+    QLabel * labelFreestyle;
+    QPushButton * m_Learning;
+    QLabel * labelLearning;
+    QLabel * labelInfo;
 
-	KAction * m_NewTaskAction;
-	KAction * m_BackAction;
-	KAction * m_HintAction;
+    KAction * m_NewTaskAction;
+    KAction * m_BackAction;
+    KAction * m_HintAction;
 
-	MainQtWidget * kbruchApp;
-	FractionRingWidget * fractionRing;
+    MainQtWidget * kbruchApp;
+    FractionRingWidget * fractionRing;
 
-	void setupActions();
+    void setupActions();
 
 private slots:
-	void slotFreestyleClicked();
-	void slotLearningClicked();
-	/**
-	* makes sure, all parts of the UI update to new settings
-	*/
-	void slotApplySettings();
+    void slotFreestyleClicked();
+    void slotLearningClicked();
+    /**
+    * makes sure, all parts of the UI update to new settings
+    */
+    void slotApplySettings();
 };
 
 #endif // AppMenuWidget

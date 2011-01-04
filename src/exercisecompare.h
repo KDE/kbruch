@@ -52,78 +52,77 @@ class QVBoxLayout;
  * */
 class ExerciseCompare : public ExerciseBase
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	/** constructor */
-	ExerciseCompare(QWidget * parent = 0);
+    /** constructor */
+    ExerciseCompare (QWidget * parent = 0);
 
-	/** destructor */
-	~ExerciseCompare();
+    /** destructor */
+    ~ExerciseCompare();
 
-	/** force the creation of a new task */
-	void forceNewTask();
+    /** force the creation of a new task */
+    void forceNewTask();
 
-	void setQuestionMixed(bool value);
+    void setQuestionMixed (bool value);
 
 public slots:
-	void update();
+    void update();
 
 signals:
-	/** class emits this signal, if the task was solved correctly by the user */
-	void signalExerciseSolvedCorrect();
+    /** class emits this signal, if the task was solved correctly by the user */
+    void signalExerciseSolvedCorrect();
 
-	/** class emits this signal, if the task was skipped by the user */
-	void signalExerciseSkipped();
+    /** class emits this signal, if the task was skipped by the user */
+    void signalExerciseSkipped();
 
-	/** class emits this signal, if the task was solved not correctly by the user
-	 * */
-	void signalExerciseSolvedWrong();
+    /** class emits this signal, if the task was solved not correctly by the user
+     * */
+    void signalExerciseSolvedWrong();
 
 private:
-	short m_currentState;
+    short m_currentState;
 
-	bool m_questionMixed;
+    bool m_questionMixed;
 
-	RatioWidget * m_firstRatioWidget;
-	RatioWidget * m_secondRatioWidget;
-	
-	// Buttons to select the comparison
-	QPushButton * m_skipButton;
-	QPushButton * m_moreButton;
-	QPushButton * m_minorButton;
-	QPushButton * m_equalButton;
+    RatioWidget * m_firstRatioWidget;
+    RatioWidget * m_secondRatioWidget;
 
-	ratio m_firstRatio;
-	ratio m_secondRatio;
+    // Buttons to select the comparison
+    QPushButton * m_skipButton;
+    QPushButton * m_moreButton;
+    QPushButton * m_minorButton;
+    QPushButton * m_equalButton;
 
-	// Layout Structures
-	QGridLayout * checkLayout;
-	QGridLayout * taskLayout;
-	QGridLayout * baseGrid;
+    ratio m_firstRatio;
+    ratio m_secondRatio;
 
-	enum SignButtonState
-	{
-		lessThen,
-		greaterThen,
-		equalTo
-	};
-	SignButtonState m_signButtonState;
+    // Layout Structures
+    QGridLayout * checkLayout;
+    QGridLayout * taskLayout;
+    QGridLayout * baseGrid;
 
-	QWidget * checkWidget;
-	QWidget * taskWidget;
+    enum SignButtonState {
+        lessThen,
+        greaterThen,
+        equalTo
+    };
+    SignButtonState m_signButtonState;
 
-	ResultWidget* m_resultWidget;
+    QWidget * checkWidget;
+    QWidget * taskWidget;
 
-	void createTask();
-	void showResult();
-	void nextTask();
+    ResultWidget* m_resultWidget;
+
+    void createTask();
+    void showResult();
+    void nextTask();
 
 private slots:
-	void slotSkipButtonClicked();
-	void slotMinorButtonClicked();
-	void slotMoreButtonClicked();
-	void slotEqualButtonClicked();
+    void slotSkipButtonClicked();
+    void slotMinorButtonClicked();
+    void slotMoreButtonClicked();
+    void slotEqualButtonClicked();
 };
 
 #endif
