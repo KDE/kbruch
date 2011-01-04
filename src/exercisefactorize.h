@@ -115,14 +115,14 @@ private:
 
 	//
 	// the following two methods were added to fix
-	// bug #116831 (reverse layout in RTL desktops)
+	// bug #116831 (reverse tqlayout in RTL desktops)
 	// Amit Ramon amit.ramon@kdemail.net
 	//
 
-	/** create the factor widgets layout */
+	/** create the factor widgets tqlayout */
 	TQHBoxLayout* createFactorsLayout();
 
-	/** create the (answer) buttons layout */
+	/** create the (answer) buttons tqlayout */
 	TQGridLayout* createButtonsLayout();
 	
 
@@ -135,14 +135,14 @@ private:
 
 protected:
 	TQVBoxLayout* Form1Layout;
-	TQVBoxLayout* layout9;
+	TQVBoxLayout* tqlayout9;
 	TQSpacerItem* spacer4;
-	TQHBoxLayout* layout4;
+	TQHBoxLayout* tqlayout4;
 	TQSpacerItem* spacer1;
 	TQSpacerItem* spacer2;
-	TQVBoxLayout* layout2;
-	TQGridLayout* layout1;
-	TQHBoxLayout* layout7;
+	TQVBoxLayout* tqlayout2;
+	TQGridLayout* tqlayout1;
+	TQHBoxLayout* tqlayout7;
 	TQSpacerItem* spacer3;
 
 private slots:

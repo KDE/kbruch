@@ -161,7 +161,7 @@ void FractionBaseWidget::setColorAndFont()
 	/* set font */
 	m_font = SettingsClass::taskFont();
 
-	// repaint
+	// tqrepaint
 	update();
 
 	return;

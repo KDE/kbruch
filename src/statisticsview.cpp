@@ -48,17 +48,17 @@ StatisticsView::StatisticsView(TQWidget * parent, const char * name):
 	/* set the caption of the window */
 	//	setCaption(i18n("Statistics"));
 
-	/* add a layout as a base */
-	layout1 = new TQVBoxLayout(this);
-	layout1->setSpacing(6);
-	layout1->setMargin(6);
+	/* add a tqlayout as a base */
+	tqlayout1 = new TQVBoxLayout(this);
+	tqlayout1->setSpacing(6);
+	tqlayout1->setMargin(6);
 
 	/* now add a v-spacer */
 	TQSpacerItem * v_spacer = new TQSpacerItem(1, 1);
-	layout1->addItem(v_spacer);
+	tqlayout1->addItem(v_spacer);
 
 	/* create a grid to show the labels */
-	labelGrid = new TQGridLayout(layout1, 3, 2);
+	labelGrid = new TQGridLayout(tqlayout1, 3, 2);
 
 	/* add 6 labels to the grid */
 	info1Label = new TQLabel(this);
@@ -112,10 +112,10 @@ StatisticsView::StatisticsView(TQWidget * parent, const char * name):
 
 	/* now add a v-spacer */
 	v_spacer = new TQSpacerItem(1, 1);
-	layout1->addItem(v_spacer);
+	tqlayout1->addItem(v_spacer);
 
 	/* the Reset button */
-	buttonLayout = new TQHBoxLayout(layout1);
+	buttonLayout = new TQHBoxLayout(tqlayout1);
 	resetBtn = new TQPushButton(i18n("&Reset"), this);
 	TQObject::connect(resetBtn, TQT_SIGNAL(clicked()), this, TQT_SLOT(resetStatistics()));
 	buttonLayout->addWidget(resetBtn);
@@ -150,14 +150,14 @@ void StatisticsView::addCorrect()
 {
 	++m_count;
 	++m_correct;
-	(void) calc(); /* repaint the statistics */
+	(void) calc(); /* tqrepaint the statistics */
 }
 
 /* called, if a task was solved wrong */
 void StatisticsView::addWrong()
 {
 	++m_count;
-	(void) calc(); /* repaint the statistics */
+	(void) calc(); /* tqrepaint the statistics */
 }
 
 

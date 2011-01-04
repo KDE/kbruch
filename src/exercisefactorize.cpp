@@ -64,40 +64,40 @@ ExerciseFactorize::ExerciseFactorize(TQWidget * parent, const char * name):
 
 	Form1Layout = new TQVBoxLayout( this, 11, 6, "Form1Layout"); 
 
-	layout9 = new TQVBoxLayout( 0, 0, 6, "layout9"); 
+	tqlayout9 = new TQVBoxLayout( 0, 0, 6, "tqlayout9"); 
 	
 	// The following method fix the problem in
 	// bug  #116831, reverse order in RTL desktops.
 	// Amit Ramon amit.ramon@kdemail.net
-	layout4 = createFactorsLayout();
-	layout9->addLayout(layout4);
+	tqlayout4 = createFactorsLayout();
+	tqlayout9->addLayout(tqlayout4);
 	
 	spacer2 = new TQSpacerItem( 20, 21, TQSizePolicy::Minimum, TQSizePolicy::Expanding );
-	layout9->addItem( spacer2 );
+	tqlayout9->addItem( spacer2 );
 	
-	layout2 = new TQVBoxLayout( 0, 0, 6, "layout2"); 
+	tqlayout2 = new TQVBoxLayout( 0, 0, 6, "tqlayout2"); 
 	
 	// The following method fix the problem in
 	// bug  #116831, reverse order in RTL desktops.
 	// Amit Ramon amit.ramon@kdemail.net
-	layout1 = createButtonsLayout();
-	layout2->addLayout(layout1);
+	tqlayout1 = createButtonsLayout();
+	tqlayout2->addLayout(tqlayout1);
 
 	m_removeLastFactorButton = new TQPushButton( this, "m_removeLastFactorButton" );
-	layout2->addWidget( m_removeLastFactorButton );
-	layout9->addLayout( layout2 );
+	tqlayout2->addWidget( m_removeLastFactorButton );
+	tqlayout9->addLayout( tqlayout2 );
 
 	spacer4 = new TQSpacerItem( 20, 21, TQSizePolicy::Minimum, TQSizePolicy::Expanding );
-	layout9->addItem( spacer4 );
+	tqlayout9->addItem( spacer4 );
 	
-	layout7 = new TQHBoxLayout( 0, 0, 6, "layout7"); 
+	tqlayout7 = new TQHBoxLayout( 0, 0, 6, "tqlayout7"); 
 	spacer3 = new TQSpacerItem( 361, 20, TQSizePolicy::Expanding, TQSizePolicy::Minimum );
-	layout7->addItem( spacer3 );
+	tqlayout7->addItem( spacer3 );
 	
 	m_checkButton = new TQPushButton( this, "m_checkButton" );
-	layout7->addWidget( m_checkButton );
-	layout9->addLayout( layout7 );
-	Form1Layout->addLayout( layout9 );
+	tqlayout7->addWidget( m_checkButton );
+	tqlayout9->addLayout( tqlayout7 );
+	Form1Layout->addLayout( tqlayout9 );
 
 	// the current task
 	TQString tmp_str;
@@ -228,16 +228,16 @@ void ExerciseFactorize::update()
 
 //
 // The following method was added to fix
-// bug #116831 (reverse layout in RTL desktops)
+// bug #116831 (reverse tqlayout in RTL desktops)
 // Amit Ramon amit.ramon@kdemail.net
 //
 
-/** Create the layout that hold the exercise widgets
+/** Create the tqlayout that hold the exercise widgets
  */
 TQHBoxLayout* ExerciseFactorize::createFactorsLayout()
 {
   // first create all widgets
-  TQHBoxLayout* layout = new TQHBoxLayout( 0, 0, 6, "layout4"); 
+  TQHBoxLayout* tqlayout = new TQHBoxLayout( 0, 0, 6, "tqlayout4"); 
   
   m_taskLabel = new TQLabel( this, "m_taskLabel" );
 
@@ -258,46 +258,46 @@ TQHBoxLayout* ExerciseFactorize::createFactorsLayout()
   spacer1 =  new TQSpacerItem( 25, 20, TQSizePolicy::Expanding,
 				    TQSizePolicy::Minimum );
 
-  // now add the widgets to the layout.
+  // now add the widgets to the tqlayout.
   // if we are in a RTL desktop, add them
   // in a reverse order
   if (TQApplication::reverseLayout())
     {
-      layout->addItem( spacer1 );
-      layout->addWidget( result_label );
-      layout->addWidget( m_factorsWidget );
-      layout->addWidget( m_factorsEnteredEdit );
-      layout->addWidget( m_equalSignLabel );
-      layout->addWidget( m_taskLabel );
+      tqlayout->addItem( spacer1 );
+      tqlayout->addWidget( result_label );
+      tqlayout->addWidget( m_factorsWidget );
+      tqlayout->addWidget( m_factorsEnteredEdit );
+      tqlayout->addWidget( m_equalSignLabel );
+      tqlayout->addWidget( m_taskLabel );
     }
   else
     {
-      layout->addWidget( m_taskLabel );
-      layout->addWidget( m_equalSignLabel );
-      layout->addWidget( m_factorsEnteredEdit );
-      layout->addWidget( m_factorsWidget );
-      layout->addWidget( result_label );
-      layout->addItem( spacer1 );
+      tqlayout->addWidget( m_taskLabel );
+      tqlayout->addWidget( m_equalSignLabel );
+      tqlayout->addWidget( m_factorsEnteredEdit );
+      tqlayout->addWidget( m_factorsWidget );
+      tqlayout->addWidget( result_label );
+      tqlayout->addItem( spacer1 );
     }
   
-  return layout;
+  return tqlayout;
 }
 
 
 //
 // The following method was added to fix
-// bug #116831 (reverse layout in RTL desktops)
+// bug #116831 (reverse tqlayout in RTL desktops)
 // Amit Ramon amit.ramon@kdemail.net
 //
 
-/** Create the layout that hold the exercise widgets
+/** Create the tqlayout that hold the exercise widgets
  */
 TQGridLayout* ExerciseFactorize::createButtonsLayout()
 {
   const int _COLS = 4; // number of buttons in each row
   const int _ROWS = 2; // number of rows
 
-  TQGridLayout* layout = new TQGridLayout( 0, 1, 1, 0, 6, "layout1"); 
+  TQGridLayout* tqlayout = new TQGridLayout( 0, 1, 1, 0, 6, "tqlayout1"); 
 	
   // first row buttons
   m_factor2Button = new TQPushButton( this, "m_factor2Button" );
@@ -348,12 +348,12 @@ TQGridLayout* ExerciseFactorize::createButtonsLayout()
       
       for (int col = 0; col < _COLS; col++)
 	{
-	  layout->addWidget(buttons[row][buttonIdx], row, col );
+	  tqlayout->addWidget(buttons[row][buttonIdx], row, col );
 	  buttonIdx += step;
 	}
     }
   
-  return layout;
+  return tqlayout;
 }
 
 

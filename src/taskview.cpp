@@ -114,9 +114,9 @@ TaskView::TaskView(TQWidget * parent, const char * name,	bool padd_sub,
 	// --- that is the end of the horizontal line ---
 	// in RTL desktops, we still need to allign the
 	// execise to the left. On Qt4, you can set the direction
-	// of the layout to LTR (instead of inherit), but on Qt3
+	// of the tqlayout to LTR (instead of inherit), but on Qt3
 	// the only way of fixing it is inserting the widgets in reversed
-	// order to the layout.
+	// order to the tqlayout.
 	//
 	// if you need help with this feel free to contact me - Diego <elcuco@kde.org> )
 	// This should fix parts of bug #116831
@@ -158,10 +158,10 @@ TaskView::TaskView(TQWidget * parent, const char * name,	bool padd_sub,
 	// that the user can start typing without moving the focus
 	numer_edit->setFocus();
 
-	// show the whole layout
+	// show the whole tqlayout
 	baseWidget->show();
 
-	// show the whole layout
+	// show the whole tqlayout
 	m_taskWidget->show();
 	m_resultWidget->hide();
 

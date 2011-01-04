@@ -4,7 +4,7 @@
     <property name="name">
         <cstring>TaskViewerOptionsBase</cstring>
     </property>
-    <property name="geometry">
+    <property name="tqgeometry">
         <rect>
             <x>0</x>
             <y>0</y>
@@ -18,7 +18,7 @@
         </property>
         <widget class="QLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>layout2</cstring>
+                <cstring>tqlayout2</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -42,7 +42,7 @@
                 </widget>
                 <widget class="QGroupBox">
                     <property name="name">
-                        <cstring>colorGroupBox</cstring>
+                        <cstring>tqcolorGroupBox</cstring>
                     </property>
                     <property name="sizePolicy">
                         <sizepolicy>
@@ -57,9 +57,9 @@
                     </property>
                     <widget class="QLayoutWidget">
                         <property name="name">
-                            <cstring>layout7</cstring>
+                            <cstring>tqlayout7</cstring>
                         </property>
-                        <property name="geometry">
+                        <property name="tqgeometry">
                             <rect>
                                 <x>10</x>
                                 <y>20</y>
@@ -214,7 +214,7 @@
 </widget>
 <customwidgets>
 </customwidgets>
-<layoutdefaults spacing="6" margin="11"/>
+<tqlayoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kfontdialog.h</includehint>
     <includehint>kcolorbutton.h</includehint>
