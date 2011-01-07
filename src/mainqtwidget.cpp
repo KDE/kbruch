@@ -109,7 +109,7 @@ MainQtWidget::MainQtWidget()
 
 #if (KDE_VERSION_MINOR>=3) && (KDE_VERSION_MAJOR>=3)
 #else
-	resize(TQSize(QMAX(toolBar()->tqsizeHint().width(), tqsizeHint().width()), tqsizeHint().height()));
+	resize(TQSize(QMAX(toolBar()->sizeHint().width(), sizeHint().width()), sizeHint().height()));
 #endif
 	// now show the last exercise
 	m_exercises->showPage(SettingsClass::activeExercise());
@@ -243,7 +243,7 @@ void MainQtWidget::setupActions()
 	
 #if (KDE_VERSION_MINOR>=3) && (KDE_VERSION_MAJOR>=3)
 	if (!initialGeometrySet())
-		resize( TQSize(725, 330).expandedTo(tqminimumSizeHint()));
+		resize( TQSize(725, 330).expandedTo(minimumSizeHint()));
 	setupGUI(ToolBar | Keys | StatusBar | Create);
 	setAutoSaveSettings();
 #endif

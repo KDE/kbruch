@@ -44,7 +44,7 @@ public:
 	/** destructor */
 	~FractionBaseWidget();
 
-	/** updates the widget by first getting the settings and then tqrepainting */
+	/** updates the widget by first getting the settings and then repainting */
 	void updateAndRepaint();	
 
 protected:

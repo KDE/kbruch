@@ -120,9 +120,9 @@ ExerciseConvert::ExerciseConvert(TQWidget * parent, const char * name):
 
 	// in RTL desktops, we still need to allign the
 	// execise to the left. On Qt4, you can set the direction
-	// of the tqlayout to LTR (instead of inherit), but on Qt3
+	// of the layout to LTR (instead of inherit), but on Qt3
 	// the only way of fixing it is inserting the widgets in reversed
-	// order to the tqlayout.
+	// order to the layout.
 	//
 	// if you need help with this feel free to contact me - Diego <elcuco@kde.org> )
 	// This should fix parts of bug #116831
@@ -163,7 +163,7 @@ ExerciseConvert::ExerciseConvert(TQWidget * parent, const char * name):
 	// that the user can start typing without moving the focus
 	numer_edit->setFocus();
 
-	// show the whole tqlayout
+	// show the whole layout
 	baseWidget->show();
 
 	// add tooltip and qwhatsthis help to the widget

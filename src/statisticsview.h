@@ -65,7 +65,7 @@ private:
 
 	TQPushButton * resetBtn;
 	TQHBoxLayout * buttonLayout;
-	TQVBoxLayout * tqlayout1;
+	TQVBoxLayout * layout1;
 	TQGridLayout * labelGrid;
 	TQLabel * result1Label;
 	TQLabel * result2Label;
