@@ -131,11 +131,11 @@ ExerciseMixedNumbers::ExerciseMixedNumbers (QWidget * parent) :
     m_editLine->setFrameStyle (QFrame::HLine | QFrame::Sunken);
     m_taskLayout->addWidget (m_editLine, 2, 4);
 
-    // denomintor input
+    // denominator input
     m_denoEdit = new KLineEdit (m_tmpTaskWidget);
     m_denoEdit->setObjectName ("m_numerEdit");
     m_denoEdit->setValidator (intValidator);
-    m_denoEdit->setToolTip (i18n ("Enter the denomintor of the fraction"));
+    m_denoEdit->setToolTip (i18n ("Enter the denominator of the fraction"));
     m_denoEdit->setFont (defaultFont);
     m_denoEdit->setFixedSize (85, 42);
     m_denoEdit->setAlignment (Qt::AlignHCenter);
@@ -218,7 +218,7 @@ void ExerciseMixedNumbers::createTask()
         // numerator should be between 1..15
         numerator = int ( (double (rand()) / RAND_MAX) * 15 + 1);
 
-        // denomintor should be between 1..(numerator-1)
+        // denominator should be between 1..(numerator-1)
         denominator = int ( (double (rand()) / RAND_MAX) * numerator);
 
         // eventually make ratio negative
