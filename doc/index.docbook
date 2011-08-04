@@ -119,7 +119,7 @@ situations.
 <sect1 id="mode">
 <title>Choosing the mode: learning or exercises</title>
 <para>When you start &kbruch;, it offers you two modes:
-<guilabel>Freestyle</guilabel> which is the training mode and
+<guilabel>Exercise</guilabel> which is the training mode and
 <guilabel>Learning</guilabel> where you can understand fractions. Clicking
 one of the pictures will enter the chosen mode. Here is a screenshot of
 &kbruch;'s mode choices:</para>
