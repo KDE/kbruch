@@ -141,10 +141,10 @@ one of the pictures will enter the chosen mode. Here is a screenshot of
 <sect1 id="overview">
 <title>Main Exercise Screen</title>
 
-<para>Here is a screenshot of &kbruch;'s main excercise screen:</para>
+<para>Here is a screenshot of &kbruch;'s main exercise screen:</para>
 
 <screenshot>
-	<screeninfo>&kbruch; main screen, directly after the excercise start</screeninfo>
+	<screeninfo>&kbruch; main screen, directly after the exercise start</screeninfo>
 	<mediaobject>
 		<imageobject>
 			<imagedata fileref="gui_main.png" format="PNG"/>
@@ -564,9 +564,9 @@ solved not correctly.
 <sect1 id="exer_mixed">
 <title>Exercise Mixed Numbers</title>
 
-<para>In this exercise you have to convert a given mixed number into an improper fraction (ratio). You
-have to enter numerator and denominator for improper fraction or a whole number, numerator and denominator
-for mixed number.
+<para>In this exercise you have to convert a given mixed number into an improper fraction (ratio) and
+vice versa. You have to enter numerator and denominator for improper fraction or a whole number,
+numerator and denominator for mixed number.
 </para>
 
 <screenshot>
