@@ -35,15 +35,15 @@
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2009-02-03</date>
-<releaseinfo>4.2</releaseinfo>
+<date>2011-08-03</date>
+<releaseinfo>4.2 (&kde; 4.7)</releaseinfo>
 
 <abstract>
 <para>&kbruch; is a small program to practice calculating with fractions and percentages.
 Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's
 input and gives feedback.
 </para>
-	
+
 </abstract>
 
 <keywordset>
@@ -62,7 +62,7 @@ input and gives feedback.
 <title>Introduction</title>
 
 <para>
-&kbruch; is a small program to practice calculating with fractions and percentages. Five different exercises 
+&kbruch; is a small program to practice calculating with fractions and percentages. Six different exercises
 are offered as well as a learning mode.
 </para>
 
@@ -73,7 +73,7 @@ You have to enter the numerator and the denominator. This is the main exercise.
 	</para></listitem>
 	<listitem><para>
 		Comparison - in this exercise you have to compare the size of 2 given
-fractions, using the symbols <guibutton>&gt;</guibutton>, <guibutton>&lt;</guibutton> 
+fractions, using the symbols <guibutton>&gt;</guibutton>, <guibutton>&lt;</guibutton>
 or <guibutton>=</guibutton>.
 	</para></listitem>
 	<listitem><para>
@@ -81,7 +81,11 @@ or <guibutton>=</guibutton>.
 into a fraction.
 	</para></listitem>
 	<listitem><para>
-		Factorization - in this exercise you have to factorize a given number 
+		Mixed Numbers - in this exercise you have to convert a mixed number into an improper fraction
+		(ratio) and vice versa.
+	</para></listitem>
+	<listitem><para>
+		Factorization - in this exercise you have to factorize a given number
 		into its prime factors.
 	</para></listitem>
 	<listitem><para>
@@ -96,14 +100,14 @@ solve it. The program checks the input and gives a feedback about it.
 
 <para>
 &kbruch; counts how many tasks were solved at all and how many tasks were
-solved correctly. The statistics are shown to the user. 
+solved correctly. The statistics are shown to the user.
 <!-- The user can reset the statistics at any point.-->
 </para>
 
 <para>
 &kbruch; is very compact and focuses on the core idea of a task generator. An
 online help system provides context-sensitive help for the different
-situations. 
+situations.
 </para>
 
 </chapter>
@@ -115,7 +119,7 @@ situations.
 <sect1 id="mode">
 <title>Choosing the mode: learning or exercises</title>
 <para>When you start &kbruch;, it offers you two modes:
-<guilabel>Freestyle</guilabel> which is the training mode and
+<guilabel>Exercise</guilabel> which is the training mode and
 <guilabel>Learning</guilabel> where you can understand fractions. Clicking
 one of the pictures will enter the chosen mode. Here is a screenshot of
 &kbruch;'s mode choices:</para>
@@ -135,12 +139,12 @@ one of the pictures will enter the chosen mode. Here is a screenshot of
 </sect1>
 
 <sect1 id="overview">
-<title>Main freestyle screen</title>
+<title>Main Exercise Screen</title>
 
-<para>Here is a screenshot of &kbruch;'s main freestyle screen:</para>
+<para>Here is a screenshot of &kbruch;'s main exercise screen:</para>
 
 <screenshot>
-	<screeninfo>&kbruch; main screen, directly after the freestyle start</screeninfo>
+	<screeninfo>&kbruch; main screen, directly after the exercise start</screeninfo>
 	<mediaobject>
 		<imageobject>
 			<imagedata fileref="gui_main.png" format="PNG"/>
@@ -163,7 +167,7 @@ parts:
 	</para></listitem>
 	<listitem><para>
 		the toolbar, where you can switch between the different
-exercises 
+exercises
 	</para></listitem>
 	<listitem><para>
 		the <guilabel>Options</guilabel> on the left, where you can
@@ -184,7 +188,7 @@ the toolbar.
 </para></note>
 <para>
 First you have to choose an exercise in the toolbar. Default is <guilabel>Arithmetic</guilabel>. The
-task part will change according to the chosen task. Some settings in the <guilabel>Options</guilabel> section 
+task part will change according to the chosen task. Some settings in the <guilabel>Options</guilabel> section
 will be enabled, depending on the task you have chosen.
 </para>
 <para>
@@ -219,7 +223,7 @@ restored on next startup.
 </screenshot>
 
 <para>
-In this part of the main screen you can see:	
+In this part of the main screen you can see:
 <itemizedlist>
 	<listitem><para>
 		on the left, how many tasks have been solved
@@ -239,11 +243,11 @@ In this part of the main screen you can see:
 You can reset the statistics by clicking on the <guimenu>New</guimenu> button
 in the toolbar or choosing <menuchoice><guimenu>File</guimenu>
 <guimenuitem>New</guimenuitem></menuchoice> in the menubar.
-</para> 
+</para>
 <para>
 The statistics will be saved when &kbruch; is closed and restored on next
 startup.
-</para> 
+</para>
 </sect1>
 
 <sect1 id="settings">
@@ -268,7 +272,7 @@ the task display. To open this dialog use
 </screenshot>
 
 <para>
-There are two tabs to adjust the setting: 
+There are two tabs to adjust the setting:
 <itemizedlist>
 	<!-- <listitem><para>
 		<guilabel>General</guilabel>: Set whether to show the mixed number notation in the result.
@@ -370,7 +374,7 @@ tasks it sets. From a minimum of 10 to a maximum of 50.</para></listitem>
 
 </para></listitem>
 </varlistentry>
-
+<!-- Not in v. 4.2
 <varlistentry>
 <term><guilabel>Solution</guilabel></term>
 <listitem><para>
@@ -380,11 +384,11 @@ tasks it sets. From a minimum of 10 to a maximum of 50.</para></listitem>
 <term><guilabel>Mixed number</guilabel></term>
 <listitem><para>Set if the fractions will appear as mixed numbers or not in the solution ( mixed number example: 1 4/5 = 9/5 ).</para></listitem>
 </varlistentry>
-
 </variablelist>
 
 </para></listitem>
 </varlistentry>
+-->
 
 <varlistentry>
 <term><guilabel>Operations</guilabel></term>
@@ -397,22 +401,22 @@ task: <guilabel>Addition</guilabel>, <guilabel>Subtraction</guilabel>,
 </variablelist>
 
 <para>
-After you have changed the parameters you have to click on the <guimenu>New</guimenu> 
+After you have changed the parameters you have to click on the <guimenu>New</guimenu>
 button in the toolbar to generate a task which uses the new
 parameters. You can also call this action from the menubar with
 <menuchoice><guimenu>Task</guimenu><guimenuitem>New</guimenuitem></menuchoice>.
-This will reset the statistics. To avoid that, click the <guibutton>Next</guibutton> 
+This will reset the statistics. To avoid that, click the <guibutton>Next</guibutton>
 button to proceed with the changed parameters.
 </para>
 <!--<note>
 <para>
 Your selection of the maximum main denominator will be reset to a default
-value every time you change the number of terms. So you should change the 
+value every time you change the number of terms. So you should change the
 number of terms first and then select the maximum main denominator.
 </para>
 </note>-->
 <!--para>
-If you have not solved the current task and call the <guimenu>New</guimenu> 
+If you have not solved the current task and call the <guimenu>New</guimenu>
 action, the task will be counted as not solved correctly. To
 prevent this you have to change the parameters after you solved the task but
 before generating a new one.
@@ -427,10 +431,10 @@ on next startup.
 <title>Solving Tasks</title>
 <para>
 After you have solved a given task, you need to enter the result into the three
-input boxes. In the left box you enter the integer part of the fraction, in the 
+input boxes. In the left box you enter the integer part of the fraction, in the
 upper box the numerator and in the lower box the denominator.
-If the option <guilabel>Mixed number</guilabel> in the <guilabel>Answer</guilabel> 
-section is unchecked, the left box for the integer part of the fraction is hidden. Then you use 
+If the option <guilabel>Mixed number</guilabel> in the <guilabel>Answer</guilabel>
+section is unchecked, the left box for the integer part of the fraction is hidden. Then you use
 only the numerator box and the denominator box for your input.
 </para>
 <para>
@@ -439,7 +443,7 @@ or denominator. If the result is 0, just type a 0 in the numerator input field.
 If the result has a denominator of 1, you can leave the lower box empty.
 </para>
 <para>
-After you have entered the result you should click the <guibutton>Check</guibutton> 
+After you have entered the result you should click the <guibutton>Check</guibutton>
 button below the input boxes. &kbruch; will check your input
 and present the correct result on the right below the <guilabel>Incorrect!</guilabel> string:
 </para>
@@ -460,7 +464,7 @@ forms: normal (reduced) and mixed number.
 </para>
 <note>
 <para>
-If you checked the <guibutton>Reduced form</guibutton> in the Options in the <guilabel>Answers</guilabel> section 
+If you checked the <guibutton>Reduced form</guibutton> in the Options in the <guilabel>Answers</guilabel> section
 then you always have to enter the result reduced. &kbruch; will show you a short message
 like the one in the screenshot below, if you enter the correct result
 unreduced. The answer will then be counted as incorrect.
@@ -557,6 +561,49 @@ solved not correctly.
 
 </sect1>
 
+<sect1 id="exer_mixed">
+<title>Exercise Mixed Numbers</title>
+
+<para>In this exercise you have to convert a given mixed number into an improper fraction (ratio) and
+vice versa. You have to enter numerator and denominator for improper fraction or a whole number,
+numerator and denominator for mixed number.
+</para>
+
+<screenshot>
+<screeninfo>Exercise Mixed Numbers</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="mixed.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase>Exercise Mixed Numbers</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para>On the left side of the equal sign in the screenshot above you can see a
+mixed number. This means, that the number is made up of a whole number and a
+proper fraction. You should enter the equal improper fraction (the numerator
+part of such fraction is greater or equal to the denominator part).
+</para>
+
+<para>After you have entered the numerator and denominator click on the
+<guibutton>Check</guibutton> button. &kbruch; will check your input and
+present the correct result. After this step you will get to the next task by
+clicking on the <guibutton>Next</guibutton> button.
+</para>
+
+<note>
+<para>
+Do not forget to enter the result reduced. Unreduced results will be counted as
+solved not correctly.
+</para>
+</note>
+
+<para>In this exercise all options are disabled.</para>
+
+</sect1>
+
 <sect1 id="exer_factorize">
 <title>Exercise Factorization</title>
 
@@ -577,7 +624,7 @@ factors. You have to enter all prime factors of the number.
 </screenshot>
 
 <para>You can enter a factor by clicking on the prime factor
-buttons. The <quote>*</quote> sign is automatically inserted, when you click the next 
+buttons. The <quote>x</quote> sign is automatically inserted, when you click the next
 prime factor button. You can remove the last entered
 prime factor by clicking on the <guibutton>Backspace</guibutton> button.
 </para>
@@ -588,7 +635,7 @@ present the correct result. After this step you will get to the next task by
 clicking on the <guibutton>Next</guibutton> button.
 </para>
 
-<para>In the screenshot at the top of this page you can see a <quote>*</quote>
+<para>In the screenshot at the top of this page you can see a <quote>x</quote>
 between the prime factors. This is the multiplication sign. The product of all
 prime factors must be the number you try to factorize.
 </para>
