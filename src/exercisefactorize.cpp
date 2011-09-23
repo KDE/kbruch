@@ -110,6 +110,10 @@ ExerciseFactorize::ExerciseFactorize (QWidget * parent) :
     m_factorsEnteredEdit->setFont (defaultFont);
     m_factorsEnteredEdit->setFixedSize (320, 35);
     taskLayout->addWidget (m_factorsEnteredEdit, 1, 3, 1, 5);
+		
+    connect(m_factorsEnteredEdit, SIGNAL(contentIsRight(bool)), this, SLOT(editContentChanged(bool)));
+    connect(m_factorsEnteredEdit, SIGNAL(returnPressed (const QString &)),
+            this, SLOT(slotFactorsEditReturnPressed(const QString &)));
 
     defaultFont.setPointSize (10);
 
@@ -287,6 +291,15 @@ void ExerciseFactorize::forceNewTask()
     }
     m_currentState = _CHECK_TASK;
     m_checkButton->setText (i18n ("&Check"));
+		
+    // Maybe the skip button was clicked with while
+    // wrong content was int the KLineEdit so...
+    // Set the KLineEdit's background to white
+    QPalette palette; 
+    palette.setColor(QPalette::Base, Qt::white);
+    m_factorsEnteredEdit->setPalette(palette);
+    // and enable all buttons that could be disabled.
+    setButtonsEnabled(true);
 
     // generate next task
     (void) nextTask();
@@ -488,6 +501,13 @@ void ExerciseFactorize::updateEnteredEdit()
 
 /* ------ private slots ------ */
 
+void ExerciseFactorize::slotFactorsEditReturnPressed(const QString &)
+{
+    if (m_checkButton->isEnabled()) {
+        slotCheckButtonClicked();
+    }
+}
+
 void ExerciseFactorize::slotCheckButtonClicked()
 {
     if (m_currentState == _CHECK_TASK) {
@@ -603,3 +623,33 @@ void ExerciseFactorize::showEvent (QShowEvent *)
     if (isVisible())
         m_factorsEnteredEdit->setFocus();
 }
+
+void ExerciseFactorize::editContentChanged(bool correct)
+{
+    if (correct) {
+      QStringList factors = m_factorsEnteredEdit->getFactors();
+
+      m_factorsEntered.clear();
+      foreach (QString auxStr, factors) {
+        m_factorsEntered.append(auxStr.toUInt());
+      }
+    } 
+    setButtonsEnabled(correct);
+}
+
+void ExerciseFactorize::setButtonsEnabled(bool enabled)
+{
+    // set the state of the buttons involved in factorization
+    m_checkButton->setEnabled(enabled);
+    m_factor2Button->setEnabled(enabled);
+    m_factor3Button->setEnabled(enabled);
+    m_factor5Button->setEnabled(enabled);
+    m_factor7Button->setEnabled(enabled);
+    m_factor11Button->setEnabled(enabled);
+    m_factor13Button->setEnabled(enabled);
+    m_factor17Button->setEnabled(enabled);
+    m_factor19Button->setEnabled(enabled);
+    m_removeLastFactorButton->setEnabled(enabled);
+}
+
+

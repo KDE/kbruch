@@ -28,7 +28,10 @@ PrimeFactorsLineEdit::PrimeFactorsLineEdit(QWidget * parent)
 #ifdef DEBUG
     kDebug() << "constructor PrimeFactorsLineEdit";
 #endif
-    m_allowedChars = "0123456789x";
+    m_usedFactors << "2" << "3" << "5" << "7" << "11" << "13" << "17" << "19";
+    // I need this so dead keys go trough keyPressEvent
+    setAttribute(Qt::WA_InputMethodEnabled, false);
+    connect(this, SIGNAL(textEdited(QString)), this, SLOT(textHasChanged(QString)));
 }
 
 /* destructor */
@@ -39,44 +42,95 @@ PrimeFactorsLineEdit::~PrimeFactorsLineEdit()
 #endif
 }
 
-/** ignore all invalid characters */
-void PrimeFactorsLineEdit::keyPressEvent(QKeyEvent * e)
+void PrimeFactorsLineEdit::textHasChanged(QString text)
 {
-    // forward special chars to KLineEdit
-    if (e->key() == Qt::Key_Enter || e->key() == Qt::Key_Return || e->key() ==
-            Qt::Key_Delete || e->key() == Qt::Key_Backspace || (e->modifiers()
-                & (Qt::ControlModifier | Qt::AltModifier | Qt::MetaModifier |
-                    Qt::GroupSwitchModifier)))
-    {
-        KLineEdit::keyPressEvent(e);
-        return;
+    QPalette palette;
+
+    if(!checkCorrectness(text)) {
+        palette.setColor(QPalette::Base, Qt::red);
+        setPalette(palette);
+        emit contentIsRight(false);
+    } else {
+        palette.setColor(QPalette::Base, Qt::white);
+        setPalette(palette);
+        emit contentIsRight(true);
     }
-
-    // first ignore all chars, which are not numeric or multiply sign "*"
-    if (! m_allowedChars.contains(e->text())) {
-        return;
-    }
-
-    // don't allow 2 multiply signs next to each other
-    const QString currentText = text();
-    if (e->text() == "x" && currentText.right(1) == "x") {
-        return;
-    } 
-
-    // valid char, process it as usual
-    KLineEdit::keyPressEvent(e);
 }
 
-/** react on change input method events */
-void PrimeFactorsLineEdit::inputMethodEvent(QInputMethodEvent * e)
+bool PrimeFactorsLineEdit::checkCorrectness(const QString& theText)
 {
-    const QString str = e->commitString();
-    
-    Q_FOREACH(QChar ch, str) {
-        if (! m_allowedChars.contains(ch)) {
-            return;
+    QString auxStr = theText;
+    QString noSpaces = auxStr.remove(' ');
+    QStringList terms = noSpaces.split('x');
+
+    return (areFactors(terms) || text().isEmpty());
+}
+
+bool PrimeFactorsLineEdit::areFactors(const QStringList& factors)
+{
+    m_theFactors.clear();
+    foreach(QString str, factors) {
+        bool found = false;
+        foreach(QString aux, m_usedFactors) {
+            if(str.compare(str, aux) == 0) {
+                found = true;
+                m_theFactors.append(str);
+                break;
+            }
+        }
+        if(!found) {
+            return false;
         }
     }
 
-    KLineEdit::inputMethodEvent(e);
+    return true;
+}
+
+QStringList PrimeFactorsLineEdit::getFactors() const
+{
+    return m_theFactors;
+}
+
+void PrimeFactorsLineEdit::keyPressEvent(QKeyEvent * event)
+{
+    QString allowedChars = "123579xX*";
+    QString allowedDigits = "123579";
+    QString symbols = "xX*";
+    bool backspaceKey = (event->key() == Qt::Key_Backspace);
+    bool returnKey = (event->key() == Qt::Key_Return
+                      || event->key() == Qt::Key_Enter);
+
+    setCursorPosition(text().length());
+
+    if(allowedChars.contains(event->text()) || backspaceKey || returnKey) {
+        QString lastFactor;
+        QChar ch = '#';
+        QString factor = "";
+        if(!event->text().isEmpty()) {
+            ch = event->text().at(0);
+        }
+        if(!text().isEmpty()) {
+            lastFactor = text().section('x', -1);
+            factor = lastFactor + ch;
+        } else {
+            factor = ch;
+        }
+
+        if(allowedChars.contains(ch) || backspaceKey || returnKey) {
+            // turns '*' and 'X' into 'x' to avoid mixed symbols
+            // and to make easier to split the text later
+            if(!event->text().isEmpty() && (symbols.indexOf(ch) != -1) && (factor.compare("x") != 0) && !lastFactor.isEmpty() && lastFactor.compare("1") != 0) {
+                QKeyEvent myKeyEvent(QKeyEvent::KeyPress, Qt::Key_X, Qt::NoModifier, "x", false, 0);
+                KLineEdit::keyPressEvent(&myKeyEvent);
+            }
+
+            if((m_usedFactors.indexOf(factor) == -1)
+                    && (factor.compare("1") != 0) && !backspaceKey &&
+                    !returnKey) {
+                return;
+            }
+
+            KLineEdit::keyPressEvent(event);
+        }
+    }
 }
