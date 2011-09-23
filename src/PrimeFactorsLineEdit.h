@@ -43,20 +43,38 @@ class PrimeFactorsLineEdit : public KLineEdit
 
 public:
     /** constructor */
-    explicit PrimeFactorsLineEdit (QWidget* parent = 0);
+    explicit PrimeFactorsLineEdit(QWidget* parent = 0);
 
     /** destructor */
     ~PrimeFactorsLineEdit();
 
-protected:
-    /** override key press event */
-    void keyPressEvent (QKeyEvent * e);
+    /** return the factors entered */
+    QStringList getFactors() const;
 
-    /** override input method change event */
-    void inputMethodEvent (QInputMethodEvent * e);
+public slots:
+    /** called when the text in KLineEdit's content changes */
+    void textHasChanged(QString text);
+
+signals:
+    /** emitted when KLineEdit's content changes and it's correct
+        itIs is true if the content is correct otherwise.
+     */
+    void contentIsRight(bool itIs);
 
 private:
-    QString m_allowedChars;
+    /** will content the factor the application will used:
+      * 2, 3, 5, 7, 11, 13, 17, 19 */
+    QStringList m_usedFactors;
+    /** the factors entered in the KLineEdit */
+    QStringList m_theFactors;
+
+    /** will check if the KLineEdit's content is right */
+    bool checkCorrectness(const QString &text);
+    /** will check if every factors' element is actually a factor */
+    bool areFactors(const QStringList &factors);
+
+    /** reimplement keyPressEvent inherited from QWidget */
+    void keyPressEvent(QKeyEvent * event);
 };
 
 #endif // PRIMEFACTORSLINEEDIT_H

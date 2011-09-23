@@ -144,6 +144,8 @@ protected:
 
 
 private slots:
+    void slotFactorsEditReturnPressed(const QString &);
+
     void slotCheckButtonClicked();
     void slotSkipButtonClicked();
 
@@ -156,6 +158,9 @@ private slots:
     void slotFactor17ButtonClicked();
     void slotFactor19ButtonClicked();
     void slotRemoveLastFactorButtonClicked();
+		
+    void editContentChanged(bool correct);
+    void setButtonsEnabled(bool enabled);
 };
 
 #endif
