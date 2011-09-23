@@ -48,23 +48,23 @@ class ResultWidget : public FractionBaseWidget
 
 public:
     /** constructors */
-    ResultWidget (QWidget * parent, const ratio para_result);
-    ResultWidget (QWidget * parent, const uintList para_factors);
-    ResultWidget (QWidget * parent = 0);
+    ResultWidget(QWidget * parent, const ratio para_result);
+    ResultWidget(QWidget * parent, const uintList para_factors);
+    ResultWidget(QWidget * parent = 0);
 
     /** destructor */
     ~ResultWidget();
 
     /** set the task to be displayed */
-    void setResult (const ratio para_result, int k);
-    void setResult (int k);
+    void setResult(const ratio para_result, int k);
+    void setResult(int k);
 
     int KindView();
 
     /** set the task to be displayed */
-    void setFactors (const uintList para_factors);
+    void setFactors(const uintList para_factors);
 
-    void setAnswerMixed (bool value);
+    void setAnswerMixed(bool value);
 
 private:
     bool m_answerMixed;
@@ -87,7 +87,7 @@ private:
     ratio m_result;
 
     /** overrideing the paint event of FractionBaseWidget */
-    void paintEvent (QPaintEvent*);
+    void paintEvent(QPaintEvent*);
 
     void Init();
     void showResult()   ;

@@ -24,8 +24,8 @@
 /* ----- public member functions ----- */
 
 /* constructor */
-ExerciseBase::ExerciseBase (QWidget * parent) :
-    QWidget (parent)
+ExerciseBase::ExerciseBase(QWidget * parent) :
+    QWidget(parent)
 {
 #ifdef DEBUG
     kDebug() << "constructor ExerciseBase()";

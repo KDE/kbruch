@@ -41,15 +41,15 @@ class RatioWidget : public FractionBaseWidget
 
 public:
     /** constructor */
-    RatioWidget (QWidget * parent, const ratio para_ratio);
+    RatioWidget(QWidget * parent, const ratio para_ratio);
 
     /** destructor */
     ~RatioWidget();
 
     /** set the task to be displayed */
-    void setRatio (const ratio para_ratio);
+    void setRatio(const ratio para_ratio);
 
-    void setQuestionMixed (bool value);
+    void setQuestionMixed(bool value);
 
 private:
 
@@ -60,7 +60,7 @@ private:
     bool m_questionMixed;
 
     /** overrideing the paint event of FractionBaseWidget */
-    void paintEvent (QPaintEvent*);
+    void paintEvent(QPaintEvent*);
 };
 
 #endif

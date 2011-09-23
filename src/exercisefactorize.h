@@ -69,7 +69,7 @@ class ExerciseFactorize : public ExerciseBase
 
 public:
     /** constructor */
-    ExerciseFactorize (QWidget * parent = 0);
+    ExerciseFactorize(QWidget * parent = 0);
 
     /** destructor */
     ~ExerciseFactorize();
@@ -135,12 +135,12 @@ private:
     void showResult();
     void nextTask();
 
-    void addFactor (uint factor);
+    void addFactor(uint factor);
     void updateEnteredEdit();
 
 
 protected:
-    void showEvent (QShowEvent * event);
+    void showEvent(QShowEvent * event);
 
 
 private slots:
@@ -158,7 +158,7 @@ private slots:
     void slotFactor17ButtonClicked();
     void slotFactor19ButtonClicked();
     void slotRemoveLastFactorButtonClicked();
-		
+
     void editContentChanged(bool correct);
     void setButtonsEnabled(bool enabled);
 };

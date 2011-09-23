@@ -40,13 +40,13 @@ class StatisticsBarWidget : public QWidget
 
 public:
     /** constructor */
-    StatisticsBarWidget (QWidget * parent = 0);
+    StatisticsBarWidget(QWidget * parent = 0);
 
     /** destructor */
     ~StatisticsBarWidget();
 
     /** Update statisticsBar */
-    void updateBar (int correct, int skipped, int total);
+    void updateBar(int correct, int skipped, int total);
 
 protected:
 

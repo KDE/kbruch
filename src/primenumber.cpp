@@ -33,8 +33,8 @@ primenumber::primenumber()
         kDebug() << "prim_vector is still empty";
 #endif
 
-        prim_vector.push_back (2);
-        prim_vector.push_back (3);
+        prim_vector.push_back(2);
+        prim_vector.push_back(3);
     }
     current_pos = prim_vector.begin();
 #ifdef DEBUG
@@ -52,7 +52,7 @@ primenumber::~primenumber()
 
 /* check, if the given number is a prime number;
  * return 0 if no, 1 if yes */
-short primenumber::isPrimeNumber (uint number)
+short primenumber::isPrimeNumber(uint number)
 {
 #ifdef DEBUG
     kDebug() << "primenumber::isPrimeNumber(" << number << ")";
@@ -66,7 +66,7 @@ short primenumber::isPrimeNumber (uint number)
 
     /* check, if we can find a divisor */
     for (unsigned int dummy = get_first(); dummy < number; dummy = get_next()) {
-        if ( (number % dummy == 0) && (dummy != number))
+        if ((number % dummy == 0) && (dummy != number))
             return 0; // the number is not a prime number
 
         /* we found a prime number, because we only have to test the given
@@ -174,7 +174,7 @@ void primenumber::find_next()
         /* loop as long as we find a divisor for the new number */
         for (current_pos = prim_vector.begin(); current_pos != prim_vector.end();
                 ++current_pos)
-            if ( (new_prim % *current_pos == 0) || (new_prim < *current_pos))
+            if ((new_prim % *current_pos == 0) || (new_prim < *current_pos))
                 break;
 
         /* if we tried all known numbers and found no divisor, well,
@@ -183,13 +183,13 @@ void primenumber::find_next()
          * we found a prime number, because we only have to test the given
          * number against all known prime numbers smaller square root of the
          * number */
-        if ( (current_pos == prim_vector.end())
+        if ((current_pos == prim_vector.end())
                 || (*current_pos * *current_pos > new_prim))
             break;
     } while (1);
 
     /* add the new prime number to the vector */
-    prim_vector.push_back (new_prim);
+    prim_vector.push_back(new_prim);
 
     current_pos = prim_vector.end() - 1;
 }

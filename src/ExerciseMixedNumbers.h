@@ -48,7 +48,7 @@ class ExerciseMixedNumbers: public ExerciseBase
 
 public:
     /** constructor */
-    ExerciseMixedNumbers (QWidget* parent = 0);
+    ExerciseMixedNumbers(QWidget* parent = 0);
 
     /** destructor */
     virtual ~ExerciseMixedNumbers();
@@ -112,7 +112,7 @@ private:
 
 protected:
     /** sets focus to input fields */
-    void showEvent (QShowEvent * event);
+    void showEvent(QShowEvent * event);
 
 private slots:
     /** handle check button click */
@@ -122,13 +122,13 @@ private slots:
     void slotSkipButtonClicked();
 
     /** focus set to numerator edit if return pressed in integer edit */
-    void integerReturnPressed (const QString &);
+    void integerReturnPressed(const QString &);
 
     /** focus set to denominator edit if return pressed in numerator edit */
-    void numerReturnPressed (const QString &);
+    void numerReturnPressed(const QString &);
 
     /** invokes check button if return pressed in denominator edit */
-    void denoReturnPressed (const QString &);
+    void denoReturnPressed(const QString &);
 };
 
 #endif // EXERCISEMIXEDNUMBERS_H

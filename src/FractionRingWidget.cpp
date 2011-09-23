@@ -58,128 +58,128 @@ FractionRingWidget::FractionRingWidget()
 #endif
     // creating KActions, used by the kbruchui.rc file
     setupActions();
-    createGUI ("FractionRingWidgetui.rc");
+    createGUI("FractionRingWidgetui.rc");
 
-    setCaption (i18n ("Learning"));
+    setCaption(i18n("Learning"));
 
     layout1 = new QGridLayout();
-    layout1->setObjectName ("layout1");
+    layout1->setObjectName("layout1");
 
     baseWidget = new QWidget();
-    baseWidget->setObjectName ("baseWidget");
+    baseWidget->setObjectName("baseWidget");
 
-    setCentralWidget (baseWidget);
+    setCentralWidget(baseWidget);
 
-    interfaceWidget = new QWidget (this);
-    interfaceWidget->setObjectName ("interfaceWidget");
-    interfaceWidget->setFixedSize (QSize (270, 300));
+    interfaceWidget = new QWidget(this);
+    interfaceWidget->setObjectName("interfaceWidget");
+    interfaceWidget->setFixedSize(QSize(270, 300));
 
     gridLayout = new QGridLayout();
-    gridLayout->setObjectName ("gridLayout");
+    gridLayout->setObjectName("gridLayout");
 
     // setup colors ---------------------------------------
-    bgOutsideRing = QColor (242, 242, 242);
-    bgOutsideMold = QColor (51, 51, 153);
-    bgInsideRing = QColor (242, 242, 242);
-    bgInsideMold = QColor (184, 18, 0);
-    bgColor = QColor (240, 240, 250);
+    bgOutsideRing = QColor(242, 242, 242);
+    bgOutsideMold = QColor(51, 51, 153);
+    bgInsideRing = QColor(242, 242, 242);
+    bgInsideMold = QColor(184, 18, 0);
+    bgColor = QColor(240, 240, 250);
 
-    colorListLeft[0] = QColor (0, 122, 209);
-    colorListLeft[1] = QColor (70, 156, 207);
-    colorListLeft[2] = QColor (121, 205, 241);
-    colorListLeft[3] = QColor (174, 231, 255);
-    colorListLeft[4] = QColor (117, 241, 255);
+    colorListLeft[0] = QColor(0, 122, 209);
+    colorListLeft[1] = QColor(70, 156, 207);
+    colorListLeft[2] = QColor(121, 205, 241);
+    colorListLeft[3] = QColor(174, 231, 255);
+    colorListLeft[4] = QColor(117, 241, 255);
 
-    colorListRight[0] = QColor (186, 18, 24);
-    colorListRight[1] = QColor (217, 74, 81);
-    colorListRight[2] = QColor (255, 114, 122);
-    colorListRight[3] = QColor (230, 147, 152);
-    colorListRight[4] = QColor (255, 186, 190);
+    colorListRight[0] = QColor(186, 18, 24);
+    colorListRight[1] = QColor(217, 74, 81);
+    colorListRight[2] = QColor(255, 114, 122);
+    colorListRight[3] = QColor(230, 147, 152);
+    colorListRight[4] = QColor(255, 186, 190);
 
     // 742, 520
-    setFixedSize (QSize (742, 520));
+    setFixedSize(QSize(742, 520));
 
-    setPalette (QPalette (bgColor));
-    setAutoFillBackground (true);
+    setPalette(QPalette(bgColor));
+    setAutoFillBackground(true);
 
-    move (50, 50);
+    move(50, 50);
 
-    fractionWidget = new FractionPainter (this);
-    fractionWidget->setObjectName ("fractionWidget");
+    fractionWidget = new FractionPainter(this);
+    fractionWidget->setObjectName("fractionWidget");
 
-    gridLayout->addWidget (fractionWidget, 0, 0, 1, 2, Qt::AlignBottom | Qt::AlignHCenter);
+    gridLayout->addWidget(fractionWidget, 0, 0, 1, 2, Qt::AlignBottom | Qt::AlignHCenter);
 
     // Info Labels -------------------------------------
-    leftInfoLabel = new QLabel (this);
-    leftInfoLabel->setObjectName ("leftInfoLabel");
-    leftInfoLabel->setText (i18nc ("Expands the ratio shown on the left by the given factor. Please note, expanding is not the same as multiplying. For example, expanding a ratio by 2 basically means multiplying the ratio with 2/2 and not with 2/1!", "Expand"));
-    gridLayout->addWidget (leftInfoLabel, 1, 0, Qt::AlignCenter);
+    leftInfoLabel = new QLabel(this);
+    leftInfoLabel->setObjectName("leftInfoLabel");
+    leftInfoLabel->setText(i18nc("Expands the ratio shown on the left by the given factor. Please note, expanding is not the same as multiplying. For example, expanding a ratio by 2 basically means multiplying the ratio with 2/2 and not with 2/1!", "Expand"));
+    gridLayout->addWidget(leftInfoLabel, 1, 0, Qt::AlignCenter);
 
-    rightInfoLabel = new QLabel (this);
-    rightInfoLabel->setObjectName ("rightInfoLabel");
-    rightInfoLabel->setText (i18nc ("Expands the ratio shown on the left by the given factor. Please note, expanding is not the same as multiplying. For example, expanding a ratio by 2 basically means multiplying the ratio with 2/2 and not with 2/1!", "Expand"));
-    gridLayout->addWidget (rightInfoLabel, 1, 1, Qt::AlignCenter);
+    rightInfoLabel = new QLabel(this);
+    rightInfoLabel->setObjectName("rightInfoLabel");
+    rightInfoLabel->setText(i18nc("Expands the ratio shown on the left by the given factor. Please note, expanding is not the same as multiplying. For example, expanding a ratio by 2 basically means multiplying the ratio with 2/2 and not with 2/1!", "Expand"));
+    gridLayout->addWidget(rightInfoLabel, 1, 1, Qt::AlignCenter);
 
     // SpinBox -----------------------------------------
-    leftSpinBox = new KIntSpinBox (this);
-    leftSpinBox->setObjectName ("leftSpinBox");
-    leftSpinBox->setRange (1, 6);
-    leftSpinBox->setMaximumWidth (50);
-    leftSpinBox->setMinimumWidth (50);
-    gridLayout->addWidget (leftSpinBox, 2, 0, Qt::AlignTop | Qt::AlignHCenter);
+    leftSpinBox = new KIntSpinBox(this);
+    leftSpinBox->setObjectName("leftSpinBox");
+    leftSpinBox->setRange(1, 6);
+    leftSpinBox->setMaximumWidth(50);
+    leftSpinBox->setMinimumWidth(50);
+    gridLayout->addWidget(leftSpinBox, 2, 0, Qt::AlignTop | Qt::AlignHCenter);
 
-    rightSpinBox = new KIntSpinBox (this);
-    rightSpinBox->setObjectName ("rightSpinBox");
-    rightSpinBox->setRange (1, 6);
-    rightSpinBox->setMaximumWidth (50);
-    rightSpinBox->setMinimumWidth (50);
-    gridLayout->addWidget (rightSpinBox, 2, 1, Qt::AlignTop | Qt::AlignHCenter);
+    rightSpinBox = new KIntSpinBox(this);
+    rightSpinBox->setObjectName("rightSpinBox");
+    rightSpinBox->setRange(1, 6);
+    rightSpinBox->setMaximumWidth(50);
+    rightSpinBox->setMinimumWidth(50);
+    gridLayout->addWidget(rightSpinBox, 2, 1, Qt::AlignTop | Qt::AlignHCenter);
 
-    QObject::connect (leftSpinBox, SIGNAL (valueChanged (int)), this,
-                      SLOT (slotLeftSpinBoxValueChanged (int)));
-    QObject::connect (rightSpinBox, SIGNAL (valueChanged (int)), this,
-                      SLOT (slotRightSpinBoxValueChanged (int)));
+    QObject::connect(leftSpinBox, SIGNAL(valueChanged(int)), this,
+                     SLOT(slotLeftSpinBoxValueChanged(int)));
+    QObject::connect(rightSpinBox, SIGNAL(valueChanged(int)), this,
+                     SLOT(slotRightSpinBoxValueChanged(int)));
 
     // Reset Button ------------------------------------
-    resetButton = new QPushButton (this);
-    resetButton->setObjectName ("resetButton");
-    resetButton->setText (i18n ("New"));
-    resetButton->setMaximumWidth (70);
-    gridLayout->addWidget (resetButton, 3, 0, 1, 2, Qt::AlignCenter);
+    resetButton = new QPushButton(this);
+    resetButton->setObjectName("resetButton");
+    resetButton->setText(i18n("New"));
+    resetButton->setMaximumWidth(70);
+    gridLayout->addWidget(resetButton, 3, 0, 1, 2, Qt::AlignCenter);
 
-    QObject::connect (resetButton, SIGNAL (clicked()), this,
-                      SLOT (NewTask()));
+    QObject::connect(resetButton, SIGNAL(clicked()), this,
+                     SLOT(NewTask()));
 
     // grid row settings --------------------------------
-    gridLayout->setRowMinimumHeight (0, 185);
-    gridLayout->setRowMinimumHeight (1, 10);
-    gridLayout->setRowMinimumHeight (2, 15);
-    gridLayout->setRowMinimumHeight (3, 85);
+    gridLayout->setRowMinimumHeight(0, 185);
+    gridLayout->setRowMinimumHeight(1, 10);
+    gridLayout->setRowMinimumHeight(2, 15);
+    gridLayout->setRowMinimumHeight(3, 85);
 
-    interfaceWidget->setLayout (gridLayout);
-    layout1->addWidget (interfaceWidget, 1, 0, Qt::AlignTop | Qt::AlignHCenter);
+    interfaceWidget->setLayout(gridLayout);
+    layout1->addWidget(interfaceWidget, 1, 0, Qt::AlignTop | Qt::AlignHCenter);
 
     // textedit -----------------------------------------
-    textMsg = new KTextEdit (this);
-    textMsg->setObjectName ("textMsg");
-    textMsg->setFixedSize (QSize (250 - MARG_LEFT, 300));
-    textMsg->setReadOnly (true);
-    textMsg->setPalette (QPalette (QColor (255, 255, 255)));
-    textMsg->setAutoFillBackground (true);
-    layout1->addWidget (textMsg, 0, 1, 2, 1, Qt::AlignCenter);
+    textMsg = new KTextEdit(this);
+    textMsg->setObjectName("textMsg");
+    textMsg->setFixedSize(QSize(250 - MARG_LEFT, 300));
+    textMsg->setReadOnly(true);
+    textMsg->setPalette(QPalette(QColor(255, 255, 255)));
+    textMsg->setAutoFillBackground(true);
+    layout1->addWidget(textMsg, 0, 1, 2, 1, Qt::AlignCenter);
 
     // grid row settings --------------------------------
-    layout1->setRowMinimumHeight (0, MARG_TOP - 20);
-    layout1->setRowMinimumHeight (1, 370 - MARG_TOP);
+    layout1->setRowMinimumHeight(0, MARG_TOP - 20);
+    layout1->setRowMinimumHeight(1, 370 - MARG_TOP);
 
     // grid column settings -----------------------------
-    layout1->setColumnMinimumWidth (0, 460 + MARG_LEFT);
-    layout1->setColumnMinimumWidth (1, 282 - MARG_LEFT);
+    layout1->setColumnMinimumWidth(0, 460 + MARG_LEFT);
+    layout1->setColumnMinimumWidth(1, 282 - MARG_LEFT);
 
-    baseWidget->setLayout (layout1);
+    baseWidget->setLayout(layout1);
 
     // Ratio ----------------------------------------------
-    resetFraction (true);
+    resetFraction(true);
 }
 
 /* destructor */
@@ -196,29 +196,29 @@ void FractionRingWidget::setupActions()
     kDebug() << "setupActions FractionRingWidget";
 #endif
     // new task action
-    m_NewTaskAction  = new KAction (KIcon ("document-new"), i18nc ("@action opens a new question", "&New"), this);
-    actionCollection()->addAction ("NewTask", m_NewTaskAction);
-    connect (m_NewTaskAction, SIGNAL (triggered (bool)), SLOT (NewTask()));
-    m_NewTaskAction->setShortcut (KStandardShortcut::shortcut (KStandardShortcut::New));
+    m_NewTaskAction  = new KAction(KIcon("document-new"), i18nc("@action opens a new question", "&New"), this);
+    actionCollection()->addAction("NewTask", m_NewTaskAction);
+    connect(m_NewTaskAction, SIGNAL(triggered(bool)), SLOT(NewTask()));
+    m_NewTaskAction->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));
 
     // back action
-    m_BackAction  = new KAction (KIcon ("go-previous"), i18nc ("@action go to the main screen", "Back"), this);
-    actionCollection()->addAction ("Back", m_BackAction);
-    connect (m_BackAction, SIGNAL (triggered (bool)), SLOT (GoBack()));
+    m_BackAction  = new KAction(KIcon("go-previous"), i18nc("@action go to the main screen", "Back"), this);
+    actionCollection()->addAction("Back", m_BackAction);
+    connect(m_BackAction, SIGNAL(triggered(bool)), SLOT(GoBack()));
 
     // hint action (hide it as it doesn't exist here)
-    m_HintAction  = new KAction (KIcon ("games-hint"), i18nc ("@action opens hint", "Hint"), this);
-    actionCollection()->addAction ("Hint", m_HintAction);
-    connect (m_HintAction, SIGNAL (triggered (bool)), SLOT (Hint()));
+    m_HintAction  = new KAction(KIcon("games-hint"), i18nc("@action opens hint", "Hint"), this);
+    actionCollection()->addAction("Hint", m_HintAction);
+    connect(m_HintAction, SIGNAL(triggered(bool)), SLOT(Hint()));
 
     // quit action
-    KStandardAction::quit (kapp, SLOT (quit()), actionCollection());
+    KStandardAction::quit(kapp, SLOT(quit()), actionCollection());
 
-    KStandardAction::preferences (this,  SLOT (slotPrefs()), actionCollection());
+    KStandardAction::preferences(this,  SLOT(slotPrefs()), actionCollection());
 
     if (!initialGeometrySet())
-        resize (QSize (725, 330).expandedTo (minimumSizeHint()));
-    setupGUI (ToolBar | Keys | StatusBar | Create);
+        resize(QSize(725, 330).expandedTo(minimumSizeHint()));
+    setupGUI(ToolBar | Keys | StatusBar | Create);
     setAutoSaveSettings();
 }
 
@@ -228,19 +228,19 @@ void FractionRingWidget::slotPrefs()
     kDebug() << "slotPrefs FractionRingWidget";
 #endif
     // do not show dialog twice
-    if (KConfigDialog::showDialog ("settings"))
+    if (KConfigDialog::showDialog("settings"))
         return;
 
     //KConfigDialog didn't find an instance of this dialog, so lets create it :
-    KConfigDialog* configDialog = new KConfigDialog (this, "settings", SettingsClass::self());
+    KConfigDialog* configDialog = new KConfigDialog(this, "settings", SettingsClass::self());
 
-    TaskColors * taskColors = new TaskColors (0);
-    configDialog->addPage (taskColors, i18n ("Colors"), "preferences-desktop-color");
+    TaskColors * taskColors = new TaskColors(0);
+    configDialog->addPage(taskColors, i18n("Colors"), "preferences-desktop-color");
 
     // User edited the configuration - update your local copies of the
     // configuration data
-    connect (configDialog, SIGNAL (settingsChanged (const QString &)), this, SLOT (slotApplySettings()));
-    configDialog->setHelp ("kbruch/index.html");
+    connect(configDialog, SIGNAL(settingsChanged(const QString &)), this, SLOT(slotApplySettings()));
+    configDialog->setHelp("kbruch/index.html");
     configDialog->show();
 
     return;
@@ -255,89 +255,89 @@ void FractionRingWidget::slotApplySettings()
     return;
 }
 
-void FractionRingWidget::paintEvent (QPaintEvent *)
+void FractionRingWidget::paintEvent(QPaintEvent *)
 {
-    QPainter painter (this);
-    painter.setRenderHint (QPainter::Antialiasing);
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
 
-    QPen penBorder = QPen (Qt::white);
-    penBorder.setWidth (2);
+    QPen penBorder = QPen(Qt::white);
+    penBorder.setWidth(2);
 
-    painter.setPen (penBorder);
-    painter.setBrush (bgOutsideRing);
+    painter.setPen(penBorder);
+    painter.setBrush(bgOutsideRing);
 
-    QRectF rect (MARG_LEFT, MARG_TOP, 440, 440);
+    QRectF rect(MARG_LEFT, MARG_TOP, 440, 440);
 
     int startAngle = 90 * 16;
     int spanAngle = 0;
 
     // Outside Ring -------------------------------
-    painter.drawEllipse (rect);
+    painter.drawEllipse(rect);
 
-    painter.setPen (Qt::NoPen);
+    painter.setPen(Qt::NoPen);
 
     int div = 255 / (rLeft.denominator() + 1);
     for (int i = 0; i < rLeft.numerator(); i++) {
-        painter.setBrush (colorListLeft[i]);
-        spanAngle = ( (16 * 360) << 8) / rLeft.denominator();
-        painter.drawPie (rect, startAngle + ( (i * spanAngle) >> 8), (spanAngle >> 8));
+        painter.setBrush(colorListLeft[i]);
+        spanAngle = ((16 * 360) << 8) / rLeft.denominator();
+        painter.drawPie(rect, startAngle + ((i * spanAngle) >> 8), (spanAngle >> 8));
     }
 
-    painter.setPen (penBorder);
-    painter.setBrush (Qt::transparent);
+    painter.setPen(penBorder);
+    painter.setBrush(Qt::transparent);
     for (int i = 0; i < rLeft.denominator() * multLeft; i++) {
-        spanAngle = ( (16 * 360) << 8) / (rLeft.denominator() * multLeft);
-        painter.drawPie (rect, startAngle + ( (i * spanAngle) >> 8), (spanAngle >> 8));
+        spanAngle = ((16 * 360) << 8) / (rLeft.denominator() * multLeft);
+        painter.drawPie(rect, startAngle + ((i * spanAngle) >> 8), (spanAngle >> 8));
     }
 
     // Spacer Ring -------------------------------
-    painter.setPen (penBorder);
-    painter.setBrush (bgColor);
-    rect.setRect (MARG_LEFT + 27, MARG_TOP + 27, 386, 386);
-    painter.drawEllipse (rect);
+    painter.setPen(penBorder);
+    painter.setBrush(bgColor);
+    rect.setRect(MARG_LEFT + 27, MARG_TOP + 27, 386, 386);
+    painter.drawEllipse(rect);
 
     // Inside Ring -------------------------------
-    painter.setPen (penBorder);
-    painter.setBrush (bgInsideRing);
-    rect.setRect (MARG_LEFT + 33, MARG_TOP + 33, 374, 374);
-    painter.drawEllipse (rect);
+    painter.setPen(penBorder);
+    painter.setBrush(bgInsideRing);
+    rect.setRect(MARG_LEFT + 33, MARG_TOP + 33, 374, 374);
+    painter.drawEllipse(rect);
 
-    painter.setPen (penBorder);
+    painter.setPen(penBorder);
 
     div = 255 / (rRight.denominator() + 1);
     for (int i = 0; i < rRight.numerator(); i++) {
-        painter.setBrush (colorListRight[i]);
-        spanAngle = ( (16 * 360) << 8) / rRight.denominator();
-        painter.drawPie (rect, startAngle + ( (i * spanAngle) >> 8), (spanAngle >> 8));
+        painter.setBrush(colorListRight[i]);
+        spanAngle = ((16 * 360) << 8) / rRight.denominator();
+        painter.drawPie(rect, startAngle + ((i * spanAngle) >> 8), (spanAngle >> 8));
     }
 
-    painter.setPen (penBorder);
-    painter.setBrush (Qt::transparent);
+    painter.setPen(penBorder);
+    painter.setBrush(Qt::transparent);
     for (int i = 0; i < rRight.denominator() * multRight; i++) {
-        spanAngle = ( (16 * 360) << 8) / ( (rRight.denominator() * multRight));
-        painter.drawPie (rect, startAngle + ( (i * spanAngle) >> 8), (spanAngle >> 8));
+        spanAngle = ((16 * 360) << 8) / ((rRight.denominator() * multRight));
+        painter.drawPie(rect, startAngle + ((i * spanAngle) >> 8), (spanAngle >> 8));
     }
 
     // Inside Area -------------------------------
-    painter.setPen (penBorder);
-    painter.setBrush (QColor (230, 230, 240));
-    rect.setRect (MARG_LEFT + 60, MARG_TOP + 60, 320, 320);
-    painter.drawEllipse (rect);
+    painter.setPen(penBorder);
+    painter.setBrush(QColor(230, 230, 240));
+    rect.setRect(MARG_LEFT + 60, MARG_TOP + 60, 320, 320);
+    painter.drawEllipse(rect);
 
     // left mold ---------------------------------
-    QPen pen = QPen (bgOutsideMold);
-    pen.setWidth (2);
-    painter.setPen (pen);
-    painter.setBrush (QColor (205, 225, 240, 150));
-    rect.setRect (MARG_LEFT + 118, MARG_TOP + 120, 80, 160);
-    painter.drawRect (rect);
+    QPen pen = QPen(bgOutsideMold);
+    pen.setWidth(2);
+    painter.setPen(pen);
+    painter.setBrush(QColor(205, 225, 240, 150));
+    rect.setRect(MARG_LEFT + 118, MARG_TOP + 120, 80, 160);
+    painter.drawRect(rect);
 
     // right mold --------------------------------
-    pen.setColor (bgInsideMold);
-    painter.setPen (pen);
-    painter.setBrush (QColor (240, 210, 160));
-    rect.setRect (MARG_LEFT + 252, MARG_TOP + 120, 80, 160);
-    painter.drawRect (rect);
+    pen.setColor(bgInsideMold);
+    painter.setPen(pen);
+    painter.setBrush(QColor(240, 210, 160));
+    rect.setRect(MARG_LEFT + 252, MARG_TOP + 120, 80, 160);
+    painter.drawRect(rect);
 }
 
 void FractionRingWidget::GoBack()
@@ -349,117 +349,117 @@ void FractionRingWidget::GoBack()
 
 void FractionRingWidget::Hint()
 {
-    textMsg->setVisible (!textMsg->isVisible());
+    textMsg->setVisible(!textMsg->isVisible());
 }
 
-void FractionRingWidget::slotLeftSpinBoxValueChanged (int value)
+void FractionRingWidget::slotLeftSpinBoxValueChanged(int value)
 {
     multLeft = value;
 
     QString msg;
     if (checkTask()) {
-        msg = i18n ("Now the parts of the inside ring and outside ring have "
-                    "the same size, and we can add the fractions!\n\n"
-                    "This is called finding the main denominator. "
-                    "The main denominator divides the rings into equal parts.");
-        if (rLeft.denominator() * value != MCM (rLeft.denominator(), rRight.denominator())) {
-            msg += QString ("\n\n");
-            msg += i18n ("There is a smaller main denominator. Can you find it?");
+        msg = i18n("Now the parts of the inside ring and outside ring have "
+                   "the same size, and we can add the fractions!\n\n"
+                   "This is called finding the main denominator. "
+                   "The main denominator divides the rings into equal parts.");
+        if (rLeft.denominator() * value != MCM(rLeft.denominator(), rRight.denominator())) {
+            msg += QString("\n\n");
+            msg += i18n("There is a smaller main denominator. Can you find it?");
         }
 
-        textMsg->setText (msg);
+        textMsg->setText(msg);
     } else {
-        msg = i18n ("You have just expanded the first fraction by %1. "
-                    "Our main goal is to make all parts be the same size. "
-                    "Try expanding the first fraction by %2 and the second fraction by %3.",
-                    value, rRight.denominator(), rLeft.denominator());
-        textMsg->setText (msg);
+        msg = i18n("You have just expanded the first fraction by %1. "
+                   "Our main goal is to make all parts be the same size. "
+                   "Try expanding the first fraction by %2 and the second fraction by %3.",
+                   value, rRight.denominator(), rLeft.denominator());
+        textMsg->setText(msg);
     }
 
     update();
-    fractionWidget->paintFraction ("+", rLeft, multLeft, rRight, multRight);
+    fractionWidget->paintFraction("+", rLeft, multLeft, rRight, multRight);
 }
 
-void FractionRingWidget::slotRightSpinBoxValueChanged (int value)
+void FractionRingWidget::slotRightSpinBoxValueChanged(int value)
 {
     multRight = value;
 
     QString msg;
     if (checkTask()) {
-        msg = i18n ("Now the parts of the inside ring and outside ring have "
-                    "the same size, and we can add the fractions!\n\n"
-                    "This is called finding the main denominator. "
-                    "The main denominator divides the rings into equal parts.");
-        if (rRight.denominator() * value != MCM (rLeft.denominator(), rRight.denominator())) {
-            msg += QString ("\n\n");
-            msg += i18n ("There is a smaller main denominator. Can you find it?");
+        msg = i18n("Now the parts of the inside ring and outside ring have "
+                   "the same size, and we can add the fractions!\n\n"
+                   "This is called finding the main denominator. "
+                   "The main denominator divides the rings into equal parts.");
+        if (rRight.denominator() * value != MCM(rLeft.denominator(), rRight.denominator())) {
+            msg += QString("\n\n");
+            msg += i18n("There is a smaller main denominator. Can you find it?");
         }
 
-        textMsg->setText (msg);
+        textMsg->setText(msg);
     } else {
-        msg = i18n ("You have just expanded the second fraction by %1. "
-                    "Our main goal is to make all parts be the same size. "
-                    "Try expanding the first fraction by %2 and the second fraction by %3.",
-                    value, rRight.denominator(), rLeft.denominator());
-        textMsg->setText (msg);
+        msg = i18n("You have just expanded the second fraction by %1. "
+                   "Our main goal is to make all parts be the same size. "
+                   "Try expanding the first fraction by %2 and the second fraction by %3.",
+                   value, rRight.denominator(), rLeft.denominator());
+        textMsg->setText(msg);
     }
 
     update();
-    fractionWidget->paintFraction ("+", rLeft, multLeft, rRight, multRight);
+    fractionWidget->paintFraction("+", rLeft, multLeft, rRight, multRight);
 }
 
 void FractionRingWidget::NewTask()
 {
-    resetFraction (true);
+    resetFraction(true);
 }
 
-void FractionRingWidget::resetFraction (bool flag = true)
+void FractionRingWidget::resetFraction(bool flag = true)
 {
-    int denominator = int ( (double (rand()) / RAND_MAX) * 5) + 2;
-    int numerator = int ( (double (rand()) / RAND_MAX) * (denominator - 1)) + 1;
+    int denominator = int ((double(rand()) / RAND_MAX) * 5) + 2;
+    int numerator = int ((double(rand()) / RAND_MAX) * (denominator - 1)) + 1;
 
-    rLeft = ratio (numerator, denominator, false);
+    rLeft = ratio(numerator, denominator, false);
 
-    int denominator2 = int ( (double (rand()) / RAND_MAX) * 5) + 2;
+    int denominator2 = int ((double(rand()) / RAND_MAX) * 5) + 2;
     while (denominator2 == denominator) {
-        denominator2 = int ( (double (rand()) / RAND_MAX) * 5) + 2;
+        denominator2 = int ((double(rand()) / RAND_MAX) * 5) + 2;
     }
-    int numerator2 = int ( (double (rand()) / RAND_MAX) * (denominator2 - 1)) + 1;
-    rRight = ratio (numerator2, denominator2, false);
+    int numerator2 = int ((double(rand()) / RAND_MAX) * (denominator2 - 1)) + 1;
+    rRight = ratio(numerator2, denominator2, false);
 
     multLeft = 1;
     multRight = 1;
-    leftSpinBox->setValue (1);
-    rightSpinBox->setValue (1);
+    leftSpinBox->setValue(1);
+    rightSpinBox->setValue(1);
 
     // NOTE: Inserting denominator as %1, as first number is used to determine plural form,
     // and in these messages that should be the number next to "...painted parts".
-    QString insert1 = i18ncp ("Inserted as %1 in the message below.",
-                              "%2 of 1 painted part.", "%2 of %1 painted parts.",
-                              rLeft.denominator(), rLeft.numerator());
-    QString insert2 = i18ncp ("Inserted as %2 in the message below.",
-                              "%2 of 1 painted part.", "%2 of %1 painted parts.",
-                              rRight.denominator(), rRight.numerator());
-    QString msg = i18nc ("%1 and %2 are the two messages translated above.",
-                         "The outside ring represents the left fraction. %1\n\n"
-                         "The inside ring represents the right fraction. %2\n\n"
-                         "The 'Expand' spinboxes expand each fraction. Try to change one of the spinbox values!",
-                         insert1, insert2);
+    QString insert1 = i18ncp("Inserted as %1 in the message below.",
+                             "%2 of 1 painted part.", "%2 of %1 painted parts.",
+                             rLeft.denominator(), rLeft.numerator());
+    QString insert2 = i18ncp("Inserted as %2 in the message below.",
+                             "%2 of 1 painted part.", "%2 of %1 painted parts.",
+                             rRight.denominator(), rRight.numerator());
+    QString msg = i18nc("%1 and %2 are the two messages translated above.",
+                        "The outside ring represents the left fraction. %1\n\n"
+                        "The inside ring represents the right fraction. %2\n\n"
+                        "The 'Expand' spinboxes expand each fraction. Try to change one of the spinbox values!",
+                        insert1, insert2);
 
-    textMsg->setText (msg);
+    textMsg->setText(msg);
 
     if (flag) {
         update();
-        fractionWidget->paintFraction ("+", rLeft, multLeft, rRight, multRight);
+        fractionWidget->paintFraction("+", rLeft, multLeft, rRight, multRight);
     }
 }
 
-int FractionRingWidget::MCM (int a, int b)
+int FractionRingWidget::MCM(int a, int b)
 {
-    return a * b / GCF (a, b);
+    return a * b / GCF(a, b);
 }
 
-int FractionRingWidget::GCF (int a, int b)
+int FractionRingWidget::GCF(int a, int b)
 {
     int tmp;
     if (a < b) {

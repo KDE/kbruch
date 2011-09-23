@@ -72,12 +72,12 @@ public:
 protected:
     /** Function is called every time the screen need to be painted.
      **/
-    void paintEvent (QPaintEvent * event);
+    void paintEvent(QPaintEvent * event);
 
-    void resetFraction (bool update);
+    void resetFraction(bool update);
     bool checkTask();
-    int MCM (int a, int b);
-    int GCF (int a, int b);
+    int MCM(int a, int b);
+    int GCF(int a, int b);
 
 private:
     QWidget * baseWidget;
@@ -122,8 +122,8 @@ private:
     void setupActions();
 
 private slots:
-    void slotLeftSpinBoxValueChanged (int value);
-    void slotRightSpinBoxValueChanged (int value);
+    void slotLeftSpinBoxValueChanged(int value);
+    void slotRightSpinBoxValueChanged(int value);
     void NewTask();
     void Hint();
     void GoBack();

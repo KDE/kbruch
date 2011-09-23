@@ -52,7 +52,7 @@ class StatisticsView : public QFrame
 
 public:
     /** constructor */
-    StatisticsView (QWidget * parent = 0);
+    StatisticsView(QWidget * parent = 0);
 
     /** destructor */
     ~StatisticsView();

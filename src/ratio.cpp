@@ -29,7 +29,7 @@
 /* ----- public member functions ----- */
 
 /* constructor */
-ratio::ratio (int pnumerator, int pdenominator) : m_numerator (pnumerator), m_denominator (pdenominator)
+ratio::ratio(int pnumerator, int pdenominator) : m_numerator(pnumerator), m_denominator(pdenominator)
 {
 #ifdef DEBUG
     kDebug() << "constructor ratio";
@@ -43,7 +43,7 @@ ratio::ratio (int pnumerator, int pdenominator) : m_numerator (pnumerator), m_de
     reduce();
 }
 
-ratio::ratio (int pnumerator, int pdenominator, bool reduce_fraction) : m_numerator (pnumerator), m_denominator (pdenominator)
+ratio::ratio(int pnumerator, int pdenominator, bool reduce_fraction) : m_numerator(pnumerator), m_denominator(pdenominator)
 {
 #ifdef DEBUG
     kDebug() << "constructor ratio";
@@ -59,13 +59,13 @@ ratio::ratio (int pnumerator, int pdenominator, bool reduce_fraction) : m_numera
 }
 
 /* copy constructor */
-ratio::ratio (const ratio & copy_ratio)
+ratio::ratio(const ratio & copy_ratio)
 {
 #ifdef DEBUG
     kDebug() << "copy constructor ratio";
 #endif
-    setNumerator (copy_ratio.numerator(), false);
-    setDenominator (copy_ratio.denominator(), false);
+    setNumerator(copy_ratio.numerator(), false);
+    setDenominator(copy_ratio.denominator(), false);
 }
 
 /* destructor */
@@ -77,15 +77,15 @@ ratio::~ratio()
 }
 
 /* displays the ratio on stdout; just for debugging */
-QTextStream & ratio::display (QTextStream & str) const
+QTextStream & ratio::display(QTextStream & str) const
 {
     int tmp_width = str.fieldWidth();
-    str << qSetFieldWidth (5) << " ";
-    str << qSetFieldWidth (5) << m_numerator << endl;
-    str << qSetFieldWidth (tmp_width) << " ";
+    str << qSetFieldWidth(5) << " ";
+    str << qSetFieldWidth(5) << m_numerator << endl;
+    str << qSetFieldWidth(tmp_width) << " ";
     str << " ----- " << endl;
-    str << qSetFieldWidth (tmp_width) << " ";
-    return str << qSetFieldWidth (5) << m_denominator;
+    str << qSetFieldWidth(tmp_width) << " ";
+    return str << qSetFieldWidth(5) << m_denominator;
 }
 
 /* return the numerator */
@@ -101,7 +101,7 @@ int ratio::denominator() const
 }
 
 /* set the numerator */
-void ratio::setNumerator (int pnumerator, bool reduce_it)
+void ratio::setNumerator(int pnumerator, bool reduce_it)
 {
     m_numerator = pnumerator;
 
@@ -113,7 +113,7 @@ void ratio::setNumerator (int pnumerator, bool reduce_it)
 }
 
 /* set the denominator */
-void ratio::setDenominator (int pdenominator, bool reduce_it)
+void ratio::setDenominator(int pdenominator, bool reduce_it)
 {
     /* denominator is not allowed to be 0 */
     if (!pdenominator)
@@ -129,10 +129,10 @@ void ratio::setDenominator (int pdenominator, bool reduce_it)
 }
 
 /* set completely new ratio */
-void ratio::setRatio (int pnumerator, int pdenominator, bool reduce_it)
+void ratio::setRatio(int pnumerator, int pdenominator, bool reduce_it)
 {
-    setNumerator (pnumerator, false);
-    setDenominator (pdenominator, false);
+    setNumerator(pnumerator, false);
+    setDenominator(pdenominator, false);
 
     // check, if we have to reduce the ratio
     if (reduce_it == true) {
@@ -143,16 +143,16 @@ void ratio::setRatio (int pnumerator, int pdenominator, bool reduce_it)
 }
 
 /* set completely new ratio using mixed numbers */
-void ratio::setRatio (int pinteger, int pnumerator, int pdenominator, bool reduce_it)
+void ratio::setRatio(int pinteger, int pnumerator, int pdenominator, bool reduce_it)
 {
     // calculate new Numerator, but ignore negative values
-    int newNumerator = qAbs (pinteger * pdenominator) + qAbs (pnumerator);
+    int newNumerator = qAbs(pinteger * pdenominator) + qAbs(pnumerator);
 
     // restore negative values
-    if ( (pinteger < 0 || pnumerator < 0) && ! (pinteger < 0 && pnumerator < 0))
+    if ((pinteger < 0 || pnumerator < 0) && !(pinteger < 0 && pnumerator < 0))
         newNumerator *= -1;
 
-    setRatio (newNumerator, pdenominator, reduce_it);
+    setRatio(newNumerator, pdenominator, reduce_it);
 
     return;
 }
@@ -162,14 +162,14 @@ void ratio::setRatio (int pinteger, int pnumerator, int pdenominator, bool reduc
 ratio ratio::operator+ (ratio addend)
 {
     // this object will be returned as the sum
-    ratio sum (0, 1);
+    ratio sum(0, 1);
 
     // calculate and set the numerator without reducing
-    sum.setNumerator (m_numerator * addend.denominator()
-                      + addend.numerator() * m_denominator, false);
+    sum.setNumerator(m_numerator * addend.denominator()
+                     + addend.numerator() * m_denominator, false);
 
     // calculate and set the denominator without reducing
-    sum.setDenominator (m_denominator * addend.denominator(), false);
+    sum.setDenominator(m_denominator * addend.denominator(), false);
 
     // reduce the sum
     sum.reduce();
@@ -181,7 +181,7 @@ ratio ratio::operator+ (ratio addend)
 ratio ratio::operator- (ratio subtrahend)
 {
     /* this object will be returned as the difference */
-    ratio diff (0, 1);
+    ratio diff(0, 1);
 
     /* change the sign of the subtrahend, so we can handle it as an addition */
     subtrahend.change_sign();
@@ -195,14 +195,14 @@ ratio ratio::operator- (ratio subtrahend)
 }
 
 /* mul a ratio with a ratio like c = a * b */
-ratio ratio::operator* (ratio factor)
+ratio ratio::operator*(ratio factor)
 {
     // this object will be returned as the product
-    ratio product (0, 1);
+    ratio product(0, 1);
 
     // calculate and set numerator and denominator without reducing
-    product.setNumerator (m_numerator * factor.numerator(), false);
-    product.setDenominator (m_denominator * factor.denominator(), false);
+    product.setNumerator(m_numerator * factor.numerator(), false);
+    product.setDenominator(m_denominator * factor.denominator(), false);
 
     // reduce the product
     product.reduce();
@@ -214,7 +214,7 @@ ratio ratio::operator* (ratio factor)
 ratio ratio::operator/ (ratio divisor)
 {
     /* this object will be returned as the quotient */
-    ratio quotient (0, 1);
+    ratio quotient(0, 1);
 
     /* exchange numerator and denominator so we can handle as multiplication */
     divisor.reziproc();
@@ -242,9 +242,9 @@ bool ratio::operator== (ratio right)
     signed short orig_sign = 1, right_sign = 1;
 
     /* we do not check the presign at this point */
-    if (qAbs (m_numerator) != qAbs (right.numerator()))
+    if (qAbs(m_numerator) != qAbs(right.numerator()))
         return false;
-    if (qAbs (m_denominator) != qAbs (right.denominator()))
+    if (qAbs(m_denominator) != qAbs(right.denominator()))
         return false;
 
     /* check if the signs of the ratios are equivalent */
@@ -266,10 +266,10 @@ bool ratio::operator== (ratio right)
 bool ratio::operator< (ratio right)
 {
     signed short sign = 1;
-    ratio tmp_ratio = ratio (m_numerator, m_denominator) - right;
+    ratio tmp_ratio = ratio(m_numerator, m_denominator) - right;
 
     // check for this == right
-    if (tmp_ratio == ratio (0, 1))
+    if (tmp_ratio == ratio(0, 1))
         return false;
 
     // get the presign of the diff
@@ -289,10 +289,10 @@ bool ratio::operator< (ratio right)
 bool ratio::operator> (ratio right)
 {
     signed short sign = 1;
-    ratio tmp_ratio = ratio (m_numerator, m_denominator) - right;
+    ratio tmp_ratio = ratio(m_numerator, m_denominator) - right;
 
     // check for this == right
-    if (tmp_ratio == ratio (0, 1))
+    if (tmp_ratio == ratio(0, 1))
         return false;
 
     // get the presign of the diff
@@ -345,7 +345,7 @@ void ratio::reduce()
         }
 
         /* is the prime number a divisor of numerator and denominator? */
-        if ( (m_numerator % divisor == 0) && (m_denominator % divisor == 0)) {
+        if ((m_numerator % divisor == 0) && (m_denominator % divisor == 0)) {
             /* reduce the ratio by the divisor */
             m_numerator /= divisor;
             m_denominator /= divisor;
@@ -391,7 +391,7 @@ void ratio::change_sign()
 
     /* if numerator and denominator both are negative, make them positive;
      * if denominator is negative and numerator positive, exchange the sign */
-    if ( (m_numerator < 0 && m_denominator < 0) || (m_numerator > 0 && m_denominator < 0)) {
+    if ((m_numerator < 0 && m_denominator < 0) || (m_numerator > 0 && m_denominator < 0)) {
         m_numerator *= -1;
         m_denominator *= -1;
     }
@@ -405,5 +405,5 @@ void ratio::change_sign()
 // it is possible to stram ratio_object
 QTextStream & operator<< (QTextStream & str, const ratio & pratio)
 {
-    return pratio.display (str);
+    return pratio.display(str);
 }

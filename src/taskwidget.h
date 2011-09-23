@@ -51,15 +51,15 @@ class TaskWidget : public FractionBaseWidget
 
 public:
     /** constructor */
-    TaskWidget (QWidget * parent, const task para_task);
+    TaskWidget(QWidget * parent, const task para_task);
 
     /** destructor */
     ~TaskWidget();
 
     /** set the task to be displayed */
-    void setTask (const task para_task);
+    void setTask(const task para_task);
 
-    void setQuestionMixed (bool value);
+    void setQuestionMixed(bool value);
 
 private:
 
@@ -69,7 +69,7 @@ private:
     bool m_questionMixed;
 
     /** overrideing the paint event of FractionBaseWidget */
-    void paintEvent (QPaintEvent*);
+    void paintEvent(QPaintEvent*);
 };
 
 #endif

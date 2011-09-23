@@ -53,7 +53,7 @@ class ExerciseConvert : public ExerciseBase
 
 public:
     /** constructor */
-    ExerciseConvert (QWidget * parent = 0);
+    ExerciseConvert(QWidget * parent = 0);
 
     /** destructor */
     ~ExerciseConvert();
@@ -109,11 +109,11 @@ private:
 private slots:
     void slotCheckButtonClicked();
     void slotSkipButtonClicked();
-    void numeratorReturnPressed (const QString &);
-    void denominatorReturnPressed (const QString &);
+    void numeratorReturnPressed(const QString &);
+    void denominatorReturnPressed(const QString &);
 
 protected:
-    void showEvent (QShowEvent * event);
+    void showEvent(QShowEvent * event);
 };
 
 #endif

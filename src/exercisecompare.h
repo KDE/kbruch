@@ -56,7 +56,7 @@ class ExerciseCompare : public ExerciseBase
 
 public:
     /** constructor */
-    ExerciseCompare (QWidget * parent = 0);
+    ExerciseCompare(QWidget * parent = 0);
 
     /** destructor */
     ~ExerciseCompare();
@@ -64,7 +64,7 @@ public:
     /** force the creation of a new task */
     void forceNewTask();
 
-    void setQuestionMixed (bool value);
+    void setQuestionMixed(bool value);
 
 public slots:
     void update();

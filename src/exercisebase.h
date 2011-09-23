@@ -39,7 +39,7 @@ class ExerciseBase : public QWidget
 
 public:
     /** constructor */
-    ExerciseBase (QWidget * parent = 0);
+    ExerciseBase(QWidget * parent = 0);
 
     /** destructor */
     ~ExerciseBase();

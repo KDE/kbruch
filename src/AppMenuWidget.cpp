@@ -56,105 +56,105 @@ AppMenuWidget::AppMenuWidget()
 
 #endif
     setupActions();
-    createGUI ("AppMenuWidgetui.rc");
+    createGUI("AppMenuWidgetui.rc");
 
     QString css =
         "QPushButton#m_Freestyle {"
         "border: none;"
         "image: url(" +
-        KStandardDirs::locate ("data", "kbruch/pics/icon_freestyle_1.png") +
+        KStandardDirs::locate("data", "kbruch/pics/icon_freestyle_1.png") +
         ");"
         "}"
         "QPushButton#m_Freestyle:hover {"
         "border: none;"
         "image: url(" +
-        KStandardDirs::locate ("data", "kbruch/pics/icon_freestyle.png") +
+        KStandardDirs::locate("data", "kbruch/pics/icon_freestyle.png") +
         ");"
         "}"
         "QPushButton#m_Learning {"
         "border: none;"
         "image: url(" +
-        KStandardDirs::locate ("data", "kbruch/pics/icon_learning_1.png") +
+        KStandardDirs::locate("data", "kbruch/pics/icon_learning_1.png") +
         ");"
         "}"
         "QPushButton#m_Learning:hover {"
         "border: none;"
         "image: url(" +
-        KStandardDirs::locate ("data", "kbruch/pics/icon_learning.png") +
+        KStandardDirs::locate("data", "kbruch/pics/icon_learning.png") +
         ");"
         "}"
         "QLabel#labelInfo, QLabel#labelFreestyle, QLabel#labelLearning"
         "{ font: bold 20px; }";
 
-    setStyleSheet (css);
+    setStyleSheet(css);
 
     QFont defaultFont = SettingsClass::taskFont();
-    defaultFont.setBold (true);
-    defaultFont.setPointSize (26);
+    defaultFont.setBold(true);
+    defaultFont.setPointSize(26);
 
     layout1 = new QHBoxLayout();
-    layout1->setObjectName ("layout1");
-    layout1->setAlignment (Qt::AlignCenter);
+    layout1->setObjectName("layout1");
+    layout1->setAlignment(Qt::AlignCenter);
 
     baseWidget = new QWidget();
-    baseWidget->setObjectName ("baseWidget");
+    baseWidget->setObjectName("baseWidget");
 
-    setCentralWidget (baseWidget);
+    setCentralWidget(baseWidget);
 
-    interfaceWidget = new QWidget (this);
-    interfaceWidget->setObjectName ("interfaceWidget");
-    interfaceWidget->setFixedSize (QSize (550, 350));
+    interfaceWidget = new QWidget(this);
+    interfaceWidget->setObjectName("interfaceWidget");
+    interfaceWidget->setFixedSize(QSize(550, 350));
 
     gridLayout = new QGridLayout();
-    gridLayout->setObjectName ("gridLayout");
+    gridLayout->setObjectName("gridLayout");
 
-    labelInfo = new QLabel (this);
-    labelInfo->setObjectName ("labelInfo");
-    labelInfo->setText (i18n ("KBruch modes:"));
-    labelInfo->setFont (defaultFont);
-    gridLayout->addWidget (labelInfo, 0, 0, 1, 2);
+    labelInfo = new QLabel(this);
+    labelInfo->setObjectName("labelInfo");
+    labelInfo->setText(i18n("KBruch modes:"));
+    labelInfo->setFont(defaultFont);
+    gridLayout->addWidget(labelInfo, 0, 0, 1, 2);
 
     // Freestyle mode ----------------------------
-    m_Freestyle = new QPushButton (this);
-    m_Freestyle->setObjectName ("m_Freestyle");
-    m_Freestyle->setToolTip (i18n ("Open standard KBruch"));
-    m_Freestyle->setFixedSize (QSize (150, 197));
-    gridLayout->addWidget (m_Freestyle, 1, 0, Qt::AlignCenter);
+    m_Freestyle = new QPushButton(this);
+    m_Freestyle->setObjectName("m_Freestyle");
+    m_Freestyle->setToolTip(i18n("Open standard KBruch"));
+    m_Freestyle->setFixedSize(QSize(150, 197));
+    gridLayout->addWidget(m_Freestyle, 1, 0, Qt::AlignCenter);
 
-    labelFreestyle = new QLabel (this);
-    labelFreestyle->setObjectName ("labelFreestyle");
-    labelFreestyle->setText (i18n ("Exercise"));
-    labelFreestyle->setFont (defaultFont);
-    gridLayout->addWidget (labelFreestyle, 2, 0, Qt::AlignCenter);
+    labelFreestyle = new QLabel(this);
+    labelFreestyle->setObjectName("labelFreestyle");
+    labelFreestyle->setText(i18n("Exercise"));
+    labelFreestyle->setFont(defaultFont);
+    gridLayout->addWidget(labelFreestyle, 2, 0, Qt::AlignCenter);
 
-    QObject::connect (m_Freestyle, SIGNAL (clicked()), this, SLOT (slotFreestyleClicked()));
+    QObject::connect(m_Freestyle, SIGNAL(clicked()), this, SLOT(slotFreestyleClicked()));
 
     // Learning mode ----------------------------
-    m_Learning = new QPushButton (this);
-    m_Learning->setObjectName ("m_Learning");
-    m_Learning->setToolTip (i18n ("Open learning KBruch"));
-    m_Learning->setFixedSize (QSize (150, 197));
-    gridLayout->addWidget (m_Learning, 1, 1, Qt::AlignCenter);
+    m_Learning = new QPushButton(this);
+    m_Learning->setObjectName("m_Learning");
+    m_Learning->setToolTip(i18n("Open learning KBruch"));
+    m_Learning->setFixedSize(QSize(150, 197));
+    gridLayout->addWidget(m_Learning, 1, 1, Qt::AlignCenter);
 
-    labelLearning = new QLabel (this);
-    labelLearning->setObjectName ("labelLearning");
-    labelLearning->setText (i18n ("Learning"));
-    labelLearning->setFont (defaultFont);
-    gridLayout->addWidget (labelLearning, 2, 1, Qt::AlignCenter);
+    labelLearning = new QLabel(this);
+    labelLearning->setObjectName("labelLearning");
+    labelLearning->setText(i18n("Learning"));
+    labelLearning->setFont(defaultFont);
+    gridLayout->addWidget(labelLearning, 2, 1, Qt::AlignCenter);
 
-    QObject::connect (m_Learning, SIGNAL (clicked()), this, SLOT (slotLearningClicked()));
+    QObject::connect(m_Learning, SIGNAL(clicked()), this, SLOT(slotLearningClicked()));
 
-    gridLayout->setRowMinimumHeight (0, 30);
-    gridLayout->setRowMinimumHeight (1, 250);
-    gridLayout->setRowMinimumHeight (2, 70);
+    gridLayout->setRowMinimumHeight(0, 30);
+    gridLayout->setRowMinimumHeight(1, 250);
+    gridLayout->setRowMinimumHeight(2, 70);
 
 
-    interfaceWidget->setLayout (gridLayout);
-    layout1->addWidget (interfaceWidget);
-    baseWidget->setLayout (layout1);
+    interfaceWidget->setLayout(gridLayout);
+    layout1->addWidget(interfaceWidget);
+    baseWidget->setLayout(layout1);
 
-    move (50, 50);
-    setFixedSize (QSize (742, 520));
+    move(50, 50);
+    setFixedSize(QSize(742, 520));
 }
 
 /* destructor */
@@ -174,11 +174,11 @@ void AppMenuWidget::setupActions()
 #endif
 
     // quit action
-    KStandardAction::quit (kapp, SLOT (quit()), actionCollection());
+    KStandardAction::quit(kapp, SLOT(quit()), actionCollection());
 
     if (!initialGeometrySet())
-        resize (QSize (725, 330).expandedTo (minimumSizeHint()));
-    setupGUI (Keys | Create);
+        resize(QSize(725, 330).expandedTo(minimumSizeHint()));
+    setupGUI(Keys | Create);
     setAutoSaveSettings();
 }
 

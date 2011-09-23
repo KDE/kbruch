@@ -61,26 +61,26 @@ class TaskView : public ExerciseBase
 
 public:
     /** constructor */
-    explicit TaskView (QWidget * parent = 0,
-                       bool padd_add = true, bool padd_div = false,
-                       bool padd_mult = false, bool padd_sub = false,
-                       unsigned int pnr_ratios = 2, unsigned int pmax_md = 10);
+    explicit TaskView(QWidget * parent = 0,
+                      bool padd_add = true, bool padd_div = false,
+                      bool padd_mult = false, bool padd_sub = false,
+                      unsigned int pnr_ratios = 2, unsigned int pmax_md = 10);
 
     /** destructor */
     ~TaskView();
 
     /** set new task parameters, which will be used for the next task to be
      * generated */
-    void setTaskParameters (bool padd_add = true, bool padd_div = false,
-                            bool padd_mult = false, bool padd_sub = false,
-                            unsigned int pnr_ratios = 2, unsigned int pmax_md = 2);
+    void setTaskParameters(bool padd_add = true, bool padd_div = false,
+                           bool padd_mult = false, bool padd_sub = false,
+                           unsigned int pnr_ratios = 2, unsigned int pmax_md = 2);
 
     /** force the creation of a new task */
     void forceNewTask();
 
-    void setReducedForm (bool value);
-    void setQuestionMixed (bool value);
-    void setAnswerMixed (bool value);
+    void setReducedForm(bool value);
+    void setQuestionMixed(bool value);
+    void setAnswerMixed(bool value);
 
 signals:
     /** class emits this signal, if the task was solved correctly by the user */
@@ -136,12 +136,12 @@ private:
 private slots:
     void slotCheckButtonClicked();
     void slotSkipButtonClicked();
-    void numeratorReturnPressed (const QString &);
-    void integerReturnPressed (const QString &);
-    void denominatorReturnPressed (const QString &);
+    void numeratorReturnPressed(const QString &);
+    void integerReturnPressed(const QString &);
+    void denominatorReturnPressed(const QString &);
 
 protected:
-    void showEvent (QShowEvent * event);
+    void showEvent(QShowEvent * event);
 };
 
 #endif

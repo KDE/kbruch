@@ -44,107 +44,107 @@
 /* ----- public member functions ----- */
 
 /* constructor */
-ExercisePercentage::ExercisePercentage (QWidget * parent) :
-    ExerciseBase (parent)
+ExercisePercentage::ExercisePercentage(QWidget * parent) :
+    ExerciseBase(parent)
 {
 #ifdef DEBUG
     kDebug() << "constructor ExercisePercentage()";
 #endif
 
     /* create a new task */
-    QApplication::setOverrideCursor (Qt::WaitCursor); /* show the sand clock */
+    QApplication::setOverrideCursor(Qt::WaitCursor);  /* show the sand clock */
     createTask();
     QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
     // to validate, that the input is an int
-    KIntValidator *valnum = new KIntValidator (this);
+    KIntValidator *valnum = new KIntValidator(this);
 
     QFont defaultFont = SettingsClass::taskFont();
-    defaultFont.setBold (true);
-    defaultFont.setPointSize (10);
+    defaultFont.setBold(true);
+    defaultFont.setPointSize(10);
 
     // the next thing to do on a button click would be to check the entered
     // result
     m_currentState = _CHECK_TASK;
 
-    taskWidget = new QWidget (this);
-    taskWidget->setObjectName ("taskWidget");
-    checkWidget = new QWidget (this);
-    checkWidget->setObjectName ("checkWidget");
+    taskWidget = new QWidget(this);
+    taskWidget->setObjectName("taskWidget");
+    checkWidget = new QWidget(this);
+    checkWidget->setObjectName("checkWidget");
 
-    baseGrid = new QGridLayout (this);
-    baseGrid->setObjectName ("baseGrid");
-    baseGrid->setColumnStretch (0, 1);
+    baseGrid = new QGridLayout(this);
+    baseGrid->setObjectName("baseGrid");
+    baseGrid->setColumnStretch(0, 1);
 
-    baseGrid->addWidget (taskWidget, 0, 0);
-    baseGrid->addWidget (checkWidget, 0, 1);
+    baseGrid->addWidget(taskWidget, 0, 0);
+    baseGrid->addWidget(checkWidget, 0, 1);
 
-    taskLayout = new QGridLayout (taskWidget);
-    taskLayout->setObjectName ("taskLayout");
-    taskLayout->setRowStretch (0, 1);
-    taskLayout->setRowStretch (4, 1);
-    taskLayout->setColumnStretch (0, 1);
-    taskLayout->setColumnStretch (3, 1);
+    taskLayout = new QGridLayout(taskWidget);
+    taskLayout->setObjectName("taskLayout");
+    taskLayout->setRowStretch(0, 1);
+    taskLayout->setRowStretch(4, 1);
+    taskLayout->setColumnStretch(0, 1);
+    taskLayout->setColumnStretch(3, 1);
 
-    checkLayout = new QGridLayout (checkWidget);
-    checkLayout->setObjectName ("checkLayout");
+    checkLayout = new QGridLayout(checkWidget);
+    checkLayout->setObjectName("checkLayout");
 
     /* Task: percentage question */
-    defaultFont.setPointSize (16);
-    m_taskLabel = new QLabel (this);
-    m_taskLabel->setObjectName ("m_taskLabel");
-    m_taskLabel->setFont (defaultFont);
-    m_taskLabel->setText (i18nc ("%1 percentage of %2", "%1% of %2 = ", m_numberPercentage ,  m_numberPercentageOf));
-    taskLayout->addWidget (m_taskLabel, 1, 1, 2, 1);
+    defaultFont.setPointSize(16);
+    m_taskLabel = new QLabel(this);
+    m_taskLabel->setObjectName("m_taskLabel");
+    m_taskLabel->setFont(defaultFont);
+    m_taskLabel->setText(i18nc("%1 percentage of %2", "%1% of %2 = ", m_numberPercentage ,  m_numberPercentageOf));
+    taskLayout->addWidget(m_taskLabel, 1, 1, 2, 1);
 
     /* Input question: result of question */
-    answer_edit = new KLineEdit (taskWidget);
-    answer_edit->setObjectName ("answer_edit");
-    answer_edit->setValidator (valnum);  // use the int validator
-    answer_edit->setToolTip (i18n ("Enter the result of percentage question"));
-    answer_edit->setFixedSize (85, 42);
-    answer_edit->setAlignment (Qt::AlignHCenter);
-    answer_edit->setFont (defaultFont);
-    QObject::connect (answer_edit, SIGNAL (returnPressed (const QString &)), this,
-                      SLOT (answerReturnPressed (const QString &)));
-    taskLayout->addWidget (answer_edit, 1, 2, 2, 1);
+    answer_edit = new KLineEdit(taskWidget);
+    answer_edit->setObjectName("answer_edit");
+    answer_edit->setValidator(valnum);   // use the int validator
+    answer_edit->setToolTip(i18n("Enter the result of percentage question"));
+    answer_edit->setFixedSize(85, 42);
+    answer_edit->setAlignment(Qt::AlignHCenter);
+    answer_edit->setFont(defaultFont);
+    QObject::connect(answer_edit, SIGNAL(returnPressed(const QString &)), this,
+                     SLOT(answerReturnPressed(const QString &)));
+    taskLayout->addWidget(answer_edit, 1, 2, 2, 1);
 
     // next is the result widget
-    m_resultWidget = new ResultWidget (checkWidget, m_result);
-    m_resultWidget->setObjectName ("m_resultWidget");
-    checkLayout->addWidget (m_resultWidget, 0, 0, 1, 2);
+    m_resultWidget = new ResultWidget(checkWidget, m_result);
+    m_resultWidget->setObjectName("m_resultWidget");
+    checkLayout->addWidget(m_resultWidget, 0, 0, 1, 2);
 
     // the right aligned button
-    defaultFont.setPointSize (10);
-    m_checkButton = new QPushButton (checkWidget);
-    m_checkButton->setObjectName ("m_checkButton");
-    m_checkButton->setText (i18n ("&Check"));
-    m_checkButton->setDefault (true); // is the default button of the dialog
-    m_checkButton->setToolTip (i18n ("Click on this button to check your result. The button will not work if you have not entered a result yet."));
-    m_checkButton->setFont (defaultFont);
-    QObject::connect (m_checkButton, SIGNAL (clicked()), this, SLOT (slotCheckButtonClicked()));
-    checkLayout->addWidget (m_checkButton, 2, 0);
+    defaultFont.setPointSize(10);
+    m_checkButton = new QPushButton(checkWidget);
+    m_checkButton->setObjectName("m_checkButton");
+    m_checkButton->setText(i18n("&Check"));
+    m_checkButton->setDefault(true);  // is the default button of the dialog
+    m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+    m_checkButton->setFont(defaultFont);
+    QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
+    checkLayout->addWidget(m_checkButton, 2, 0);
 
     // the right aligned button
-    m_skipButton = new QPushButton (checkWidget);
-    m_skipButton->setObjectName ("m_skipButton");
-    m_skipButton->setText (i18n ("&Skip"));
-    m_skipButton->setToolTip (i18n ("Click on this button to skip this question."));
-    m_skipButton->setFont (defaultFont);
-    QObject::connect (m_skipButton, SIGNAL (clicked()), this, SLOT (slotSkipButtonClicked()));
-    checkLayout->addWidget (m_skipButton, 2, 1);
+    m_skipButton = new QPushButton(checkWidget);
+    m_skipButton->setObjectName("m_skipButton");
+    m_skipButton->setText(i18n("&Skip"));
+    m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
+    m_skipButton->setFont(defaultFont);
+    QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
+    checkLayout->addWidget(m_skipButton, 2, 1);
 
     // that the user can start typing without moving the focus
     //numer_edit->setFocus();
     answer_edit->setFocus();
 
-    setLayout (baseGrid);
-    taskWidget->setLayout (taskLayout);
-    checkWidget->setLayout (checkLayout);
+    setLayout(baseGrid);
+    taskWidget->setLayout(taskLayout);
+    checkWidget->setLayout(checkLayout);
 
     // add tooltip and qwhatsthis help to the widget
-    setToolTip (i18n ("In this exercise you have to work with percentage questions."));
-    setWhatsThis (i18n ("In this exercise you have to enter the fraction of the given number."));
+    setToolTip(i18n("In this exercise you have to work with percentage questions."));
+    setWhatsThis(i18n("In this exercise you have to enter the fraction of the given number."));
 
 }
 
@@ -172,7 +172,7 @@ void ExercisePercentage::forceNewTask()
         signalExerciseSkipped();
     }
     m_currentState = _CHECK_TASK;
-    m_checkButton->setText (i18n ("&Check"));
+    m_checkButton->setText(i18n("&Check"));
 
     // generate next task
     (void) nextTask();
@@ -188,7 +188,7 @@ void ExercisePercentage::update()
     m_resultWidget->updateAndRepaint();
 
     // update for itself
-    ( (QWidget *) this)->update();
+    ((QWidget *) this)->update();
 }
 
 
@@ -198,7 +198,7 @@ void ExercisePercentage::createTask()
 {
     // the tasks are hardcoded here; there are some algorithms to convert
     // rational numbers to fractions, but it is not worth the effort here
-    switch (int ( (double (rand()) / RAND_MAX) * 18 + 1)) {
+    switch (int ((double(rand()) / RAND_MAX) * 18 + 1)) {
     case  0 :
         //m_number = KGlobal::locale()->formatNumber(0.5, 1);
         m_numberPercentage = "75";
@@ -330,31 +330,31 @@ void ExercisePercentage::showResult()
     ratio correct_result;
 
     // change the tooltip of the check button
-    m_checkButton->setToolTip (i18n ("Click on this button to get to the next question."));
+    m_checkButton->setToolTip(i18n("Click on this button to get to the next question."));
 
-    answer_edit->setEnabled (false);
-    m_skipButton->setEnabled (false);
+    answer_edit->setEnabled(false);
+    m_skipButton->setEnabled(false);
 
     //an empty answer field will be interpreted as 0
     if (answer_edit->text().isEmpty() == true)
-        answer_edit->setText ("0");
+        answer_edit->setText("0");
 
 
     tmp_result = answer_edit->text().toInt();
-    entered_result.setNumerator (tmp_result, false);
-    entered_result.setDenominator (1, false);
-    correct_result.setNumerator (m_resultPercentage.toInt());
-    correct_result.setDenominator (1, false);
+    entered_result.setNumerator(tmp_result, false);
+    entered_result.setDenominator(1, false);
+    correct_result.setNumerator(m_resultPercentage.toInt());
+    correct_result.setDenominator(1, false);
     if (tmp_result == m_resultPercentage.toInt()) {
         // emit the signal for correct
         signalExerciseSolvedCorrect();
         /* yes, the user entered the correct result */
-        m_resultWidget->setResult (entered_result, 1);
+        m_resultWidget->setResult(entered_result, 1);
     } else {
         // emit the signal for incorrect
         signalExerciseSolvedWrong();
         /* no, the user entered the wrong result */
-        m_resultWidget->setResult (correct_result, 0);
+        m_resultWidget->setResult(correct_result, 0);
     }
 
     return;
@@ -364,25 +364,25 @@ void ExercisePercentage::showResult()
 void ExercisePercentage::nextTask()
 {
     // change the tooltip of the check button
-    m_checkButton->setToolTip (i18n ("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+    m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
 
-    answer_edit->setEnabled (true);
-    m_skipButton->setEnabled (true);
+    answer_edit->setEnabled(true);
+    m_skipButton->setEnabled(true);
 
-    m_resultWidget->setResult (m_result, -1);
+    m_resultWidget->setResult(m_result, -1);
 
     /* clear user input */
-    answer_edit->setText ("");
+    answer_edit->setText("");
     answer_edit->setFocus();
 
     /* create a new task */
-    QApplication::setOverrideCursor (Qt::WaitCursor); /* show the sand clock */
+    QApplication::setOverrideCursor(Qt::WaitCursor);  /* show the sand clock */
     createTask();
     QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
     // update the task widget
-    QString tempTask = i18nc ("%1 percentage of %2", "%1% of %2 = ", m_numberPercentage, m_numberPercentageOf);
-    m_taskLabel->setText (tempTask);
+    QString tempTask = i18nc("%1 percentage of %2", "%1% of %2 = ", m_numberPercentage, m_numberPercentageOf);
+    m_taskLabel->setText(tempTask);
 
     return;
 }
@@ -396,11 +396,11 @@ void ExercisePercentage::slotCheckButtonClicked()
         if (answer_edit->text().isEmpty() == true)
             return;
         m_currentState = _NEXT_TASK;
-        m_checkButton->setText (i18n ("N&ext"));
+        m_checkButton->setText(i18n("N&ext"));
         (void) showResult();
     } else {
         m_currentState = _CHECK_TASK;
-        m_checkButton->setText (i18n ("&Check"));
+        m_checkButton->setText(i18n("&Check"));
         (void) nextTask();
     }
 
@@ -412,7 +412,7 @@ void ExercisePercentage::slotSkipButtonClicked()
     forceNewTask();
 }
 
-void ExercisePercentage::answerReturnPressed (const QString &)
+void ExercisePercentage::answerReturnPressed(const QString &)
 {
     slotCheckButtonClicked();
 }

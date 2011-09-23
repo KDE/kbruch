@@ -32,7 +32,7 @@
 /** constructor of class task */
 task::task()
 {
-    srand (time (NULL));
+    srand(time(NULL));
 #ifdef DEBUG
     kDebug() << "constructor task";
 #endif
@@ -51,9 +51,9 @@ task::~task()
  * pmax_md: maximum main denominator
  * pnr_ratios: number of ratios -> pnr_ratios - 1 operations
 */
-void task::create_task (unsigned int pmax_md, short pnr_ratios,
-                        short padd_add, short padd_div,
-                        short padd_mult, short padd_sub)
+void task::create_task(unsigned int pmax_md, short pnr_ratios,
+                       short padd_add, short padd_div,
+                       short padd_mult, short padd_sub)
 {
     unsigned int max_product_length = 0;
     int main_denominator = 1;
@@ -63,7 +63,7 @@ void task::create_task (unsigned int pmax_md, short pnr_ratios,
         clean();
 
         /* generate the operations and count the max. mul/div in one block */
-        max_product_length = make_operation (padd_add, padd_div, padd_mult, padd_sub, pnr_ratios);
+        max_product_length = make_operation(padd_add, padd_div, padd_mult, padd_sub, pnr_ratios);
 
 #ifdef DEBUG
         kDebug() << "1: max_product_length: " << max_product_length;
@@ -71,28 +71,28 @@ void task::create_task (unsigned int pmax_md, short pnr_ratios,
 
         /* later we must be able to find a main denominator;
          * so 2 ^ max_product_length couldn't be bigger than the max. denominator */
-    } while ( (unsigned int) pow (2.0, (double) max_product_length) > pmax_md);
+    } while ((unsigned int) pow(2.0, (double) max_product_length) > pmax_md);
 
 #ifdef DEBUG
     kDebug() << "2: max_product_length: " << max_product_length;
 #endif
 
     /* find a main denominator */
-    main_denominator = make_main_dn (pmax_md, max_product_length);
+    main_denominator = make_main_dn(pmax_md, max_product_length);
 
 #ifdef DEBUG
     kDebug() << "after make_main_dn()";
 #endif
 
     /* create the ratios' numerators */
-    make_numerators (main_denominator, pnr_ratios);
+    make_numerators(main_denominator, pnr_ratios);
 
 #ifdef DEBUG
     kDebug() << "after make_numerators()";
 #endif
 
     /* create the ratios' denominators */
-    make_denominators (main_denominator, pmax_md, padd_div, padd_mult);
+    make_denominators(main_denominator, pmax_md, padd_div, padd_mult);
 
 #ifdef DEBUG
     kDebug() << "main deno: " << main_denominator;
@@ -103,29 +103,29 @@ void task::create_task (unsigned int pmax_md, short pnr_ratios,
 }
 
 /** set ratio n in the ratio_vector */
-void task::set_ratio_n (unsigned short number, int numerator, int denominator)
+void task::set_ratio_n(unsigned short number, int numerator, int denominator)
 {
     /* do not set something outside our vector */
     if (number > ratio_vector.size() - 1)
         number = 0;
-    ratio_vector[number].setNumerator (numerator); // set numerator
-    ratio_vector[number].setDenominator (denominator); // set denominator
+    ratio_vector[number].setNumerator(numerator);  // set numerator
+    ratio_vector[number].setDenominator(denominator);  // set denominator
     return;
 }
 
 /** set ratio n in the ratio_vector */
-void task::set_ratio_n (unsigned short number, ratio fraction)
+void task::set_ratio_n(unsigned short number, ratio fraction)
 {
     /* do not set something outside our vector */
     if (number > ratio_vector.size() - 1)
         number = 0;
-    ratio_vector[number].setNumerator (fraction.numerator()); // set numerator
-    ratio_vector[number].setDenominator (fraction.denominator()); // set denominator
+    ratio_vector[number].setNumerator(fraction.numerator());  // set numerator
+    ratio_vector[number].setDenominator(fraction.denominator());  // set denominator
     return;
 }
 
 /** returns the ratio given by number from the ratio_vector */
-ratio task::get_ratio_n (unsigned short number) const
+ratio task::get_ratio_n(unsigned short number) const
 {
     /* do not set something outside our vector */
     if (number > ratio_vector.size() - 1)
@@ -134,7 +134,7 @@ ratio task::get_ratio_n (unsigned short number) const
 }
 
 /** set operation given by the number in the op_vector */
-void task::set_op_n (unsigned short number, short operation)
+void task::set_op_n(unsigned short number, short operation)
 {
     /* do not set something outside our vector */
     if (number > op_vector.size() - 1)
@@ -144,7 +144,7 @@ void task::set_op_n (unsigned short number, short operation)
 }
 
 /** returns the operation given by number from the op_vector */
-short task::get_op_n (unsigned short number) const
+short task::get_op_n(unsigned short number) const
 {
     /* do not set something outside our vector */
     if (number > op_vector.size() - 1)
@@ -153,29 +153,29 @@ short task::get_op_n (unsigned short number) const
 }
 
 /** add a new ratio at the end of the ratio vector */
-void task::add_ratio (ratio new_ratio)
+void task::add_ratio(ratio new_ratio)
 {
-    ratio_vector.push_back (new_ratio);
+    ratio_vector.push_back(new_ratio);
     return;
 }
 
 /** add a new ratio at the end of the ratio vector */
-void task::add_ratio (int numerator, int denominator)
+void task::add_ratio(int numerator, int denominator)
 {
-    ratio new_ratio (numerator, denominator);
-    ratio_vector.push_back (new_ratio);
+    ratio new_ratio(numerator, denominator);
+    ratio_vector.push_back(new_ratio);
     return;
 }
 
 /** add a new operation at the end of the operation vector */
-void task::add_operation (short operation)
+void task::add_operation(short operation)
 {
-    op_vector.push_back (operation);
+    op_vector.push_back(operation);
     return;
 }
 
 /** just outputs the whole given task to stdout; for debugging */
-QTextStream & task::display (QTextStream & str)
+QTextStream & task::display(QTextStream & str)
 {
 #ifdef DEBUG
     kDebug() << "task::display()";
@@ -193,7 +193,7 @@ QTextStream & task::display (QTextStream & str)
     /* check, if a qSetFieldWidth() was given to the stream */
     int weite = str.fieldWidth();
     int pweite = weite;
-    str << qSetFieldWidth (0);
+    str << qSetFieldWidth(0);
 
     /* check, if ratio number and operation number fit together */
     if (ratio_vector.size() != op_vector.size() + 1) {
@@ -207,7 +207,7 @@ QTextStream & task::display (QTextStream & str)
     /* display all numerators */
     for (ratio_pointer = ratio_vector.begin();
             ratio_pointer != ratio_vector.end(); ++ratio_pointer) {
-        str << qSetFieldWidth (5) << ratio_pointer->numerator() << "   ";
+        str << qSetFieldWidth(5) << ratio_pointer->numerator() << "   ";
     }
     str << endl;
 
@@ -230,8 +230,8 @@ QTextStream & task::display (QTextStream & str)
     for (ratio_pointer = ratio_vector.begin();
             ratio_pointer != ratio_vector.end(); ++ratio_pointer) {
         if (ratio_pointer == ratio_vector.end() - 1)
-            return str << qSetFieldWidth (5) << ratio_pointer->denominator() << "   ";
-        str << qSetFieldWidth (5) << ratio_pointer->denominator() << "   ";
+            return str << qSetFieldWidth(5) << ratio_pointer->denominator() << "   ";
+        str << qSetFieldWidth(5) << ratio_pointer->denominator() << "   ";
     }
     return str;
 }
@@ -239,13 +239,13 @@ QTextStream & task::display (QTextStream & str)
 /** solves the given task and returns the result as a ratio */
 ratio task::solve()
 {
-    ratio ergebnis (0, 1); /* that is the starting point */
+    ratio ergebnis(0, 1);  /* that is the starting point */
 
     /* this is our pointer on the ratio_vector, set it to the beginning */
     RatioArray::iterator ratio_pointer = ratio_vector.begin();
 
     /* add a temp operation at the beginning */
-    op_vector.insert (op_vector.begin(), ADD);
+    op_vector.insert(op_vector.begin(), ADD);
 
     /* this is our pointer on the op_vector, set it to the beginning */
     ShortArray::iterator op_pointer = op_vector.begin() + 1;
@@ -261,7 +261,7 @@ ratio task::solve()
         switch (*op_pointer) {
         case ADD :
         case SUB :
-            switch (* (op_pointer - 1)) {
+            switch (*(op_pointer - 1)) {
                 /* we only have to add/sub the next ratio */
             case ADD :
                 ergebnis = ergebnis + *ratio_pointer++;
@@ -273,16 +273,16 @@ ratio task::solve()
             break;
         case MUL :
         case DIV :
-            switch (* (op_pointer - 1)) {
+            switch (*(op_pointer - 1)) {
                 /* the next ratio is a product, so we have to
                  * compute this product first and than add/sub it */
             case ADD :
                 ergebnis = ergebnis +
-                           product (ratio_pointer, op_pointer);
+                           product(ratio_pointer, op_pointer);
                 break;
             case SUB :
                 ergebnis = ergebnis -
-                           product (ratio_pointer, op_pointer);
+                           product(ratio_pointer, op_pointer);
                 break;
             }
             break;
@@ -313,7 +313,7 @@ ratio task::solve()
     }
 
     /* erase the temp operation */
-    op_vector.erase (op_vector.begin());
+    op_vector.erase(op_vector.begin());
 
     /* before we return the result we have to reduce it */
     ergebnis.reduce();
@@ -353,15 +353,15 @@ void task::clean()
 
 /** this function is called by the solving function to compute a given
  * product (or div) and return the solution */
-ratio task::product (RatioArray::iterator & ratio_pointer,
-                     ShortArray::iterator & op_pointer)
+ratio task::product(RatioArray::iterator & ratio_pointer,
+                    ShortArray::iterator & op_pointer)
 {
 #ifdef DEBUG
     kDebug() << "task::product()";
 #endif
     /* the function's parameters are pointing to the next ratio;
      * to the starting point of the product */
-    ratio product (ratio_pointer->numerator(), ratio_pointer->denominator());
+    ratio product(ratio_pointer->numerator(), ratio_pointer->denominator());
 
     ++ratio_pointer;
     do {
@@ -392,8 +392,8 @@ ratio task::product (RatioArray::iterator & ratio_pointer,
 
 /** generate the operations randomly; return how many mul or div
  * are in one block */
-unsigned short task::make_operation (short padd_add, short padd_div, short padd_mult, short padd_sub,
-                                     short pnr_ratios)
+unsigned short task::make_operation(short padd_add, short padd_div, short padd_mult, short padd_sub,
+                                    short pnr_ratios)
 {
 #ifdef DEBUG
     kDebug() << "task::make_operation()";
@@ -411,41 +411,41 @@ unsigned short task::make_operation (short padd_add, short padd_div, short padd_
     /* generate the operations */
     if (padd_add == YES && padd_div == NO && padd_mult == NO && padd_sub == NO) {
         for (short counter = 0; counter < pnr_ratios - 1; counter++)
-            op_vector.push_back (ADD);
+            op_vector.push_back(ADD);
     } else if (padd_div == YES && padd_add == NO && padd_mult == NO && padd_sub == NO) {
         for (short counter = 0; counter < pnr_ratios - 1; counter++)
-            op_vector.push_back (DIV);
+            op_vector.push_back(DIV);
     } else if (padd_mult == YES && padd_add == NO && padd_div == NO && padd_sub == NO) {
         for (short counter = 0; counter < pnr_ratios - 1; counter++)
-            op_vector.push_back (MUL);
+            op_vector.push_back(MUL);
     } else if (padd_sub == YES && padd_add == NO && padd_div == NO && padd_mult == NO) {
         for (short counter = 0; counter < pnr_ratios - 1; counter++)
-            op_vector.push_back (SUB);
+            op_vector.push_back(SUB);
     } else {
         do {
-            operations = short ( (double (rand()) / RAND_MAX) * 4);
+            operations = short((double(rand()) / RAND_MAX) * 4);
             switch (operations) {
             case ADD:
                 if (padd_add == YES) {
-                    op_vector.push_back (ADD);
+                    op_vector.push_back(ADD);
                     counter++;
                 }
                 break;
             case SUB:
                 if (padd_sub == YES) {
-                    op_vector.push_back (SUB);
+                    op_vector.push_back(SUB);
                     counter++;
                 }
                 break;
             case DIV:
                 if (padd_div == YES) {
-                    op_vector.push_back (DIV);
+                    op_vector.push_back(DIV);
                     counter++;
                 }
                 break;
             case  MUL:
                 if (padd_mult == YES) {
-                    op_vector.push_back (MUL);
+                    op_vector.push_back(MUL);
                     counter++;
                 }
                 break;
@@ -484,7 +484,7 @@ unsigned short task::make_operation (short padd_add, short padd_div, short padd_
         /* if (pmul_div == YES) */
         /* a task is given only with add/sub ops; so we want a max.
          * of pnr_ratios / 2 + 1 prime factors, but at least  */
-        max_product_length = (unsigned short) (float (pnr_ratios) / 2) + 1;
+        max_product_length = (unsigned short)(float(pnr_ratios) / 2) + 1;
         if (max_product_length < 2)
             max_product_length = 2;
     } /* if (pmul_div == YES) */
@@ -493,23 +493,23 @@ unsigned short task::make_operation (short padd_add, short padd_div, short padd_
 }
 
 /** find a denominator for the task */
-int task::make_main_dn (unsigned int pmax_md, unsigned short max_product_length)
+int task::make_main_dn(unsigned int pmax_md, unsigned short max_product_length)
 {
     int denominator;
 
     /* find a main denominator in the given limits by pmax_md and check
      * if the main denominator has enough prime factors */
     do {
-        denominator = int ( ( (double (rand()) / RAND_MAX) * pmax_md) + 1);
-    } while ( (pmax_md < 1) ||
-              (prim_factor_nr (denominator) < max_product_length));
+        denominator = int (((double(rand()) / RAND_MAX) * pmax_md) + 1);
+    } while ((pmax_md < 1) ||
+             (prim_factor_nr(denominator) < max_product_length));
 
     return denominator;
 }
 
 /** returns the count number's prime factors and stores the prime factors
  * in the prim_fac_vektor vektor */
-unsigned short task::prim_factor_nr (int number)
+unsigned short task::prim_factor_nr(int number)
 {
     unsigned int tmp_number = number;
     primenumber primenumber;
@@ -530,7 +530,7 @@ unsigned short task::prim_factor_nr (int number)
             /* now we add the prime factor to our prime factor vector */
             prim_fac_struct.factor = primenumber.get_current();
             prim_fac_struct.flag = UNUSED;
-            prim_fac_vector.push_back (prim_fac_struct);
+            prim_fac_vector.push_back(prim_fac_struct);
         }
     }
 #ifdef DEBUG
@@ -547,23 +547,23 @@ unsigned short task::prim_factor_nr (int number)
 }
 
 /** set the numerators randomly */
-void task::make_numerators (int main_denominator, short pnr_ratios)
+void task::make_numerators(int main_denominator, short pnr_ratios)
 {
     /* I think it is to easy to deal with ratios like 1/1 or 4/4; so
      * I limit the maximum of a numerator */
-    int max_numerator = int (main_denominator * float (0.7));
+    int max_numerator = int (main_denominator * float(0.7));
 
     /* add a new ratio to the task and compute the numerator randomly */
     for (short tmpcounter = 0; tmpcounter < pnr_ratios; tmpcounter++) {
-        (*this).add_ratio (int ( (double (rand()) / RAND_MAX)
-                                 * max_numerator) + 1, 1);
+        (*this).add_ratio(int ((double(rand()) / RAND_MAX)
+                               * max_numerator) + 1, 1);
     }
     return;
 }
 
 /** create the ratios' denominators */
-void task::make_denominators (int main_denominator, short pmax_md,
-                              short padd_div, short padd_mult)
+void task::make_denominators(int main_denominator, short pmax_md,
+                             short padd_div, short padd_mult)
 {
     /* this is our pointer on the ratio_vector, set it to the beginning */
     RatioArray::iterator ratio_pointer = ratio_vector.begin();
@@ -590,9 +590,9 @@ void task::make_denominators (int main_denominator, short pmax_md,
     for (ratio_pointer = ratio_vector.begin();
             ratio_pointer != ratio_vector.end(); ++ratio_pointer) {
         do {
-            tmp_deno = int ( (double (rand()) / RAND_MAX) * pmax_md) + 1;
+            tmp_deno = int ((double(rand()) / RAND_MAX) * pmax_md) + 1;
         } while (main_denominator % tmp_deno != 0);
-        (*ratio_pointer).setDenominator (tmp_deno);
+        (*ratio_pointer).setDenominator(tmp_deno);
     }
 
     /* if the ratio is connected to a mul or div operation, we have to do some
@@ -619,15 +619,15 @@ void task::make_denominators (int main_denominator, short pmax_md,
                     /* the prim_fac_vector is sorted, but we do not want the
                      * factors in this sorted way as our denominators;
                      * so we choose one randomly */
-                    next_fac = (unsigned short) ( (double (rand()) / RAND_MAX)
-                                                  * unused_fac);
+                    next_fac = (unsigned short)((double(rand()) / RAND_MAX)
+                                                * unused_fac);
                     tmp_counter = 0;
 
                     /* check the prime factors, if they are unused */
                     for (prim_fac_pointer = prim_fac_vector.begin();
                             prim_fac_pointer != prim_fac_vector.end();
                             ++prim_fac_pointer) {
-                        if ( (*prim_fac_pointer).flag == UNUSED) {
+                        if ((*prim_fac_pointer).flag == UNUSED) {
                             tmp_counter++; /* we found a unused factor */
                         }
                         /* we found the factor, which we have chosen randomly */
@@ -639,14 +639,14 @@ void task::make_denominators (int main_denominator, short pmax_md,
                     (*prim_fac_pointer).flag = USED;
 
                     /* store the factor as our new denominator for this ratio */
-                    (*ratio_pointer).setDenominator ( (*prim_fac_pointer).factor, false);
+                    (*ratio_pointer).setDenominator((*prim_fac_pointer).factor, false);
                     unused_fac--; /* now there is one factor less available */
 
                     /* move to the next ratio */
                     ratio_pointer++;
                     op_pointer++;
-                } while ( (op_pointer != op_vector.end()) &&
-                          (*op_pointer == MUL || *op_pointer == DIV));
+                } while ((op_pointer != op_vector.end()) &&
+                         (*op_pointer == MUL || *op_pointer == DIV));
 
                 /* we always miss to set the last ratio in a mul/div section;
                  * so we have to fix this here */
@@ -654,15 +654,15 @@ void task::make_denominators (int main_denominator, short pmax_md,
                     /* the prim_fac_vector is sorted, but we do not want the
                      * factors in this sorted way as our denominators;
                      * so we choose one randomly */
-                    next_fac = (unsigned short) ( (double (rand()) / RAND_MAX)
-                                                  * unused_fac);
+                    next_fac = (unsigned short)((double(rand()) / RAND_MAX)
+                                                * unused_fac);
                     tmp_counter = 0;
 
                     /* check the prime factors, if they are unused */
                     for (prim_fac_pointer = prim_fac_vector.begin();
                             prim_fac_pointer != prim_fac_vector.end();
                             ++prim_fac_pointer) {
-                        if ( (*prim_fac_pointer).flag == UNUSED) {
+                        if ((*prim_fac_pointer).flag == UNUSED) {
                             tmp_counter++; /* we found a unused factor */
                         }
                         /* we found the factor, which we have chosen randomly */
@@ -674,7 +674,7 @@ void task::make_denominators (int main_denominator, short pmax_md,
                     (*prim_fac_pointer).flag = USED;
 
                     /* store the factor as our new denominator for this ratio */
-                    (*ratio_pointer).setDenominator ( (*prim_fac_pointer).factor, false);
+                    (*ratio_pointer).setDenominator((*prim_fac_pointer).factor, false);
                     unused_fac--; /* now there is one factor less available */
 
                     /* move to the next ratio */
@@ -711,5 +711,5 @@ void task::make_denominators (int main_denominator, short pmax_md,
 /** it is possible to code: cout << task_object << endl; */
 QTextStream & operator<< (QTextStream & str, task & ptask)
 {
-    return ptask.display (str);
+    return ptask.display(str);
 }

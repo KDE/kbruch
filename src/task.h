@@ -77,36 +77,36 @@ public:
     ~task();
 
     /** automatically generate a new task with the given parameters */
-    void create_task (unsigned int pmax_md = 10, short pnr_ratios = 2,
-                      short padd_add = YES, short padd_div = NO, short padd_mult = NO, short padd_sub = NO);
+    void create_task(unsigned int pmax_md = 10, short pnr_ratios = 2,
+                     short padd_add = YES, short padd_div = NO, short padd_mult = NO, short padd_sub = NO);
 
     /** set ratio n */
-    void set_ratio_n (unsigned short number = 0, int numerator = 0,
-                      int denominator = 1);
+    void set_ratio_n(unsigned short number = 0, int numerator = 0,
+                     int denominator = 1);
 
     /** set ratio n */
-    void set_ratio_n (unsigned short number, ratio fraction);
+    void set_ratio_n(unsigned short number, ratio fraction);
 
     /** returns ration n */
-    ratio get_ratio_n (unsigned short number = 0) const;
+    ratio get_ratio_n(unsigned short number = 0) const;
 
     /** set operation n */
-    void set_op_n (unsigned short number = 0, short operation = ADD);
+    void set_op_n(unsigned short number = 0, short operation = ADD);
 
     /** return operation n */
-    short get_op_n (unsigned short number = 0) const;
+    short get_op_n(unsigned short number = 0) const;
 
     /** add a ratio to the end of the task */
-    void add_ratio (ratio new_ratio);
+    void add_ratio(ratio new_ratio);
 
     /** add a ratio to the end of the task */
-    void add_ratio (int numerator = 0, int denominator = 1);
+    void add_ratio(int numerator = 0, int denominator = 1);
 
     /** add an operation at the end of the task */
-    void add_operation (short operation = ADD);
+    void add_operation(short operation = ADD);
 
     /** display the whole task, mainly for debug */
-    QTextStream & display (QTextStream & str);
+    QTextStream & display(QTextStream & str);
 
     /** solves the task and returns the result as ratio */
     ratio solve();
@@ -143,27 +143,27 @@ private:
     PrimeFactorArray prim_fac_vector;
 
     /** this function is needed by solve() */
-    ratio product (RatioArray::iterator & ratio_pointer,
-                   ShortArray::iterator & op_pointer);
+    ratio product(RatioArray::iterator & ratio_pointer,
+                  ShortArray::iterator & op_pointer);
 
     /** generate the operations randomly; return how many mul or div
      * are in one block */
-    unsigned short make_operation (short padd_add = YES, short padd_div = NO,
-                                   short padd_mult = NO, short padd_sub = NO,
-                                   short pnr_ratios = 0);
+    unsigned short make_operation(short padd_add = YES, short padd_div = NO,
+                                  short padd_mult = NO, short padd_sub = NO,
+                                  short pnr_ratios = 0);
 
     /** find a denominator for the task */
-    int make_main_dn (unsigned int pmax_md, unsigned short max_product_length);
+    int make_main_dn(unsigned int pmax_md, unsigned short max_product_length);
 
     /** returns the count number's prime factors  */
-    unsigned short prim_factor_nr (int number = 1);
+    unsigned short prim_factor_nr(int number = 1);
 
     /** set the numerators randomly */
-    void make_numerators (int main_denominator, short pnr_ratios);
+    void make_numerators(int main_denominator, short pnr_ratios);
 
     /** create the ratios' denominators */
-    void make_denominators (int main_denominator = 0, short pmax_md = 0,
-                            short padd_div = NO, short padd_mult = NO);
+    void make_denominators(int main_denominator = 0, short pmax_md = 0,
+                           short padd_div = NO, short padd_mult = NO);
 };
 
 

@@ -46,18 +46,18 @@ class FractionPainter : public FractionBaseWidget
 
 public:
     /** constructor */
-    FractionPainter (QWidget * parent);
+    FractionPainter(QWidget * parent);
 
     /** destructor */
     ~FractionPainter();
 
-    void paintFraction (const QString & str_operation, ratio & leftRatio, int leftMult,
-                        ratio & rightRatio, int rightMult);
+    void paintFraction(const QString & str_operation, ratio & leftRatio, int leftMult,
+                       ratio & rightRatio, int rightMult);
 protected:
     /** Function is called every time the screen need to be painted.
      **/
-    void paintEvent (QPaintEvent * event);
-    void paintWidget (QPainter & paint);
+    void paintEvent(QPaintEvent * event);
+    void paintWidget(QPainter & paint);
 
 private:
     QString str_operation;

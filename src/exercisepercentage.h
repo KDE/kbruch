@@ -51,7 +51,7 @@ class ExercisePercentage : public ExerciseBase
 
 public:
     /** constructor */
-    ExercisePercentage (QWidget * parent = 0);
+    ExercisePercentage(QWidget * parent = 0);
 
     /** destructor */
     ~ExercisePercentage();
@@ -106,7 +106,7 @@ private:
 private slots:
     void slotCheckButtonClicked();
     void slotSkipButtonClicked();
-    void answerReturnPressed (const QString &);
+    void answerReturnPressed(const QString &);
 };
 
 #endif

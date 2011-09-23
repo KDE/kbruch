@@ -40,7 +40,7 @@ public:
     ~primenumber();
 
     /** returns whether the given number is a prime number */
-    short isPrimeNumber (uint number);
+    short isPrimeNumber(uint number);
 
     /** returns the next prime number */
     unsigned int get_next();

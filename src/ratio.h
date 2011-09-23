@@ -33,19 +33,19 @@ class ratio
 {
 public:
     /** constructor */
-    explicit ratio (int pnumerator = 0, int pdenominator = 1);
+    explicit ratio(int pnumerator = 0, int pdenominator = 1);
 
     /** constructor with reduce option */
-    ratio (int pnumerator, int pdenominator, bool reduce_fraction);
+    ratio(int pnumerator, int pdenominator, bool reduce_fraction);
 
     /** copy constructor */
-    ratio (const ratio & copy_ratio);
+    ratio(const ratio & copy_ratio);
 
     /** destructor */
     ~ratio();
 
     /** returns the ratio as QTextStream object */
-    QTextStream & display (QTextStream & str) const;
+    QTextStream & display(QTextStream & str) const;
 
     /** returns the numerator */
     int numerator() const;
@@ -54,20 +54,20 @@ public:
     int denominator() const;
 
     /** set numerator and reduce the ratio */
-    void setNumerator (int pnumerator = 0, bool reduce = true);
+    void setNumerator(int pnumerator = 0, bool reduce = true);
 
     /** set denominator and reduce the ratio */
-    void setDenominator (int pdenominator = 1, bool reduce = true);
+    void setDenominator(int pdenominator = 1, bool reduce = true);
 
     /** set both numerator and denominator;
      *  reducing will be done after numerator and denominator were set!
      */
-    void setRatio (int pnumerator, int pdenominator, bool reduce = true);
+    void setRatio(int pnumerator, int pdenominator, bool reduce = true);
 
     /** set new ratio using mixed numbers;
      *  reducing will be done after numerator and denominator were set!
      */
-    void setRatio (int pinteger, int pnumerator, int pdenominator, bool reduce = true);
+    void setRatio(int pinteger, int pnumerator, int pdenominator, bool reduce = true);
 
     /** operator overloading for: c = object + summand */
     ratio operator+ (ratio addend);
@@ -76,7 +76,7 @@ public:
     ratio operator- (ratio subtrahend);
 
     /** operator overloading for: c = object * factor */
-    ratio operator* (ratio factor);
+    ratio operator*(ratio factor);
 
     /** operator overloading for: c = object / divisor */
     ratio operator/ (ratio divisor);
