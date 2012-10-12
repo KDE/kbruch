@@ -120,7 +120,7 @@ StatisticsView::StatisticsView(QWidget * parent) :
 
     // add tooltip and qwhatsthis help to the widget
     setToolTip(i18n("This part of the window shows the statistics."));
-    setWhatsThis(i18n("This part of the window shows the statistics. Each exercise you do is counted. You can reset the statistics by clicking on the 'New' button in the toolbar or by selecting 'New' from the 'File' menu"));
+    setWhatsThis(i18n("This part of the window shows the statistics.  Each exercise you do is counted. You can reset the statistics by clicking on the 'New' button in the toolbar or by selecting 'New' from the 'File' menu"));
 
     QBoxLayout * cLayout = new QBoxLayout(QBoxLayout::LeftToRight);
 
