@@ -7,7 +7,7 @@
 <!ENTITY % English "INCLUDE"><!-- change language only here -->
 ]>
 
-<book lang="&language;">
+<book id="kbruch" lang="&language;">
 
 <bookinfo>
 <title>The &kbruch; Handbook</title>
