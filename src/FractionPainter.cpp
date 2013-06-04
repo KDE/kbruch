@@ -28,7 +28,7 @@
 //Added by qt3to4:
 #include <QPaintEvent>
 
-FractionPainter::FractionPainter(QWidget * parent = 0) :
+FractionPainter::FractionPainter(QWidget * parent) :
     FractionBaseWidget(parent)
 {
 #ifdef DEBUG

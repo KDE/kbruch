@@ -30,7 +30,7 @@
 
 #include "settingsclass.h"
 
-FractionBaseWidget::FractionBaseWidget(QWidget * parent = 0) :
+FractionBaseWidget::FractionBaseWidget(QWidget * parent) :
     QWidget(parent)
 {
 #ifdef DEBUG
