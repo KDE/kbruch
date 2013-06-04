@@ -30,8 +30,8 @@
 //Added by qt3to4:
 #include <QPaintEvent>
 
-TaskWidget::TaskWidget(QWidget * parent = 0,
-                       const task para_task = task()) :
+TaskWidget::TaskWidget(QWidget * parent,
+                       const task para_task) :
     FractionBaseWidget(parent), m_task(para_task)
 {
 #ifdef DEBUG
