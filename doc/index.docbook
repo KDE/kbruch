@@ -35,8 +35,8 @@
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2011-08-03</date>
-<releaseinfo>4.2 (&kde; 4.7)</releaseinfo>
+<date>2013-06-23</date>
+<releaseinfo>4.2 (&kde; 4.11)</releaseinfo>
 
 <abstract>
 <para>&kbruch; is a small program to practice calculating with fractions and percentages.
@@ -686,7 +686,7 @@ clicking on the <guibutton>Next</guibutton> button.
 <title>Credits and License</title>
 <para>&kbruch;</para>
 <para>
-Program and documentation Copyright, 2001-2004 Sebastian Stein
+Program and documentation Copyright, 2001-2011 Sebastian Stein
  <email>seb.kde@hpfsc.de</email>
 </para>
 
@@ -744,7 +744,7 @@ In order to successfully use &kbruch;, you need &kde; > 4.1 .
 on <ulink url="http://edu.kde.org/kbruch/">the &kbruch; home page</ulink>
 and it is part of the &kde; Edu project</para>
 
-<para>You can find a list of changes in the <acronym>SVN</acronym> commit
+<para>You can find a list of changes in the <acronym>Git</acronym> commit
 messages.</para>
 
 </sect1>
