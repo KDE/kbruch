@@ -56,7 +56,6 @@ AppMenuWidget::AppMenuWidget()
 
 #endif
     setupActions();
-    createGUI("AppMenuWidgetui.rc");
 
     QString css =
         "QPushButton#m_Freestyle {"
@@ -178,7 +177,7 @@ void AppMenuWidget::setupActions()
 
     if (!initialGeometrySet())
         resize(QSize(725, 330).expandedTo(minimumSizeHint()));
-    setupGUI(Keys | Create);
+    setupGUI(Keys | Create, "AppMenuWidgetui.rc");
     setAutoSaveSettings();
 }
 
