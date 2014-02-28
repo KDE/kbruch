@@ -26,7 +26,7 @@
 class TaskColors : public QWidget, public Ui::TaskColorsBase
 {
 public:
-    TaskColors(QWidget * parent) : QWidget(parent) {
+    explicit TaskColors(QWidget * parent) : QWidget(parent) {
         setupUi(this);
     }
 };

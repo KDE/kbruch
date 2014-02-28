@@ -1,6 +1,6 @@
 /*
     KBruch - exercise to convert mixed numbers in ratios and vice versa
-    Copyright (C) 2011 - Sebastian Stein
+    Copyright 2011 - Sebastian Stein <seb.kde@hpfsc.de>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -106,8 +106,8 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     m_integerEdit->setFont(defaultFont);
     m_integerEdit->setFixedSize(85, 42);
     m_integerEdit->setAlignment(Qt::AlignHCenter);
-    QObject::connect(m_integerEdit, SIGNAL(returnPressed(const QString &)),
-                     this, SLOT(integerReturnPressed(const QString &)));
+    QObject::connect(m_integerEdit, SIGNAL(returnPressed(QString)),
+                     this, SLOT(integerReturnPressed(QString)));
     m_taskLayout->addWidget(m_integerEdit, 1, 3, 3, 1, Qt::AlignVCenter |
                             Qt::AlignRight);
     m_integerEdit->setEnabled(false);
@@ -121,8 +121,8 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     m_numerEdit->setFont(defaultFont);
     m_numerEdit->setFixedSize(85, 42);
     m_numerEdit->setAlignment(Qt::AlignHCenter);
-    QObject::connect(m_numerEdit, SIGNAL(returnPressed(const QString &)),
-                     this, SLOT(numerReturnPressed(const QString &)));
+    QObject::connect(m_numerEdit, SIGNAL(returnPressed(QString)),
+                     this, SLOT(numerReturnPressed(QString)));
     m_taskLayout->addWidget(m_numerEdit, 1, 4);
 
     // add a line between the input boxes
@@ -139,8 +139,8 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     m_denoEdit->setFont(defaultFont);
     m_denoEdit->setFixedSize(85, 42);
     m_denoEdit->setAlignment(Qt::AlignHCenter);
-    QObject::connect(m_denoEdit, SIGNAL(returnPressed(const QString &)),
-                     this, SLOT(denoReturnPressed(const QString &)));
+    QObject::connect(m_denoEdit, SIGNAL(returnPressed(QString)),
+                     this, SLOT(denoReturnPressed(QString)));
     m_taskLayout->addWidget(m_denoEdit, 3, 4);
 
 

@@ -51,7 +51,7 @@ class ExercisePercentage : public ExerciseBase
 
 public:
     /** constructor */
-    ExercisePercentage(QWidget * parent = 0);
+    explicit ExercisePercentage(QWidget * parent = 0);
 
     /** destructor */
     ~ExercisePercentage();

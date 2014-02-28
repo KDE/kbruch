@@ -807,7 +807,7 @@ void MainQtWidget::slotPrefs()
     configDialog->addPage(taskFonts, i18n("Fonts"), "preferences-desktop-font");
     // User edited the configuration - update your local copies of the
     // configuration data
-    connect(configDialog, SIGNAL(settingsChanged(const QString &)), this, SLOT(slotApplySettings()));
+    connect(configDialog, SIGNAL(settingsChanged(QString)), this, SLOT(slotApplySettings()));
     configDialog->show();
 
     return;

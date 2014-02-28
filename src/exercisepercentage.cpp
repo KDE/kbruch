@@ -105,8 +105,8 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
     answer_edit->setFixedSize(85, 42);
     answer_edit->setAlignment(Qt::AlignHCenter);
     answer_edit->setFont(defaultFont);
-    QObject::connect(answer_edit, SIGNAL(returnPressed(const QString &)), this,
-                     SLOT(answerReturnPressed(const QString &)));
+    QObject::connect(answer_edit, SIGNAL(returnPressed(QString)), this,
+                     SLOT(answerReturnPressed(QString)));
     taskLayout->addWidget(answer_edit, 1, 2, 2, 1);
 
     // next is the result widget
@@ -213,7 +213,7 @@ void ExercisePercentage::createTask()
         break;
     case  2 :
         //m_number = KGlobal::locale()->formatNumber(0.6, 1);
-        m_numberPercentage = "1";
+        m_numberPercentage = '1';
         m_numberPercentageOf = "1200";
         m_resultPercentage = "12" ;
         break;
@@ -261,9 +261,9 @@ void ExercisePercentage::createTask()
         break;
     case 10 :
         //m_number = KGlobal::locale()->formatNumber(0.142857, 6);
-        m_numberPercentage = "1";
+        m_numberPercentage = '1';
         m_numberPercentageOf = "400";
-        m_resultPercentage = "4" ;
+        m_resultPercentage = '4';
         break;
     case 11 :
         //m_number = KGlobal::locale()->formatNumber(0.125, 3);
@@ -297,7 +297,7 @@ void ExercisePercentage::createTask()
         break;
     case 16 :
         //m_number = KGlobal::locale()->formatNumber(0.01, 2);
-        m_numberPercentage = "1";
+        m_numberPercentage = '1';
         m_numberPercentageOf = "2000";
         m_resultPercentage = "20" ;
         break;

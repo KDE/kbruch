@@ -104,8 +104,8 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
     numer_edit->setFixedSize(85, 42);
     numer_edit->setAlignment(Qt::AlignHCenter);
     numer_edit->setFont(defaultFont);
-    QObject::connect(numer_edit, SIGNAL(returnPressed(const QString &)), this,
-                     SLOT(numeratorReturnPressed(const QString &)));
+    QObject::connect(numer_edit, SIGNAL(returnPressed(QString)), this,
+                     SLOT(numeratorReturnPressed(QString)));
     taskLayout->addWidget(numer_edit, 1, 2);
 
     /* add a line between the edit boxes */
@@ -122,8 +122,8 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
     deno_edit->setFixedSize(85, 42);
     deno_edit->setAlignment(Qt::AlignHCenter);
     deno_edit->setFont(defaultFont);
-    QObject::connect(deno_edit, SIGNAL(returnPressed(const QString &)), this,
-                     SLOT(denominatorReturnPressed(const QString &)));
+    QObject::connect(deno_edit, SIGNAL(returnPressed(QString)), this,
+                     SLOT(denominatorReturnPressed(QString)));
     taskLayout->addWidget(deno_edit, 3, 2);
 
     // next is the result widget

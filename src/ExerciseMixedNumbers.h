@@ -1,6 +1,6 @@
 /*
     KBruch - exercise to convert mixed numbers in ratios and vice versa
-    Copyright (C) 2011 - Sebastian Stein
+    Copyright 2011 - Sebastian Stein <seb.kde@hpfsc.de>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -48,7 +48,7 @@ class ExerciseMixedNumbers: public ExerciseBase
 
 public:
     /** constructor */
-    ExerciseMixedNumbers(QWidget* parent = 0);
+    explicit ExerciseMixedNumbers(QWidget* parent = 0);
 
     /** destructor */
     virtual ~ExerciseMixedNumbers();

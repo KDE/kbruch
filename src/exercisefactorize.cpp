@@ -112,8 +112,8 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
     taskLayout->addWidget(m_factorsEnteredEdit, 1, 3, 1, 5);
 
     connect(m_factorsEnteredEdit, SIGNAL(contentIsRight(bool)), this, SLOT(editContentChanged(bool)));
-    connect(m_factorsEnteredEdit, SIGNAL(returnPressed(const QString &)),
-            this, SLOT(slotFactorsEditReturnPressed(const QString &)));
+    connect(m_factorsEnteredEdit, SIGNAL(returnPressed(QString)),
+            this, SLOT(slotFactorsEditReturnPressed(QString)));
 
     defaultFont.setPointSize(10);
 
@@ -630,7 +630,7 @@ void ExerciseFactorize::editContentChanged(bool correct)
         QStringList factors = m_factorsEnteredEdit->getFactors();
 
         m_factorsEntered.clear();
-        foreach(QString auxStr, factors) {
+        foreach(const QString & auxStr, factors) {
             m_factorsEntered.append(auxStr.toUInt());
         }
     }

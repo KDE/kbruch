@@ -40,7 +40,7 @@ class StatisticsBarWidget : public QWidget
 
 public:
     /** constructor */
-    StatisticsBarWidget(QWidget * parent = 0);
+    explicit StatisticsBarWidget(QWidget * parent = 0);
 
     /** destructor */
     ~StatisticsBarWidget();

@@ -109,7 +109,7 @@ TaskView::TaskView(QWidget * parent,
     integer_edit->setFont(defaultFont);
     integer_edit->setFixedSize(85, 42);
     integer_edit->setAlignment(Qt::AlignHCenter);
-    QObject::connect(integer_edit, SIGNAL(returnPressed(const QString &)), this, SLOT(integerReturnPressed(const QString &)));
+    QObject::connect(integer_edit, SIGNAL(returnPressed(QString)), this, SLOT(integerReturnPressed(QString)));
     taskLayout->addWidget(integer_edit, 1, 3, 3, 1, Qt::AlignVCenter | Qt::AlignRight);
 
 
@@ -121,8 +121,8 @@ TaskView::TaskView(QWidget * parent,
     numer_edit->setFont(defaultFont);
     numer_edit->setFixedSize(85, 42);
     numer_edit->setAlignment(Qt::AlignHCenter);
-    QObject::connect(numer_edit, SIGNAL(returnPressed(const QString &)), this,
-                     SLOT(numeratorReturnPressed(const QString &)));
+    QObject::connect(numer_edit, SIGNAL(returnPressed(QString)), this,
+                     SLOT(numeratorReturnPressed(QString)));
     taskLayout->addWidget(numer_edit, 1, 4);
 
     /* add a line between the edit boxes */
@@ -139,8 +139,8 @@ TaskView::TaskView(QWidget * parent,
     deno_edit->setFont(defaultFont);
     deno_edit->setFixedSize(85, 42);
     deno_edit->setAlignment(Qt::AlignHCenter);
-    QObject::connect(deno_edit, SIGNAL(returnPressed(const QString &)), this,
-                     SLOT(denominatorReturnPressed(const QString &)));
+    QObject::connect(deno_edit, SIGNAL(returnPressed(QString)), this,
+                     SLOT(denominatorReturnPressed(QString)));
     taskLayout->addWidget(deno_edit, 3, 4);
 
     // next is the result widget

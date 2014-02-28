@@ -53,7 +53,7 @@ class ExerciseConvert : public ExerciseBase
 
 public:
     /** constructor */
-    ExerciseConvert(QWidget * parent = 0);
+    explicit ExerciseConvert(QWidget * parent = 0);
 
     /** destructor */
     ~ExerciseConvert();

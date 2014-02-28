@@ -51,7 +51,7 @@ class TaskWidget : public FractionBaseWidget
 
 public:
     /** constructor */
-    TaskWidget(QWidget * parent = 0, const task para_task = task());
+    explicit TaskWidget(QWidget * parent = 0, const task para_task = task());
 
     /** destructor */
     ~TaskWidget();

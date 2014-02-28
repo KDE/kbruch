@@ -56,7 +56,7 @@ FractionRingWidget::FractionRingWidget()
 #ifdef DEBUG
     kDebug() << "constructor FractionRingWidget()";
 #endif
-    // creating KActions, used by the kbruchui.rc file
+    // creating KActions, used by the FractionRingWidgetui.rc file
     setupActions();
     createGUI("FractionRingWidgetui.rc");
 
@@ -239,7 +239,7 @@ void FractionRingWidget::slotPrefs()
 
     // User edited the configuration - update your local copies of the
     // configuration data
-    connect(configDialog, SIGNAL(settingsChanged(const QString &)), this, SLOT(slotApplySettings()));
+    connect(configDialog, SIGNAL(settingsChanged(QString)), this, SLOT(slotApplySettings()));
     configDialog->setHelp("kbruch/index.html");
     configDialog->show();
 
@@ -276,7 +276,6 @@ void FractionRingWidget::paintEvent(QPaintEvent *)
 
     painter.setPen(Qt::NoPen);
 
-    int div = 255 / (rLeft.denominator() + 1);
     for (int i = 0; i < rLeft.numerator(); i++) {
         painter.setBrush(colorListLeft[i]);
         spanAngle = ((16 * 360) << 8) / rLeft.denominator();
@@ -304,7 +303,6 @@ void FractionRingWidget::paintEvent(QPaintEvent *)
 
     painter.setPen(penBorder);
 
-    div = 255 / (rRight.denominator() + 1);
     for (int i = 0; i < rRight.numerator(); i++) {
         painter.setBrush(colorListRight[i]);
         spanAngle = ((16 * 360) << 8) / rRight.denominator();

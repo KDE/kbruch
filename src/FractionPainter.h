@@ -46,7 +46,7 @@ class FractionPainter : public FractionBaseWidget
 
 public:
     /** constructor */
-    FractionPainter(QWidget * parent = 0);
+    explicit FractionPainter(QWidget * parent = 0);
 
     /** destructor */
     ~FractionPainter();

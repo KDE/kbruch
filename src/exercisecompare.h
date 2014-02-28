@@ -56,7 +56,7 @@ class ExerciseCompare : public ExerciseBase
 
 public:
     /** constructor */
-    ExerciseCompare(QWidget * parent = 0);
+    explicit ExerciseCompare(QWidget * parent = 0);
 
     /** destructor */
     ~ExerciseCompare();

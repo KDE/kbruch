@@ -69,7 +69,7 @@ class ExerciseFactorize : public ExerciseBase
 
 public:
     /** constructor */
-    ExerciseFactorize(QWidget * parent = 0);
+    explicit ExerciseFactorize(QWidget * parent = 0);
 
     /** destructor */
     ~ExerciseFactorize();

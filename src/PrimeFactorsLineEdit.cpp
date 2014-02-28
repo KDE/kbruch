@@ -1,6 +1,6 @@
 /*
     KBruch - line edit used for entering prime factors
-    Copyright (C) 2011 - Sebastian Stein
+    Copyright 2011 - Sebastian Stein <seb.kde@hpfsc.de>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -69,9 +69,9 @@ bool PrimeFactorsLineEdit::checkCorrectness(const QString& theText)
 bool PrimeFactorsLineEdit::areFactors(const QStringList& factors)
 {
     m_theFactors.clear();
-    foreach(QString str, factors) {
+    foreach(const QString & str, factors) {
         bool found = false;
-        foreach(QString aux, m_usedFactors) {
+        foreach(const QString & aux, m_usedFactors) {
             if (str.compare(str, aux) == 0) {
                 found = true;
                 m_theFactors.append(str);
