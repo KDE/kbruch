@@ -1,5 +1,5 @@
 /***************************************************************************
-                              fractionringwidget.h
+                              FractionRingWidget.h
                              -------------------
     begin                : 2008/09/16
     copyright            : (C) 2008 by Danilo Balzaque
@@ -38,7 +38,7 @@
 #include <QLabel>
 
 #include "AppMenuWidget.h"
-#include "ratio.h"
+#include "Ratio.h"
 #include "FractionPainter.h"
 
 class KAction;
@@ -108,8 +108,8 @@ private:
     KAction * m_BackAction;
     KAction * m_HintAction;
 
-    ratio rLeft;
-    ratio rRight;
+    Ratio rLeft;
+    Ratio rRight;
 
     int numLeft;
     int denLeft;

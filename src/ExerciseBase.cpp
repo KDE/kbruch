@@ -1,12 +1,9 @@
 /***************************************************************************
-                              TaskColors.h
+                                ExerciseBase.cpp
                              -------------------
-    begin                : 2009/08/10
-    copyright            : (C) 2008 by Danilo Balzaque
-    email                : danilo.balzaque@ltia.fc.unesp.br
-
-    copyright            : (C) 2008 by Tadeu Araujo, tadeu.araujo@ltia.fc.unesp.br
-    copyright            : (C) 2008 by Tiago Porangaba, tiago.porangaba@ltia.fc.unesp.br
+    begin                : 2004/06/03
+    copyright            : (C) 2004 by Sebastian Stein
+    email                : seb.kde@hpfsc.de
  ***************************************************************************/
 
 /***************************************************************************
@@ -18,17 +15,27 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef TASKCOLORS_H
-#define TASKCOLORS_H
+#include "ExerciseBase.h"
+#include "ExerciseBase.moc"
 
-#include "ui_taskcolorsbase.h"
+/* these includes are needed for KDE support */
+#include <klocale.h>
 
-class TaskColors : public QWidget, public Ui::TaskColorsBase
+/* ----- public member functions ----- */
+
+/* constructor */
+ExerciseBase::ExerciseBase(QWidget * parent) :
+    QWidget(parent)
 {
-public:
-    explicit TaskColors(QWidget * parent) : QWidget(parent) {
-        setupUi(this);
-    }
-};
-
+#ifdef DEBUG
+    kDebug() << "constructor ExerciseBase()";
 #endif
+}
+
+/* destructor */
+ExerciseBase::~ExerciseBase()
+{
+#ifdef DEBUG
+    kDebug() << "destructor ExerciseBase()";
+#endif
+}

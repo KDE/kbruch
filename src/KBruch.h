@@ -1,12 +1,13 @@
 /***************************************************************************
-                              TaskColors.h
+                          KBruch.h  -  Header File
                              -------------------
-    begin                : 2009/08/10
-    copyright            : (C) 2008 by Danilo Balzaque
-    email                : danilo.balzaque@ltia.fc.unesp.br
+    begin                : Tue Nov 27 16:40:42 CET 2001
+    copyright            : (C) 2001 by Sebastian Stein
+    email                : seb.kde@hpfsc.de
 
-    copyright            : (C) 2008 by Tadeu Araujo, tadeu.araujo@ltia.fc.unesp.br
     copyright            : (C) 2008 by Tiago Porangaba, tiago.porangaba@ltia.fc.unesp.br
+    copyright            : (C) 2008 by Tadeu Araujo, tadeu.araujo@ltia.fc.unesp.br
+    copyright            : (C) 2008 by Danilo Balzaque, danilo.balzaque@ltia.fc.unesp.br
  ***************************************************************************/
 
 /***************************************************************************
@@ -18,17 +19,20 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef TASKCOLORS_H
-#define TASKCOLORS_H
+/*#define DEBUG*/
 
-#include "ui_taskcolorsbase.h"
+#ifndef BRUCH_H
+#define BRUCH_H
 
-class TaskColors : public QWidget, public Ui::TaskColorsBase
-{
-public:
-    explicit TaskColors(QWidget * parent) : QWidget(parent) {
-        setupUi(this);
-    }
-};
+/* for the I18N_NOOP macro */
+#include <klocale.h>
 
-#endif
+#include "Task.h"
+#include "AppMenuWidget.h"
+
+static const char description[] =
+    I18N_NOOP("KBruch");
+
+class Task;
+
+#endif /* ifndef BRUCH_H */

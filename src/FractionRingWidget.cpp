@@ -1,5 +1,5 @@
 /***************************************************************************
-                              fractionringwidget.cpp
+                              FractionRingWidget.cpp
                              -------------------
     begin                : 2008/09/16
     copyright            : (C) 2008 by Danilo Balzaque
@@ -41,7 +41,7 @@
 #include <QString>
 #include <QPushButton>
 
-#include "ratio.h"
+#include "Ratio.h"
 #include "FractionPainter.h"
 #include "ui_taskfontsbase.h"
 #include "settingsclass.h"
@@ -416,14 +416,14 @@ void FractionRingWidget::resetFraction(bool flag = true)
     int denominator = int ((double(rand()) / RAND_MAX) * 5) + 2;
     int numerator = int ((double(rand()) / RAND_MAX) * (denominator - 1)) + 1;
 
-    rLeft = ratio(numerator, denominator, false);
+    rLeft = Ratio(numerator, denominator, false);
 
     int denominator2 = int ((double(rand()) / RAND_MAX) * 5) + 2;
     while (denominator2 == denominator) {
         denominator2 = int ((double(rand()) / RAND_MAX) * 5) + 2;
     }
     int numerator2 = int ((double(rand()) / RAND_MAX) * (denominator2 - 1)) + 1;
-    rRight = ratio(numerator2, denominator2, false);
+    rRight = Ratio(numerator2, denominator2, false);
 
     multLeft = 1;
     multRight = 1;

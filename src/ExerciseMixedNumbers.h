@@ -25,10 +25,10 @@
 #include <kdebug.h>
 #endif
 
-#include "exercisebase.h"
-#include "resultwidget.h"
-#include "task.h"
-#include "taskwidget.h"
+#include "ExerciseBase.h"
+#include "ResultWidget.h"
+#include "Task.h"
+#include "TaskWidget.h"
 
 
 class KLineEdit;
@@ -76,7 +76,7 @@ private:
     bool m_isMixedTask;
 
     /** task currently to be solved */
-    task m_task;
+    Task m_task;
 
     // components to enter result
     KLineEdit * m_integerEdit;

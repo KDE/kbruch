@@ -1,12 +1,9 @@
 /***************************************************************************
-                              TaskColors.h
+                                ExerciseBase.h
                              -------------------
-    begin                : 2009/08/10
-    copyright            : (C) 2008 by Danilo Balzaque
-    email                : danilo.balzaque@ltia.fc.unesp.br
-
-    copyright            : (C) 2008 by Tadeu Araujo, tadeu.araujo@ltia.fc.unesp.br
-    copyright            : (C) 2008 by Tiago Porangaba, tiago.porangaba@ltia.fc.unesp.br
+    begin                : 2004/06/03
+    copyright            : (C) 2004 by Sebastian Stein
+    email                : seb.kde@hpfsc.de
  ***************************************************************************/
 
 /***************************************************************************
@@ -18,17 +15,37 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef TASKCOLORS_H
-#define TASKCOLORS_H
+#ifndef EXERCISEBASE_H
+#define EXERCISEBASE_H
 
-#include "ui_taskcolorsbase.h"
+#define _CHECK_TASK 0
+#define _NEXT_TASK  1
 
-class TaskColors : public QWidget, public Ui::TaskColorsBase
+#ifdef DEBUG
+#include <kdebug.h>
+#endif
+
+#include <qwidget.h>
+
+/*! Constructs a QWidget.
+ *
+ * It is the base class for showing the different exercises.
+ *
+ *  \author Sebastian Stein
+ * */
+class ExerciseBase : public QWidget
 {
+    Q_OBJECT
+
 public:
-    explicit TaskColors(QWidget * parent) : QWidget(parent) {
-        setupUi(this);
-    }
+    /** constructor */
+    explicit ExerciseBase(QWidget * parent = 0);
+
+    /** destructor */
+    ~ExerciseBase();
+
+    /** force the creation of a new task */
+    virtual void forceNewTask() = 0;
 };
 
 #endif

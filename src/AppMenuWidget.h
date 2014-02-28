@@ -28,7 +28,7 @@
 
 #include <QHBoxLayout>
 
-#include "mainqtwidget.h"
+#include "MainQtWidget.h"
 #include "FractionRingWidget.h"
 
 class QHBoxLayout;

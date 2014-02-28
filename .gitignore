@@ -1,2 +1,4 @@
 *.swp
 build
+.kdev4
+kbruch.kdev4

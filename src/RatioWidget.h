@@ -1,12 +1,12 @@
 /***************************************************************************
-                              FractionPainter.h
+                          RatioWidget.h  -  paint a ratio
                              -------------------
-    begin                : 2008/09/18
-    copyright            : (C) 2008 by Danilo Balzaque
-    email                : danilo.balzaque@ltia.fc.unesp.br
+    begin                : 2004/06/03
+    copyright            : (C) 2004 by Sebastian Stein
+    email                : seb.kde@hpfsc.de
 
     copyright            : (C) 2008 by Tadeu Araujo, tadeu.araujo@ltia.fc.unesp.br
-    copyright            : (C) 2008 by Tiago Porangaba, tiago.porangaba@ltia.fc.unesp.br
+    copyright            : (C) 2008 by Danilo Balzaque, danilo.balzaque@ltia.fc.unesp.br
  ***************************************************************************/
 
 /***************************************************************************
@@ -18,56 +18,49 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef FRACTIONPAINTER_H
-#define FRACTIONPAINTER_H
-
-#define DEBUG
+#ifndef RATIOWIDGET_H
+#define RATIOWIDGET_H
 
 #ifdef DEBUG
 #include <kdebug.h>
 #endif
 
+#include "FractionBaseWidget.h"
 #include "Ratio.h"
-#include "RatioWidget.h"
 
 #include <qwidget.h>
 //Added by qt3to4:
 #include <QPaintEvent>
-#include <QPainter>
 
-class QPainter;
-
-/*! Constructs a QWidget bla bla bla
- *  \author Danilo Balzaque
- * */
-class FractionPainter : public FractionBaseWidget
+/*! class to paint the ratio
+ *
+ *  \author Sebastian Stein */
+class RatioWidget : public FractionBaseWidget
 {
     Q_OBJECT
 
 public:
     /** constructor */
-    explicit FractionPainter(QWidget * parent = 0);
+    explicit RatioWidget(QWidget * parent = 0, const Ratio para_ratio = Ratio());
 
     /** destructor */
-    ~FractionPainter();
+    ~RatioWidget();
 
-    void paintFraction(const QString & str_operation, Ratio & leftRatio, int leftMult,
-                       Ratio & rightRatio, int rightMult);
-protected:
-    /** Function is called every time the screen need to be painted.
-     **/
-    void paintEvent(QPaintEvent * event);
-    void paintWidget(QPainter & paint);
+    /** set the task to be displayed */
+    void setRatio(const Ratio para_ratio);
+
+    void setQuestionMixed(bool value);
 
 private:
-    QString str_operation;
-    Ratio leftRatio;
-    int leftMult;
-    Ratio rightRatio;
-    int rightMult;
 
-public slots:
-    void update();
+    /** the ratio to be displayed */
+    Ratio m_ratio;
+
+    /*identify if the fraction will appear in mixed form or not*/
+    bool m_questionMixed;
+
+    /** overrideing the paint event of FractionBaseWidget */
+    void paintEvent(QPaintEvent*);
 };
 
 #endif

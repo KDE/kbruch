@@ -1,12 +1,12 @@
 /***************************************************************************
-                              FractionPainter.h
+                          TaskWidget.h  -  paint a task
                              -------------------
-    begin                : 2008/09/18
-    copyright            : (C) 2008 by Danilo Balzaque
-    email                : danilo.balzaque@ltia.fc.unesp.br
+    begin                : 2004/05/30
+    copyright            : (C) 2004 by Sebastian Stein
+    email                : seb.kde@hpfsc.de
 
     copyright            : (C) 2008 by Tadeu Araujo, tadeu.araujo@ltia.fc.unesp.br
-    copyright            : (C) 2008 by Tiago Porangaba, tiago.porangaba@ltia.fc.unesp.br
+    copyright            : (C) 2008 by Danilo Balzaque, danilo.balzaque@ltia.fc.unesp.br
  ***************************************************************************/
 
 /***************************************************************************
@@ -18,56 +18,58 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef FRACTIONPAINTER_H
-#define FRACTIONPAINTER_H
-
-#define DEBUG
+#ifndef TASKWIDGET_H
+#define TASKWIDGET_H
 
 #ifdef DEBUG
 #include <kdebug.h>
 #endif
 
-#include "Ratio.h"
-#include "RatioWidget.h"
+#include "FractionBaseWidget.h"
+#include "Task.h"
 
 #include <qwidget.h>
 //Added by qt3to4:
 #include <QPaintEvent>
-#include <QPainter>
 
-class QPainter;
+/** important for add_sub and mul_div */
+#define YES 1
+#define NO  0
 
-/*! Constructs a QWidget bla bla bla
- *  \author Danilo Balzaque
- * */
-class FractionPainter : public FractionBaseWidget
+/** important for op_vector */
+#define ADD 0
+#define SUB 1
+#define MUL 2
+#define DIV 3
+
+/*! class to paint task with fractions
+ *
+ *  \author Sebastian Stein */
+class TaskWidget : public FractionBaseWidget
 {
     Q_OBJECT
 
 public:
     /** constructor */
-    explicit FractionPainter(QWidget * parent = 0);
+    explicit TaskWidget(QWidget * parent = 0, const Task para_task = Task());
 
     /** destructor */
-    ~FractionPainter();
+    ~TaskWidget();
 
-    void paintFraction(const QString & str_operation, Ratio & leftRatio, int leftMult,
-                       Ratio & rightRatio, int rightMult);
-protected:
-    /** Function is called every time the screen need to be painted.
-     **/
-    void paintEvent(QPaintEvent * event);
-    void paintWidget(QPainter & paint);
+    /** set the task to be displayed */
+    void setTask(const Task para_task);
+
+    void setQuestionMixed(bool value);
 
 private:
-    QString str_operation;
-    Ratio leftRatio;
-    int leftMult;
-    Ratio rightRatio;
-    int rightMult;
 
-public slots:
-    void update();
+    /** the task to be displayed */
+    Task m_task;
+
+    bool m_questionMixed;
+
+    /** overrideing the paint event of FractionBaseWidget */
+    void paintEvent(QPaintEvent*);
 };
 
 #endif

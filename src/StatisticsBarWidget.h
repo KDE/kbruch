@@ -1,12 +1,11 @@
 /***************************************************************************
-                              TaskColors.h
+                              StatisticsBarWidget.h
                              -------------------
-    begin                : 2009/08/10
+    begin                : 2008/09/02
     copyright            : (C) 2008 by Danilo Balzaque
     email                : danilo.balzaque@ltia.fc.unesp.br
 
     copyright            : (C) 2008 by Tadeu Araujo, tadeu.araujo@ltia.fc.unesp.br
-    copyright            : (C) 2008 by Tiago Porangaba, tiago.porangaba@ltia.fc.unesp.br
  ***************************************************************************/
 
 /***************************************************************************
@@ -18,17 +17,53 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef TASKCOLORS_H
-#define TASKCOLORS_H
+#ifndef STATISTICSBARWIDGET_H
+#define STATISTICSBARWIDGET_H
 
-#include "ui_taskcolorsbase.h"
+#define DEBUG
 
-class TaskColors : public QWidget, public Ui::TaskColorsBase
+#ifdef DEBUG
+#include <kdebug.h>
+#endif
+
+#include <qwidget.h>
+
+class QProgressBar;
+class QLabel;
+
+/*! Constructs a QWidget bla bla bla
+ *  \author Danilo Balzaque
+ * */
+class StatisticsBarWidget : public QWidget
 {
+    Q_OBJECT
+
 public:
-    explicit TaskColors(QWidget * parent) : QWidget(parent) {
-        setupUi(this);
-    }
+    /** constructor */
+    explicit StatisticsBarWidget(QWidget * parent = 0);
+
+    /** destructor */
+    ~StatisticsBarWidget();
+
+    /** Update statisticsBar */
+    void updateBar(int correct, int skipped, int total);
+
+protected:
+
+private:
+    int m_correct;
+    int m_skipped;
+    int m_total;
+
+    QFont defaultFont;
+
+    QLabel * m_correctLabel;
+    QLabel * m_skippedLabel;
+    QLabel * m_incorrectLabel;
+
+    QProgressBar * m_correctBar;
+    QProgressBar * m_skippedBar;
+    QProgressBar * m_incorrectBar;
 };
 
 #endif

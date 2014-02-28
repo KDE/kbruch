@@ -6,25 +6,25 @@ include_directories( ${CMAKE_CURRENT_BINARY_DIR} )
 
 set(kbruch_SRCS
    PrimeFactorsLineEdit.cpp
-   exercisebase.cpp 
-   task.cpp 
-   ratio.cpp 
-   taskview.cpp 
-   statisticsview.cpp 
-   primenumber.cpp 
-   kbruch.cpp 
-   mainqtwidget.cpp 
-   taskwidget.cpp 
-   fractionbasewidget.cpp 
-   resultwidget.cpp 
-   exercisecompare.cpp 
-   exercisepercentage.cpp   
+   ExerciseBase.cpp
+   Task.cpp
+   Ratio.cpp
+   TaskView.cpp
+   StatisticsView.cpp
+   PrimeNumber.cpp
+   KBruch.cpp
+   MainQtWidget.cpp
+   TaskWidget.cpp
+   FractionBaseWidget.cpp
+   ResultWidget.cpp
+   ExerciseCompare.cpp
+   ExercisePercentage.cpp
    ExerciseMixedNumbers.cpp
-   ratiowidget.cpp 
-   rationalwidget.cpp 
-   exerciseconvert.cpp 
-   statisticsbarwidget.cpp
-   exercisefactorize.cpp
+   RatioWidget.cpp
+   RationalWidget.cpp
+   ExerciseConvert.cpp
+   StatisticsBarWidget.cpp
+   ExerciseFactorize.cpp
    AppMenuWidget.cpp
    FractionPainter.cpp
    FractionRingWidget.cpp )

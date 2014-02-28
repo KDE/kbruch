@@ -147,7 +147,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     // set up check layout
     //
     // add result widget
-    m_resultWidget = new ResultWidget(m_checkWidget, ratio());
+    m_resultWidget = new ResultWidget(m_checkWidget, Ratio());
     m_resultWidget->setObjectName("m_resultWidget");
     m_checkLayout->addWidget(m_resultWidget, 0, 0, 1, 2);
 
@@ -211,7 +211,7 @@ void ExerciseMixedNumbers::createTask()
     // - reduced
     // - numerator is larger than denominator
     // - denominator is not 1
-    ratio tmpRatio = ratio();
+    Ratio tmpRatio = Ratio();
     int numerator = 0;
     int denominator = 1;
     do {
@@ -229,7 +229,7 @@ void ExerciseMixedNumbers::createTask()
     } while (tmpRatio.denominator() == 1);
 
     // store new task
-    m_task = task();
+    m_task = Task();
     m_task.add_ratio(tmpRatio);
 
     return;
@@ -248,10 +248,10 @@ void ExerciseMixedNumbers::nextTask()
 
     // update the task widget
     m_taskWidget->setQuestionMixed(m_isMixedTask);
-    m_taskWidget->setTask((const task) m_task);
+    m_taskWidget->setTask((const Task) m_task);
 
     // hide result widget
-    m_resultWidget->setResult(ratio(), -1);
+    m_resultWidget->setResult(Ratio(), -1);
 
     // change check button
     m_checkButton->setToolTip(i18n("Click this button to check your result. The button will not work if you have not entered a result yet."));
@@ -330,12 +330,12 @@ void ExerciseMixedNumbers::showResult()
     }
 
     // create result ratio, but don't try to reduce it yet
-    ratio resultRatio = ratio();
+    Ratio resultRatio = Ratio();
     resultRatio.setRatio(resultInteger, resultNumerator, resultDenominator,
                          false);
 
     // check for correct solution
-    ratio solutionRatio = m_task.get_ratio_n(0);
+    Ratio solutionRatio = m_task.get_ratio_n(0);
     if (!(resultRatio == solutionRatio)) {
         wrong = true;
     }

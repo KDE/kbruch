@@ -49,8 +49,8 @@ void FractionPainter::paintEvent(QPaintEvent *)
     paintWidget(paint);
 }
 
-void FractionPainter::paintFraction(const QString & op, ratio & lr, int lm,
-                                    ratio & rr, int rm)
+void FractionPainter::paintFraction(const QString & op, Ratio & lr, int lm,
+                                    Ratio & rr, int rm)
 {
     str_operation = op;
     leftRatio = lr;
@@ -86,7 +86,7 @@ void FractionPainter::paintWidget(QPainter & paint)
     setMaximumHeight(2 * fm.lineSpacing() + 10);
 
     // get the current ratio and paint it
-    paintRatio(paint, ratio(leftRatio.numerator() * leftMult, leftRatio.denominator() * leftMult, false), old_x, old_y, fm);
+    paintRatio(paint, Ratio(leftRatio.numerator() * leftMult, leftRatio.denominator() * leftMult, false), old_x, old_y, fm);
 
     if (leftRatio.denominator() * leftMult < 10)
         old_x += 40;
@@ -102,7 +102,7 @@ void FractionPainter::paintWidget(QPainter & paint)
         old_x += 25;
 
     // get the current ratio and paint it
-    paintRatio(paint, ratio(rightRatio.numerator() * rightMult, rightRatio.denominator() * rightMult, false), old_x, old_y, fm);
+    paintRatio(paint, Ratio(rightRatio.numerator() * rightMult, rightRatio.denominator() * rightMult, false), old_x, old_y, fm);
 
     // stop the painter
     paint.end();
