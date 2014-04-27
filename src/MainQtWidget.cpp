@@ -875,10 +875,10 @@ void MainQtWidget::slotAboutToShowPage()
     return;
 }
 
-bool MainQtWidget::queryExit()
+void MainQtWidget::closeEvent(QCloseEvent *event)
 {
     writeOptions();
-    return true;
+    KXmlGuiWindow::closeEvent(event);
 }
 
 void MainQtWidget::SelectPercentage()

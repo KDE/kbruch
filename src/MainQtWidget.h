@@ -256,10 +256,10 @@ private slots:
     void goBack();
 
 protected:
-    /** Function is called when user calls termination.
+    /** Function is called when user closes the window.
      *  Used to save the current statistics and settings before exiting.
-     **/
-    bool queryExit();
+     */
+    void closeEvent(QCloseEvent *event);
 };
 
 #endif // MainQtWidget
