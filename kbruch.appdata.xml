@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<component type="desktop">
+  <id>kbruch.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <name>KBruch</name>
+  <summary>Exercise Fractions</summary>
+  <description>
+    <p>KBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.</p>
+    <p>Features:</p>
+    <ul>
+      <li>Arithmetic exercise - in this exercise you have to solve a given fraction task. You have to enter the numerator and the denominator. This is the main exercise.</li>
+      <li>Comparison exercise - in this exercise you have to compare the size of 2 given fractions, using the symbols &gt;, </li>
+      <li>Conversion exercise - in this exercise you have to convert a given number into a fraction.</li>
+      <li>Factorization exercise - in this exercise you have to factorize a given number into its prime factors.</li>
+      <li>Percentage exercise - in this exercise you have to calculate percentages.</li>
+    </ul>
+  </description>
+  <url type="homepage">http://edu.kde.org/kbruch/</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kbruch</url>
+  <url type="help">http://docs.kde.org/stable/en/kdeedu/kbruch/index.html</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>http://kde.org/images/screenshots/kbruch.png</image>
+    </screenshot>
+  </screenshots>
+  <project_group>KDE</project_group>
+  <provides>
+    <binary>kbruch</binary>
+  </provides>
+</component>
