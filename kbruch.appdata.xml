@@ -9,6 +9,7 @@
   <name xml:lang="pl">KBruch</name>
   <name xml:lang="pt">KBruch</name>
   <name xml:lang="pt-BR">KBruch</name>
+  <name xml:lang="sk">KBruch</name>
   <name xml:lang="sv">Kbruch</name>
   <name xml:lang="uk">KBruch</name>
   <name xml:lang="x-test">xxKBruchxx</name>
@@ -18,6 +19,7 @@
   <summary xml:lang="pl">Ćwiczenia z ułamków</summary>
   <summary xml:lang="pt">Exercitar Fracções</summary>
   <summary xml:lang="pt-BR">Exercícios com frações</summary>
+  <summary xml:lang="sk">Cvičenie zlomkov</summary>
   <summary xml:lang="sv">Övningar med bråk</summary>
   <summary xml:lang="uk">Вправи з дробами</summary>
   <summary xml:lang="x-test">xxExercise Fractionsxx</summary>
@@ -35,11 +37,13 @@
     <p xml:lang="pl">Możliwości:</p>
     <p xml:lang="pt">Características:</p>
     <p xml:lang="pt-BR">Funcionalidades:</p>
+    <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
     <ul>
       <li>Arithmetic exercise - in this exercise you have to solve a given fraction task. You have to enter the numerator and the denominator. This is the main exercise.</li>
+      <li xml:lang="nl">Rekenoefening - in deze oefening moet je met breuken rekenen. Je moet de teller en de noemer intypen. Dit is de belangrijkste oefening.</li>
       <li xml:lang="pl">Ćwiczenie arytmetyczne - w tym ćwiczeniu musisz rozwiązać podane zadanie na tworzenie ułamka. Musisz wprowadzić licznik i mianownik. Jest to główne ćwiczenie.</li>
       <li xml:lang="pt">Exercício aritmético - neste exercício, terá de resolver uma dada tarefa de fracções. Terá de indicar o numerador e o denominador. Este é o exercício principal.</li>
       <li xml:lang="pt-BR">Exercício aritmético - Neste exercício, você terá que resolver uma determinada tarefa de frações. Terá que indicar o numerador e o denominador. Esse é o exercício principal.</li>
@@ -47,11 +51,14 @@
       <li xml:lang="uk">Вправа з арифметики — у цій вправі вам потрібно буде розв’язати завдання з дробів. Вам слід буде ввести чисельник і знаменник відповіді. Це головна вправа програми.</li>
       <li xml:lang="x-test">xxArithmetic exercise - in this exercise you have to solve a given fraction task. You have to enter the numerator and the denominator. This is the main exercise.xx</li>
       <li>Comparison exercise - in this exercise you have to compare the size of 2 given fractions, using the symbols &gt;, &lt; or =.</li>
+      <li xml:lang="nl">Vergelijken - In deze oefening moet je de grootte vergelijken van twee gegeven breuken, met behulp van de tekens &gt;, &lt; of = (groter dan, kleiner dan, of gelijk aan).</li>
       <li xml:lang="pl">Ćwiczenie na porównanie - w tym ćwiczeniu musisz porównać rozmiar dwóch podanych ułamków, za pomocą symboli &gt;, &lt; lub =.</li>
       <li xml:lang="pt">Exercícios de comparação - neste exercício, terá de comparar o valor de 2 dadas fracções, usando os símbolos &gt;, &lt; ou =.</li>
       <li xml:lang="pt-BR">Exercício de comparação - Neste exercício, terá que comparar o tamanho de 2 frações apresentadas, usando os símbolos &gt;, &lt; or =.</li>
+      <li xml:lang="sv">Jämförelseövning: I den här övningen måste du jämföra storleken på två givna bråk, med symbolerna &gt;, &lt; eller =.</li>
       <li xml:lang="x-test">xxComparison exercise - in this exercise you have to compare the size of 2 given fractions, using the symbols &gt;, &lt; or =.xx</li>
       <li>Conversion exercise - in this exercise you have to convert a given number into a fraction.</li>
+      <li xml:lang="nl">Omzetten - in deze oefening moet je een gegeven getal omzetten naar een breuk.</li>
       <li xml:lang="pl">Ćwiczenie zamiany - w tym ćwiczeniu musisz zamienić podaną liczbę na ułamek.</li>
       <li xml:lang="pt">Exercício de conversão - neste exercício, terá de converter um dado número numa fracção.</li>
       <li xml:lang="pt-BR">Exercício de conversão - Neste exercício, terá que converter um determinado número numa fração.</li>
@@ -59,6 +66,7 @@
       <li xml:lang="uk">Перетворення — у цій вправі вам слід буде перетворити задане число на дріб.</li>
       <li xml:lang="x-test">xxConversion exercise - in this exercise you have to convert a given number into a fraction.xx</li>
       <li>Factorization exercise - in this exercise you have to factorize a given number into its prime factors.</li>
+      <li xml:lang="nl">Ontbinden in factoren - in deze oefening moet je een gegeven getal ontbinden in zijn priemfactoren.</li>
       <li xml:lang="pl">Ćwiczenie na rozkładanie - w tym ćwiczeniu musisz rozłożyć podaną liczbę na jej czynniki pierwsze.</li>
       <li xml:lang="pt">Exercício de decomposição de factores - neste exercício, terá de decompor um número nos seus factores primos.</li>
       <li xml:lang="pt-BR">Exercício de decomposição de fatores - Neste exercício, você terá que decompor um número nos seus fatores primos.</li>
@@ -66,6 +74,7 @@
       <li xml:lang="uk">Розкладання на множники — у цій вправі вам слід буде розкласти задане число на його елементарні множники.</li>
       <li xml:lang="x-test">xxFactorization exercise - in this exercise you have to factorize a given number into its prime factors.xx</li>
       <li>Percentage exercise - in this exercise you have to calculate percentages.</li>
+      <li xml:lang="nl">Oefenen met percentages - in deze oefening moet je met percentages rekenen.</li>
       <li xml:lang="pl">Ćwiczenie procentowe - w tym ćwiczeniu należy policzyć procenty.</li>
       <li xml:lang="pt">Exercício de percentagens - neste exercício, terá de calcular percentagens.</li>
       <li xml:lang="pt-BR">Exercício de percentagens - Neste exercício, terá que calcular percentagens.</li>
