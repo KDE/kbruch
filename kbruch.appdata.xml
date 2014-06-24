@@ -4,6 +4,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KBruch</name>
+  <name xml:lang="cs">KBruch</name>
   <name xml:lang="fi">KBruch</name>
   <name xml:lang="hu">KBruch</name>
   <name xml:lang="nds">KBruch</name>
@@ -16,6 +17,7 @@
   <name xml:lang="uk">KBruch</name>
   <name xml:lang="x-test">xxKBruchxx</name>
   <summary>Exercise Fractions</summary>
+  <summary xml:lang="cs">Cvičení se zlomky</summary>
   <summary xml:lang="fi">Murtolukujen harjoittelu</summary>
   <summary xml:lang="hu">Gyakorlat törtekkel</summary>
   <summary xml:lang="nds">Brookreken öven</summary>
@@ -31,6 +33,7 @@
     <p>KBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.</p>
     <p xml:lang="fi">KBruch on pieni ohjelma murtoluku- ja prosenttilaskujen harjoittelemiseen. Ohjelmaan sisältyy useammanlaisia tehtäviä, ja opiskelutilaa voi käyttää murtolukujen harjoitteluun. Ohjelma tarkistaa käyttäjän antaman vastauksen ja antaa palautetta.</p>
     <p xml:lang="nds">KBruch is en lütt Programm, mit dat sik dat Reken mit Bröök un Perzenttallen öven lett. Verscheden Öven warrt dor för praatstellt, un Du kannst Bröök in'n Lehrbedrief öven. Dat Programm kiekt sik de Ingaven an un vertellt dor denn wat över.</p>
+    <p xml:lang="nl">KBruch is een klein programma'tje waarmee geoefend kan worden in het rekenen met breuken en percentages. Tot dit doel kan in de leermodus worden geoefend met breuken. Het programma kijkt elk antwoord na en meldt dan of het goed is of fout.</p>
     <p xml:lang="pl">KBruch jest małym programem do ćwiczenia obliczeń na ułamkach i procentach. Do tego celu przygotowano różne ćwiczenia. Można także skorzystać z trybu uczenia się, gdzie można poćwiczyć ułamki i znajdowanie wspólnego mianownika. Program sprawdza podane przez użytkownika dane i daje odpowiedź na temat ich poprawności. </p>
     <p xml:lang="pt">O KBruch é um pequeno programa que ajuda a praticar o cálculo de fracções e percentagens. São oferecidos diferentes exercícios para esse fim, podendo também usar o modo de aprendizagem para exercitar as fracções. O programa verifica os dados introduzidos pelo utilizador e dá as reacções respectivas.</p>
     <p xml:lang="pt-BR">KBruch é um pequeno programa para exercitar o cálculo de frações e percentagens. São fornecidos diferentes exercícios para esse fim e você poderá usar o modo de aprendizagem para praticar as frações. O programa verifica os dados inseridos pelo usuário e fornece algum feedback.</p>
@@ -39,6 +42,7 @@
     <p xml:lang="uk">KBruch — це невеличка програма, яку призначено для вдосконалення навичок з обчислень з дробами і відсотками. З цією метою у ній використано різні вправи. Програма перевіряє введену користувачем інформацію і повідомляє про результат.</p>
     <p xml:lang="x-test">xxKBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.xx</p>
     <p>Features:</p>
+    <p xml:lang="cs">Vlastnosti:</p>
     <p xml:lang="fi">Ominaisuudet:</p>
     <p xml:lang="hu">Szolgáltatások:</p>
     <p xml:lang="nds">Markmalen:</p>
