@@ -5,6 +5,7 @@
   <project_license>GPL-2.0+</project_license>
   <name>KBruch</name>
   <name xml:lang="cs">KBruch</name>
+  <name xml:lang="es">KBruch</name>
   <name xml:lang="fi">KBruch</name>
   <name xml:lang="hu">KBruch</name>
   <name xml:lang="nds">KBruch</name>
@@ -19,6 +20,7 @@
   <name xml:lang="zh-TW">數學_KBruch</name>
   <summary>Exercise Fractions</summary>
   <summary xml:lang="cs">Cvičení se zlomky</summary>
+  <summary xml:lang="es">Ejercitar fracciones</summary>
   <summary xml:lang="fi">Murtolukujen harjoittelu</summary>
   <summary xml:lang="hu">Gyakorlat törtekkel</summary>
   <summary xml:lang="nds">Brookreken öven</summary>
@@ -46,6 +48,7 @@
     <p xml:lang="zh-TW">KBruch 是用來練習計算分數與百分比的小程式。提供不同的練習模式讓您練習分數。</p>
     <p>Features:</p>
     <p xml:lang="cs">Vlastnosti:</p>
+    <p xml:lang="es">Funciones:</p>
     <p xml:lang="fi">Ominaisuudet:</p>
     <p xml:lang="hu">Szolgáltatások:</p>
     <p xml:lang="nds">Markmalen:</p>
