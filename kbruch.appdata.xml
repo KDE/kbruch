@@ -16,6 +16,7 @@
   <name xml:lang="pt">KBruch</name>
   <name xml:lang="pt-BR">KBruch</name>
   <name xml:lang="sk">KBruch</name>
+  <name xml:lang="sl">KBruch</name>
   <name xml:lang="sv">Kbruch</name>
   <name xml:lang="uk">KBruch</name>
   <name xml:lang="x-test">xxKBruchxx</name>
@@ -32,6 +33,7 @@
   <summary xml:lang="pt">Exercitar Fracções</summary>
   <summary xml:lang="pt-BR">Exercícios com frações</summary>
   <summary xml:lang="sk">Cvičenie zlomkov</summary>
+  <summary xml:lang="sl">Vaje z ulomki</summary>
   <summary xml:lang="sv">Övningar med bråk</summary>
   <summary xml:lang="uk">Вправи з дробами</summary>
   <summary xml:lang="x-test">xxExercise Fractionsxx</summary>
@@ -46,6 +48,7 @@
     <p xml:lang="pt">O KBruch é um pequeno programa que ajuda a praticar o cálculo de fracções e percentagens. São oferecidos diferentes exercícios para esse fim, podendo também usar o modo de aprendizagem para exercitar as fracções. O programa verifica os dados introduzidos pelo utilizador e dá as reacções respectivas.</p>
     <p xml:lang="pt-BR">KBruch é um pequeno programa para exercitar o cálculo de frações e percentagens. São fornecidos diferentes exercícios para esse fim e você poderá usar o modo de aprendizagem para praticar as frações. O programa verifica os dados inseridos pelo usuário e fornece algum feedback.</p>
     <p xml:lang="sk">KBruch je malý program na výuku počítania so zlomkami a percentami. Sú tu rôzne cvičenia na tento účel a môžete použiť režim učenia na precvičovanie zlomkov. Program kontroluje vstup používateľa a reaguje naň.</p>
+    <p xml:lang="sl">KBruch je majhen program za vadbo ulomkov in odstotkov. Ponuja različne vaje, lahko pa uporabite tudi učni način. Program preveri uporabnikov vnos ter poda odziv.</p>
     <p xml:lang="sv">Kbruch är ett litet program för att öva räkning med bråk och procent. Olika övningar tillhandahålls för detta syfte, och du kan använda inlärningsläget för att öva dig på bråk. Programmet kontrollerar användarens indata och ger återmatning.</p>
     <p xml:lang="uk">KBruch — це невеличка програма, яку призначено для вдосконалення навичок з обчислень з дробами і відсотками. З цією метою у ній використано різні вправи. Програма перевіряє введену користувачем інформацію і повідомляє про результат.</p>
     <p xml:lang="x-test">xxKBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.xx</p>
@@ -62,6 +65,7 @@
     <p xml:lang="pt">Características:</p>
     <p xml:lang="pt-BR">Funcionalidades:</p>
     <p xml:lang="sk">Funkcie:</p>
+    <p xml:lang="sl">Zmožnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
@@ -76,6 +80,7 @@
       <li xml:lang="pt">Exercício aritmético - neste exercício, terá de resolver uma dada tarefa de fracções. Terá de indicar o numerador e o denominador. Este é o exercício principal.</li>
       <li xml:lang="pt-BR">Exercício aritmético - Neste exercício, você terá que resolver uma determinada tarefa de frações. Terá que indicar o numerador e o denominador. Esse é o exercício principal.</li>
       <li xml:lang="sk">Aritmetické cvičenie - v tomto cvičení musíte vyriešiť danú úlohu so zlomkami. Musíte zadať čitateľa a menovateľa. Toto je hlavné cvičenie.</li>
+      <li xml:lang="sl">Računstvo -  v tej vaji morate rešiti nalogo z ulomki. Vnesti morate števec in imenovalec. To je glavna vaja.</li>
       <li xml:lang="sv">Aritmetikövning: I den här övningen måste du lösa en given uppgift med bråk. Du måste skriva in täljare och nämnare. Detta är den huvudsakliga övningen.</li>
       <li xml:lang="uk">Вправа з арифметики — у цій вправі вам потрібно буде розв’язати завдання з дробів. Вам слід буде ввести чисельник і знаменник відповіді. Це головна вправа програми.</li>
       <li xml:lang="x-test">xxArithmetic exercise - in this exercise you have to solve a given fraction task. You have to enter the numerator and the denominator. This is the main exercise.xx</li>
@@ -89,6 +94,7 @@
       <li xml:lang="pt">Exercícios de comparação - neste exercício, terá de comparar o valor de 2 dadas fracções, usando os símbolos &gt;, &lt; ou =.</li>
       <li xml:lang="pt-BR">Exercício de comparação - Neste exercício, terá que comparar o tamanho de 2 frações apresentadas, usando os símbolos &gt;, &lt; or =.</li>
       <li xml:lang="sk">Porovnávacie cvičenie - v tomto cvičení musíte porovnať veľkosť 2 daných zlomkov, pomocou symbolov &gt;, &lt; alebo =.</li>
+      <li xml:lang="sl">Primerjava - v tej vaji morate primerjati velikost dveh ulomkov z uporabo znakov &gt;, &lt; ali =.</li>
       <li xml:lang="sv">Jämförelseövning: I den här övningen måste du jämföra storleken på två givna bråk, med symbolerna &gt;, &lt; eller =.</li>
       <li xml:lang="uk">Порівняння — у цій вправі вам потрібно буде порівняти величини 2 заданих дробів за допомогою символів &gt;, &lt; або =.</li>
       <li xml:lang="x-test">xxComparison exercise - in this exercise you have to compare the size of 2 given fractions, using the symbols &gt;, &lt; or =.xx</li>
@@ -102,6 +108,7 @@
       <li xml:lang="pt">Exercício de conversão - neste exercício, terá de converter um dado número numa fracção.</li>
       <li xml:lang="pt-BR">Exercício de conversão - Neste exercício, terá que converter um determinado número numa fração.</li>
       <li xml:lang="sk">Prevodové cvičenie - v tomto cvičení musíte previesť dané číslo na zlomok.</li>
+      <li xml:lang="sl">Pretvorba - v tej vaji morate dano število pretvoriti v ulomek.</li>
       <li xml:lang="sv">Konverteringsövning: I den här övningen måste du konvertera ett givet tal till ett bråk.</li>
       <li xml:lang="uk">Перетворення — у цій вправі вам слід буде перетворити задане число на дріб.</li>
       <li xml:lang="x-test">xxConversion exercise - in this exercise you have to convert a given number into a fraction.xx</li>
@@ -115,6 +122,7 @@
       <li xml:lang="pt">Exercício de decomposição de factores - neste exercício, terá de decompor um número nos seus factores primos.</li>
       <li xml:lang="pt-BR">Exercício de decomposição de fatores - Neste exercício, você terá que decompor um número nos seus fatores primos.</li>
       <li xml:lang="sk">Rozkladové cvičenie - v tomto cvičení musíte rozložiť dané číslo na prvočíselné činitele.</li>
+      <li xml:lang="sl">Razstavljanje - v tej vaji morate razstaviti dano število v prafaktorje.</li>
       <li xml:lang="sv">Faktoriseringsövning: I den här övningen måste du faktorisera ett givet tal i dess primtalsfaktorer.</li>
       <li xml:lang="uk">Розкладання на множники — у цій вправі вам слід буде розкласти задане число на його елементарні множники.</li>
       <li xml:lang="x-test">xxFactorization exercise - in this exercise you have to factorize a given number into its prime factors.xx</li>
@@ -128,6 +136,7 @@
       <li xml:lang="pt">Exercício de percentagens - neste exercício, terá de calcular percentagens.</li>
       <li xml:lang="pt-BR">Exercício de percentagens - Neste exercício, terá que calcular percentagens.</li>
       <li xml:lang="sk">Percentové cvičenie - v tomto cvičení musíte vypočítať percentá.</li>
+      <li xml:lang="sl">Odstotki - v tej vaji morate izračunati odstotke.</li>
       <li xml:lang="sv">Procentövning: I den här övningen måste du beräkna procent.</li>
       <li xml:lang="uk">Вправа з відсотками — у цій вправі вам потрібно буде виконати обчислення, пов’язані з відсотками.</li>
       <li xml:lang="x-test">xxPercentage exercise - in this exercise you have to calculate percentages.xx</li>
