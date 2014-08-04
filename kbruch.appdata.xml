@@ -4,6 +4,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KBruch</name>
+  <name xml:lang="ca">KBruch</name>
   <name xml:lang="cs">KBruch</name>
   <name xml:lang="de">KBruch</name>
   <name xml:lang="en-GB">KBruch</name>
@@ -11,6 +12,7 @@
   <name xml:lang="et">KBruch</name>
   <name xml:lang="fi">KBruch</name>
   <name xml:lang="hu">KBruch</name>
+  <name xml:lang="it">KBruch</name>
   <name xml:lang="nds">KBruch</name>
   <name xml:lang="nl">KBruch</name>
   <name xml:lang="pl">KBruch</name>
@@ -23,6 +25,7 @@
   <name xml:lang="x-test">xxKBruchxx</name>
   <name xml:lang="zh-TW">數學_KBruch</name>
   <summary>Exercise Fractions</summary>
+  <summary xml:lang="ca">Exercita les fraccions</summary>
   <summary xml:lang="cs">Cvičení se zlomky</summary>
   <summary xml:lang="de">Bruchrechnen üben</summary>
   <summary xml:lang="en-GB">Exercise Fractions</summary>
@@ -30,6 +33,7 @@
   <summary xml:lang="et">Ülesanded murdudega</summary>
   <summary xml:lang="fi">Murtolukujen harjoittelu</summary>
   <summary xml:lang="hu">Gyakorlat törtekkel</summary>
+  <summary xml:lang="it">Esercizi con le frazioni</summary>
   <summary xml:lang="nds">Brookreken öven</summary>
   <summary xml:lang="nl">Breuken oefenen</summary>
   <summary xml:lang="pl">Ćwiczenia z ułamków</summary>
@@ -43,10 +47,12 @@
   <summary xml:lang="zh-TW">練習分數</summary>
   <description>
     <p>KBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.</p>
+    <p xml:lang="ca">El KBruch és un programa senzill per a practicar càlcul amb fraccions i percentatges. Es proposen diversos exercicis i podeu utilitzar el mode d'aprenentatge per a practicar amb fraccions. El programa comprova l'entrada de l'usuari i proporciona una resposta.</p>
     <p xml:lang="de">KBruch ist ein kleines Programm, um das Rechnen mit Brüchen und Prozenten zu üben. Für diesen Zweck werden verschiedene Übungen angeboten. Außerdem gibt es einen Modus für das Lernen von Brüchen. Das Programm überprüft die Eingaben des Benutzers und gibt entsprechende Rückmeldungen.</p>
     <p xml:lang="en-GB">KBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.</p>
     <p xml:lang="et">KBruch on väike rakendus, mis aitab harjutada murdude ja protsentidega arvutamist. Selleks pakutakse mitut laadi ülesandeid, samuti saab murdudega arvutamist harjutada vastavas harjutamisrežiimis. Rakendus kontrollib vastuse õigsust ja annab teada, mida ta sellest arvab.</p>
     <p xml:lang="fi">KBruch on pieni ohjelma murtoluku- ja prosenttilaskujen harjoittelemiseen. Ohjelmaan sisältyy useammanlaisia tehtäviä, ja opiskelutilaa voi käyttää murtolukujen harjoitteluun. Ohjelma tarkistaa käyttäjän antaman vastauksen ja antaa palautetta.</p>
+    <p xml:lang="it">KBruch è un piccolo programma per esercitarti a calcolare con frazioni e percentuali. Per questo scopo vi sono differenti esercizi e puoi usare la modalità di apprendimento per esercitarti con le frazioni. Il programma controlla che i dati inseriti siano corretti e risponde di conseguenza.</p>
     <p xml:lang="nds">KBruch is en lütt Programm, mit dat sik dat Reken mit Bröök un Perzenttallen öven lett. Verscheden Öven warrt dor för praatstellt, un Du kannst Bröök in'n Lehrbedrief öven. Dat Programm kiekt sik de Ingaven an un vertellt dor denn wat över.</p>
     <p xml:lang="nl">KBruch is een klein programma'tje waarmee geoefend kan worden in het rekenen met breuken en percentages. Tot dit doel kan in de leermodus worden geoefend met breuken. Het programma kijkt elk antwoord na en meldt dan of het goed is of fout.</p>
     <p xml:lang="pl">KBruch jest małym programem do ćwiczenia obliczeń na ułamkach i procentach. Do tego celu przygotowano różne ćwiczenia. Można także skorzystać z trybu uczenia się, gdzie można poćwiczyć ułamki i znajdowanie wspólnego mianownika. Program sprawdza podane przez użytkownika dane i daje odpowiedź na temat ich poprawności. </p>
@@ -59,6 +65,7 @@
     <p xml:lang="x-test">xxKBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.xx</p>
     <p xml:lang="zh-TW">KBruch 是用來練習計算分數與百分比的小程式。提供不同的練習模式讓您練習分數。</p>
     <p>Features:</p>
+    <p xml:lang="ca">Característiques:</p>
     <p xml:lang="cs">Vlastnosti:</p>
     <p xml:lang="de">Funktionen:</p>
     <p xml:lang="en-GB">Features:</p>
@@ -66,6 +73,7 @@
     <p xml:lang="et">Omadused:</p>
     <p xml:lang="fi">Ominaisuudet:</p>
     <p xml:lang="hu">Szolgáltatások:</p>
+    <p xml:lang="it">Funzionalità:</p>
     <p xml:lang="nds">Markmalen:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="pl">Możliwości:</p>
@@ -79,10 +87,12 @@
     <p xml:lang="zh-TW">功能:</p>
     <ul>
       <li>Arithmetic exercise - in this exercise you have to solve a given fraction task. You have to enter the numerator and the denominator. This is the main exercise.</li>
+      <li xml:lang="ca">Exercici aritmètic: En aquest exercici heu de resoldre un càlcul de fracció. Cal que escriviu el resultat, és a dir el numerador i el denominador. Aquest és l'exercici principal.</li>
       <li xml:lang="de">Arithmetik - in dieser Übung muss eine gegebene Bruchaufgabe gelöst werden. Sie müssen den ganzzahligen Anteil des Bruchs und Zähler und Nenner eingeben. Dies ist die Hauptübung.</li>
       <li xml:lang="en-GB">Arithmetic exercise - in this exercise you have to solve a given fraction task. You have to enter the numerator and the denominator. This is the main exercise.</li>
       <li xml:lang="et">Aritmeetikaülesanded - nende korral tuleb lahendada etteantud murdudega ülesanne. Sul on vaja sisestada lugeja ja nimetaja. See on põhiline ülesandetüüp.</li>
       <li xml:lang="fi">Aritmetiikkaharjoitus: Tässä harjoituksessa täytyy ratkaista murtolukutehtävä. Tehtävänä on kirjoittaa osoittaja ja nimittäjä. Tämä on pääharjoitus.</li>
+      <li xml:lang="it">Esercizio aritmetico - in questo esercizio devi risolvere un esercizio con frazioni date. Devi inserire il numeratore e il denominatore. Questo è l'esercizio principale.</li>
       <li xml:lang="nds">Arhitmeetsch Öven - in disse Öven muttst Du en Brookopgaav lösen. Du muttst den Teller un den Nömer ingeven. Dat is de Hööftöven.</li>
       <li xml:lang="nl">Rekenoefening - in deze oefening moet je met breuken rekenen. Je moet de teller en de noemer intypen. Dit is de belangrijkste oefening.</li>
       <li xml:lang="pl">Ćwiczenie arytmetyczne - w tym ćwiczeniu musisz rozwiązać podane zadanie na tworzenie ułamka. Musisz wprowadzić licznik i mianownik. Jest to główne ćwiczenie.</li>
@@ -95,9 +105,11 @@
       <li xml:lang="x-test">xxArithmetic exercise - in this exercise you have to solve a given fraction task. You have to enter the numerator and the denominator. This is the main exercise.xx</li>
       <li xml:lang="zh-TW">運算練習 -- 這類練習中您要解分數題。您要輸入分子與分母，是基本的練習。</li>
       <li>Comparison exercise - in this exercise you have to compare the size of 2 given fractions, using the symbols &gt;, &lt; or =.</li>
+      <li xml:lang="ca">Exercici de comparació: En aquest exercici heu de comparar el valor numèric de 2 fraccions, utilitzant els símbols &gt;, &lt; or =.</li>
       <li xml:lang="en-GB">Comparison exercise - in this exercise you have to compare the size of 2 given fractions, using the symbols &gt;, &lt; or =.</li>
       <li xml:lang="et">Võrdlemisülesanded - nendee korral tuleb võrrelda kaht etteantud murdarvu, kasutades sümboleid &gt;, &lt; või =.</li>
       <li xml:lang="fi">Vertailuharjoitus: Tässä harjoituksessa tehtävänä on vertailla kahta annettua murtolukua käyttäen symboleita &gt;, &lt; tai =.</li>
+      <li xml:lang="it">Esercizio di confronto - in questo esercizio devi confrontare la dimensione di 2 frazioni date, usando i simboli &gt;, &lt; o =.</li>
       <li xml:lang="nds">Vergliekenöven - in disse Öven muttst Du twee angeven Bröök mit de Symbolen »&gt;«, »&lt;« un »=« verglieken.</li>
       <li xml:lang="nl">Vergelijken - In deze oefening moet je de grootte vergelijken van twee gegeven breuken, met behulp van de tekens &gt;, &lt; of = (groter dan, kleiner dan, of gelijk aan).</li>
       <li xml:lang="pl">Ćwiczenie na porównanie - w tym ćwiczeniu musisz porównać rozmiar dwóch podanych ułamków, za pomocą symboli &gt;, &lt; lub =.</li>
@@ -110,10 +122,12 @@
       <li xml:lang="x-test">xxComparison exercise - in this exercise you have to compare the size of 2 given fractions, using the symbols &gt;, &lt; or =.xx</li>
       <li xml:lang="zh-TW">比較練習 -- 這類練習中您要比較兩個分數的大小，並輸入 &gt;, &lt; 或 =。</li>
       <li>Conversion exercise - in this exercise you have to convert a given number into a fraction.</li>
+      <li xml:lang="ca">Exercici de conversió: En aquest exercici heu de convertir un nombre en una fracció.</li>
       <li xml:lang="de">Umwandeln - in dieser Übung muss eine gegebene Zahl in einen Bruch umgewandelt werden.</li>
       <li xml:lang="en-GB">Conversion exercise - in this exercise you have to convert a given number into a fraction.</li>
       <li xml:lang="et">Teisendamisülesanded - nende korral tuleb etteantud arv teisendada murruks.</li>
       <li xml:lang="fi">Muunnosharjoitus: Tässä harjoituksessa tehtävänä on muuntaa luku murtoluvuksi.</li>
+      <li xml:lang="it">Esercizio di conversione - in questo esercizio devi convertire un numero dato in frazione.</li>
       <li xml:lang="nds">Ümwannelöven - in disse Öven muttst Du en Tall na en Bröök överföhren.</li>
       <li xml:lang="nl">Omzetten - in deze oefening moet je een gegeven getal omzetten naar een breuk.</li>
       <li xml:lang="pl">Ćwiczenie zamiany - w tym ćwiczeniu musisz zamienić podaną liczbę na ułamek.</li>
@@ -126,10 +140,12 @@
       <li xml:lang="x-test">xxConversion exercise - in this exercise you have to convert a given number into a fraction.xx</li>
       <li xml:lang="zh-TW">轉換練習 -- 這類練習讓您將指定的數字換成分數。</li>
       <li>Factorization exercise - in this exercise you have to factorize a given number into its prime factors.</li>
+      <li xml:lang="ca">Exercici de factorització: En aquest exercici heu de descompondre un nombre en factors primers.</li>
       <li xml:lang="de">Faktorisieren - in dieser Übung muss eine gegebene Zahl in ihre Primfaktoren zerlegt werden.</li>
       <li xml:lang="en-GB">Factorisation exercise - in this exercise you have to factorise a given number into its prime factors.</li>
       <li xml:lang="et">Algteguriteks lahutamise ülesanded - nende korral tuleb etteantud arv lahutada algteguriteks.</li>
       <li xml:lang="fi">Tekijöihin jakamisharjoitus: Tässä harjoituksessa tehtävänä on jakaa annettu luku alkutekijöihinsä.</li>
+      <li xml:lang="it">Esercizio di fattorizzazione - in questo esercizio devi ridurre un numero dato nei suoi fattori primi.</li>
       <li xml:lang="nds">Faktorspleetöven - in disse Öven muttst Du en angeven Tall in ehr Primfaktoren opspleten.</li>
       <li xml:lang="nl">Ontbinden in factoren - in deze oefening moet je een gegeven getal ontbinden in zijn priemfactoren.</li>
       <li xml:lang="pl">Ćwiczenie na rozkładanie - w tym ćwiczeniu musisz rozłożyć podaną liczbę na jej czynniki pierwsze.</li>
@@ -142,10 +158,12 @@
       <li xml:lang="x-test">xxFactorization exercise - in this exercise you have to factorize a given number into its prime factors.xx</li>
       <li xml:lang="zh-TW">分解練習 -- 這類練習讓您將數字做質因數分解。</li>
       <li>Percentage exercise - in this exercise you have to calculate percentages.</li>
+      <li xml:lang="ca">Exercici de percentatge: En aquest exercici heu de calcular els percentatges.</li>
       <li xml:lang="de">Prozentaufgaben - in dieser Übung müssen Prozente berechnet werden.</li>
       <li xml:lang="en-GB">Percentage exercise - in this exercise you have to calculate percentages.</li>
       <li xml:lang="et">Protsentülesanded - nende korral tuleb arvutada protsent.</li>
       <li xml:lang="fi">Prosenttiharjoitus: Tässä harjoituksessa tehtävänä on laskea prosenttiosuuksia.</li>
+      <li xml:lang="it">Esercizio sulle percentuali - in questo esercizio devi calcolare percentuali.</li>
       <li xml:lang="nds">Perzentöven - in disse Öven muttst Du Perzenttallen utreken.</li>
       <li xml:lang="nl">Oefenen met percentages - in deze oefening moet je met percentages rekenen.</li>
       <li xml:lang="pl">Ćwiczenie procentowe - w tym ćwiczeniu należy policzyć procenty.</li>
