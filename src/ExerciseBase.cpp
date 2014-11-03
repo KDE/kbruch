@@ -16,10 +16,11 @@
  ***************************************************************************/
 
 #include "ExerciseBase.h"
-#include "ExerciseBase.moc"
 
-/* these includes are needed for KDE support */
-#include <klocale.h>
+/* these includes are needed for Qt support */
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 /* ----- public member functions ----- */
 
@@ -28,7 +29,7 @@ ExerciseBase::ExerciseBase(QWidget * parent) :
     QWidget(parent)
 {
 #ifdef DEBUG
-    kDebug() << "constructor ExerciseBase()";
+    qDebug() << "constructor ExerciseBase()";
 #endif
 }
 
@@ -36,6 +37,6 @@ ExerciseBase::ExerciseBase(QWidget * parent) :
 ExerciseBase::~ExerciseBase()
 {
 #ifdef DEBUG
-    kDebug() << "destructor ExerciseBase()";
+    qDebug() << "destructor ExerciseBase()";
 #endif
 }

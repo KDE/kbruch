@@ -20,13 +20,15 @@
  ***************************************************************************/
 
 #include "FractionBaseWidget.h"
-#include "FractionBaseWidget.moc"
 
 /* these includes are needed for KDE support */
-#include <kglobalsettings.h>
 
 /* these includes are needed for Qt support */
-#include <qpainter.h>
+#include <QPainter>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 #include "settingsclass.h"
 
@@ -34,7 +36,7 @@ FractionBaseWidget::FractionBaseWidget(QWidget * parent) :
     QWidget(parent)
 {
 #ifdef DEBUG
-    kDebug() << "constructor FractionBaseWidget";
+    qDebug() << "constructor FractionBaseWidget";
 #endif
 
     // set colors and font used for task displaying
@@ -44,7 +46,7 @@ FractionBaseWidget::FractionBaseWidget(QWidget * parent) :
 FractionBaseWidget::~FractionBaseWidget()
 {
 #ifdef DEBUG
-    kDebug() << "destructor FractionBaseWidget";
+    qDebug() << "destructor FractionBaseWidget";
 #endif
 }
 

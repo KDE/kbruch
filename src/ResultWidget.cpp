@@ -19,24 +19,27 @@
  ***************************************************************************/
 
 #include "ResultWidget.h"
-#include "ResultWidget.moc"
+
+/* these includes are needed for KDE support */
+#include <KLocalizedString>
 
 /* these includes are needed for Qt support */
-#include <qpainter.h>
-#include <qlabel.h>
-#include <qlayout.h>
-
-//Added by qt3to4:
+#include <QLayout>
+#include <QLabel>
+#include <QPainter>
 #include <QPaintEvent>
 
+#ifdef DEBUG
+#include <QDebug>
+#endif
+
 #include "settingsclass.h"
-#include <klocale.h>
 
 ResultWidget::ResultWidget(QWidget * parent, const uintList para_factors) :
     FractionBaseWidget(parent), m_factors(para_factors)
 {
 #ifdef DEBUG
-    kDebug() << "constructor ResultWidget";
+    qDebug() << "constructor ResultWidget";
 #endif
     Init();
     m_ExerciseView = 0;
@@ -47,7 +50,7 @@ ResultWidget::ResultWidget(QWidget * parent,
     FractionBaseWidget(parent), m_result(para_result)
 {
 #ifdef DEBUG
-    kDebug() << "constructor ResultWidget";
+    qDebug() << "constructor ResultWidget";
 #endif
     Init();
     m_ExerciseView = 1;
@@ -57,7 +60,7 @@ ResultWidget::ResultWidget(QWidget * parent) :
     FractionBaseWidget(parent)
 {
 #ifdef DEBUG
-    kDebug() << "constructor ResultWidget";
+    qDebug() << "constructor ResultWidget";
 #endif
     Init();
     m_ExerciseView = 2;
@@ -72,7 +75,7 @@ void ResultWidget::setFactors(const uintList para_factors)
 void ResultWidget::Init()
 {
 #ifdef DEBUG
-    kDebug() << "ResultWidget::Init()";
+    qDebug() << "ResultWidget::Init()";
 #endif
     setMinimumWidth(160);
     setMaximumHeight(213);
@@ -118,7 +121,7 @@ void ResultWidget::Init()
 ResultWidget::~ResultWidget()
 {
 #ifdef DEBUG
-    kDebug() << "destructor ResultWidget";
+    qDebug() << "destructor ResultWidget";
 #endif
 }
 
@@ -130,7 +133,7 @@ int ResultWidget::KindView()
 void ResultWidget::showResult()
 {
 #ifdef DEBUG
-    kDebug() << "ResultWidget::showResult";
+    qDebug() << "ResultWidget::showResult";
 #endif
     switch (m_kindView) {
     case 1:
@@ -165,8 +168,8 @@ void ResultWidget::showResult()
 void ResultWidget::setResult(const Ratio para_result, int k)
 {
 #ifdef DEBUG
-    kDebug() << "ResultWidget::setResult";
-    kDebug() << "m_kindView = " + k;
+    qDebug() << "ResultWidget::setResult";
+    qDebug() << "m_kindView = " + k;
 #endif
     m_kindView = k;
     m_result = para_result;
@@ -177,7 +180,7 @@ void ResultWidget::setResult(const Ratio para_result, int k)
 void ResultWidget::setAnswerMixed(bool value)
 {
 #ifdef DEBUG
-    kDebug() << "ResultWidget::setAnswerMixed";
+    qDebug() << "ResultWidget::setAnswerMixed";
 #endif
     m_answerMixed = value;
 }
@@ -185,8 +188,8 @@ void ResultWidget::setAnswerMixed(bool value)
 void ResultWidget::setResult(int k)
 {
 #ifdef DEBUG
-    kDebug() << "ResultWidget::setResult";
-    kDebug() << "m_kindView = " + k;
+    qDebug() << "ResultWidget::setResult";
+    qDebug() << "m_kindView = " + k;
 #endif
     m_kindView = k;
     showResult();

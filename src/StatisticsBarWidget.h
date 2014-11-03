@@ -20,13 +20,7 @@
 #ifndef STATISTICSBARWIDGET_H
 #define STATISTICSBARWIDGET_H
 
-#define DEBUG
-
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
-
-#include <qwidget.h>
+#include <QWidget>
 
 class QProgressBar;
 class QLabel;

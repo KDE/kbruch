@@ -18,27 +18,19 @@
 #ifndef EXERCISEPERCENTAGE_H
 #define EXERCISEPERCENTAGE_H
 
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
-
 #include "ExerciseBase.h"
 #include "Ratio.h"
-//Added by qt3to4:
+
 #include <QLabel>
-#include <QVBoxLayout>
-#include <QGridLayout>
 
 class RationalWidget;
 class ResultWidget;
 
-class KLineEdit;
+class QLineEdit;
 
 class QGridLayout;
 class QLabel;
 class QPushButton;
-class QString;
-class QVBoxLayout;
 
 /*! Construct the exercise widget to work with percentage
  *
@@ -87,7 +79,7 @@ private:
     RationalWidget * m_rationalWidget;
     ResultWidget * m_resultWidget;
     QFrame * edit_line;
-    KLineEdit * answer_edit;
+    QLineEdit * answer_edit;
 
     QPushButton* m_checkButton;
     QPushButton* m_skipButton;
@@ -106,7 +98,7 @@ private:
 private slots:
     void slotCheckButtonClicked();
     void slotSkipButtonClicked();
-    void answerReturnPressed(const QString &);
+    void answerReturnPressed();
 };
 
 #endif

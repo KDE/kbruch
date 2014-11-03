@@ -20,18 +20,19 @@
  ***************************************************************************/
 
 #include "StatisticsView.h"
-#include "StatisticsView.moc"
+
+/* the includes are needed for KDE support */
+#include <KLocalizedString>
 
 /* the includes are needed for Qt support */
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qpushbutton.h>
-
-//Added by qt3to4:
 #include <QGridLayout>
+#include <QLabel>
+#include <QLayout>
+#include <QPushButton>
 
-#include <klocale.h>
-#include <kdebug.h>
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 #include "settingsclass.h"
 #include "StatisticsBarWidget.h"
@@ -41,7 +42,7 @@ StatisticsView::StatisticsView(QWidget * parent) :
     QFrame(parent), m_count(0), m_correct(0)
 {
 #ifdef DEBUG
-    kDebug() << "constructor StatisticsView()";
+    qDebug() << "constructor StatisticsView()";
 #endif
     // load statistics from config file
     m_count = SettingsClass::count();
@@ -134,7 +135,7 @@ StatisticsView::StatisticsView(QWidget * parent) :
     resetButton->setText(i18n("&Reset"));
     resetButton->setToolTip(i18n("Click this button to reset the statistics."));
     resetButton->setFont(defaultFont);
-    QObject::connect(resetButton, SIGNAL(clicked()), this, SLOT(resetStatistics()));
+    QObject::connect(resetButton, &QPushButton::clicked, this, &StatisticsView::resetStatistics);
     labelGrid->addWidget(resetButton, 5, 5, Qt::AlignRight);
 
     /* calculate the statistics */
@@ -145,13 +146,13 @@ StatisticsView::StatisticsView(QWidget * parent) :
 StatisticsView::~StatisticsView()
 {
 #ifdef DEBUG
-    kDebug() << "destructor StatisticsView()";
+    qDebug() << "destructor StatisticsView()";
 #endif
     // save statistics for next run
     SettingsClass::setCount(m_count);
     SettingsClass::setCorrect(m_correct);
     SettingsClass::setSkipped(m_skipped);
-    SettingsClass::self()->writeConfig();
+    SettingsClass::self()->save();
 
     /* no need to delete any child widgets, Qt does it by itself */
 }

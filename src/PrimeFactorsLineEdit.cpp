@@ -18,27 +18,30 @@
 
 */
 
+#ifdef DEBUG
+#include <QDebug>
+#endif
+
 #include "PrimeFactorsLineEdit.h"
-#include "PrimeFactorsLineEdit.moc"
 
 /* constructor */
 PrimeFactorsLineEdit::PrimeFactorsLineEdit(QWidget * parent)
-    : KLineEdit(parent)
+    : QLineEdit(parent)
 {
 #ifdef DEBUG
-    kDebug() << "constructor PrimeFactorsLineEdit";
+    qDebug() << "constructor PrimeFactorsLineEdit";
 #endif
     m_usedFactors << "2" << "3" << "5" << "7" << "11" << "13" << "17" << "19";
     // I need this so dead keys go trough keyPressEvent
     setAttribute(Qt::WA_InputMethodEnabled, false);
-    connect(this, SIGNAL(textEdited(QString)), this, SLOT(textHasChanged(QString)));
+    connect(this, &PrimeFactorsLineEdit::textEdited, this, &PrimeFactorsLineEdit::textHasChanged);
 }
 
 /* destructor */
 PrimeFactorsLineEdit::~PrimeFactorsLineEdit()
 {
 #ifdef DEBUG
-    kDebug() << "destructor PrimeFactorsLineEdit";
+    qDebug() << "destructor PrimeFactorsLineEdit";
 #endif
 }
 
@@ -121,7 +124,7 @@ void PrimeFactorsLineEdit::keyPressEvent(QKeyEvent * event)
             // and to make easier to split the text later
             if (!event->text().isEmpty() && (symbols.indexOf(ch) != -1) && (factor.compare("x") != 0) && !lastFactor.isEmpty() && lastFactor.compare("1") != 0) {
                 QKeyEvent myKeyEvent(QKeyEvent::KeyPress, Qt::Key_X, Qt::NoModifier, "x", false, 0);
-                KLineEdit::keyPressEvent(&myKeyEvent);
+                QLineEdit::keyPressEvent(&myKeyEvent);
             }
 
             if ((m_usedFactors.indexOf(factor) == -1)
@@ -130,7 +133,7 @@ void PrimeFactorsLineEdit::keyPressEvent(QKeyEvent * event)
                 return;
             }
 
-            KLineEdit::keyPressEvent(event);
+            QLineEdit::keyPressEvent(event);
         }
     }
 }

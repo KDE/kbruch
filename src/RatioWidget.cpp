@@ -19,26 +19,28 @@
  ***************************************************************************/
 
 #include "RatioWidget.h"
-#include "RatioWidget.moc"
 
 /* these includes are needed for Qt support */
-#include <qpainter.h>
-//Added by qt3to4:
+#include <QPainter>
 #include <QPaintEvent>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 RatioWidget::RatioWidget(QWidget * parent,
                          const Ratio para_ratio) :
     FractionBaseWidget(parent), m_ratio(para_ratio)
 {
 #ifdef DEBUG
-    kDebug() << "constructor RatioWidget";
+    qDebug() << "constructor RatioWidget";
 #endif
 }
 
 RatioWidget::~RatioWidget()
 {
 #ifdef DEBUG
-    kDebug() << "destructor RatioWidget";
+    qDebug() << "destructor RatioWidget";
 #endif
 }
 

@@ -17,34 +17,30 @@
  *                                                                         *
  ***************************************************************************/
 #include "AppMenuWidget.h"
-#include "AppMenuWidget.moc"
 
 /* these includes are needed for KDE support */
-#include <kdebug.h>
-#include <kiconloader.h>
-#include <klocale.h>
-#include <kicon.h>
-#include <kapplication.h>
-#include <kactioncollection.h>
-#include <kstandardaction.h>
-#include <kconfigdialog.h>
-#include <KStandardShortcut>
+#include <KLocalizedString>
+#include <KActionCollection>
+#include <KStandardAction>
 
 /* these includes are needed for Qt support */
-#include <qapplication.h>
-#include <qlayout.h>
-#include <qpushbutton.h>
-#include <KStandardDirs>
+#include <QAction>
+#include <QApplication>
+#include <QHBoxLayout>
+#include <QLayout>
+#include <QPushButton>
+#include <QStandardPaths>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 #include "ui_taskcolorsbase.h"
 #include "ui_taskfontsbase.h"
 #include "settingsclass.h"
 
-//Added by qt3to4:
-#include <QHBoxLayout>
-
 /* standard C++ library includes */
-#include <stdlib.h>
+#include <cstdlib>
 
 /* ----- public member functions ----- */
 
@@ -52,7 +48,7 @@
 AppMenuWidget::AppMenuWidget()
 {
 #ifdef DEBUG
-    kDebug() << "constructor AppMenuWidget";
+    qDebug() << "constructor AppMenuWidget";
 
 #endif
     setupActions();
@@ -61,25 +57,25 @@ AppMenuWidget::AppMenuWidget()
         "QPushButton#m_Freestyle {"
         "border: none;"
         "image: url(" +
-        KStandardDirs::locate("data", "kbruch/pics/icon_freestyle_1.png") +
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kbruch/pics/icon_freestyle_1.png") +
         ");"
         "}"
         "QPushButton#m_Freestyle:hover {"
         "border: none;"
         "image: url(" +
-        KStandardDirs::locate("data", "kbruch/pics/icon_freestyle.png") +
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kbruch/pics/icon_freestyle.png") +
         ");"
         "}"
         "QPushButton#m_Learning {"
         "border: none;"
         "image: url(" +
-        KStandardDirs::locate("data", "kbruch/pics/icon_learning_1.png") +
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kbruch/pics/icon_learning_1.png") +
         ");"
         "}"
         "QPushButton#m_Learning:hover {"
         "border: none;"
         "image: url(" +
-        KStandardDirs::locate("data", "kbruch/pics/icon_learning.png") +
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kbruch/pics/icon_learning.png") +
         ");"
         "}"
         "QLabel#labelInfo, QLabel#labelFreestyle, QLabel#labelLearning"
@@ -126,7 +122,7 @@ AppMenuWidget::AppMenuWidget()
     labelFreestyle->setFont(defaultFont);
     gridLayout->addWidget(labelFreestyle, 2, 0, Qt::AlignCenter);
 
-    QObject::connect(m_Freestyle, SIGNAL(clicked()), this, SLOT(slotFreestyleClicked()));
+    QObject::connect(m_Freestyle, &QPushButton::clicked, this, &AppMenuWidget::slotFreestyleClicked);
 
     // Learning mode ----------------------------
     m_Learning = new QPushButton(this);
@@ -141,7 +137,7 @@ AppMenuWidget::AppMenuWidget()
     labelLearning->setFont(defaultFont);
     gridLayout->addWidget(labelLearning, 2, 1, Qt::AlignCenter);
 
-    QObject::connect(m_Learning, SIGNAL(clicked()), this, SLOT(slotLearningClicked()));
+    QObject::connect(m_Learning, &QPushButton::clicked, this, &AppMenuWidget::slotLearningClicked);
 
     gridLayout->setRowMinimumHeight(0, 30);
     gridLayout->setRowMinimumHeight(1, 250);
@@ -160,7 +156,7 @@ AppMenuWidget::AppMenuWidget()
 AppMenuWidget::~AppMenuWidget()
 {
 #ifdef DEBUG
-    kDebug() << "destructor AppMenuWidget()";
+    qDebug() << "destructor AppMenuWidget()";
 #endif
 
     /* no need to delete any child widgets, Qt does it by itself */
@@ -169,14 +165,13 @@ AppMenuWidget::~AppMenuWidget()
 void AppMenuWidget::setupActions()
 {
 #ifdef DEBUG
-    kDebug() << "setupActions FractionRingWidget";
+    qDebug() << "setupActions FractionRingWidget";
 #endif
 
     // quit action
-    KStandardAction::quit(kapp, SLOT(quit()), actionCollection());
+    KStandardAction::quit(this, SLOT(close()), actionCollection());
 
-    if (!initialGeometrySet())
-        resize(QSize(725, 330).expandedTo(minimumSizeHint()));
+    resize(QSize(725, 330).expandedTo(minimumSizeHint()));
     setupGUI(Keys | Create, "AppMenuWidgetui.rc");
     setAutoSaveSettings();
 }
@@ -184,7 +179,7 @@ void AppMenuWidget::setupActions()
 void AppMenuWidget::slotApplySettings()
 {
 #ifdef DEBUG
-    kDebug() << "slotApplySettings FractionRingWidget";
+    qDebug() << "slotApplySettings FractionRingWidget";
 #endif
     return;
 }

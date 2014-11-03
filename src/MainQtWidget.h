@@ -21,11 +21,11 @@
 #ifndef MAINQTWIDGET_H
 #define MAINQTWIDGET_H
 
-#include <kxmlguiwindow.h>
-#include <QGridLayout>
-#include <kapplication.h>
-class KAction;
-class KComboBox;
+#include <KXmlGuiWindow>
+
+class QAction;
+class QWidgetAction;
+class QComboBox;
 
 class QLabel;
 class QCheckBox;
@@ -33,7 +33,6 @@ class QGroupBox;
 class QGridLayout;
 class QFrame;
 class QToolButton;
-class QPushButton;
 
 class ExerciseCompare;
 class ExerciseConvert;
@@ -138,10 +137,10 @@ private:
     QToolButton * m_PercentageButton;
 
     // Question Group
-    KComboBox * m_NrOfTermsBox;
+    QComboBox * m_NrOfTermsBox;
     QLabel * m_NrOfTermsLabel;
 
-    KComboBox * m_MaxMainDenominatorBox;
+    QComboBox * m_MaxMainDenominatorBox;
     QLabel * m_MaxMainDenominatorLabel;
 
     QCheckBox * m_QuestionMixedCheck;
@@ -170,17 +169,17 @@ private:
     QLabel * m_DivisionLabel;
 
     // Menu exercise actions
-    KAction * m_ArithmeticAction;
-    KAction * m_ComparisonAction;
-    KAction * m_ConversionAction;
-    KAction * m_MixedNumbersAction;
-    KAction * m_FactorizationAction;
-    KAction * m_NewTaskActionMenu;
-    KAction * m_NewTaskActionTool;
-    KAction * m_BackActionTool;
-    KAction * m_BackActionMenu;
-    KAction * m_HintAction;
-    KAction * m_PercentageAction;
+    QWidgetAction * m_ArithmeticAction;
+    QWidgetAction * m_ComparisonAction;
+    QWidgetAction * m_ConversionAction;
+    QWidgetAction * m_MixedNumbersAction;
+    QWidgetAction * m_FactorizationAction;
+    QWidgetAction * m_NewTaskActionMenu;
+    QWidgetAction * m_NewTaskActionTool;
+    QWidgetAction * m_BackActionTool;
+    QWidgetAction * m_BackActionMenu;
+    QAction * m_HintAction;
+    QWidgetAction * m_PercentageAction;
 
     QFrame * m_footerline;
     QFrame * m_headerline;

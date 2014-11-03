@@ -21,11 +21,7 @@
 #define _CHECK_TASK 0
 #define _NEXT_TASK  1
 
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
-
-#include <qwidget.h>
+#include <QWidget>
 
 /*! Constructs a QWidget.
  *

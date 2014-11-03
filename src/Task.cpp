@@ -21,12 +21,10 @@
 
 #include "Task.h"
 
-#include <math.h>
+#include <cmath>
+#include <ctime>
 
-#include <kdebug.h>
-
-#include <time.h>
-
+#include <QDebug>
 #include <QTextStream>
 
 /** constructor of class task */
@@ -34,7 +32,7 @@ Task::Task()
 {
     srand(time(NULL));
 #ifdef DEBUG
-    kDebug() << "constructor task";
+    qDebug() << "constructor task";
 #endif
 }
 
@@ -42,7 +40,7 @@ Task::Task()
 Task::~Task()
 {
 #ifdef DEBUG
-    kDebug() << "destructor task";
+    qDebug() << "destructor task";
 #endif
 }
 
@@ -66,7 +64,7 @@ void Task::create_task(unsigned int pmax_md, short pnr_ratios,
         max_product_length = make_operation(padd_add, padd_div, padd_mult, padd_sub, pnr_ratios);
 
 #ifdef DEBUG
-        kDebug() << "1: max_product_length: " << max_product_length;
+        qDebug() << "1: max_product_length: " << max_product_length;
 #endif
 
         /* later we must be able to find a main denominator;
@@ -74,29 +72,29 @@ void Task::create_task(unsigned int pmax_md, short pnr_ratios,
     } while ((unsigned int) pow(2.0, (double) max_product_length) > pmax_md);
 
 #ifdef DEBUG
-    kDebug() << "2: max_product_length: " << max_product_length;
+    qDebug() << "2: max_product_length: " << max_product_length;
 #endif
 
     /* find a main denominator */
     main_denominator = make_main_dn(pmax_md, max_product_length);
 
 #ifdef DEBUG
-    kDebug() << "after make_main_dn()";
+    qDebug() << "after make_main_dn()";
 #endif
 
     /* create the ratios' numerators */
     make_numerators(main_denominator, pnr_ratios);
 
 #ifdef DEBUG
-    kDebug() << "after make_numerators()";
+    qDebug() << "after make_numerators()";
 #endif
 
     /* create the ratios' denominators */
     make_denominators(main_denominator, pmax_md, padd_div, padd_mult);
 
 #ifdef DEBUG
-    kDebug() << "main deno: " << main_denominator;
-    kDebug() << "prim fakt: " << prim_fac_vector.size();
+    qDebug() << "main deno: " << main_denominator;
+    qDebug() << "prim fakt: " << prim_fac_vector.size();
 #endif
 
     return;
@@ -178,7 +176,7 @@ void Task::add_operation(short operation)
 QTextStream & Task::display(QTextStream & str)
 {
 #ifdef DEBUG
-    kDebug() << "task::display()";
+    qDebug() << "task::display()";
 #endif
 
     /* this is our pointer on the ratio_vector, set it to the beginning */
@@ -197,7 +195,7 @@ QTextStream & Task::display(QTextStream & str)
 
     /* check, if ratio number and operation number fit together */
     if (ratio_vector.size() != op_vector.size() + 1) {
-        kDebug() << "Number of ratios and operations do not fit.";
+        qDebug() << "Number of ratios and operations do not fit.";
         return str;
     }
 
@@ -252,7 +250,7 @@ Ratio Task::solve()
 
     /* check, if ratio number and operation number fit together */
     if (ratio_vector.size() != op_vector.size()) {
-        kDebug() << "Number of ratios and operations do not fit.";
+        qDebug() << "Number of ratios and operations do not fit.";
         return ergebnis;
     }
 
@@ -292,13 +290,13 @@ Ratio Task::solve()
             break;
 
 #ifdef DEBUG
-        kDebug() << "Schleifenende";
+        qDebug() << "Schleifenende";
 #endif
 
     } while (++op_pointer != op_vector.end());
 
 #ifdef DEBUG
-    kDebug() << "after do while in solve()";
+    qDebug() << "after do while in solve()";
 #endif
 
     /* if the last operation was an add/sub we haven't add/subed it until now */
@@ -325,7 +323,7 @@ Ratio Task::solve()
 int Task::getNumberOfRatios() const
 {
 #ifdef DEBUG
-    kDebug() << "task::getNumberOfRatios()";
+    qDebug() << "task::getNumberOfRatios()";
 #endif
     return ratio_vector.count();
 }
@@ -334,7 +332,7 @@ int Task::getNumberOfRatios() const
 int Task::getNumberOfOperations() const
 {
 #ifdef DEBUG
-    kDebug() << "task::getNumberOfOperations()";
+    qDebug() << "task::getNumberOfOperations()";
 #endif
     return op_vector.count();
 }
@@ -343,7 +341,7 @@ int Task::getNumberOfOperations() const
 void Task::clean()
 {
 #ifdef DEBUG
-    kDebug() << "task::clean()";
+    qDebug() << "task::clean()";
 #endif
     ratio_vector.clear();
     op_vector.clear();
@@ -357,7 +355,7 @@ Ratio Task::product(RatioArray::iterator & ratio_pointer,
                     ShortArray::iterator & op_pointer)
 {
 #ifdef DEBUG
-    kDebug() << "task::product()";
+    qDebug() << "task::product()";
 #endif
     /* the function's parameters are pointing to the next ratio;
      * to the starting point of the product */
@@ -396,7 +394,7 @@ unsigned short Task::make_operation(short padd_add, short padd_div, short padd_m
                                     short pnr_ratios)
 {
 #ifdef DEBUG
-    kDebug() << "task::make_operation()";
+    qDebug() << "task::make_operation()";
 #endif
     unsigned short max_product_length = 0;
     unsigned short operations = 0;
@@ -535,12 +533,12 @@ unsigned short Task::prim_factor_nr(int number)
     }
 #ifdef DEBUG
     PrimeFactorArray::iterator prim_fac_pointer = prim_fac_vector.begin();
-    kDebug() << "Primfaktoren von: " << number;
+    qDebug() << "Primfaktoren von: " << number;
     for (prim_fac_pointer = prim_fac_vector.begin();
             prim_fac_pointer != prim_fac_vector.end();
             ++prim_fac_pointer)
-        kDebug() << (*prim_fac_pointer).factor;
-    kDebug() << "Anzahl: " << prim_fac_vector.size();
+        qDebug() << (*prim_fac_pointer).factor;
+    qDebug() << "Anzahl: " << prim_fac_vector.size();
 #endif
 
     return prim_fac_vector.size();
@@ -582,7 +580,7 @@ void Task::make_denominators(int main_denominator, short pmax_md,
 
     /* check, if ratio number and operation number fit together */
     if (ratio_vector.size() != op_vector.size() + 1) {
-        kDebug() << "Number of ratios and operations do not fit.";
+        qDebug() << "Number of ratios and operations do not fit.";
         return;
     }
 

@@ -29,25 +29,33 @@ set(kbruch_SRCS
    FractionPainter.cpp
    FractionRingWidget.cpp )
 
-kde4_add_ui_files(kbruch_SRCS taskcolorsbase.ui taskfontsbase.ui)
+ki18n_wrap_ui(kbruch_SRCS taskcolorsbase.ui taskfontsbase.ui)
 
-kde4_add_kcfg_files(kbruch_SRCS settingsclass.kcfgc )
+kconfig_add_kcfg_files(kbruch_SRCS settingsclass.kcfgc )
 
-kde4_add_app_icon(kbruch_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-kbruch.png")
+#kde4_add_app_icon(kbruch_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-kbruch.png")
 
-kde4_add_executable(kbruch ${kbruch_SRCS})
+add_executable(kbruch ${kbruch_SRCS})
 
-target_link_libraries(kbruch  ${KDE4_KDEUI_LIBS} )
+target_link_libraries(kbruch
+    KF5::ConfigCore
+    KF5::ConfigGui
+    KF5::I18n
+    KF5::IconThemes
+    KF5::WidgetsAddons
+    KF5::WindowSystem
+    KF5::XmlGui
+)
 
 install(TARGETS kbruch  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 
 ########### install files ###############
 
-install( PROGRAMS kbruch.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
-install( FILES kbruch.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
-install( FILES kbruchui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kbruch )
-install( FILES AppMenuWidgetui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kbruch )
-install( FILES FractionRingWidgetui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kbruch )
+install( PROGRAMS kbruch.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR}/kbruch )
+install( FILES kbruch.kcfg  DESTINATION  ${KCFG_INSTALL_DIR}/kbruch )
+install( FILES kbruchui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kbruch )
+install( FILES AppMenuWidgetui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kbruch )
+install( FILES FractionRingWidgetui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kbruch )
 
-kde4_install_icons( ${ICON_INSTALL_DIR} )
+ecm_install_icons( ICONS 16-apps-kbruch.png 22-apps-kbruch.png 32-apps-kbruch.png 48-apps-kbruch.png 64-apps-kbruch.png sc-apps-kbruch.svgz DESTINATION ${ICON_INSTALL_DIR} THEME hicolor )

@@ -20,37 +20,35 @@
  ***************************************************************************/
 
 #include "RationalWidget.h"
-#include "RationalWidget.moc"
-
-/* these includes are needed for KDE support */
-#include <kglobal.h>
-#include <klocale.h>
 
 /* these includes are needed for Qt support */
-#include <qpainter.h>
-#include <qstring.h>
-//Added by qt3to4:
+#include <QLocale>
+#include <QPainter>
 #include <QPaintEvent>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 RationalWidget::RationalWidget(QWidget * parent, const QString &pnumber, const int pperiodStart, const int pperiodLength) :
     FractionBaseWidget(parent), m_number(pnumber),
     m_periodStart(pperiodStart), m_periodLength(pperiodLength)
 {
 #ifdef DEBUG
-    kDebug() << "constructor RationalWidget";
+    qDebug() << "constructor RationalWidget";
 #endif
 }
 
 RationalWidget::~RationalWidget()
 {
 #ifdef DEBUG
-    kDebug() << "destructor RationalWidget";
+    qDebug() << "destructor RationalWidget";
 #endif
 }
 
 void RationalWidget::setRational(const QString &pnumber, const int pperiodStart, const int pperiodLength)
 {
-    m_number = KGlobal::locale()->formatNumber(pnumber, false, -1);
+    m_number = pnumber;
     m_periodStart = pperiodStart;
     m_periodLength = pperiodLength;
 

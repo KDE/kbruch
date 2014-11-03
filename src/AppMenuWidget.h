@@ -19,13 +19,9 @@
 #ifndef APPMENUWIDGET_H
 #define APPMENUWIDGET_H
 
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
+#include <KXmlGuiWindow>
 
-#include <kxmlguiwindow.h>
-#include <kapplication.h>
-
+#include <QApplication>
 #include <QHBoxLayout>
 
 #include "MainQtWidget.h"
@@ -35,7 +31,7 @@ class QHBoxLayout;
 class QPushButton;
 class MainQtWidget;
 class FractionRingWidget;
-class KAction;
+class QAction;
 
 /** Constructs the main window and presents the user interface.
  *  The window give the user the hability to choose what application
@@ -66,9 +62,9 @@ private:
     QLabel * labelLearning;
     QLabel * labelInfo;
 
-    KAction * m_NewTaskAction;
-    KAction * m_BackAction;
-    KAction * m_HintAction;
+    QAction * m_NewTaskAction;
+    QAction * m_BackAction;
+    QAction * m_HintAction;
 
     MainQtWidget * kbruchApp;
     FractionRingWidget * fractionRing;

@@ -21,16 +21,12 @@
 #ifndef RATIOWIDGET_H
 #define RATIOWIDGET_H
 
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
-
 #include "FractionBaseWidget.h"
 #include "Ratio.h"
 
-#include <qwidget.h>
-//Added by qt3to4:
-#include <QPaintEvent>
+#include <QWidget>
+
+class QPaintEvent;
 
 /*! class to paint the ratio
  *

@@ -25,16 +25,10 @@
 /** the space between a ratio and an operation */
 #define _MARGIN_X 5
 
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
-
 #include "Ratio.h"
 
-#include <qwidget.h>
-//Added by qt3to4:
 #include <QPaintEvent>
-
+#include <QWidget>
 
 /*! base class for painting fractions
  *

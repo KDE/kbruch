@@ -19,19 +19,12 @@
  *                                                                         *
  ***************************************************************************/
 
-/*#define DEBUG*/
 
 #ifndef BRUCH_H
 #define BRUCH_H
 
-/* for the I18N_NOOP macro */
-#include <klocale.h>
-
 #include "Task.h"
 #include "AppMenuWidget.h"
-
-static const char description[] =
-    I18N_NOOP("KBruch");
 
 class Task;
 

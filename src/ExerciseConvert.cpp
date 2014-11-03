@@ -19,26 +19,27 @@
  ***************************************************************************/
 
 #include "ExerciseConvert.h"
-#include "ExerciseConvert.moc"
 
 /* these includes are needed for KDE support */
-#include <kglobal.h>
-#include <klineedit.h>
-#include <klocale.h>
-#include <kmessagebox.h>
-#include <knumvalidator.h>
+#include <KMessageBox>
+#include <KLocalizedString>
 
 /* these includes are needed for Qt support */
 #include <QApplication>
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qpushbutton.h>
-
-//Added by qt3to4:
 #include <QGridLayout>
+#include <QIntValidator>
+#include <QLabel>
+#include <QLayout>
+#include <QLineEdit>
+#include <QLocale>
+#include <QPushButton>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 /* standard C++ library includes */
-#include <stdlib.h>
+#include <cstdlib>
 
 #include "RationalWidget.h"
 #include "ResultWidget.h"
@@ -51,7 +52,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
     ExerciseBase(parent)
 {
 #ifdef DEBUG
-    kDebug() << "constructor ExerciseConvert()";
+    qDebug() << "constructor ExerciseConvert()";
 #endif
 
     /* create a new task */
@@ -60,7 +61,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
     QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
     // to validate, that the input is an int
-    KIntValidator *valnum = new KIntValidator(this);
+    QIntValidator *valnum = new QIntValidator(this);
 
     QFont defaultFont = SettingsClass::taskFont();
     defaultFont.setBold(true);
@@ -97,15 +98,14 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
     taskLayout->addWidget(m_rationalWidget, 1, 1, 3, 1);
 
     /* add input box so the user can enter numerator */
-    numer_edit = new KLineEdit(taskWidget);
+    numer_edit = new QLineEdit(taskWidget);
     numer_edit->setObjectName("numer_edit");
     numer_edit->setValidator(valnum);   // use the int validator
     numer_edit->setToolTip(i18n("Enter the numerator of your result"));
     numer_edit->setFixedSize(85, 42);
     numer_edit->setAlignment(Qt::AlignHCenter);
     numer_edit->setFont(defaultFont);
-    QObject::connect(numer_edit, SIGNAL(returnPressed(QString)), this,
-                     SLOT(numeratorReturnPressed(QString)));
+    QObject::connect(numer_edit, &QLineEdit::returnPressed, this, &ExerciseConvert::numeratorReturnPressed);
     taskLayout->addWidget(numer_edit, 1, 2);
 
     /* add a line between the edit boxes */
@@ -115,15 +115,14 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
     taskLayout->addWidget(edit_line, 2, 2);
 
     /* add input box so the user can enter denominator */
-    deno_edit = new KLineEdit(taskWidget);
+    deno_edit = new QLineEdit(taskWidget);
     deno_edit->setObjectName("deno_edit");
     deno_edit->setValidator(valnum);   // use the int validator
     deno_edit->setToolTip(i18n("Enter the denominator of your result"));
     deno_edit->setFixedSize(85, 42);
     deno_edit->setAlignment(Qt::AlignHCenter);
     deno_edit->setFont(defaultFont);
-    QObject::connect(deno_edit, SIGNAL(returnPressed(QString)), this,
-                     SLOT(denominatorReturnPressed(QString)));
+    QObject::connect(deno_edit, &QLineEdit::returnPressed, this, &ExerciseConvert::denominatorReturnPressed);
     taskLayout->addWidget(deno_edit, 3, 2);
 
     // next is the result widget
@@ -140,7 +139,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
     m_checkButton->setDefault(true);  // is the default button of the dialog
     m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
     m_checkButton->setFont(defaultFont);
-    QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
+    QObject::connect(m_checkButton, &QPushButton::clicked, this, &ExerciseConvert::slotCheckButtonClicked);
     checkLayout->addWidget(m_checkButton, 1, 0);
 
     // the right aligned button
@@ -149,7 +148,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
     m_skipButton->setText(i18n("&Skip"));
     m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
     m_skipButton->setFont(defaultFont);
-    QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
+    QObject::connect(m_skipButton, &QPushButton::clicked, this, &ExerciseConvert::slotSkipButtonClicked);
     checkLayout->addWidget(m_skipButton, 1, 1);
 
     setLayout(baseGrid);
@@ -165,7 +164,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
 ExerciseConvert::~ExerciseConvert()
 {
 #ifdef DEBUG
-    kDebug() << "destructor ExerciseConvert()";
+    qDebug() << "destructor ExerciseConvert()";
 #endif
 
     /* no need to delete any child widgets, Qt does it by itself */
@@ -177,7 +176,7 @@ ExerciseConvert::~ExerciseConvert()
 void ExerciseConvert::forceNewTask()
 {
 #ifdef DEBUG
-    kDebug() << "forceNewTask ExerciseConvert()";
+    qDebug() << "forceNewTask ExerciseConvert()";
 #endif
 
     if (m_currentState == _CHECK_TASK) {
@@ -211,99 +210,99 @@ void ExerciseConvert::createTask()
 {
     // the tasks are hardcoded here; there are some algorithms to convert
     // rational numbers to fractions, but it is not worth the effort here
-    switch (int ((double(rand()) / RAND_MAX) * 18 + 1)) {
-    case  0 :   m_number = KGlobal::locale()->formatNumber(0.5, 1);
+    switch (int ((double(rand()) / RAND_MAX) * 19 )) {
+    case  0 :   m_number = QLocale().toString(0.5, 'f', 1);
         m_periodStart = 2;
         m_periodLength = 0;
         m_result = Ratio(1, 2);
         break;
-    case  1 :   m_number = KGlobal::locale()->formatNumber(0.3, 1);
+    case  1 :   m_number = QLocale().toString(0.3, 'f', 1);
         m_periodStart = 2;
         m_periodLength = 1;
         m_result = Ratio(1, 3);
         break;
-    case  2 :   m_number = KGlobal::locale()->formatNumber(0.6, 1);
+    case  2 :   m_number = QLocale().toString(0.6, 'f', 1);
         m_periodStart = 2;
         m_periodLength = 1;
         m_result = Ratio(2, 3);
         break;
-    case  3 :   m_number = KGlobal::locale()->formatNumber(0.25, 2);
+    case  3 :   m_number = QLocale().toString(0.25, 'f', 2);
         m_periodStart = 2;
         m_periodLength = 0;
         m_result = Ratio(1, 4);
         break;
-    case  4 :   m_number = KGlobal::locale()->formatNumber(0.75, 2);
+    case  4 :   m_number = QLocale().toString(0.75, 'f', 2);
         m_periodStart = 2;
         m_periodLength = 0;
         m_result = Ratio(3, 4);
         break;
-    case  5 :   m_number = KGlobal::locale()->formatNumber(0.2, 1);
+    case  5 :   m_number = QLocale().toString(0.2, 'f', 1);
         m_periodStart = 2;
         m_periodLength = 0;
         m_result = Ratio(1, 5);
         break;
-    case  6 :   m_number = KGlobal::locale()->formatNumber(0.4, 1);
+    case  6 :   m_number = QLocale().toString(0.4, 'f', 1);
         m_periodStart = 2;
         m_periodLength = 0;
         m_result = Ratio(2, 5);
         break;
-    case  7 :   m_number = KGlobal::locale()->formatNumber(0.6, 1);
+    case  7 :   m_number = QLocale().toString(0.6, 'f', 1);
         m_periodStart = 2;
         m_periodLength = 0;
         m_result = Ratio(3, 5);
         break;
-    case  8 :   m_number = KGlobal::locale()->formatNumber(0.8, 1);
+    case  8 :   m_number = QLocale().toString(0.8, 'f', 1);
         m_periodStart = 2;
         m_periodLength = 0;
         m_result = Ratio(4, 5);
         break;
-    case  9 :   m_number = KGlobal::locale()->formatNumber(0.16, 2);
+    case  9 :   m_number = QLocale().toString(0.16, 'f', 2);
         m_periodStart = 3;
         m_periodLength = 1;
         m_result = Ratio(1, 6);
         break;
-    case 10 :   m_number = KGlobal::locale()->formatNumber(0.142857, 6);
+    case 10 :   m_number = QLocale().toString(0.142857, 'f', 6);
         m_periodStart = 2;
         m_periodLength = 6;
         m_result = Ratio(1, 7);
         break;
-    case 11 :   m_number = KGlobal::locale()->formatNumber(0.125, 3);
+    case 11 :   m_number = QLocale().toString(0.125, 'f', 3);
         m_periodStart = 2;
         m_periodLength = 0;
         m_result = Ratio(1, 8);
         break;
-    case 12 :   m_number = KGlobal::locale()->formatNumber(0.375, 3);
+    case 12 :   m_number = QLocale().toString(0.375, 'f', 3);
         m_periodStart = 2;
         m_periodLength = 0;
         m_result = Ratio(3, 8);
         break;
-    case 13 :   m_number = KGlobal::locale()->formatNumber(0.1, 1);
+    case 13 :   m_number = QLocale().toString(0.1, 'f', 1);
         m_periodStart = 2;
         m_periodLength = 1;
         m_result = Ratio(1, 9);
         break;
-    case 14 :   m_number = KGlobal::locale()->formatNumber(0.1, 1);
+    case 14 :   m_number = QLocale().toString(0.1, 'f', 1);
         m_periodStart = 2;
         m_periodLength = 0;
         m_result = Ratio(1, 10);
         break;
-    case 15 :   m_number = KGlobal::locale()->formatNumber(0.05, 2);
+    case 15 :   m_number = QLocale().toString(0.05, 'f', 2);
         m_periodStart = 2;
         m_periodLength = 0;
         m_result = Ratio(1, 20);
         break;
-    case 16 :   m_number = KGlobal::locale()->formatNumber(0.01, 2);
+    case 16 :   m_number = QLocale().toString(0.01, 'f', 2);
         m_periodStart = 2;
         m_periodLength = 0;
         m_result = Ratio(1, 100);
         break;
-    case 17 :   m_number = KGlobal::locale()->formatNumber(0.83, 2);
+    case 17 :   m_number = QLocale().toString(0.83, 'f', 2);
         m_periodStart = 3;
         m_periodLength = 1;
         m_result = Ratio(5, 6);
         break;
     default :
-    case 18 :   m_number = KGlobal::locale()->formatNumber(0.001, 3);
+    case 18 :   m_number = QLocale().toString(0.001, 'f', 3);
         m_periodStart = 2;
         m_periodLength = 0;
         m_result = Ratio(1, 1000);
@@ -436,12 +435,12 @@ void ExerciseConvert::slotSkipButtonClicked()
 
 /* ------ private slots ------ */
 
-void ExerciseConvert::numeratorReturnPressed(const QString &)
+void ExerciseConvert::numeratorReturnPressed()
 {
     deno_edit->setFocus();
 }
 
-void ExerciseConvert::denominatorReturnPressed(const QString &)
+void ExerciseConvert::denominatorReturnPressed()
 {
     slotCheckButtonClicked();
 }

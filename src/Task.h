@@ -26,7 +26,6 @@
 #include "PrimeNumber.h"
 
 #include <vector>
-//Added by qt3to4:
 #include <QTextStream>
 
 /** important for add_sub and mul_div */

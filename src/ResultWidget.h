@@ -21,20 +21,14 @@
 #ifndef RESULTWIDGET_H
 #define RESULTWIDGET_H
 
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
-
 #include "FractionBaseWidget.h"
 #include "Ratio.h"
 
-#include <qwidget.h>
-//Added by qt3to4:
-#include <QPaintEvent>
+#include <QWidget>
 
-class QLabel;
 class QGridLayout;
-class QVBoxLayout;
+class QLabel;
+class QPaintEvent;
 
 // a list containing uints
 typedef QList<uint> uintList;

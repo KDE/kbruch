@@ -19,28 +19,28 @@
  ***************************************************************************/
 
 #include "TaskView.h"
-#include "TaskView.moc"
 
 /* these includes are needed for KDE support */
-#include <kdebug.h>
-#include <klocale.h>
-#include <kmessagebox.h>
-#include <knumvalidator.h>
-#include <klineedit.h>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 /* these includes are needed for Qt support */
-#include <qapplication.h>
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qpushbutton.h>
-
-//Added by qt3to4:
+#include <QApplication>
 #include <QGridLayout>
+#include <QIntValidator>
+#include <QLabel>
+#include <QLayout>
+#include <QLineEdit>
+#include <QPushButton>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 #include "settingsclass.h"
 
 /* standard C++ library includes */
-#include <math.h>
+#include <cmath>
 
 /* ----- public member functions ----- */
 
@@ -53,7 +53,7 @@ TaskView::TaskView(QWidget * parent,
     nr_ratios(pnr_ratios), max_md(pmax_md)
 {
 #ifdef DEBUG
-    kDebug() << "constructor TaskView()";
+    qDebug() << "constructor TaskView()";
 #endif
     curr_nr_ratios = nr_ratios;
 
@@ -63,7 +63,7 @@ TaskView::TaskView(QWidget * parent,
     QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
     // to validate, that the input is an int
-    KIntValidator *valnum = new KIntValidator(this);
+    QIntValidator *valnum = new QIntValidator(this);
 
     // the next thing to do on a button click would be to check the entered
     // result
@@ -102,27 +102,26 @@ TaskView::TaskView(QWidget * parent,
     taskLayout->addWidget(m_taskWidget, 1, 1, 3, 1);
 
     /* add input box so the user can enter the integer par of the fraction */
-    integer_edit = new KLineEdit(taskWidget);
+    integer_edit = new QLineEdit(taskWidget);
     integer_edit->setObjectName("integer_edit");
     integer_edit->setValidator(valnum);   // use the int validator
     integer_edit->setToolTip(i18n("Enter the integer part of the fraction"));
     integer_edit->setFont(defaultFont);
     integer_edit->setFixedSize(85, 42);
     integer_edit->setAlignment(Qt::AlignHCenter);
-    QObject::connect(integer_edit, SIGNAL(returnPressed(QString)), this, SLOT(integerReturnPressed(QString)));
+    QObject::connect(integer_edit, &QLineEdit::returnPressed, this, &TaskView::integerReturnPressed);
     taskLayout->addWidget(integer_edit, 1, 3, 3, 1, Qt::AlignVCenter | Qt::AlignRight);
 
 
     /* add input box so the user can enter numerator */
-    numer_edit = new KLineEdit(taskWidget);
+    numer_edit = new QLineEdit(taskWidget);
     numer_edit->setObjectName("numer_edit");
     numer_edit->setValidator(valnum);   // use the int validator
     numer_edit->setToolTip(i18n("Enter the numerator of your result"));
     numer_edit->setFont(defaultFont);
     numer_edit->setFixedSize(85, 42);
     numer_edit->setAlignment(Qt::AlignHCenter);
-    QObject::connect(numer_edit, SIGNAL(returnPressed(QString)), this,
-                     SLOT(numeratorReturnPressed(QString)));
+    QObject::connect(numer_edit, &QLineEdit::returnPressed, this, &TaskView::numeratorReturnPressed);
     taskLayout->addWidget(numer_edit, 1, 4);
 
     /* add a line between the edit boxes */
@@ -132,15 +131,14 @@ TaskView::TaskView(QWidget * parent,
     taskLayout->addWidget(edit_line, 2, 4);
 
     /* add input box so the user can enter denominator */
-    deno_edit = new KLineEdit(taskWidget);
+    deno_edit = new QLineEdit(taskWidget);
     deno_edit->setObjectName("deno_edit");
     deno_edit->setValidator(valnum);   // use the int validator
     deno_edit->setToolTip(i18n("Enter the denominator of your result"));
     deno_edit->setFont(defaultFont);
     deno_edit->setFixedSize(85, 42);
     deno_edit->setAlignment(Qt::AlignHCenter);
-    QObject::connect(deno_edit, SIGNAL(returnPressed(QString)), this,
-                     SLOT(denominatorReturnPressed(QString)));
+    QObject::connect(deno_edit, &QLineEdit::returnPressed, this, &TaskView::denominatorReturnPressed);
     taskLayout->addWidget(deno_edit, 3, 4);
 
     // next is the result widget
@@ -157,7 +155,7 @@ TaskView::TaskView(QWidget * parent,
     m_checkButton->setDefault(true);  // is the default button of the dialog
     m_checkButton->setToolTip(i18n("Click this button to check your result. The button will not work if you have not entered a result yet."));
     m_checkButton->setFont(defaultFont);
-    QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
+    QObject::connect(m_checkButton, &QPushButton::clicked, this, &TaskView::slotCheckButtonClicked);
     checkLayout->addWidget(m_checkButton, 1, 0);
 
     // the right aligned button
@@ -166,7 +164,7 @@ TaskView::TaskView(QWidget * parent,
     m_skipButton->setText(i18n("&Skip"));
     m_skipButton->setToolTip(i18n("Click this button to skip this question."));
     m_skipButton->setFont(defaultFont);
-    QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
+    QObject::connect(m_skipButton, &QPushButton::clicked, this, &TaskView::slotSkipButtonClicked);
     checkLayout->addWidget(m_skipButton, 1, 1);
 
     // show the whole layout
@@ -181,7 +179,7 @@ TaskView::TaskView(QWidget * parent,
 TaskView::~TaskView()
 {
 #ifdef DEBUG
-    kDebug() << "destructor TaskView()";
+    qDebug() << "destructor TaskView()";
 #endif
 
     /* no need to delete any child widgets, Qt does it by itself */
@@ -195,7 +193,7 @@ void TaskView::setReducedForm(bool value)
 void TaskView::setQuestionMixed(bool value)
 {
 #ifdef DEBUG
-    kDebug() << "TaskView::setQuestionMixed()";
+    qDebug() << "TaskView::setQuestionMixed()";
 #endif
     m_taskWidget->setQuestionMixed(value);
 }
@@ -203,7 +201,7 @@ void TaskView::setQuestionMixed(bool value)
 void TaskView::setAnswerMixed(bool value)
 {
 #ifdef DEBUG
-    kDebug() << "TaskView::setAnswerMixed()";
+    qDebug() << "TaskView::setAnswerMixed()";
 #endif
     m_answerMixed = value;
     integer_edit->setVisible(value);
@@ -250,7 +248,7 @@ void TaskView::setTaskParameters(bool padd_add, bool padd_div,
 void TaskView::forceNewTask()
 {
 #ifdef DEBUG
-    kDebug() << "forceNewTask TaskView()";
+    qDebug() << "forceNewTask TaskView()";
 #endif
 
     if (m_currentState == _CHECK_TASK) {
@@ -428,18 +426,17 @@ void TaskView::nextTask()
 
 /* ------ private slots ------ */
 
-void TaskView::integerReturnPressed(const QString &)
+void TaskView::integerReturnPressed()
 {
     numer_edit->setFocus();
 }
 
-
-void TaskView::numeratorReturnPressed(const QString &)
+void TaskView::numeratorReturnPressed()
 {
     deno_edit->setFocus();
 }
 
-void TaskView::denominatorReturnPressed(const QString &)
+void TaskView::denominatorReturnPressed()
 {
     slotCheckButtonClicked();
 }

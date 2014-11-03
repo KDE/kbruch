@@ -18,17 +18,9 @@
 #ifndef RATIONALWIDGET_H
 #define RATIONALWIDGET_H
 
-#define DEBUG
-
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
-
 #include "FractionBaseWidget.h"
-//Added by qt3to4:
-#include <QPaintEvent>
 
-class QString;
+class QPaintEvent;
 
 /*! class to paint a rational number
  *

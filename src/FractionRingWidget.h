@@ -21,38 +21,25 @@
 #ifndef FRACTIONRINGWIDGET_H
 #define FRACTIONRINGWIDGET_H
 
-#define DEBUG
-
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
-
-#include <kxmlguiwindow.h>
-#include <kapplication.h>
-#include <KTextEdit>
-
-#include <QGridLayout>
-#include <QHBoxLayout>
-#include <QColor>
-#include <QPushButton>
-#include <QLabel>
+#include <KXmlGuiWindow>
 
 #include "AppMenuWidget.h"
 #include "Ratio.h"
 #include "FractionPainter.h"
 
-class KAction;
+class QAction;
 class QGridLayout;
 class QHBoxLayout;
 class AppMenuWidget;
 class QColor;
 class QLabel;
 class FractionPainter;
-class KIntSpinBox;
+class QSpinBox;
 class QPushButton;
 class QLabel;
-class KTextEdit;
-class KAction;
+class QTextEdit;
+class QAction;
+class QWidgetAction;
 
 
 /*! Constructs a QWidget bla bla bla
@@ -85,10 +72,10 @@ private:
 
     QGridLayout * layout1;
     QGridLayout * gridLayout;
-    KIntSpinBox * leftSpinBox;
-    KIntSpinBox * rightSpinBox;
+    QSpinBox * leftSpinBox;
+    QSpinBox * rightSpinBox;
     QPushButton * resetButton;
-    KTextEdit * textMsg;
+    QTextEdit * textMsg;
     QLabel * leftInfoLabel;
     QLabel * rightInfoLabel;
 
@@ -104,9 +91,9 @@ private:
     QColor colorListLeft[5];
     QColor colorListRight[5];
 
-    KAction * m_NewTaskAction;
-    KAction * m_BackAction;
-    KAction * m_HintAction;
+    QWidgetAction * m_NewTaskAction;
+    QWidgetAction * m_BackAction;
+    QAction * m_HintAction;
 
     Ratio rLeft;
     Ratio rRight;

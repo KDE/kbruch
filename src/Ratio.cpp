@@ -20,11 +20,14 @@
 
 #include "Ratio.h"
 
-#include <kdebug.h>
+#include <QTextStream>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 #include "PrimeNumber.h"
-//Added by qt3to4:
-#include <QTextStream>
+
 
 /* ----- public member functions ----- */
 
@@ -32,7 +35,7 @@
 Ratio::Ratio(int pnumerator, int pdenominator) : m_numerator(pnumerator), m_denominator(pdenominator)
 {
 #ifdef DEBUG
-    kDebug() << "constructor ratio";
+    qDebug() << "constructor ratio";
 #endif
 
     // denominator is never allowed to be 0
@@ -46,7 +49,7 @@ Ratio::Ratio(int pnumerator, int pdenominator) : m_numerator(pnumerator), m_deno
 Ratio::Ratio(int pnumerator, int pdenominator, bool reduce_fraction) : m_numerator(pnumerator), m_denominator(pdenominator)
 {
 #ifdef DEBUG
-    kDebug() << "constructor ratio";
+    qDebug() << "constructor ratio";
 #endif
 
     // denominator is never allowed to be 0
@@ -62,7 +65,7 @@ Ratio::Ratio(int pnumerator, int pdenominator, bool reduce_fraction) : m_numerat
 Ratio::Ratio(const Ratio & copy_ratio)
 {
 #ifdef DEBUG
-    kDebug() << "copy constructor ratio";
+    qDebug() << "copy constructor ratio";
 #endif
     setNumerator(copy_ratio.numerator(), false);
     setDenominator(copy_ratio.denominator(), false);
@@ -72,7 +75,7 @@ Ratio::Ratio(const Ratio & copy_ratio)
 Ratio::~Ratio()
 {
 #ifdef DEBUG
-    kDebug() << "destructor ratio";
+    qDebug() << "destructor ratio";
 #endif
 }
 
@@ -333,9 +336,9 @@ void Ratio::reduce()
             divisor <= m_numerator && divisor <= m_denominator; divisor = number.get_next()) {
         if (divisor == 0) {
 #ifdef DEBUG
-            kDebug() << "ratio::reduce() -> divisor == 0 !!!";
-            kDebug() << "m_numerator: " << m_numerator;
-            kDebug() << "m_denominator: " << m_denominator;
+            qDebug() << "ratio::reduce() -> divisor == 0 !!!";
+            qDebug() << "m_numerator: " << m_numerator;
+            qDebug() << "m_denominator: " << m_denominator;
             // cin.get();
 #endif
             /* so that the application does not crash with a floating

@@ -21,17 +21,9 @@
 #ifndef EXERCISEFACTORIZE_H
 #define EXERCISEFACTORIZE_H
 
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
-
-#include <qvariant.h>
-#include <qwidget.h>
-#include <QLabel>
 #include <QList>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QGridLayout>
+#include <QVariant>
+#include <QWidget>
 
 #include "ExerciseBase.h"
 #include "ResultWidget.h"
@@ -39,13 +31,9 @@
 #include "PrimeFactorsLineEdit.h"
 
 class ResultWidget;
-class QVBoxLayout;
-class QHBoxLayout;
 class QGridLayout;
-class QSpacerItem;
 class QLabel;
 class QPushButton;
-class QToolButton;
 
 // a list containing uints
 typedef QList<uint> uintList;
@@ -144,7 +132,7 @@ protected:
 
 
 private slots:
-    void slotFactorsEditReturnPressed(const QString &);
+    void slotFactorsEditReturnPressed();
 
     void slotCheckButtonClicked();
     void slotSkipButtonClicked();

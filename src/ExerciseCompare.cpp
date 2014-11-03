@@ -19,22 +19,23 @@
  ***************************************************************************/
 
 #include "ExerciseCompare.h"
-#include "ExerciseCompare.moc"
 
 /* these includes are needed for KDE support */
-#include <klocale.h>
+#include <KLocalizedString>
 
 /* these includes are needed for Qt support */
-#include <qapplication.h>
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qpushbutton.h>
-
-//Added by qt3to4:
+#include <QApplication>
 #include <QGridLayout>
+#include <QLabel>
+#include <QLayout>
+#include <QPushButton>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 /* standard C++ library includes */
-#include <stdlib.h>
+#include <cstdlib>
 
 #include "settingsclass.h"
 
@@ -45,7 +46,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
     ExerciseBase(parent)
 {
 #ifdef DEBUG
-    kDebug() << "constructor ExerciseCompare()";
+    qDebug() << "constructor ExerciseCompare()";
 #endif
 
     QApplication::setOverrideCursor(Qt::WaitCursor);  /* show the sand clock */
@@ -97,7 +98,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
     m_moreButton->setText(i18n(">"));
     m_moreButton->setFixedSize(74, 30);
     m_moreButton->setFont(defaultFont);
-    QObject::connect(m_moreButton, SIGNAL(clicked()), this, SLOT(slotMoreButtonClicked()));
+    QObject::connect(m_moreButton, &QPushButton::clicked, this, &ExerciseCompare::slotMoreButtonClicked);
     m_moreButton->setToolTip(i18n("Click on this button to select the 'greater than' sign."));
     taskLayout->addWidget(m_moreButton, 1, 2);
 
@@ -106,7 +107,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
     m_minorButton->setText(i18n("<"));
     m_minorButton->setFixedSize(74, 30);
     m_minorButton->setFont(defaultFont);
-    QObject::connect(m_minorButton, SIGNAL(clicked()), this, SLOT(slotMinorButtonClicked()));
+    QObject::connect(m_minorButton, &QPushButton::clicked, this, &ExerciseCompare::slotMinorButtonClicked);
     m_minorButton->setToolTip(i18n("Click on this button to select the 'less than' sign."));
     taskLayout->addWidget(m_minorButton, 2, 2);
 
@@ -115,7 +116,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
     m_equalButton->setText(i18n("="));
     m_equalButton->setFixedSize(74, 30);
     m_equalButton->setFont(defaultFont);
-    QObject::connect(m_equalButton, SIGNAL(clicked()), this, SLOT(slotEqualButtonClicked()));
+    QObject::connect(m_equalButton, &QPushButton::clicked, this, &ExerciseCompare::slotEqualButtonClicked);
     m_equalButton->setToolTip(i18n("Click on this button to select the 'equals' sign."));
     taskLayout->addWidget(m_equalButton, 3, 2);
 
@@ -131,7 +132,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
     m_skipButton->setText(i18n("&Skip"));
     m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
     m_skipButton->setFont(defaultFont);
-    QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
+    QObject::connect(m_skipButton, &QPushButton::clicked, this, &ExerciseCompare::slotSkipButtonClicked);
     checkLayout->addWidget(m_skipButton, 1, 0);
 
     m_equalButton->setFocusPolicy(Qt::NoFocus);
@@ -155,7 +156,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
 ExerciseCompare::~ExerciseCompare()
 {
 #ifdef DEBUG
-    kDebug() << "destructor ExerciseCompare()";
+    qDebug() << "destructor ExerciseCompare()";
 #endif
 
     /* no need to delete any child widgets, Qt does it by itself */
@@ -167,7 +168,7 @@ ExerciseCompare::~ExerciseCompare()
 void ExerciseCompare::forceNewTask()
 {
 #ifdef DEBUG
-    kDebug() << "forceNewTask ExerciseCompare()";
+    qDebug() << "forceNewTask ExerciseCompare()";
 #endif
 
     if (m_currentState == _CHECK_TASK) {
@@ -285,7 +286,7 @@ void ExerciseCompare::nextTask()
 void ExerciseCompare::slotSkipButtonClicked()
 {
 #ifdef DEBUG
-    kDebug() << "ExerciseCompare::slotSkipButtonClicked()";
+    qDebug() << "ExerciseCompare::slotSkipButtonClicked()";
 #endif
     if (m_currentState == _CHECK_TASK) {
         forceNewTask();
@@ -302,7 +303,7 @@ void ExerciseCompare::slotSkipButtonClicked()
 void ExerciseCompare::slotMinorButtonClicked()
 {
 #ifdef DEBUG
-    kDebug() << "ExerciseCompare::slotMinorButtonClicked()";
+    qDebug() << "ExerciseCompare::slotMinorButtonClicked()";
 #endif
 
     m_currentState = _NEXT_TASK;
@@ -316,7 +317,7 @@ void ExerciseCompare::slotMinorButtonClicked()
 void ExerciseCompare::slotMoreButtonClicked()
 {
 #ifdef DEBUG
-    kDebug() << "ExerciseCompare::slotMoreButtonClicked()";
+    qDebug() << "ExerciseCompare::slotMoreButtonClicked()";
 #endif
 
     m_currentState = _NEXT_TASK;
@@ -330,7 +331,7 @@ void ExerciseCompare::slotMoreButtonClicked()
 void ExerciseCompare::slotEqualButtonClicked()
 {
 #ifdef DEBUG
-    kDebug() << "ExerciseCompare::slotEqualButtonClicked()";
+    qDebug() << "ExerciseCompare::slotEqualButtonClicked()";
 #endif
 
     m_currentState = _NEXT_TASK;

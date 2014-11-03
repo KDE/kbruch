@@ -21,28 +21,21 @@
 #ifndef EXERCISECOMPARE_H
 #define EXERCISECOMPARE_H
 
-#define DEBUG
+#include <QGridLayout>
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QWidget>
 
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
 
 #include "ExerciseBase.h"
 #include "Ratio.h"
 #include "RatioWidget.h"
 #include "ResultWidget.h"
-//Added by qt3to4:
-#include <QLabel>
-#include <QVBoxLayout>
-#include <QGridLayout>
 
 class QGridLayout;
 class QLabel;
 class QPushButton;
 class QVBoxLayout;
-
-
-#include <qwidget.h>
 
 /*! Constructs a QWidget, which shows the task to the user.
  *  The class also provides input fields, so that the user can enter the result.

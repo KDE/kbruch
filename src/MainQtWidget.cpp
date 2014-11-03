@@ -20,32 +20,34 @@
  ***************************************************************************/
 #include "MainQtWidget.h"
 
-#include <kaction.h>
-#include <kcombobox.h>
-#include <kdebug.h>
-#include <kiconloader.h>
-#include <kconfigdialog.h>
-#include <klocale.h>
+/* these includes are needed for KDE support */
+#include <KIconLoader>
+#include <KConfigDialog>
+#include <KLocalizedString>
 #include <KStandardShortcut>
-#include <kactioncollection.h>
-#include <kstandardaction.h>
-#include <kvbox.h>
-#include <kpagewidgetmodel.h>
-#include <kicon.h>
-#include <kapplication.h>
-#include <kstandarddirs.h>
-#include <kglobalsettings.h>
+#include <KActionCollection>
+#include <KPageWidgetModel>
 
-#include <qlayout.h>
-#include <qsplitter.h>
-#include <qlabel.h>
-#include <qcheckbox.h>
-#include <qwidget.h>
-#include <qframe.h>
-#include <QToolButton>
+/* these includes are needed for Qt support */
+#include <QAction>
+#include <QCheckBox>
+#include <QComboBox>
+#include <QFontDatabase>
+#include <QFrame>
+#include <QIcon>
+#include <QLabel>
+#include <QLayout>
+#include <QSplitter>
 #include <QPushButton>
+#include <QToolButton>
+#include <QWidget>
+#include <QWidgetAction>
 
-#include <math.h>
+#ifdef DEBUG
+#include <QDebug>
+#endif
+
+#include <cmath>
 
 #include "ExerciseCompare.h"
 #include "ExerciseConvert.h"
@@ -59,7 +61,8 @@
 #include "TaskColors.h"
 
 #include "settingsclass.h"
-#include <kpageview.h>
+#include <KPageView>
+#include <QStandardPaths>
 
 class TaskFonts : public QWidget, public Ui::TaskFontsBase
 {
@@ -74,7 +77,7 @@ public:
 MainQtWidget::MainQtWidget()
 {
 #ifdef DEBUG
-    kDebug() << "constructor MainQtWidget";
+    qDebug() << "constructor MainQtWidget";
 #endif
 
     // get the settings
@@ -179,7 +182,7 @@ MainQtWidget::MainQtWidget()
     m_QuestionMixedCheck->setObjectName("QuestionMixedCheck");
     m_QuestionMixedCheck->setChecked(m_questionMixed);
     m_taskview->setQuestionMixed(m_questionMixed);
-    QObject::connect(m_QuestionMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(QuestionMixedCheckSlot()));
+    QObject::connect(m_QuestionMixedCheck, &QCheckBox::stateChanged, this, &MainQtWidget::QuestionMixedCheckSlot);
 
     m_AnswerMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
     m_AnswerMixedLabel->setToolTip(i18n("Set if the fractions will appear as mixed numbers or not in the answer (mixed number example: 1 4/5 = 9/5 )."));
@@ -190,7 +193,7 @@ MainQtWidget::MainQtWidget()
     m_AnswerMixedCheck->setObjectName("AnswerMixedCheck");
     m_AnswerMixedCheck->setChecked(m_answerMixed);
     m_taskview->setAnswerMixed(m_answerMixed);
-    QObject::connect(m_AnswerMixedCheck, SIGNAL(stateChanged(int)), this, SLOT(AnswerMixedCheckSlot()));
+    QObject::connect(m_AnswerMixedCheck, &QCheckBox::stateChanged, this, &MainQtWidget::AnswerMixedCheckSlot);
 
     m_AdditionLabel = new QLabel(i18n("Addition:"), pageOptions);
     m_AdditionLabel->setToolTip(i18n("Check this to use addition operator."));
@@ -200,7 +203,7 @@ MainQtWidget::MainQtWidget()
     m_AdditionCheck = new QCheckBox(pageOptions);
     m_AdditionCheck->setObjectName("AdditionCheck");
     m_AdditionCheck->setChecked(m_addAdd);
-    QObject::connect(m_AdditionCheck, SIGNAL(stateChanged(int)), this, SLOT(AdditionCheckSlot()));
+    QObject::connect(m_AdditionCheck, &QCheckBox::stateChanged, this, &MainQtWidget::AdditionCheckSlot);
 
     m_SubtractionLabel = new QLabel(i18n("Subtraction:"), pageOptions);
     m_SubtractionLabel->setToolTip(i18n("Check this to use subtraction operator."));
@@ -210,7 +213,7 @@ MainQtWidget::MainQtWidget()
     m_SubtractionCheck = new QCheckBox(pageOptions);
     m_SubtractionCheck->setObjectName("SubtractionCheck");
     m_SubtractionCheck->setChecked(m_addSub);
-    QObject::connect(m_SubtractionCheck, SIGNAL(stateChanged(int)), this, SLOT(SubtractionCheckSlot()));
+    QObject::connect(m_SubtractionCheck, &QCheckBox::stateChanged, this, &MainQtWidget::SubtractionCheckSlot);
 
     m_MultiplicationLabel = new QLabel(i18n("Multiplication:"), pageOptions);
     m_MultiplicationLabel->setToolTip(i18n("Check this to use multiplication operator."));
@@ -220,7 +223,7 @@ MainQtWidget::MainQtWidget()
     m_MultiplicationCheck = new QCheckBox(pageOptions);
     m_MultiplicationCheck->setObjectName("MultiplicationCheck");
     m_MultiplicationCheck->setChecked(m_addMult);
-    QObject::connect(m_MultiplicationCheck, SIGNAL(stateChanged(int)), this, SLOT(MultiplicationCheckSlot()));
+    QObject::connect(m_MultiplicationCheck, &QCheckBox::stateChanged, this, &MainQtWidget::MultiplicationCheckSlot);
 
     m_DivisionLabel = new QLabel(i18n("Division:"), pageOptions);
     m_DivisionLabel->setToolTip(i18n("Check this to use division operator."));
@@ -230,7 +233,7 @@ MainQtWidget::MainQtWidget()
     m_DivisionCheck = new QCheckBox(pageOptions);
     m_DivisionCheck->setObjectName("DivisionCheck");
     m_DivisionCheck->setChecked(m_addDiv);
-    QObject::connect(m_DivisionCheck, SIGNAL(stateChanged(int)), this, SLOT(DivisionCheckSlot()));
+    QObject::connect(m_DivisionCheck, &QCheckBox::stateChanged, this, &MainQtWidget::DivisionCheckSlot);
 
     m_ReducedLabel = new QLabel(i18n("Reduced form:"), pageOptions);
     m_ReducedLabel->setToolTip(i18n("Check this to force the use of the reduced form."));
@@ -241,14 +244,14 @@ MainQtWidget::MainQtWidget()
     m_ReducedCheck->setObjectName("ReducedCheck");
     m_ReducedCheck->setChecked(m_reducedForm);
     m_taskview->setReducedForm(m_reducedForm);
-    QObject::connect(m_ReducedCheck, SIGNAL(stateChanged(int)), this, SLOT(ReducedFormCheckSlot()));
+    QObject::connect(m_ReducedCheck, &QCheckBox::stateChanged, this, &MainQtWidget::ReducedFormCheckSlot);
 
     m_NrOfTermsLabel = new QLabel(i18n("Number of terms:"), pageOptions);
     m_NrOfTermsLabel->setToolTip(i18n("The number of \nterms you want"));
     m_NrOfTermsLabel->setObjectName("NrOfTermsLabel");
     m_NrOfTermsLabel->setAlignment(Qt::AlignRight);
 
-    m_NrOfTermsBox = new KComboBox(pageOptions);
+    m_NrOfTermsBox = new QComboBox(pageOptions);
     m_NrOfTermsBox->addItem("2");
     m_NrOfTermsBox->addItem("3");
     m_NrOfTermsBox->addItem("4");
@@ -256,14 +259,14 @@ MainQtWidget::MainQtWidget()
     m_NrOfTermsBox->setCurrentIndex(m_nrRatios - 2);
     m_NrOfTermsBox->setToolTip(i18n("The number of \nterms you want"));
     m_NrOfTermsBox->setWhatsThis(i18n("Choose the number of terms (2, 3, 4 or 5) you \nwant for calculating fractions."));
-    QObject::connect(m_NrOfTermsBox, SIGNAL(activated(int)), this, SLOT(NrOfTermsBoxSlot()));
+    QObject::connect(m_NrOfTermsBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::activated), this, &MainQtWidget::NrOfTermsBoxSlot);
 
     m_MaxMainDenominatorLabel = new QLabel(i18n("Maximum denominator:"), pageOptions);
     m_MaxMainDenominatorLabel->setObjectName("MaxMainDenominatorLabel");
     m_MaxMainDenominatorLabel->setAlignment(Qt::AlignRight);
     m_MaxMainDenominatorLabel->setWordWrap(true);
 
-    m_MaxMainDenominatorBox = new KComboBox(pageOptions);
+    m_MaxMainDenominatorBox = new QComboBox(pageOptions);
     m_MaxMainDenominatorBox->addItem("10");
     m_MaxMainDenominatorBox->addItem("20");
     m_MaxMainDenominatorBox->addItem("30");
@@ -284,7 +287,7 @@ MainQtWidget::MainQtWidget()
         m_MaxMainDenominatorBox->setCurrentIndex(3);
         break;
     }
-    QObject::connect(m_MaxMainDenominatorBox, SIGNAL(activated(int)), this, SLOT(MaxMainDenominatorBoxSlot()));
+    QObject::connect(m_MaxMainDenominatorBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::activated), this, &MainQtWidget::MaxMainDenominatorBoxSlot);
 
 
     layoutExercises->addWidget(m_TitleLabel, 0, 0);
@@ -341,24 +344,24 @@ MainQtWidget::MainQtWidget()
 
     // connect signals of the exercises and StatisticView, so that StatisticView
     // gets informed about how the user solved a given task (wrong or correct)
-    QObject::connect(m_taskview, SIGNAL(signalTaskSolvedCorrect()), m_statview, SLOT(addCorrect()));
-    QObject::connect(m_taskview, SIGNAL(signalTaskSkipped()), m_statview, SLOT(addSkipped()));
-    QObject::connect(m_taskview, SIGNAL(signalTaskSolvedWrong()), m_statview, SLOT(addWrong()));
-    QObject::connect(m_exerciseCompare, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
-    QObject::connect(m_exerciseCompare, SIGNAL(signalExerciseSkipped()), m_statview, SLOT(addSkipped()));
-    QObject::connect(m_exerciseCompare, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
-    QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
-    QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSkipped()), m_statview, SLOT(addSkipped()));
-    QObject::connect(m_exerciseConvert, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
-    QObject::connect(m_exerciseMixedNumbers, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
-    QObject::connect(m_exerciseMixedNumbers, SIGNAL(signalExerciseSkipped()), m_statview, SLOT(addSkipped()));
-    QObject::connect(m_exerciseMixedNumbers, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
-    QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
-    QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSkipped()), m_statview, SLOT(addSkipped()));
-    QObject::connect(m_exerciseFactorize, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
-    QObject::connect(m_exercisePercentage, SIGNAL(signalExerciseSolvedCorrect()), m_statview, SLOT(addCorrect()));
-    QObject::connect(m_exercisePercentage, SIGNAL(signalExerciseSkipped()), m_statview, SLOT(addSkipped()));
-    QObject::connect(m_exercisePercentage, SIGNAL(signalExerciseSolvedWrong()), m_statview, SLOT(addWrong()));
+    QObject::connect(m_taskview, &TaskView::signalTaskSolvedCorrect, m_statview, &StatisticsView::addCorrect);
+    QObject::connect(m_taskview, &TaskView::signalTaskSkipped, m_statview, &StatisticsView::addSkipped);
+    QObject::connect(m_taskview, &TaskView::signalTaskSolvedWrong, m_statview, &StatisticsView::addWrong);
+    QObject::connect(m_exerciseCompare, &ExerciseCompare::signalExerciseSolvedCorrect, m_statview, &StatisticsView::addCorrect);
+    QObject::connect(m_exerciseCompare, &ExerciseCompare::signalExerciseSkipped, m_statview, &StatisticsView::addSkipped);
+    QObject::connect(m_exerciseCompare, &ExerciseCompare::signalExerciseSolvedWrong, m_statview, &StatisticsView::addWrong);
+    QObject::connect(m_exerciseConvert, &ExerciseConvert::signalExerciseSolvedCorrect, m_statview, &StatisticsView::addCorrect);
+    QObject::connect(m_exerciseConvert, &ExerciseConvert::signalExerciseSkipped, m_statview, &StatisticsView::addSkipped);
+    QObject::connect(m_exerciseConvert, &ExerciseConvert::signalExerciseSolvedWrong, m_statview, &StatisticsView::addWrong);
+    QObject::connect(m_exerciseMixedNumbers, &ExerciseMixedNumbers::signalExerciseSolvedCorrect, m_statview, &StatisticsView::addCorrect);
+    QObject::connect(m_exerciseMixedNumbers, &ExerciseMixedNumbers::signalExerciseSkipped, m_statview, &StatisticsView::addSkipped);
+    QObject::connect(m_exerciseMixedNumbers, &ExerciseMixedNumbers::signalExerciseSolvedWrong, m_statview, &StatisticsView::addWrong);
+    QObject::connect(m_exerciseFactorize, &ExerciseFactorize::signalExerciseSolvedCorrect, m_statview, &StatisticsView::addCorrect);
+    QObject::connect(m_exerciseFactorize, &ExerciseFactorize::signalExerciseSkipped, m_statview, &StatisticsView::addSkipped);
+    QObject::connect(m_exerciseFactorize, &ExerciseFactorize::signalExerciseSolvedWrong, m_statview, &StatisticsView::addWrong);
+    QObject::connect(m_exercisePercentage, &ExercisePercentage::signalExerciseSolvedCorrect, m_statview, &StatisticsView::addCorrect);
+    QObject::connect(m_exercisePercentage, &ExercisePercentage::signalExerciseSkipped, m_statview, &StatisticsView::addSkipped);
+    QObject::connect(m_exercisePercentage, &ExercisePercentage::signalExerciseSolvedWrong, m_statview, &StatisticsView::addWrong);
 
     // Get and set the page of last exercise
     selectedTask = (ExerciseType) SettingsClass::activeExercise();
@@ -391,7 +394,7 @@ MainQtWidget::~MainQtWidget()
 
 QFont MainQtWidget::DefaultFont()
 {
-    QFont defaultFont = KGlobalSettings::generalFont();
+    QFont defaultFont = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
     defaultFont.setPointSize(24);
     defaultFont.setBold(true);
     return defaultFont;
@@ -402,7 +405,7 @@ QFont MainQtWidget::DefaultFont()
 void MainQtWidget::readOptions()
 {
 #ifdef DEBUG
-    kDebug() << "readOptions MainQtWidget";
+    qDebug() << "readOptions MainQtWidget";
 #endif
 
     m_addSub = SettingsClass::addsub();
@@ -438,13 +441,13 @@ void MainQtWidget::writeOptions()
     SettingsClass::setReduceForm(m_reducedForm);
     SettingsClass::setAnswerMixed(m_answerMixed);
     SettingsClass::setQuestionMixed(m_questionMixed);
-    SettingsClass::self()->writeConfig();
+    SettingsClass::self()->save();
 }
 
 void MainQtWidget::setupActions()
 {
 #ifdef DEBUG
-    kDebug() << "setupActions MainQtWidget";
+    qDebug() << "setupActions MainQtWidget";
 #endif
 
     QString css =
@@ -454,32 +457,32 @@ void MainQtWidget::setupActions()
         "}"
         "QToolButton#ArithmeticButton {"
         "background-image: url(" +
-        KStandardDirs::locate("data", "kbruch/pics/exercise_arithmetics.png") +
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kbruch/pics/exercise_arithmetics.png") +
         ");"
         "}"
         "QToolButton#ComparisonButton {"
         "background-image: url(" +
-        KStandardDirs::locate("data", "kbruch/pics/exercise_compare.png") +
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kbruch/pics/exercise_compare.png") +
         ");"
         "}"
         "QToolButton#ConversionButton {"
         "background-image: url(" +
-        KStandardDirs::locate("data", "kbruch/pics/exercise_conversion.png") +
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kbruch/pics/exercise_conversion.png") +
         ");"
         "}"
         "QToolButton#MixedNumbersButton {"
         "background-image: url(" +
-        KStandardDirs::locate("data", "kbruch/pics/exercise_mixed.png") +
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kbruch/pics/exercise_mixed.png") +
         ");"
         "}"
         "QToolButton#Factorization {"
         "background-image: url(" +
-        KStandardDirs::locate("data", "kbruch/pics/exercise_factorization.png") +
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kbruch/pics/exercise_factorization.png") +
         ");"
         "}"
         "QToolButton#Percentage {"
         "background-image: url(" +
-        KStandardDirs::locate("data", "kbruch/pics/exercise_percentage.png") +
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kbruch/pics/exercise_percentage.png") +
         ");"
         "}";
 
@@ -488,14 +491,14 @@ void MainQtWidget::setupActions()
     m_NewTaskButton = new QToolButton(this);
     m_NewTaskButton->setObjectName("NewTaskButton");
     m_NewTaskButton->setText(i18n("New"));
-    m_NewTaskButton->setIcon(KIcon("document-new"));
+    m_NewTaskButton->setIcon(QIcon::fromTheme("document-new"));
     m_NewTaskButton->setToolTip(i18n("Reset statistics and set a new task."));
     m_NewTaskButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
     m_BackTaskButton = new QToolButton(this);
     m_BackTaskButton->setObjectName("BackTaskButton");
     m_BackTaskButton->setText(i18n("Back"));
-    m_BackTaskButton->setIcon(KIcon("go-previous"));
+    m_BackTaskButton->setIcon(QIcon::fromTheme("go-previous"));
     m_BackTaskButton->setToolTip(i18n("Go back to Modes screen."));
     m_BackTaskButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
@@ -536,63 +539,74 @@ void MainQtWidget::setupActions()
     m_PercentageButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
 
-    m_NewTaskActionMenu  = new KAction(KIcon("document-new"), i18nc("@action opens a new question", "&New"), this);
+    m_NewTaskActionMenu  = new QWidgetAction(this);
+    m_NewTaskActionMenu->setText(i18nc("@action opens a new question", "&New"));
+    m_NewTaskActionMenu->setIcon(QIcon::fromTheme("document-new"));
     actionCollection()->addAction("NewTaskMenu", m_NewTaskActionMenu);
-    connect(m_NewTaskActionMenu, SIGNAL(triggered(bool)), SLOT(newTask()));
-    m_NewTaskActionMenu->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));
+    actionCollection()->setDefaultShortcuts(m_NewTaskActionMenu, KStandardShortcut::shortcut(KStandardShortcut::New));
+    connect(m_NewTaskActionMenu, &QAction::triggered, this, &MainQtWidget::newTask);
 
-    m_NewTaskActionTool  = new KAction(i18nc("@action opens a new question", "New"), this);
-    actionCollection()->addAction("NewTaskTool", m_NewTaskActionTool);
-    connect(m_NewTaskButton, SIGNAL(clicked()), SLOT(newTask()));
+    m_NewTaskActionTool  = new QWidgetAction(this);
+    m_NewTaskActionTool->setText(i18nc("@action opens a new question", "New"));
     m_NewTaskActionTool->setDefaultWidget(m_NewTaskButton);
+    actionCollection()->addAction("NewTaskTool", m_NewTaskActionTool);
+    connect(m_NewTaskButton, &QToolButton::clicked, this, &MainQtWidget::newTask);
 
-    m_BackActionMenu  = new KAction(KIcon("go-previous"), i18nc("@action go to the main screen", "&Back"), this);
+    m_BackActionMenu  = new QWidgetAction(this);
+    m_BackActionMenu->setText(i18nc("@action go to the main screen", "&Back"));
+    m_BackActionMenu->setIcon(QIcon::fromTheme("go-previous"));
     actionCollection()->addAction("BackMenu", m_BackActionMenu);
-    connect(m_BackActionMenu, SIGNAL(triggered(bool)), SLOT(goBack()));
-    m_BackActionMenu->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::Back));
+    actionCollection()->setDefaultShortcuts(m_BackActionMenu, KStandardShortcut::shortcut(KStandardShortcut::Back));
+    connect(m_BackActionMenu, &QAction::triggered, this, &MainQtWidget::goBack);
 
-    m_BackActionTool  = new KAction(i18nc("@action go to the main screen", "Back"), this);
-    actionCollection()->addAction("BackTool", m_BackActionTool);
-    connect(m_BackTaskButton, SIGNAL(clicked()), SLOT(goBack()));
+    m_BackActionTool  = new QWidgetAction(this);
+    m_BackActionTool->setText(i18nc("@action go to the main screen", "Back"));
     m_BackActionTool->setDefaultWidget(m_BackTaskButton);
+    actionCollection()->addAction("BackTool", m_BackActionTool);
+    connect(m_BackTaskButton, &QToolButton::clicked, this, &MainQtWidget::goBack);
 
-    m_ArithmeticAction  = new KAction(i18nc("Arithmetic Exercise", "Arithmetic"), this);
-    actionCollection()->addAction("Arithmetic", m_ArithmeticAction);
-    connect(m_ArithmeticButton, SIGNAL(clicked()), SLOT(SelectArithmetic()));
+    m_ArithmeticAction  = new QWidgetAction(this);
+    m_ArithmeticAction->setText(i18nc("Arithmetic Exercise", "Arithmetic"));
     m_ArithmeticAction->setDefaultWidget(m_ArithmeticButton);
+    actionCollection()->addAction("Arithmetic", m_ArithmeticAction);
+    connect(m_ArithmeticButton, &QToolButton::clicked, this, &MainQtWidget::SelectArithmetic);
 
-    m_ComparisonAction  = new KAction(i18nc("Comparison Exercise", "Comparison"), this);
-    actionCollection()->addAction("Comparison", m_ComparisonAction);
-    connect(m_ComparisonButton, SIGNAL(clicked()), SLOT(SelectComparison()));
+    m_ComparisonAction  = new QWidgetAction(this);
+    m_ComparisonAction->setText(i18nc("Comparison Exercise", "Comparison"));
     m_ComparisonAction->setDefaultWidget(m_ComparisonButton);
+    actionCollection()->addAction("Comparison", m_ComparisonAction);
+    connect(m_ComparisonButton, &QToolButton::clicked, this, &MainQtWidget::SelectComparison);
 
-    m_ConversionAction  = new KAction(i18nc("Conversion Exercise", "Conversion"), this);
-    actionCollection()->addAction("Conversion", m_ConversionAction);
-    connect(m_ConversionButton, SIGNAL(clicked()), SLOT(SelectConversion()));
+    m_ConversionAction  = new QWidgetAction(this);
+    m_ConversionAction->setText(i18nc("Conversion Exercise", "Conversion"));
     m_ConversionAction->setDefaultWidget(m_ConversionButton);
+    actionCollection()->addAction("Conversion", m_ConversionAction);
+    connect(m_ConversionButton, &QToolButton::clicked, this, &MainQtWidget::SelectConversion);
 
-    m_MixedNumbersAction  = new KAction(i18nc("Mixed Numbers Exercise", "MixedNumbers"), this);
-    actionCollection()->addAction("MixedNumbers", m_MixedNumbersAction);
-    connect(m_MixedNumbersButton, SIGNAL(clicked()), SLOT(SelectMixedNumbers()));
+    m_MixedNumbersAction  = new QWidgetAction(this);
+    m_MixedNumbersAction->setText(i18nc("Mixed Numbers Exercise", "MixedNumbers"));
     m_MixedNumbersAction->setDefaultWidget(m_MixedNumbersButton);
+    actionCollection()->addAction("MixedNumbers", m_MixedNumbersAction);
+    connect(m_MixedNumbersButton, &QToolButton::clicked, this, &MainQtWidget::SelectMixedNumbers);
 
-    m_FactorizationAction  = new KAction(i18nc("Factorization Exercise", "Factorization"), this);
-    actionCollection()->addAction("Factorization", m_FactorizationAction);
-    connect(m_FactorizationButton, SIGNAL(clicked()), SLOT(SelectFactorization()));
+    m_FactorizationAction  = new QWidgetAction(this);
+    m_MixedNumbersAction->setText(i18nc("Factorization Exercise", "Factorization"));
     m_FactorizationAction->setDefaultWidget(m_FactorizationButton);
+    actionCollection()->addAction("Factorization", m_FactorizationAction);
+    connect(m_FactorizationButton, &QToolButton::clicked, this, &MainQtWidget::SelectFactorization);
 
-    m_PercentageAction  = new KAction(i18nc("Percentage Exercise", "Percentage"), this);
-    actionCollection()->addAction("Percentage", m_PercentageAction);
-    connect(m_PercentageButton, SIGNAL(clicked()), SLOT(SelectPercentage()));
+    m_PercentageAction  = new QWidgetAction(this);
+    m_PercentageAction->setText(i18nc("Percentage Exercise", "Percentage"));
     m_PercentageAction->setDefaultWidget(m_PercentageButton);
+    actionCollection()->addAction("Percentage", m_PercentageAction);
+    connect(m_PercentageButton, &QToolButton::clicked, this, &MainQtWidget::SelectPercentage);
 
     // quit action
-    KStandardAction::quit(kapp, SLOT(quit()), actionCollection());
+    KStandardAction::quit(this, SLOT(close()), actionCollection());
 
     KStandardAction::preferences(this,  SLOT(slotPrefs()), actionCollection());
 
-    if (!initialGeometrySet())
-        resize(QSize(742, 520).expandedTo(minimumSizeHint()));
+    resize(QSize(742, 520).expandedTo(minimumSizeHint()));
 
     setupGUI(ToolBar | Keys | Create);
     setAutoSaveSettings();
@@ -604,7 +618,7 @@ void MainQtWidget::setupActions()
 void MainQtWidget::newTask()
 {
 #ifdef DEBUG
-    kDebug() << "NewTask MainQtWidget";
+    qDebug() << "NewTask MainQtWidget";
 #endif
     // check which page should generate a new task
     switch (selectedTask) {
@@ -634,7 +648,7 @@ void MainQtWidget::newTask()
 void MainQtWidget::NrOfTermsBoxSlot()
 {
 #ifdef DEBUG
-    kDebug() << "MainQtWidget::NrOfTermsBoxSlot()";
+    qDebug() << "MainQtWidget::NrOfTermsBoxSlot()";
 #endif
     int currentMaxDenom = m_MaxMainDenominatorBox->currentText().toInt();
     QString curr_nr = m_NrOfTermsBox->currentText();
@@ -679,7 +693,7 @@ void MainQtWidget::NrOfTermsBoxSlot()
 void MainQtWidget::MaxMainDenominatorBoxSlot()
 {
 #ifdef DEBUG
-    kDebug() << "MainQtWidget::MaxMainDenominatorBoxSlot()";
+    qDebug() << "MainQtWidget::MaxMainDenominatorBoxSlot()";
 #endif
     // get the max. size from the ComboBox, convert it to a number and store
     // it in the private member
@@ -693,7 +707,7 @@ void MainQtWidget::MaxMainDenominatorBoxSlot()
 void MainQtWidget::AnswerMixedCheckSlot()
 {
 #ifdef DEBUG
-    kDebug() << "MainQtWidget::AnswerMixedCheckSlot()";
+    qDebug() << "MainQtWidget::AnswerMixedCheckSlot()";
 #endif
     m_answerMixed = m_AnswerMixedCheck->isChecked();
     m_taskview->setAnswerMixed(m_answerMixed);
@@ -702,7 +716,7 @@ void MainQtWidget::AnswerMixedCheckSlot()
 void MainQtWidget::QuestionMixedCheckSlot()
 {
 #ifdef DEBUG
-    kDebug() << "MainQtWidget::QuestionMixedCheckSlot()";
+    qDebug() << "MainQtWidget::QuestionMixedCheckSlot()";
 #endif
     m_questionMixed = m_QuestionMixedCheck->isChecked();
     if (selectedTask == Arithmetic)
@@ -714,7 +728,7 @@ void MainQtWidget::QuestionMixedCheckSlot()
 void MainQtWidget::ReducedFormCheckSlot()
 {
 #ifdef DEBUG
-    kDebug() << "MainQtWidget::ChkReducedFormSlot()";
+    qDebug() << "MainQtWidget::ChkReducedFormSlot()";
 #endif
     m_reducedForm = m_ReducedCheck->isChecked();
     m_taskview->setReducedForm(m_reducedForm);
@@ -723,7 +737,7 @@ void MainQtWidget::ReducedFormCheckSlot()
 void MainQtWidget::AdditionCheckSlot()
 {
 #ifdef DEBUG
-    kDebug() << "MainQtWidget::AdditionCheckSlot()";
+    qDebug() << "MainQtWidget::AdditionCheckSlot()";
 #endif
     if (OperationsCheck() == true) {
         if (m_AdditionCheck->checkState() == Qt::Checked)
@@ -740,7 +754,7 @@ void MainQtWidget::AdditionCheckSlot()
 void MainQtWidget::SubtractionCheckSlot()
 {
 #ifdef DEBUG
-    kDebug() << "MainQtWidget::SubtractionCheckSlot()";
+    qDebug() << "MainQtWidget::SubtractionCheckSlot()";
 #endif
     if (OperationsCheck() == true) {
         if (m_SubtractionCheck->checkState() == Qt::Checked)
@@ -757,7 +771,7 @@ void MainQtWidget::SubtractionCheckSlot()
 void MainQtWidget::MultiplicationCheckSlot()
 {
 #ifdef DEBUG
-    kDebug() << "MainQtWidget::MultiplicationCheckSlot()";
+    qDebug() << "MainQtWidget::MultiplicationCheckSlot()";
 #endif
     if (OperationsCheck() == true) {
         if (m_MultiplicationCheck->checkState() == Qt::Checked)
@@ -774,7 +788,7 @@ void MainQtWidget::MultiplicationCheckSlot()
 void MainQtWidget::DivisionCheckSlot()
 {
 #ifdef DEBUG
-    kDebug() << "MainQtWidget::DivisionCheckSlot()";
+    qDebug() << "MainQtWidget::DivisionCheckSlot()";
 #endif
     if (OperationsCheck() == true) {
         if (m_DivisionCheck->checkState() == Qt::Checked)
@@ -791,7 +805,7 @@ void MainQtWidget::DivisionCheckSlot()
 void MainQtWidget::slotPrefs()
 {
 #ifdef DEBUG
-    kDebug() << "slotPrefs MainQtWidget";
+    qDebug() << "slotPrefs MainQtWidget";
 #endif
     // do not show dialog twice
     if (KConfigDialog::showDialog("settings"))
@@ -807,7 +821,7 @@ void MainQtWidget::slotPrefs()
     configDialog->addPage(taskFonts, i18n("Fonts"), "preferences-desktop-font");
     // User edited the configuration - update your local copies of the
     // configuration data
-    connect(configDialog, SIGNAL(settingsChanged(QString)), this, SLOT(slotApplySettings()));
+    connect(configDialog, &KConfigDialog::settingsChanged, this, &MainQtWidget::slotApplySettings);
     configDialog->show();
 
     return;
@@ -816,7 +830,7 @@ void MainQtWidget::slotPrefs()
 void MainQtWidget::slotApplySettings()
 {
 #ifdef DEBUG
-    kDebug() << "slotApplySettings MainQtWidget";
+    qDebug() << "slotApplySettings MainQtWidget";
 #endif
     // update the task view
     m_taskview->update();
@@ -830,7 +844,7 @@ void MainQtWidget::slotApplySettings()
 void MainQtWidget::slotAboutToShowPage()
 {
 #ifdef DEBUG
-    kDebug() << "slotAboutToShowPage MainQtWidget";
+    qDebug() << "slotAboutToShowPage MainQtWidget";
 #endif
     // check which page to show
 
@@ -884,7 +898,7 @@ void MainQtWidget::closeEvent(QCloseEvent *event)
 void MainQtWidget::SelectPercentage()
 {
 #ifdef DEBUG
-    kDebug() << "SelectPercentage MainQtWidget";
+    qDebug() << "SelectPercentage MainQtWidget";
 #endif
     m_TitleLabel->setText(i18n("Percentage"));
     selectedTask = Percentage;
@@ -900,7 +914,7 @@ void MainQtWidget::SelectPercentage()
 void MainQtWidget::SelectArithmetic()
 {
 #ifdef DEBUG
-    kDebug() << "SelectArithmetic MainQtWidget";
+    qDebug() << "SelectArithmetic MainQtWidget";
 #endif
     m_TitleLabel->setText(i18n("Arithmetic"));
     selectedTask = Arithmetic;
@@ -916,7 +930,7 @@ void MainQtWidget::SelectArithmetic()
 void MainQtWidget::SelectComparison()
 {
 #ifdef DEBUG
-    kDebug() << "SelectComparison MainQtWidget";
+    qDebug() << "SelectComparison MainQtWidget";
 #endif
     m_TitleLabel->setText(i18n("Comparison"));
     selectedTask = Comparison;
@@ -932,7 +946,7 @@ void MainQtWidget::SelectComparison()
 void MainQtWidget::SelectConversion()
 {
 #ifdef DEBUG
-    kDebug() << "SelectConversion MainQtWidget";
+    qDebug() << "SelectConversion MainQtWidget";
 #endif
     m_TitleLabel->setText(i18n("Conversion"));
     selectedTask = Conversion;
@@ -948,7 +962,7 @@ void MainQtWidget::SelectConversion()
 void MainQtWidget::SelectMixedNumbers()
 {
 #ifdef DEBUG
-    kDebug() << "SelectMixedNumbers MainQtWidget";
+    qDebug() << "SelectMixedNumbers MainQtWidget";
 #endif
     m_TitleLabel->setText(i18n("Mixed Numbers"));
     selectedTask = MixedNumbers;
@@ -964,7 +978,7 @@ void MainQtWidget::SelectMixedNumbers()
 void MainQtWidget::SelectFactorization()
 {
 #ifdef DEBUG
-    kDebug() << "SelectFactorization MainQtWidget";
+    qDebug() << "SelectFactorization MainQtWidget";
 #endif
     m_TitleLabel->setText(i18n("Factorization"));
     selectedTask = Factorization;
@@ -980,7 +994,7 @@ void MainQtWidget::SelectFactorization()
 bool MainQtWidget::OperationsCheck()
 {
 #ifdef DEBUG
-    kDebug() << "MainQtWidget::OperationsCheck()";
+    qDebug() << "MainQtWidget::OperationsCheck()";
 #endif
 
     if (m_AdditionCheck->checkState() == Qt::Unchecked &&
@@ -998,5 +1012,3 @@ void MainQtWidget::goBack()
     kbruchApp->show();
     close();
 }
-
-#include "MainQtWidget.moc"

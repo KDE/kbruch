@@ -21,21 +21,13 @@
 #ifndef FRACTIONPAINTER_H
 #define FRACTIONPAINTER_H
 
-#define DEBUG
-
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
-
 #include "Ratio.h"
 #include "RatioWidget.h"
 
-#include <qwidget.h>
-//Added by qt3to4:
-#include <QPaintEvent>
-#include <QPainter>
+#include <QWidget>
 
 class QPainter;
+class QPaintEvent;
 
 /*! Constructs a QWidget bla bla bla
  *  \author Danilo Balzaque

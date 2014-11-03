@@ -21,17 +21,13 @@
 #ifndef EXERCISEMIXEDNUMBERS_H
 #define EXERCISEMIXEDNUMBERS_H
 
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
-
 #include "ExerciseBase.h"
 #include "ResultWidget.h"
 #include "Task.h"
 #include "TaskWidget.h"
 
 
-class KLineEdit;
+class QLineEdit;
 class QFrame;
 class QGridLayout;
 class QPushButton;
@@ -79,10 +75,10 @@ private:
     Task m_task;
 
     // components to enter result
-    KLineEdit * m_integerEdit;
-    KLineEdit * m_numerEdit;
+    QLineEdit * m_integerEdit;
+    QLineEdit * m_numerEdit;
     QFrame * m_editLine;
-    KLineEdit * m_denoEdit;
+    QLineEdit * m_denoEdit;
 
     // check and skip buttons
     QPushButton * m_checkButton;
@@ -122,13 +118,13 @@ private slots:
     void slotSkipButtonClicked();
 
     /** focus set to numerator edit if return pressed in integer edit */
-    void integerReturnPressed(const QString &);
+    void integerReturnPressed();
 
     /** focus set to denominator edit if return pressed in numerator edit */
-    void numerReturnPressed(const QString &);
+    void numerReturnPressed();
 
     /** invokes check button if return pressed in denominator edit */
-    void denoReturnPressed(const QString &);
+    void denoReturnPressed();
 };
 
 #endif // EXERCISEMIXEDNUMBERS_H

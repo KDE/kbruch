@@ -29,16 +29,8 @@
 #include "Task.h"
 #include "TaskWidget.h"
 
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
-
-#include <qwidget.h>
-//Added by qt3to4:
 #include <QLabel>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QGridLayout>
+#include <QWidget>
 
 
 class QVBoxLayout;
@@ -47,7 +39,7 @@ class QGridLayout;
 class QLabel;
 class QPushButton;
 
-class KLineEdit;
+class QLineEdit;
 
 /*! Constructs a QWidget, which shows the task to the user.
  *  The class also provides input fields, so that the user can enter the result.
@@ -113,10 +105,10 @@ private:
     QPushButton* m_skipButton;
 
     TaskWidget* m_taskWidget;
-    KLineEdit* numer_edit;
+    QLineEdit* numer_edit;
     QFrame* edit_line;
-    KLineEdit* deno_edit;
-    KLineEdit* integer_edit;
+    QLineEdit* deno_edit;
+    QLineEdit* integer_edit;
 
     QGridLayout* checkLayout;
     QGridLayout* taskLayout;
@@ -136,9 +128,9 @@ private:
 private slots:
     void slotCheckButtonClicked();
     void slotSkipButtonClicked();
-    void numeratorReturnPressed(const QString &);
-    void integerReturnPressed(const QString &);
-    void denominatorReturnPressed(const QString &);
+    void numeratorReturnPressed();
+    void integerReturnPressed();
+    void denominatorReturnPressed();
 
 protected:
     void showEvent(QShowEvent * event);

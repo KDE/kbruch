@@ -18,7 +18,7 @@
 #ifndef PRIMENUMBER_H
 #define PRIMENUMBER_H
 
-#include <qvector.h>
+#include <QVector>
 
 typedef QVector<uint> UnsignedIntArray;
 

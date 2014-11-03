@@ -19,30 +19,31 @@
  ***************************************************************************/
 
 #include "TaskWidget.h"
-#include "TaskWidget.moc"
 
 /* these includes are needed for KDE support */
-#include <klocale.h>
-#include <kdebug.h>
+#include <KLocalizedString>
 
 /* these includes are needed for Qt support */
-#include <qpainter.h>
-//Added by qt3to4:
+#include <QPainter>
 #include <QPaintEvent>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 TaskWidget::TaskWidget(QWidget * parent,
                        const Task para_task) :
     FractionBaseWidget(parent), m_task(para_task)
 {
 #ifdef DEBUG
-    kDebug() << "constructor TaskWidget";
+    qDebug() << "constructor TaskWidget";
 #endif
 }
 
 TaskWidget::~TaskWidget()
 {
 #ifdef DEBUG
-    kDebug() << "destructor TaskWidget";
+    qDebug() << "destructor TaskWidget";
 #endif
 }
 

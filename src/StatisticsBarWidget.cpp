@@ -18,17 +18,16 @@
  ***************************************************************************/
 
 #include "StatisticsBarWidget.h"
-#include "StatisticsBarWidget.moc"
-
-/* these includes are needed for KDE support */
-#include <klocale.h>
 
 /* these includes are needed for Qt support */
-#include <qapplication.h>
-#include <QProgressBar>
+#include <QApplication>
+#include <QGridLayout>
 #include <QLabel>
+#include <QProgressBar>
 
-//Added by qt3to4:
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 #include "settingsclass.h"
 
@@ -37,7 +36,7 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent) :
     QWidget(parent)
 {
 #ifdef DEBUG
-    kDebug() << "constructor StatisticsBarWidget()";
+    qDebug() << "constructor StatisticsBarWidget()";
 #endif
     m_correct = 0;
     m_skipped = 0;
@@ -102,14 +101,14 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent) :
 StatisticsBarWidget::~StatisticsBarWidget()
 {
 #ifdef DEBUG
-    kDebug() << "destructor StatisticsBarWidget()";
+    qDebug() << "destructor StatisticsBarWidget()";
 #endif
 }
 
 void StatisticsBarWidget::updateBar(int correct, int skipped, int total)
 {
 #ifdef DEBUG
-    kDebug() << "StatisticsBarWidget::updateBar()";
+    qDebug() << "StatisticsBarWidget::updateBar()";
 #endif
     m_correct = correct;
     m_skipped = skipped;

@@ -19,19 +19,22 @@
 */
 
 #include "ExerciseMixedNumbers.h"
-#include "ExerciseMixedNumbers.moc"
 
 /* these includes are needed for KDE support */
-#include <klineedit.h>
-#include <klocale.h>
-#include <kmessagebox.h>
-#include <knumvalidator.h>
+#include <QLineEdit>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 /* these includes are needed for Qt support */
 #include <QApplication>
 #include <QGridLayout>
+#include <QIntValidator>
 #include <QPushButton>
 #include <QWidget>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 /* KBruch includes */
 #include "settingsclass.h"
@@ -42,7 +45,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     ExerciseBase(parent)
 {
 #ifdef DEBUG
-    kDebug() << "constructor ExerciseMixedNumbers()";
+    qDebug() << "constructor ExerciseMixedNumbers()";
 #endif
 
     // define initial state
@@ -89,7 +92,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     m_taskLayout->addWidget(m_taskWidget, 1, 1, 3, 1);
 
     // int input validator
-    KIntValidator * intValidator = new KIntValidator(this);
+    QIntValidator * intValidator = new QIntValidator(this);
 
     // default font
     QFont defaultFont = SettingsClass::taskFont();
@@ -99,30 +102,28 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     // input fields for solution
     //
     // integer input
-    m_integerEdit = new KLineEdit(m_tmpTaskWidget);
+    m_integerEdit = new QLineEdit(m_tmpTaskWidget);
     m_integerEdit->setObjectName("m_integerEdit");
     m_integerEdit->setValidator(intValidator);
     m_integerEdit->setToolTip(i18n("Enter the integer part of the fraction"));
     m_integerEdit->setFont(defaultFont);
     m_integerEdit->setFixedSize(85, 42);
     m_integerEdit->setAlignment(Qt::AlignHCenter);
-    QObject::connect(m_integerEdit, SIGNAL(returnPressed(QString)),
-                     this, SLOT(integerReturnPressed(QString)));
+    QObject::connect(m_integerEdit, &QLineEdit::returnPressed, this, &ExerciseMixedNumbers::integerReturnPressed);
     m_taskLayout->addWidget(m_integerEdit, 1, 3, 3, 1, Qt::AlignVCenter |
                             Qt::AlignRight);
     m_integerEdit->setEnabled(false);
     m_integerEdit->hide();
 
     // numerator input
-    m_numerEdit = new KLineEdit(m_tmpTaskWidget);
+    m_numerEdit = new QLineEdit(m_tmpTaskWidget);
     m_numerEdit->setObjectName("m_numerEdit");
     m_numerEdit->setValidator(intValidator);
     m_numerEdit->setToolTip(i18n("Enter the numerator of the fraction"));
     m_numerEdit->setFont(defaultFont);
     m_numerEdit->setFixedSize(85, 42);
     m_numerEdit->setAlignment(Qt::AlignHCenter);
-    QObject::connect(m_numerEdit, SIGNAL(returnPressed(QString)),
-                     this, SLOT(numerReturnPressed(QString)));
+    QObject::connect(m_numerEdit, &QLineEdit::returnPressed, this, &ExerciseMixedNumbers::numerReturnPressed);
     m_taskLayout->addWidget(m_numerEdit, 1, 4);
 
     // add a line between the input boxes
@@ -132,15 +133,14 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     m_taskLayout->addWidget(m_editLine, 2, 4);
 
     // denominator input
-    m_denoEdit = new KLineEdit(m_tmpTaskWidget);
+    m_denoEdit = new QLineEdit(m_tmpTaskWidget);
     m_denoEdit->setObjectName("m_numerEdit");
     m_denoEdit->setValidator(intValidator);
     m_denoEdit->setToolTip(i18n("Enter the denominator of the fraction"));
     m_denoEdit->setFont(defaultFont);
     m_denoEdit->setFixedSize(85, 42);
     m_denoEdit->setAlignment(Qt::AlignHCenter);
-    QObject::connect(m_denoEdit, SIGNAL(returnPressed(QString)),
-                     this, SLOT(denoReturnPressed(QString)));
+    QObject::connect(m_denoEdit, &QLineEdit::returnPressed, this, &ExerciseMixedNumbers::denoReturnPressed);
     m_taskLayout->addWidget(m_denoEdit, 3, 4);
 
 
@@ -161,7 +161,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     m_checkButton->setDefault(true);    // is the default button of the dialog
     m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
     m_checkButton->setFont(defaultFont);
-    QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
+    QObject::connect(m_checkButton, &QPushButton::clicked, this, &ExerciseMixedNumbers::slotCheckButtonClicked);
     m_checkLayout->addWidget(m_checkButton, 1, 0);
 
     // skip button
@@ -170,7 +170,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     m_skipButton->setText(i18n("&Skip"));
     m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
     m_skipButton->setFont(defaultFont);
-    QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
+    QObject::connect(m_skipButton, &QPushButton::clicked, this, &ExerciseMixedNumbers::slotSkipButtonClicked);
     m_checkLayout->addWidget(m_skipButton, 1, 1);
 
     // add tooltip and qwhatsthis help to the exercise widget
@@ -182,7 +182,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
 ExerciseMixedNumbers::~ExerciseMixedNumbers()
 {
 #ifdef DEBUG
-    kDebug() << "destructor ExerciseMixedNumbers()";
+    qDebug() << "destructor ExerciseMixedNumbers()";
 #endif
 }
 
@@ -190,7 +190,7 @@ ExerciseMixedNumbers::~ExerciseMixedNumbers()
 void ExerciseMixedNumbers::forceNewTask()
 {
 #ifdef DEBUG
-    kDebug() << "forceNewTask ExerciseMixedNumbers()";
+    qDebug() << "forceNewTask ExerciseMixedNumbers()";
 #endif
 
     if (m_currentState == _CHECK_TASK) {
@@ -398,19 +398,19 @@ void ExerciseMixedNumbers::slotSkipButtonClicked()
 }
 
 /* handle integer edit */
-void ExerciseMixedNumbers::integerReturnPressed(const QString &)
+void ExerciseMixedNumbers::integerReturnPressed()
 {
     m_numerEdit->setFocus();
 }
 
 /* handle numerator edit */
-void ExerciseMixedNumbers::numerReturnPressed(const QString &)
+void ExerciseMixedNumbers::numerReturnPressed()
 {
     m_denoEdit->setFocus();
 }
 
 /* handle denominator edit */
-void ExerciseMixedNumbers::denoReturnPressed(const QString &)
+void ExerciseMixedNumbers::denoReturnPressed()
 {
     slotCheckButtonClicked();
 }

@@ -16,26 +16,26 @@
  ***************************************************************************/
 
 #include "ExercisePercentage.h"
-#include "ExercisePercentage.moc"
 
 /* these includes are needed for KDE support */
-#include <kglobal.h>
-#include <klineedit.h>
-#include <klocale.h>
-#include <kmessagebox.h>
-#include <knumvalidator.h>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 /* these includes are needed for Qt support */
 #include <QApplication>
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qpushbutton.h>
-
-//Added by qt3to4:
 #include <QGridLayout>
+#include <QIntValidator>
+#include <QLabel>
+#include <QLayout>
+#include <QLineEdit>
+#include <QPushButton>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 /* standard C++ library includes */
-#include <stdlib.h>
+#include <cstdlib>
 
 #include "RationalWidget.h"
 #include "ResultWidget.h"
@@ -48,7 +48,7 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
     ExerciseBase(parent)
 {
 #ifdef DEBUG
-    kDebug() << "constructor ExercisePercentage()";
+    qDebug() << "constructor ExercisePercentage()";
 #endif
 
     /* create a new task */
@@ -57,7 +57,7 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
     QApplication::restoreOverrideCursor(); /* show the normal cursor */
 
     // to validate, that the input is an int
-    KIntValidator *valnum = new KIntValidator(this);
+    QIntValidator *valnum = new QIntValidator(this);
 
     QFont defaultFont = SettingsClass::taskFont();
     defaultFont.setBold(true);
@@ -98,15 +98,14 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
     taskLayout->addWidget(m_taskLabel, 1, 1, 2, 1);
 
     /* Input question: result of question */
-    answer_edit = new KLineEdit(taskWidget);
+    answer_edit = new QLineEdit(taskWidget);
     answer_edit->setObjectName("answer_edit");
     answer_edit->setValidator(valnum);   // use the int validator
     answer_edit->setToolTip(i18n("Enter the result of percentage question"));
     answer_edit->setFixedSize(85, 42);
     answer_edit->setAlignment(Qt::AlignHCenter);
     answer_edit->setFont(defaultFont);
-    QObject::connect(answer_edit, SIGNAL(returnPressed(QString)), this,
-                     SLOT(answerReturnPressed(QString)));
+    QObject::connect(answer_edit, &QLineEdit::returnPressed, this, &ExercisePercentage::answerReturnPressed);
     taskLayout->addWidget(answer_edit, 1, 2, 2, 1);
 
     // next is the result widget
@@ -122,7 +121,7 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
     m_checkButton->setDefault(true);  // is the default button of the dialog
     m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
     m_checkButton->setFont(defaultFont);
-    QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
+    QObject::connect(m_checkButton, &QPushButton::clicked, this, &ExercisePercentage::slotCheckButtonClicked);
     checkLayout->addWidget(m_checkButton, 2, 0);
 
     // the right aligned button
@@ -131,7 +130,7 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
     m_skipButton->setText(i18n("&Skip"));
     m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
     m_skipButton->setFont(defaultFont);
-    QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
+    QObject::connect(m_skipButton, &QPushButton::clicked, this, &ExercisePercentage::slotSkipButtonClicked);
     checkLayout->addWidget(m_skipButton, 2, 1);
 
     // that the user can start typing without moving the focus
@@ -152,7 +151,7 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
 ExercisePercentage::~ExercisePercentage()
 {
 #ifdef DEBUG
-    kDebug() << "destructor ExercisePercentage()";
+    qDebug() << "destructor ExercisePercentage()";
 #endif
 
     /* no need to delete any child widgets, Qt does it by itself */
@@ -164,7 +163,7 @@ ExercisePercentage::~ExercisePercentage()
 void ExercisePercentage::forceNewTask()
 {
 #ifdef DEBUG
-    kDebug() << "forceNewTask ExercisePercentage()";
+    qDebug() << "forceNewTask ExercisePercentage()";
 #endif
 
     if (m_currentState == _CHECK_TASK) {
@@ -198,118 +197,118 @@ void ExercisePercentage::createTask()
 {
     // the tasks are hardcoded here; there are some algorithms to convert
     // rational numbers to fractions, but it is not worth the effort here
-    switch (int ((double(rand()) / RAND_MAX) * 18 + 1)) {
+    switch (int ((double(rand()) / RAND_MAX) * 19)) {
     case  0 :
-        //m_number = KGlobal::locale()->formatNumber(0.5, 1);
+        //m_number = QLocale().toString(0.5, 'f', 1);
         m_numberPercentage = "75";
         m_numberPercentageOf = "1900";
         m_resultPercentage = "1425" ;
         break;
     case  1 :
-        //m_number = KGlobal::locale()->formatNumber(0.3, 1);
+        //m_number = QLocale().toString(0.3, 'f', 1);
         m_numberPercentage = "50";
         m_numberPercentageOf = "1800";
         m_resultPercentage = "900" ;
         break;
     case  2 :
-        //m_number = KGlobal::locale()->formatNumber(0.6, 1);
+        //m_number = QLocale().toString(0.6, 'f', 1);
         m_numberPercentage = '1';
         m_numberPercentageOf = "1200";
         m_resultPercentage = "12" ;
         break;
     case  3 :
-        //m_number = KGlobal::locale()->formatNumber(0.25, 2);
+        //m_number = QLocale().toString(0.25, 'f', 2);
         m_numberPercentage = "10";
         m_numberPercentageOf = "900";
         m_resultPercentage = "90" ;
         break;
     case  4 :
-        //m_number = KGlobal::locale()->formatNumber(0.75, 2);
+        //m_number = QLocale().toString(0.75, 'f', 2);
         m_numberPercentage = "100";
         m_numberPercentageOf = "800";
         m_resultPercentage = "800" ;
         break;
     case  5 :
-        //m_number = KGlobal::locale()->formatNumber(0.2, 1);
+        //m_number = QLocale().toString(0.2, 'f', 1);
         m_numberPercentage = "75";
         m_numberPercentageOf = "300";
         m_resultPercentage = "225" ;
         break;
     case  6 :
-        //m_number = KGlobal::locale()->formatNumber(0.4, 1);
+        //m_number = QLocale().toString(0.4, 'f', 1);
         m_numberPercentage = "10";
         m_numberPercentageOf = "1500";
         m_resultPercentage = "150" ;
         break;
     case  7 :
-        //m_number = KGlobal::locale()->formatNumber(0.6, 1);
+        //m_number = QLocale().toString(0.6, 'f', 1);
         m_numberPercentage = "10";
         m_numberPercentageOf = "100";
         m_resultPercentage = "10" ;
         break;
     case  8 :
-        //m_number = KGlobal::locale()->formatNumber(0.8, 1);
+        //m_number = QLocale().toString(0.8, 'f', 1);
         m_numberPercentage = "25";
         m_numberPercentageOf = "400";
         m_resultPercentage = "100" ;
         break;
     case  9 :
-        //m_number = KGlobal::locale()->formatNumber(0.16, 2);
+        //m_number = QLocale().toString(0.16, 'f', 2);
         m_numberPercentage = "50";
         m_numberPercentageOf = "800";
         m_resultPercentage = "400" ;
         break;
     case 10 :
-        //m_number = KGlobal::locale()->formatNumber(0.142857, 6);
+        //m_number = QLocale().toString(0.142857, 'f', 6);
         m_numberPercentage = '1';
         m_numberPercentageOf = "400";
         m_resultPercentage = '4';
         break;
     case 11 :
-        //m_number = KGlobal::locale()->formatNumber(0.125, 3);
+        //m_number = QLocale().toString(0.125, 'f', 3);
         m_numberPercentage = "50";
         m_numberPercentageOf = "600";
         m_resultPercentage = "300" ;
         break;
     case 12 :
-        //m_number = KGlobal::locale()->formatNumber(0.375, 3);
+        //m_number = QLocale().toString(0.375, 'f', 3);
         m_numberPercentage = "100";
         m_numberPercentageOf = "1300";
         m_resultPercentage = "1300" ;
         break;
     case 13 :
-        //m_number = KGlobal::locale()->formatNumber(0.1, 1);
+        //m_number = QLocale().toString(0.1, 'f', 1);
         m_numberPercentage = "100";
         m_numberPercentageOf = "800";
         m_resultPercentage = "800" ;
         break;
     case 14 :
-        //m_number = KGlobal::locale()->formatNumber(0.1, 1);
+        //m_number = QLocale().toString(0.1, 'f', 1);
         m_numberPercentage = "25";
         m_numberPercentageOf = "1400";
         m_resultPercentage = "350" ;
         break;
     case 15 :
-        //m_number = KGlobal::locale()->formatNumber(0.05, 2);
+        //m_number = QLocale().toString(0.05, 'f', 2);
         m_numberPercentage = "10";
         m_numberPercentageOf = "1400";
         m_resultPercentage = "140" ;
         break;
     case 16 :
-        //m_number = KGlobal::locale()->formatNumber(0.01, 2);
+        //m_number = QLocale().toString(0.01, 'f', 2);
         m_numberPercentage = '1';
         m_numberPercentageOf = "2000";
         m_resultPercentage = "20" ;
         break;
     case 17 :
-        //m_number = KGlobal::locale()->formatNumber(0.83, 2);
+        //m_number = QLocale().toString(0.83, 'f', 2);
         m_numberPercentage = "75";
         m_numberPercentageOf = "1000";
         m_resultPercentage = "750" ;
         break;
     default :
     case 18 :
-        //m_number = KGlobal::locale()->formatNumber(0.001, 3);
+        //m_number = QLocale().toString(0.001, 'f', 3);
         m_numberPercentage = "75";
         m_numberPercentageOf = "1100";
         m_resultPercentage = "825" ;
@@ -412,7 +411,7 @@ void ExercisePercentage::slotSkipButtonClicked()
     forceNewTask();
 }
 
-void ExercisePercentage::answerReturnPressed(const QString &)
+void ExercisePercentage::answerReturnPressed()
 {
     slotCheckButtonClicked();
 }

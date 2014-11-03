@@ -21,16 +21,12 @@
 #ifndef TASKWIDGET_H
 #define TASKWIDGET_H
 
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
-
 #include "FractionBaseWidget.h"
 #include "Task.h"
 
-#include <qwidget.h>
-//Added by qt3to4:
-#include <QPaintEvent>
+#include <QWidget>
+
+class QPaintEvent;
 
 /** important for add_sub and mul_div */
 #define YES 1

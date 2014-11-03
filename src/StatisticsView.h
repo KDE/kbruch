@@ -19,14 +19,11 @@
  *                                                                         *
  ***************************************************************************/
 
-//Added by qt3to4:
-#include <QLabel>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QGridLayout>
-
 #ifndef STATISTICSVIEW_H
 #define STATISTICSVIEW_H
+
+#include <QLabel>
+#include <QWidget>
 
 class QLabel;
 class QPushButton;
@@ -36,7 +33,6 @@ class QGridLayout;
 
 class StatisticsBarWidget;
 
-#include <qwidget.h>
 
 /*!
   * StatisticsView takes care of the statistics of a test.

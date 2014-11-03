@@ -19,25 +19,25 @@
  ***************************************************************************/
 
 #include "ExerciseFactorize.h"
-#include "ExerciseFactorize.moc"
 
 /* these includes are needed for KDE support */
-#include <klocale.h>
-#include <kmessagebox.h>
-#include <knumvalidator.h>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 /* these includes are needed for Qt support */
-#include <qapplication.h>
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qpushbutton.h>
-#include <qpainter.h>
-
-//Added by qt3to4:
+#include <QApplication>
 #include <QGridLayout>
+#include <QLabel>
+#include <QLayout>
+#include <QPushButton>
+#include <QPainter>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 /* standard C++ library includes */
-#include <stdlib.h>
+#include <cstdlib>
 
 #include "PrimeFactorsLineEdit.h"
 #include "PrimeNumber.h"
@@ -52,7 +52,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
     ExerciseBase(parent)
 {
 #ifdef DEBUG
-    kDebug() << "constructor ExerciseFactorize()";
+    qDebug() << "constructor ExerciseFactorize()";
 #endif
 
     /* create a new task */
@@ -111,9 +111,8 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
     m_factorsEnteredEdit->setFixedSize(320, 35);
     taskLayout->addWidget(m_factorsEnteredEdit, 1, 3, 1, 5);
 
-    connect(m_factorsEnteredEdit, SIGNAL(contentIsRight(bool)), this, SLOT(editContentChanged(bool)));
-    connect(m_factorsEnteredEdit, SIGNAL(returnPressed(QString)),
-            this, SLOT(slotFactorsEditReturnPressed(QString)));
+    connect(m_factorsEnteredEdit, &PrimeFactorsLineEdit::contentIsRight, this, &ExerciseFactorize::editContentChanged);
+    connect(m_factorsEnteredEdit, &PrimeFactorsLineEdit::returnPressed, this, &ExerciseFactorize::slotFactorsEditReturnPressed);
 
     defaultFont.setPointSize(10);
 
@@ -179,7 +178,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
     m_skipButton->setText(i18n("&Skip"));
     m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
     m_skipButton->setFont(defaultFont);
-    QObject::connect(m_skipButton, SIGNAL(clicked()), this, SLOT(slotSkipButtonClicked()));
+    QObject::connect(m_skipButton, &QPushButton::clicked, this, &ExerciseFactorize::slotSkipButtonClicked);
     checkLayout->addWidget(m_skipButton, 1, 1);
 
     // the check task button
@@ -187,7 +186,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
     m_checkButton->setObjectName("m_checkButton");
     m_checkButton->setText(i18n("&Check"));
     m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
-    QObject::connect(m_checkButton, SIGNAL(clicked()), this, SLOT(slotCheckButtonClicked()));
+    QObject::connect(m_checkButton, &QPushButton::clicked, this, &ExerciseFactorize::slotCheckButtonClicked);
     m_checkButton->setFont(defaultFont);
     m_checkButton->setDefault(true);  // is the default button of the dialog
     checkLayout->addWidget(m_checkButton, 1, 0);
@@ -221,14 +220,14 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
     m_factor13Button->setText(i18n("13"));
     m_factor17Button->setText(i18n("17"));
     m_factor19Button->setText(i18n("19"));
-    QObject::connect(m_factor2Button, SIGNAL(clicked()), this, SLOT(slotFactor2ButtonClicked()));
-    QObject::connect(m_factor3Button, SIGNAL(clicked()), this, SLOT(slotFactor3ButtonClicked()));
-    QObject::connect(m_factor5Button, SIGNAL(clicked()), this, SLOT(slotFactor5ButtonClicked()));
-    QObject::connect(m_factor7Button, SIGNAL(clicked()), this, SLOT(slotFactor7ButtonClicked()));
-    QObject::connect(m_factor11Button, SIGNAL(clicked()), this, SLOT(slotFactor11ButtonClicked()));
-    QObject::connect(m_factor13Button, SIGNAL(clicked()), this, SLOT(slotFactor13ButtonClicked()));
-    QObject::connect(m_factor17Button, SIGNAL(clicked()), this, SLOT(slotFactor17ButtonClicked()));
-    QObject::connect(m_factor19Button, SIGNAL(clicked()), this, SLOT(slotFactor19ButtonClicked()));
+    QObject::connect(m_factor2Button, &QPushButton::clicked, this, &ExerciseFactorize::slotFactor2ButtonClicked);
+    QObject::connect(m_factor3Button, &QPushButton::clicked, this, &ExerciseFactorize::slotFactor3ButtonClicked);
+    QObject::connect(m_factor5Button, &QPushButton::clicked, this, &ExerciseFactorize::slotFactor5ButtonClicked);
+    QObject::connect(m_factor7Button, &QPushButton::clicked, this, &ExerciseFactorize::slotFactor7ButtonClicked);
+    QObject::connect(m_factor11Button, &QPushButton::clicked, this, &ExerciseFactorize::slotFactor11ButtonClicked);
+    QObject::connect(m_factor13Button, &QPushButton::clicked, this, &ExerciseFactorize::slotFactor13ButtonClicked);
+    QObject::connect(m_factor17Button, &QPushButton::clicked, this, &ExerciseFactorize::slotFactor17ButtonClicked);
+    QObject::connect(m_factor19Button, &QPushButton::clicked, this, &ExerciseFactorize::slotFactor19ButtonClicked);
 
     // add tooltips to the factor buttons
     m_factor2Button->setToolTip(i18n("Add prime factor 2."));
@@ -242,7 +241,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
 
     // the remove last factor button
     m_removeLastFactorButton->setEnabled(false);
-    QObject::connect(m_removeLastFactorButton, SIGNAL(clicked()), this, SLOT(slotRemoveLastFactorButtonClicked()));
+    QObject::connect(m_removeLastFactorButton, &QPushButton::clicked, this, &ExerciseFactorize::slotRemoveLastFactorButtonClicked);
     m_removeLastFactorButton->setToolTip(i18n("Removes the last entered prime factor."));
 
     m_factor2Button->setFocusPolicy(Qt::NoFocus);
@@ -270,7 +269,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
 ExerciseFactorize::~ExerciseFactorize()
 {
 #ifdef DEBUG
-    kDebug() << "destructor ExerciseFactorize()";
+    qDebug() << "destructor ExerciseFactorize()";
 #endif
 
     /* no need to delete any child widgets, Qt does it by itself */
@@ -282,7 +281,7 @@ ExerciseFactorize::~ExerciseFactorize()
 void ExerciseFactorize::forceNewTask()
 {
 #ifdef DEBUG
-    kDebug() << "forceNewTask ExerciseFactorize()";
+    qDebug() << "forceNewTask ExerciseFactorize()";
 #endif
 
     if (m_currentState == _CHECK_TASK) {
@@ -293,8 +292,8 @@ void ExerciseFactorize::forceNewTask()
     m_checkButton->setText(i18n("&Check"));
 
     // Maybe the skip button was clicked with while
-    // wrong content was int the KLineEdit so...
-    // Set the KLineEdit's background to white
+    // wrong content was int the QLineEdit so...
+    // Set the QLineEdit's background to white
     QPalette palette;
     palette.setColor(QPalette::Base, Qt::white);
     m_factorsEnteredEdit->setPalette(palette);
@@ -501,7 +500,7 @@ void ExerciseFactorize::updateEnteredEdit()
 
 /* ------ private slots ------ */
 
-void ExerciseFactorize::slotFactorsEditReturnPressed(const QString &)
+void ExerciseFactorize::slotFactorsEditReturnPressed()
 {
     if (m_checkButton->isEnabled()) {
         slotCheckButtonClicked();
@@ -617,7 +616,7 @@ void ExerciseFactorize::slotRemoveLastFactorButtonClicked()
 void ExerciseFactorize::showEvent(QShowEvent *)
 {
 #ifdef DEBUG
-    kDebug() << "ExerciseFactorize::showEvent()";
+    qDebug() << "ExerciseFactorize::showEvent()";
 #endif
 
     if (isVisible())

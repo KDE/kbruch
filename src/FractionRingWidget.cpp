@@ -18,28 +18,30 @@
  *                                                                         *
  ***************************************************************************/
 #include "FractionRingWidget.h"
-#include "FractionRingWidget.moc"
 
 /* these includes are needed for KDE support */
-#include <KAction>
-#include <kactioncollection.h>
-#include <kconfigdialog.h>
-#include <klocale.h>
-#include <KNumInput>
-#include <kstandardaction.h>
+#include <KActionCollection>
+#include <KConfigDialog>
+#include <KLocalizedString>
+#include <KStandardAction>
 #include <KStandardShortcut>
-#include <KTextEdit>
 
 /* these includes are needed for Qt support */
-#include <qapplication.h>
-
-//Added by qt3to4:
+#include <QAction>
+#include <QApplication>
 #include <QGridLayout>
 #include <QLabel>
 #include <QPainter>
-#include <QRectF>
-#include <QString>
 #include <QPushButton>
+#include <QRectF>
+#include <QSpinBox>
+#include <QString>
+#include <QTextEdit>
+#include <QWidgetAction>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 #include "Ratio.h"
 #include "FractionPainter.h"
@@ -54,7 +56,7 @@
 FractionRingWidget::FractionRingWidget()
 {
 #ifdef DEBUG
-    kDebug() << "constructor FractionRingWidget()";
+    qDebug() << "constructor FractionRingWidget()";
 #endif
     // creating KActions, used by the FractionRingWidgetui.rc file
     setupActions();
@@ -121,24 +123,22 @@ FractionRingWidget::FractionRingWidget()
     gridLayout->addWidget(rightInfoLabel, 1, 1, Qt::AlignCenter);
 
     // SpinBox -----------------------------------------
-    leftSpinBox = new KIntSpinBox(this);
+    leftSpinBox = new QSpinBox(this);
     leftSpinBox->setObjectName("leftSpinBox");
     leftSpinBox->setRange(1, 6);
     leftSpinBox->setMaximumWidth(50);
     leftSpinBox->setMinimumWidth(50);
     gridLayout->addWidget(leftSpinBox, 2, 0, Qt::AlignTop | Qt::AlignHCenter);
 
-    rightSpinBox = new KIntSpinBox(this);
+    rightSpinBox = new QSpinBox(this);
     rightSpinBox->setObjectName("rightSpinBox");
     rightSpinBox->setRange(1, 6);
     rightSpinBox->setMaximumWidth(50);
     rightSpinBox->setMinimumWidth(50);
     gridLayout->addWidget(rightSpinBox, 2, 1, Qt::AlignTop | Qt::AlignHCenter);
 
-    QObject::connect(leftSpinBox, SIGNAL(valueChanged(int)), this,
-                     SLOT(slotLeftSpinBoxValueChanged(int)));
-    QObject::connect(rightSpinBox, SIGNAL(valueChanged(int)), this,
-                     SLOT(slotRightSpinBoxValueChanged(int)));
+    QObject::connect(leftSpinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &FractionRingWidget::slotLeftSpinBoxValueChanged);
+    QObject::connect(rightSpinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &FractionRingWidget::slotRightSpinBoxValueChanged);
 
     // Reset Button ------------------------------------
     resetButton = new QPushButton(this);
@@ -147,8 +147,7 @@ FractionRingWidget::FractionRingWidget()
     resetButton->setMaximumWidth(70);
     gridLayout->addWidget(resetButton, 3, 0, 1, 2, Qt::AlignCenter);
 
-    QObject::connect(resetButton, SIGNAL(clicked()), this,
-                     SLOT(NewTask()));
+    QObject::connect(resetButton, &QPushButton::clicked, this, &FractionRingWidget::NewTask);
 
     // grid row settings --------------------------------
     gridLayout->setRowMinimumHeight(0, 185);
@@ -160,7 +159,7 @@ FractionRingWidget::FractionRingWidget()
     layout1->addWidget(interfaceWidget, 1, 0, Qt::AlignTop | Qt::AlignHCenter);
 
     // textedit -----------------------------------------
-    textMsg = new KTextEdit(this);
+    textMsg = new QTextEdit(this);
     textMsg->setObjectName("textMsg");
     textMsg->setFixedSize(QSize(250 - MARG_LEFT, 300));
     textMsg->setReadOnly(true);
@@ -186,38 +185,42 @@ FractionRingWidget::FractionRingWidget()
 FractionRingWidget::~FractionRingWidget()
 {
 #ifdef DEBUG
-    kDebug() << "destructor StatisticsBarWidget()";
+    qDebug() << "destructor StatisticsBarWidget()";
 #endif
 }
 
 void FractionRingWidget::setupActions()
 {
 #ifdef DEBUG
-    kDebug() << "setupActions FractionRingWidget";
+    qDebug() << "setupActions FractionRingWidget";
 #endif
     // new task action
-    m_NewTaskAction  = new KAction(KIcon("document-new"), i18nc("@action opens a new question", "&New"), this);
+    m_NewTaskAction = new QWidgetAction(this);
+    m_NewTaskAction->setText(i18nc("@action opens a new question", "&New"));
+    m_NewTaskAction->setIcon(QIcon::fromTheme("document-new"));
     actionCollection()->addAction("NewTask", m_NewTaskAction);
-    connect(m_NewTaskAction, SIGNAL(triggered(bool)), SLOT(NewTask()));
-    m_NewTaskAction->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));
+    actionCollection()->setDefaultShortcuts(m_NewTaskAction, KStandardShortcut::shortcut(KStandardShortcut::New));
+    connect(m_NewTaskAction, &QAction::triggered, this, &FractionRingWidget::NewTask);
 
     // back action
-    m_BackAction  = new KAction(KIcon("go-previous"), i18nc("@action go to the main screen", "Back"), this);
+    m_BackAction  = new QWidgetAction(this);
+    m_BackAction->setText(i18nc("@action go to the main screen", "Back"));
+    m_BackAction->setIcon(QIcon::fromTheme("go-previous"));
     actionCollection()->addAction("Back", m_BackAction);
-    connect(m_BackAction, SIGNAL(triggered(bool)), SLOT(GoBack()));
+    actionCollection()->setDefaultShortcuts(m_BackAction, KStandardShortcut::shortcut(KStandardShortcut::Back));
+    connect(m_BackAction, &QAction::triggered, this, &FractionRingWidget::GoBack);
 
     // hint action (hide it as it doesn't exist here)
-    m_HintAction  = new KAction(KIcon("games-hint"), i18nc("@action opens hint", "Hint"), this);
+    m_HintAction  = new QAction(QIcon::fromTheme("games-hint"), i18nc("@action opens hint", "Hint"), this);
     actionCollection()->addAction("Hint", m_HintAction);
-    connect(m_HintAction, SIGNAL(triggered(bool)), SLOT(Hint()));
+    connect(m_HintAction, &QAction::triggered, this, &FractionRingWidget::Hint);
 
     // quit action
-    KStandardAction::quit(kapp, SLOT(quit()), actionCollection());
+    KStandardAction::quit(this, SLOT(close()), actionCollection());
 
     KStandardAction::preferences(this,  SLOT(slotPrefs()), actionCollection());
 
-    if (!initialGeometrySet())
-        resize(QSize(725, 330).expandedTo(minimumSizeHint()));
+    resize(QSize(725, 330).expandedTo(minimumSizeHint()));
     setupGUI(ToolBar | Keys | StatusBar | Create);
     setAutoSaveSettings();
 }
@@ -225,7 +228,7 @@ void FractionRingWidget::setupActions()
 void FractionRingWidget::slotPrefs()
 {
 #ifdef DEBUG
-    kDebug() << "slotPrefs FractionRingWidget";
+    qDebug() << "slotPrefs FractionRingWidget";
 #endif
     // do not show dialog twice
     if (KConfigDialog::showDialog("settings"))
@@ -239,8 +242,7 @@ void FractionRingWidget::slotPrefs()
 
     // User edited the configuration - update your local copies of the
     // configuration data
-    connect(configDialog, SIGNAL(settingsChanged(QString)), this, SLOT(slotApplySettings()));
-    configDialog->setHelp("kbruch/index.html");
+    connect(configDialog, &KConfigDialog::settingsChanged, this, &FractionRingWidget::slotApplySettings);
     configDialog->show();
 
     return;
@@ -249,7 +251,7 @@ void FractionRingWidget::slotPrefs()
 void FractionRingWidget::slotApplySettings()
 {
 #ifdef DEBUG
-    kDebug() << "slotApplySettings FractionRingWidget";
+    qDebug() << "slotApplySettings FractionRingWidget";
 #endif
     fractionWidget->update();
     return;

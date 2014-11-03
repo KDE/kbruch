@@ -18,28 +18,27 @@
  *                                                                         *
  ***************************************************************************/
 #include "FractionPainter.h"
-#include "FractionPainter.moc"
-
-/* these includes are needed for KDE support */
-#include <klocale.h>
 
 /* these includes are needed for Qt support */
-#include <qpainter.h>
-//Added by qt3to4:
+#include <QPainter>
 #include <QPaintEvent>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 FractionPainter::FractionPainter(QWidget * parent) :
     FractionBaseWidget(parent)
 {
 #ifdef DEBUG
-    kDebug() << "constructor FractionPainter";
+    qDebug() << "constructor FractionPainter";
 #endif
 }
 
 FractionPainter::~FractionPainter()
 {
 #ifdef DEBUG
-    kDebug() << "destructor FractionPainter";
+    qDebug() << "destructor FractionPainter";
 #endif
 }
 

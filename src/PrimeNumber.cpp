@@ -17,7 +17,8 @@
 
 #include "PrimeNumber.h"
 
-#include <kdebug.h>
+#include <QDebug>
+
 
 /* ----- the global prime number vector ----- */
 UnsignedIntArray PrimeNumber::prim_vector;
@@ -30,7 +31,7 @@ PrimeNumber::PrimeNumber()
     /* if the vector is empty, we will add the first 2 prime numbers */
     if (prim_vector.empty()) {
 #ifdef DEBUG
-        kDebug() << "prim_vector is still empty";
+        qDebug() << "prim_vector is still empty";
 #endif
 
         prim_vector.push_back(2);
@@ -38,7 +39,7 @@ PrimeNumber::PrimeNumber()
     }
     current_pos = prim_vector.begin();
 #ifdef DEBUG
-    kDebug() << "constructor primenumber";
+    qDebug() << "constructor primenumber";
 #endif
 }
 
@@ -46,7 +47,7 @@ PrimeNumber::PrimeNumber()
 PrimeNumber::~PrimeNumber()
 {
 #ifdef DEBUG
-    kDebug() << "destructor primenumber";
+    qDebug() << "destructor primenumber";
 #endif
 }
 
@@ -55,7 +56,7 @@ PrimeNumber::~PrimeNumber()
 short PrimeNumber::isPrimeNumber(uint number)
 {
 #ifdef DEBUG
-    kDebug() << "primenumber::isPrimeNumber(" << number << ")";
+    qDebug() << "primenumber::isPrimeNumber(" << number << ")";
 #endif
     /* 0 is not a prime number */
     if (number == 0)
@@ -155,7 +156,7 @@ void PrimeNumber::display_all()
     /* looping through the complete vector */
     for (current_pos = prim_vector.begin(); current_pos != prim_vector.end();
             current_pos++, dummy++)
-        kDebug() << dummy << ": " << *current_pos;
+        qDebug() << dummy << ": " << *current_pos;
 
     current_pos = prim_vector.end() - 1;
 }

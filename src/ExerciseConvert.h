@@ -21,24 +21,19 @@
 #ifndef EXERCISECONVERT_H
 #define EXERCISECONVERT_H
 
-#ifdef DEBUG
-#include <kdebug.h>
-#endif
-
 #include "ExerciseBase.h"
 #include "Ratio.h"
-//Added by qt3to4:
+
+#include <QGridLayout>
 #include <QLabel>
 #include <QVBoxLayout>
-#include <QGridLayout>
 
 class RationalWidget;
 class ResultWidget;
 
-class KLineEdit;
-
 class QGridLayout;
 class QLabel;
+class QLineEdit;
 class QPushButton;
 class QString;
 class QVBoxLayout;
@@ -86,9 +81,9 @@ private:
     // Visible components
     RationalWidget * m_rationalWidget;
     ResultWidget * m_resultWidget;
-    KLineEdit * numer_edit;
+    QLineEdit * numer_edit;
     QFrame * edit_line;
-    KLineEdit * deno_edit;
+    QLineEdit * deno_edit;
 
     QPushButton* m_checkButton;
     QPushButton* m_skipButton;
@@ -109,8 +104,8 @@ private:
 private slots:
     void slotCheckButtonClicked();
     void slotSkipButtonClicked();
-    void numeratorReturnPressed(const QString &);
-    void denominatorReturnPressed(const QString &);
+    void numeratorReturnPressed();
+    void denominatorReturnPressed();
 
 protected:
     void showEvent(QShowEvent * event);

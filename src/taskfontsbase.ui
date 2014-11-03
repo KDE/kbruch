@@ -23,14 +23,9 @@
   <customwidget>
    <class>KFontChooser</class>
    <extends>QWidget</extends>
-   <header>kfontdialog.h</header>
+   <header>KFontChooser</header>
   </customwidget>
  </customwidgets>
- <includes>
-  <include location="local" >kcolorbutton.h</include>
-  <include location="local" >kcolorbutton.h</include>
-  <include location="local" >kcolorbutton.h</include>
- </includes>
  <resources/>
  <connections/>
 </ui>
