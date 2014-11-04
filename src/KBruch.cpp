@@ -33,6 +33,7 @@
 /* these includes are needed for Qt support */
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QObject>
 
 /* the main program */
 int main(int argc, char * argv[])
@@ -64,7 +65,7 @@ int main(int argc, char * argv[])
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-//     QObject::connect(app, SIGNAL(lastWindowClosed()), app, SLOT(quit())); //FIXME: KF5
+    QObject::connect(&app, &QApplication::lastWindowClosed, &app, &QApplication::quit);
 
     AppMenuWidget * kbruchApp = new AppMenuWidget();
     kbruchApp->show();
