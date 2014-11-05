@@ -2,6 +2,7 @@ add_subdirectory( pics )
 
 ########### next target ###############
 
+add_definitions(-DTRANSLATION_DOMAIN=\"kbruch\")
 include_directories( ${CMAKE_CURRENT_BINARY_DIR} )
 
 set(kbruch_SRCS
@@ -52,7 +53,7 @@ install(TARGETS kbruch  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### install files ###############
 
-install( PROGRAMS kbruch.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR}/kbruch )
+install( PROGRAMS org.kde.kbruch.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR}/kbruch )
 install( FILES kbruch.kcfg  DESTINATION  ${KCFG_INSTALL_DIR}/kbruch )
 install( FILES kbruchui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kbruch )
 install( FILES AppMenuWidgetui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kbruch )

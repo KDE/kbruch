@@ -2,7 +2,7 @@ project(kbruch)
 
 cmake_minimum_required(VERSION 2.8.12)
 
-find_package(ECM 1.0.0 REQUIRED NO_MODULE)
+find_package(ECM 1.3.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 include(ECMInstallIcons)
 
@@ -13,8 +13,6 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings)
 include(FeatureSummary)
-
-include_directories (${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${Qt5Core_INCLUDE_DIRS} ${Qt5Gui_INCLUDE_DIRS} ${Qt5Widgets_INCLUDE_DIRS})
 
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 

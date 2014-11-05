@@ -208,3 +208,4 @@ Name[x-test]=xxKBruchxx
 Name[zh_CN]=KBruch
 Name[zh_TW]=數學_KBruch
 Categories=Qt;KDE;Education;Math;
+X-DBUS-ServiceName=org.kde.kbruch

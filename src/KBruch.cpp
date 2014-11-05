@@ -31,6 +31,7 @@
 #include <KLocalizedString>
 
 /* these includes are needed for Qt support */
+#include <Kdelibs4ConfigMigrator>
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QObject>
@@ -40,6 +41,12 @@ int main(int argc, char * argv[])
 {
     // init random generator
     srand(time(NULL));
+
+    Kdelibs4ConfigMigrator migrate(QLatin1String("kbruch"));
+    migrate.setConfigFiles(QStringList() << QLatin1String("kbruchrc"));
+    migrate.setUiFiles(QStringList() << QLatin1String("AppMenuWidgetui.rc") <<  QLatin1String("FractionRingWidgetui.rc") << QLatin1String("kbruchui.rc"));
+    migrate.migrate();
+
 
     /* fill the about data; the common KDE about dialog will show it to the
      * user */
