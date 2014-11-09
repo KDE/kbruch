@@ -34,8 +34,6 @@ ki18n_wrap_ui(kbruch_SRCS taskcolorsbase.ui taskfontsbase.ui)
 
 kconfig_add_kcfg_files(kbruch_SRCS settingsclass.kcfgc )
 
-#kde4_add_app_icon(kbruch_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-kbruch.png")
-
 add_executable(kbruch ${kbruch_SRCS})
 
 target_link_libraries(kbruch
