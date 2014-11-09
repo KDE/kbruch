@@ -50,11 +50,11 @@ int main(int argc, char * argv[])
 
     /* fill the about data; the common KDE about dialog will show it to the
      * user */
-    KAboutData aboutData("kbruch", "KBruch",
+    KAboutData aboutData("kbruch", i18n("KBruch"),
                          KBRUCH_VERSION,
                          i18n("Learn calculating with fractions"),
                          KAboutLicense::GPL,
-                         i18n("(c) 2002-2011, Sebastian Stein"));
+                         i18n("© 2002-2011, Sebastian Stein"));
     aboutData.addAuthor(i18n("Sebastian Stein"), i18n("Current maintainer, original author"), "seb.kde@hpfsc.de");
     aboutData.addAuthor(i18n("Paulo Cattai"), i18n("New interface design and usability improvements"), "paulo.cattai@ltia.fc.unesp.br");
     aboutData.addAuthor(i18n("Danilo Balzaque"), i18n("New interface design and usability improvements"), "danilo.balzaque@ltia.fc.unesp.br");
