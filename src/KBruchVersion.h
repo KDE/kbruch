@@ -1,2 +1,2 @@
 #undef KBRUCH_VERSION
-#define KBRUCH_VERSION "4.2"
+#define KBRUCH_VERSION "5.0"
