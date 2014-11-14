@@ -29,9 +29,9 @@ PrimeFactorsLineEdit::PrimeFactorsLineEdit(QWidget * parent)
     : QLineEdit(parent)
 {
 #ifdef DEBUG
-    qDebug() << "constructor PrimeFactorsLineEdit";
+    qDebug() << QStringLiteral("constructor PrimeFactorsLineEdit");
 #endif
-    m_usedFactors << "2" << "3" << "5" << "7" << "11" << "13" << "17" << "19";
+    m_usedFactors << QStringLiteral("2") << QStringLiteral("3") << QStringLiteral("5") << QStringLiteral("7") << QStringLiteral("11") << QStringLiteral("13") << QStringLiteral("17") << QStringLiteral("19");
     // I need this so dead keys go trough keyPressEvent
     setAttribute(Qt::WA_InputMethodEnabled, false);
     connect(this, &PrimeFactorsLineEdit::textEdited, this, &PrimeFactorsLineEdit::textHasChanged);
@@ -41,7 +41,7 @@ PrimeFactorsLineEdit::PrimeFactorsLineEdit(QWidget * parent)
 PrimeFactorsLineEdit::~PrimeFactorsLineEdit()
 {
 #ifdef DEBUG
-    qDebug() << "destructor PrimeFactorsLineEdit";
+    qDebug() << QStringLiteral("destructor PrimeFactorsLineEdit");
 #endif
 }
 
@@ -63,8 +63,8 @@ void PrimeFactorsLineEdit::textHasChanged(QString text)
 bool PrimeFactorsLineEdit::checkCorrectness(const QString& theText)
 {
     QString auxStr = theText;
-    QString noSpaces = auxStr.remove(' ');
-    QStringList terms = noSpaces.split('x');
+    QString noSpaces = auxStr.remove(QStringLiteral(" "));
+    QStringList terms = noSpaces.split(QStringLiteral("x"));
 
     return (areFactors(terms) || text().isEmpty());
 }
@@ -96,9 +96,9 @@ QStringList PrimeFactorsLineEdit::getFactors() const
 
 void PrimeFactorsLineEdit::keyPressEvent(QKeyEvent * event)
 {
-    QString allowedChars = "123579xX*";
-    QString allowedDigits = "123579";
-    QString symbols = "xX*";
+    QString allowedChars = QStringLiteral("123579xX*");
+    QString allowedDigits = QStringLiteral("123579");
+    QString symbols = QStringLiteral("xX*");
     bool backspaceKey = (event->key() == Qt::Key_Backspace);
     bool returnKey = (event->key() == Qt::Key_Return
                       || event->key() == Qt::Key_Enter);
@@ -107,13 +107,13 @@ void PrimeFactorsLineEdit::keyPressEvent(QKeyEvent * event)
 
     if (allowedChars.contains(event->text()) || backspaceKey || returnKey) {
         QString lastFactor;
-        QChar ch = '#';
-        QString factor = "";
+        QString ch = QStringLiteral("#");
+        QString factor = QStringLiteral("");
         if (!event->text().isEmpty()) {
             ch = event->text().at(0);
         }
         if (!text().isEmpty()) {
-            lastFactor = text().section('x', -1);
+            lastFactor = text().section(QStringLiteral("x"), -1);
             factor = lastFactor + ch;
         } else {
             factor = ch;
@@ -122,13 +122,13 @@ void PrimeFactorsLineEdit::keyPressEvent(QKeyEvent * event)
         if (allowedChars.contains(ch) || backspaceKey || returnKey) {
             // turns '*' and 'X' into 'x' to avoid mixed symbols
             // and to make easier to split the text later
-            if (!event->text().isEmpty() && (symbols.indexOf(ch) != -1) && (factor.compare("x") != 0) && !lastFactor.isEmpty() && lastFactor.compare("1") != 0) {
-                QKeyEvent myKeyEvent(QKeyEvent::KeyPress, Qt::Key_X, Qt::NoModifier, "x", false, 0);
+            if (!event->text().isEmpty() && (symbols.indexOf(ch) != -1) && (factor.compare(QStringLiteral("x")) != 0) && !lastFactor.isEmpty() && lastFactor.compare(QStringLiteral("1")) != 0) {
+                QKeyEvent myKeyEvent(QKeyEvent::KeyPress, Qt::Key_X, Qt::NoModifier, QStringLiteral("x"), false, 0);
                 QLineEdit::keyPressEvent(&myKeyEvent);
             }
 
             if ((m_usedFactors.indexOf(factor) == -1)
-                    && (factor.compare("1") != 0) && !backspaceKey &&
+                    && (factor.compare(QStringLiteral("1")) != 0) && !backspaceKey &&
                     !returnKey) {
                 return;
             }

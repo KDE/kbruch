@@ -46,11 +46,11 @@ public:
     /** return the factors entered */
     QStringList getFactors() const;
 
-public slots:
+public Q_SLOTS:
     /** called when the text in QLineEdit's content changes */
     void textHasChanged(QString text);
 
-signals:
+Q_SIGNALS:
     /** emitted when QLineEdit's content changes and it's correct
         itIs is true if the content is correct otherwise.
      */

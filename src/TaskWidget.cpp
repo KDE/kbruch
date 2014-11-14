@@ -36,14 +36,14 @@ TaskWidget::TaskWidget(QWidget * parent,
     FractionBaseWidget(parent), m_task(para_task)
 {
 #ifdef DEBUG
-    qDebug() << "constructor TaskWidget";
+    qDebug() << QStringLiteral("constructor TaskWidget");
 #endif
 }
 
 TaskWidget::~TaskWidget()
 {
 #ifdef DEBUG
-    qDebug() << "destructor TaskWidget";
+    qDebug() << QStringLiteral("destructor TaskWidget");
 #endif
 }
 
@@ -104,13 +104,13 @@ void TaskWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
             // we have to convert the operation sign into a string
             switch (tmp_operation) {
             case ADD :
-                str_operation = '+';
+                str_operation = QStringLiteral("+");
                 break;
             case SUB :
-                str_operation = '-';
+                str_operation = QStringLiteral("-");
                 break;
             case MUL :
-                str_operation = 'x';
+                str_operation = QStringLiteral("x");
                 break;
             case DIV :
                 // there seems to be different division signs around the world
@@ -125,7 +125,7 @@ void TaskWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
         } else {
             // no further operations to show, so we always show the = sign at the
             // end of a task
-            paintMiddle(paint, "=", old_x, old_y, fm, m_colorOperation);
+            paintMiddle(paint, QStringLiteral("="), old_x, old_y, fm, m_colorOperation);
 
             break;
         } // if (tmp_counter < m_task.getNumberOfOperations())

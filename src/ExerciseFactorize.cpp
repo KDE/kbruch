@@ -52,7 +52,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
     ExerciseBase(parent)
 {
 #ifdef DEBUG
-    qDebug() << "constructor ExerciseFactorize()";
+    qDebug() << QStringLiteral("constructor ExerciseFactorize()");
 #endif
 
     /* create a new task */
@@ -67,29 +67,29 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
     QFont defaultFont = SettingsClass::taskFont();
 
     taskWidget = new QWidget(this);
-    taskWidget->setObjectName("taskWidget");
+    taskWidget->setObjectName(QStringLiteral("taskWidget"));
     checkWidget = new QWidget(this);
-    checkWidget->setObjectName("checkWidget");
+    checkWidget->setObjectName(QStringLiteral("checkWidget"));
 
     baseGrid = new QGridLayout(this);
-    baseGrid->setObjectName("baseGrid");
+    baseGrid->setObjectName(QStringLiteral("baseGrid"));
     baseGrid->setColumnStretch(0, 1);
 
     baseGrid->addWidget(taskWidget, 0, 0);
     baseGrid->addWidget(checkWidget, 0, 1);
 
     taskLayout = new QGridLayout(taskWidget);
-    taskLayout->setObjectName("taskLayout");
+    taskLayout->setObjectName(QStringLiteral("taskLayout"));
     taskLayout->setRowStretch(0, 1);
     taskLayout->setRowStretch(6, 1);
     taskLayout->setColumnStretch(0, 1);
     taskLayout->setColumnStretch(7, 1);
 
     checkLayout = new QGridLayout(checkWidget);
-    checkLayout->setObjectName("checkLayout");
+    checkLayout->setObjectName(QStringLiteral("checkLayout"));
 
     m_taskLabel = new QLabel(this);
-    m_taskLabel->setObjectName("taskLabel");
+    m_taskLabel->setObjectName(QStringLiteral("taskLabel"));
     m_taskLabel->setFont(defaultFont);
     taskLayout->addWidget(m_taskLabel, 1, 1);
 
@@ -97,13 +97,13 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
     defaultFont.setPointSize(16);
 
     m_equalSignLabel = new QLabel(this);
-    m_equalSignLabel->setObjectName("equalSignLabel");
-    m_equalSignLabel->setText("=");
+    m_equalSignLabel->setObjectName(QStringLiteral("equalSignLabel"));
+    m_equalSignLabel->setText(QStringLiteral("="));
     m_equalSignLabel->setFont(defaultFont);
     taskLayout->addWidget(m_equalSignLabel, 1, 2);
 
     m_factorsEnteredEdit = new PrimeFactorsLineEdit(this);
-    m_factorsEnteredEdit->setObjectName("factorsEnteredEdit");
+    m_factorsEnteredEdit->setObjectName(QStringLiteral("factorsEnteredEdit"));
     QPalette pal;
     pal.setColor(m_factorsEnteredEdit->foregroundRole(), QColor(0, 0, 0));
     //m_factorsEnteredEdit->setPalette (pal);
@@ -117,55 +117,55 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
     defaultFont.setPointSize(10);
 
     m_factor2Button = new QPushButton(this);
-    m_factor2Button->setObjectName("factor2Button");
+    m_factor2Button->setObjectName(QStringLiteral("factor2Button"));
     m_factor2Button->setFixedSize(50, 35);
     m_factor2Button->setFont(defaultFont);
     taskLayout->addWidget(m_factor2Button, 4, 3);
 
     m_factor3Button = new QPushButton(this);
-    m_factor3Button->setObjectName("factor3Button");
+    m_factor3Button->setObjectName(QStringLiteral("factor3Button"));
     m_factor3Button->setFixedSize(50, 35);
     m_factor3Button->setFont(defaultFont);
     taskLayout->addWidget(m_factor3Button, 4, 4);
 
     m_factor5Button = new QPushButton(this);
-    m_factor5Button->setObjectName("factor5Button");
+    m_factor5Button->setObjectName(QStringLiteral("factor5Button"));
     m_factor5Button->setFixedSize(50, 35);
     m_factor5Button->setFont(defaultFont);
     taskLayout->addWidget(m_factor5Button, 4, 5);
 
     m_factor7Button = new QPushButton(this);
-    m_factor7Button->setObjectName("factor7Button");
+    m_factor7Button->setObjectName(QStringLiteral("factor7Button"));
     m_factor7Button->setFixedSize(50, 35);
     m_factor7Button->setFont(defaultFont);
     taskLayout->addWidget(m_factor7Button, 4, 6);
 
     m_factor11Button = new QPushButton(this);
-    m_factor11Button->setObjectName("factor11Button");
+    m_factor11Button->setObjectName(QStringLiteral("factor11Button"));
     m_factor11Button->setFixedSize(50, 35);
     m_factor11Button->setFont(defaultFont);
     taskLayout->addWidget(m_factor11Button, 5, 3);
 
     m_factor13Button = new QPushButton(this);
-    m_factor13Button->setObjectName("factor13Button");
+    m_factor13Button->setObjectName(QStringLiteral("factor13Button"));
     m_factor13Button->setFixedSize(50, 35);
     m_factor13Button->setFont(defaultFont);
     taskLayout->addWidget(m_factor13Button, 5, 4);
 
     m_factor17Button = new QPushButton(this);
-    m_factor17Button->setObjectName("factor17Button");
+    m_factor17Button->setObjectName(QStringLiteral("factor17Button"));
     m_factor17Button->setFixedSize(50, 35);
     m_factor17Button->setFont(defaultFont);
     taskLayout->addWidget(m_factor17Button, 5, 5);
 
     m_factor19Button = new QPushButton(this);
-    m_factor19Button->setObjectName("factor19Button");
+    m_factor19Button->setObjectName(QStringLiteral("factor19Button"));
     m_factor19Button->setFixedSize(50, 35);
     m_factor19Button->setFont(defaultFont);
     taskLayout->addWidget(m_factor19Button, 5, 6);
 
     m_removeLastFactorButton = new QPushButton(this);
-    m_removeLastFactorButton->setObjectName("removeLastFactor");
+    m_removeLastFactorButton->setObjectName(QStringLiteral("removeLastFactor"));
     m_removeLastFactorButton->setFixedSize(115, 35);
     m_removeLastFactorButton->setFont(defaultFont);
     m_removeLastFactorButton->setText(i18n("Backspace"));
@@ -174,7 +174,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
     defaultFont.setPointSize(10);
 
     m_skipButton = new QPushButton(this);
-    m_skipButton->setObjectName("m_skipButton");
+    m_skipButton->setObjectName(QStringLiteral("m_skipButton"));
     m_skipButton->setText(i18n("&Skip"));
     m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
     m_skipButton->setFont(defaultFont);
@@ -183,7 +183,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
 
     // the check task button
     m_checkButton = new QPushButton(this);
-    m_checkButton->setObjectName("m_checkButton");
+    m_checkButton->setObjectName(QStringLiteral("m_checkButton"));
     m_checkButton->setText(i18n("&Check"));
     m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
     QObject::connect(m_checkButton, &QPushButton::clicked, this, &ExerciseFactorize::slotCheckButtonClicked);
@@ -193,7 +193,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
 
     // next is the result widget
     m_resultWidget = new ResultWidget(this,  m_factorsResult);
-    m_resultWidget->setObjectName("m_resultWidget");
+    m_resultWidget->setObjectName(QStringLiteral("m_resultWidget"));
     checkLayout->addWidget(m_resultWidget, 0, 0, 1, 2);
 
     // the current task
@@ -269,7 +269,7 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
 ExerciseFactorize::~ExerciseFactorize()
 {
 #ifdef DEBUG
-    qDebug() << "destructor ExerciseFactorize()";
+    qDebug() << QStringLiteral("destructor ExerciseFactorize()");
 #endif
 
     /* no need to delete any child widgets, Qt does it by itself */
@@ -281,7 +281,7 @@ ExerciseFactorize::~ExerciseFactorize()
 void ExerciseFactorize::forceNewTask()
 {
 #ifdef DEBUG
-    qDebug() << "forceNewTask ExerciseFactorize()";
+    qDebug() << QStringLiteral("forceNewTask ExerciseFactorize()");
 #endif
 
     if (m_currentState == _CHECK_TASK) {
@@ -437,7 +437,7 @@ void ExerciseFactorize::nextTask()
     /* clear user input */
     m_factorsEntered.clear();
     m_factorsResult.clear();
-    m_factorsEnteredEdit->setText("");
+    m_factorsEnteredEdit->setText(QStringLiteral(""));
 
     m_factorsEnteredEdit->setFocus();
 
@@ -473,7 +473,7 @@ void ExerciseFactorize::addFactor(uint factor)
 void ExerciseFactorize::updateEnteredEdit()
 {
     // the string to be shown in the entered edit
-    QString str_output = "";
+    QString str_output = QStringLiteral("");
     QString str_tmp;
 
     // find the end of the list
@@ -488,7 +488,7 @@ void ExerciseFactorize::updateEnteredEdit()
         if (it == m_factorsEntered.begin()) {
             str_output = str_tmp;
         } else {
-            str_output += " x " + str_tmp;
+            str_output += QStringLiteral(" x ") + str_tmp;
         }
     }
 
@@ -616,7 +616,7 @@ void ExerciseFactorize::slotRemoveLastFactorButtonClicked()
 void ExerciseFactorize::showEvent(QShowEvent *)
 {
 #ifdef DEBUG
-    qDebug() << "ExerciseFactorize::showEvent()";
+    qDebug() << QStringLiteral("ExerciseFactorize::showEvent()");
 #endif
 
     if (isVisible())

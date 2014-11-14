@@ -51,10 +51,10 @@ public:
     /** force the creation of a new task */
     void forceNewTask();
 
-public slots:
+public Q_SLOTS:
     void update();
 
-signals:
+Q_SIGNALS:
     /** class emits this signal, if the task was solved correctly by the user */
     void signalExerciseSolvedCorrect();
 
@@ -95,7 +95,7 @@ private:
     void showResult();
     void nextTask();
 
-private slots:
+private Q_SLOTS:
     void slotCheckButtonClicked();
     void slotSkipButtonClicked();
     void answerReturnPressed();

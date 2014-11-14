@@ -71,7 +71,7 @@ private:
 
     void setupActions();
 
-private slots:
+private Q_SLOTS:
     void slotFreestyleClicked();
     void slotLearningClicked();
     /**

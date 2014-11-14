@@ -188,7 +188,7 @@ private:
 
     void setupActions();
 
-private slots:
+private Q_SLOTS:
 
     bool OperationsCheck();
 

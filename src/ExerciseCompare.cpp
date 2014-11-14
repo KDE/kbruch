@@ -46,7 +46,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
     ExerciseBase(parent)
 {
 #ifdef DEBUG
-    qDebug() << "constructor ExerciseCompare()";
+    qDebug() << QStringLiteral("constructor ExerciseCompare()");
 #endif
 
     QApplication::setOverrideCursor(Qt::WaitCursor);  /* show the sand clock */
@@ -61,40 +61,40 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
 
     // Create layout
     taskWidget = new QWidget(this);
-    taskWidget->setObjectName("taskWidget");
+    taskWidget->setObjectName(QStringLiteral("taskWidget"));
     checkWidget = new QWidget(this);
-    checkWidget->setObjectName("checkWidget");
+    checkWidget->setObjectName(QStringLiteral("checkWidget"));
 
     baseGrid = new QGridLayout(this);
-    baseGrid->setObjectName("baseGrid");
+    baseGrid->setObjectName(QStringLiteral("baseGrid"));
     baseGrid->setColumnStretch(0, 1);
 
     baseGrid->addWidget(taskWidget, 0, 0);
     baseGrid->addWidget(checkWidget, 0, 1);
 
     taskLayout = new QGridLayout(taskWidget);
-    taskLayout->setObjectName("taskLayout");
+    taskLayout->setObjectName(QStringLiteral("taskLayout"));
     taskLayout->setRowStretch(0, 1);
     taskLayout->setRowStretch(4, 1);
     taskLayout->setColumnStretch(0, 1);
     taskLayout->setColumnStretch(4, 1);
 
     checkLayout = new QGridLayout(checkWidget);
-    checkLayout->setObjectName("checkLayout");
+    checkLayout->setObjectName(QStringLiteral("checkLayout"));
 
     // first the first ratio widget
     m_firstRatioWidget = new RatioWidget(taskWidget, m_firstRatio);
-    m_firstRatioWidget->setObjectName("m_firstRatioWidget");
+    m_firstRatioWidget->setObjectName(QStringLiteral("m_firstRatioWidget"));
     taskLayout->addWidget(m_firstRatioWidget, 1, 1, 3, 1);
 
     // now the second ratio widget
     m_secondRatioWidget = new RatioWidget(taskWidget, m_secondRatio);
-    m_secondRatioWidget->setObjectName("m_secondRatioWidget");
+    m_secondRatioWidget->setObjectName(QStringLiteral("m_secondRatioWidget"));
     taskLayout->addWidget(m_secondRatioWidget, 1, 3, 3, 1);
 
     // Create compare buttons
     m_moreButton = new QPushButton(taskWidget);
-    m_moreButton->setObjectName("m_moreButton");
+    m_moreButton->setObjectName(QStringLiteral("m_moreButton"));
     m_moreButton->setText(i18n(">"));
     m_moreButton->setFixedSize(74, 30);
     m_moreButton->setFont(defaultFont);
@@ -103,7 +103,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
     taskLayout->addWidget(m_moreButton, 1, 2);
 
     m_minorButton = new QPushButton(taskWidget);
-    m_minorButton->setObjectName("m_minorButton");
+    m_minorButton->setObjectName(QStringLiteral("m_minorButton"));
     m_minorButton->setText(i18n("<"));
     m_minorButton->setFixedSize(74, 30);
     m_minorButton->setFont(defaultFont);
@@ -112,7 +112,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
     taskLayout->addWidget(m_minorButton, 2, 2);
 
     m_equalButton = new QPushButton(taskWidget);
-    m_equalButton->setObjectName("m_equalButton");
+    m_equalButton->setObjectName(QStringLiteral("m_equalButton"));
     m_equalButton->setText(i18n("="));
     m_equalButton->setFixedSize(74, 30);
     m_equalButton->setFont(defaultFont);
@@ -122,13 +122,13 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
 
     // Create Skip and Check buttons
     m_resultWidget = new ResultWidget(checkWidget);
-    m_resultWidget->setObjectName("m_resultWidget");
+    m_resultWidget->setObjectName(QStringLiteral("m_resultWidget"));
     checkLayout->addWidget(m_resultWidget, 0, 0);
 
     defaultFont.setPointSize(10);
 
     m_skipButton = new QPushButton(checkWidget);
-    m_skipButton->setObjectName("m_skipButton");
+    m_skipButton->setObjectName(QStringLiteral("m_skipButton"));
     m_skipButton->setText(i18n("&Skip"));
     m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
     m_skipButton->setFont(defaultFont);
@@ -156,7 +156,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
 ExerciseCompare::~ExerciseCompare()
 {
 #ifdef DEBUG
-    qDebug() << "destructor ExerciseCompare()";
+    qDebug() << QStringLiteral("destructor ExerciseCompare()");
 #endif
 
     /* no need to delete any child widgets, Qt does it by itself */
@@ -168,7 +168,7 @@ ExerciseCompare::~ExerciseCompare()
 void ExerciseCompare::forceNewTask()
 {
 #ifdef DEBUG
-    qDebug() << "forceNewTask ExerciseCompare()";
+    qDebug() << QStringLiteral("forceNewTask ExerciseCompare()");
 #endif
 
     if (m_currentState == _CHECK_TASK) {
@@ -303,7 +303,7 @@ void ExerciseCompare::slotSkipButtonClicked()
 void ExerciseCompare::slotMinorButtonClicked()
 {
 #ifdef DEBUG
-    qDebug() << "ExerciseCompare::slotMinorButtonClicked()";
+    qDebug() << QStringLiteral("ExerciseCompare::slotMinorButtonClicked()");
 #endif
 
     m_currentState = _NEXT_TASK;
@@ -317,7 +317,7 @@ void ExerciseCompare::slotMinorButtonClicked()
 void ExerciseCompare::slotMoreButtonClicked()
 {
 #ifdef DEBUG
-    qDebug() << "ExerciseCompare::slotMoreButtonClicked()";
+    qDebug() << QStringLiteral("ExerciseCompare::slotMoreButtonClicked()");
 #endif
 
     m_currentState = _NEXT_TASK;
@@ -331,7 +331,7 @@ void ExerciseCompare::slotMoreButtonClicked()
 void ExerciseCompare::slotEqualButtonClicked()
 {
 #ifdef DEBUG
-    qDebug() << "ExerciseCompare::slotEqualButtonClicked()";
+    qDebug() << QStringLiteral("ExerciseCompare::slotEqualButtonClicked()");
 #endif
 
     m_currentState = _NEXT_TASK;

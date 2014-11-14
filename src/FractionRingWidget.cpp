@@ -56,28 +56,28 @@
 FractionRingWidget::FractionRingWidget()
 {
 #ifdef DEBUG
-    qDebug() << "constructor FractionRingWidget()";
+    qDebug() << QStringLiteral("constructor FractionRingWidget()");
 #endif
     // creating KActions, used by the FractionRingWidgetui.rc file
     setupActions();
-    createGUI("FractionRingWidgetui.rc");
+    createGUI(QStringLiteral("FractionRingWidgetui.rc"));
 
     setCaption(i18n("Learning"));
 
     layout1 = new QGridLayout();
-    layout1->setObjectName("layout1");
+    layout1->setObjectName(QStringLiteral("layout1"));
 
     baseWidget = new QWidget();
-    baseWidget->setObjectName("baseWidget");
+    baseWidget->setObjectName(QStringLiteral("baseWidget"));
 
     setCentralWidget(baseWidget);
 
     interfaceWidget = new QWidget(this);
-    interfaceWidget->setObjectName("interfaceWidget");
+    interfaceWidget->setObjectName(QStringLiteral("interfaceWidget"));
     interfaceWidget->setFixedSize(QSize(270, 300));
 
     gridLayout = new QGridLayout();
-    gridLayout->setObjectName("gridLayout");
+    gridLayout->setObjectName(QStringLiteral("gridLayout"));
 
     // setup colors ---------------------------------------
     bgOutsideRing = QColor(242, 242, 242);
@@ -107,31 +107,31 @@ FractionRingWidget::FractionRingWidget()
     move(50, 50);
 
     fractionWidget = new FractionPainter(this);
-    fractionWidget->setObjectName("fractionWidget");
+    fractionWidget->setObjectName(QStringLiteral("fractionWidget"));
 
     gridLayout->addWidget(fractionWidget, 0, 0, 1, 2, Qt::AlignBottom | Qt::AlignHCenter);
 
     // Info Labels -------------------------------------
     leftInfoLabel = new QLabel(this);
-    leftInfoLabel->setObjectName("leftInfoLabel");
+    leftInfoLabel->setObjectName(QStringLiteral("leftInfoLabel"));
     leftInfoLabel->setText(i18nc("Expands the ratio shown on the left by the given factor. Please note, expanding is not the same as multiplying. For example, expanding a ratio by 2 basically means multiplying the ratio with 2/2 and not with 2/1!", "Expand"));
     gridLayout->addWidget(leftInfoLabel, 1, 0, Qt::AlignCenter);
 
     rightInfoLabel = new QLabel(this);
-    rightInfoLabel->setObjectName("rightInfoLabel");
+    rightInfoLabel->setObjectName(QStringLiteral("rightInfoLabel"));
     rightInfoLabel->setText(i18nc("Expands the ratio shown on the left by the given factor. Please note, expanding is not the same as multiplying. For example, expanding a ratio by 2 basically means multiplying the ratio with 2/2 and not with 2/1!", "Expand"));
     gridLayout->addWidget(rightInfoLabel, 1, 1, Qt::AlignCenter);
 
     // SpinBox -----------------------------------------
     leftSpinBox = new QSpinBox(this);
-    leftSpinBox->setObjectName("leftSpinBox");
+    leftSpinBox->setObjectName(QStringLiteral("leftSpinBox"));
     leftSpinBox->setRange(1, 6);
     leftSpinBox->setMaximumWidth(50);
     leftSpinBox->setMinimumWidth(50);
     gridLayout->addWidget(leftSpinBox, 2, 0, Qt::AlignTop | Qt::AlignHCenter);
 
     rightSpinBox = new QSpinBox(this);
-    rightSpinBox->setObjectName("rightSpinBox");
+    rightSpinBox->setObjectName(QStringLiteral("rightSpinBox"));
     rightSpinBox->setRange(1, 6);
     rightSpinBox->setMaximumWidth(50);
     rightSpinBox->setMinimumWidth(50);
@@ -142,7 +142,7 @@ FractionRingWidget::FractionRingWidget()
 
     // Reset Button ------------------------------------
     resetButton = new QPushButton(this);
-    resetButton->setObjectName("resetButton");
+    resetButton->setObjectName(QStringLiteral("resetButton"));
     resetButton->setText(i18n("New"));
     resetButton->setMaximumWidth(70);
     gridLayout->addWidget(resetButton, 3, 0, 1, 2, Qt::AlignCenter);
@@ -160,7 +160,7 @@ FractionRingWidget::FractionRingWidget()
 
     // textedit -----------------------------------------
     textMsg = new QTextEdit(this);
-    textMsg->setObjectName("textMsg");
+    textMsg->setObjectName(QStringLiteral("textMsg"));
     textMsg->setFixedSize(QSize(250 - MARG_LEFT, 300));
     textMsg->setReadOnly(true);
     textMsg->setPalette(QPalette(QColor(255, 255, 255)));
@@ -185,34 +185,34 @@ FractionRingWidget::FractionRingWidget()
 FractionRingWidget::~FractionRingWidget()
 {
 #ifdef DEBUG
-    qDebug() << "destructor StatisticsBarWidget()";
+    qDebug() << QStringLiteral("destructor StatisticsBarWidget()");
 #endif
 }
 
 void FractionRingWidget::setupActions()
 {
 #ifdef DEBUG
-    qDebug() << "setupActions FractionRingWidget";
+    qDebug() << QStringLiteral("setupActions FractionRingWidget");
 #endif
     // new task action
     m_NewTaskAction = new QWidgetAction(this);
     m_NewTaskAction->setText(i18nc("@action opens a new question", "&New"));
-    m_NewTaskAction->setIcon(QIcon::fromTheme("document-new"));
-    actionCollection()->addAction("NewTask", m_NewTaskAction);
+    m_NewTaskAction->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
+    actionCollection()->addAction(QStringLiteral("NewTask"), m_NewTaskAction);
     actionCollection()->setDefaultShortcuts(m_NewTaskAction, KStandardShortcut::shortcut(KStandardShortcut::New));
     connect(m_NewTaskAction, &QAction::triggered, this, &FractionRingWidget::NewTask);
 
     // back action
     m_BackAction  = new QWidgetAction(this);
     m_BackAction->setText(i18nc("@action go to the main screen", "Back"));
-    m_BackAction->setIcon(QIcon::fromTheme("go-previous"));
-    actionCollection()->addAction("Back", m_BackAction);
+    m_BackAction->setIcon(QIcon::fromTheme(QStringLiteral("go-previous")));
+    actionCollection()->addAction(QStringLiteral("Back"), m_BackAction);
     actionCollection()->setDefaultShortcuts(m_BackAction, KStandardShortcut::shortcut(KStandardShortcut::Back));
     connect(m_BackAction, &QAction::triggered, this, &FractionRingWidget::GoBack);
 
     // hint action (hide it as it doesn't exist here)
-    m_HintAction  = new QAction(QIcon::fromTheme("games-hint"), i18nc("@action opens hint", "Hint"), this);
-    actionCollection()->addAction("Hint", m_HintAction);
+    m_HintAction  = new QAction(QIcon::fromTheme(QStringLiteral("games-hint")), i18nc("@action opens hint", "Hint"), this);
+    actionCollection()->addAction(QStringLiteral("Hint"), m_HintAction);
     connect(m_HintAction, &QAction::triggered, this, &FractionRingWidget::Hint);
 
     // quit action
@@ -228,17 +228,17 @@ void FractionRingWidget::setupActions()
 void FractionRingWidget::slotPrefs()
 {
 #ifdef DEBUG
-    qDebug() << "slotPrefs FractionRingWidget";
+    qDebug() << QStringLiteral("slotPrefs FractionRingWidget");
 #endif
     // do not show dialog twice
-    if (KConfigDialog::showDialog("settings"))
+    if (KConfigDialog::showDialog(QStringLiteral("settings")))
         return;
 
     //KConfigDialog didn't find an instance of this dialog, so lets create it :
-    KConfigDialog* configDialog = new KConfigDialog(this, "settings", SettingsClass::self());
+    KConfigDialog* configDialog = new KConfigDialog(this, QStringLiteral("settings"), SettingsClass::self());
 
     TaskColors * taskColors = new TaskColors(0);
-    configDialog->addPage(taskColors, i18n("Colors"), "preferences-desktop-color");
+    configDialog->addPage(taskColors, i18n("Colors"), QStringLiteral("preferences-desktop-color"));
 
     // User edited the configuration - update your local copies of the
     // configuration data
@@ -251,7 +251,7 @@ void FractionRingWidget::slotPrefs()
 void FractionRingWidget::slotApplySettings()
 {
 #ifdef DEBUG
-    qDebug() << "slotApplySettings FractionRingWidget";
+    qDebug() << QStringLiteral("slotApplySettings FractionRingWidget");
 #endif
     fractionWidget->update();
     return;
@@ -363,7 +363,7 @@ void FractionRingWidget::slotLeftSpinBoxValueChanged(int value)
                    "This is called finding the main denominator. "
                    "The main denominator divides the rings into equal parts.");
         if (rLeft.denominator() * value != MCM(rLeft.denominator(), rRight.denominator())) {
-            msg += QString("\n\n");
+            msg += QStringLiteral("\n\n");
             msg += i18n("There is a smaller main denominator. Can you find it?");
         }
 
@@ -377,7 +377,7 @@ void FractionRingWidget::slotLeftSpinBoxValueChanged(int value)
     }
 
     update();
-    fractionWidget->paintFraction("+", rLeft, multLeft, rRight, multRight);
+    fractionWidget->paintFraction(QStringLiteral("+"), rLeft, multLeft, rRight, multRight);
 }
 
 void FractionRingWidget::slotRightSpinBoxValueChanged(int value)
@@ -391,7 +391,7 @@ void FractionRingWidget::slotRightSpinBoxValueChanged(int value)
                    "This is called finding the main denominator. "
                    "The main denominator divides the rings into equal parts.");
         if (rRight.denominator() * value != MCM(rLeft.denominator(), rRight.denominator())) {
-            msg += QString("\n\n");
+            msg += QStringLiteral("\n\n");
             msg += i18n("There is a smaller main denominator. Can you find it?");
         }
 
@@ -405,7 +405,7 @@ void FractionRingWidget::slotRightSpinBoxValueChanged(int value)
     }
 
     update();
-    fractionWidget->paintFraction("+", rLeft, multLeft, rRight, multRight);
+    fractionWidget->paintFraction(QStringLiteral("+"), rLeft, multLeft, rRight, multRight);
 }
 
 void FractionRingWidget::NewTask()
@@ -450,7 +450,7 @@ void FractionRingWidget::resetFraction(bool flag = true)
 
     if (flag) {
         update();
-        fractionWidget->paintFraction("+", rLeft, multLeft, rRight, multRight);
+        fractionWidget->paintFraction(QStringLiteral("+"), rLeft, multLeft, rRight, multRight);
     }
 }
 

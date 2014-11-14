@@ -48,38 +48,38 @@
 AppMenuWidget::AppMenuWidget()
 {
 #ifdef DEBUG
-    qDebug() << "constructor AppMenuWidget";
+    qDebug() << QStringLiteral("constructor AppMenuWidget");
 
 #endif
     setupActions();
 
     QString css =
-        "QPushButton#m_Freestyle {"
+        QStringLiteral("QPushButton#m_Freestyle {"
         "border: none;"
-        "image: url(" +
-        QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kbruch/pics/icon_freestyle_1.png") +
-        ");"
+        "image: url(") +
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kbruch/pics/icon_freestyle_1.png")) +
+        QStringLiteral(");"
         "}"
         "QPushButton#m_Freestyle:hover {"
         "border: none;"
-        "image: url(" +
-        QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kbruch/pics/icon_freestyle.png") +
-        ");"
+        "image: url(") +
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kbruch/pics/icon_freestyle.png")) +
+        QStringLiteral(");"
         "}"
         "QPushButton#m_Learning {"
         "border: none;"
-        "image: url(" +
-        QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kbruch/pics/icon_learning_1.png") +
-        ");"
+        "image: url(") +
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kbruch/pics/icon_learning_1.png")) +
+        QStringLiteral(");"
         "}"
         "QPushButton#m_Learning:hover {"
         "border: none;"
-        "image: url(" +
-        QStandardPaths::locate(QStandardPaths::GenericDataLocation, "kbruch/pics/icon_learning.png") +
-        ");"
+        "image: url(") +
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kbruch/pics/icon_learning.png") +
+        QStringLiteral(");"
         "}"
         "QLabel#labelInfo, QLabel#labelFreestyle, QLabel#labelLearning"
-        "{ font: bold 20px; }";
+        "{ font: bold 20px; }"));
 
     setStyleSheet(css);
 
@@ -88,36 +88,36 @@ AppMenuWidget::AppMenuWidget()
     defaultFont.setPointSize(26);
 
     layout1 = new QHBoxLayout();
-    layout1->setObjectName("layout1");
+    layout1->setObjectName(QStringLiteral("layout1"));
     layout1->setAlignment(Qt::AlignCenter);
 
     baseWidget = new QWidget();
-    baseWidget->setObjectName("baseWidget");
+    baseWidget->setObjectName(QStringLiteral("baseWidget"));
 
     setCentralWidget(baseWidget);
 
     interfaceWidget = new QWidget(this);
-    interfaceWidget->setObjectName("interfaceWidget");
+    interfaceWidget->setObjectName(QStringLiteral("interfaceWidget"));
     interfaceWidget->setFixedSize(QSize(550, 350));
 
     gridLayout = new QGridLayout();
-    gridLayout->setObjectName("gridLayout");
+    gridLayout->setObjectName(QStringLiteral("gridLayout"));
 
     labelInfo = new QLabel(this);
-    labelInfo->setObjectName("labelInfo");
+    labelInfo->setObjectName(QStringLiteral("labelInfo"));
     labelInfo->setText(i18n("KBruch modes:"));
     labelInfo->setFont(defaultFont);
     gridLayout->addWidget(labelInfo, 0, 0, 1, 2);
 
     // Freestyle mode ----------------------------
     m_Freestyle = new QPushButton(this);
-    m_Freestyle->setObjectName("m_Freestyle");
+    m_Freestyle->setObjectName(QStringLiteral("m_Freestyle"));
     m_Freestyle->setToolTip(i18n("Open standard KBruch"));
     m_Freestyle->setFixedSize(QSize(150, 197));
     gridLayout->addWidget(m_Freestyle, 1, 0, Qt::AlignCenter);
 
     labelFreestyle = new QLabel(this);
-    labelFreestyle->setObjectName("labelFreestyle");
+    labelFreestyle->setObjectName(QStringLiteral("labelFreestyle"));
     labelFreestyle->setText(i18n("Exercise"));
     labelFreestyle->setFont(defaultFont);
     gridLayout->addWidget(labelFreestyle, 2, 0, Qt::AlignCenter);
@@ -126,13 +126,13 @@ AppMenuWidget::AppMenuWidget()
 
     // Learning mode ----------------------------
     m_Learning = new QPushButton(this);
-    m_Learning->setObjectName("m_Learning");
+    m_Learning->setObjectName(QStringLiteral("m_Learning"));
     m_Learning->setToolTip(i18n("Open learning KBruch"));
     m_Learning->setFixedSize(QSize(150, 197));
     gridLayout->addWidget(m_Learning, 1, 1, Qt::AlignCenter);
 
     labelLearning = new QLabel(this);
-    labelLearning->setObjectName("labelLearning");
+    labelLearning->setObjectName(QStringLiteral("labelLearning"));
     labelLearning->setText(i18n("Learning"));
     labelLearning->setFont(defaultFont);
     gridLayout->addWidget(labelLearning, 2, 1, Qt::AlignCenter);
@@ -156,7 +156,7 @@ AppMenuWidget::AppMenuWidget()
 AppMenuWidget::~AppMenuWidget()
 {
 #ifdef DEBUG
-    qDebug() << "destructor AppMenuWidget()";
+    qDebug() << QStringLiteral("destructor AppMenuWidget()");
 #endif
 
     /* no need to delete any child widgets, Qt does it by itself */
@@ -165,21 +165,21 @@ AppMenuWidget::~AppMenuWidget()
 void AppMenuWidget::setupActions()
 {
 #ifdef DEBUG
-    qDebug() << "setupActions FractionRingWidget";
+    qDebug() << QStringLiteral("setupActions FractionRingWidget");
 #endif
 
     // quit action
     KStandardAction::quit(this, SLOT(close()), actionCollection());
 
     resize(QSize(725, 330).expandedTo(minimumSizeHint()));
-    setupGUI(Keys | Create, "AppMenuWidgetui.rc");
+    setupGUI(Keys | Create, QStringLiteral("AppMenuWidgetui.rc"));
     setAutoSaveSettings();
 }
 
 void AppMenuWidget::slotApplySettings()
 {
 #ifdef DEBUG
-    qDebug() << "slotApplySettings FractionRingWidget";
+    qDebug() << QStringLiteral("slotApplySettings FractionRingWidget");
 #endif
     return;
 }

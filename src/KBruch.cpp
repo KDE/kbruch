@@ -42,26 +42,26 @@ int main(int argc, char * argv[])
     // init random generator
     srand(time(NULL));
 
-    Kdelibs4ConfigMigrator migrate(QLatin1String("kbruch"));
-    migrate.setConfigFiles(QStringList() << QLatin1String("kbruchrc"));
-    migrate.setUiFiles(QStringList() << QLatin1String("AppMenuWidgetui.rc") <<  QLatin1String("FractionRingWidgetui.rc") << QLatin1String("kbruchui.rc"));
+    Kdelibs4ConfigMigrator migrate(QStringLiteral("kbruch"));
+    migrate.setConfigFiles(QStringList() << QStringLiteral("kbruchrc"));
+    migrate.setUiFiles(QStringList() << QStringLiteral("AppMenuWidgetui.rc") <<  QStringLiteral("FractionRingWidgetui.rc") << QStringLiteral("kbruchui.rc"));
     migrate.migrate();
 
 
     /* fill the about data; the common KDE about dialog will show it to the
      * user */
-    KAboutData aboutData("kbruch", i18n("KBruch"),
-                         KBRUCH_VERSION,
+    KAboutData aboutData(QStringLiteral("kbruch"), i18n("KBruch"),
+                         QStringLiteral(KBRUCH_VERSION),
                          i18n("Learn calculating with fractions"),
                          KAboutLicense::GPL,
                          i18n("© 2002-2011, Sebastian Stein"));
-    aboutData.addAuthor(i18n("Sebastian Stein"), i18n("Current maintainer, original author"), "seb.kde@hpfsc.de");
-    aboutData.addAuthor(i18n("Paulo Cattai"), i18n("New interface design and usability improvements"), "paulo.cattai@ltia.fc.unesp.br");
-    aboutData.addAuthor(i18n("Danilo Balzaque"), i18n("New interface design and usability improvements"), "danilo.balzaque@ltia.fc.unesp.br");
-    aboutData.addAuthor(i18n("Roberto Cunha"), i18n("New interface design and usability improvements"), "roberto.cunha@ltia.fc.unesp.br");
-    aboutData.addAuthor(i18n("Tadeu Araujo"), i18n("New interface design and usability improvements"), "tadeu.araujo@ltia.fc.unesp.br");
-    aboutData.addAuthor(i18n("Tiago Porangaba"), i18n("New interface design and usability improvements"), "tiago.porangaba@ltia.fc.unesp.br");
-    aboutData.setHomepage("http://edu.kde.org/kbruch/");
+    aboutData.addAuthor(i18n("Sebastian Stein"), i18n("Current maintainer, original author"), QStringLiteral("seb.kde@hpfsc.de"));
+    aboutData.addAuthor(i18n("Paulo Cattai"), i18n("New interface design and usability improvements"), QStringLiteral("paulo.cattai@ltia.fc.unesp.br"));
+    aboutData.addAuthor(i18n("Danilo Balzaque"), i18n("New interface design and usability improvements"), QStringLiteral("danilo.balzaque@ltia.fc.unesp.br"));
+    aboutData.addAuthor(i18n("Roberto Cunha"), i18n("New interface design and usability improvements"), QStringLiteral("roberto.cunha@ltia.fc.unesp.br"));
+    aboutData.addAuthor(i18n("Tadeu Araujo"), i18n("New interface design and usability improvements"), QStringLiteral("tadeu.araujo@ltia.fc.unesp.br"));
+    aboutData.addAuthor(i18n("Tiago Porangaba"), i18n("New interface design and usability improvements"), QStringLiteral("tiago.porangaba@ltia.fc.unesp.br"));
+    aboutData.setHomepage(QStringLiteral("http://edu.kde.org/kbruch/"));
 
     QApplication app(argc, argv);
     QCommandLineParser parser;

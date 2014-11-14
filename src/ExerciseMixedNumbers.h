@@ -54,7 +54,7 @@ public:
      * after changing the task parameters */
     void forceNewTask();
 
-signals:
+Q_SIGNALS:
     /** signal emitted if task solved correctly */
     void signalExerciseSolvedCorrect();
 
@@ -110,7 +110,7 @@ protected:
     /** sets focus to input fields */
     void showEvent(QShowEvent * event);
 
-private slots:
+private Q_SLOTS:
     /** handle check button click */
     void slotCheckButtonClicked();
 

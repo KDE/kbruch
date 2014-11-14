@@ -45,7 +45,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     ExerciseBase(parent)
 {
 #ifdef DEBUG
-    qDebug() << "constructor ExerciseMixedNumbers()";
+    qDebug() << QStringLiteral("constructor ExerciseMixedNumbers()");
 #endif
 
     // define initial state
@@ -61,20 +61,20 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     //
     // create 2 base widgets
     m_tmpTaskWidget = new QWidget(this);
-    m_tmpTaskWidget->setObjectName("m_tmpTaskWidget");
+    m_tmpTaskWidget->setObjectName(QStringLiteral("m_tmpTaskWidget"));
     m_checkWidget = new QWidget(this);
-    m_checkWidget->setObjectName("m_checkWidget");
+    m_checkWidget->setObjectName(QStringLiteral("m_checkWidget"));
 
     // add base widgets to base grid layout
     m_baseGrid = new QGridLayout(this);
-    m_baseGrid->setObjectName("m_baseGrid");
+    m_baseGrid->setObjectName(QStringLiteral("m_baseGrid"));
     m_baseGrid->setColumnStretch(0, 1);
     m_baseGrid->addWidget(m_tmpTaskWidget, 0, 0);
     m_baseGrid->addWidget(m_checkWidget, 0, 1);
 
     // prepare task layout
     m_taskLayout = new QGridLayout(m_tmpTaskWidget);
-    m_taskLayout->setObjectName("m_taskLayout");
+    m_taskLayout->setObjectName(QStringLiteral("m_taskLayout"));
     m_taskLayout->setRowStretch(0, 1);
     m_taskLayout->setRowStretch(4, 1);
     m_taskLayout->setColumnStretch(0, 1);
@@ -82,13 +82,13 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
 
     // prepare check layout
     m_checkLayout = new QGridLayout(m_checkWidget);
-    m_checkLayout->setObjectName("m_checkLayout");
+    m_checkLayout->setObjectName(QStringLiteral("m_checkLayout"));
 
     // set up task layout
     //
     // create task widget
     m_taskWidget = new TaskWidget(m_tmpTaskWidget, m_task);
-    m_taskWidget->setObjectName("m_taskWidget");
+    m_taskWidget->setObjectName(QStringLiteral("m_taskWidget"));
     m_taskLayout->addWidget(m_taskWidget, 1, 1, 3, 1);
 
     // int input validator
@@ -103,7 +103,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     //
     // integer input
     m_integerEdit = new QLineEdit(m_tmpTaskWidget);
-    m_integerEdit->setObjectName("m_integerEdit");
+    m_integerEdit->setObjectName(QStringLiteral("m_integerEdit"));
     m_integerEdit->setValidator(intValidator);
     m_integerEdit->setToolTip(i18n("Enter the integer part of the fraction"));
     m_integerEdit->setFont(defaultFont);
@@ -117,7 +117,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
 
     // numerator input
     m_numerEdit = new QLineEdit(m_tmpTaskWidget);
-    m_numerEdit->setObjectName("m_numerEdit");
+    m_numerEdit->setObjectName(QStringLiteral("m_numerEdit"));
     m_numerEdit->setValidator(intValidator);
     m_numerEdit->setToolTip(i18n("Enter the numerator of the fraction"));
     m_numerEdit->setFont(defaultFont);
@@ -134,7 +134,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
 
     // denominator input
     m_denoEdit = new QLineEdit(m_tmpTaskWidget);
-    m_denoEdit->setObjectName("m_numerEdit");
+    m_denoEdit->setObjectName(QStringLiteral("m_numerEdit"));
     m_denoEdit->setValidator(intValidator);
     m_denoEdit->setToolTip(i18n("Enter the denominator of the fraction"));
     m_denoEdit->setFont(defaultFont);
@@ -148,7 +148,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     //
     // add result widget
     m_resultWidget = new ResultWidget(m_checkWidget, Ratio());
-    m_resultWidget->setObjectName("m_resultWidget");
+    m_resultWidget->setObjectName(QStringLiteral("m_resultWidget"));
     m_checkLayout->addWidget(m_resultWidget, 0, 0, 1, 2);
 
     // new font size
@@ -156,7 +156,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
 
     // check button
     m_checkButton = new QPushButton(m_checkWidget);
-    m_checkButton->setObjectName("m_checkButton");
+    m_checkButton->setObjectName(QStringLiteral("m_checkButton"));
     m_checkButton->setText(i18n("&Check"));
     m_checkButton->setDefault(true);    // is the default button of the dialog
     m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
@@ -166,7 +166,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
 
     // skip button
     m_skipButton = new QPushButton(m_checkWidget);
-    m_skipButton->setObjectName("m_skipButton");
+    m_skipButton->setObjectName(QStringLiteral("m_skipButton"));
     m_skipButton->setText(i18n("&Skip"));
     m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
     m_skipButton->setFont(defaultFont);
@@ -182,7 +182,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
 ExerciseMixedNumbers::~ExerciseMixedNumbers()
 {
 #ifdef DEBUG
-    qDebug() << "destructor ExerciseMixedNumbers()";
+    qDebug() << QStringLiteral("destructor ExerciseMixedNumbers()");
 #endif
 }
 
@@ -190,7 +190,7 @@ ExerciseMixedNumbers::~ExerciseMixedNumbers()
 void ExerciseMixedNumbers::forceNewTask()
 {
 #ifdef DEBUG
-    qDebug() << "forceNewTask ExerciseMixedNumbers()";
+    qDebug() << QStringLiteral("forceNewTask ExerciseMixedNumbers()");
 #endif
 
     if (m_currentState == _CHECK_TASK) {
@@ -258,9 +258,9 @@ void ExerciseMixedNumbers::nextTask()
     m_checkButton->setText(i18n("&Check"));
 
     // clear user input and restore input fields
-    m_denoEdit->setText("");
-    m_numerEdit->setText("");
-    m_integerEdit->setText("");
+    m_denoEdit->setText(QStringLiteral(""));
+    m_numerEdit->setText(QStringLiteral(""));
+    m_integerEdit->setText(QStringLiteral(""));
     m_numerEdit->setEnabled(true);
     m_denoEdit->setEnabled(true);
     m_skipButton->setEnabled(true);
@@ -304,13 +304,13 @@ void ExerciseMixedNumbers::showResult()
 
     // an empty numerator field is interpreted as 0
     if (m_numerEdit->text().isEmpty()) {
-        m_numerEdit->setText("0");
+        m_numerEdit->setText(QStringLiteral("0"));
     }
     int resultNumerator = m_numerEdit->text().toInt();
 
     // an empty denominator field is interpreted as 1
     if (m_denoEdit->text().isEmpty()) {
-        m_denoEdit->setText("1");
+        m_denoEdit->setText(QStringLiteral("1"));
     }
     int resultDenominator = m_denoEdit->text().toInt();
     if (resultDenominator == 0) {

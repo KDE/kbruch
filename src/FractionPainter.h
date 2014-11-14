@@ -58,7 +58,7 @@ private:
     Ratio rightRatio;
     int rightMult;
 
-public slots:
+public Q_SLOTS:
     void update();
 };
 

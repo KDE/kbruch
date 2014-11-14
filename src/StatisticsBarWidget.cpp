@@ -36,7 +36,7 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent) :
     QWidget(parent)
 {
 #ifdef DEBUG
-    qDebug() << "constructor StatisticsBarWidget()";
+    qDebug() << QStringLiteral("constructor StatisticsBarWidget()");
 #endif
     m_correct = 0;
     m_skipped = 0;
@@ -76,13 +76,13 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent) :
     m_skippedBar->setRange(0, 100);
     m_skippedBar->setValue(0);
 
-    m_correctLabel = new QLabel("0%", this);
+    m_correctLabel = new QLabel(QStringLiteral("0%"), this);
     m_correctLabel->setFont(defaultFont);
     m_correctLabel->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
-    m_incorrectLabel = new QLabel("0%", this);
+    m_incorrectLabel = new QLabel(QStringLiteral("0%"), this);
     m_incorrectLabel->setFont(defaultFont);
     m_incorrectLabel->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
-    m_skippedLabel = new QLabel("0%", this);
+    m_skippedLabel = new QLabel(QStringLiteral("0%"), this);
     m_skippedLabel->setFont(defaultFont);
     m_skippedLabel->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
 
@@ -101,14 +101,14 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent) :
 StatisticsBarWidget::~StatisticsBarWidget()
 {
 #ifdef DEBUG
-    qDebug() << "destructor StatisticsBarWidget()";
+    qDebug() << QStringLiteral("destructor StatisticsBarWidget()");
 #endif
 }
 
 void StatisticsBarWidget::updateBar(int correct, int skipped, int total)
 {
 #ifdef DEBUG
-    qDebug() << "StatisticsBarWidget::updateBar()";
+    qDebug() << QStringLiteral("StatisticsBarWidget::updateBar()");
 #endif
     m_correct = correct;
     m_skipped = skipped;

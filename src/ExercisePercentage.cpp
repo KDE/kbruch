@@ -48,7 +48,7 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
     ExerciseBase(parent)
 {
 #ifdef DEBUG
-    qDebug() << "constructor ExercisePercentage()";
+    qDebug() << QStringLiteral("constructor ExercisePercentage()");
 #endif
 
     /* create a new task */
@@ -68,38 +68,38 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
     m_currentState = _CHECK_TASK;
 
     taskWidget = new QWidget(this);
-    taskWidget->setObjectName("taskWidget");
+    taskWidget->setObjectName(QStringLiteral("taskWidget"));
     checkWidget = new QWidget(this);
-    checkWidget->setObjectName("checkWidget");
+    checkWidget->setObjectName(QStringLiteral("checkWidget"));
 
     baseGrid = new QGridLayout(this);
-    baseGrid->setObjectName("baseGrid");
+    baseGrid->setObjectName(QStringLiteral("baseGrid"));
     baseGrid->setColumnStretch(0, 1);
 
     baseGrid->addWidget(taskWidget, 0, 0);
     baseGrid->addWidget(checkWidget, 0, 1);
 
     taskLayout = new QGridLayout(taskWidget);
-    taskLayout->setObjectName("taskLayout");
+    taskLayout->setObjectName(QStringLiteral("taskLayout"));
     taskLayout->setRowStretch(0, 1);
     taskLayout->setRowStretch(4, 1);
     taskLayout->setColumnStretch(0, 1);
     taskLayout->setColumnStretch(3, 1);
 
     checkLayout = new QGridLayout(checkWidget);
-    checkLayout->setObjectName("checkLayout");
+    checkLayout->setObjectName(QStringLiteral("checkLayout"));
 
     /* Task: percentage question */
     defaultFont.setPointSize(16);
     m_taskLabel = new QLabel(this);
-    m_taskLabel->setObjectName("m_taskLabel");
+    m_taskLabel->setObjectName(QStringLiteral("m_taskLabel"));
     m_taskLabel->setFont(defaultFont);
     m_taskLabel->setText(i18nc("%1 percentage of %2", "%1% of %2 = ", m_numberPercentage ,  m_numberPercentageOf));
     taskLayout->addWidget(m_taskLabel, 1, 1, 2, 1);
 
     /* Input question: result of question */
     answer_edit = new QLineEdit(taskWidget);
-    answer_edit->setObjectName("answer_edit");
+    answer_edit->setObjectName(QStringLiteral("answer_edit"));
     answer_edit->setValidator(valnum);   // use the int validator
     answer_edit->setToolTip(i18n("Enter the result of percentage question"));
     answer_edit->setFixedSize(85, 42);
@@ -110,13 +110,13 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
 
     // next is the result widget
     m_resultWidget = new ResultWidget(checkWidget, m_result);
-    m_resultWidget->setObjectName("m_resultWidget");
+    m_resultWidget->setObjectName(QStringLiteral("m_resultWidget"));
     checkLayout->addWidget(m_resultWidget, 0, 0, 1, 2);
 
     // the right aligned button
     defaultFont.setPointSize(10);
     m_checkButton = new QPushButton(checkWidget);
-    m_checkButton->setObjectName("m_checkButton");
+    m_checkButton->setObjectName(QStringLiteral("m_checkButton"));
     m_checkButton->setText(i18n("&Check"));
     m_checkButton->setDefault(true);  // is the default button of the dialog
     m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
@@ -126,7 +126,7 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
 
     // the right aligned button
     m_skipButton = new QPushButton(checkWidget);
-    m_skipButton->setObjectName("m_skipButton");
+    m_skipButton->setObjectName(QStringLiteral("m_skipButton"));
     m_skipButton->setText(i18n("&Skip"));
     m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
     m_skipButton->setFont(defaultFont);
@@ -151,7 +151,7 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
 ExercisePercentage::~ExercisePercentage()
 {
 #ifdef DEBUG
-    qDebug() << "destructor ExercisePercentage()";
+    qDebug() << QStringLiteral("destructor ExercisePercentage()");
 #endif
 
     /* no need to delete any child widgets, Qt does it by itself */
@@ -163,7 +163,7 @@ ExercisePercentage::~ExercisePercentage()
 void ExercisePercentage::forceNewTask()
 {
 #ifdef DEBUG
-    qDebug() << "forceNewTask ExercisePercentage()";
+    qDebug() << QStringLiteral("forceNewTask ExercisePercentage()");
 #endif
 
     if (m_currentState == _CHECK_TASK) {
@@ -200,118 +200,118 @@ void ExercisePercentage::createTask()
     switch (int ((double(rand()) / RAND_MAX) * 19)) {
     case  0 :
         //m_number = QLocale().toString(0.5, 'f', 1);
-        m_numberPercentage = "75";
-        m_numberPercentageOf = "1900";
-        m_resultPercentage = "1425" ;
+        m_numberPercentage = QStringLiteral("75");
+        m_numberPercentageOf = QStringLiteral("1900");
+        m_resultPercentage = QStringLiteral("1425");
         break;
     case  1 :
         //m_number = QLocale().toString(0.3, 'f', 1);
-        m_numberPercentage = "50";
-        m_numberPercentageOf = "1800";
-        m_resultPercentage = "900" ;
+        m_numberPercentage = QStringLiteral("50");
+        m_numberPercentageOf = QStringLiteral("1800");
+        m_resultPercentage = QStringLiteral("900");
         break;
     case  2 :
         //m_number = QLocale().toString(0.6, 'f', 1);
-        m_numberPercentage = '1';
-        m_numberPercentageOf = "1200";
-        m_resultPercentage = "12" ;
+        m_numberPercentage = QStringLiteral("1");
+        m_numberPercentageOf = QStringLiteral("1200");
+        m_resultPercentage = QStringLiteral("12");
         break;
     case  3 :
         //m_number = QLocale().toString(0.25, 'f', 2);
-        m_numberPercentage = "10";
-        m_numberPercentageOf = "900";
-        m_resultPercentage = "90" ;
+        m_numberPercentage = QStringLiteral("10");
+        m_numberPercentageOf = QStringLiteral("900");
+        m_resultPercentage = QStringLiteral("90");
         break;
     case  4 :
         //m_number = QLocale().toString(0.75, 'f', 2);
-        m_numberPercentage = "100";
-        m_numberPercentageOf = "800";
-        m_resultPercentage = "800" ;
+        m_numberPercentage = QStringLiteral("100");
+        m_numberPercentageOf = QStringLiteral("800");
+        m_resultPercentage = QStringLiteral("800");
         break;
     case  5 :
         //m_number = QLocale().toString(0.2, 'f', 1);
-        m_numberPercentage = "75";
-        m_numberPercentageOf = "300";
-        m_resultPercentage = "225" ;
+        m_numberPercentage = QStringLiteral("75");
+        m_numberPercentageOf = QStringLiteral("300");
+        m_resultPercentage = QStringLiteral("225");
         break;
     case  6 :
         //m_number = QLocale().toString(0.4, 'f', 1);
-        m_numberPercentage = "10";
-        m_numberPercentageOf = "1500";
-        m_resultPercentage = "150" ;
+        m_numberPercentage = QStringLiteral("10");
+        m_numberPercentageOf = QStringLiteral("1500");
+        m_resultPercentage = QStringLiteral("150");
         break;
     case  7 :
         //m_number = QLocale().toString(0.6, 'f', 1);
-        m_numberPercentage = "10";
-        m_numberPercentageOf = "100";
-        m_resultPercentage = "10" ;
+        m_numberPercentage = QStringLiteral("10");
+        m_numberPercentageOf = QStringLiteral("100");
+        m_resultPercentage = QStringLiteral("10");
         break;
     case  8 :
         //m_number = QLocale().toString(0.8, 'f', 1);
-        m_numberPercentage = "25";
-        m_numberPercentageOf = "400";
-        m_resultPercentage = "100" ;
+        m_numberPercentage = QStringLiteral("25");
+        m_numberPercentageOf = QStringLiteral("400");
+        m_resultPercentage = QStringLiteral("100");
         break;
     case  9 :
         //m_number = QLocale().toString(0.16, 'f', 2);
-        m_numberPercentage = "50";
-        m_numberPercentageOf = "800";
-        m_resultPercentage = "400" ;
+        m_numberPercentage = QStringLiteral("50");
+        m_numberPercentageOf = QStringLiteral("800");
+        m_resultPercentage = QStringLiteral("400");
         break;
     case 10 :
         //m_number = QLocale().toString(0.142857, 'f', 6);
-        m_numberPercentage = '1';
-        m_numberPercentageOf = "400";
-        m_resultPercentage = '4';
+        m_numberPercentage = QStringLiteral("1");
+        m_numberPercentageOf = QStringLiteral("400");
+        m_resultPercentage = QStringLiteral("4");
         break;
     case 11 :
         //m_number = QLocale().toString(0.125, 'f', 3);
-        m_numberPercentage = "50";
-        m_numberPercentageOf = "600";
-        m_resultPercentage = "300" ;
+        m_numberPercentage = QStringLiteral("50");
+        m_numberPercentageOf = QStringLiteral("600");
+        m_resultPercentage = QStringLiteral("300");
         break;
     case 12 :
         //m_number = QLocale().toString(0.375, 'f', 3);
-        m_numberPercentage = "100";
-        m_numberPercentageOf = "1300";
-        m_resultPercentage = "1300" ;
+        m_numberPercentage = QStringLiteral("100");
+        m_numberPercentageOf = QStringLiteral("1300");
+        m_resultPercentage = QStringLiteral("1300");
         break;
     case 13 :
         //m_number = QLocale().toString(0.1, 'f', 1);
-        m_numberPercentage = "100";
-        m_numberPercentageOf = "800";
-        m_resultPercentage = "800" ;
+        m_numberPercentage = QStringLiteral("100");
+        m_numberPercentageOf = QStringLiteral("800");
+        m_resultPercentage = QStringLiteral("800");
         break;
     case 14 :
         //m_number = QLocale().toString(0.1, 'f', 1);
-        m_numberPercentage = "25";
-        m_numberPercentageOf = "1400";
-        m_resultPercentage = "350" ;
+        m_numberPercentage = QStringLiteral("25");
+        m_numberPercentageOf = QStringLiteral("1400");
+        m_resultPercentage = QStringLiteral("350");
         break;
     case 15 :
         //m_number = QLocale().toString(0.05, 'f', 2);
-        m_numberPercentage = "10";
-        m_numberPercentageOf = "1400";
-        m_resultPercentage = "140" ;
+        m_numberPercentage = QStringLiteral("10");
+        m_numberPercentageOf = QStringLiteral("1400");
+        m_resultPercentage = QStringLiteral("140");
         break;
     case 16 :
         //m_number = QLocale().toString(0.01, 'f', 2);
-        m_numberPercentage = '1';
-        m_numberPercentageOf = "2000";
-        m_resultPercentage = "20" ;
+        m_numberPercentage = QStringLiteral("1");
+        m_numberPercentageOf = QStringLiteral("2000");
+        m_resultPercentage = QStringLiteral("20");
         break;
     case 17 :
         //m_number = QLocale().toString(0.83, 'f', 2);
-        m_numberPercentage = "75";
-        m_numberPercentageOf = "1000";
-        m_resultPercentage = "750" ;
+        m_numberPercentage = QStringLiteral("75");
+        m_numberPercentageOf = QStringLiteral("1000");
+        m_resultPercentage = QStringLiteral("750");
         break;
     default :
     case 18 :
         //m_number = QLocale().toString(0.001, 'f', 3);
-        m_numberPercentage = "75";
-        m_numberPercentageOf = "1100";
-        m_resultPercentage = "825" ;
+        m_numberPercentage = QStringLiteral("75");
+        m_numberPercentageOf = QStringLiteral("1100");
+        m_resultPercentage = QStringLiteral("825");
         break;
     }
 
@@ -336,7 +336,7 @@ void ExercisePercentage::showResult()
 
     //an empty answer field will be interpreted as 0
     if (answer_edit->text().isEmpty() == true)
-        answer_edit->setText("0");
+        answer_edit->setText(QStringLiteral("0"));
 
 
     tmp_result = answer_edit->text().toInt();
@@ -371,7 +371,7 @@ void ExercisePercentage::nextTask()
     m_resultWidget->setResult(m_result, -1);
 
     /* clear user input */
-    answer_edit->setText("");
+    answer_edit->setText(QStringLiteral(""));
     answer_edit->setFocus();
 
     /* create a new task */

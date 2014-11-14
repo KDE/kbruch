@@ -35,14 +35,14 @@ RationalWidget::RationalWidget(QWidget * parent, const QString &pnumber, const i
     m_periodStart(pperiodStart), m_periodLength(pperiodLength)
 {
 #ifdef DEBUG
-    qDebug() << "constructor RationalWidget";
+    qDebug() << QStringLiteral("constructor RationalWidget");
 #endif
 }
 
 RationalWidget::~RationalWidget()
 {
 #ifdef DEBUG
-    qDebug() << "destructor RationalWidget";
+    qDebug() << QStringLiteral("destructor RationalWidget");
 #endif
 }
 
@@ -108,7 +108,7 @@ void RationalWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 
     // paint a = at the end
     x_pos += _MARGIN_X;
-    paintMiddle(paint, "=", x_pos, y_pos, fm, m_colorOperation);
+    paintMiddle(paint, QStringLiteral("="), x_pos, y_pos, fm, m_colorOperation);
 
     // stop the painter
     paint.end();

@@ -52,7 +52,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
     ExerciseBase(parent)
 {
 #ifdef DEBUG
-    qDebug() << "constructor ExerciseConvert()";
+    qDebug() << QStringLiteral("constructor ExerciseConvert()");
 #endif
 
     /* create a new task */
@@ -71,35 +71,35 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
 
     // Create layout
     taskWidget = new QWidget(this);
-    taskWidget->setObjectName("taskWidget");
+    taskWidget->setObjectName(QStringLiteral("taskWidget"));
     checkWidget = new QWidget(this);
-    checkWidget->setObjectName("checkWidget");
+    checkWidget->setObjectName(QStringLiteral("checkWidget"));
 
     baseGrid = new QGridLayout(this);
-    baseGrid->setObjectName("baseGrid");
+    baseGrid->setObjectName(QStringLiteral("baseGrid"));
     baseGrid->setColumnStretch(0, 1);
 
     baseGrid->addWidget(taskWidget, 0, 0);
     baseGrid->addWidget(checkWidget, 0, 1);
 
     taskLayout = new QGridLayout(taskWidget);
-    taskLayout->setObjectName("taskLayout");
+    taskLayout->setObjectName(QStringLiteral("taskLayout"));
     taskLayout->setRowStretch(0, 1);
     taskLayout->setRowStretch(4, 1);
     taskLayout->setColumnStretch(0, 1);
     taskLayout->setColumnStretch(3, 1);
 
     checkLayout = new QGridLayout(checkWidget);
-    checkLayout->setObjectName("checkLayout");
+    checkLayout->setObjectName(QStringLiteral("checkLayout"));
 
     // first left is the rational widget
     m_rationalWidget = new RationalWidget(taskWidget, m_number, m_periodStart, m_periodLength);
-    m_rationalWidget->setObjectName("m_rationalWidget");
+    m_rationalWidget->setObjectName(QStringLiteral("m_rationalWidget"));
     taskLayout->addWidget(m_rationalWidget, 1, 1, 3, 1);
 
     /* add input box so the user can enter numerator */
     numer_edit = new QLineEdit(taskWidget);
-    numer_edit->setObjectName("numer_edit");
+    numer_edit->setObjectName(QStringLiteral("numer_edit"));
     numer_edit->setValidator(valnum);   // use the int validator
     numer_edit->setToolTip(i18n("Enter the numerator of your result"));
     numer_edit->setFixedSize(85, 42);
@@ -116,7 +116,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
 
     /* add input box so the user can enter denominator */
     deno_edit = new QLineEdit(taskWidget);
-    deno_edit->setObjectName("deno_edit");
+    deno_edit->setObjectName(QStringLiteral("deno_edit"));
     deno_edit->setValidator(valnum);   // use the int validator
     deno_edit->setToolTip(i18n("Enter the denominator of your result"));
     deno_edit->setFixedSize(85, 42);
@@ -127,14 +127,14 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
 
     // next is the result widget
     m_resultWidget = new ResultWidget(checkWidget, m_result);
-    m_resultWidget->setObjectName("m_resultWidget");
+    m_resultWidget->setObjectName(QStringLiteral("m_resultWidget"));
     checkLayout->addWidget(m_resultWidget, 0, 0, 1, 2);
 
     defaultFont.setPointSize(10);
 
     // the right aligned button
     m_checkButton = new QPushButton(checkWidget);
-    m_checkButton->setObjectName("m_checkButton");
+    m_checkButton->setObjectName(QStringLiteral("m_checkButton"));
     m_checkButton->setText(i18n("&Check"));
     m_checkButton->setDefault(true);  // is the default button of the dialog
     m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
@@ -144,7 +144,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
 
     // the right aligned button
     m_skipButton = new QPushButton(checkWidget);
-    m_skipButton->setObjectName("m_skipButton");
+    m_skipButton->setObjectName(QStringLiteral("m_skipButton"));
     m_skipButton->setText(i18n("&Skip"));
     m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
     m_skipButton->setFont(defaultFont);
@@ -164,7 +164,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
 ExerciseConvert::~ExerciseConvert()
 {
 #ifdef DEBUG
-    qDebug() << "destructor ExerciseConvert()";
+    qDebug() << QStringLiteral("destructor ExerciseConvert()");
 #endif
 
     /* no need to delete any child widgets, Qt does it by itself */
@@ -176,7 +176,7 @@ ExerciseConvert::~ExerciseConvert()
 void ExerciseConvert::forceNewTask()
 {
 #ifdef DEBUG
-    qDebug() << "forceNewTask ExerciseConvert()";
+    qDebug() << QStringLiteral("forceNewTask ExerciseConvert()");
 #endif
 
     if (m_currentState == _CHECK_TASK) {
@@ -329,11 +329,11 @@ void ExerciseConvert::showResult()
 
     // an empty numerator field will be interpreted as 0
     if (numer_edit->text().isEmpty() == true)
-        numer_edit->setText("0");
+        numer_edit->setText(QStringLiteral("0"));
 
     // an empty denominator field will be interpreted as 1
     if (deno_edit->text().isEmpty() == true)
-        deno_edit->setText("1");
+        deno_edit->setText(QStringLiteral("1"));
 
     /* store the entered result to check it, but without reducing */
     entered_result.setNumerator(numer_edit->text().toInt(), false);
@@ -392,8 +392,8 @@ void ExerciseConvert::nextTask()
     m_resultWidget->setResult(m_result, -1);
 
     /* clear user input */
-    deno_edit->setText("");
-    numer_edit->setText("");
+    deno_edit->setText(QStringLiteral(""));
+    numer_edit->setText(QStringLiteral(""));
     numer_edit->setFocus();
 
     /* create a new task */

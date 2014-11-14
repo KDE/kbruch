@@ -53,7 +53,7 @@ public:
     /** destructor */
     ~StatisticsView();
 
-public slots:
+public Q_SLOTS:
     /** increment number of correct answers */
     void addCorrect();
 

@@ -42,7 +42,7 @@ StatisticsView::StatisticsView(QWidget * parent) :
     QFrame(parent), m_count(0), m_correct(0)
 {
 #ifdef DEBUG
-    qDebug() << "constructor StatisticsView()";
+    qDebug() << QStringLiteral("constructor StatisticsView()");
 #endif
     // load statistics from config file
     m_count = SettingsClass::count();
@@ -131,7 +131,7 @@ StatisticsView::StatisticsView(QWidget * parent) :
 
     // add reset button and connect
     resetButton = new QPushButton(this);
-    resetButton->setObjectName("resetButton");
+    resetButton->setObjectName(QStringLiteral("resetButton"));
     resetButton->setText(i18n("&Reset"));
     resetButton->setToolTip(i18n("Click this button to reset the statistics."));
     resetButton->setFont(defaultFont);
@@ -146,7 +146,7 @@ StatisticsView::StatisticsView(QWidget * parent) :
 StatisticsView::~StatisticsView()
 {
 #ifdef DEBUG
-    qDebug() << "destructor StatisticsView()";
+    qDebug() << QStringLiteral("destructor StatisticsView()");
 #endif
     // save statistics for next run
     SettingsClass::setCount(m_count);
@@ -191,25 +191,25 @@ void StatisticsView::calc()
     QString new_text;
     QString number;
 
-    new_text = QString("<b>%1</b>").arg(m_count);
+    new_text = QStringLiteral("<b>%1</b>").arg(m_count);
     result1Label->setText(new_text);
 
     /* we have to be careful with division by 0 */
     if (m_count == 0) {
-        result2Label->setText("0 (0 %)");
-        result3Label->setText("0 (0 %)");
-        result4Label->setText("0 (0 %)");
+        result2Label->setText(QStringLiteral("0 (0 %)"));
+        result3Label->setText(QStringLiteral("0 (0 %)"));
+        result4Label->setText(QStringLiteral("0 (0 %)"));
     } else {
         /* set the correct label */
-        new_text = QString("%1").arg(m_correct);
+        new_text = QStringLiteral("%1").arg(m_correct);
         result2Label->setText(new_text);
 
         /* set the correct label */
-        new_text = QString("%1").arg(m_skipped);
+        new_text = QStringLiteral("%1").arg(m_skipped);
         result3Label->setText(new_text);
 
         /* set the incorrect label */
-        new_text = QString("%1").arg(m_count - m_correct - m_skipped);
+        new_text = QStringLiteral("%1").arg(m_count - m_correct - m_skipped);
         result4Label->setText(new_text);
     }
 }

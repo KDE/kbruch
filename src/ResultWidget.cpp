@@ -39,7 +39,7 @@ ResultWidget::ResultWidget(QWidget * parent, const uintList para_factors) :
     FractionBaseWidget(parent), m_factors(para_factors)
 {
 #ifdef DEBUG
-    qDebug() << "constructor ResultWidget";
+    qDebug() << QStringLiteral("constructor ResultWidget");
 #endif
     Init();
     m_ExerciseView = 0;
@@ -50,7 +50,7 @@ ResultWidget::ResultWidget(QWidget * parent,
     FractionBaseWidget(parent), m_result(para_result)
 {
 #ifdef DEBUG
-    qDebug() << "constructor ResultWidget";
+    qDebug() << QStringLiteral("constructor ResultWidget");
 #endif
     Init();
     m_ExerciseView = 1;
@@ -60,7 +60,7 @@ ResultWidget::ResultWidget(QWidget * parent) :
     FractionBaseWidget(parent)
 {
 #ifdef DEBUG
-    qDebug() << "constructor ResultWidget";
+    qDebug() << QStringLiteral("constructor ResultWidget");
 #endif
     Init();
     m_ExerciseView = 2;
@@ -75,7 +75,7 @@ void ResultWidget::setFactors(const uintList para_factors)
 void ResultWidget::Init()
 {
 #ifdef DEBUG
-    qDebug() << "ResultWidget::Init()";
+    qDebug() << QStringLiteral("ResultWidget::Init()");
 #endif
     setMinimumWidth(160);
     setMaximumHeight(213);
@@ -92,8 +92,8 @@ void ResultWidget::Init()
     pal.setColor(QPalette::Foreground, Qt::white);
     setPalette(pal);
 
-    m_primaryText = new QLabel("", this);
-    m_primaryText->setObjectName("primaryText");
+    m_primaryText = new QLabel(QStringLiteral(""), this);
+    m_primaryText->setObjectName(QStringLiteral("primaryText"));
     m_primaryText->setPalette(pal);
     defaultFont.setPointSize(20);
     m_primaryText->setMinimumHeight(75);
@@ -102,7 +102,7 @@ void ResultWidget::Init()
     m_primaryText->hide();
 
     m_secondaryText = new QLabel(i18n("Solution:"), this);
-    m_secondaryText->setObjectName("secondaryText");
+    m_secondaryText->setObjectName(QStringLiteral("secondaryText"));
     m_secondaryText->setPalette(pal);
     defaultFont.setPointSize(10);
     m_secondaryText->setAlignment(Qt::AlignCenter);
@@ -121,7 +121,7 @@ void ResultWidget::Init()
 ResultWidget::~ResultWidget()
 {
 #ifdef DEBUG
-    qDebug() << "destructor ResultWidget";
+    qDebug() << QStringLiteral("destructor ResultWidget");
 #endif
 }
 
@@ -133,7 +133,7 @@ int ResultWidget::KindView()
 void ResultWidget::showResult()
 {
 #ifdef DEBUG
-    qDebug() << "ResultWidget::showResult";
+    qDebug() << QStringLiteral("ResultWidget::showResult");
 #endif
     switch (m_kindView) {
     case 1:
@@ -168,8 +168,8 @@ void ResultWidget::showResult()
 void ResultWidget::setResult(const Ratio para_result, int k)
 {
 #ifdef DEBUG
-    qDebug() << "ResultWidget::setResult";
-    qDebug() << "m_kindView = " + k;
+    qDebug() << QStringLiteral("ResultWidget::setResult");
+    qDebug() << ("m_kindView = ") + k;
 #endif
     m_kindView = k;
     m_result = para_result;
@@ -180,7 +180,7 @@ void ResultWidget::setResult(const Ratio para_result, int k)
 void ResultWidget::setAnswerMixed(bool value)
 {
 #ifdef DEBUG
-    qDebug() << "ResultWidget::setAnswerMixed";
+    qDebug() << QStringLiteral("ResultWidget::setAnswerMixed");
 #endif
     m_answerMixed = value;
 }
@@ -188,8 +188,8 @@ void ResultWidget::setAnswerMixed(bool value)
 void ResultWidget::setResult(int k)
 {
 #ifdef DEBUG
-    qDebug() << "ResultWidget::setResult";
-    qDebug() << "m_kindView = " + k;
+    qDebug() << QStringLiteral("ResultWidget::setResult");
+    qDebug() << QStringLiteral("m_kindView = ") + k;
 #endif
     m_kindView = k;
     showResult();
@@ -253,7 +253,7 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
             int tmpWidth = 0;
             for (int tmpInt = 0; tmpInt < m_factors.count(); tmpInt++) {
                 if (tmpInt != 0) {
-                    tmpWidth += fm.width("*");
+                    tmpWidth += fm.width(QStringLiteral("*"));
                 }
                 tmpStr.setNum(m_factors[tmpInt]);
                 fontWidth = fm.width(tmpStr);
@@ -264,8 +264,8 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 
             for (int tmpInt = 0; tmpInt < m_factors.count(); tmpInt++) {
                 if (tmpInt != 0) {
-                    fontWidth = fm.width("*");
-                    paint.drawText(old_x, old_y, fontWidth, fontHeight, Qt::AlignCenter, "*");
+                    fontWidth = fm.width(QStringLiteral("*"));
+                    paint.drawText(old_x, old_y, fontWidth, fontHeight, Qt::AlignCenter, QStringLiteral("*"));
                     old_x += fontWidth;
                 }
 

@@ -108,7 +108,7 @@ private:
 
     void setupActions();
 
-private slots:
+private Q_SLOTS:
     void slotLeftSpinBoxValueChanged(int value);
     void slotRightSpinBoxValueChanged(int value);
     void NewTask();

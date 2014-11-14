@@ -21,7 +21,7 @@
 #ifndef RATIO_H
 #define RATIO_H
 
-#include <qtextstream.h>
+#include <QTextStream>
 
 /** Represents a ratio
  *  This class represents 1 ratio. There are several functions provided to
