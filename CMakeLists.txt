@@ -6,8 +6,20 @@ find_package(ECM 1.3.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 include(ECMInstallIcons)
 
-find_package(Qt5 5.2.0 CONFIG REQUIRED Core Widgets)
-find_package(KF5 5.0.0 REQUIRED Config DocTools I18n IconThemes WidgetsAddons XmlGui)
+find_package(Qt5 5.2.0 CONFIG REQUIRED
+  Core
+  Widgets
+)
+
+find_package(KF5 5.0.0 REQUIRED
+  Config
+  Crash
+  DocTools
+  I18n
+  IconThemes
+  WidgetsAddons
+  XmlGui
+)
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)

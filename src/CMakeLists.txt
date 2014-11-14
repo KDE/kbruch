@@ -39,6 +39,7 @@ add_executable(kbruch ${kbruch_SRCS})
 target_link_libraries(kbruch
     KF5::ConfigCore
     KF5::ConfigGui
+    KF5::Crash
     KF5::I18n
     KF5::IconThemes
     KF5::WidgetsAddons
