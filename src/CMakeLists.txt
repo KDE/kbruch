@@ -41,7 +41,6 @@ target_link_libraries(kbruch
     KF5::ConfigGui
     KF5::Crash
     KF5::I18n
-    KF5::IconThemes
     KF5::WidgetsAddons
     KF5::WindowSystem
     KF5::XmlGui

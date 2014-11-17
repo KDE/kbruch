@@ -16,7 +16,6 @@ find_package(KF5 5.0.0 REQUIRED
   Crash
   DocTools
   I18n
-  IconThemes
   WidgetsAddons
   XmlGui
 )

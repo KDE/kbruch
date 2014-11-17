@@ -21,7 +21,6 @@
 #include "MainQtWidget.h"
 
 /* these includes are needed for KDE support */
-#include <KIconLoader>
 #include <KConfigDialog>
 #include <KLocalizedString>
 #include <KStandardShortcut>
