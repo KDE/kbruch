@@ -34,8 +34,6 @@ class QPaintEvent;
  * */
 class FractionPainter : public FractionBaseWidget
 {
-    Q_OBJECT
-
 public:
     /** constructor */
     explicit FractionPainter(QWidget * parent = 0);
@@ -45,6 +43,7 @@ public:
 
     void paintFraction(const QString & str_operation, Ratio & leftRatio, int leftMult,
                        Ratio & rightRatio, int rightMult);
+    void update();
 protected:
     /** Function is called every time the screen need to be painted.
      **/
@@ -57,9 +56,6 @@ private:
     int leftMult;
     Ratio rightRatio;
     int rightMult;
-
-public Q_SLOTS:
-    void update();
 };
 
 #endif

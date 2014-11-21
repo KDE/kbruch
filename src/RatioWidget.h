@@ -33,8 +33,6 @@ class QPaintEvent;
  *  \author Sebastian Stein */
 class RatioWidget : public FractionBaseWidget
 {
-    Q_OBJECT
-
 public:
     /** constructor */
     explicit RatioWidget(QWidget * parent = 0, const Ratio para_ratio = Ratio());

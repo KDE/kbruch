@@ -106,11 +106,6 @@ private:
     /** checks result and shows solution */
     void showResult();
 
-protected:
-    /** sets focus to input fields */
-    void showEvent(QShowEvent * event);
-
-private Q_SLOTS:
     /** handle check button click */
     void slotCheckButtonClicked();
 
@@ -125,6 +120,10 @@ private Q_SLOTS:
 
     /** invokes check button if return pressed in denominator edit */
     void denoReturnPressed();
+
+    protected:
+    /** sets focus to input fields */
+    void showEvent(QShowEvent * event);
 };
 
 #endif // EXERCISEMIXEDNUMBERS_H

@@ -59,7 +59,6 @@ public:
 
     void setQuestionMixed(bool value);
 
-public Q_SLOTS:
     void update();
 
 Q_SIGNALS:
@@ -111,7 +110,6 @@ private:
     void showResult();
     void nextTask();
 
-private Q_SLOTS:
     void slotSkipButtonClicked();
     void slotMinorButtonClicked();
     void slotMoreButtonClicked();

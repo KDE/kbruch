@@ -65,7 +65,6 @@ public:
     /** force the creation of a new task */
     void forceNewTask();
 
-public Q_SLOTS:
     void update();
 
 Q_SIGNALS:
@@ -126,12 +125,6 @@ private:
     void addFactor(uint factor);
     void updateEnteredEdit();
 
-
-protected:
-    void showEvent(QShowEvent * event);
-
-
-private Q_SLOTS:
     void slotFactorsEditReturnPressed();
 
     void slotCheckButtonClicked();
@@ -149,6 +142,9 @@ private Q_SLOTS:
 
     void editContentChanged(bool correct);
     void setButtonsEnabled(bool enabled);
+
+    protected:
+    void showEvent(QShowEvent * event);
 };
 
 #endif

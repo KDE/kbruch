@@ -35,8 +35,6 @@
  *  \author Sebastian Stein */
 class FractionBaseWidget : public QWidget
 {
-    Q_OBJECT
-
 public:
     /** constructor */
     explicit FractionBaseWidget(QWidget * parent = 0);

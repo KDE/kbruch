@@ -46,7 +46,6 @@ public:
     /** return the factors entered */
     QStringList getFactors() const;
 
-public Q_SLOTS:
     /** called when the text in QLineEdit's content changes */
     void textHasChanged(QString text);
 

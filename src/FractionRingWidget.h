@@ -47,8 +47,6 @@ class QWidgetAction;
  * */
 class FractionRingWidget : public KXmlGuiWindow
 {
-    Q_OBJECT
-
 public:
     /** constructor */
     FractionRingWidget();
@@ -108,7 +106,6 @@ private:
 
     void setupActions();
 
-private Q_SLOTS:
     void slotLeftSpinBoxValueChanged(int value);
     void slotRightSpinBoxValueChanged(int value);
     void NewTask();

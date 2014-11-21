@@ -40,8 +40,6 @@ class QAction;
  **/
 class AppMenuWidget : public KXmlGuiWindow
 {
-    Q_OBJECT
-
 public:
     /** constructor */
     AppMenuWidget();
@@ -71,7 +69,6 @@ private:
 
     void setupActions();
 
-private Q_SLOTS:
     void slotFreestyleClicked();
     void slotLearningClicked();
     /**

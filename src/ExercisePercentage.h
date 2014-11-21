@@ -51,7 +51,6 @@ public:
     /** force the creation of a new task */
     void forceNewTask();
 
-public Q_SLOTS:
     void update();
 
 Q_SIGNALS:
@@ -95,7 +94,6 @@ private:
     void showResult();
     void nextTask();
 
-private Q_SLOTS:
     void slotCheckButtonClicked();
     void slotSkipButtonClicked();
     void answerReturnPressed();

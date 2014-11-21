@@ -125,7 +125,6 @@ private:
     void showResult();
     void nextTask();
 
-private Q_SLOTS:
     void slotCheckButtonClicked();
     void slotSkipButtonClicked();
     void numeratorReturnPressed();

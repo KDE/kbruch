@@ -27,8 +27,6 @@ class QPaintEvent;
  *  \author Sebastian Stein */
 class RationalWidget : public FractionBaseWidget
 {
-    Q_OBJECT
-
 public:
     /** constructor */
     RationalWidget(QWidget * parent, const QString &pnumber, const int pperiodStart = 1, const int pperiodLength = 0);

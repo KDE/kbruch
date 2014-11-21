@@ -44,8 +44,6 @@ class StatisticsBarWidget;
 
 class StatisticsView : public QFrame
 {
-    Q_OBJECT
-
 public:
     /** constructor */
     explicit StatisticsView(QWidget * parent = 0);
@@ -53,7 +51,6 @@ public:
     /** destructor */
     ~StatisticsView();
 
-public Q_SLOTS:
     /** increment number of correct answers */
     void addCorrect();
 
