@@ -41,4 +41,4 @@ add_definitions(
 add_subdirectory( doc )
 add_subdirectory( src )
 
-install(FILES kbruch.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata/)
+install(FILES org.kde.kbruch.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata/)
