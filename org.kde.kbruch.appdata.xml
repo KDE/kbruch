@@ -26,6 +26,7 @@
   <name xml:lang="sv">Kbruch</name>
   <name xml:lang="uk">KBruch</name>
   <name xml:lang="x-test">xxKBruchxx</name>
+  <name xml:lang="zh-CN">KBruch</name>
   <name xml:lang="zh-TW">數學_KBruch</name>
   <summary>Exercise Fractions</summary>
   <summary xml:lang="ca">Exercita les fraccions</summary>
@@ -49,6 +50,7 @@
   <summary xml:lang="sv">Övningar med bråk</summary>
   <summary xml:lang="uk">Вправи з дробами</summary>
   <summary xml:lang="x-test">xxExercise Fractionsxx</summary>
+  <summary xml:lang="zh-CN">分数练习</summary>
   <summary xml:lang="zh-TW">練習分數</summary>
   <description>
     <p>KBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.</p>
@@ -93,6 +95,7 @@
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
+    <p xml:lang="zh-CN">功能：</p>
     <p xml:lang="zh-TW">功能:</p>
     <ul>
       <li>Arithmetic exercise - in this exercise you have to solve a given fraction task. You have to enter the numerator and the denominator. This is the main exercise.</li>
