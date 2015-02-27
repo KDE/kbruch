@@ -4,6 +4,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KBruch</name>
+  <name xml:lang="ast">KBruch</name>
   <name xml:lang="bs">KBruch</name>
   <name xml:lang="ca">KBruch</name>
   <name xml:lang="cs">KBruch</name>
@@ -76,6 +77,7 @@
     <p xml:lang="x-test">xxKBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.xx</p>
     <p xml:lang="zh-TW">KBruch 是用來練習計算分數與百分比的小程式。提供不同的練習模式讓您練習分數。</p>
     <p>Features:</p>
+    <p xml:lang="ast">Carauterístiques:</p>
     <p xml:lang="bs">Svojstva:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="cs">Vlastnosti:</p>
