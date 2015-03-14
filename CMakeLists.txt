@@ -2,7 +2,7 @@ project(kbruch)
 
 cmake_minimum_required(VERSION 2.8.12)
 
-find_package(ECM 1.3.0 REQUIRED NO_MODULE)
+find_package(ECM 1.7.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 include(ECMInstallIcons)
 
@@ -24,6 +24,7 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings)
 include(FeatureSummary)
+include(ECMAddAppIcon)
 
 # use sane compile flags
 add_definitions(
@@ -41,6 +42,6 @@ add_definitions(
 add_subdirectory( doc )
 add_subdirectory( src )
 
-install(FILES org.kde.kbruch.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata/)
+install(FILES org.kde.kbruch.appdata.xml DESTINATION ${KDE_INSTALL_DATAROOTDIR}/appdata/)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

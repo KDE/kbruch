@@ -46,15 +46,15 @@ target_link_libraries(kbruch
     KF5::XmlGui
 )
 
-install(TARGETS kbruch  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS kbruch  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 
 ########### install files ###############
 
-install( PROGRAMS org.kde.kbruch.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR}/kbruch )
-install( FILES kbruch.kcfg  DESTINATION  ${KCFG_INSTALL_DIR}/kbruch )
-install( FILES kbruchui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kbruch )
-install( FILES AppMenuWidgetui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kbruch )
-install( FILES FractionRingWidgetui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kbruch )
+install( PROGRAMS org.kde.kbruch.desktop  DESTINATION  ${KDE_INSTALL_APPDIR}/kbruch )
+install( FILES kbruch.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR}/kbruch )
+install( FILES kbruchui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kbruch )
+install( FILES AppMenuWidgetui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kbruch )
+install( FILES FractionRingWidgetui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kbruch )
 
-ecm_install_icons( ICONS 16-apps-kbruch.png 22-apps-kbruch.png 32-apps-kbruch.png 48-apps-kbruch.png 64-apps-kbruch.png sc-apps-kbruch.svgz DESTINATION ${ICON_INSTALL_DIR} THEME hicolor )
+ecm_install_icons( ICONS 16-apps-kbruch.png 22-apps-kbruch.png 32-apps-kbruch.png 48-apps-kbruch.png 64-apps-kbruch.png sc-apps-kbruch.svgz DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor )
