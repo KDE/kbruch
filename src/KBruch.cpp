@@ -41,6 +41,8 @@ int main(int argc, char * argv[])
 {
     // init random generator
     srand(time(NULL));
+    QApplication app(argc, argv);
+
 
     Kdelibs4ConfigMigrator migrate(QStringLiteral("kbruch"));
     migrate.setConfigFiles(QStringList() << QStringLiteral("kbruchrc"));
@@ -63,7 +65,6 @@ int main(int argc, char * argv[])
     aboutData.addAuthor(i18n("Tiago Porangaba"), i18n("New interface design and usability improvements"), QStringLiteral("tiago.porangaba@ltia.fc.unesp.br"));
     aboutData.setHomepage(QStringLiteral("http://edu.kde.org/kbruch/"));
 
-    QApplication app(argc, argv);
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
