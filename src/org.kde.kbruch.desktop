@@ -1,7 +1,7 @@
 # KDE Config File
 [Desktop Entry]
 Type=Application
-Exec=kbruch -caption %c %i
+Exec=kbruch -qwindowtitle %c %i
 Icon=kbruch
 X-DocPath=kbruch/index.html
 GenericName=Exercise Fractions
