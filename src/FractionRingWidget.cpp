@@ -221,7 +221,7 @@ void FractionRingWidget::setupActions()
     KStandardAction::preferences(this,  SLOT(slotPrefs()), actionCollection());
 
     resize(QSize(725, 330).expandedTo(minimumSizeHint()));
-    setupGUI(ToolBar | Keys | StatusBar | Create);
+    setupGUI(ToolBar | Keys | StatusBar);
     setAutoSaveSettings();
 }
 
