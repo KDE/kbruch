@@ -65,6 +65,8 @@ enum ExerciseType {
  **/
 class MainQtWidget : public KXmlGuiWindow
 {
+    Q_OBJECT
+
 public:
 
     /** constructor */
@@ -186,6 +188,7 @@ private:
 
     void setupActions();
 
+private Q_SLOTS:
     bool OperationsCheck();
 
     /**

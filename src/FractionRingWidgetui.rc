@@ -10,7 +10,7 @@
     <Action name="file_quit"/>
   </Menu>
 </MenuBar>
-<ToolBar name="exerciseToolBar" noEdit="true" fullWidth="true">
+<ToolBar name="exerciseToolBar" noEdit="false" fullWidth="true">
   <Action name="NewTask"/>
   <Action name="Back"/>  
   <Separator/>

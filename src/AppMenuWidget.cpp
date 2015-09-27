@@ -75,11 +75,11 @@ AppMenuWidget::AppMenuWidget()
         "QPushButton#m_Learning:hover {"
         "border: none;"
         "image: url(") +
-        QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kbruch/pics/icon_learning.png") +
+        QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kbruch/pics/icon_learning.png")) +
         QStringLiteral(");"
         "}"
         "QLabel#labelInfo, QLabel#labelFreestyle, QLabel#labelLearning"
-        "{ font: bold 20px; }"));
+        "{ font: bold 20px; }");
 
     setStyleSheet(css);
 
