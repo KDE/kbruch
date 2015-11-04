@@ -7,6 +7,7 @@
   <name xml:lang="ast">KBruch</name>
   <name xml:lang="bs">KBruch</name>
   <name xml:lang="ca">KBruch</name>
+  <name xml:lang="ca-valencia">KBruch</name>
   <name xml:lang="cs">KBruch</name>
   <name xml:lang="da">KBruch</name>
   <name xml:lang="de">KBruch</name>
@@ -36,6 +37,7 @@
   <summary xml:lang="ast">Exercicios de fraiciones</summary>
   <summary xml:lang="bs">Vježba razlomaka</summary>
   <summary xml:lang="ca">Exercita les fraccions</summary>
+  <summary xml:lang="ca-valencia">Exercita les fraccions</summary>
   <summary xml:lang="cs">Cvičení se zlomky</summary>
   <summary xml:lang="de">Bruchrechnen üben</summary>
   <summary xml:lang="en-GB">Exercise Fractions</summary>
@@ -64,6 +66,7 @@
     <p>KBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.</p>
     <p xml:lang="ast">KBruch ye un programa pequeñu pa prauticar el cálculu con fraiciones y porcentaxes. Apúrrense estremaos exercicios pa esti propósitu y pues usar el mou deprendimientu pa prauticar con fraiciones. El programa comprueba la entrada del usuariu y da encamientos.</p>
     <p xml:lang="ca">El KBruch és un programa senzill per a practicar càlcul amb fraccions i percentatges. Es proposen diversos exercicis i podeu utilitzar el mode d'aprenentatge per a practicar amb fraccions. El programa comprova l'entrada de l'usuari i proporciona una resposta.</p>
+    <p xml:lang="ca-valencia">El KBruch és un programa senzill per a practicar càlcul amb fraccions i percentatges. Es proposen diversos exercicis i podeu utilitzar el mode d'aprenentatge per a practicar amb fraccions. El programa comprova l'entrada de l'usuari i proporciona una resposta.</p>
     <p xml:lang="de">KBruch ist ein kleines Programm, um das Rechnen mit Brüchen und Prozenten zu üben. Für diesen Zweck werden verschiedene Übungen angeboten. Außerdem gibt es einen Modus für das Lernen von Brüchen. Das Programm überprüft die Eingaben des Benutzers und gibt entsprechende Rückmeldungen.</p>
     <p xml:lang="en-GB">KBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.</p>
     <p xml:lang="es">KBruch es un pequeño programa para practicar el cálculo con fracciones y porcentajes. Para ello, se proporcionan diferentes ejercicios y se puede utilizar el modo de aprendizaje para practicar con las fracciones. El programa comprueba las respuestas del usuario y hace comentarios al respecto.</p>
@@ -87,6 +90,7 @@
     <p xml:lang="ast">Carauterístiques:</p>
     <p xml:lang="bs">Svojstva:</p>
     <p xml:lang="ca">Característiques:</p>
+    <p xml:lang="ca-valencia">Característiques:</p>
     <p xml:lang="cs">Vlastnosti:</p>
     <p xml:lang="de">Funktionen:</p>
     <p xml:lang="en-GB">Features:</p>
@@ -116,6 +120,7 @@
       <li xml:lang="ast">Exerciciu aritméticu - nesti exerciciu tienes de resolver una xera de fraiciones daes. Tienes d'introducir el numberador y el denominador. Esti ye l'exercicu principal.</li>
       <li xml:lang="bs">Aritmetička vježba - u ovoj vježbi morate riješiti dati razlomak . Morate ući u brojnik i nazivnik. Ovo je glavna vježba.</li>
       <li xml:lang="ca">Exercici aritmètic: En aquest exercici heu de resoldre un càlcul de fracció. Cal que escriviu el resultat, és a dir el numerador i el denominador. Aquest és l'exercici principal.</li>
+      <li xml:lang="ca-valencia">Exercici aritmètic: En este exercici heu de resoldre un càlcul de fracció. Cal que escriviu el resultat, és a dir el numerador i el denominador. Este és l'exercici principal.</li>
       <li xml:lang="de">Arithmetik - in dieser Übung muss eine gegebene Bruchaufgabe gelöst werden. Sie müssen den ganzzahligen Anteil des Bruchs und Zähler und Nenner eingeben. Dies ist die Hauptübung.</li>
       <li xml:lang="en-GB">Arithmetic exercise - in this exercise you have to solve a given fraction task. You have to enter the numerator and the denominator. This is the main exercise.</li>
       <li xml:lang="es">Ejercicio de aritmética: en este ejercicio tiene que resolver una operación con fracciones. Deberá introducir el numerador y el denominador. Este es el ejercicio principal.</li>
@@ -138,6 +143,7 @@
       <li>Comparison exercise - in this exercise you have to compare the size of 2 given fractions, using the symbols &gt;, &lt; or =.</li>
       <li xml:lang="ast">Exerciciu de comparanza - nesti exerciciu tienes de comparar el tamañu de 2 fraiciones daes, usando los símbolos &gt;, &lt; ó =.</li>
       <li xml:lang="ca">Exercici de comparació: En aquest exercici heu de comparar el valor numèric de 2 fraccions, utilitzant els símbols &gt;, &lt; or =.</li>
+      <li xml:lang="ca-valencia">Exercici de comparació: En este exercici heu de comparar el valor numèric de 2 fraccions, utilitzant els símbols &gt;, &lt; or =.</li>
       <li xml:lang="de">Vergleich - In dieser Übung müssen 2 gegebene Brüche der Größe nach mithilfe der Symbole  „&gt;“, „&lt; “ oder „=“ verglichen werden.</li>
       <li xml:lang="en-GB">Comparison exercise - in this exercise you have to compare the size of 2 given fractions, using the symbols &gt;, &lt; or =.</li>
       <li xml:lang="es">Ejercicio de comparación: en este ejercicio usted debe comparar el tamaño de 2 fracciones dadas, utilizando los símbolos  &gt;, &lt; o =.</li>
@@ -161,6 +167,7 @@
       <li xml:lang="ast">Exerciciu de conversión - nesti exerciciu tienes de convertir un númberu dau a una fraición.</li>
       <li xml:lang="bs">Konverzija vježbe - u ovoj vježbi morate pretvoriti dati broj u razlomak.</li>
       <li xml:lang="ca">Exercici de conversió: En aquest exercici heu de convertir un nombre en una fracció.</li>
+      <li xml:lang="ca-valencia">Exercici de conversió: En este exercici heu de convertir un nombre en una fracció.</li>
       <li xml:lang="de">Umwandeln - in dieser Übung muss eine gegebene Zahl in einen Bruch umgewandelt werden.</li>
       <li xml:lang="en-GB">Conversion exercise - in this exercise you have to convert a given number into a fraction.</li>
       <li xml:lang="es">Ejercicio de conversión: en este ejercicio debe convertir un número dado en una fracción.</li>
@@ -184,6 +191,7 @@
       <li xml:lang="ast">Exerciciu de fautorización - nesti exerciciu tienes de fautorizar un númberu dau a los sos fautores primos.</li>
       <li xml:lang="bs">Faktorizacijska vježba - u ovoj vježbi morate razložiti dati broj na proste faktore.</li>
       <li xml:lang="ca">Exercici de factorització: En aquest exercici heu de descompondre un nombre en factors primers.</li>
+      <li xml:lang="ca-valencia">Exercici de factorització: En este exercici heu de descompondre un nombre en factors primers.</li>
       <li xml:lang="de">Faktorisieren - in dieser Übung muss eine gegebene Zahl in ihre Primfaktoren zerlegt werden.</li>
       <li xml:lang="en-GB">Factorisation exercise - in this exercise you have to factorise a given number into its prime factors.</li>
       <li xml:lang="es">Ejercicio de descomponer en factores: en este ejercicio debe descomponer un número dado en sus factores primos.</li>
@@ -207,6 +215,7 @@
       <li xml:lang="ast">Exerciciu de porcentaxe - nesti exerciciu tienes de calcular porcentaxes.</li>
       <li xml:lang="bs">Procenat vježbe - u ovoj vježbi morate izračunati postotke.</li>
       <li xml:lang="ca">Exercici de percentatge: En aquest exercici heu de calcular els percentatges.</li>
+      <li xml:lang="ca-valencia">Exercici de percentatge: En este exercici heu de calcular els percentatges.</li>
       <li xml:lang="de">Prozentaufgaben - in dieser Übung müssen Prozente berechnet werden.</li>
       <li xml:lang="en-GB">Percentage exercise - in this exercise you have to calculate percentages.</li>
       <li xml:lang="es">Ejercicio de porcentajes: en este ejercicio debe calcular porcentajes.</li>
