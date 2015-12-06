@@ -28,6 +28,7 @@
 
 /* these includes are needed for KDE support */
 #include <KAboutData>
+#include <KCrash>
 #include <KLocalizedString>
 
 /* these includes are needed for Qt support */
@@ -64,6 +65,8 @@ int main(int argc, char * argv[])
     aboutData.addAuthor(i18n("Tadeu Araujo"), i18n("New interface design and usability improvements"), QStringLiteral("tadeu.araujo@ltia.fc.unesp.br"));
     aboutData.addAuthor(i18n("Tiago Porangaba"), i18n("New interface design and usability improvements"), QStringLiteral("tiago.porangaba@ltia.fc.unesp.br"));
     aboutData.setHomepage(QStringLiteral("http://edu.kde.org/kbruch/"));
+
+    KCrash::initialize();
 
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
