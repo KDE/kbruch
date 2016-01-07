@@ -43,6 +43,7 @@ int main(int argc, char * argv[])
     srand(time(NULL));
     QApplication app(argc, argv);
 
+    KLocalizedString::setApplicationDomain("kbruch");
 
     Kdelibs4ConfigMigrator migrate(QStringLiteral("kbruch"));
     migrate.setConfigFiles(QStringList() << QStringLiteral("kbruchrc"));
