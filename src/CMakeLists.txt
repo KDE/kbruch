@@ -2,7 +2,6 @@ add_subdirectory( pics )
 
 ########### next target ###############
 
-add_definitions(-DTRANSLATION_DOMAIN=\"kbruch\")
 include_directories( ${CMAKE_CURRENT_BINARY_DIR} )
 
 set(kbruch_SRCS
