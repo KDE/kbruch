@@ -626,10 +626,10 @@ void ExerciseFactorize::showEvent(QShowEvent *)
 void ExerciseFactorize::editContentChanged(bool correct)
 {
     if (correct) {
-        QStringList factors = m_factorsEnteredEdit->getFactors();
+        const QStringList factors = m_factorsEnteredEdit->getFactors();
 
         m_factorsEntered.clear();
-        foreach(const QString & auxStr, factors) {
+        for (const QString & auxStr : factors) {
             m_factorsEntered.append(auxStr.toUInt());
         }
     }

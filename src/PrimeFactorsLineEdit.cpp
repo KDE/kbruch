@@ -72,7 +72,7 @@ bool PrimeFactorsLineEdit::checkCorrectness(const QString& theText)
 bool PrimeFactorsLineEdit::areFactors(const QStringList& factors)
 {
     m_theFactors.clear();
-    foreach(const QString & str, factors) {
+    for (const QString & str : factors) {
         bool found = false;
         foreach(const QString & aux, m_usedFactors) {
             if (str.compare(str, aux) == 0) {
