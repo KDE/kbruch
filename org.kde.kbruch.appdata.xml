@@ -23,6 +23,7 @@
   <name xml:lang="lt">KBruch</name>
   <name xml:lang="nds">KBruch</name>
   <name xml:lang="nl">KBruch</name>
+  <name xml:lang="nn">KBrøk</name>
   <name xml:lang="pl">KBruch</name>
   <name xml:lang="pt">KBruch</name>
   <name xml:lang="pt-BR">KBruch</name>
@@ -54,6 +55,7 @@
   <summary xml:lang="lt">Treniruokitės trupmenas</summary>
   <summary xml:lang="nds">Brookreken öven</summary>
   <summary xml:lang="nl">Breuken oefenen</summary>
+  <summary xml:lang="nn">Brøkøvingar</summary>
   <summary xml:lang="pl">Ćwiczenia z ułamków</summary>
   <summary xml:lang="pt">Exercitar Fracções</summary>
   <summary xml:lang="pt-BR">Exercícios com frações</summary>
@@ -111,6 +113,7 @@
     <p xml:lang="lt">Ypatybės:</p>
     <p xml:lang="nds">Markmalen:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
+    <p xml:lang="nn">Funksjonar:</p>
     <p xml:lang="pl">Możliwości:</p>
     <p xml:lang="pt">Funcionalidades:</p>
     <p xml:lang="pt-BR">Funcionalidades:</p>
