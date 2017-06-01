@@ -46,7 +46,7 @@ public:
     void updateAndRepaint();
 
 protected:
-    virtual QSize minimumSizeHint() const {
+    QSize minimumSizeHint() const Q_DECL_OVERRIDE {
         return QSize(20, 10);
     }
 

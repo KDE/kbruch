@@ -49,7 +49,7 @@ public:
     ~ExercisePercentage();
 
     /** force the creation of a new task */
-    void forceNewTask();
+    void forceNewTask() Q_DECL_OVERRIDE;
 
     void update();
 

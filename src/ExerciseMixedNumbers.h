@@ -52,7 +52,7 @@ public:
     /** resets the current state, creates a new task and counts the last task
      * as wrong, if it wasn't solved (in _NEXT_TASK state) yet mainly used
      * after changing the task parameters */
-    void forceNewTask();
+    void forceNewTask() Q_DECL_OVERRIDE;
 
 Q_SIGNALS:
     /** signal emitted if task solved correctly */
@@ -123,7 +123,7 @@ private:
 
     protected:
     /** sets focus to input fields */
-    void showEvent(QShowEvent * event);
+    void showEvent(QShowEvent * event) Q_DECL_OVERRIDE;
 };
 
 #endif // EXERCISEMIXEDNUMBERS_H

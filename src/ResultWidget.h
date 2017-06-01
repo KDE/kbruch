@@ -79,7 +79,7 @@ private:
     Ratio m_result;
 
     /** overrideing the paint event of FractionBaseWidget */
-    void paintEvent(QPaintEvent*);
+    void paintEvent(QPaintEvent*) Q_DECL_OVERRIDE;
 
     void Init();
     void showResult()   ;

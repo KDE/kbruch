@@ -54,7 +54,7 @@ public:
     ~ExerciseConvert();
 
     /** force the creation of a new task */
-    void forceNewTask();
+    void forceNewTask() Q_DECL_OVERRIDE;
 
     void update();
 
@@ -106,7 +106,7 @@ private:
     void denominatorReturnPressed();
 
 protected:
-    void showEvent(QShowEvent * event);
+    void showEvent(QShowEvent * event) Q_DECL_OVERRIDE;
 };
 
 #endif
