@@ -42,7 +42,9 @@ int main(int argc, char * argv[])
 {
     // init random generator
     srand(time(NULL));
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication app(argc, argv);
+    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
     KLocalizedString::setApplicationDomain("kbruch");
 
