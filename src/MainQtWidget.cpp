@@ -41,6 +41,7 @@
 #include <QToolButton>
 #include <QWidget>
 #include <QWidgetAction>
+#include <QRadioButton>
 
 #ifdef DEBUG
 #include <QDebug>
@@ -188,11 +189,11 @@ MainQtWidget::MainQtWidget()
     m_AnswerMixedLabel->setObjectName(QStringLiteral("AnswerMixedLabel"));
     m_AnswerMixedLabel->setAlignment(Qt::AlignRight);
 
-    m_AnswerMixedCheck = new QCheckBox(pageOptions);
+    m_AnswerMixedCheck = new QRadioButton(pageOptions);
     m_AnswerMixedCheck->setObjectName(QStringLiteral("AnswerMixedCheck"));
     m_AnswerMixedCheck->setChecked(m_answerMixed);
     m_taskview->setAnswerMixed(m_answerMixed);
-    QObject::connect(m_AnswerMixedCheck, &QCheckBox::stateChanged, this, &MainQtWidget::AnswerMixedCheckSlot);
+    QObject::connect(m_AnswerMixedCheck, &QRadioButton::toggled, this, &MainQtWidget::AnswerMixedCheckSlot);
 
     m_AdditionLabel = new QLabel(i18n("Addition:"), pageOptions);
     m_AdditionLabel->setToolTip(i18n("Check this to use addition operator."));
@@ -239,11 +240,11 @@ MainQtWidget::MainQtWidget()
     m_ReducedLabel->setObjectName(QStringLiteral("ReducedLabel"));
     m_ReducedLabel->setAlignment(Qt::AlignRight);
 
-    m_ReducedCheck = new QCheckBox(pageOptions);
+    m_ReducedCheck = new QRadioButton(pageOptions);
     m_ReducedCheck->setObjectName(QStringLiteral("ReducedCheck"));
     m_ReducedCheck->setChecked(m_reducedForm);
     m_taskview->setReducedForm(m_reducedForm);
-    QObject::connect(m_ReducedCheck, &QCheckBox::stateChanged, this, &MainQtWidget::ReducedFormCheckSlot);
+    QObject::connect(m_ReducedCheck, &QRadioButton::toggled, this, &MainQtWidget::ReducedFormCheckSlot);
 
     m_NrOfTermsLabel = new QLabel(i18n("Number of terms:"), pageOptions);
     m_NrOfTermsLabel->setToolTip(i18n("The number of \nterms you want"));

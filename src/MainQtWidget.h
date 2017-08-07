@@ -22,6 +22,7 @@
 #define MAINQTWIDGET_H
 
 #include <KXmlGuiWindow>
+#include <QRadioButton>
 
 class QAction;
 class QWidgetAction;
@@ -148,10 +149,10 @@ private:
 
 
     // Answer group
-    QCheckBox * m_AnswerMixedCheck;
+    QRadioButton * m_AnswerMixedCheck;
     QLabel * m_AnswerMixedLabel;
 
-    QCheckBox * m_ReducedCheck;
+    QRadioButton * m_ReducedCheck;
     QLabel * m_ReducedLabel;
 
 
