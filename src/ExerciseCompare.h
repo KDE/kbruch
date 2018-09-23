@@ -49,7 +49,7 @@ class ExerciseCompare : public ExerciseBase
 
 public:
     /** constructor */
-    explicit ExerciseCompare(QWidget * parent = 0);
+    explicit ExerciseCompare(QWidget * parent = nullptr);
 
     /** destructor */
     ~ExerciseCompare();

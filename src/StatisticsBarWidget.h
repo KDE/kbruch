@@ -32,7 +32,7 @@ class StatisticsBarWidget : public QWidget
 {
 public:
     /** constructor */
-    explicit StatisticsBarWidget(QWidget * parent = 0);
+    explicit StatisticsBarWidget(QWidget * parent = nullptr);
 
     /** destructor */
     ~StatisticsBarWidget();

@@ -42,7 +42,7 @@ public:
     /** constructors */
     ResultWidget(QWidget * parent, const Ratio para_result);
     ResultWidget(QWidget * parent, const uintList para_factors);
-    explicit ResultWidget(QWidget * parent = 0);
+    explicit ResultWidget(QWidget * parent = nullptr);
 
     /** destructor */
     ~ResultWidget();

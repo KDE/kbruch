@@ -814,10 +814,10 @@ void MainQtWidget::slotPrefs()
     //KConfigDialog didn't find an instance of this dialog, so lets create it :
     KConfigDialog* configDialog = new KConfigDialog(this, QStringLiteral("settings"), SettingsClass::self());
 
-    TaskColors * taskColors = new TaskColors(0);
+    TaskColors * taskColors = new TaskColors(nullptr);
     configDialog->addPage(taskColors, i18n("Colors"), QStringLiteral("preferences-desktop-color"));
 
-    TaskFonts * taskFonts = new TaskFonts(0);
+    TaskFonts * taskFonts = new TaskFonts(nullptr);
     configDialog->addPage(taskFonts, i18n("Fonts"), QStringLiteral("preferences-desktop-font"));
     // User edited the configuration - update your local copies of the
     // configuration data

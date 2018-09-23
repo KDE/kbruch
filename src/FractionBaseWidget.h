@@ -37,7 +37,7 @@ class FractionBaseWidget : public QWidget
 {
 public:
     /** constructor */
-    explicit FractionBaseWidget(QWidget * parent = 0);
+    explicit FractionBaseWidget(QWidget * parent = nullptr);
 
     /** destructor */
     ~FractionBaseWidget();

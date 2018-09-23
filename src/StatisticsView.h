@@ -46,7 +46,7 @@ class StatisticsView : public QFrame
 {
 public:
     /** constructor */
-    explicit StatisticsView(QWidget * parent = 0);
+    explicit StatisticsView(QWidget * parent = nullptr);
 
     /** destructor */
     ~StatisticsView();

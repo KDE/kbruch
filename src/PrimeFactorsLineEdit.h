@@ -38,7 +38,7 @@ class PrimeFactorsLineEdit : public QLineEdit
 
 public:
     /** constructor */
-    explicit PrimeFactorsLineEdit(QWidget* parent = 0);
+    explicit PrimeFactorsLineEdit(QWidget* parent = nullptr);
 
     /** destructor */
     ~PrimeFactorsLineEdit();

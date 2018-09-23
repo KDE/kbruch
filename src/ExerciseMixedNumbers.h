@@ -44,7 +44,7 @@ class ExerciseMixedNumbers: public ExerciseBase
 
 public:
     /** constructor */
-    explicit ExerciseMixedNumbers(QWidget* parent = 0);
+    explicit ExerciseMixedNumbers(QWidget* parent = nullptr);
 
     /** destructor */
     virtual ~ExerciseMixedNumbers();
