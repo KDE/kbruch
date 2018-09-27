@@ -335,7 +335,7 @@ void ExerciseFactorize::createTask()
     PrimeNumber tmp_primenumber;
 
     // just pick one number out of the possible numbers to factorize
-    m_taskNumber = possibleTasks[uint((double(rand()) / RAND_MAX) * numberPossibleTasks)];
+    m_taskNumber = possibleTasks[uint((double(qrand()) / RAND_MAX) * numberPossibleTasks)];
 
     // now get the primefactors of the taskNumber
     m_factorsResult.clear();

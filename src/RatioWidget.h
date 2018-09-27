@@ -53,7 +53,7 @@ private:
     /*identify if the fraction will appear in mixed form or not*/
     bool m_questionMixed;
 
-    /** overrideing the paint event of FractionBaseWidget */
+    /** overriding the paint event of FractionBaseWidget */
     void paintEvent(QPaintEvent*) Q_DECL_OVERRIDE;
 };
 

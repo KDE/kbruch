@@ -197,7 +197,7 @@ void ExercisePercentage::createTask()
 {
     // the tasks are hardcoded here; there are some algorithms to convert
     // rational numbers to fractions, but it is not worth the effort here
-    switch (int ((double(rand()) / RAND_MAX) * 19)) {
+    switch (int ((double(qrand()) / RAND_MAX) * 19)) {
     case  0 :
         //m_number = QLocale().toString(0.5, 'f', 1);
         m_numberPercentage = QStringLiteral("75");

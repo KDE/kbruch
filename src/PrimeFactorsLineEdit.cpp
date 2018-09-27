@@ -18,11 +18,11 @@
 
 */
 
+#include "PrimeFactorsLineEdit.h"
+
 #ifdef DEBUG
 #include <QDebug>
 #endif
-
-#include "PrimeFactorsLineEdit.h"
 
 /* constructor */
 PrimeFactorsLineEdit::PrimeFactorsLineEdit(QWidget * parent)

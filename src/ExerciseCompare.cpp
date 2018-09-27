@@ -205,12 +205,12 @@ void ExerciseCompare::update()
 void ExerciseCompare::createTask()
 {
     // generate the first ratio
-    m_firstRatio = Ratio(int ((double(rand()) / RAND_MAX) * 10 + 1), int ((double(rand()) / RAND_MAX) * 10 + 1));
+    m_firstRatio = Ratio(int ((double(qrand()) / RAND_MAX) * 10 + 1), int ((double(qrand()) / RAND_MAX) * 10 + 1));
 
     // now the second ratio, but make sure, the second ratio is different from
     // the first one
     do {
-        m_secondRatio = Ratio(int ((double(rand()) / RAND_MAX) * 10 + 1), int ((double(rand()) / RAND_MAX) * 10 + 1));
+        m_secondRatio = Ratio(int ((double(qrand()) / RAND_MAX) * 10 + 1), int ((double(qrand()) / RAND_MAX) * 10 + 1));
     } while (m_firstRatio == m_secondRatio);
 
     return;

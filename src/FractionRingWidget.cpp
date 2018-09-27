@@ -238,7 +238,7 @@ void FractionRingWidget::slotPrefs()
     //KConfigDialog didn't find an instance of this dialog, so lets create it :
     KConfigDialog* configDialog = new KConfigDialog(this, QStringLiteral("settings"), SettingsClass::self());
 
-    TaskColors * taskColors = new TaskColors(0);
+    TaskColors * taskColors = new TaskColors(nullptr);
     configDialog->addPage(taskColors, i18n("Colors"), QStringLiteral("preferences-desktop-color"));
 
     // User edited the configuration - update your local copies of the
@@ -416,16 +416,16 @@ void FractionRingWidget::NewTask()
 
 void FractionRingWidget::resetFraction(bool flag = true)
 {
-    int denominator = int ((double(rand()) / RAND_MAX) * 5) + 2;
-    int numerator = int ((double(rand()) / RAND_MAX) * (denominator - 1)) + 1;
+    int denominator = int ((double(qrand()) / RAND_MAX) * 5) + 2;
+    int numerator = int ((double(qrand()) / RAND_MAX) * (denominator - 1)) + 1;
 
     rLeft = Ratio(numerator, denominator, false);
 
-    int denominator2 = int ((double(rand()) / RAND_MAX) * 5) + 2;
+    int denominator2 = int ((double(qrand()) / RAND_MAX) * 5) + 2;
     while (denominator2 == denominator) {
-        denominator2 = int ((double(rand()) / RAND_MAX) * 5) + 2;
+        denominator2 = int ((double(qrand()) / RAND_MAX) * 5) + 2;
     }
-    int numerator2 = int ((double(rand()) / RAND_MAX) * (denominator2 - 1)) + 1;
+    int numerator2 = int ((double(qrand()) / RAND_MAX) * (denominator2 - 1)) + 1;
     rRight = Ratio(numerator2, denominator2, false);
 
     multLeft = 1;

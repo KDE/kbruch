@@ -34,7 +34,7 @@ class FractionRingWidget;
 class QAction;
 
 /** Constructs the main window and presents the user interface.
- *  The window give the user the hability to choose what application
+ *  The window give the user the ability to choose what application
  *  he want to open first.
  *  \author Danilo Balzaque
  **/

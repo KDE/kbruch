@@ -317,7 +317,7 @@ bool Ratio::operator> (Ratio right)
 /* reduce the ratio */
 void Ratio::reduce()
 {
-    /* we try prime numbers as divisors; I think it is the fastet way to do */
+    /* we try prime numbers as divisors; I think it is the fastest way to do */
     PrimeNumber number;
     short sign_numerator = 0, sign_denominator = 0;
 

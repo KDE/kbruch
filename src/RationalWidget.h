@@ -48,7 +48,7 @@ private:
     /** length of the period */
     int m_periodLength;
 
-    /** overrideing the paint event of FractionBaseWidget */
+    /** overriding the paint event of FractionBaseWidget */
     void paintEvent(QPaintEvent*) Q_DECL_OVERRIDE;
 };
 
