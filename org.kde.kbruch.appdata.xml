@@ -254,6 +254,7 @@
   <url type="help">http://docs.kde.org/stable/en/kdeedu/kbruch/index.html</url>
   <screenshots>
     <screenshot type="default">
+      <caption>Exercising fractions with KBruch</caption>
       <image>http://kde.org/images/screenshots/kbruch.png</image>
     </screenshot>
   </screenshots>
