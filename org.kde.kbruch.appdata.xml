@@ -252,6 +252,7 @@
   <url type="homepage">http://edu.kde.org/kbruch/</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kbruch</url>
   <url type="help">http://docs.kde.org/stable/en/kdeedu/kbruch/index.html</url>
+  <url type="donation">https://www.kde.org/community/donations/?app=kbruch&amp;source=appdata</url>
   <screenshots>
     <screenshot type="default">
       <caption>Exercising fractions with KBruch</caption>
