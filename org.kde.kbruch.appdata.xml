@@ -256,6 +256,14 @@
   <screenshots>
     <screenshot type="default">
       <caption>Exercising fractions with KBruch</caption>
+      <caption xml:lang="ca">Practicant les fraccions amb el KBruch</caption>
+      <caption xml:lang="ca-valencia">Practicant les fraccions amb el KBruch</caption>
+      <caption xml:lang="gl">Facendo exercicios de fraccións con KBruch</caption>
+      <caption xml:lang="nl">Breuken oefenen met KBruch</caption>
+      <caption xml:lang="pt">A praticar fracções com o KBruch</caption>
+      <caption xml:lang="sv">Bråkövning med Kbruch</caption>
+      <caption xml:lang="uk">Вправи з дробами у KBruch</caption>
+      <caption xml:lang="x-test">xxExercising fractions with KBruchxx</caption>
       <image>http://kde.org/images/screenshots/kbruch.png</image>
     </screenshot>
   </screenshots>
