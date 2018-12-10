@@ -41,7 +41,7 @@
 int main(int argc, char * argv[])
 {
     // init random generator
-    qsrand(time(NULL));
+    qsrand(time(nullptr));
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);

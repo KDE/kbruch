@@ -30,7 +30,7 @@
 /** constructor of class task */
 Task::Task()
 {
-    qsrand(time(NULL));
+    qsrand(time(nullptr));
 #ifdef DEBUG
     qDebug() << "constructor task";
 #endif
