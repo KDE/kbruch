@@ -386,10 +386,12 @@ MainQtWidget::MainQtWidget()
         break;
     }
     move(50, 50);
+    qDebug() << " MainQtWidget::MainQtWidget()"<<this;
 }
 
 MainQtWidget::~MainQtWidget()
 {
+    qDebug() << " MainQtWidget::~MainQtWidget()"<<this;
 }
 
 QFont MainQtWidget::DefaultFont()
