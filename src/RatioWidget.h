@@ -35,13 +35,13 @@ class RatioWidget : public FractionBaseWidget
 {
 public:
     /** constructor */
-    explicit RatioWidget(QWidget * parent = nullptr, const Ratio para_ratio = Ratio());
+    explicit RatioWidget(QWidget * parent = nullptr, const Ratio &para_ratio = Ratio());
 
     /** destructor */
     ~RatioWidget();
 
     /** set the task to be displayed */
-    void setRatio(const Ratio para_ratio);
+    void setRatio(const Ratio &para_ratio);
 
     void setQuestionMixed(bool value);
 

@@ -112,7 +112,7 @@ void Task::set_ratio_n(unsigned short number, int numerator, int denominator)
 }
 
 /** set ratio n in the ratio_vector */
-void Task::set_ratio_n(unsigned short number, Ratio fraction)
+void Task::set_ratio_n(unsigned short number, const Ratio &fraction)
 {
     /* do not set something outside our vector */
     if (number > ratio_vector.size() - 1)
@@ -151,7 +151,7 @@ short Task::get_op_n(unsigned short number) const
 }
 
 /** add a new ratio at the end of the ratio vector */
-void Task::add_ratio(Ratio new_ratio)
+void Task::add_ratio(const Ratio &new_ratio)
 {
     ratio_vector.push_back(new_ratio);
     return;

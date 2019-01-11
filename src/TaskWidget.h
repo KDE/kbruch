@@ -45,13 +45,13 @@ class TaskWidget : public FractionBaseWidget
 {
 public:
     /** constructor */
-    explicit TaskWidget(QWidget * parent = nullptr, const Task para_task = Task());
+    explicit TaskWidget(QWidget * parent = nullptr, const Task &para_task = Task());
 
     /** destructor */
     ~TaskWidget();
 
     /** set the task to be displayed */
-    void setTask(const Task para_task);
+    void setTask(const Task &para_task);
 
     void setQuestionMixed(bool value);
 

@@ -47,7 +47,7 @@ public:
     QStringList getFactors() const;
 
     /** called when the text in QLineEdit's content changes */
-    void textHasChanged(QString text);
+    void textHasChanged(const QString &text);
 
 Q_SIGNALS:
     /** emitted when QLineEdit's content changes and it's correct

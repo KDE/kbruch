@@ -62,7 +62,7 @@ protected:
     //virtual void paintEvent(QPaintEvent*) = 0;
 
     /** paints a ratio at the given position */
-    void paintRatio(QPainter & paint, Ratio tmp_ratio, int & x_pos, int & y_pos, QFontMetrics & fm, bool addMargin = true, bool show_mixed = true, bool show_center = false);
+    void paintRatio(QPainter & paint, const Ratio &tmp_ratio, int & x_pos, int & y_pos, QFontMetrics & fm, bool addMargin = true, bool show_mixed = true, bool show_center = false);
 
     /** paints a string in the vertical middle (aligned to the operation signs) */
     void paintMiddle(QPainter & paint, const QString& paint_str, int & x_pos, int & y_pos, QFontMetrics & fm, const QColor &color, bool addMargin = true);

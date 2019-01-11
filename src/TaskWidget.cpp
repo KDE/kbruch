@@ -32,7 +32,7 @@
 #endif
 
 TaskWidget::TaskWidget(QWidget * parent,
-                       const Task para_task) :
+                       const Task &para_task) :
     FractionBaseWidget(parent), m_task(para_task)
 {
 #ifdef DEBUG
@@ -47,7 +47,7 @@ TaskWidget::~TaskWidget()
 #endif
 }
 
-void TaskWidget::setTask(const Task para_task)
+void TaskWidget::setTask(const Task &para_task)
 {
     m_task = para_task;
     update();

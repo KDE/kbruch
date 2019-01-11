@@ -35,7 +35,7 @@
 
 #include "settingsclass.h"
 
-ResultWidget::ResultWidget(QWidget * parent, const uintList para_factors) :
+ResultWidget::ResultWidget(QWidget * parent, const uintList &para_factors) :
     FractionBaseWidget(parent), m_factors(para_factors)
 {
 #ifdef DEBUG
@@ -46,7 +46,7 @@ ResultWidget::ResultWidget(QWidget * parent, const uintList para_factors) :
 }
 
 ResultWidget::ResultWidget(QWidget * parent,
-                           const Ratio para_result) :
+                           const Ratio &para_result) :
     FractionBaseWidget(parent), m_result(para_result)
 {
 #ifdef DEBUG
@@ -66,7 +66,7 @@ ResultWidget::ResultWidget(QWidget * parent) :
     m_ExerciseView = 2;
 }
 
-void ResultWidget::setFactors(const uintList para_factors)
+void ResultWidget::setFactors(const uintList &para_factors)
 {
     m_factors = para_factors;
     update();
@@ -165,7 +165,7 @@ void ResultWidget::showResult()
     update();
 }
 
-void ResultWidget::setResult(const Ratio para_result, int k)
+void ResultWidget::setResult(const Ratio &para_result, int k)
 {
 #ifdef DEBUG
     qDebug() << QStringLiteral("ResultWidget::setResult");

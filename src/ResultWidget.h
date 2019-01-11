@@ -40,21 +40,21 @@ class ResultWidget : public FractionBaseWidget
 {
 public:
     /** constructors */
-    ResultWidget(QWidget * parent, const Ratio para_result);
-    ResultWidget(QWidget * parent, const uintList para_factors);
+    ResultWidget(QWidget * parent, const Ratio &para_result);
+    ResultWidget(QWidget * parent, const uintList &para_factors);
     explicit ResultWidget(QWidget * parent = nullptr);
 
     /** destructor */
     ~ResultWidget();
 
     /** set the task to be displayed */
-    void setResult(const Ratio para_result, int k);
+    void setResult(const Ratio &para_result, int k);
     void setResult(int k);
 
     int KindView();
 
     /** set the task to be displayed */
-    void setFactors(const uintList para_factors);
+    void setFactors(const uintList &para_factors);
 
     void setAnswerMixed(bool value);
 

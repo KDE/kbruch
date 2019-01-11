@@ -70,13 +70,13 @@ public:
     void setRatio(int pinteger, int pnumerator, int pdenominator, bool reduce = true);
 
     /** operator overloading for: c = object + summand */
-    Ratio operator+ (Ratio addend);
+    Ratio operator+ (const Ratio &addend);
 
     /** operator overloading for: c = object - subtrahend */
     Ratio operator- (Ratio subtrahend);
 
     /** operator overloading for: c = object * factor */
-    Ratio operator*(Ratio factor);
+    Ratio operator*(const Ratio &factor);
 
     /** operator overloading for: c = object / divisor */
     Ratio operator/ (Ratio divisor);
@@ -85,13 +85,13 @@ public:
     Ratio operator= (int dummy);
 
     /** compares the current ratio with a given one */
-    bool operator== (Ratio right);
+    bool operator== (const Ratio &right);
 
     /** compares the current ratio with a given one */
-    bool operator< (Ratio right);
+    bool operator< (const Ratio &right);
 
     /** compares the current ratio with a given one */
-    bool operator> (Ratio right);
+    bool operator> (const Ratio &right);
 
     /** exchange numerator and denominator */
     void reziproc();

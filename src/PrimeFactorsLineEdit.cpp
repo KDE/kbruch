@@ -45,7 +45,7 @@ PrimeFactorsLineEdit::~PrimeFactorsLineEdit()
 #endif
 }
 
-void PrimeFactorsLineEdit::textHasChanged(QString text)
+void PrimeFactorsLineEdit::textHasChanged(const QString &text)
 {
     QPalette palette;
 

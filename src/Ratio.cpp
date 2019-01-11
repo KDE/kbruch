@@ -162,7 +162,7 @@ void Ratio::setRatio(int pinteger, int pnumerator, int pdenominator, bool reduce
 
 
 /* add a ratio to a ratio like c = a + b */
-Ratio Ratio::operator+ (Ratio addend)
+Ratio Ratio::operator+ (const Ratio &addend)
 {
     // this object will be returned as the sum
     Ratio sum(0, 1);
@@ -198,7 +198,7 @@ Ratio Ratio::operator- (Ratio subtrahend)
 }
 
 /* mul a ratio with a ratio like c = a * b */
-Ratio Ratio::operator*(Ratio factor)
+Ratio Ratio::operator*(const Ratio &factor)
 {
     // this object will be returned as the product
     Ratio product(0, 1);
@@ -240,7 +240,7 @@ Ratio Ratio::operator= (int dummy)
 }
 
 /* check, if the ratios are equivalent; -1/2 == 1/-2 -> true */
-bool Ratio::operator== (Ratio right)
+bool Ratio::operator== (const Ratio &right)
 {
     signed short orig_sign = 1, right_sign = 1;
 
@@ -266,7 +266,7 @@ bool Ratio::operator== (Ratio right)
     return true;
 }
 
-bool Ratio::operator< (Ratio right)
+bool Ratio::operator< (const Ratio &right)
 {
     signed short sign = 1;
     Ratio tmp_ratio = Ratio(m_numerator, m_denominator) - right;
@@ -289,7 +289,7 @@ bool Ratio::operator< (Ratio right)
     }
 }
 
-bool Ratio::operator> (Ratio right)
+bool Ratio::operator> (const Ratio &right)
 {
     signed short sign = 1;
     Ratio tmp_ratio = Ratio(m_numerator, m_denominator) - right;

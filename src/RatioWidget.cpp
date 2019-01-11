@@ -29,7 +29,7 @@
 #endif
 
 RatioWidget::RatioWidget(QWidget * parent,
-                         const Ratio para_ratio) :
+                         const Ratio &para_ratio) :
     FractionBaseWidget(parent), m_ratio(para_ratio)
 {
 #ifdef DEBUG
@@ -44,7 +44,7 @@ RatioWidget::~RatioWidget()
 #endif
 }
 
-void RatioWidget::setRatio(const Ratio para_ratio)
+void RatioWidget::setRatio(const Ratio &para_ratio)
 {
     m_ratio = para_ratio;
     update();

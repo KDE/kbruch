@@ -56,7 +56,7 @@ void FractionBaseWidget::updateAndRepaint()
     update();
 }
 
-void FractionBaseWidget::paintRatio(QPainter & paint, Ratio tmp_ratio, int & x_pos, int & y_pos, QFontMetrics & fm, bool show_mixed, bool addMargin, bool show_center)
+void FractionBaseWidget::paintRatio(QPainter & paint, const Ratio &tmp_ratio, int & x_pos, int & y_pos, QFontMetrics & fm, bool show_mixed, bool addMargin, bool show_center)
 {
     QPen pen = paint.pen(); // get the pen
     int fontHeight = fm.lineSpacing(); // get the font height
