@@ -51,7 +51,7 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent) :
     m_correctBar = new QProgressBar(this);
     m_correctBar->setTextVisible(false);
     QPalette progressPalette;
-    progressPalette.setColor(QPalette::Background, QColor(192, 234, 194));
+    progressPalette.setColor(QPalette::Window, QColor(192, 234, 194));
     progressPalette.setColor(QPalette::Highlight, Qt::green);
     m_correctBar->setPalette(progressPalette);
     m_correctBar->setMinimumSize(QSize(210, 14));
@@ -60,7 +60,7 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent) :
 
     m_incorrectBar = new QProgressBar(this);
     m_incorrectBar->setTextVisible(false);
-    progressPalette.setColor(QPalette::Background, QColor(234, 192, 192));
+    progressPalette.setColor(QPalette::Window, QColor(234, 192, 192));
     progressPalette.setColor(QPalette::Highlight, Qt::red);
     m_incorrectBar->setPalette(progressPalette);
     m_incorrectBar->setMinimumSize(QSize(210, 14));
@@ -69,7 +69,7 @@ StatisticsBarWidget::StatisticsBarWidget(QWidget * parent) :
 
     m_skippedBar = new QProgressBar(this);
     m_skippedBar->setTextVisible(false);
-    progressPalette.setColor(QPalette::Background, QColor(233, 234, 192));
+    progressPalette.setColor(QPalette::Window, QColor(233, 234, 192));
     progressPalette.setColor(QPalette::Highlight, Qt::yellow);
     m_skippedBar->setPalette(progressPalette);
     m_skippedBar->setMinimumSize(QSize(210, 14));

@@ -89,7 +89,7 @@ void ResultWidget::Init()
     defaultFont.setBold(true);
 
     QPalette pal = palette();
-    pal.setColor(QPalette::Foreground, Qt::white);
+    pal.setColor(QPalette::WindowText, Qt::white);
     setPalette(pal);
 
     m_primaryText = new QLabel(QStringLiteral(""), this);
