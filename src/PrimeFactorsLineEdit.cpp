@@ -74,7 +74,7 @@ bool PrimeFactorsLineEdit::areFactors(const QStringList& factors)
     m_theFactors.clear();
     for (const QString & str : factors) {
         bool found = false;
-        foreach(const QString & aux, m_usedFactors) {
+        for (const QString & aux : qAsConst(m_usedFactors)) {
             if (str.compare(str, aux) == 0) {
                 found = true;
                 m_theFactors.append(str);
