@@ -29,7 +29,6 @@
 
 class QAction;
 class QGridLayout;
-class QHBoxLayout;
 class AppMenuWidget;
 class QColor;
 class QLabel;
