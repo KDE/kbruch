@@ -21,7 +21,7 @@
 
 #include "KBruch.h"
 
-#include "KBruchVersion.h"
+#include "kbruch_version.h"
 
 /* standard C++ library includes */
 #include <ctime>
@@ -57,7 +57,7 @@ int main(int argc, char * argv[])
     /* fill the about data; the common KDE about dialog will show it to the
      * user */
     KAboutData aboutData(QStringLiteral("kbruch"), i18n("KBruch"),
-                         QStringLiteral(KBRUCH_VERSION),
+                         QStringLiteral(KBRUCH_VERSION_STRING),
                          i18n("Learn calculating with fractions"),
                          KAboutLicense::GPL,
                          i18n("© 2002-2011, Sebastian Stein"));
