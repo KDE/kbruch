@@ -100,8 +100,8 @@ void FractionBaseWidget::paintRatio(QPainter & paint, const Ratio &tmp_ratio, in
     } // if (show_mixed == true && qAbs(int_numerator) > qAbs(int_denominator))
 
     // get the text width of the current ratio
-    fontWidth = fm.horizontalAdvance(str_numerator);
-    tmp_int = fm.horizontalAdvance(str_denominator);
+    fontWidth = fm.boundingRect(str_numerator).width();
+    tmp_int = fm.boundingRect(str_denominator).width();
     if (tmp_int > fontWidth)
         fontWidth = tmp_int;
 
@@ -147,7 +147,7 @@ void FractionBaseWidget::paintMiddle(QPainter & paint,
     // get the pen, font height and font width
     QPen pen = paint.pen();
     int fontHeight = fm.lineSpacing();
-    int fontWidth = fm.horizontalAdvance(paint_str);
+    int fontWidth = fm.boundingRect(paint_str).width();
 
     // paint the string
     pen.setColor(color);
