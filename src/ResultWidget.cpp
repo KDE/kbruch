@@ -253,10 +253,10 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
             int tmpWidth = 0;
             for (int tmpInt = 0; tmpInt < m_factors.count(); tmpInt++) {
                 if (tmpInt != 0) {
-                    tmpWidth += fm.width(QStringLiteral("*"));
+                    tmpWidth += fm.horizontalAdvance(QStringLiteral("*"));
                 }
                 tmpStr.setNum(m_factors[tmpInt]);
-                fontWidth = fm.width(tmpStr);
+                fontWidth = fm.horizontalAdvance(tmpStr);
                 tmpWidth += fontWidth;
             }
             if (tmpWidth <= 100)
@@ -264,14 +264,14 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 
             for (int tmpInt = 0; tmpInt < m_factors.count(); tmpInt++) {
                 if (tmpInt != 0) {
-                    fontWidth = fm.width(QStringLiteral("*"));
+                    fontWidth = fm.horizontalAdvance(QStringLiteral("*"));
                     paint.drawText(old_x, old_y, fontWidth, fontHeight, Qt::AlignCenter, QStringLiteral("*"));
                     old_x += fontWidth;
                 }
 
                 tmpStr.setNum(m_factors[tmpInt]);
 
-                fontWidth = fm.width(tmpStr);
+                fontWidth = fm.horizontalAdvance(tmpStr);
                 paint.drawText(old_x, old_y, fontWidth, fontHeight, Qt::AlignCenter, tmpStr);
                 old_x += fontWidth;
             }
