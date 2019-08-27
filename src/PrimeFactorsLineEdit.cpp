@@ -64,7 +64,7 @@ bool PrimeFactorsLineEdit::checkCorrectness(const QString& theText)
 {
     QString auxStr = theText;
     QString noSpaces = auxStr.remove(QStringLiteral(" "));
-    QStringList terms = noSpaces.split(QStringLiteral("x"));
+    QStringList terms = noSpaces.split(QLatin1Char('x'));
 
     return (areFactors(terms) || text().isEmpty());
 }
@@ -113,7 +113,7 @@ void PrimeFactorsLineEdit::keyPressEvent(QKeyEvent * event)
             ch = event->text().at(0);
         }
         if (!text().isEmpty()) {
-            lastFactor = text().section(QStringLiteral("x"), -1);
+            lastFactor = text().section(QLatin1Char('x'), -1);
             factor = lastFactor + ch;
         } else {
             factor = ch;
@@ -122,7 +122,7 @@ void PrimeFactorsLineEdit::keyPressEvent(QKeyEvent * event)
         if (allowedChars.contains(ch) || backspaceKey || returnKey) {
             // turns '*' and 'X' into 'x' to avoid mixed symbols
             // and to make easier to split the text later
-            if (!event->text().isEmpty() && (symbols.indexOf(ch) != -1) && (factor.compare(QStringLiteral("x")) != 0) && !lastFactor.isEmpty() && lastFactor.compare(QStringLiteral("1")) != 0) {
+            if (!event->text().isEmpty() && (symbols.indexOf(ch) != -1) && (factor.compare(QLatin1String("x")) != 0) && !lastFactor.isEmpty() && lastFactor.compare(QLatin1String("1")) != 0) {
                 QKeyEvent myKeyEvent(QKeyEvent::KeyPress, Qt::Key_X, Qt::NoModifier, QStringLiteral("x"), false, 0);
                 QLineEdit::keyPressEvent(&myKeyEvent);
             }
