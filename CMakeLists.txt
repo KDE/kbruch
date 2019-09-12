@@ -35,10 +35,9 @@ include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(FeatureSummary)
 include(ECMAddAppIcon)
 include(ECMSetupVersion)
-
+kde_enable_exceptions()
 # use sane compile flags
 add_definitions(
-  -fexceptions
   -DQT_NO_URL_CAST_FROM_STRING
 )
 
