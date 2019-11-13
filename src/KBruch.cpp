@@ -67,7 +67,7 @@ int main(int argc, char * argv[])
     aboutData.addAuthor(i18n("Roberto Cunha"), i18n("New interface design and usability improvements"), QStringLiteral("roberto.cunha@ltia.fc.unesp.br"));
     aboutData.addAuthor(i18n("Tadeu Araujo"), i18n("New interface design and usability improvements"), QStringLiteral("tadeu.araujo@ltia.fc.unesp.br"));
     aboutData.addAuthor(i18n("Tiago Porangaba"), i18n("New interface design and usability improvements"), QStringLiteral("tiago.porangaba@ltia.fc.unesp.br"));
-    aboutData.setHomepage(QStringLiteral("http://edu.kde.org/kbruch/"));
+    aboutData.setHomepage(QStringLiteral("https://edu.kde.org/kbruch/"));
 
     KCrash::initialize();
 

@@ -258,9 +258,9 @@
       <li xml:lang="zh-TW">百分比練習 -- 這類練習讓您計算百分比。</li>
     </ul>
   </description>
-  <url type="homepage">http://edu.kde.org/kbruch/</url>
+  <url type="homepage">https://edu.kde.org/kbruch/</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kbruch</url>
-  <url type="help">http://docs.kde.org/stable/en/kdeedu/kbruch/index.html</url>
+  <url type="help">https://docs.kde.org/stable/en/kdeedu/kbruch/index.html</url>
   <url type="donation">https://www.kde.org/community/donations/?app=kbruch&amp;source=appdata</url>
   <screenshots>
     <screenshot type="default">
@@ -285,7 +285,7 @@
       <caption xml:lang="x-test">xxExercising fractions with KBruchxx</caption>
       <caption xml:lang="zh-CN">在 KBrush 中练习分数</caption>
       <caption xml:lang="zh-TW">使用 KBruch 練習分數</caption>
-      <image>http://kde.org/images/screenshots/kbruch.png</image>
+      <image>https://kde.org/images/screenshots/kbruch.png</image>
     </screenshot>
   </screenshots>
   <project_group>KDE</project_group>

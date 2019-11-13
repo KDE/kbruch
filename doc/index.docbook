@@ -698,7 +698,7 @@ Program and documentation Copyright, 2001-2011 Sebastian Stein
 	<listitem><para>Eva Brucherseifer for writing <application>KMath</application> (&kbruch;'s &GUI; is based on this work)</para></listitem>
 	<listitem><para>Dominique Devriese for bug fixing</para></listitem>
 	<listitem><para><ulink url="http://www.net-tex.de/">Stefan Schumacher</ulink> for testing a very early version</para></listitem>
-	<listitem><para><ulink url="http://www.guckes.net/">Sven Guckes</ulink> for testing the text interface (which has been removed)</para></listitem>
+	<listitem><para><ulink url="https://www.guckes.net/">Sven Guckes</ulink> for testing the text interface (which has been removed)</para></listitem>
 	<listitem><para>&David.Faure; for helping with &kde; <acronym>CVS</acronym> and &kde; Bugzilla</para></listitem>
 	<listitem><para>&Robert.Gogolok; for helping with &kde; <acronym>CVS</acronym></para></listitem>
 	<listitem><para>John Kesson for proof reading the handbook</para></listitem>

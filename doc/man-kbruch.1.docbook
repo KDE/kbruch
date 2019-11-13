@@ -44,7 +44,7 @@ url="help:/kbruch">help:/kbruch</ulink>
 <userinput><command>khelpcenter</command>
 <parameter>help:/kbruch</parameter></userinput>).</para>
 <para>There is also further information available at <ulink
-url="http://edu.kde.org/kbruch/">the kde-edu website</ulink></para>
+url="https://edu.kde.org/kbruch/">the kde-edu website</ulink></para>
 </refsect1>
 
 <refsect1>
