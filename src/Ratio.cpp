@@ -84,11 +84,13 @@ QTextStream & Ratio::display(QTextStream & str) const
 {
     int tmp_width = str.fieldWidth();
     str << qSetFieldWidth(5) << " ";
-    str << qSetFieldWidth(5) << m_numerator << endl;
+    str << qSetFieldWidth(5) << m_numerator << QLatin1Char('\n');
     str << qSetFieldWidth(tmp_width) << " ";
-    str << " ----- " << endl;
+    str << " ----- " << QLatin1Char('\n');
     str << qSetFieldWidth(tmp_width) << " ";
-    return str << qSetFieldWidth(5) << m_denominator;
+    str << qSetFieldWidth(5) << m_denominator;
+    str.flush();
+    return str;
 }
 
 /* return the numerator */

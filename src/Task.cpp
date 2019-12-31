@@ -207,7 +207,7 @@ QTextStream & Task::display(QTextStream & str)
             ratio_pointer != ratio_vector.end(); ++ratio_pointer) {
         str << qSetFieldWidth(5) << ratio_pointer->numerator() << "   ";
     }
-    str << endl;
+    str << QLatin1Char('\n');
 
     pweite = weite;
     while (pweite-- > 0)
