@@ -218,7 +218,7 @@ QTextStream & Task::display(QTextStream & str)
             op_pointer != op_vector.end(); ++op_pointer) {
         str << " ----- " << a[*op_pointer];
     }
-    str << " ----- = " << endl;
+    str << " ----- = \n";
 
     pweite = weite;
     while (pweite-- > 0)
@@ -231,6 +231,7 @@ QTextStream & Task::display(QTextStream & str)
             return str << qSetFieldWidth(5) << ratio_pointer->denominator() << "   ";
         str << qSetFieldWidth(5) << ratio_pointer->denominator() << "   ";
     }
+    str.flush();
     return str;
 }
 
