@@ -253,7 +253,7 @@ void TaskView::forceNewTask()
 
     if (m_currentState == _CHECK_TASK) {
         // emit the signal for skipped
-        signalTaskSkipped();
+        Q_EMIT signalTaskSkipped();
     }
     m_currentState = _CHECK_TASK;
     m_checkButton->setText(i18n("&Check"));
@@ -273,8 +273,6 @@ void TaskView::forceNewTask()
         - emits signals if task was solved right or wrong */
 void TaskView::showResult()
 {
-    QString tmp_str; /* to build a string for a label */
-    QPalette pal;
     bool wrong = false;
 
     // change the tooltip of the check button
@@ -358,7 +356,7 @@ void TaskView::showResult()
     // in case the user entered the wrong result, try to give some hints
     if (wrong == true) {
         // emit the signal for wrong
-        signalTaskSolvedWrong();
+        Q_EMIT signalTaskSolvedWrong();
         m_resultWidget->setResult(solution, 0);
 
         // if the user entered a 0 for the denominator (division by 0) we have to
@@ -382,7 +380,7 @@ void TaskView::showResult()
         }
     } else {
         // emit the signal for correct
-        signalTaskSolvedCorrect();
+        Q_EMIT signalTaskSolvedCorrect();
         m_resultWidget->setResult(solution, 1);
 
     }
@@ -406,9 +404,9 @@ void TaskView::nextTask()
     m_resultWidget->setResult(solution, -1);
 
     /* clear user input */
-    deno_edit->setText(QStringLiteral(""));
-    numer_edit->setText(QStringLiteral(""));
-    integer_edit->setText(QStringLiteral(""));
+    deno_edit->clear();
+    numer_edit->clear();
+    integer_edit->clear();
     if (m_answerMixed == true)
         integer_edit->setFocus();
     else

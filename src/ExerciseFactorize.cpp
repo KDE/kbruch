@@ -286,7 +286,7 @@ void ExerciseFactorize::forceNewTask()
 
     if (m_currentState == _CHECK_TASK) {
         // emit the signal for skipped
-        signalExerciseSkipped();
+        Q_EMIT signalExerciseSkipped();
     }
     m_currentState = _CHECK_TASK;
     m_checkButton->setText(i18n("&Check"));
@@ -360,8 +360,6 @@ void ExerciseFactorize::createTask()
         - emits signals if task was solved correctly or wrong */
 void ExerciseFactorize::showResult()
 {
-    QString tmp_str, tmp_str2; /* to build a string for a label */
-    QPalette pal;
     uint uint_result = 0;
 
     // change the tooltip of the check button
@@ -395,13 +393,13 @@ void ExerciseFactorize::showResult()
 
     if (uint_result == m_taskNumber) {
         // emit the signal for correct
-        signalExerciseSolvedCorrect();
+        Q_EMIT signalExerciseSolvedCorrect();
 
         /* yes, the user entered the correct result */
         m_resultWidget->setResult(Ratio(), 1);
     } else {
         // emit the signal for wrong
-        signalExerciseSolvedWrong();
+        Q_EMIT signalExerciseSolvedWrong();
 
         /* no, the user entered the wrong result */
         m_resultWidget->setResult(Ratio(), 0);
@@ -437,7 +435,7 @@ void ExerciseFactorize::nextTask()
     /* clear user input */
     m_factorsEntered.clear();
     m_factorsResult.clear();
-    m_factorsEnteredEdit->setText(QStringLiteral(""));
+    m_factorsEnteredEdit->clear();
 
     m_factorsEnteredEdit->setFocus();
 
@@ -473,7 +471,7 @@ void ExerciseFactorize::addFactor(uint factor)
 void ExerciseFactorize::updateEnteredEdit()
 {
     // the string to be shown in the entered edit
-    QString str_output = QStringLiteral("");
+    QString str_output;
     QString str_tmp;
 
     // find the end of the list

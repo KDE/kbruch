@@ -108,7 +108,7 @@ void PrimeFactorsLineEdit::keyPressEvent(QKeyEvent * event)
     if (allowedChars.contains(event->text()) || backspaceKey || returnKey) {
         QString lastFactor;
         QString ch = QStringLiteral("#");
-        QString factor = QStringLiteral("");
+        QString factor;
         if (!event->text().isEmpty()) {
             ch = event->text().at(0);
         }

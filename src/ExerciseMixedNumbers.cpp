@@ -195,7 +195,7 @@ void ExerciseMixedNumbers::forceNewTask()
 
     if (m_currentState == _CHECK_TASK) {
         // emit the signal for skipped
-        signalExerciseSkipped();
+        Q_EMIT signalExerciseSkipped();
     }
     m_currentState = _CHECK_TASK;
     m_checkButton->setText(i18n("&Check"));
@@ -258,9 +258,9 @@ void ExerciseMixedNumbers::nextTask()
     m_checkButton->setText(i18n("&Check"));
 
     // clear user input and restore input fields
-    m_denoEdit->setText(QStringLiteral(""));
-    m_numerEdit->setText(QStringLiteral(""));
-    m_integerEdit->setText(QStringLiteral(""));
+    m_denoEdit->clear();
+    m_numerEdit->clear();
+    m_integerEdit->clear();
     m_numerEdit->setEnabled(true);
     m_denoEdit->setEnabled(true);
     m_skipButton->setEnabled(true);
@@ -343,7 +343,7 @@ void ExerciseMixedNumbers::showResult()
     // wrong solution, try to give some hints what might be wrong
     if (wrong) {
         // emit the signal for wrong
-        signalExerciseSolvedWrong();
+        Q_EMIT signalExerciseSolvedWrong();
         m_resultWidget->setAnswerMixed(! m_isMixedTask);
         m_resultWidget->setResult(solutionRatio, 0);
 
@@ -364,7 +364,7 @@ void ExerciseMixedNumbers::showResult()
         }
     } else {
         // emit the signal for correct
-        signalExerciseSolvedCorrect();
+        Q_EMIT signalExerciseSolvedCorrect();
         m_resultWidget->setResult(solutionRatio, 1);
     }
 

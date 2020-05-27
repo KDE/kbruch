@@ -30,6 +30,7 @@ class QLabel;
  * */
 class StatisticsBarWidget : public QWidget
 {
+    Q_OBJECT
 public:
     /** constructor */
     explicit StatisticsBarWidget(QWidget * parent = nullptr);

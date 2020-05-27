@@ -40,6 +40,7 @@ class QAction;
  **/
 class AppMenuWidget : public KXmlGuiWindow
 {
+    Q_OBJECT
 public:
     /** constructor */
     AppMenuWidget();
@@ -59,10 +60,6 @@ private:
     QPushButton * m_Learning;
     QLabel * labelLearning;
     QLabel * labelInfo;
-
-    QAction * m_NewTaskAction;
-    QAction * m_BackAction;
-    QAction * m_HintAction;
 
     MainQtWidget * kbruchApp;
     FractionRingWidget * fractionRing;

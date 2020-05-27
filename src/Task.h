@@ -120,17 +120,6 @@ public:
     void clean();
 
 private:
-    /** max. size of main denominator */
-    int max_md;
-
-    /** how many ratios should the task have */
-    short nr_ratios;
-
-    short add_sub;
-    short add_add;
-    short add_mult;
-    short add_div;
-
     /** the ratio vector */
     RatioArray ratio_vector;
 

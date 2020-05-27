@@ -92,7 +92,7 @@ void ResultWidget::Init()
     pal.setColor(QPalette::WindowText, Qt::white);
     setPalette(pal);
 
-    m_primaryText = new QLabel(QStringLiteral(""), this);
+    m_primaryText = new QLabel(this);
     m_primaryText->setObjectName(QStringLiteral("primaryText"));
     m_primaryText->setPalette(pal);
     defaultFont.setPointSize(20);

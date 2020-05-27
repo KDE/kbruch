@@ -168,7 +168,7 @@ void ExercisePercentage::forceNewTask()
 
     if (m_currentState == _CHECK_TASK) {
         // emit the signal for skipped
-        signalExerciseSkipped();
+        Q_EMIT signalExerciseSkipped();
     }
     m_currentState = _CHECK_TASK;
     m_checkButton->setText(i18n("&Check"));
@@ -322,8 +322,6 @@ void ExercisePercentage::createTask()
         - emits signals if task was solved correctly or wrong */
 void ExercisePercentage::showResult()
 {
-    QString tmp_str; /* to build a string for a label */
-    QPalette pal;
     int tmp_result;
     Ratio entered_result;
     Ratio correct_result;
@@ -346,12 +344,12 @@ void ExercisePercentage::showResult()
     correct_result.setDenominator(1, false);
     if (tmp_result == m_resultPercentage.toInt()) {
         // emit the signal for correct
-        signalExerciseSolvedCorrect();
+        Q_EMIT signalExerciseSolvedCorrect();
         /* yes, the user entered the correct result */
         m_resultWidget->setResult(entered_result, 1);
     } else {
         // emit the signal for incorrect
-        signalExerciseSolvedWrong();
+        Q_EMIT signalExerciseSolvedWrong();
         /* no, the user entered the wrong result */
         m_resultWidget->setResult(correct_result, 0);
     }
@@ -371,7 +369,7 @@ void ExercisePercentage::nextTask()
     m_resultWidget->setResult(m_result, -1);
 
     /* clear user input */
-    answer_edit->setText(QStringLiteral(""));
+    answer_edit->clear();
     answer_edit->setFocus();
 
     /* create a new task */

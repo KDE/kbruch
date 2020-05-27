@@ -67,7 +67,7 @@ void TaskWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
     int old_y = 0;
 
     // strings holding numerator, denominator and the operation sign
-    QString str_numerator, str_denominator, str_operation;
+    QString str_operation;
 
     // operation sign as number
     short tmp_operation;

@@ -31,6 +31,7 @@
  * */
 class ExerciseBase : public QWidget
 {
+    Q_OBJECT
 public:
     /** constructor */
     explicit ExerciseBase(QWidget * parent = nullptr);

@@ -53,8 +53,6 @@ StatisticsView::StatisticsView(QWidget * parent) :
     defaultFont.setBold(true);
     defaultFont.setPointSize(28);
 
-    QPalette pal;
-
     /* create a grid to show the labels */
     labelGrid = new QGridLayout();
     setLayout(labelGrid);
@@ -189,7 +187,6 @@ void StatisticsView::calc()
     statisticsBar->updateBar(m_correct, m_skipped, m_count);
 
     QString new_text;
-    QString number;
 
     new_text = QStringLiteral("<b>%1</b>").arg(m_count);
     result1Label->setText(new_text);

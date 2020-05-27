@@ -38,6 +38,7 @@ typedef QList<uint> uintList;
  *  \author Sebastian Stein */
 class ResultWidget : public FractionBaseWidget
 {
+    Q_OBJECT
 public:
     /** constructors */
     ResultWidget(QWidget * parent, const Ratio &para_result);

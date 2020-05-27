@@ -181,7 +181,7 @@ void ExerciseConvert::forceNewTask()
 
     if (m_currentState == _CHECK_TASK) {
         // emit the signal for skipped
-        signalExerciseSkipped();
+        Q_EMIT signalExerciseSkipped();
     }
     m_currentState = _CHECK_TASK;
     m_checkButton->setText(i18n("&Check"));
@@ -316,8 +316,6 @@ void ExerciseConvert::createTask()
         - emits signals if task was solved correctly or wrong */
 void ExerciseConvert::showResult()
 {
-    QString tmp_str; /* to build a string for a label */
-    QPalette pal;
     Ratio entered_result;
 
     // change the tooltip of the check button
@@ -349,13 +347,13 @@ void ExerciseConvert::showResult()
     if ((deno_edit->text().toInt() != 0) && ((entered_result == m_result) ||
             (m_result.numerator() == 0 && entered_result.numerator() == 0))) {
         // emit the signal for correct
-        signalExerciseSolvedCorrect();
+        Q_EMIT signalExerciseSolvedCorrect();
 
         /* yes, the user entered the correct result */
         m_resultWidget->setResult(m_result, 1);
     } else {
         // emit the signal for wrong
-        signalExerciseSolvedWrong();
+        Q_EMIT signalExerciseSolvedWrong();
 
         /* no, the user entered the wrong result */
         m_resultWidget->setResult(m_result, 0);
@@ -392,8 +390,8 @@ void ExerciseConvert::nextTask()
     m_resultWidget->setResult(m_result, -1);
 
     /* clear user input */
-    deno_edit->setText(QStringLiteral(""));
-    numer_edit->setText(QStringLiteral(""));
+    deno_edit->clear();
+    numer_edit->clear();
     numer_edit->setFocus();
 
     /* create a new task */

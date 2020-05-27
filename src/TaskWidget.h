@@ -43,6 +43,7 @@ class QPaintEvent;
  *  \author Sebastian Stein */
 class TaskWidget : public FractionBaseWidget
 {
+    Q_OBJECT
 public:
     /** constructor */
     explicit TaskWidget(QWidget * parent = nullptr, const Task &para_task = Task());

@@ -173,7 +173,7 @@ void ExerciseCompare::forceNewTask()
 
     if (m_currentState == _CHECK_TASK) {
         // emit the signal for skipped
-        signalExerciseSkipped();
+        Q_EMIT signalExerciseSkipped();
     }
     m_currentState = _CHECK_TASK;
 
@@ -220,7 +220,6 @@ void ExerciseCompare::createTask()
         - emits signals if task was solved correctly or wrong */
 void ExerciseCompare::showResult()
 {
-    QPalette pal;
     SignButtonState result;
 
     if (m_firstRatio < m_secondRatio)
@@ -238,13 +237,13 @@ void ExerciseCompare::showResult()
 
     if (m_signButtonState == result) {
         // emit the signal for correct
-        signalExerciseSolvedCorrect();
+        Q_EMIT signalExerciseSolvedCorrect();
 
         /* yes, the user entered the correct result */
         m_resultWidget->setResult(1);
     } else {
         // emit the signal for wrong
-        signalExerciseSolvedWrong();
+        Q_EMIT signalExerciseSolvedWrong();
 
         /* no, the user entered the wrong result */
 

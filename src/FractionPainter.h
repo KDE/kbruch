@@ -34,6 +34,7 @@ class QPaintEvent;
  * */
 class FractionPainter : public FractionBaseWidget
 {
+    Q_OBJECT
 public:
     /** constructor */
     explicit FractionPainter(QWidget * parent = nullptr);
