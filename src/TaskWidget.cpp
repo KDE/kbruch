@@ -104,17 +104,15 @@ void TaskWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
             // we have to convert the operation sign into a string
             switch (tmp_operation) {
             case ADD :
-                str_operation = QStringLiteral("+");
+                str_operation = i18nc("addition symbol", "+");
                 break;
             case SUB :
-                str_operation = QStringLiteral("-");
+                str_operation = i18nc("subtraction symbol", "−");
                 break;
             case MUL :
-                str_operation = QStringLiteral("x");
+                str_operation = i18nc("multiplication symbol", "×");
                 break;
             case DIV :
-                // there seems to be different division signs around the world
-                // so please translate it to the right one for your country
                 str_operation = i18nc("division symbol", "/");
                 break;
             } /* switch (operation) */
