@@ -94,7 +94,6 @@ ExerciseFactorize::ExerciseFactorize(QWidget * parent) :
     taskLayout->addWidget(m_taskLabel, 1, 1);
 
     defaultFont.setBold(true);
-    defaultFont.setPointSize(16);
 
     m_equalSignLabel = new QLabel(this);
     m_equalSignLabel->setObjectName(QStringLiteral("equalSignLabel"));
