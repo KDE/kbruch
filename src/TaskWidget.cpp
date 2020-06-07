@@ -117,13 +117,16 @@ void TaskWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
                 break;
             } /* switch (operation) */
 
+            // add proper spacing around the operator
+            str_operation = QStringLiteral(" ") + str_operation + QStringLiteral(" ");
+
             // paint the operation
             paintMiddle(paint, str_operation, old_x, old_y, fm, m_colorOperation);
 
         } else {
             // no further operations to show, so we always show the = sign at the
             // end of a task
-            paintMiddle(paint, QStringLiteral("="), old_x, old_y, fm, m_colorOperation);
+            paintMiddle(paint, QStringLiteral(" = "), old_x, old_y, fm, m_colorOperation);
 
             break;
         } // if (tmp_counter < m_task.getNumberOfOperations())
