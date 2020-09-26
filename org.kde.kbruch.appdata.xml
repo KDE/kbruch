@@ -89,7 +89,7 @@
     <p xml:lang="nn">KBruch er eit lite program for brøk- og prosentøving. Det har ulike øvingar og ein eigen læremodus for å læra brøkrekning. Programmet sjekkar svara du gjev og kjem med tilbakemelding.</p>
     <p xml:lang="pl">KBruch jest małym programem do ćwiczenia obliczeń na ułamkach i procentach. Do tego celu przygotowano różne ćwiczenia. Można także skorzystać z trybu uczenia się, gdzie można poćwiczyć ułamki i znajdowanie wspólnego mianownika. Program sprawdza podane przez użytkownika dane i daje odpowiedź na temat ich poprawności. </p>
     <p xml:lang="pt">O KBruch é um pequeno programa que ajuda a praticar o cálculo de fracções e percentagens. São oferecidos diferentes exercícios para esse fim, podendo também usar o modo de aprendizagem para exercitar as fracções. O programa verifica os dados introduzidos pelo utilizador e dá as reacções respectivas.</p>
-    <p xml:lang="pt-BR">KBruch é um pequeno programa para exercitar o cálculo de frações e percentagens. São fornecidos diferentes exercícios para esse fim e você poderá usar o modo de aprendizagem para praticar as frações. O programa verifica os dados inseridos pelo usuário e fornece algum retorno.</p>
+    <p xml:lang="pt-BR">KBruch é um pequeno programa para exercitar o cálculo de frações e porcentagens. São fornecidos diferentes exercícios para esse fim e você poderá usar o modo de aprendizagem para praticar as frações. O programa verifica os dados inseridos pelo usuário e fornece algum retorno.</p>
     <p xml:lang="ru">KBruch — простая программа для тренировки вычислений с дробями и процентами. Для начинающих есть режим обучения работе с дробями. Программа проверяет ответ пользователя и сообщает, был ли он правильным.</p>
     <p xml:lang="sk">KBruch je malý program na výuku počítania so zlomkami a percentami. Sú tu rôzne cvičenia na tento účel a môžete použiť režim učenia na precvičovanie zlomkov. Program kontroluje vstup používateľa a reaguje naň.</p>
     <p xml:lang="sl">KBruch je majhen program za vadbo ulomkov in odstotkov. Ponuja različne vaje, lahko pa uporabite tudi učni način. Program preveri uporabnikov vnos ter poda odziv.</p>
@@ -262,7 +262,7 @@
       <li xml:lang="nn">Prosentøving: Her må du rekna ut prosentverdiar.</li>
       <li xml:lang="pl">Ćwiczenie procentowe - w tym ćwiczeniu należy policzyć procenty.</li>
       <li xml:lang="pt">Exercício de percentagens - neste exercício, terá de calcular percentagens.</li>
-      <li xml:lang="pt-BR">Exercício de percentagens - Neste exercício, terá que calcular percentagens.</li>
+      <li xml:lang="pt-BR">Exercício de porcentagens - Neste exercício, terá que calcular porcentagens.</li>
       <li xml:lang="ru">Упражнения с процентами: нужно вычислять проценты от чисел.</li>
       <li xml:lang="sk">Percentové cvičenie - v tomto cvičení musíte vypočítať percentá.</li>
       <li xml:lang="sl">Odstotki - v tej vaji morate izračunati odstotke.</li>
