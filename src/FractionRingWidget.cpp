@@ -43,8 +43,6 @@
 #include <QDebug>
 #endif
 
-#include "Ratio.h"
-#include "FractionPainter.h"
 #include "ui_taskfontsbase.h"
 #include "settingsclass.h"
 #include "TaskColors.h"

@@ -39,10 +39,8 @@
 /* standard C++ library includes */
 #include <cstdlib>
 
-#include "PrimeFactorsLineEdit.h"
 #include "PrimeNumber.h"
 #include "RationalWidget.h"
-#include "ResultWidget.h"
 #include "settingsclass.h"
 
 /* ----- public member functions ----- */

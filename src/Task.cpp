@@ -25,7 +25,6 @@
 #include <ctime>
 
 #include <QDebug>
-#include <QTextStream>
 
 /** constructor of class task */
 Task::Task()

@@ -28,7 +28,6 @@
 #include <QApplication>
 #include <QGridLayout>
 #include <QIntValidator>
-#include <QLabel>
 #include <QLayout>
 #include <QLineEdit>
 #include <QPushButton>

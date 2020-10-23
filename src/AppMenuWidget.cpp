@@ -25,8 +25,6 @@
 
 /* these includes are needed for Qt support */
 #include <QAction>
-#include <QApplication>
-#include <QHBoxLayout>
 #include <QLayout>
 #include <QPushButton>
 #include <QStandardPaths>

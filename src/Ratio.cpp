@@ -20,7 +20,6 @@
 
 #include "Ratio.h"
 
-#include <QTextStream>
 
 #ifdef DEBUG
 #include <QDebug>

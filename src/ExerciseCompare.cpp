@@ -25,8 +25,6 @@
 
 /* these includes are needed for Qt support */
 #include <QApplication>
-#include <QGridLayout>
-#include <QLabel>
 #include <QLayout>
 #include <QPushButton>
 

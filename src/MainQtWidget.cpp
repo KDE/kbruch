@@ -41,7 +41,6 @@
 #include <QToolButton>
 #include <QWidget>
 #include <QWidgetAction>
-#include <QRadioButton>
 
 #ifdef DEBUG
 #include <QDebug>
