@@ -33,8 +33,8 @@
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2015-09-27</date>
-<releaseinfo>&kbruch; 5.0 (Applications 15.12)</releaseinfo>
+<date>2020-12-21</date>
+<releaseinfo>Applications 20.12</releaseinfo>
 
 <abstract>
 <para>&kbruch; is a small program to practice calculating with fractions and percentages.
@@ -66,28 +66,28 @@ are offered as well as a learning mode.
 
 <itemizedlist>
 	<listitem><para>
-		Arithmetic - in this exercise you have to solve a given fraction task.
+		<guilabel>Arithmetic</guilabel> - in this exercise you have to solve a given fraction task.
 You have to enter the numerator and the denominator. This is the main exercise.
 	</para></listitem>
 	<listitem><para>
-		Comparison - in this exercise you have to compare the size of 2 given
+		<guilabel>Comparison</guilabel> - in this exercise you have to compare the size of 2 given
 fractions, using the symbols <guibutton>&gt;</guibutton>, <guibutton>&lt;</guibutton>
 or <guibutton>=</guibutton>.
 	</para></listitem>
 	<listitem><para>
-		Conversion - in this exercise you have to convert a given number
+		<guilabel>Conversion</guilabel> - in this exercise you have to convert a given number
 into a fraction.
 	</para></listitem>
 	<listitem><para>
-		Mixed Numbers - in this exercise you have to convert a mixed number into an improper fraction
+		<guilabel>Mixed Numbers</guilabel> - in this exercise you have to convert a mixed number into an improper fraction
 		(ratio) and vice versa.
 	</para></listitem>
 	<listitem><para>
-		Factorization - in this exercise you have to factorize a given number
+		<guilabel>Factorization</guilabel> - in this exercise you have to factorize a given number
 		into its prime factors.
 	</para></listitem>
 	<listitem><para>
-		Percentage - in this exercise you have to calculate percentages.
+		<guilabel>Percentage</guilabel> - in this exercise you have to calculate percentages.
 	</para></listitem>
 </itemizedlist>
 
@@ -139,7 +139,7 @@ one of the pictures will enter the chosen mode. Here is a screenshot of
 <sect1 id="overview">
 <title>Main Exercise Screen</title>
 
-<para>Here is a screenshot of &kbruch;'s main exercise screen:</para>
+<para>Here is a screenshot of &kbruch;'s main Exercise screen:</para>
 
 <screenshot>
 	<screeninfo>&kbruch; main screen, directly after the exercise start</screeninfo>
@@ -168,7 +168,7 @@ parts:
 exercises
 	</para></listitem>
 	<listitem><para>
-		the <guilabel>Options</guilabel> on the left, where you can
+		the <guilabel>Options:</guilabel> on the left, where you can
 define the difficulty and various settings for the tasks
 	</para></listitem>
 	<listitem><para>
@@ -182,7 +182,7 @@ define the difficulty and various settings for the tasks
 At any time, you can go back to Modes using the <guiicon>Back</guiicon> icon in
 the toolbar.
 </para>
-<note><para>You can hide the <guilabel>Options</guilabel> section by dragging it to the left.
+<note><para>You can hide the <guilabel>Options:</guilabel> section by dragging it to the left.
 </para></note>
 <para>
 First you have to choose an exercise in the toolbar. Default is <guilabel>Arithmetic</guilabel>. The
@@ -254,7 +254,7 @@ startup.
 In this dialog you can adjust some general settings for
 the task display. To open this dialog use
 <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure
-&kbruch;</guimenuitem></menuchoice>.
+&kbruch;...</guimenuitem></menuchoice>.
 </para>
 
 <screenshot>
@@ -270,7 +270,7 @@ the task display. To open this dialog use
 </screenshot>
 
 <para>
-There are two tabs to adjust the setting:
+There are two sections to adjust the setting:
 <itemizedlist>
 	<!-- <listitem><para>
 		<guilabel>General</guilabel>: Set whether to show the mixed number notation in the result.
@@ -292,7 +292,7 @@ startup.
 </sect1>
 
 <sect1 id="learning-screen">
-<title>Main learning screen</title>
+<title>Main Learning Screen</title>
 <screenshot>
 	<screeninfo>&kbruch; learning mode</screeninfo>
 	<mediaobject>
@@ -329,23 +329,23 @@ tasks:</para>
 
 <variablelist>
 <varlistentry>
-<term><guilabel>Question</guilabel></term>
+<term><guilabel>Question:</guilabel></term>
 <listitem><para>
 
 <variablelist>
 <varlistentry>
-<term><guilabel>Mixed number</guilabel></term>
+<term><guilabel>Mixed number:</guilabel></term>
 <listitem><para>Set if the fractions will appear as mixed numbers or not in the question expression ( mixed number example: 1 4/5 = 9/5 ).</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Number of terms</guilabel></term>
+<term><guilabel>Number of terms:</guilabel></term>
 <listitem><para>The number of terms (separate fractions) given in each
 task. From 2 to 5, inclusive.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Maximum denominator</guilabel></term>
+<term><guilabel>Maximum denominator:</guilabel></term>
 <listitem><para>The highest number &kbruch; will use as the main denominator in the
 tasks it sets. From a minimum of 10 to a maximum of 50.</para></listitem>
 </varlistentry>
@@ -355,17 +355,17 @@ tasks it sets. From a minimum of 10 to a maximum of 50.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Answer</guilabel></term>
+<term><guilabel>Answer:</guilabel></term>
 <listitem><para>
 
 <variablelist>
 <varlistentry>
-<term><guilabel>Mixed number</guilabel></term>
+<term><guilabel>Mixed number:</guilabel></term>
 <listitem><para>Set if the fractions will appear as mixed numbers or not in the answer ( mixed number example: 1 4/5 = 9/5 ).</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Reduced Form</guilabel></term>
+<term><guilabel>Reduced Form:</guilabel></term>
 <listitem><para>Check this to force the use of the reduced form.</para></listitem>
 </varlistentry>
 </variablelist>
@@ -389,10 +389,10 @@ tasks it sets. From a minimum of 10 to a maximum of 50.</para></listitem>
 -->
 
 <varlistentry>
-<term><guilabel>Operations</guilabel></term>
+<term><guilabel>Operations:</guilabel></term>
 <listitem><para>Operations which should be used in the
-task: <guilabel>Addition</guilabel>, <guilabel>Subtraction</guilabel>,
-<guilabel>Multiplication</guilabel> or <guilabel>Division</guilabel>. Check all operations
+task: <guilabel>Addition:</guilabel>, <guilabel>Subtraction:</guilabel>,
+<guilabel>Multiplication:</guilabel> or <guilabel>Division:</guilabel>. Check all operations
  you want to use.</para></listitem>
 </varlistentry>
 
@@ -402,7 +402,7 @@ task: <guilabel>Addition</guilabel>, <guilabel>Subtraction</guilabel>,
 After you have changed the parameters you have to click on the <guimenu>New</guimenu>
 button in the toolbar to generate a task which uses the new
 parameters. You can also call this action from the menubar with
-<menuchoice><guimenu>Task</guimenu><guimenuitem>New</guimenuitem></menuchoice>.
+<menuchoice><guimenu>File</guimenu><guimenuitem>New</guimenuitem></menuchoice>.
 This will reset the statistics. To avoid that, click the <guibutton>Next</guibutton>
 button to proceed with the changed parameters.
 </para>
@@ -431,7 +431,7 @@ on next startup.
 After you have solved a given task, you need to enter the result into the three
 input boxes. In the left box you enter the integer part of the fraction, in the
 upper box the numerator and in the lower box the denominator.
-If the option <guilabel>Mixed number</guilabel> in the <guilabel>Answer</guilabel>
+If the option <guilabel>Mixed number:</guilabel> in the <guilabel>Answer:</guilabel>
 section is unchecked, the left box for the integer part of the fraction is hidden. Then you use
 only the numerator box and the denominator box for your input.
 </para>
@@ -462,7 +462,7 @@ forms: normal (reduced) and mixed number.
 </para>
 <note>
 <para>
-If you checked the <guibutton>Reduced form</guibutton> in the Options in the <guilabel>Answers</guilabel> section
+If you checked the <guilabel>Reduced form:</guilabel> in the Options in the <guilabel>Answers:</guilabel> section
 then you always have to enter the result reduced. &kbruch; will show you a short message
 like the one in the screenshot below, if you enter the correct result
 unreduced. The answer will then be counted as incorrect.
@@ -508,13 +508,13 @@ the bigger fraction of both by selecting the correct comparison sign.
 </screenshot>
 
 <para>First choose the correct comparison sign. After you have
-chosen the comparison sign, the result will show on the right. A green square with <guilabel>Correct</guilabel>
-will tell you that your answer was correct while a red square with <guilabel>Incorrect</guilabel> will indicate that your
+chosen the comparison sign, the result will show on the right. A green square with <guilabel>Correct!</guilabel>
+will tell you that your answer was correct while a red square with <guilabel>Incorrect!</guilabel> will indicate that your
 answer was wrong. You will get to the next task by clicking the <guibutton>Next</guibutton>
 button.
 </para>
 
-<para>In this exercise only the option <guilabel>Mixed number</guilabel> is enabled. If checked the fractions will appear as mixed numbers.</para>
+<para>In this exercise only the option <guilabel>Mixed number:</guilabel> is enabled. If checked the fractions will appear as mixed numbers.</para>
 </sect1>
 
 <sect1 id="exer_convert">

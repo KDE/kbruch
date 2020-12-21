@@ -6,9 +6,9 @@
 <refentry lang="&language;">
 <refentryinfo>
 <title>&kbruch; User's Manual</title>
-<author>&Lauri.Watts;&Lauri.Watts.mail;</author>
-<date>2015-09-27</date>
-<releaseinfo>&kbruch; 5.0 (Applications 15.12)</releaseinfo>
+<author>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<date>2020-12-21</date>
+<releaseinfo>Applications 20.12</releaseinfo>
 <productname>KDE Applications</productname>
 </refentryinfo>
 
@@ -19,7 +19,7 @@
 
 <refnamediv>
 <refname><command>kbruch</command></refname>
-<refpurpose>Learn calculating with fractions</refpurpose>
+<refpurpose>Learn calculating with fractions and percentages</refpurpose>
 </refnamediv>
 
 <refsynopsisdiv>
@@ -31,7 +31,7 @@
 
 <refsect1>
 <title>Description</title>
-<para>&kbruch; is a small program to practice calculating with fractions.
+<para>&kbruch; is a small program to practice calculating with fractions and percentages.
 Different exercises are provided for this purpose. The program checks user's
 input and gives feedback.</para>
 </refsect1>
@@ -40,11 +40,11 @@ input and gives feedback.</para>
 <title>See Also</title>
 <para>More detailed user documentation is available from <ulink
 url="help:/kbruch">help:/kbruch</ulink>
-(either enter this <acronym>URL</acronym> into &konqueror;, or run
+(either enter this &URL; into &konqueror;, or run
 <userinput><command>khelpcenter</command>
 <parameter>help:/kbruch</parameter></userinput>).</para>
 <para>There is also further information available at <ulink
-url="https://edu.kde.org/kbruch/">the kde-edu website</ulink></para>
+url="https://edu.kde.org/kbruch/">the &kde;du website</ulink></para>
 </refsect1>
 
 <refsect1>
