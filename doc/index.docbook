@@ -4,7 +4,11 @@
 <!ENTITY % addindex "IGNORE">
 <!ENTITY % English "INCLUDE"><!-- change language only here -->
 ]>
-
+<!--
+SPDX-FileCopyrightText: 2001-2005 Sebastian Stein <seb.kde@hpfsc.de>
+SPDX-FileCopyrightText: 2008 Anne-Marie Mahfouf
+SPDX-License-Identifier: GFDL-1.2-only
+-->
 <book id="kbruch" lang="&language;">
 
 <bookinfo>
@@ -684,7 +688,7 @@ clicking on the <guibutton>Next</guibutton> button.
 <title>Credits and License</title>
 <para>&kbruch;</para>
 <para>
-Program and documentation Copyright, 2001-2011 Sebastian Stein
+Program and documentation SPDX-FileCopyrightText: 2001-2011 Sebastian Stein
  <email>seb.kde@hpfsc.de</email>
 </para>
 

@@ -1,19 +1,9 @@
-/***************************************************************************
-                          PrimeNumber.h  -  class PrimeNumber
-                             -------------------
-    begin                : Tue Nov 27 16:40:42 CET 2001
-    copyright            : (C) 2001 by Sebastian Stein
-    email                : seb.kde@hpfsc.de
- ***************************************************************************/
+/*
+    PrimeNumber.cpp  -  source code of class PrimeNumber
+    SPDX-FileCopyrightText: 2001 Sebastian Stein <seb.kde@hpfsc.de>
 
-/***************************************************************************
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- ***************************************************************************/
+    SPDX-License-Identifier: GPL-2.0-or-later
+*/
 
 #ifndef PRIMENUMBER_H
 #define PRIMENUMBER_H
