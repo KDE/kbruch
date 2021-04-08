@@ -15,7 +15,6 @@
 #include <QLabel>
 #include <QWidget>
 
-class QLabel;
 class QPushButton;
 class QVBoxLayout;
 class QHBoxLayout;

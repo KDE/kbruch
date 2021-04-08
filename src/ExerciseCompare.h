@@ -20,10 +20,7 @@
 #include "RatioWidget.h"
 #include "ResultWidget.h"
 
-class QGridLayout;
-class QLabel;
 class QPushButton;
-class QVBoxLayout;
 
 /*! Constructs a QWidget, which shows the task to the user.
  *  The class also provides input fields, so that the user can enter the result.

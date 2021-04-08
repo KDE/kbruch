@@ -18,7 +18,6 @@ class ResultWidget;
 class QLineEdit;
 
 class QGridLayout;
-class QLabel;
 class QPushButton;
 
 /*! Construct the exercise widget to work with percentage

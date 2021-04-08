@@ -18,7 +18,6 @@
 #include "MainQtWidget.h"
 #include "FractionRingWidget.h"
 
-class QHBoxLayout;
 class QPushButton;
 class MainQtWidget;
 class FractionRingWidget;

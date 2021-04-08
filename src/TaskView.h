@@ -22,7 +22,6 @@
 
 
 class QGridLayout;
-class QLabel;
 class QPushButton;
 
 class QLineEdit;

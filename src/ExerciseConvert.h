@@ -19,12 +19,9 @@
 class RationalWidget;
 class ResultWidget;
 
-class QGridLayout;
-class QLabel;
 class QLineEdit;
 class QPushButton;
 class QString;
-class QVBoxLayout;
 
 /*! Construct the exercise widget to convert rational numbers into fractions
  *
