@@ -39,11 +39,11 @@ void PrimeFactorsLineEdit::textHasChanged(const QString &text)
     if (!checkCorrectness(text)) {
         palette.setColor(QPalette::Base, Qt::red);
         setPalette(palette);
-        emit contentIsRight(false);
+        Q_EMIT contentIsRight(false);
     } else {
         palette.setColor(QPalette::Base, Qt::white);
         setPalette(palette);
-        emit contentIsRight(true);
+        Q_EMIT contentIsRight(true);
     }
 }
 
