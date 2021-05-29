@@ -91,6 +91,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="gl">KBruch é un programiña para praticar o cálculo con fraccións e porcentaxes. Fornécense distintos tipos de exercicios que serán de utilidade e pódese empregar o modo de aprendizaxe para practicar as fraccións. O programa comproba a entrada do usuario e reacciona en consecuencia.</p>
     <p xml:lang="id">KBruch adalah program kecil untuk berlatih menghitung dengan pecahan dan persentase. Latihan yang berbeda disediakan untuk tujuan ini dan kamu bisa menggunakan mode belajar untuk berlatih dengan pecahan. Program memeriksa input pengguna dan memberikan tanggapan.</p>
     <p xml:lang="it">KBruch è un piccolo programma per esercitarti a calcolare con frazioni e percentuali. Per questo scopo vi sono differenti esercizi e puoi usare la modalità di apprendimento per esercitarti con le frazioni. Il programma controlla che i dati inseriti siano corretti e risponde di conseguenza.</p>
+    <p xml:lang="ko">KBruch는 분수와 백분율 계산을 연습하는 작은 프로그램입니다. 여러 연습 문제가 제공되며 학습 모드를 사용하여 분수를 연습할 수 있습니다. 사용자 입력을 확인하고 피드백을 제공합니다.</p>
     <p xml:lang="nds">KBruch is en lütt Programm, mit dat sik dat Reken mit Bröök un Perzenttallen öven lett. Verscheden Öven warrt dor för praatstellt, un Du kannst Bröök in'n Lehrbedrief öven. Dat Programm kiekt sik de Ingaven an un vertellt dor denn wat över.</p>
     <p xml:lang="nl">KBruch is een klein programma waarmee geoefend kan worden in het rekenen met breuken en percentages. Tot dit doel kan in de leermodus worden geoefend met breuken. Het programma kijkt elk antwoord na en meldt dan of het goed is of fout.</p>
     <p xml:lang="nn">KBruch er eit lite program for brøk- og prosentøving. Det har ulike øvingar og ein eigen læremodus for å læra brøkrekning. Programmet sjekkar svara du gjev og kjem med tilbakemelding.</p>
@@ -155,6 +156,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="gl">Exercicio de aritmética - neste exercicio hai que resolver un problema cunha fracción dada. Hai que inserir o numerador e o denominador. Este é o tipo principal de exercicio.</li>
       <li xml:lang="id">Latihan aritmatika - dalam latihan ini kamu harus menyelesaikan tugas fraksi yang diberikan. Kamu harus memasukkan pembilang dan penyebut. Ini adalah latihan utama.</li>
       <li xml:lang="it">Esercizio aritmetico - in questo esercizio devi risolvere un esercizio con frazioni date. Devi inserire il numeratore e il denominatore. Questo è l'esercizio principale.</li>
+      <li xml:lang="ko">산술 연습 - 이 연습에서는 주어진 분수 문제를 해결해야 합니다. 분자와 분모를 입력해야 합니다. 이것은 주 연습입니다.</li>
       <li xml:lang="nds">Arhitmeetsch Öven - in disse Öven muttst Du en Brookopgaav lösen. Du muttst den Teller un den Nömer ingeven. Dat is de Hööftöven.</li>
       <li xml:lang="nl">Rekenoefening - in deze oefening moet je met breuken rekenen. Je moet de teller en de noemer intypen. Dit is de belangrijkste oefening.</li>
       <li xml:lang="nn">Aritmetikkøving: Her må løysa brøkoppgåver ved å skriva inn rett teljar og nemnar. Dette er hovudøvinga.</li>
@@ -183,6 +185,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="gl">Exercicio de comparación - neste exercicio hai que comparar o tamaño de dúas fraccións dadas empregando os símbolos &gt;, &lt; e =.</li>
       <li xml:lang="id">Latihan perbandingan - dalam latihan ini kamu harus membandingkan ukuran 2 fraksi yang diberikan, menggunakan simbol &gt;, &lt; atau =.</li>
       <li xml:lang="it">Esercizio di confronto - in questo esercizio devi confrontare la dimensione di 2 frazioni date, usando i simboli &gt;, &lt; o =.</li>
+      <li xml:lang="ko">비교 연습 - 이 연습에서는 부등호(&gt;, &lt;) 또는 등호(=)를 사용하여 주어진 분수 두 개의 크기를 비교해야 합니다.</li>
       <li xml:lang="nds">Vergliekenöven - in disse Öven muttst Du twee angeven Bröök mit de Symbolen »&gt;«, »&lt;« un »=« verglieken.</li>
       <li xml:lang="nl">Vergelijken - In deze oefening moet je de grootte vergelijken van twee gegeven breuken, met behulp van de tekens &gt;, &lt; of = (groter dan, kleiner dan, of gelijk aan).</li>
       <li xml:lang="nn">Samanlikningsøving: Her må du samanlikna to brøker ved hjelp av teikna &gt;, &lt; og =.</li>
@@ -212,6 +215,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="gl">Exercicio de conversión - nestes exercicios hai que converter un número dado nunha fracción.</li>
       <li xml:lang="id">Latihan perbandingan - dalam latihan ini kamu harus membandingkan angka ke dalam fraksi. </li>
       <li xml:lang="it">Esercizio di conversione - in questo esercizio devi convertire un numero dato in frazione.</li>
+      <li xml:lang="ko">변환 연습 - 이 연습에서는 주어진 숫자를 분수로 변환해야 합니다.</li>
       <li xml:lang="nds">Ümwannelöven - in disse Öven muttst Du en Tall na en Bröök överföhren.</li>
       <li xml:lang="nl">Omzetten - in deze oefening moet je een gegeven getal omzetten naar een breuk.</li>
       <li xml:lang="nn">Omrekningsøving: Her må gjera om eit tal til ein brøk.</li>
@@ -241,6 +245,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="gl">Exercicio de factorización - neste exercicio hai que descompor un número dado nos seus factores primos.</li>
       <li xml:lang="id">Latihan faktor - dalam latihan ini kamu harus memfaktor angka yang diberikan ke dalam faktor prima.</li>
       <li xml:lang="it">Esercizio di fattorizzazione - in questo esercizio devi ridurre un numero dato nei suoi fattori primi.</li>
+      <li xml:lang="ko">소인수 분해 연습 - 이 연습에서는 주어진 수를 소인수로 분해해야 합니다.</li>
       <li xml:lang="nds">Faktorspleetöven - in disse Öven muttst Du en angeven Tall in ehr Primfaktoren opspleten.</li>
       <li xml:lang="nl">Ontbinden in factoren - in deze oefening moet je een gegeven getal ontbinden in zijn priemfactoren.</li>
       <li xml:lang="nn">Faktoriseringsøving: Her må faktorisera eit tal ned til primtals­faktorane til talet.</li>
@@ -270,6 +275,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="gl">Exercicio de porcentaxe - neste exercicio hai que calcular porcentaxes.</li>
       <li xml:lang="id">Latihan persentase - dalam latihan ini kamu harus mengkalkulasi persentase.</li>
       <li xml:lang="it">Esercizio sulle percentuali - in questo esercizio devi calcolare percentuali.</li>
+      <li xml:lang="ko">백분율 연습 - 이 연습에서는 백분율을 계산해야 합니다.</li>
       <li xml:lang="nds">Perzentöven - in disse Öven muttst Du Perzenttallen utreken.</li>
       <li xml:lang="nl">Oefenen met percentages - in deze oefening moet je met percentages rekenen.</li>
       <li xml:lang="nn">Prosentøving: Her må du rekna ut prosentverdiar.</li>
@@ -306,6 +312,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="gl">Facendo exercicios de fraccións con KBruch</caption>
       <caption xml:lang="id">Berlatih fraksi dengan KBruch</caption>
       <caption xml:lang="it">Esercizi con le frazioni in KBruch</caption>
+      <caption xml:lang="ko">KBruch로 분수 연습</caption>
       <caption xml:lang="nl">Breuken oefenen met KBruch</caption>
       <caption xml:lang="nn">Brøkøving med KBruch</caption>
       <caption xml:lang="pl">Ćwiczenia ułamków z KBruch</caption>
