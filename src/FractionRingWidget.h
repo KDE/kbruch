@@ -41,7 +41,7 @@ public:
     FractionRingWidget();
 
     /** destructor */
-    ~FractionRingWidget();
+    ~FractionRingWidget() override;
 
 protected:
     /** Function is called every time the screen need to be painted.

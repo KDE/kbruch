@@ -28,7 +28,7 @@ public:
     explicit RatioWidget(QWidget * parent = nullptr, const Ratio &para_ratio = Ratio());
 
     /** destructor */
-    ~RatioWidget();
+    ~RatioWidget() override;
 
     /** set the task to be displayed */
     void setRatio(const Ratio &para_ratio);

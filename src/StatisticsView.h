@@ -39,7 +39,7 @@ public:
     explicit StatisticsView(QWidget * parent = nullptr);
 
     /** destructor */
-    ~StatisticsView();
+    ~StatisticsView() override;
 
     /** increment number of correct answers */
     void addCorrect();

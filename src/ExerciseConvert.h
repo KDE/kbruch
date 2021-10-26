@@ -36,7 +36,7 @@ public:
     explicit ExerciseConvert(QWidget * parent = nullptr);
 
     /** destructor */
-    ~ExerciseConvert();
+    ~ExerciseConvert() override;
 
     /** force the creation of a new task */
     void forceNewTask() Q_DECL_OVERRIDE;

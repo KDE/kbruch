@@ -26,7 +26,7 @@ public:
     explicit ExerciseBase(QWidget * parent = nullptr);
 
     /** destructor */
-    ~ExerciseBase();
+    ~ExerciseBase() override;
 
     /** force the creation of a new task */
     virtual void forceNewTask() = 0;

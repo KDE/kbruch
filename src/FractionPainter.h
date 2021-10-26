@@ -28,7 +28,7 @@ public:
     explicit FractionPainter(QWidget * parent = nullptr);
 
     /** destructor */
-    ~FractionPainter();
+    ~FractionPainter() override;
 
     void paintFraction(const QString & str_operation, Ratio & leftRatio, int leftMult,
                        Ratio & rightRatio, int rightMult);

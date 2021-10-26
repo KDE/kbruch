@@ -35,7 +35,7 @@ public:
     explicit ResultWidget(QWidget * parent = nullptr);
 
     /** destructor */
-    ~ResultWidget();
+    ~ResultWidget() override;
 
     /** set the task to be displayed */
     void setResult(const Ratio &para_result, int k);

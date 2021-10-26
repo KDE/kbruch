@@ -48,7 +48,7 @@ public:
     explicit ExerciseFactorize(QWidget * parent = nullptr);
 
     /** destructor */
-    ~ExerciseFactorize();
+    ~ExerciseFactorize() override;
 
     /** force the creation of a new task */
     void forceNewTask() Q_DECL_OVERRIDE;

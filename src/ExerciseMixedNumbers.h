@@ -34,7 +34,7 @@ public:
     explicit ExerciseMixedNumbers(QWidget* parent = nullptr);
 
     /** destructor */
-    virtual ~ExerciseMixedNumbers();
+    ~ExerciseMixedNumbers() override;
 
     /** resets the current state, creates a new task and counts the last task
      * as wrong, if it wasn't solved (in _NEXT_TASK state) yet mainly used

@@ -23,7 +23,7 @@ public:
     RationalWidget(QWidget * parent, const QString &pnumber, const int pperiodStart = 1, const int pperiodLength = 0);
 
     /** destructor */
-    ~RationalWidget();
+    ~RationalWidget() override;
 
     /** set the task to be displayed */
     void setRational(const QString &pnumber, const int pperiodStart = 1, const int pperiodLength = 0);

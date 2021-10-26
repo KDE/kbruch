@@ -64,7 +64,7 @@ public:
     MainQtWidget();
 
     /** destructor */
-    ~MainQtWidget();
+    ~MainQtWidget() override;
 
     static QFont DefaultFont();
 

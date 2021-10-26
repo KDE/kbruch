@@ -44,7 +44,7 @@ public:
                       unsigned int pnr_ratios = 2, unsigned int pmax_md = 10);
 
     /** destructor */
-    ~TaskView();
+    ~TaskView() override;
 
     /** set new task parameters, which will be used for the next task to be
      * generated */

@@ -30,7 +30,7 @@ public:
     explicit FractionBaseWidget(QWidget * parent = nullptr);
 
     /** destructor */
-    ~FractionBaseWidget();
+    ~FractionBaseWidget() override;
 
     /** updates the widget by first getting the settings and then repainting */
     void updateAndRepaint();

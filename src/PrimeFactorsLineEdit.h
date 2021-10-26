@@ -28,7 +28,7 @@ public:
     explicit PrimeFactorsLineEdit(QWidget* parent = nullptr);
 
     /** destructor */
-    ~PrimeFactorsLineEdit();
+    ~PrimeFactorsLineEdit() override;
 
     /** return the factors entered */
     QStringList getFactors() const;

@@ -34,7 +34,7 @@ public:
     explicit ExercisePercentage(QWidget * parent = nullptr);
 
     /** destructor */
-    ~ExercisePercentage();
+    ~ExercisePercentage() override;
 
     /** force the creation of a new task */
     void forceNewTask() Q_DECL_OVERRIDE;

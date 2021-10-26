@@ -36,7 +36,7 @@ public:
     AppMenuWidget();
 
     /** destructor */
-    ~AppMenuWidget();
+    ~AppMenuWidget() override;
 
 private:
     QWidget * baseWidget;

@@ -38,7 +38,7 @@ public:
     explicit TaskWidget(QWidget * parent = nullptr, const Task &para_task = Task());
 
     /** destructor */
-    ~TaskWidget();
+    ~TaskWidget() override;
 
     /** set the task to be displayed */
     void setTask(const Task &para_task);

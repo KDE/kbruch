@@ -37,7 +37,7 @@ public:
     explicit ExerciseCompare(QWidget * parent = nullptr);
 
     /** destructor */
-    ~ExerciseCompare();
+    ~ExerciseCompare() override;
 
     /** force the creation of a new task */
     void forceNewTask() Q_DECL_OVERRIDE;

@@ -24,7 +24,7 @@ public:
     explicit StatisticsBarWidget(QWidget * parent = nullptr);
 
     /** destructor */
-    ~StatisticsBarWidget();
+    ~StatisticsBarWidget() override;
 
     /** Update statisticsBar */
     void updateBar(int correct, int skipped, int total);
