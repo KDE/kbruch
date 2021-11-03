@@ -39,7 +39,7 @@ public:
     ~ExerciseConvert() override;
 
     /** force the creation of a new task */
-    void forceNewTask() Q_DECL_OVERRIDE;
+    void forceNewTask() override;
 
     void update();
 
@@ -91,7 +91,7 @@ private:
     void denominatorReturnPressed();
 
 protected:
-    void showEvent(QShowEvent * event) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent * event) override;
 };
 
 #endif

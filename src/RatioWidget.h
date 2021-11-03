@@ -44,7 +44,7 @@ private:
     bool m_questionMixed;
 
     /** overriding the paint event of FractionBaseWidget */
-    void paintEvent(QPaintEvent*) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent*) override;
 };
 
 #endif

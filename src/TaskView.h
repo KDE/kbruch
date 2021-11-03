@@ -53,7 +53,7 @@ public:
                            unsigned int pnr_ratios = 2, unsigned int pmax_md = 2);
 
     /** force the creation of a new task */
-    void forceNewTask() Q_DECL_OVERRIDE;
+    void forceNewTask() override;
 
     void setReducedForm(bool value);
     void setQuestionMixed(bool value);
@@ -117,7 +117,7 @@ private:
     void denominatorReturnPressed();
 
 protected:
-    void showEvent(QShowEvent * event) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent * event) override;
 };
 
 #endif

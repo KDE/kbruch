@@ -55,7 +55,7 @@ private:
     bool areFactors(const QStringList &factors);
 
     /** reimplement keyPressEvent inherited from QWidget */
-    void keyPressEvent(QKeyEvent * event) Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent * event) override;
 };
 
 #endif // PRIMEFACTORSLINEEDIT_H

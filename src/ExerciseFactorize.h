@@ -51,7 +51,7 @@ public:
     ~ExerciseFactorize() override;
 
     /** force the creation of a new task */
-    void forceNewTask() Q_DECL_OVERRIDE;
+    void forceNewTask() override;
 
     void update();
 
@@ -132,7 +132,7 @@ private:
     void setButtonsEnabled(bool enabled);
 
     protected:
-    void showEvent(QShowEvent * event) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent * event) override;
 };
 
 #endif

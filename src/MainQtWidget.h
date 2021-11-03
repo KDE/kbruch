@@ -248,7 +248,7 @@ protected:
     /** Function is called when user closes the window.
      *  Used to save the current statistics and settings before exiting.
      */
-    void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
+    void closeEvent(QCloseEvent *event) override;
 };
 
 #endif // MainQtWidget

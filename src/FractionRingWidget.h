@@ -46,7 +46,7 @@ public:
 protected:
     /** Function is called every time the screen need to be painted.
      **/
-    void paintEvent(QPaintEvent * event) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent * event) override;
 
     void resetFraction(bool update);
     bool checkTask();
