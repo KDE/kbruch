@@ -36,6 +36,12 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
   WidgetsAddons
   XmlGui
 )
+
+find_package(KF5DocTools ${KF5_MIN_VERSION})
+set_package_properties(KF5DocTools PROPERTIES DESCRIPTION
+    "Tools to generate documentation"
+    TYPE OPTIONAL
+)
 add_definitions(
     -DQT_DISABLE_DEPRECATED_BEFORE=0x050c00
     -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
@@ -46,13 +52,14 @@ add_definitions(
 
 kde_enable_exceptions()
 
-add_subdirectory( doc )
 add_subdirectory( src )
 
 ki18n_install(po)
 if (KF5DocTools_FOUND)
     kdoctools_install(po)
+    add_subdirectory(doc)
 endif()
+
 install(FILES org.kde.kbruch.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
