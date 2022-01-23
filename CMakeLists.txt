@@ -32,6 +32,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
   Config
   Crash
   I18n
+  CoreAddons
   WidgetsAddons
   XmlGui
 )
