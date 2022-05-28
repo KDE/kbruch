@@ -82,7 +82,7 @@ SPDX-License-Identifier: CC0-1.0
     <p>KBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.</p>
     <p xml:lang="ar">الكسور هو برنامج صغير لممارسة الحساب باستخدام الكسور والنسب المئوية. توجد تمارين مختلفة لهذا الغرض ويمكنك استخدام وضع التعلم للتدرب على الكسور. يتحقق البرنامج مدخلات المستخدم ويعطي التغذية الراجعة.</p>
     <p xml:lang="ca">El KBruch és un programa senzill per a practicar càlcul amb fraccions i percentatges. Es proposen diversos exercicis i podeu utilitzar el mode d'aprenentatge per a practicar amb fraccions. El programa comprova l'entrada de l'usuari i proporciona una resposta.</p>
-    <p xml:lang="ca-valencia">KBruch és un programa senzill per a practicar càlcul amb fraccions i percentatges. Es proposen diversos exercicis i podeu utilitzar el mode d'aprenentatge per a practicar amb fraccions. El programa comprova l'entrada de l'usuari i proporciona una resposta.</p>
+    <p xml:lang="ca-valencia">KBruch és un programa senzill per a practicar càlcul amb fraccions i percentatges. Es proposen diversos exercicis i podeu utilisar el modo d'aprenentatge per a practicar amb fraccions. El programa comprova l'entrada de l'usuari i proporciona una resposta.</p>
     <p xml:lang="de">KBruch ist ein kleines Programm, um das Rechnen mit Brüchen und Prozenten zu üben. Für diesen Zweck werden verschiedene Übungen angeboten. Außerdem gibt es einen Modus für das Lernen von Brüchen. Das Programm überprüft die Eingaben des Benutzers und gibt entsprechende Rückmeldungen.</p>
     <p xml:lang="el">Το KBruch είναι ένα μικρό πρόγραμμα εξάσκησης στους υπολογισμούς με κλάσματακαι ποσοστά. Διαφορετικές ασκήσεις παρέχονται γι' αυτόν το σκοπό και μπορείτε να χρησιμοποιήσετε τη λειτουργία μάθησης για να εξασκηθείτε στα κλάσματα. Το πρόγραμμα ελέγχει τα δεδομένα του χρήστη και δίνει αναφορά.</p>
     <p xml:lang="en-GB">KBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.</p>
@@ -181,7 +181,7 @@ SPDX-License-Identifier: CC0-1.0
       <li>Comparison exercise - in this exercise you have to compare the size of 2 given fractions, using the symbols &gt;, &lt; or =.</li>
       <li xml:lang="ar">تمرين المقارنة - في هذا التمرين عليك أن تقارن حجم كسرين معينين باستخدام رموز &gt; أو &lt; أو =.</li>
       <li xml:lang="ca">Exercici de comparació: En aquest exercici heu de comparar el valor numèric de 2 fraccions, usant els símbols &gt;, &lt; o =.</li>
-      <li xml:lang="ca-valencia">Exercici de comparació: En este exercici heu de comparar el valor numèric de 2 fraccions, utilitzant els símbols &gt;, &lt; o =.</li>
+      <li xml:lang="ca-valencia">Exercici de comparació: En este exercici heu de comparar el valor numèric de 2 fraccions, utilisant els símbols &gt;, &lt; o =.</li>
       <li xml:lang="de">Vergleich - In dieser Übung müssen 2 gegebene Brüche der Größe nach mithilfe der Symbole  „&gt;“, „&lt; “ oder „=“ verglichen werden.</li>
       <li xml:lang="el">Ασκήσεις σύγκρισης - σε αυτήν την άσκηση συγκρίνετε το μέγεθος 2 δοσμένων κλασμάτων, με χρήση των συμβόλων &gt;, &lt; ή =.</li>
       <li xml:lang="en-GB">Comparison exercise - in this exercise you have to compare the size of 2 given fractions, using the symbols &gt;, &lt; or =.</li>
