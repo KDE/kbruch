@@ -82,7 +82,7 @@ SPDX-License-Identifier: CC0-1.0
     <p>KBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.</p>
     <p xml:lang="ar">الكسور هو برنامج صغير لممارسة الحساب باستخدام الكسور والنسب المئوية. توجد تمارين مختلفة لهذا الغرض ويمكنك استخدام وضع التعلم للتدرب على الكسور. يتحقق البرنامج مدخلات المستخدم ويعطي التغذية الراجعة.</p>
     <p xml:lang="ca">El KBruch és un programa senzill per a practicar càlcul amb fraccions i percentatges. Es proposen diversos exercicis i podeu utilitzar el mode d'aprenentatge per a practicar amb fraccions. El programa comprova l'entrada de l'usuari i proporciona una resposta.</p>
-    <p xml:lang="ca-valencia">KBruch és un programa senzill per a practicar càlcul amb fraccions i percentatges. Es proposen diversos exercicis i podeu utilisar el modo d'aprenentatge per a practicar amb fraccions. El programa comprova l'entrada de l'usuari i proporciona una resposta.</p>
+    <p xml:lang="ca-valencia">KBruch és un programa senzill per a practicar càlcul amb fraccions i percentages. Es proposen diversos eixercicis i podeu utilisar el modo d'aprenentatge per a practicar amb fraccions. El programa comprova l'entrada de l'usuari i proporciona una resposta.</p>
     <p xml:lang="de">KBruch ist ein kleines Programm, um das Rechnen mit Brüchen und Prozenten zu üben. Für diesen Zweck werden verschiedene Übungen angeboten. Außerdem gibt es einen Modus für das Lernen von Brüchen. Das Programm überprüft die Eingaben des Benutzers und gibt entsprechende Rückmeldungen.</p>
     <p xml:lang="el">Το KBruch είναι ένα μικρό πρόγραμμα εξάσκησης στους υπολογισμούς με κλάσματακαι ποσοστά. Διαφορετικές ασκήσεις παρέχονται γι' αυτόν το σκοπό και μπορείτε να χρησιμοποιήσετε τη λειτουργία μάθησης για να εξασκηθείτε στα κλάσματα. Το πρόγραμμα ελέγχει τα δεδομένα του χρήστη και δίνει αναφορά.</p>
     <p xml:lang="en-GB">KBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.</p>
@@ -150,7 +150,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="ar">تمرين حسابي - في هذا التمرين عليك حل مهمة كسر معينة. عليك إدخال البسط والمقام. هذا هو التمرين الرئيس.</li>
       <li xml:lang="bs">Aritmetička vježba - u ovoj vježbi morate riješiti dati razlomak . Morate ući u brojnik i nazivnik. Ovo je glavna vježba.</li>
       <li xml:lang="ca">Exercici aritmètic: En aquest exercici heu de resoldre un càlcul de fracció. Cal que escriviu el resultat, és a dir, el numerador i el denominador. Aquest és l'exercici principal.</li>
-      <li xml:lang="ca-valencia">Exercici aritmètic: En este exercici heu de resoldre un càlcul de fracció. Cal que escriviu el resultat, és a dir, el numerador i el denominador. Este és l'exercici principal.</li>
+      <li xml:lang="ca-valencia">Eixercici aritmètic: En est eixercici heu de resoldre un càlcul de fracció. Cal que escriviu el resultat, és a dir, el numerador i el denominador. Este és l'eixercici principal.</li>
       <li xml:lang="de">Arithmetik - in dieser Übung muss eine gegebene Bruchaufgabe gelöst werden. Sie müssen den ganzzahligen Anteil des Bruchs und Zähler und Nenner eingeben. Dies ist die Hauptübung.</li>
       <li xml:lang="el">Ασκήσεις αριθμητικής - σε αυτήν την άσκηση επιλύετε ένα δοσμένο πρόβλημα με κλάσματα. Δίνετε τον αριθμητή και τον παρονομαστή. Αυτή είναι η κύρια άσκηση.</li>
       <li xml:lang="en-GB">Arithmetic exercise - in this exercise you have to solve a given fraction task. You have to enter the numerator and the denominator. This is the main exercise.</li>
@@ -181,7 +181,7 @@ SPDX-License-Identifier: CC0-1.0
       <li>Comparison exercise - in this exercise you have to compare the size of 2 given fractions, using the symbols &gt;, &lt; or =.</li>
       <li xml:lang="ar">تمرين المقارنة - في هذا التمرين عليك أن تقارن حجم كسرين معينين باستخدام رموز &gt; أو &lt; أو =.</li>
       <li xml:lang="ca">Exercici de comparació: En aquest exercici heu de comparar el valor numèric de 2 fraccions, usant els símbols &gt;, &lt; o =.</li>
-      <li xml:lang="ca-valencia">Exercici de comparació: En este exercici heu de comparar el valor numèric de 2 fraccions, utilisant els símbols &gt;, &lt; o =.</li>
+      <li xml:lang="ca-valencia">Eixercici de comparació: En est eixercici heu de comparar el valor numèric de 2 fraccions, utilisant els símbols &gt;, &lt; o =.</li>
       <li xml:lang="de">Vergleich - In dieser Übung müssen 2 gegebene Brüche der Größe nach mithilfe der Symbole  „&gt;“, „&lt; “ oder „=“ verglichen werden.</li>
       <li xml:lang="el">Ασκήσεις σύγκρισης - σε αυτήν την άσκηση συγκρίνετε το μέγεθος 2 δοσμένων κλασμάτων, με χρήση των συμβόλων &gt;, &lt; ή =.</li>
       <li xml:lang="en-GB">Comparison exercise - in this exercise you have to compare the size of 2 given fractions, using the symbols &gt;, &lt; or =.</li>
@@ -213,7 +213,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="ar">تمرين التحويل - في هذا التمرين عليك تحويل عدد معين إلى كسر.</li>
       <li xml:lang="bs">Konverzija vježbe - u ovoj vježbi morate pretvoriti dati broj u razlomak.</li>
       <li xml:lang="ca">Exercici de conversió: En aquest exercici heu de convertir un nombre en una fracció.</li>
-      <li xml:lang="ca-valencia">Exercici de conversió: En este exercici heu de convertir un nombre en una fracció.</li>
+      <li xml:lang="ca-valencia">Eixercici de conversió: En est eixercici heu de convertir un nombre en una fracció.</li>
       <li xml:lang="de">Umwandeln - in dieser Übung muss eine gegebene Zahl in einen Bruch umgewandelt werden.</li>
       <li xml:lang="el">Ασκήσεις μετατροπής - σε αυτήν την άσκηση μετατρέπετε έναν δοσμένο αριθμό σε κλάσμα.</li>
       <li xml:lang="en-GB">Conversion exercise - in this exercise you have to convert a given number into a fraction.</li>
@@ -245,7 +245,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="ar">تمرين العوامل - في هذا التمرين عليك تحليل رقم معين إلى عوامله الأولية.</li>
       <li xml:lang="bs">Faktorizacijska vježba - u ovoj vježbi morate razložiti dati broj na proste faktore.</li>
       <li xml:lang="ca">Exercici de factorització: En aquest exercici heu de descompondre un nombre en factors primers.</li>
-      <li xml:lang="ca-valencia">Exercici de factorisació: En este exercici heu de descompondre un nombre en factors primers.</li>
+      <li xml:lang="ca-valencia">Eixercici de factorisació: En est eixercici heu de descompondre un nombre en factors primers.</li>
       <li xml:lang="de">Faktorisieren - in dieser Übung muss eine gegebene Zahl in ihre Primfaktoren zerlegt werden.</li>
       <li xml:lang="el">Ασκήσεις παραγοντοποίησης - σε αυτήν την άσκηση παραγοντοποιείτε έναν δοσμένο αριθμό σε πρώτους παράγοντες.</li>
       <li xml:lang="en-GB">Factorisation exercise - in this exercise you have to factorise a given number into its prime factors.</li>
@@ -277,7 +277,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="ar">تمرين النسبة المئوية - في هذا التمرين عليك حساب النسب المئوية.</li>
       <li xml:lang="bs">Procenat vježbe - u ovoj vježbi morate izračunati postotke.</li>
       <li xml:lang="ca">Exercici de percentatge: En aquest exercici heu de calcular els percentatges.</li>
-      <li xml:lang="ca-valencia">Exercici de percentatge: En este exercici heu de calcular els percentatges.</li>
+      <li xml:lang="ca-valencia">Eixercici de percentage: En est eixercici heu de calcular els percentages.</li>
       <li xml:lang="de">Prozentaufgaben - in dieser Übung müssen Prozente berechnet werden.</li>
       <li xml:lang="el">Ασκήσεις ποσοστών - σε αυτήν την άσκηση υπολογίζετε ποσοστά.</li>
       <li xml:lang="en-GB">Percentage exercise - in this exercise you have to calculate percentages.</li>
