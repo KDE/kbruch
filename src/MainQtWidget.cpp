@@ -15,7 +15,6 @@
 #include <KLocalizedString>
 #include <KStandardShortcut>
 #include <KActionCollection>
-#include <KPageWidgetModel>
 
 /* these includes are needed for Qt support */
 #include <QAction>
@@ -25,7 +24,6 @@
 #include <QFrame>
 #include <QIcon>
 #include <QLabel>
-#include <QLayout>
 #include <QSplitter>
 #include <QPushButton>
 #include <QToolButton>
@@ -50,7 +48,6 @@
 #include "TaskColors.h"
 
 #include "settingsclass.h"
-#include <KPageView>
 #include <QStandardPaths>
 
 class TaskFonts : public QWidget, public Ui::TaskFontsBase

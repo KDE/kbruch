@@ -10,8 +10,6 @@
 #define EXERCISECOMPARE_H
 
 #include <QGridLayout>
-#include <QLabel>
-#include <QVBoxLayout>
 #include <QWidget>
 
 

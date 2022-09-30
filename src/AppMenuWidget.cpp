@@ -15,8 +15,6 @@
 #include <KStandardAction>
 
 /* these includes are needed for Qt support */
-#include <QAction>
-#include <QLayout>
 #include <QPushButton>
 #include <QStandardPaths>
 

@@ -17,7 +17,6 @@
 #include "Task.h"
 #include "TaskWidget.h"
 
-#include <QLabel>
 #include <QWidget>
 
 
@@ -25,7 +24,7 @@ class QGridLayout;
 class QPushButton;
 
 class QLineEdit;
-
+class QFrame;
 /*! Constructs a QWidget, which shows the task to the user.
  *  The class also provides input fields, so that the user can enter the result.
  *  It also controls the interaction, so that the entered result gets checked

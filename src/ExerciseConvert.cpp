@@ -15,10 +15,10 @@
 /* these includes are needed for Qt support */
 #include <QApplication>
 #include <QIntValidator>
-#include <QLayout>
 #include <QLineEdit>
 #include <QLocale>
 #include <QPushButton>
+#include <QFrame>
 
 #ifdef DEBUG
 #include <QDebug>

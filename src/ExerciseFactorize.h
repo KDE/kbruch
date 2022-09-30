@@ -10,7 +10,6 @@
 #define EXERCISEFACTORIZE_H
 
 #include <QList>
-#include <QVariant>
 #include <QWidget>
 
 #include "ExerciseBase.h"

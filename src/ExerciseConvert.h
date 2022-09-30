@@ -13,8 +13,6 @@
 #include "Ratio.h"
 
 #include <QGridLayout>
-#include <QLabel>
-#include <QVBoxLayout>
 
 class RationalWidget;
 class ResultWidget;
@@ -22,7 +20,7 @@ class ResultWidget;
 class QLineEdit;
 class QPushButton;
 class QString;
-
+class QFrame;
 /*! Construct the exercise widget to convert rational numbers into fractions
  *
  *  \author Sebastian Stein

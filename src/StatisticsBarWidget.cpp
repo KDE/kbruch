@@ -8,7 +8,6 @@
 #include "StatisticsBarWidget.h"
 
 /* these includes are needed for Qt support */
-#include <QApplication>
 #include <QGridLayout>
 #include <QLabel>
 #include <QProgressBar>

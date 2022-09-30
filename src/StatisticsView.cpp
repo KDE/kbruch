@@ -16,7 +16,6 @@
 
 /* the includes are needed for Qt support */
 #include <QGridLayout>
-#include <QLayout>
 #include <QPushButton>
 
 #ifdef DEBUG

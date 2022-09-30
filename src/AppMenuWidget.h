@@ -12,7 +12,6 @@
 
 #include <KXmlGuiWindow>
 
-#include <QApplication>
 #include <QHBoxLayout>
 
 #include "MainQtWidget.h"

@@ -11,7 +11,6 @@
 #include "RationalWidget.h"
 
 /* these includes are needed for Qt support */
-#include <QLocale>
 #include <QPainter>
 #include <QPaintEvent>
 

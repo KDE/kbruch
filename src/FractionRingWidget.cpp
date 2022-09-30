@@ -17,7 +17,6 @@
 
 /* these includes are needed for Qt support */
 #include <QAction>
-#include <QApplication>
 #include <QGridLayout>
 #include <QLabel>
 #include <QPainter>

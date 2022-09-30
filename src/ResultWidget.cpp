@@ -13,10 +13,10 @@
 #include <KLocalizedString>
 
 /* these includes are needed for Qt support */
-#include <QLayout>
 #include <QLabel>
 #include <QPainter>
 #include <QPaintEvent>
+#include <QGridLayout>
 
 #ifdef DEBUG
 #include <QDebug>

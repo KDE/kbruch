@@ -13,7 +13,6 @@
 
 /* these includes are needed for Qt support */
 #include <QApplication>
-#include <QLayout>
 #include <QPushButton>
 
 #ifdef DEBUG

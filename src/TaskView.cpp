@@ -17,9 +17,9 @@
 #include <QApplication>
 #include <QGridLayout>
 #include <QIntValidator>
-#include <QLayout>
 #include <QLineEdit>
 #include <QPushButton>
+#include <QFrame>
 
 #ifdef DEBUG
 #include <QDebug>

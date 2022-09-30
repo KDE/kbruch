@@ -8,13 +8,11 @@
 
 /* these includes are needed for KDE support */
 #include <KLocalizedString>
-#include <KMessageBox>
 
 /* these includes are needed for Qt support */
 #include <QApplication>
 #include <QGridLayout>
 #include <QIntValidator>
-#include <QLayout>
 #include <QLineEdit>
 #include <QPushButton>
 
