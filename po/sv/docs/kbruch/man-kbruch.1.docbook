@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Swedish "INCLUDE">
+]>
+<!--
+SPDX-FileCopyrightText: 2005 Lauri Watts
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>&kbruch; användarhandbok</title>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<date
+>2020-12-21</date>
+<releaseinfo
+>Program 20.12</releaseinfo>
+<productname
+>KDE-program</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kbruch</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kbruch</command
+></refname>
+<refpurpose
+>Lär dig räkna med bråk och procent</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kbruch</command
+> <arg choice="opt"
+>väljare</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Beskrivning</title>
+<para
+>&kbruch; är ett litet program för att öva räkning med bråk och procent. Olika övningar tillhandahålls för detta syfte. Programmet kontrollerar indata och ger återmatning.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Se också</title>
+<para
+>Mer detaljerad användardokumentation är tillgänglig med <ulink url="help:/kbruch"
+>help:/kbruch</ulink
+> (skriv antingen in webbadressen i &konqueror;, eller kör <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kbruch</parameter
+></userinput
+>).</para>
+<para
+>Det finns också ytterligare information tillgänglig på <ulink url="https://edu.kde.org/kbruch/"
+>webbsidan för kde-edu</ulink
+>.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Upphovsmän</title>
+<para
+>&kbruch; är skrivet av <personname
+><firstname
+>Sebastian</firstname
+><surname
+>Stein</surname
+></personname
+> <email
+>seb.kde@hpfsc.de</email
+></para>
+</refsect1>
+
+</refentry>

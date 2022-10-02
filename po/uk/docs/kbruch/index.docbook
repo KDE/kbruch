@@ -1,0 +1,956 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY kappname "&kbruch;">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Ukrainian "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kbruch" lang="&language;">
+
+<bookinfo>
+<title
+>Підручник з &kbruch;</title>
+
+<authorgroup>
+<author
+><firstname
+>Sebastian</firstname
+> <surname
+>Stein</surname
+> <email
+>seb.kde@hpfsc.de</email
+> </author>
+<author
+>&Anne-Marie.Mahfouf; </author>
+<othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<copyright>
+<year
+>2001-2005</year>
+<holder
+>Sebastian Stein</holder>
+</copyright>
+<copyright>
+<year
+>2008</year>
+<holder
+>&Anne-Marie.Mahfouf;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>21 грудня 2020 року</date>
+<releaseinfo
+>Програми 20.12</releaseinfo>
+
+<abstract>
+<para
+>&kbruch; — це невеличка програма, яку призначено для вдосконалення навичок з обчислень з дробами і відсотками. З цією метою у ній використано різні вправи. Програма перевіряє введену користувачем інформацію і повідомляє про результат. </para>
+
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>освіта</keyword>
+<keyword
+>дріб</keyword>
+<keyword
+>відсотки</keyword>
+<keyword
+>математика</keyword>
+<keyword
+>знаменник</keyword>
+<keyword
+>kbruch</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Вступ</title>
+
+<para
+>&kbruch; — це невелика програма, яку призначено для вдосконалення навичок з обчислень з дробами. Вона пропонує вам 6 різних вправ та режим навчання. </para>
+
+<itemizedlist>
+	<listitem
+><para
+><guilabel
+>Арифметика</guilabel
+> — у цій вправі вам потрібно буде розв’язати завдання з дробів. Вам слід буде ввести чисельник і знаменник відповіді. Це головна вправа програми.  </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Порівняння</guilabel
+> — у цій вправі вам потрібно буде порівняти величини 2 заданих дробів за допомогою символів <guibutton
+>&gt;</guibutton
+>, <guibutton
+>&lt;</guibutton
+> або <guibutton
+>=</guibutton
+>. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Перетворення</guilabel
+> — у цій вправі вам слід буде перетворити задане число на дріб. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Мішані дроби</guilabel
+> — у цій вправі вам слід буде перетворити мішане число на неправильний дріб (відношення) або виконати зворотну дію. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Розкладання на множники</guilabel
+> — у цій вправі вам слід буде розкласти задане число на його елементарні множники. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Відсотки</guilabel
+> — у цій вправі вам потрібно буде виконати обчислення, пов’язані з відсотками. </para
+></listitem>
+</itemizedlist>
+
+<para
+>У всіх вправах &kbruch; програма створює завдання, а користувач повинен його розв’язати. Програма перевірить введені значення і повідомить про правильність відповіді. </para>
+
+<para
+>&kbruch; підраховує загальну кількість розв’язаних завдань і кількість завдань, які було розв’язано правильно. Статистичні дані показуються користувачеві. </para>
+
+<para
+>&kbruch; є дуже компактним, його зосереджено на основній ідеї — створенні завдань. Інтерактивна довідкова система надасть вам контекстну довідку у різноманітних ситуаціях. </para>
+
+</chapter>
+
+
+<chapter id="using-kbruch">
+<title
+>Користування &kbruch;</title>
+
+<sect1 id="mode">
+<title
+>Вибір режиму: навчання чи вправа</title>
+<para
+>Після запуску &kbruch; програма запропонує вам вибрати один з двох режимів: <guilabel
+>Вправа</guilabel
+>, режим для вправляння, та <guilabel
+>Навчання</guilabel
+> — режим, який надасть вам змогу краще зрозуміти природу дробів. Натискання однієї з картинок переведе програму у вибраний режим. Ось знімок вікна зміни режимів &kbruch;:</para>
+
+<screenshot>
+	<screeninfo
+>Вибір режиму &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_mode.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Вибір режиму &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>Натисніть одну з картинок, щоб вибрати режим.</para>
+</sect1>
+
+<sect1 id="overview">
+<title
+>Головне вікно вправи</title>
+
+<para
+>Ось знімок головного вікна &kbruch;у режимі вправи:</para>
+
+<screenshot>
+	<screeninfo
+>Головне вікно &kbruch;, одразу після запуску режиму вправи</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_main.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Головне вікно &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Вся дія відбувається у цьому вікні. Це забезпечує простоту у користуванні &kbruch; навіть для недосвідчених користувачів! Головне вікно розділено на 5 частин: <itemizedlist
+> <listitem
+><para
+> панель меню з трьома меню <guimenu
+>Файл</guimenu
+>, <guimenu
+>Параметри</guimenu
+> і <guimenu
+>Довідка</guimenu
+> </para
+></listitem
+> <listitem
+><para
+>панелі інструментів, за допомогою якої ви можете перемикатися між різними вправами</para
+></listitem
+> <listitem
+> <para
+> <guilabel
+>Параметрів</guilabel
+>, розташованих ліворуч, за їх допомогою ви зможете визначити складність та інші параметри завдань</para
+></listitem
+> <listitem
+><para
+> частина завдання, куди ви маєте ввести результат виконання завдання </para
+></listitem
+> <listitem
+><para
+>частини зі статистикою, де ви можете побачити скільки завдань було розв’язано і скільки було розв’язано правильно</para
+></listitem
+> </itemizedlist
+> У будь-який момент часу ви можете повернутися до вікна вибору режиму за допомогою кнопки <guiicon
+>Назад</guiicon
+>, розташованої на панелі інструментів. </para>
+<note
+><para
+>Ви можете сховати розділ <guilabel
+>Параметри</guilabel
+>, якщо перетягнете його ліворуч. </para
+></note>
+<para
+>Спочатку вам слід вибрати вправу за допомогою панелі інструментів. Типовою вправою є <guilabel
+>Арифметика</guilabel
+>. Область завдання буде змінено відповідно до вибраного типу завдання. Залежно від вибраного завдання буде увімкнено певні параметри у розділі <guilabel
+>Параметри</guilabel
+>. </para>
+<para
+>Також на панелі інструментів ви знайдете піктограму для створення нового завдання. Доступ до цієї дії можна також отримати за допомогою пункту меню <menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Створити</guimenuitem
+></menuchoice
+>. Цю дію буде увімкнено завжди. Якщо ви ще не розв’язали поточне завдання, буде створено нове завдання, а ваші статистичні дані погіршаться. </para>
+<!--<para>
+You can hide the statistic part by dragging the vertical separator to the
+right.
+</para
+>-->
+<para
+>Якщо перервати &kbruch; поточне вибране завдання буде збережено і поновлено під час наступного запуску. </para>
+</sect1>
+
+<sect1 id="statistics">
+<title
+>Частина зі статистикою</title>
+<screenshot>
+	<screeninfo
+>Статистичні дані у &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="statistics.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Статистичні дані у &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>У цій частині головного вікна ви можете побачити: <itemizedlist>
+	<listitem
+><para
+>ліворуч показано кількість розв’язаних завдань </para
+></listitem>
+	<listitem
+><para
+>праворуч, зеленим кольором, показано скільки завдань було розв’язано правильно </para
+></listitem>
+	<listitem
+><para
+>праворуч, червоним кольором, показано скільки завдань було розв’язано неправильно </para
+></listitem>
+		<listitem
+><para
+>праворуч, жовто-гарячим кольором, показано кількість завдань, які було пропущено </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>Ви можете повернути статистичні дані до початкового стану натисканням кнопки <guimenu
+>Створити</guimenu
+> панелі інструментів або за допомогою пункту меню <menuchoice
+><guimenu
+>Файл</guimenu
+><guimenuitem
+>Створити</guimenuitem
+></menuchoice
+>. </para>
+<para
+>Статистику буде збережено під час завершення роботи &kbruch; і поновлено під час наступного запуску. </para>
+</sect1>
+
+<sect1 id="settings">
+<title
+>Як налаштувати вигляд &kbruch;</title>
+<para
+>У цьому діалоговому вікні ви можете налаштувати деякі загальні параметри показу завдань. Щоб відкрити це діалогове вікно, скористайтеся пунктом меню <menuchoice
+><guimenu
+>Параметри</guimenu
+> <guimenuitem
+>Налаштувати &kbruch;</guimenuitem
+></menuchoice
+>. </para>
+
+<screenshot>
+	<screeninfo
+>Діалогове вікно параметрів &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="settings.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Діалогове вікно параметрів &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Існує два розділи для встановлення параметрів: <itemizedlist>
+	<!-- <listitem
+><para>
+		<guilabel
+>General</guilabel
+>: Set whether to show the mixed number notation in the result.
+		This notation is not known everywhere and can be disabled therefore.
+	</para
+></listitem
+> -->
+	<listitem
+><para
+><guilabel
+>Кольори</guilabel
+>: виберіть кольори для різних частин математичних виразів: цифр, знаків дій та рисок дробів. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Шрифти</guilabel
+>: виберіть шрифт для показу завдань. </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>Ці параметри буде збережено під час завершення роботи &kbruch; і відновлено під час наступного запуску. </para>
+</sect1>
+
+<sect1 id="learning-screen">
+<title
+>Головне вікно навчання</title>
+<screenshot>
+	<screeninfo
+>&kbruch; у режимі навчання</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="learning.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>&kbruch; у режимі навчання</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>Натискання кнопки <guibutton
+>Підказка</guibutton
+> вмикає або вимикає показ довідкової інформації праворуч, ця інформація стосуватиметься того, як працюють кільця. </para>
+</sect1>
+</chapter>
+
+<chapter id="exercises">
+<title
+>Вправи</title>
+
+<sect1 id="exer_fraction">
+<title
+>Вправа з арифметики</title>
+
+<para
+>У цій вправі вам слід буде знайти значення заданого виразу. Вам слід буде вказати цілу частину дробу, а також його чисельник і знаменник. Складність створеного завдання можна налаштувати у параметрах завдання, розташованих ліворуч. </para>
+
+<sect2 id="task_paras">
+<title
+>Параметри</title>
+<para
+>Існує декілька параметрів, які впливають на складність завдань, що створюються:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Питання:</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Мішаний дріб:</guilabel
+></term>
+<listitem
+><para
+>Вкажіть, у якій формі, мішаній чи звичайній, з’являтимуться дроби у запитаннях (приклад мішаної форми: 1 4/5 = 9/5 ).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Кількість доданків:</guilabel
+></term>
+<listitem
+><para
+>Кількість окремих дробів у кожному завданні. Значеннями можуть бути числа від 2 до 5, включно.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Максимальний знаменник:</guilabel
+></term>
+<listitem
+><para
+>Найбільше число, яке &kbruch; буде використовувати для спільного знаменника у завданнях. Це число у проміжку від мінімального значення 10 до максимального 50.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Відповідь:</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Мішаний дріб:</guilabel
+></term>
+<listitem
+><para
+>Вкажіть, у якій формі, мішаній чи звичайній, з’являтимуться дроби у відповіді (приклад мішаної форми: 1 4/5 = 9/5 ).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Спрощена форма:</guilabel
+></term>
+<listitem
+><para
+>Позначте цей пункт, щоб дроби завжди слід було подавати у спрощеній формі.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+<!-- Not in v. 4.2
+<varlistentry>
+<term
+><guilabel
+>Solution</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mixed number</guilabel
+></term>
+<listitem
+><para
+>Set if the fractions will appear as mixed numbers or not in the solution ( mixed number example: 1 4/5 = 9/5 ).</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+-->
+
+<varlistentry>
+<term
+><guilabel
+>Операції:</guilabel
+></term>
+<listitem
+><para
+>Дії, які слід використовувати у завданнях: <guilabel
+>Додавання</guilabel
+>, <guilabel
+>Віднімання</guilabel
+>, <guilabel
+>Множення</guilabel
+>, <guilabel
+>Ділення</guilabel
+>. Вам слід позначити всі дії, які ви бажаєте використати.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Після того як ви зміните параметри, вам слід натиснути на кнопку <guimenu
+>Створити</guimenu
+> панелі інструментів, щоб створити завдання, яке використовуватиме нові параметри. Ви також можете отримати доступ до цієї дії за допомогою пункту меню <menuchoice
+><guimenu
+>Файл</guimenu
+><guimenuitem
+>Створити</guimenuitem
+></menuchoice
+>. Після цього статистичні дані буде відновлено до початкових. Щоб уникнути цього, натисніть кнопку <guibutton
+>Наступне завдання</guibutton
+>: програма продовжить роботу зі зміненими параметрами. </para>
+<!--<note>
+<para>
+Your selection of the maximum main denominator will be reset to a default
+value every time you change the number of terms. So you should change the
+number of terms first and then select the maximum main denominator.
+</para>
+</note
+>-->
+<!--para>
+If you have not solved the current task and call the <guimenu
+>New</guimenu>
+action, the task will be counted as not solved correctly. To
+prevent this you have to change the parameters after you solved the task but
+before generating a new one.
+</para-->
+<para
+>Вибрані параметри буде збережено під час завершення роботи &kbruch; і відновлено під час наступного запуску. </para>
+</sect2>
+
+<sect2 id="exer_fraction_solve_task">
+<title
+>Розв’язання завдань</title>
+<para
+>Після того як ви розв’язали завдання, вам слід ввести результат у три віконця вводу. У ліве віконце слід ввести цілу частину, у верхньому віконці ви вводите чисельник, а у нижньому — знаменник. Якщо було знято позначку з пункту <guilabel
+>Мішане число</guilabel
+> у розділі <guilabel
+>Відповідь</guilabel
+>, ліве поле з цілою частиною буде приховано. У цьому випадку ви зможете скористатися для введення відповіді лише полями чисельника і знаменника. </para>
+<para
+>Якщо результат є від’ємним, ви можете ввести знак «мінус» перед чисельником або знаменником. Якщо результат дорівнює нулю, просто наберіть 0 у полі вводу чисельника. Якщо знаменник результату дорівнює 1, залиште нижнє поле порожнім. </para>
+<para
+>Після того як ви ввели результат, вам слід натиснути кнопку <guibutton
+>Перевірити</guibutton
+>, розміщену під полями вводу. &kbruch; перевірить вказаний вами результат і повідомить правильний результат одразу під написом <guilabel
+>Неправильно!</guilabel
+>: </para>
+<screenshot>
+<screeninfo
+>Перевірене завдання</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="checked.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Перевірене завдання</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+<para
+>Це завдання було розв’язано правильно. Правильну відповідь показано у  2 різних формах: звичайній (спрощеній) і у формі мішаного дробу. </para>
+<note>
+<para
+>Якщо ви позначили пункт <guilabel
+>Спрощена форма</guilabel
+> у розділі <guilabel
+>Відповіді</guilabel
+> «Параметрів», вам завжди слід вводити результат у скороченій формі. &kbruch; покаже вам коротеньке повідомлення, таке як на знімку вікна нижче, якщо ви не виконали скорочення у результаті. Відповідь буде зараховано, як неправильну. </para>
+</note>
+<screenshot>
+<screeninfo
+>Нескорочений результат</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="reduced.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Нескорочений результат</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Щоб продовжити розв’язання завдань, натисніть кнопку <guibutton
+>Створити</guibutton
+>. Якщо ви бажаєте змінити параметри наступного завдання, будь ласка, зробіть це перш ніж натискати кнопку <guibutton
+>Створити</guibutton
+>. </para>
+</sect2>
+</sect1>
+
+<sect1 id="exer_compare">
+<title
+>Вправа «Порівняння»</title>
+
+<para
+>У цій вправі вам слід буде порівняти 2 заданих дроби. Вам слід буде вибрати більший з двох дробів за допомогою правильного знака порівняння. </para>
+
+<screenshot>
+<screeninfo
+>Вправа «Порівняння»</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="compare.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Вправа «Порівняння»</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Спочатку виберіть правильний знак порівняння. Після того як ви виберете знак порівняння, праворуч буде показано результат. Зелений прямокутник з написом <guilabel
+>Правильно</guilabel
+> повідомить вас про те, що відповідь була правильною, а червоний прямокутника з написом <guilabel
+>Неправильно</guilabel
+> означатиме, що ваша відповідь була неправильною. До наступного завдання можна перейти за допомогою кнопки <guibutton
+>Далі</guibutton
+>. </para>
+
+<para
+>Для цієї вправи є лише один параметр: <guilabel
+>Змішаний дріб</guilabel
+>. Якщо позначити відповідний пункт, дроби буде показано у мішаній формі.</para>
+</sect1>
+
+<sect1 id="exer_convert">
+<title
+>Вправа «Перетворення»</title>
+
+<para
+>У цій вправі вам слід буде перетворити задане число на дріб. Вам слід буде ввести чисельник і знаменник цього дробу. </para>
+
+<screenshot>
+<screeninfo
+>Вправа «Перетворення»</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="convert.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Вправа «Перетворення»</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Ліворуч від знака рівності на знімку вікна, розміщеному вище, ви можете бачити десятковий дріб з періодичною частиною. Це означає, що дріб зображено у вигляді десяткового числа з дробовою періодичною частиною після коми. Періодичну частину позначено маленькою рискою над цифрами. Ця періодична частина десяткового дробу повторюється у такому записі нескінченну кількість разів. </para>
+
+<para
+>Після того як введете чисельник і знаменник, натисніть кнопку <guibutton
+>Перевірити</guibutton
+>. &kbruch; перевірить введену вами інформацію і покаже правильну відповідь. Після цього кроку ви можете перейти до виконання наступного завдання за допомогою кнопки <guibutton
+>Наступне завдання</guibutton
+>. </para>
+
+<note>
+<para
+>Не забудьте ввести спрощену форму результату. Нескорочені відповіді вважатимуться неправильними. </para>
+</note>
+
+<para
+>У цій вправі всі пункти буде вимкнено.</para>
+
+</sect1>
+
+<sect1 id="exer_mixed">
+<title
+>Вправа «Мішані дроби»</title>
+
+<para
+>У цій вправі вам слід буде перетворити заданий мішаний дріб на неправильний або виконати зворотню дію. Вам слід  буде ввести чисельник і знаменник неправильного дробу або цілу частину, чисельник і знаменник мішаного дробу. </para>
+
+<screenshot>
+<screeninfo
+>Вправа «Мішані дроби»</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="mixed.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Вправа «Мішані дроби»</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Ліворуч від знака рівності на знімку вікна, розміщеному вище, ви можете бачити мішаний дріб. Це означає, що це число складається з цілого числа та правильного дробу. Вам слід вказати рівний цьому числу неправильний дріб (дріб, у якого чисельник за модулем є більшим за знаменник). </para>
+
+<para
+>Після того як введете чисельник і знаменник, натисніть кнопку <guibutton
+>Перевірити</guibutton
+>. &kbruch; перевірить введену вами інформацію і покаже правильну відповідь. Після цього кроку ви можете перейти до виконання наступного завдання за допомогою кнопки <guibutton
+>Наступне завдання</guibutton
+>. </para>
+
+<note>
+<para
+>Не забудьте ввести спрощену форму результату. Нескорочені відповіді вважатимуться неправильними. </para>
+</note>
+
+<para
+>У цій вправі всі пункти буде вимкнено.</para>
+
+</sect1>
+
+<sect1 id="exer_factorize">
+<title
+>Вправа «Розклад на множники»</title>
+
+<para
+>У цій вправі вам слід буде розкласти задане число на прості множники. Вам слід буде ввести всі прості дільники числа. </para>
+
+<screenshot>
+<screeninfo
+>Вправа «Розклад на множники»</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="factorize.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Вправа «Розклад на множники»</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Вам слід вводити множники за допомогою кнопок простих множників. Знак множення, «x», буде додано автоматично після введення наступного простого множника. Ви можете вилучити останній з введених простих множників за допомогою клавіші <guibutton
+>Backspace</guibutton
+>. </para>
+<para
+>Після того як введете всі прості множники, натисніть кнопку <guibutton
+>Перевірити завдання</guibutton
+>. &kbruch; перевірить введену вами інформацію і покаже правильну відповідь. Після цього кроку ви можете перейти до виконання наступного завдання за допомогою кнопки <guibutton
+>Наступне завдання</guibutton
+>. </para>
+
+<para
+>На знімку вікна вгорі цієї сторінки ви можете бачити знак «x» між простими множниками. Це знак множення. Добутком всіх простих чисел має бути число, яке ви намагаєтеся розкласти на множники. </para>
+
+<note>
+<para
+>Вам слід ввести всі прості множники, навіть якщо простий множник входить до добутку декілька разів. Наприклад, простими множниками числа 18 є 2, 3 і 3. </para>
+</note>
+
+<para
+>У цій вправі всі пункти буде вимкнено.</para>
+
+</sect1>
+
+<sect1 id="exer_percentage">
+<title
+>Вправа «Відсотки»</title>
+
+<para
+>У цій вправі вам потрібно буде виконати обчислення, пов’язані з відсотками.</para>
+
+<screenshot>
+<screeninfo
+>Вправа «Відсотки»</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="percentage.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Вправа «Відсотки»</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Після того як ви введете вашу відповідь, натисніть кнопку <guibutton
+>Перевірити</guibutton
+>. &kbruch; перевірить введену вами інформацію і покаже правильну відповідь. Після цього кроку ви можете перейти до виконання наступного завдання за допомогою кнопки <guibutton
+>Наступне завдання</guibutton
+>. </para>
+
+<para
+>У цій вправі всі пункти буде вимкнено.</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Подяки і ліцензія</title>
+<para
+>&kbruch;</para>
+<para
+>Авторські права на програму і документацію Sebastian Stein <email
+>seb.kde@hpfsc.de</email
+>, 2001–2011 </para>
+
+<!-- needs update ???-->
+
+<para
+>Дякую таким особам:</para>
+
+<itemizedlist>
+	<listitem
+><para
+>&Anne-Marie.Mahfouf; за керівництво проєктом &kde; Edu</para
+></listitem>
+	<listitem
+><para
+>Klas Kalass за допомогу у розробці інтерфейсу програми</para
+></listitem>
+	<listitem
+><para
+>Eva Brucherseifer за <application
+>KMath</application
+> (Графічний інтерфейс &kbruch; засновано на цій роботі)</para
+></listitem>
+	<listitem
+><para
+>Dominique Devriese за виправлення вад</para
+></listitem>
+	<listitem
+><para
+><ulink url="http://www.net-tex.de/"
+>Stefan Schumacher</ulink
+> за випробування початкової версії</para
+></listitem>
+	<listitem
+><para
+><ulink url="https://www.guckes.net/"
+>Sven Guckes</ulink
+> за випробування текстового інтерфейсу (зараз його вже вилучено)</para
+></listitem>
+	<listitem
+><para
+>&David.Faure; за допомогу з <acronym
+>CVS</acronym
+> &kde;  і Bugzilla &kde;</para
+></listitem>
+	<listitem
+><para
+>&Robert.Gogolok; за допомогу з <acronym
+>CVS</acronym
+> &kde;</para
+></listitem>
+	<listitem
+><para
+>John Kesson за вичитку цього довідника</para
+></listitem>
+</itemizedlist>
+
+<para
+>Новий дизайн інтерфейсу та покращення у користуванні для &kde; 4.1:</para>
+<itemizedlist>
+<listitem
+><para
+>Paulo Cattai <email
+>paulo.cattai@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Danilo Balzaque <email
+>danilo.balzaque@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Roberto Cunha <email
+>roberto.cunha@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tadeu Araujo <email
+>tadeu.araujo@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tiago Porangaba <email
+>tiago.porangaba@ltia.fc.unesp.br</email
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Юрій Чорноіван <email
+>yurchor@ukr.net</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->

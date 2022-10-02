@@ -1,0 +1,1315 @@
+# Translation for kbruch.po to Euskara/Basque (eu)
+# Copyright (C) 2003, 2005, 2009 Free Software Foundation, Inc.
+# Copyright (C) 2010-2020, This file is copyright:
+# This file is distributed under the same license as the kbruch package.
+# KDE euskaratzeko proiektuko arduraduna <xalba@euskalnet.net>.
+#
+# Translators:
+# Marcos  <marcos@euskalgnu.org>, 2003.
+# Ion Gaztañaga <ion_g_m@hotmail.com>, 2005.
+# Ion Gaztañaga <igaztanaga@gmail.com>, 2005.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2009.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: kbruch\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-01 00:41+0000\n"
+"PO-Revision-Date: 2020-11-14 23:53+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.08.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ion Gaztañaga"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "igaztanaga@gmail.com"
+
+#: AppMenuWidget.cpp:95
+#, kde-format
+msgid "KBruch modes:"
+msgstr "KBruch moduak:"
+
+#: AppMenuWidget.cpp:102
+#, kde-format
+msgid "Open standard KBruch"
+msgstr "Ireki KBruch estandarra"
+
+#: AppMenuWidget.cpp:108 MainQtWidget.cpp:75
+#, kde-format
+msgid "Exercise"
+msgstr "Ariketa"
+
+#: AppMenuWidget.cpp:117
+#, kde-format
+msgid "Open learning KBruch"
+msgstr "Ireki KBruch-en ikasketa"
+
+#: AppMenuWidget.cpp:123 FractionRingWidget.cpp:51
+#, kde-format
+msgid "Learning"
+msgstr "Ikasketa"
+
+#. i18n: ectx: Menu (file)
+#: AppMenuWidgetui.rc:6 FractionRingWidgetui.rc:6 kbruchui.rc:6
+#, kde-format
+msgid "&File"
+msgstr "&Fitxategia"
+
+#: ExerciseCompare.cpp:83
+#, kde-format
+msgid ">"
+msgstr ">"
+
+#: ExerciseCompare.cpp:87
+#, kde-format
+msgid "Click on this button to select the 'greater than' sign."
+msgstr "Egin klik botoi honetan 'handiagoa baino' zeinua hautatzeko."
+
+#: ExerciseCompare.cpp:92
+#, kde-format
+msgid "<"
+msgstr "<"
+
+#: ExerciseCompare.cpp:96
+#, kde-format
+msgid "Click on this button to select the 'less than' sign."
+msgstr "Egin klik botoi honetan 'txikiagoa baino' zeinua hautatzeko."
+
+#: ExerciseCompare.cpp:101
+#, kde-format
+msgid "="
+msgstr "="
+
+#: ExerciseCompare.cpp:105
+#, kde-format
+msgid "Click on this button to select the 'equals' sign."
+msgstr "Egin klik botoi honetan 'berdinak' zeinua hautatzeko."
+
+#: ExerciseCompare.cpp:117 ExerciseCompare.cpp:279 ExerciseConvert.cpp:134
+#: ExerciseFactorize.cpp:160 ExerciseMixedNumbers.cpp:157
+#: ExercisePercentage.cpp:116 TaskView.cpp:152
+#, kde-format
+msgid "&Skip"
+msgstr "&Saltatu"
+
+#: ExerciseCompare.cpp:118 ExerciseConvert.cpp:135 ExerciseFactorize.cpp:161
+#: ExerciseMixedNumbers.cpp:158 ExercisePercentage.cpp:117
+#, kde-format
+msgid "Click on this button to skip this question."
+msgstr "Egin klik botoi honetan ariketa hau saltatzeko."
+
+#: ExerciseCompare.cpp:133 MainQtWidget.cpp:502
+#, kde-format
+msgid "In this exercise you have to compare two given fractions."
+msgstr "Ariketa honetan emandako 2 zatiki konparatu behar dituzu."
+
+#: ExerciseCompare.cpp:134
+#, kde-format
+msgid ""
+"In this exercise you have to compare two given fractions and choose the "
+"correct comparison sign."
+msgstr ""
+"Ariketa honetan emandako 2 zatiki konparatu behar dituzu eta konparazioaren "
+"zeinu zuzena aukeratu."
+
+#: ExerciseCompare.cpp:245 ExerciseCompare.cpp:246 ExerciseCompare.cpp:247
+#, kde-format
+msgid "Click on this button to check your result."
+msgstr "Klikatu botoi honetan zure emaitza egiaztatzeko."
+
+#: ExerciseCompare.cpp:294 ExerciseCompare.cpp:308 ExerciseCompare.cpp:322
+#, kde-format
+msgid "&Next"
+msgstr "&Hurrengoa"
+
+#: ExerciseConvert.cpp:90 TaskView.cpp:108
+#, kde-format
+msgid "Enter the numerator of your result"
+msgstr "Sartu zure emaitzaren zenbakitzailea"
+
+#: ExerciseConvert.cpp:107 TaskView.cpp:125
+#, kde-format
+msgid "Enter the denominator of your result"
+msgstr "Sartu zure emaitzaren izendatzailea"
+
+#: ExerciseConvert.cpp:124 ExerciseConvert.cpp:173 ExerciseConvert.cpp:408
+#: ExerciseFactorize.cpp:169 ExerciseFactorize.cpp:274
+#: ExerciseFactorize.cpp:501 ExerciseMixedNumbers.cpp:147
+#: ExerciseMixedNumbers.cpp:188 ExerciseMixedNumbers.cpp:245
+#: ExercisePercentage.cpp:106 ExercisePercentage.cpp:160
+#: ExercisePercentage.cpp:386 TaskView.cpp:142 TaskView.cpp:247
+#: TaskView.cpp:441
+#, kde-format
+msgid "&Check"
+msgstr "&Egiaztatu"
+
+#: ExerciseConvert.cpp:126 ExerciseConvert.cpp:370 ExerciseFactorize.cpp:170
+#: ExerciseFactorize.cpp:399 ExerciseMixedNumbers.cpp:149
+#: ExercisePercentage.cpp:108 ExercisePercentage.cpp:350
+#, kde-format
+msgid ""
+"Click on this button to check your result. The button will not work if you "
+"have not entered a result yet."
+msgstr ""
+"Klikatu botoi honetan zure emaitza egiaztateko. Botoiak ez du funtzionatuko "
+"emaitzarik sartu ez baduzu."
+
+#: ExerciseConvert.cpp:145 MainQtWidget.cpp:508
+#, kde-format
+msgid "In this exercise you have to convert a number into a fraction."
+msgstr "Ariketa honetan zenbakia zatiki batean bihurtu behar duzu."
+
+#: ExerciseConvert.cpp:146
+#, kde-format
+msgid ""
+"In this exercise you have to convert a given number into a fraction by "
+"entering a numerator and denominator. Do not forget to reduce the result."
+msgstr ""
+"Ariketa honetan zenbakia zatiki batean bihurtu behar duzu zenbakitzailea eta "
+"izendatzailea sartuz. Ez ahaztu emaitza sinplifikatzea!"
+
+#: ExerciseConvert.cpp:308 ExerciseFactorize.cpp:348 ExercisePercentage.cpp:316
+#, kde-format
+msgid "Click on this button to get to the next question."
+msgstr "Egin klik botoi honetan hurrengo ariketa eskuratzeko."
+
+#: ExerciseConvert.cpp:353
+#, kde-format
+msgid ""
+"You entered a 0 as the denominator. This means division by zero, which is "
+"not allowed. This question will be counted as not correctly solved."
+msgstr ""
+"0 sartu duzu izendatzaile bezala. Horrek zerorekin zatitea adierazten du eta "
+"debekatuta dago. Ariketa hau oker ebatzia bezala kontatuko da."
+
+#: ExerciseConvert.cpp:359
+#, kde-format
+msgid ""
+"You entered the correct result, but not reduced.\n"
+"Always enter your results as reduced. This question will be counted as not "
+"correctly solved."
+msgstr ""
+"Emaitza zuzena sartu duzu, baina ez duzu sinplifikatu.\n"
+"Zure emaitza sinplifikatuta sartu behar duzu beti. Ariketa hau oker ebatzita "
+"bezala kontatutako da."
+
+#: ExerciseConvert.cpp:404 ExerciseFactorize.cpp:497
+#: ExerciseMixedNumbers.cpp:286 ExercisePercentage.cpp:382 TaskView.cpp:437
+#, kde-format
+msgid "N&ext"
+msgstr "H&urrengoa"
+
+#: ExerciseFactorize.cpp:153
+#, kde-format
+msgid "Backspace"
+msgstr "Atzera-tekla"
+
+#: ExerciseFactorize.cpp:197
+#, kde-format
+msgid "2"
+msgstr "2"
+
+#: ExerciseFactorize.cpp:198
+#, kde-format
+msgid "3"
+msgstr "3"
+
+#: ExerciseFactorize.cpp:199
+#, kde-format
+msgid "5"
+msgstr "5"
+
+#: ExerciseFactorize.cpp:200
+#, kde-format
+msgid "7"
+msgstr "7"
+
+#: ExerciseFactorize.cpp:201
+#, kde-format
+msgid "11"
+msgstr "11"
+
+#: ExerciseFactorize.cpp:202
+#, kde-format
+msgid "13"
+msgstr "13"
+
+#: ExerciseFactorize.cpp:203
+#, kde-format
+msgid "17"
+msgstr "17"
+
+#: ExerciseFactorize.cpp:204
+#, kde-format
+msgid "19"
+msgstr "19"
+
+#: ExerciseFactorize.cpp:215
+#, kde-format
+msgid "Add prime factor 2."
+msgstr "Gehitu 2 faktore lehena."
+
+#: ExerciseFactorize.cpp:216
+#, kde-format
+msgid "Add prime factor 3."
+msgstr "Gehitu 3 faktore lehena."
+
+#: ExerciseFactorize.cpp:217
+#, kde-format
+msgid "Add prime factor 5."
+msgstr "Gehitu 5 faktore lehena."
+
+#: ExerciseFactorize.cpp:218
+#, kde-format
+msgid "Add prime factor 7."
+msgstr "Gehitu 7 faktore lehena."
+
+#: ExerciseFactorize.cpp:219
+#, kde-format
+msgid "Add prime factor 11."
+msgstr "Gehitu 11 faktore lehena."
+
+#: ExerciseFactorize.cpp:220
+#, kde-format
+msgid "Add prime factor 13."
+msgstr "Gehitu 13 faktore lehena."
+
+#: ExerciseFactorize.cpp:221
+#, kde-format
+msgid "Add prime factor 17."
+msgstr "Gehitu 17 faktore lehena."
+
+#: ExerciseFactorize.cpp:222
+#, kde-format
+msgid "Add prime factor 19."
+msgstr "Gehitu 19 faktore lehena."
+
+#: ExerciseFactorize.cpp:227
+#, kde-format
+msgid "Removes the last entered prime factor."
+msgstr "Sartutako azken faktore lehena kentzan du."
+
+#: ExerciseFactorize.cpp:244 MainQtWidget.cpp:520
+#, kde-format
+msgid "In this exercise you have to factorize a given number."
+msgstr "Ariketa honetan emandako zenbaki bat faktorizatu behar duzu."
+
+#: ExerciseFactorize.cpp:245
+#, kde-format
+msgid ""
+"In this exercise you have to factorize a given number. You have to enter all "
+"prime factors of the number. You can add a prime factor by clicking on the "
+"corresponding button. The chosen prime factors will be shown in the input "
+"field. Do not forget to enter all prime factors, even when a prime factor "
+"repeats several times. Click the 'Backspace' button to remove the last "
+"entered prime factor."
+msgstr ""
+"Ariketa honetan emandako zenbaki bat faktorizatu behar duzu. Zenbakiaren "
+"faktore lehenak sartu behar dituzu. Faktore lehen bat gehitzeko sakatu "
+"dagokion botoian. Hautatutako faktore lehenak sarrerako eremuan erakutsiko "
+"dira. Ez ahaztu faktore lehen guztiak sartzeaz, faktore lehen bat hainbat "
+"aldiz errepikatzen bada ere. Egin klik 'Atzera-tekla' botoian sartutako "
+"azken faktore lehena ezabatzeko."
+
+#: ExerciseMixedNumbers.cpp:95 TaskView.cpp:96
+#, kde-format
+msgid "Enter the integer part of the fraction"
+msgstr "Sartu zatikiaren osoko zatia"
+
+#: ExerciseMixedNumbers.cpp:109
+#, kde-format
+msgid "Enter the numerator of the fraction"
+msgstr "Sartu zatikiaren zenbakitzailea"
+
+#: ExerciseMixedNumbers.cpp:126
+#, kde-format
+msgid "Enter the denominator of the fraction"
+msgstr "Sartu zatikiaren izendatzailea"
+
+#: ExerciseMixedNumbers.cpp:164 MainQtWidget.cpp:514
+#, kde-format
+msgid ""
+"In this exercise you have to convert a mixed number into a ratio and vice "
+"versa."
+msgstr ""
+"Ariketa honetan zenbaki misto bat proportzio bihurtu behar duzu eta "
+"alderantziz."
+
+#: ExerciseMixedNumbers.cpp:165
+#, kde-format
+msgid ""
+"In this exercise you have to convert a mixed number into a ratio and vice "
+"versa. Do not forget to reduce the result."
+msgstr ""
+"Ariketa honetan zenbaki misto bat proportzio bihurtu behar duzu eta "
+"alderantziz. Ez ahaztu emaitza sinplifikatzea."
+
+#: ExerciseMixedNumbers.cpp:244 TaskView.cpp:144 TaskView.cpp:383
+#, kde-format
+msgid ""
+"Click this button to check your result. The button will not work if you have "
+"not entered a result yet."
+msgstr ""
+"Egin klik botoi honetan zure emaitza egiaztateko. Botoiak ez du "
+"funtzionatuko emaitzarik sartu ez baduzu."
+
+#: ExerciseMixedNumbers.cpp:285 TaskView.cpp:267
+#, kde-format
+msgid "Click this button to get the next question."
+msgstr "Egin klik botoi honetan hurrengo ariketa eskuratzeko."
+
+#: ExerciseMixedNumbers.cpp:339 TaskView.cpp:356
+#, kde-format
+msgid ""
+"You entered 0 as the denominator. This means division by zero, which is not "
+"allowed. This question will be counted as not correctly solved."
+msgstr ""
+"0 sartu duzu izendatzaile bezala. Honek zerorekin zatitzea adierazten du, "
+"eta debekatuta dago. Ariketa hau oker ebatzia bezala kontatuko da."
+
+#: ExerciseMixedNumbers.cpp:346 TaskView.cpp:366
+#, kde-format
+msgid ""
+"You entered the correct result, but not in the mixed number notation. This "
+"question will be counted as not correctly solved."
+msgstr ""
+"Emaitza zuzena sartu duzu, baina ez zenbaki misto notazioan. Galdera hau "
+"zuzen ez ebatzitako gisa zenbatuko da."
+
+#: ExerciseMixedNumbers.cpp:349 TaskView.cpp:363
+#, kde-format
+msgid ""
+"You entered the correct result, but not reduced. This question will be "
+"counted as not correctly solved."
+msgstr ""
+"Emaitza zuzena sartu duzu, baina ez duzu sinplifikatu. Galdera hau zuzen ez "
+"ebatzitako gisa zenbatuko da."
+
+#: ExercisePercentage.cpp:83 ExercisePercentage.cpp:367
+#, kde-format
+msgctxt "%1 percentage of %2"
+msgid "%1% of %2 = "
+msgstr "%2(r)en % %1 = "
+
+#: ExercisePercentage.cpp:90
+#, kde-format
+msgid "Enter the result of percentage question"
+msgstr "Sartu ehunekoa ariketaren emaitza"
+
+#: ExercisePercentage.cpp:131 MainQtWidget.cpp:526
+#, kde-format
+msgid "In this exercise you have to work with percentage questions."
+msgstr "Ariketa honetan ehunekoen galderekin lan egin behar duzu."
+
+#: ExercisePercentage.cpp:132
+#, kde-format
+msgid "In this exercise you have to enter the fraction of the given number."
+msgstr "Ariketa honetan emandako zenbakiaren zatikia eman behar duzu."
+
+#: FractionRingWidget.cpp:103 FractionRingWidget.cpp:108
+#, kde-format
+msgctxt ""
+"Expands the ratio shown on the left by the given factor. Please note, "
+"expanding is not the same as multiplying. For example, expanding a ratio by "
+"2 basically means multiplying the ratio with 2/2 and not with 2/1!"
+msgid "Expand"
+msgstr "Hedatu"
+
+#: FractionRingWidget.cpp:132 MainQtWidget.cpp:481
+#, kde-format
+msgid "New"
+msgstr "Berria"
+
+#: FractionRingWidget.cpp:185 MainQtWidget.cpp:531
+#, kde-format
+msgctxt "@action opens a new question"
+msgid "&New"
+msgstr "&Berria"
+
+#: FractionRingWidget.cpp:193 MainQtWidget.cpp:551
+#, kde-format
+msgctxt "@action go to the main screen"
+msgid "Back"
+msgstr "Atzera"
+
+#: FractionRingWidget.cpp:200
+#, kde-format
+msgctxt "@action opens hint"
+msgid "Hint"
+msgstr "Argibidea"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: FractionRingWidget.cpp:228 MainQtWidget.cpp:806 taskcolorsbase.ui:16
+#, kde-format
+msgid "Colors"
+msgstr "Koloreak"
+
+#: FractionRingWidget.cpp:348 FractionRingWidget.cpp:376
+#, kde-format
+msgid ""
+"Now the parts of the inside ring and outside ring have the same size, and we "
+"can add the fractions!\n"
+"\n"
+"This is called finding the main denominator. The main denominator divides "
+"the rings into equal parts."
+msgstr ""
+"Orain barneko eta kanpoko eraztunen zatiak tamaina berdina dute, eta "
+"zatikiak gehi ditzakegu.\n"
+"\n"
+"Honi izendatzaile nagusia bilatzea deitzen zaio. Izendatzaile nagusiak "
+"eraztunak zati berdinetan zatitzen ditu."
+
+#: FractionRingWidget.cpp:354 FractionRingWidget.cpp:382
+#, kde-format
+msgid "There is a smaller main denominator. Can you find it?"
+msgstr "Izendatzaile nagusi txikiago bat dago. Aurki dezakezu?"
+
+#: FractionRingWidget.cpp:359
+#, kde-format
+msgid ""
+"You have just expanded the first fraction by %1. Our main goal is to make "
+"all parts be the same size. Try expanding the first fraction by %2 and the "
+"second fraction by %3."
+msgstr ""
+"Aurreneko zatikia %1(r)ekin hedatu duzu. Gure helburu nagusia zati guztiak "
+"tamaina berdinekoak izatea da. Saia zaitez aurreneko zatikia %2(r)ekin eta "
+"bigarrena %3(r)ekin hedatzen."
+
+#: FractionRingWidget.cpp:387
+#, kde-format
+msgid ""
+"You have just expanded the second fraction by %1. Our main goal is to make "
+"all parts be the same size. Try expanding the first fraction by %2 and the "
+"second fraction by %3."
+msgstr ""
+"Bigarren zatikia %1(r)ekin hedatu duzu. Gure helburu nagusia zati guztiak "
+"tamaina berdinekoak izatea da. Saia zaitez aurreneko zatikia %2(r)ekin eta "
+"bigarrena %3(r)ekin hedatzen."
+
+#: FractionRingWidget.cpp:425
+#, kde-format
+msgctxt "Inserted as %1 in the message below."
+msgid "%2 of 1 painted part."
+msgid_plural "%2 of %1 painted parts."
+msgstr[0] "Margotutako %2 / 1 zati"
+msgstr[1] "Margotutako %2 / %1 zati"
+
+#: FractionRingWidget.cpp:428
+#, kde-format
+msgctxt "Inserted as %2 in the message below."
+msgid "%2 of 1 painted part."
+msgid_plural "%2 of %1 painted parts."
+msgstr[0] "Margotutako %2 / 1 zati."
+msgstr[1] "Margotutako %2 / %1 zati."
+
+#: FractionRingWidget.cpp:431
+#, kde-format
+msgctxt "%1 and %2 are the two messages translated above."
+msgid ""
+"The outside ring represents the left fraction. %1\n"
+"\n"
+"The inside ring represents the right fraction. %2\n"
+"\n"
+"The 'Expand' spinboxes expand each fraction. Try to change one of the "
+"spinbox values!"
+msgstr ""
+"Kanpoko eraztunak ezkerreko zatikia ordezkatzen du. %1\n"
+"\n"
+"Barneko eraztunak eskuineko zatikia ordezkatzen du. %2\n"
+"\n"
+"'Hedatu' biratze-koadroak zatiki bakoitza hedatzen du. Saia zaitez biratze-"
+"koadroetako baten balioa aldatzea!"
+
+#: KBruch.cpp:54
+#, kde-format
+msgid "KBruch"
+msgstr "KBruch"
+
+#: KBruch.cpp:56
+#, kde-format
+msgid "Learn calculating with fractions"
+msgstr "Ikasi zatikiekin kalkulatzen"
+
+#: KBruch.cpp:58
+#, kde-format
+msgid "© 2002-2011, Sebastian Stein"
+msgstr "© 2002-2011, Sebastian Stein"
+
+#: KBruch.cpp:59
+#, kde-format
+msgid "Sebastian Stein"
+msgstr "Sebastian Stein"
+
+#: KBruch.cpp:59
+#, kde-format
+msgid "Current maintainer, original author"
+msgstr "Egungo mantentzailea, jatorrizko egilea"
+
+#: KBruch.cpp:60
+#, kde-format
+msgid "Paulo Cattai"
+msgstr "Paulo Cattai"
+
+#: KBruch.cpp:60 KBruch.cpp:61 KBruch.cpp:62 KBruch.cpp:63 KBruch.cpp:64
+#, kde-format
+msgid "New interface design and usability improvements"
+msgstr "Interfaze berriaren diseinua eta erabilgarritasunaren hobekuntzak"
+
+#: KBruch.cpp:61
+#, kde-format
+msgid "Danilo Balzaque"
+msgstr "Danilo Balzaque"
+
+#: KBruch.cpp:62
+#, kde-format
+msgid "Roberto Cunha"
+msgstr "Roberto Cunha"
+
+#: KBruch.cpp:63
+#, kde-format
+msgid "Tadeu Araujo"
+msgstr "Tadeu Araujo"
+
+#: KBruch.cpp:64
+#, kde-format
+msgid "Tiago Porangaba"
+msgstr "Tiago Porangaba"
+
+#. i18n: ectx: label, entry, group (General)
+#: kbruch.kcfg:11
+#, kde-format
+msgid "Active exercise."
+msgstr "Ariketa aktiboa."
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kbruch.kcfg:12
+#, kde-format
+msgid "Saves the active exercise's type."
+msgstr "Uneko ariketa aktiboaren mota gordetzen du."
+
+#. i18n: ectx: label, entry, group (Task)
+#: kbruch.kcfg:19
+#, kde-format
+msgid "Enable Addition"
+msgstr "Gaitu batuketa"
+
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: kbruch.kcfg:20
+#, kde-format
+msgid "Enable Addition for task generation."
+msgstr "Gaitu batuketa ariketa sorreran."
+
+#. i18n: ectx: label, entry, group (Task)
+#: kbruch.kcfg:24
+#, kde-format
+msgid "Enable Subtraction"
+msgstr "Gaitu kenketa"
+
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: kbruch.kcfg:25
+#, kde-format
+msgid "Enable Addition/Subtraction for task generation."
+msgstr "Gaitu batuketa/kenketa ariketa sorreran."
+
+#. i18n: ectx: label, entry, group (Task)
+#: kbruch.kcfg:29
+#, kde-format
+msgid "Enable Division"
+msgstr "Gaitu zatiketa"
+
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: kbruch.kcfg:30
+#, kde-format
+msgid "Enable Division for task generation."
+msgstr "Gaitu zatiketa ariketa sorreran."
+
+#. i18n: ectx: label, entry, group (Task)
+#: kbruch.kcfg:34
+#, kde-format
+msgid "Enable Multiplication"
+msgstr "Gaitu biderkaketa"
+
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: kbruch.kcfg:35
+#, kde-format
+msgid "Enable Multiplication for task generation."
+msgstr "Gaitu biderkaketa ariketa sorreran."
+
+#. i18n: ectx: label, entry, group (Task)
+#: kbruch.kcfg:39
+#, kde-format
+msgid "Enable Multiplication/Division"
+msgstr "Gaitu biderkaketa/zatiketa"
+
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: kbruch.kcfg:40
+#, kde-format
+msgid "Enable Multiplication/Division for task generation."
+msgstr "Gaitu biderkaketa/zatiketa ariketa sorreran."
+
+#. i18n: ectx: label, entry, group (Task)
+#: kbruch.kcfg:44
+#, kde-format
+msgid "Number of fractions"
+msgstr "Zatiki kopurua"
+
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: kbruch.kcfg:45
+#, kde-format
+msgid "Set the number of fractions for task generation."
+msgstr "Ezarri ariketa sorreraren zatiki kopurua."
+
+#. i18n: ectx: label, entry, group (Task)
+#: kbruch.kcfg:49
+#, kde-format
+msgid "Max. main denominator"
+msgstr "Zatitzaile nagusia max."
+
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: kbruch.kcfg:50
+#, kde-format
+msgid "Set the maximum value of the main denominator."
+msgstr "Ezarri izendatzaile nagusiaren balio maximoa."
+
+#. i18n: ectx: label, entry, group (Task)
+#: kbruch.kcfg:54
+#, kde-format
+msgid "Answer reduced fractions"
+msgstr "Forma sinplifikatuen erantzuna"
+
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: kbruch.kcfg:55
+#, kde-format
+msgid "Set if the fractions need to be reduced."
+msgstr "Ezarri zatikiak sinplifikatzea behar badute."
+
+#. i18n: ectx: label, entry, group (Task)
+#: kbruch.kcfg:59 kbruch.kcfg:64 kbruch.kcfg:69
+#, kde-format
+msgid "Mixed number"
+msgstr "Zenbaki mistoa"
+
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: kbruch.kcfg:60
+#, kde-format
+msgid "Set if the fractions will appear in mixed form or not on solution."
+msgstr ""
+"Zatikiak modu nahasian agertu behar duten emaitzean edo ez ezartzen du."
+
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: kbruch.kcfg:65
+#, kde-format
+msgid ""
+"Set if the fractions will need answers in mixed form or not on solution."
+msgstr ""
+"Zatikiak modu nahasian erantzun behar diren emaitzean edo ez ezartzen du."
+
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: kbruch.kcfg:70
+#, kde-format
+msgid "Set if the fractions will appear in mixed form or not in questions."
+msgstr ""
+"Zatikiak modu nahasian erantzun behar diren ariketetan edo ez ezartzen du."
+
+#. i18n: ectx: label, entry, group (Statistics)
+#. i18n: ectx: whatsthis, entry, group (Statistics)
+#: kbruch.kcfg:77 kbruch.kcfg:78
+#, kde-format
+msgid "Number of correctly solved tasks"
+msgstr "Zuzen ebatzitako ariketa kopurua"
+
+#. i18n: ectx: label, entry, group (Statistics)
+#: kbruch.kcfg:82
+#, kde-format
+msgid "Number of solved tasks"
+msgstr "Ebatzitako ariketa kopurua"
+
+#. i18n: ectx: whatsthis, entry, group (Statistics)
+#: kbruch.kcfg:83
+#, kde-format
+msgid "Total number of solved tasks"
+msgstr "Guztizko ebatzitako ariketa kopurua"
+
+#. i18n: ectx: label, entry, group (Statistics)
+#. i18n: ectx: whatsthis, entry, group (Statistics)
+#: kbruch.kcfg:87 kbruch.kcfg:88
+#, kde-format
+msgid "Number of skipped tasks"
+msgstr "Saltatutako ariketa kopurua"
+
+#. i18n: ectx: label, entry (numberColor), group (TaskViewer)
+#. i18n: ectx: whatsthis, entry (numberColor), group (TaskViewer)
+#: kbruch.kcfg:95 kbruch.kcfg:96
+#, kde-format
+msgid "Color of the numbers in the task view"
+msgstr "Ariketa ikuspegiko zenbakien kolorea"
+
+#. i18n: ectx: label, entry (operationColor), group (TaskViewer)
+#. i18n: ectx: whatsthis, entry (operationColor), group (TaskViewer)
+#: kbruch.kcfg:100 kbruch.kcfg:101
+#, kde-format
+msgid "Color of the operation signs in the task view"
+msgstr "Ariketa ikuspegiko eragiketen kolorea"
+
+#. i18n: ectx: label, entry (fractionBarColor), group (TaskViewer)
+#. i18n: ectx: whatsthis, entry (fractionBarColor), group (TaskViewer)
+#: kbruch.kcfg:105 kbruch.kcfg:106
+#, kde-format
+msgid "Color of the fraction bars in the task view"
+msgstr "Ariketa ikuspegiko zatiki-barren kolorea"
+
+#. i18n: ectx: label, entry, group (TaskViewer)
+#. i18n: ectx: whatsthis, entry, group (TaskViewer)
+#: kbruch.kcfg:110 kbruch.kcfg:111
+#, kde-format
+msgid "Font used for the task view"
+msgstr "Ariketa ikuspegiko letra-tipoa"
+
+#. i18n: ectx: label, entry, group (TaskViewer)
+#: kbruch.kcfg:115
+#, kde-format
+msgid "Enable showing the result also as a mixed number"
+msgstr "Gaitu emaitza zenbaki misto gisa ere erakustea"
+
+#. i18n: ectx: whatsthis, entry, group (TaskViewer)
+#: kbruch.kcfg:116
+#, kde-format
+msgid ""
+"Enables/disables showing the result also in the special mixed-number "
+"notation."
+msgstr "Emaitza zenbaki misto notazioan ere erakustea gaitzen/ezgaitzen du."
+
+#: MainQtWidget.cpp:106
+#, kde-format
+msgid "Question:"
+msgstr "Ariketa:"
+
+#: MainQtWidget.cpp:107
+#, kde-format
+msgid "Answer:"
+msgstr "Erantzuna:"
+
+#: MainQtWidget.cpp:108
+#, kde-format
+msgid "Operations:"
+msgstr "Eragiketak:"
+
+#: MainQtWidget.cpp:114 MainQtWidget.cpp:907
+#, kde-format
+msgid "Arithmetic"
+msgstr "Aritmetikoa"
+
+#: MainQtWidget.cpp:156
+#, kde-format
+msgid "Options:"
+msgstr "Aukerak:"
+
+#: MainQtWidget.cpp:157
+#, kde-format
+msgid "Set the options to solve the exercises."
+msgstr "Ezarri aukerak ariketak ebazteko."
+
+#: MainQtWidget.cpp:158
+#, kde-format
+msgid ""
+"This part of the window shows the options to solve the exercises. Use the "
+"handle between the options and main window to change the size of this window "
+"part or to hide it by moving the handle to the left border of the main "
+"window."
+msgstr ""
+"Leihoaren zati honek aukerak erakusten ditu ariketak ebazteko. Aukeren eta "
+"leiho nagusiaren arteko heldulekua erabili leiho honen tamaina aldatzeko, "
+"edo ezkutatu ezazu heldulekua leiho nagusiaren ezkerreko ertzera eramanez."
+
+#: MainQtWidget.cpp:162 MainQtWidget.cpp:173
+#, kde-format
+msgid "Mixed number:"
+msgstr "Zenbaki mistoa:"
+
+#: MainQtWidget.cpp:163
+#, kde-format
+msgid ""
+"Set if the fractions will appear as mixed numbers or not in the question "
+"expression (mixed number example: 1 4/5 = 9/5 )."
+msgstr ""
+"Galderako adierazpenean zatikiak zenbaki misto gisa agertuko diren edo ez "
+"ezartzea (zenbaki nahasiaren adibidea: 1 4/5 = 9/5 )."
+
+#: MainQtWidget.cpp:174
+#, kde-format
+msgid ""
+"Set if the fractions will appear as mixed numbers or not in the answer "
+"(mixed number example: 1 4/5 = 9/5 )."
+msgstr ""
+"Erantzunean zatikiak zenbaki misto gisa agertuko diren edo ez ezartzea "
+"(zenbaki nahasiaren adibidea: 1 4/5 = 9/5 )."
+
+#: MainQtWidget.cpp:184
+#, kde-format
+msgid "Addition:"
+msgstr "Batuketa:"
+
+#: MainQtWidget.cpp:185
+#, kde-format
+msgid "Check this to use addition operator."
+msgstr "Aktibatu hau batuketaren eragilea erabiltzeko."
+
+#: MainQtWidget.cpp:194
+#, kde-format
+msgid "Subtraction:"
+msgstr "Kenketa:"
+
+#: MainQtWidget.cpp:195
+#, kde-format
+msgid "Check this to use subtraction operator."
+msgstr "Aktibatu hau kenketaren eragilea erabiltzeko."
+
+#: MainQtWidget.cpp:204
+#, kde-format
+msgid "Multiplication:"
+msgstr "Biderketa:"
+
+#: MainQtWidget.cpp:205
+#, kde-format
+msgid "Check this to use multiplication operator."
+msgstr "Aktibatu hau biderketaren eragilea erabiltzeko."
+
+#: MainQtWidget.cpp:214
+#, kde-format
+msgid "Division:"
+msgstr "Zatiketa:"
+
+#: MainQtWidget.cpp:215
+#, kde-format
+msgid "Check this to use division operator."
+msgstr "Aktibatu hau zatiketaren eragilea erabiltzeko."
+
+#: MainQtWidget.cpp:224
+#, kde-format
+msgid "Reduced form:"
+msgstr "Forma sinplifikatua:"
+
+#: MainQtWidget.cpp:225
+#, kde-format
+msgid "Check this to force the use of the reduced form."
+msgstr "Aktibatu hau forma sinplifikatua erabiltzea derrigortzeko."
+
+#: MainQtWidget.cpp:235
+#, kde-format
+msgid "Number of terms:"
+msgstr "Termino kopurua:"
+
+#: MainQtWidget.cpp:236 MainQtWidget.cpp:246
+#, kde-format
+msgid ""
+"The number of \n"
+"terms you want"
+msgstr ""
+"Nahi dituzun \n"
+"termino kopurua"
+
+#: MainQtWidget.cpp:247
+#, kde-format
+msgid ""
+"Choose the number of terms (2, 3, 4 or 5) you \n"
+"want for calculating fractions."
+msgstr ""
+"Aukeratu zatikien kalkuluetan nahi\n"
+"dituzun termino kopurua (2, 3, 4 edo 5)."
+
+#: MainQtWidget.cpp:250
+#, kde-format
+msgid "Maximum denominator:"
+msgstr "Gehienezko izendatzailea:"
+
+#: MainQtWidget.cpp:260
+#, kde-format
+msgid "The maximum number you can have as main denominator"
+msgstr "Zatitzaile nagusi bezala izan dezakezun zenbaki maximoa."
+
+#: MainQtWidget.cpp:261
+#, kde-format
+msgid ""
+"Choose the number which will be the maximum for the main denominator: 10, "
+"20, 30, 40 or 50."
+msgstr "Hautatu izendatzaile nagusiaren zenbaki maximoa: 10 20, 30, 40 edo 50."
+
+#: MainQtWidget.cpp:483
+#, kde-format
+msgid "Reset statistics and set a new task."
+msgstr "Berrezarri estatistikak eta ezarri ariketa berria."
+
+#: MainQtWidget.cpp:488
+#, kde-format
+msgid "Back"
+msgstr "Atzera"
+
+#: MainQtWidget.cpp:490
+#, kde-format
+msgid "Go back to Modes screen."
+msgstr "Joan atzera pantailako moduetan."
+
+#: MainQtWidget.cpp:495
+#, kde-format
+msgid ""
+"\n"
+"\n"
+"Arithmetic"
+msgstr ""
+"\n"
+"\n"
+"Aritmetikoa"
+
+#: MainQtWidget.cpp:496 TaskView.cpp:162
+#, kde-format
+msgid "In this exercise you have to solve a given question with fractions."
+msgstr "Ariketa honetan emandako zatikien ariketa  ebatzi behar duzu."
+
+#: MainQtWidget.cpp:501
+#, kde-format
+msgid ""
+"\n"
+"\n"
+"Comparison"
+msgstr ""
+"\n"
+"\n"
+"Konparaketa"
+
+#: MainQtWidget.cpp:507
+#, kde-format
+msgid ""
+"\n"
+"\n"
+"Conversion"
+msgstr ""
+"\n"
+"\n"
+"Bihurketa"
+
+#: MainQtWidget.cpp:513
+#, kde-format
+msgid ""
+"\n"
+"\n"
+"Mixed Numbers"
+msgstr ""
+"\n"
+"\n"
+"Zenbaki mistoak"
+
+#: MainQtWidget.cpp:519
+#, kde-format
+msgid ""
+"\n"
+"\n"
+"Factorization"
+msgstr ""
+"\n"
+"\n"
+"Faktorizazioa"
+
+#: MainQtWidget.cpp:525
+#, kde-format
+msgid ""
+"\n"
+"\n"
+"Percentage"
+msgstr ""
+"\n"
+"\n"
+"Ehunekoa"
+
+#: MainQtWidget.cpp:538
+#, kde-format
+msgctxt "@action opens a new question"
+msgid "New"
+msgstr "Berria"
+
+#: MainQtWidget.cpp:544
+#, kde-format
+msgctxt "@action go to the main screen"
+msgid "&Back"
+msgstr "&Atzera"
+
+#: MainQtWidget.cpp:557
+#, kde-format
+msgctxt "Arithmetic Exercise"
+msgid "Arithmetic"
+msgstr "Aritmetikoa"
+
+#: MainQtWidget.cpp:563
+#, kde-format
+msgctxt "Comparison Exercise"
+msgid "Comparison"
+msgstr "Konparaketa"
+
+#: MainQtWidget.cpp:569
+#, kde-format
+msgctxt "Conversion Exercise"
+msgid "Conversion"
+msgstr "Bihurketa"
+
+#: MainQtWidget.cpp:575
+#, kde-format
+msgctxt "Mixed Numbers Exercise"
+msgid "MixedNumbers"
+msgstr "ZenbakiMistoak"
+
+#: MainQtWidget.cpp:581
+#, kde-format
+msgctxt "Factorization Exercise"
+msgid "Factorization"
+msgstr "Faktorizazioa"
+
+#: MainQtWidget.cpp:587
+#, kde-format
+msgctxt "Percentage Exercise"
+msgid "Percentage"
+msgstr "Ehunekoa"
+
+#: MainQtWidget.cpp:809
+#, kde-format
+msgid "Fonts"
+msgstr "Letra-tipoak"
+
+#: MainQtWidget.cpp:891
+#, kde-format
+msgid "Percentage"
+msgstr "Ehunekoa"
+
+#: MainQtWidget.cpp:923
+#, kde-format
+msgid "Comparison"
+msgstr "Konparaketa"
+
+#: MainQtWidget.cpp:939
+#, kde-format
+msgid "Conversion"
+msgstr "Bihurketa"
+
+#: MainQtWidget.cpp:955
+#, kde-format
+msgid "Mixed Numbers"
+msgstr "Zenbaki mistoak"
+
+#: MainQtWidget.cpp:971
+#, kde-format
+msgid "Factorization"
+msgstr "Faktorizazioa"
+
+#: ResultWidget.cpp:93
+#, kde-format
+msgid "Solution:"
+msgstr "Emaitza:"
+
+#: ResultWidget.cpp:131
+#, kde-format
+msgid "Correct!"
+msgstr "Zuzena!"
+
+#: ResultWidget.cpp:138 ResultWidget.cpp:145
+#, kde-format
+msgid "Incorrect!"
+msgstr "Oker!"
+
+#: StatisticsView.cpp:59
+#, kde-format
+msgid "This is the current total number of solved tasks."
+msgstr "Uneko guztizko ebatzitako ariketa kopurua da."
+
+#: StatisticsView.cpp:65
+#, kde-format
+msgid "Questions:"
+msgstr "Ariketak:"
+
+#: StatisticsView.cpp:71
+#, kde-format
+msgctxt "@info:status the number of correct answers"
+msgid "Correct:"
+msgstr "Zuzenak:"
+
+#: StatisticsView.cpp:77
+#, kde-format
+msgctxt "@info:status the number of incorrect answers"
+msgid "Incorrect:"
+msgstr "Okerrak:"
+
+#: StatisticsView.cpp:83
+#, kde-format
+msgctxt "@info:status the number of skipped answers"
+msgid "Skipped:"
+msgstr "Saltatutakoak:"
+
+#: StatisticsView.cpp:94
+#, kde-format
+msgid "This is the current total number of correctly solved tasks."
+msgstr "Hau ongi ebatzitako guztizko ariketa kopurua da."
+
+#: StatisticsView.cpp:100
+#, kde-format
+msgid "This is the current total number of unsolved tasks."
+msgstr "Hau oker ebatzitako guztizko ariketa kopurua da."
+
+#: StatisticsView.cpp:106
+#, kde-format
+msgid "This is the current total number of skipped tasks."
+msgstr "Uneko guztizko saltatutako ariketa kopurua da."
+
+#: StatisticsView.cpp:109
+#, kde-format
+msgid "This part of the window shows the statistics."
+msgstr "Lehioaren zati honek estatistikak erakusten ditu."
+
+#: StatisticsView.cpp:110
+#, kde-format
+msgid ""
+"This part of the window shows the statistics. Each exercise you do is "
+"counted. You can reset the statistics by clicking on the 'New' button in the "
+"toolbar or by selecting 'New' from the 'File' menu"
+msgstr ""
+"Leihoaren zati honek estatistikak erakusten ditu. Egiten duzun ariketa "
+"bakoitza kontuan hartzen da. Tresna-barrako «Berria» botoian klik eginez "
+"estatistikak berrezar ditzakezu, edo «Fitxategia» menuko «Berria» hautatuz."
+
+#: StatisticsView.cpp:121
+#, kde-format
+msgid "&Reset"
+msgstr "&Berrezarri"
+
+#: StatisticsView.cpp:122
+#, kde-format
+msgid "Click this button to reset the statistics."
+msgstr "Egin klik botoi honi estatistikak berrezartzeko."
+
+#. i18n: ectx: property (text), widget (QLabel, numberLabel)
+#: taskcolorsbase.ui:28
+#, kde-format
+msgid "&Number:"
+msgstr "&Zenbakia:"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_numberColor)
+#: taskcolorsbase.ui:38
+#, kde-format
+msgid "Change the color of the numbers"
+msgstr "Aldatu zenbakien kolorea"
+
+#. i18n: ectx: property (text), widget (QLabel, operationLabel)
+#: taskcolorsbase.ui:54
+#, kde-format
+msgid "&Operation sign:"
+msgstr "&Eragiketaren zeinua:"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_operationColor)
+#: taskcolorsbase.ui:70
+#, kde-format
+msgid "Change the color of the operation signs"
+msgstr "Aldatu eragiketa zeinuen koloreak"
+
+#. i18n: ectx: property (text), widget (QLabel, fractionBarLabel)
+#: taskcolorsbase.ui:86
+#, kde-format
+msgid "&Fraction bar:"
+msgstr "&Zatiki-barra:"
+
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_fractionBarColor)
+#: taskcolorsbase.ui:96
+#, kde-format
+msgid "Change the color of the fraction bar"
+msgstr "Aldatu zatiki-barraren kolorea"
+
+#. i18n: ectx: property (toolTip), widget (KFontChooser, kcfg_taskFont)
+#: taskfontsbase.ui:16
+#, kde-format
+msgid "Change the font of the numbers"
+msgstr "Aldatu zenbakien letra-tipoa"
+
+#: TaskView.cpp:153
+#, kde-format
+msgid "Click this button to skip this question."
+msgstr "Egin klik botoi honetan ariketa hau saltatzeko."
+
+#: TaskView.cpp:163
+#, kde-format
+msgid ""
+"In this exercise you have to solve the generated question. You have to enter "
+"the integer part of the fraction and the numerator and the denominator. You "
+"can adjust the difficulty of the question in the options window part. Do not "
+"forget to reduce the result, if the use of the reduced form is forced."
+msgstr ""
+"Ariketa honetan sortutako galdera ebatzi behar duzu. Zatikiaren osoko zatia, "
+"zenbakitzaile eta izendatzaile bat sartu behar dituzu. Ariketaren zailtasuna "
+"doitzeko erabili aukeren leihoko zatia. Ez ahaztu emaitza sinplifikatzea, "
+"sinplifikatutako forma derrigortuta egonez gero."
+
+#: TaskWidget.cpp:96
+#, kde-format
+msgctxt "addition symbol"
+msgid "+"
+msgstr "+"
+
+#: TaskWidget.cpp:99
+#, kde-format
+msgctxt "subtraction symbol"
+msgid "−"
+msgstr "−"
+
+#: TaskWidget.cpp:102
+#, kde-format
+msgctxt "multiplication symbol"
+msgid "×"
+msgstr "×"
+
+#: TaskWidget.cpp:105
+#, kde-format
+msgctxt "division symbol"
+msgid "/"
+msgstr "/"
+
+#~ msgid "Freestyle"
+#~ msgstr "Estilo librea"
+
+#~ msgid "Original Author"
+#~ msgstr "Jatorrizko egilea"
+
+#, fuzzy
+#~| msgid ""
+#~| "Set if the fractions will appear as mixed numbers or not in the solution "
+#~| "(mixed number example: 1 5/4 = 9/4 )."
+#~ msgid ""
+#~ "Set if the fractions will appear as mixed numbers or not in the solution "
+#~ "(mixed number example: 1 4/5 = 9/5 )."
+#~ msgstr ""
+#~ "Zatikiak zenbaki nahasi gisa agertu behar duten emaitzean edo ez ezartzen "
+#~ "du (zenbaki nahasiaren adibidea: 1 5/4 = 9/4 )."
+
+#~ msgid " or "
+#~ msgstr " edo "
+
+#~ msgid "Multiply"
+#~ msgstr "Bidertu"
+
+#~| msgid ""
+#~| "You entered the correct result, but not reduced.\n"
+#~| "Always enter your results as reduced. This task will be counted as not "
+#~| "correctly solved."
+#~ msgid ""
+#~ "You entered the correct result, but not reduced.\n"
+#~ "Enter your results as reduced, if the use of this form is forced in the "
+#~ "options. This question will be counted as not correctly solved."
+#~ msgstr ""
+#~ "Emaitza zuzena sartu duzu, baina ez duzu sinplifikatu.\n"
+#~ "Zure emaitza sinplifikatuta sartu behar duzu, aukeretan forma honen "
+#~ "erabilera derrigortuta badago. Ariketa hau oker ebatzita bezala "
+#~ "kontatutako da."

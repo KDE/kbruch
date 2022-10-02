@@ -1,0 +1,950 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY kappname "&kbruch;">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Dutch "INCLUDE"
+><!-- change language only here -->
+]>
+<!--
+SPDX-FileCopyrightText: 2001-2005 Sebastian Stein <seb.kde@hpfsc.de>
+SPDX-FileCopyrightText: 2008 Anne-Marie Mahfouf
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+<book id="kbruch" lang="&language;">
+
+<bookinfo>
+<title
+>Het handboek van &kbruch;</title>
+
+<authorgroup>
+<author
+><firstname
+>Sebastian</firstname
+> <surname
+>Stein</surname
+> <email
+>seb.kde@hpfsc.de</email
+> </author>
+<author
+>&Anne-Marie.Mahfouf; </author>
+&Jaap.Woldringh; 
+
+</authorgroup>
+
+<copyright>
+<year
+>2001-2005</year>
+<holder
+>Sebastian Stein</holder>
+</copyright>
+<copyright>
+<year
+>2008</year>
+<holder
+>&Anne-Marie.Mahfouf;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2020-12-21</date>
+<releaseinfo
+>Applicaties 20.12</releaseinfo>
+
+<abstract>
+<para
+>&kbruch; is een klein programma'tje waarmee geoefend kan worden in het rekenen met breuken en percentages. Tot dit doel worden verschillende soorten oefeningen aangeboden, en in de leermodus kan worden geoefend met breuken. Het programma kijkt elk antwoord na en meldt dan of het goed is of fout. </para>
+
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>onderwijs</keyword>
+<keyword
+>breuk</keyword>
+<keyword
+>percentage</keyword>
+<keyword
+>rekenen</keyword>
+<keyword
+>noemer</keyword>
+<keyword
+>kbruch</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Inleiding</title>
+
+<para
+>&kbruch; is een klein programma'tje voor het oefenen in het rekenen met breuken en percentages. Er zijn zes verschillende soorten oefeningen beschikbaar, en een leermodus. </para>
+
+<itemizedlist>
+	<listitem
+><para
+><guilabel
+>Rekenen</guilabel
+> - In deze oefening moet een gegeven opgave met breuken worden beantwoord. De leerling moet (van het antwoord) de teller en de noemer invullen. Dit is de belangrijkste oefening. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Vergelijken</guilabel
+> - In deze oefening moeten de groottes van 2 gegeven breuken met elkaar worden vergeleken. Dit gebeurt met behulp van de tekens <guibutton
+>&gt;</guibutton
+>, <guibutton
+>&lt;</guibutton
+> en <guibutton
+>=</guibutton
+>. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Omzetten</guilabel
+> - In deze oefening moet een gegeven getal in een breuk worden omgezet. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Gemengde breuken</guilabel
+> - In deze oefening moet een gemengde breuk worden omgezet naar een oneigenlijke breuk (teller groter dan de noemer), en terug. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Ontbinden in factoren</guilabel
+> - In deze oefening moet een gegeven getal worden ontbonden in de priemfactoren. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Percentages</guilabel
+> - In deze oefening moet met percentages worden gerekend. </para
+></listitem>
+</itemizedlist>
+
+<para
+>In alle oefeningen genereert &kbruch; een opgave die de leerling moet beantwoorden. Het programma kijkt het antwoord na en meldt het resultaat. </para>
+
+<para
+>&kbruch; telt het aantal gemaakte opgaven en het aantal goede antwoorden. Het resultaat hiervan wordt aan de leerling getoond. </para>
+
+<para
+>&kbruch; is erg klein, en gericht op het basisidee van een opgavengenerator. Een direct beschikbaar helpsysteem geeft contextgevoelige informatie voor de verschillende situaties. </para>
+
+</chapter>
+
+
+<chapter id="using-kbruch">
+<title
+>&kbruch; gebruiken</title>
+
+<sect1 id="mode">
+<title
+>De modus kiezen: leren of oefeningen</title>
+<para
+>Bij het starten van &kbruch; kan worden gekozen uit twee modi: <guilabel
+>Oefenen</guilabel
+>, in deze modus wordt geoefend, en <guilabel
+>Leren</guilabel
+>, waarin de leerling breuken leert begrijpen. Door op een van de plaatjes te klikken wordt de modus gekozen. Hier is een schermbeeld van het kiezen van een modus in &kbruch;:</para>
+
+<screenshot>
+	<screeninfo
+>Modus kiezen in &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_mode.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Modus kiezen in &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>Kies een modus door op een plaatje te klikken.</para>
+</sect1>
+
+<sect1 id="overview">
+<title
+>Hoofdscherm oefenen</title>
+
+<para
+>Dit is een schermafbeelding van het hoofdscherm van &kbruch;:</para>
+
+<screenshot>
+	<screeninfo
+>Het hoofdscherm van &kbruch;, direct na de start van de oefenmodus</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_main.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Hoofdscherm van &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Alle oefeningen worden in dit scherm gedaan. Hierdoor is &kbruch; gemakkelijk te gebruiken, zelfs voor jonge leerlingen! Het hoofdscherm wordt in 5 gedeelten verdeeld: <itemizedlist
+> <listitem
+><para
+> de menubalk met de 3 menu's <guimenu
+>Bestand</guimenu
+>, <guimenu
+>Instellingen</guimenu
+> en <guimenu
+>Help</guimenu
+> </para
+></listitem
+> <listitem
+><para
+> de werkbalk waarin geschakeld kan worden tussen de verschillende oefeningen </para
+></listitem
+> <listitem
+><para
+> de <guilabel
+>Opties:</guilabel
+> links, waarin de moeilijkheidsgraad kan worden ingesteld, en de diverse instellingen voor de opgaven </para
+></listitem
+> <listitem
+><para
+> het opgavengedeelte, waarin het antwoord moet worden gegeven van een gegeven opgave </para
+></listitem
+> <listitem
+><para
+> het statistische gedeelte, waarin te zien is hoeveel opgaven er gemaakt zijn, en hoeveel er goed zijn beantwoord </para
+></listitem
+> </itemizedlist
+> Op elk moment kan worden teruggekeerd naar de modusinstelling met behulp van het pictogram <guiicon
+>Terug</guiicon
+> in de werkbalk. </para>
+<note
+><para
+>Het gedeelte <guilabel
+>Opties:</guilabel
+> kan worden verborgen door die naar links te slepen met de muis. </para
+></note>
+<para
+>Eerst moet een oefening worden gekozen in de werkbalk. De standaard oefening is .<guilabel
+>Rekenen</guilabel
+>. Het opgavedeel past zich aan aan de gekozen oefening. Sommige instellingen in de sectie <guilabel
+>Opties</guilabel
+> zullen, afhankelijk van de gekozen opgaven, worden aangezet. </para>
+<para
+>In de werkbalk is ook een pictogram voor het genereren van een nieuwe opgave. Dit kan ook in het menu <menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>Nieuw</guimenuitem
+></menuchoice
+>. Dit kan altijd. Als een opgave niet wordt beantwoord, wordt die niet meegeteld, en wordt een nieuwe opgave gegeven. </para>
+<!--<para>
+You can hide the statistic part by dragging the vertical separator to the
+right.
+</para
+>-->
+<para
+>Bij afsluiten van &kbruch; wordt de huidig gekozen oefening bewaard en weer hersteld bij de volgende keer dat het programma wordt gestart. </para>
+</sect1>
+
+<sect1 id="statistics">
+<title
+>Het statistische gedeelte</title>
+<screenshot>
+	<screeninfo
+>Statistieken van &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="statistics.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Statistieken van &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>In dit gedeelte van het hoofdscherm is te zien: <itemizedlist>
+	<listitem
+><para
+>links, hoeveel opgaven er zijn gemaakt </para
+></listitem>
+	<listitem
+><para
+>rechts, in groen, hoeveel opgaven goed zijn beantwoord </para
+></listitem>
+	<listitem
+><para
+>rechts, in rood, hoeveel opgaven niet goed zijn beantwoord </para
+></listitem>
+		<listitem
+><para
+>rechts, in oranje, hoeveel opgaven zijn overgeslagen </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>De statistieken kunnen weer op nul worden gezet met de knop <guimenu
+>Nieuw</guimenu
+> in de werkbalk, of met <menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Nieuw</guimenuitem
+></menuchoice
+> in de menubalk. </para>
+<para
+>De statistieken worden opgeslagen wanneer &kbruch; wordt afgesloten, en weer hersteld bij het opnieuw starten van het programma. </para>
+</sect1>
+
+<sect1 id="settings">
+<title
+>Het uiterlijk van &kbruch; instellen</title>
+<para
+>In deze dialoog kunnen wat algemene instellingen worden gedaan voor het tonen van opgaven. Deze dialoog kan worden geopend met <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>&kbruch; instellen...</guimenuitem
+></menuchoice
+>. </para>
+
+<screenshot>
+	<screeninfo
+>Instellingendialoog van &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="settings.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Instellingendialoog van &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Er zijn twee secties voor de instellingen: <itemizedlist>
+	<!-- <listitem
+><para>
+		<guilabel
+>General</guilabel
+>: Set whether to show the mixed number notation in the result.
+		This notation is not known everywhere and can be disabled therefore.
+	</para
+></listitem
+> -->
+	<listitem
+><para
+><guilabel
+>Kleuren</guilabel
+>: Kies hier de kleuren voor de diverse onderdelen van een rekenkundige uitdrukking: getallen, bewerkingsteken, deelstreep. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Lettertypen</guilabel
+>: Kies het lettertype waarmee een opgave wordt weergegeven. </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>Deze instellingen worden bewaard als &kbruch; wordt afgesloten, en de volgende keer dat&kbruch; wordt gestart weer hersteld. </para>
+</sect1>
+
+<sect1 id="learning-screen">
+<title
+>Hoofdscherm leermodus</title>
+<screenshot>
+	<screeninfo
+>Leermodus van &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="learning.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Leermodus van &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>Door op de knop <guibutton
+>Hint</guibutton
+> te klikken wordt rechts de uitleg zichtbaar/onzichtbaar over hoe de ringen werken. </para>
+</sect1>
+</chapter>
+
+<chapter id="exercises">
+<title
+>Oefeningen</title>
+
+<sect1 id="exer_fraction">
+<title
+>Rekenen oefenen</title>
+
+<para
+>In deze oefening moet een antwoord worden gegeven op een gegeven opgave. Daartoe moeten het gehele deel van de breuk, en de teller en noemer worden ingevuld. De moeilijkheidsgraad van de opgaven kan worden ingesteld met behulp van enkele opties links. </para>
+
+<sect2 id="task_paras">
+<title
+>Opties</title>
+<para
+>Er zijn diverse parameters die de moeilijkheidsgraad van de gegenereerde opgaven beïnvloeden:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Vraag:</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Gemengde breuk:</guilabel
+></term>
+<listitem
+><para
+>Stel in of in een vraag de breuk zal worden gegeven als een gemengde breuk, of niet (voorbeeld van een gemengde breuk: 1 4/5 = 9/5 ).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Aantal termen:</guilabel
+></term>
+<listitem
+><para
+>Het aantal termen (afzonderlijke breuken) in elke opgave, in te stellen van 2 tot en met 5.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Grootste noemer:</guilabel
+></term>
+<listitem
+><para
+>De grootste waarde van de noemers in de opgaven die &kbruch; moet genereren. Van een minimum van 10 tot en met een maximum van 50.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Antwoord:</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Gemengde breuk:</guilabel
+></term>
+<listitem
+><para
+>Stel in of in het antwoord de breuk zal worden gegeven als een gemengde breuk, of niet (voorbeeld van een gemengde breuk: 1 4/5 = 9/5 ).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Vereenvoudigde breuk:</guilabel
+></term>
+<listitem
+><para
+>Kies dit als de breuken vereenvoudigd moeten worden.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+<!-- Not in v. 4.2
+<varlistentry>
+<term
+><guilabel
+>Solution</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mixed number</guilabel
+></term>
+<listitem
+><para
+>Set if the fractions will appear as mixed numbers or not in the solution ( mixed number example: 1 4/5 = 9/5 ).</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+-->
+
+<varlistentry>
+<term
+><guilabel
+>Bewerkingen:</guilabel
+></term>
+<listitem
+><para
+>Bewerkingen die in de opgaven moeten voorkomen: <guilabel
+>Optellen:</guilabel
+>, <guilabel
+>Aftrekken:</guilabel
+>, <guilabel
+>Vermenigvuldigen:</guilabel
+> of <guilabel
+>Delen:</guilabel
+>. Kies alle bewerkingen die je wilt doen.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Nadat deze parameters zijn veranderd, moet nog op de knop <guimenu
+>Nieuw</guimenu
+> worden geklikt in de werkbalk, voor een opgave met de nieuwe parameters. Dit kan ook met <menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Nieuw</guimenuitem
+></menuchoice
+> in de menubalk. Dit zet de statistieken op nul. Om dat tegen te gaan klikt u op de knop <guibutton
+>Volgende opgave</guibutton
+> om door te gaan met de gewijzigde parameters. </para>
+<!--<note>
+<para>
+Your selection of the maximum main denominator will be reset to a default
+value every time you change the number of terms. So you should change the
+number of terms first and then select the maximum main denominator.
+</para>
+</note
+>-->
+<!--para>
+If you have not solved the current task and call the <guimenu
+>New</guimenu>
+action, the task will be counted as not solved correctly. To
+prevent this you have to change the parameters after you solved the task but
+before generating a new one.
+</para-->
+<para
+>De gekozen parameters zullen worden opgeslagen als &kbruch; wordt afgesloten, en weer hersteld bij de volgende keer dat het programma wordt gestart. </para>
+</sect2>
+
+<sect2 id="exer_fraction_solve_task">
+<title
+>Beantwoorden van opgaven</title>
+<para
+>Het antwoord op een opgave moet worden ingevoerd in de drie invoervakken. Het linkse vak is bestemd voor het gehele deel van de breuk, het bovenste is voor de teller en het onderste voor de noemer. Indien niet de optie <guilabel
+>Gemengde breuk</guilabel
+> in de sectie <guilabel
+>Antwoord:</guilabel
+> is gekozen, is het linker invoervakje, voor het gehele gedeelte van de breuk, verborgen. Voor het invullen van het antwoord zijn dan alleen de invoervakjes voor de teller en de noemer beschikbaar. </para>
+<para
+>Als het antwoord negatief is, kan een minteken worden toegevoegd voor de teller of de noemer. Als het antwoord 0 is, typ dan maar een 0 in voor de noemer.Als de noemer 1 is kan het onderste invoerveld leeg blijven. </para>
+<para
+>Nadat het antwoord is ingevuld, moet er op de knop <guibutton
+>Antwoord controleren</guibutton
+> worden geklikt, onder de invoervelden. &kbruch; controleert dan het antwoord, en toont het goede antwoord, rechts onder het woord <guilabel
+>Fout</guilabel
+>: </para>
+<screenshot>
+<screeninfo
+>Antwoord gecontroleerd</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="checked.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Antwoord gecontroleerd</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+<para
+>Hier was het gegeven antwoord niet goed. Het goede antwoord wordt op 2 manieren gegeven: de normale manier (vereenvoudigd) en als een gemengde breuk. </para>
+<note>
+<para
+>Indien de optie <guibutton
+>Vereenvoudigd:</guibutton
+> is gekozen in de sectie <guilabel
+>Antwoorden:</guilabel
+>, moeten antwoorden altijd vereenvoudigd worden gegeven (bijvoorbeeld 3/5 en niet 9/15).  &kbruch; toont een bericht als in de schermafbeelding hieronder, als een niet (zoveel mogelijk) vereenvoudigd antwoord wordt gegeven. Het antwoord wordt in dat geval niet goed gerekend. </para>
+</note>
+<screenshot>
+<screeninfo
+>Niet vereenvoudigd antwoord</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="reduced.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Niet vereenvoudigd antwoord</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Voor een volgende opgave moet er op de knop <guibutton
+>Volgende opgave</guibutton
+> worden geklikt. Als de instellingen voor de volgende opgave moeten worden veranderd, moet dat eerst worden gedaan. </para>
+</sect2>
+</sect1>
+
+<sect1 id="exer_compare">
+<title
+>Oefening met vergelijken</title>
+
+<para
+>In deze oefening worden 2 gegeven breuken met elkaar vergeleken. U moet van beide de grootste kiezen door het juiste vergelijkingsteken te kiezen. 
+
+
+Betekenis van de vergelijkingstekens: 
+
+     &lt;  Kleiner dan (in gedachten kan er een k van worden gemaakt, van kleiner)
+....&gt;  groter dan 
+.....=  is gelijk aan </para>
+
+<screenshot>
+<screeninfo
+>Oefening met vergelijken</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="compare.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Oefening met vergelijken</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Kies eerst het juiste vergelijkingsteken. Hierna wordt het resultaat rechts getoond. Een groen vierkantje met <guilabel
+>Goed</guilabel
+> betekent dat het antwoord goed is, en een rood vierkantje met <guilabel
+>Fout</guilabel
+> betekent dat het antwoord niet goed is. Voor de volgende opgave moet er worden geklikt op de knop <guibutton
+>Volgende opgave</guibutton
+>. </para>
+
+<para
+>In deze oefening is alleen de optie <guilabel
+>Gemengde breuk</guilabel
+> aangezet. Indien gekozen worden breuken getoond als gemengde breuken (bijvoorbeeld 1 3/4).</para>
+</sect1>
+
+<sect1 id="exer_convert">
+<title
+>Oefening met omzetten</title>
+
+<para
+>In deze oefening moet een gegeven getal in een breuk worden omgezet. </para>
+
+<screenshot>
+<screeninfo
+>Oefening met omzetten</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="convert.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Oefening met omzetten</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>In het bovenstaande schermbeeld ziet u links van het isgelijkteken een herhaald voorkomende decimaal. Dit betekent dat de getoonde decimale fractie een gedeelte heeft dat zich herhaalt. Dit zich herhalende gedeelte wordt gekenmerkt met een klein streepje boven de cijfers. Deze cijfers herhalen zich tot in het oneindige. </para>
+
+<para
+>Klik na het invullen van de teller en de noemer op de knop <guibutton
+>Antwoord nakijken</guibutton
+>. &kbruch; controleert dan het antwoord en geeft het goede antwoord. Door hierna op de knop <guibutton
+>Volgende opgave</guibutton
+> te klikken wordt de volgende opgave getoond. </para>
+
+<note>
+<para
+>Vergeet niet het antwoord zoveel mogelijk te vereenvoudigen. Niet vereenvoudigde antwoorden worden fout gerekend. </para>
+</note>
+
+<para
+>In deze oefening zijn alle opties uitgezet.</para>
+
+</sect1>
+
+<sect1 id="exer_mixed">
+<title
+>Oefening met gemengde breuken</title>
+
+<para
+>In deze oefening moet een gemengde breuk worden omgezet naar een oneigenlijke breuk (verhouding, teller groter dan de noemer), en terug. Je moet de teller en de noemer geven van een oneigenlijke breuk, of het hele getal, de teller en de noemer van een gemengde breuk. </para>
+
+<screenshot>
+<screeninfo
+>Oefening met gemengde breuken</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="mixed.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Oefening met gemengde breuken</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>In het bovenstaande schermbeeld staat links van het isgelijkteken (=) een gemengde breuk. Dit betekent dat het getal bestaat uit een geheel getal en  een (echte) breuk. Je moet nu de oneigenlijke breuk invullen die hieraan gelijk is (de teller hiervan is groter of gelijk aan de noemer). </para>
+
+<para
+>Klik na het invullen van de teller en de noemer op de knop <guibutton
+>Antwoord nakijken</guibutton
+>. &kbruch; controleert dan het antwoord en geeft het goede antwoord. Door hierna op de knop <guibutton
+>Volgende opgave</guibutton
+> te klikken wordt de volgende opgave getoond. </para>
+
+<note>
+<para
+>Vergeet niet het antwoord zoveel mogelijk te vereenvoudigen. Niet vereenvoudigde antwoorden worden fout gerekend. </para>
+</note>
+
+<para
+>In deze oefening zijn alle opties uitgezet.</para>
+
+</sect1>
+
+<sect1 id="exer_factorize">
+<title
+>Oefening met het ontbinden in factoren</title>
+
+<para
+>In deze oefening moet een gegeven getal worden ontbonden in zijn priemfactoren. Alle priemfactoren van het getal worden gevraagd. </para>
+
+<screenshot>
+<screeninfo
+>Oefening met het ontbinden in factoren</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="factorize.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Oefening met het ontbinden in factoren</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Een factor wordt ingevoerd door op een van de knoppen voor priemfactoren te klikken. Het bewerkingsteken <quote
+>x</quote
+> wordt automatisch ingevoegd bij het klikken op een volgende knop voor een priemfactor. De laatst ingevoerde priemfactor kan worden verwijderd door op de knop <guibutton
+> &lt;--- </guibutton
+> te klikken. </para>
+<para
+>Klik na het invullen van alle priemfactoren op de knop <guibutton
+>Antwoord nakijken</guibutton
+>. &kbruch; controleert dan het antwoord en geeft het goede antwoord. Door hierna op de knop<guibutton
+>Volgende opgave</guibutton
+> te klikken komt er weer een nieuwe opgave. </para>
+
+<para
+>In het schermbeeld bovenaan deze pagina staat een <quote
+>x</quote
+> tussen de priemfactoren. Dit is het vermenigvuldigingsteken. Het product van alle priemfactoren moet het getal zijn dat je in factoren hebt ontbonden. </para>
+
+<note>
+<para
+>Alle priemfactoren, ook als die meerdere keren voorkomen, moeten worden ingevoerd. Een voorbeeld: Als priemfactoren van 18 moeten een 2, een 3 en nog een 3 worden ingevoerd. </para>
+</note>
+
+<para
+>In deze oefening zijn alle opties uitgezet.</para>
+
+</sect1>
+
+<sect1 id="exer_percentage">
+<title
+>Oefening met percentages</title>
+
+<para
+>In deze oefening moeten vragen over percentages worden beantwoord.</para>
+
+<screenshot>
+<screeninfo
+>Oefening met percentages</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="percentage.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Oefening met percentages</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Klik na het invullen van het antwoord op de knop <guibutton
+>Antwoord nakijken</guibutton
+>. &kbruch; controleert dan het antwoord en geeft het goede antwoord. Door op de knop <guibutton
+>Volgende opgave</guibutton
+> te klikken komt de volgende opgave. </para>
+
+<para
+>In deze oefening zijn alle opties uitgezet.</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Dankbetuigingen en licentie</title>
+<para
+>&kbruch;</para>
+<para
+>Programma en documentatie Copyright: 2001-2011 Sebastian Stein <email
+>seb.kde@hpfsc.de</email
+> </para>
+
+<!-- needs update ???-->
+
+<para
+>Dank aan:</para>
+
+<itemizedlist>
+	<listitem
+><para
+>&Anne-Marie.Mahfouf; voor het leiden van het &kde;-Eduproject</para
+></listitem>
+	<listitem
+><para
+>Klas Kalass voor zijn hulp bij het ontwerpen van de interface</para
+></listitem>
+	<listitem
+><para
+>Eva Brucherseifer voor het schrijven van <application
+>KMath</application
+> (de GUI (grafische interface) van &kbruch; is hierop gebaseerd)</para
+></listitem>
+	<listitem
+><para
+>Dominique Devriese voor het verhelpen van programmafouten</para
+></listitem>
+	<listitem
+><para
+><ulink url="http://www.net-tex.de/"
+>Stefan Schumacher</ulink
+> voor het testen van een erg vroege versie</para
+></listitem>
+	<listitem
+><para
+><ulink url="https://www.guckes.net/"
+>Sven Guckes</ulink
+> voor het testen van de tekstinterface (die overigens verwijderd is)</para
+></listitem>
+	<listitem
+><para
+>&David.Faure; voor de hulp met &kde;-<acronym
+>-CVS</acronym
+> en &kde;-Bugzilla</para
+></listitem>
+	<listitem
+><para
+>&Robert.Gogolok; voor de hulp met &kde;-<acronym
+>CVS</acronym
+></para
+></listitem>
+	<listitem
+><para
+>John Kesson voor het doorlezen op fouten van het handboek</para
+></listitem>
+</itemizedlist>
+
+<para
+>Nieuw ontwerp van de interface, en verbeterde gebruiksmogelijkheden voor &kde; 4.1:</para>
+<itemizedlist>
+<listitem
+><para
+>Paulo Cattai <email
+>paulo.cattai@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Danilo Balzaque <email
+>danilo.balzaque@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Roberto Cunha <email
+>roberto.cunha@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tadeu Araujo <email
+>tadeu.araujo@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tiago Porangaba <email
+>tiago.porangaba@ltia.fc.unesp.br</email
+></para
+></listitem>
+</itemizedlist>
+
+&vertaling.jaap; &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->

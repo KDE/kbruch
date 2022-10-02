@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Estonian  "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>KDE kasutaja käsiraamat</title>
+<author
+>&Lauri.Watts;&Lauri.Watts.mail;</author>
+<date
+>2010-10-06</date>
+<productname
+>KDE töökeskkond</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kbruch</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kbruch</command
+></refname>
+<refpurpose
+>Arvutamine murdudega</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kbruch</command
+> <arg choice="opt"
+>KDE üldised võtmed</arg
+> <arg choice="opt"
+>Qt üldised võtmed</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Kirjeldus</title>
+<para
+>&kbruch; on väike programm murdudega arvutamise õppimiseks. Selleks pakutakse erinevat laadi ülesandeid. Programm kontrollib kasutaja vastuseid ja teatab, kas need on õiged või mitte.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Vaata ka</title>
+<para
+>Põhjalikumat kasutaja dokumentatsiooni pakub <ulink url="help:/kbruch"
+>help:/kbruch</ulink
+> (kirjuta see &URL; &konqueror;i või käivita käsuga <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kbruch</parameter
+></userinput
+>).</para>
+<para
+>Täiendavat infot leiab ka <ulink url="http://edu.kde.org/kbruch/"
+>KDE-Edu koduleheküljelt</ulink
+>.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Autorid</title>
+<para
+>&kbruch;i autor on <personname
+><firstname
+>Sebastian</firstname
+><surname
+>Stein</surname
+></personname
+> <email
+>seb.kde@hpfsc.de</email
+>.</para>
+</refsect1>
+
+</refentry>

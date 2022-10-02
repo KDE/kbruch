@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Dutch "INCLUDE">
+]>
+<!--
+SPDX-FileCopyrightText: 2005 Lauri Watts
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Gebruikershandboek van &kbruch;</title>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<date
+>2020-12-21</date>
+<releaseinfo
+>Applicaties 20.12</releaseinfo>
+<productname
+>KDE Applications</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kbruch</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kbruch</command
+></refname>
+<refpurpose
+>Leer rekenen met breuken en procenten</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kbruch</command
+> <arg choice="opt"
+>opties</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Beschrijving</title>
+<para
+>&kbruch; is een klein programma voor het oefenen in het rekenen met breuken en procenten. Hiertoe zijn verschillende oefeningen beschikbaar. Het programma controleert de invoer van de gebruiker en geeft een beoordeling.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Zie ook</title>
+<para
+>Uitvoeriger documentatie is in <ulink url="help:/kbruch"
+>help:/kbruch</ulink
+> (voer deze &URL;  in in &konqueror;, of start <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kbruch</parameter
+></userinput
+>).</para>
+<para
+>Er is ook nog informatie beschikbaar op <ulink url="https://edu.kde.org/kbruch/"
+>the &kde;du website</ulink
+>.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Auteurs</title>
+<para
+>&kbruch; is geschreven door <personname
+><firstname
+>Sebastian</firstname
+><surname
+>Stein</surname
+></personname
+> <email
+>seb.kde@hpfsc.de</email
+></para>
+</refsect1>
+
+</refentry>

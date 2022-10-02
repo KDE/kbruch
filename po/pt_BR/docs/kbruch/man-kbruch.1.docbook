@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Brazilian-Portuguese "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Manual do Usuário do &kbruch;</title>
+<author
+>&Lauri.Watts;&Lauri.Watts.mail;</author>
+<date
+>27/09/2015</date>
+<releaseinfo
+>&kbruch; 5.0 (Applications 15.12)</releaseinfo>
+<productname
+>KDE Applications</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kbruch</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kbruch</command
+></refname>
+<refpurpose
+>Aprender a calcular com frações</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kbruch</command
+> <arg choice="opt"
+>opções</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descrição</title>
+<para
+>O &kbruch; é um pequeno programa para praticar cálculos com frações. Estão disponíveis vários exercícios para este fim. O programa verifica os dados introduzidos e fornece um resultado.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Veja também</title>
+<para
+>A documentação mais detalhada para o usuário está disponível em <ulink url="help:/kbruch"
+>help:/kbruch</ulink
+> (tanto poderá inserir esta <acronym
+>URL</acronym
+> no &konqueror;, como executar o comando <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kbruch</parameter
+></userinput
+>).</para>
+<para
+>Também existe mais informações disponível no <ulink url="https://edu.kde.org/kbruch/"
+>site do kde-edu</ulink
+></para>
+</refsect1>
+
+<refsect1>
+<title
+>Autores</title>
+<para
+>O &kbruch; foi escrito por <personname
+><firstname
+>Sebastian</firstname
+><surname
+>Stein</surname
+></personname
+> <email
+>seb.kde@hpfsc.de</email
+></para>
+</refsect1>
+
+</refentry>

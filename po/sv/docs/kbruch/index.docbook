@@ -1,0 +1,959 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY kappname "&kbruch;">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Swedish "INCLUDE"
+><!-- change language only here -->
+]>
+<!--
+SPDX-FileCopyrightText: 2001-2005 Sebastian Stein <seb.kde@hpfsc.de>
+SPDX-FileCopyrightText: 2008 Anne-Marie Mahfouf
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+<book id="kbruch" lang="&language;">
+
+<bookinfo>
+<title
+>Handbok &kbruch;</title>
+
+<authorgroup>
+<author
+><firstname
+>Sebastian</firstname
+> <surname
+>Stein</surname
+> <email
+>seb.kde@hpfsc.de</email
+> </author>
+<author
+>&Anne-Marie.Mahfouf; </author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<copyright>
+<year
+>2001-2005</year>
+<holder
+>Sebastian Stein</holder>
+</copyright>
+<copyright>
+<year
+>2008</year>
+<holder
+>&Anne-Marie.Mahfouf;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2020-12-21</date>
+<releaseinfo
+>Program 20.12</releaseinfo>
+
+<abstract>
+<para
+>&kbruch; är ett litet program för att öva räkning med bråk och procent. Olika övningar tillhandahålls för detta syfte, och du kan använda inlärningsläget för att öva dig på bråk. Programmet kontrollerar användarens indata och ger återmatning. </para>
+
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>utbildning</keyword>
+<keyword
+>bråk</keyword>
+<keyword
+>procent</keyword>
+<keyword
+>matematik</keyword>
+<keyword
+>nämnare</keyword>
+<keyword
+>kbruch</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Inledning</title>
+
+<para
+>&kbruch; är ett litet program för att öva räkning med bråk och procent. För att göra det erbjuds sex olika övningar samt ett inlärningsläge. </para>
+
+<itemizedlist>
+	<listitem
+><para
+><guilabel
+>Aritmetik</guilabel
+>: I den här övningen måste du lösa en given uppgift med bråk. Du måste skriva in täljare och nämnare. Detta är den huvudsakliga övningen. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Jämförelse</guilabel
+>: I den här övningen måste du jämföra storleken på två givna bråk, med symbolerna <guibutton
+>&gt;</guibutton
+>, <guibutton
+>&lt;</guibutton
+> eller <guibutton
+>=</guibutton
+>. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Konvertering</guilabel
+>: I den här övningen måste du konvertera ett givet tal till ett bråk. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Blandade tal</guilabel
+>: I den här övningen måste du konvertera ett blandat tal till ett oäkta bråk (oegentligt) och tvärtom. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Faktorisering</guilabel
+>: I den här övningen måste du faktorisera ett givet tal i dess primtalsfaktorer. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Procent</guilabel
+>: I den här övningen måste du beräkna procent. </para
+></listitem>
+</itemizedlist>
+
+<para
+>I alla olika övningar skapar &kbruch; en uppgift, och användaren måste lösa den. Programmet kontrollerar indata och ger återmatning om det. </para>
+
+<para
+>&kbruch; räknar hur många uppgifter som lösts överhuvudtaget och hur många uppgifter som löstes rätt. Statistiken visas för användaren. </para>
+
+<para
+>&kbruch; är mycket kompakt och fokuserar på den centrala idén att skapa uppgifter. Ett inbyggt hjälpsystem tillhandahåller sammanhangsberoende hjälp för olika situationer. </para>
+
+</chapter>
+
+
+<chapter id="using-kbruch">
+<title
+>Att använda &kbruch;</title>
+
+<sect1 id="mode">
+<title
+>Välja läget: inlärning eller övning</title>
+<para
+>När &kbruch; startas, erbjuder det två lägen: <guilabel
+>Övning</guilabel
+>, som är övningsläget och <guilabel
+>Inlärning</guilabel
+> där du kan lära dig förstå bråk. Genom att klicka på en av bilderna, aktiveras valt läge. Här är en skärmbild av &kbruch;s lägesval:</para>
+
+<screenshot>
+	<screeninfo
+>&kbruch;s lägesval</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_mode.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>&kbruch;s lägesval</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>Klicka på en av bilderna för att välja läge.</para>
+</sect1>
+
+<sect1 id="overview">
+<title
+>Huvudskärmen för övningar</title>
+
+<para
+>Här är en skärmbild av &kbruch;s huvudfönster för övningar:</para>
+
+<screenshot>
+	<screeninfo
+>&kbruch;s huvudfönster, direkt efter start av övningen</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_main.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>&kbruch;s huvudfönster</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Alla övningar utförs på den här skärmen. Det garanterar att &kbruch; är enkelt att använda också för unga användare. Huvudskärmen är uppdelad i fem delar: <itemizedlist
+> <listitem
+><para
+>Menyraden med de tre menyerna <guimenu
+>Arkiv</guimenu
+>, <guimenu
+>Inställningar</guimenu
+> och <guimenu
+>Hjälp</guimenu
+> </para
+></listitem
+> <listitem
+><para
+>Verktygsraden, där man kan byta mellan olika övningar</para
+></listitem
+> <listitem
+><para
+><guilabel
+>Alternativ:</guilabel
+> till vänster, där man kan ange uppgifternas svårighetsnivå och diverse inställningar</para
+></listitem
+> <listitem
+><para
+>Uppgiftsdelen, där resultatet av den givna uppgiften ska matas in</para
+></listitem
+> <listitem
+><para
+>Statistikdelen, där antal uppgifter som lösts riktigt eller försökt lösas visas</para
+></listitem
+> </itemizedlist
+> Du kan gå tillbaka till lägesvalet när som helst genom att använda ikonen <guiicon
+>Tillbaka</guiicon
+> i verktygsraden. </para>
+<note
+><para
+>Du kan dölja <guilabel
+>Alternativ:</guilabel
+> genom att dra den åt vänster. </para
+></note>
+<para
+>Först måste du välja en övning i verktygsraden. <guilabel
+>Aritmetik</guilabel
+> är förvalt. Uppgiftsdelen ändras enligt vald uppgift. Vissa inställningar under <guilabel
+>Alternativ</guilabel
+> kommer att aktiveras, beroende på vald uppgift. </para>
+<para
+>Du hittar dessutom en ikon för att skapa en ny uppgift i verktygsraden. Åtgärden är dessutom tillgänglig i menyn <menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Ny</guimenuitem
+></menuchoice
+>. Åtgärden är alltid aktiverad. Om du inte har löst pågående uppgift, skapas en ny uppgift och statistiken ställs tillbaka. </para>
+<!--<para>
+You can hide the statistic part by dragging the vertical separator to the
+right.
+</para
+>-->
+<para
+>Om du avslutar &kbruch; sparas övningen som för närvarande är vald och återställs vid nästa start. </para>
+</sect1>
+
+<sect1 id="statistics">
+<title
+>Statistikdel</title>
+<screenshot>
+	<screeninfo
+>&kbruch;s statistik</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="statistics.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>&kbruch;s statistik</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>På den här delen av huvudfönstret kan du se: <itemizedlist>
+	<listitem
+><para
+>till vänster, hur många uppgifter som har lösts </para
+></listitem>
+	<listitem
+><para
+>till höger, med grönt, hur många uppgifter som har lösts riktigt </para
+></listitem>
+	<listitem
+><para
+>till höger, med rött, hur många uppgifter som har lösts felaktigt </para
+></listitem>
+		<listitem
+><para
+>till höger, med orange, hur många uppgifter som har hoppats över </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>Du kan nollställa statistiken genom att klicka på knappen <guimenu
+>Ny</guimenu
+> i verktygsraden eller välja <menuchoice
+><guimenu
+>Arkiv</guimenu
+><guimenuitem
+>Ny</guimenuitem
+></menuchoice
+> i menyraden. </para>
+<para
+>Statistiken sparas när &kbruch; avslutas, och återställs vid nästa start. </para>
+</sect1>
+
+<sect1 id="settings">
+<title
+>Anpassa &kbruch;s utseende</title>
+<para
+>I den här dialogrutan kan du justera några allmänna inställningar av uppgiftsvisningen. Använd <menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Anpassa &kbruch;...</guimenuitem
+></menuchoice
+> för att visa dialogrutan. </para>
+
+<screenshot>
+	<screeninfo
+>&kbruch;s inställningsdialogruta</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="settings.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>&kbruch;s inställningsdialogruta</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Det finns två delar för att justera inställningarna: <itemizedlist>
+	<!-- <listitem
+><para>
+		<guilabel
+>General</guilabel
+>: Set whether to show the mixed number notation in the result.
+		This notation is not known everywhere and can be disabled therefore.
+	</para
+></listitem
+> -->
+	<listitem
+><para
+><guilabel
+>Färger</guilabel
+>: Välj färger för de olika delarna av ett matematiskt uttryck: siffror, operationens tecken, bråkstrecket. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Teckensnitt</guilabel
+>: Välj ett teckensnitt för att visa uppgiften. </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>Inställningarna sparas när &kbruch; avslutas, och återställs vid nästa start. </para>
+</sect1>
+
+<sect1 id="learning-screen">
+<title
+>Huvudskärmen för inlärning</title>
+<screenshot>
+	<screeninfo
+>&kbruch;s inlärningsläge</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="learning.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>&kbruch;s inlärningsläge</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>Att klicka på knappen <guibutton
+>Tips</guibutton
+> visar eller döljer hjälpen till höger som förklarar hur cirklarna fungerar. </para>
+</sect1>
+</chapter>
+
+<chapter id="exercises">
+<title
+>Övningar</title>
+
+<sect1 id="exer_fraction">
+<title
+>Aritmetikövning</title>
+
+<para
+>I den här övningen måste du lösa en given uppgift. Därför måste du skriva in ett bråks heltalsdel, täljare och nämnare. Svårighetsgraden hos den skapade uppgiften kan justeras genom att använda några alternativ till vänster. </para>
+
+<sect2 id="task_paras">
+<title
+>Alternativ</title>
+<para
+>Det finns flera parametrar som påverkar svårighetsgraden på uppgifterna som skapas:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Fråga:</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Blandat tal:</guilabel
+></term>
+<listitem
+><para
+>Markerat om bråk visas som blandade tal eller inte i frågeuttryck (exempel på blandat tal: 1 4/5 = 9/5).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Antal termer:</guilabel
+></term>
+<listitem
+><para
+>Antal termer (separata bråk) som ingår i varje uppgift. Från 2 till 5.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Maximal nämnare:</guilabel
+></term>
+<listitem
+><para
+>Det högsta tal som &kbruch; använder som huvudnämnare i uppgifterna som ges. Från minimalt 10 till maximalt 50.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Svar:</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Blandat tal:</guilabel
+></term>
+<listitem
+><para
+>Markerat om bråk visas som blandade tal eller inte i svaret (exempel på blandat tal: 1 4/5 = 9/5).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Normalform:</guilabel
+></term>
+<listitem
+><para
+>Markera för att tvinga att normalform används.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+<!-- Not in v. 4.2
+<varlistentry>
+<term
+><guilabel
+>Solution</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mixed number</guilabel
+></term>
+<listitem
+><para
+>Set if the fractions will appear as mixed numbers or not in the solution ( mixed number example: 1 4/5 = 9/5 ).</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+-->
+
+<varlistentry>
+<term
+><guilabel
+>Operationer:</guilabel
+></term>
+<listitem
+><para
+>Operationer som ska användas i uppgiften: <guilabel
+>Addition:</guilabel
+>, <guilabel
+>Subtraktion:</guilabel
+>, <guilabel
+>Multiplikation:</guilabel
+> eller <guilabel
+>Division:</guilabel
+>. Markera alla operationer du vill använda.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>När du har ändrat parametrarna måste du klicka på knappen <guimenu
+>Ny</guimenu
+> i verktygsraden för att skapa en uppgift som använder de nya parametrarna. Du kan också utföra åtgärden från menyraden med <menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Ny</guimenuitem
+></menuchoice
+>. Detta återställer statistiken. För att undvika det, klicka på knappen <guibutton
+>Nästa</guibutton
+> för att fortsätta med de ändrade parametrarna. </para>
+<!--<note>
+<para>
+Your selection of the maximum main denominator will be reset to a default
+value every time you change the number of terms. So you should change the
+number of terms first and then select the maximum main denominator.
+</para>
+</note
+>-->
+<!--para>
+If you have not solved the current task and call the <guimenu
+>New</guimenu>
+action, the task will be counted as not solved correctly. To
+prevent this you have to change the parameters after you solved the task but
+before generating a new one.
+</para-->
+<para
+>De valda parametrarna sparas när &kbruch; avslutas och återställs vid nästa start. </para>
+</sect2>
+
+<sect2 id="exer_fraction_solve_task">
+<title
+>Lösa uppgifter</title>
+<para
+>När du har löst en given uppgift, måste du skriva in resultatet i de tre inmatningsrutorna. I rutan till vänster skriver du in bråkets heltalsdel, i den övre rutan täljaren och i den nedre rutan nämnaren. Om alternativet <guilabel
+>Blandat tal:</guilabel
+> i svarsdelen inte är markerat, är den vänstra rutan för heltalsdelen dold. Då används bara rutorna för täljaren och nämnaren att skriva i. </para>
+<para
+>Om resultatet är negativt, kan du skriva in minustecknet framför täljaren eller nämnaren. Om resultatet är 0, skriv bara 0 i täljarens inmatningsruta. Om resultatet har nämnaren 1, kan du lämna den nedre rutan tom. </para>
+<para
+>När du har skrivit in resultatet måste du klicka på knappen <guimenu
+>Kontrollera</guimenu
+> under inmatningsrutorna. &kbruch; kontrollerar indata och visar det riktiga resultatet till höger under strängen <guilabel
+>Felaktigt!</guilabel
+>: </para>
+<screenshot>
+<screeninfo
+>Kontrollerad uppgift</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="checked.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Kontrollerad uppgift</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+<para
+>Den här uppgiften löstes felaktigt. Det rätta värdet visas med två olika former: normalform (reducerad form) och blandat tal. </para>
+<note>
+<para
+>Om du markerade <guilabel
+>Normalform:</guilabel
+> under alternativen i svarsdelen, måste du alltid skriva in resultatet på normalform. &kbruch; visar ett kort meddelande som det på skärmbilden nedan, om du skriver in rätt resultat men inte normaliserat. Svaret räknas då som felaktigt. </para>
+</note>
+<screenshot>
+<screeninfo
+>Resultat som inte är normaliserat</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="reduced.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Resultat som inte är normaliserat</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>För att fortsätta med nästa uppgift, klicka på knappen <guibutton
+>Nästa</guibutton
+>. Om du vill ändra parametrarna för nästa uppgift, måste du göra det innan du klickar på knappen <guibutton
+>Nästa</guibutton
+>. </para>
+</sect2>
+</sect1>
+
+<sect1 id="exer_compare">
+<title
+>Jämförelseövning</title>
+
+<para
+>I den här övningen måste du jämföra två givna bråk. Du måste välja det största bråket av de båda, genom att välja rätt jämförelsetecken. </para>
+
+<screenshot>
+<screeninfo
+>Jämförelseövning</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="compare.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Jämförelseövning</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Välj först det riktiga jämförelsetecknet. När du har valt jämförelsetecken, visas resultatet till höger. En grön ruta med <guilabel
+>Riktigt</guilabel
+> talar om att ditt svar var rätt, medan en röd ruta med <guilabel
+>Felaktigt</guilabel
+> anger att svaret var fel. Du kommer till nästa uppgift genom att klicka på knappen <guibutton
+>Nästa</guibutton
+>. </para>
+
+<para
+>I den här övningen är bara alternativet <guilabel
+>Blandat tal:</guilabel
+> aktiverat. Om markerad visas bråk som blandade tal.</para>
+</sect1>
+
+<sect1 id="exer_convert">
+<title
+>Konverteringsövning</title>
+
+<para
+>I den här övningen måste du konvertera ett givet tal till ett bråk. Du måste skriva in täljare och nämnare. </para>
+
+<screenshot>
+<screeninfo
+>Konverteringsövning</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="convert.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Konverteringsövning</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Till vänster om likhetstecknet på skärmbilden ovan kan du se en decimal som upprepas. Det betyder att bråket som visas decimalt har en del som upprepas. Den upprepade delen anges med det lilla strecket ovanför siffrorna. De siffrorna upprepas i oändlighet. </para>
+
+<para
+>När du har skrivit in täljaren och nämnaren, klicka på knappen <guibutton
+>Kontrollera</guibutton
+>. &kbruch; kontrollerar indata och visar det riktiga resultatet. Efter det här steget kommer du till nästa uppgift genom att klicka på knappen <guibutton
+>Nästa</guibutton
+>. </para>
+
+<note>
+<para
+>Glöm inte bort att skriva in resultatet på normalform. Om resultatet inte är normaliserat räknas det som felaktigt löst. </para>
+</note>
+
+<para
+>I den här övningen är alla alternativ inaktiverade.</para>
+
+</sect1>
+
+<sect1 id="exer_mixed">
+<title
+>Öva blandade tal</title>
+
+<para
+>I den här övningen måste du konvertera ett givet blandat tal till ett oäkta bråk (oegentligt) och tvärtom. Du måste skriva in täljare och nämnare för oäkta bråk eller heltal, täljare och nämnare för blandade tal. </para>
+
+<screenshot>
+<screeninfo
+>Öva blandade tal</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="mixed.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Öva blandade tal</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Till vänster om likhetstecknet på skärmbilden ovan kan du se ett blandat tal. Det betyder att talet består av ett heltal och ett äkta bråk. Du ska skriva in motsvarande oäkta bråk (täljaren i ett sådant bråk är större än eller lika med nämnaren). </para>
+
+<para
+>När du har skrivit in täljaren och nämnaren, klicka på knappen <guibutton
+>Kontrollera</guibutton
+>. &kbruch; kontrollerar indata och visar det riktiga resultatet. Efter det här steget kommer du till nästa uppgift genom att klicka på knappen <guibutton
+>Nästa</guibutton
+>. </para>
+
+<note>
+<para
+>Glöm inte bort att skriva in resultatet på normalform. Om resultatet inte är normaliserat räknas det som felaktigt löst. </para>
+</note>
+
+<para
+>I den här övningen är alla alternativ inaktiverade.</para>
+
+</sect1>
+
+<sect1 id="exer_factorize">
+<title
+>Faktoriseringsövning</title>
+
+<para
+>I den här övningen måste du faktorisera ett givet tal i dess primtalsfaktorer. Du måste skriva in alla primtalsfaktorer i talet. </para>
+
+<screenshot>
+<screeninfo
+>Faktoriseringsövning</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="factorize.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Faktoriseringsövning</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Du kan skriva in en faktor genom att klicka på knapparna med primtalsfaktorer. Tecknet <quote
+>x</quote
+> infogas automatiskt när du klickar på nästa knapp med en primtalsfaktor. Du kan ta bort den senast inskrivna primtalsfaktorn genom att klicka på knappen <guibutton
+>Baksteg</guibutton
+>. </para>
+<para
+>När du har skrivit in alla primtalsfaktorer, klicka på knappen <guibutton
+>Kontrollera</guibutton
+>. &kbruch; kontrollerar indata och visar det riktiga resultatet. Efter det här steget kommer du till nästa uppgift genom att klicka på knappen <guibutton
+>Nästa</guibutton
+>. </para>
+
+<para
+>På skärmbilden längst upp på sidan kan du se tecknet <quote
+>x</quote
+> mellan primtalsfaktorerna. Det är multiplikationstecknet. Produkten av alla primtalsfaktorer måste bli talet du försöker faktorisera. </para>
+
+<note>
+<para
+>Du måste skriva in alla primtalsfaktorer även om en primtalsfaktor upprepas flera gånger. För talet 18 måste du exempelvis ange primtalsfaktorerna 2, 3 och 3. </para>
+</note>
+
+<para
+>I den här övningen är alla alternativ inaktiverade.</para>
+
+</sect1>
+
+<sect1 id="exer_percentage">
+<title
+>Procentövning</title>
+
+<para
+>I den här övningen måste du svara på några procentfrågor.</para>
+
+<screenshot>
+<screeninfo
+>Procentövning</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="percentage.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Procentövning</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>När du har skrivit in svaret, klicka på knappen <guibutton
+>Kontrollera</guibutton
+>. &kbruch; kontrollerar indata och visar det riktiga resultatet. Efter det här steget kommer du till nästa uppgift genom att klicka på knappen <guibutton
+>Nästa</guibutton
+>. </para>
+
+<para
+>I den här övningen är alla alternativ inaktiverade.</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Tack till och licens</title>
+<para
+>&kbruch;</para>
+<para
+>Program och dokumentation Copyright: 2001-2011 Sebastian Stein <email
+>seb.kde@hpfsc.de</email
+> </para>
+
+<!-- needs update ???-->
+
+<para
+>Tack går till:</para>
+
+<itemizedlist>
+	<listitem
+><para
+>&Anne-Marie.Mahfouf; för att hantera &kde;:s utbildningsprojekt</para
+></listitem>
+	<listitem
+><para
+>Klas Kalass för hjälp med att konstruera gränssnittet</para
+></listitem>
+	<listitem
+><para
+>Eva Brucherseifer för att ha skrivit <application
+>Kmath</application
+> (&kbruch;s grafiska gränssnitt är baserat på det arbetet)</para
+></listitem>
+	<listitem
+><para
+>Dominique Devriese för felrättning</para
+></listitem>
+	<listitem
+><para
+><ulink url="http://www.net-tex.de/"
+>Stefan Schumacher</ulink
+> för att ha testat en mycket tidig version</para
+></listitem>
+	<listitem
+><para
+><ulink url="https://www.guckes.net/"
+>Sven Guckes</ulink
+> för att ha testat textgränssnittet (som har tagits bort)</para
+></listitem>
+	<listitem
+><para
+>&David.Faure; för hjälp med &kde;:s <acronym
+>CVS</acronym
+> och &kde; Bugzilla</para
+></listitem>
+	<listitem
+><para
+>&Robert.Gogolok; för hjälp med &kde;:s <acronym
+>CVS</acronym
+></para
+></listitem>
+	<listitem
+><para
+>John Kesson för korrekturläsning av handboken</para
+></listitem>
+</itemizedlist>
+
+<para
+>Ny gränssnittsdesign och förbättringar av användbarhet för &kde; 4.1:</para>
+<itemizedlist>
+<listitem
+><para
+>Paulo Cattai <email
+>paulo.cattai@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Danilo Balzaque <email
+>danilo.balzaque@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Roberto Cunha <email
+>roberto.cunha@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tadeu Araujo <email
+>tadeu.araujo@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tiago Porangaba <email
+>tiago.porangaba@ltia.fc.unesp.br</email
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->

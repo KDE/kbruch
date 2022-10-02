@@ -1,0 +1,997 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY kappname "&kbruch;">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Russian "INCLUDE"
+><!-- change language only here -->
+]>
+<!--
+SPDX-FileCopyrightText: 2001-2005 Sebastian Stein <seb.kde@hpfsc.de>
+SPDX-FileCopyrightText: 2008 Anne-Marie Mahfouf
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+<book id="kbruch" lang="&language;">
+
+<bookinfo>
+<title
+>Руководство пользователя &kbruch;</title>
+
+<authorgroup>
+<author
+><firstname
+>Sebastian</firstname
+> <surname
+>Stein</surname
+> <email
+>seb.kde@hpfsc.de</email
+> </author>
+<author
+>&Anne-Marie.Mahfouf; </author>
+<othercredit role="translator"
+><firstname
+>Антон</firstname
+><surname
+>Иванов</surname
+><affiliation
+><address
+><email
+>a-i@bk.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский язык</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Константин</firstname
+><surname
+>Богданов</surname
+><affiliation
+><address
+><email
+>var1able@var1able.ru</email
+></address
+></affiliation
+><contrib
+>Обновление перевода</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Олеся</firstname
+><surname
+>Герасименко</surname
+><affiliation
+><address
+><email
+>translation-team@basealt.ru</email
+></address
+></affiliation
+><contrib
+>Обновление перевода</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<copyright>
+<year
+>2001-2005</year>
+<holder
+>Sebastian Stein</holder>
+</copyright>
+<copyright>
+<year
+>2008</year>
+<holder
+>&Anne-Marie.Mahfouf;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>21 декабря 2020 г.</date>
+<releaseinfo
+>Приложения 20.12</releaseinfo>
+
+<abstract>
+<para
+>&kbruch; — это небольшая программа, создающая задачи на вычисление дробей и процентов. Пользователь должен решить задачу и ввести значения числителя и знаменателя. Программа проверяет введённые значения и определяет, верны ли они. </para>
+
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>образование</keyword>
+<keyword
+>дробь</keyword>
+<keyword
+>проценты</keyword>
+<keyword
+>математика</keyword>
+<keyword
+>знаменатель</keyword>
+<keyword
+>kbruch</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Введение</title>
+
+<para
+>&kbruch; — это небольшая программа для практики вычисления дробей и процентов. Есть шесть разных типов заданий и режим обучения. </para>
+
+<itemizedlist>
+	<listitem
+><para
+><guilabel
+>Арифметика</guilabel
+> — в этом задании требуется решить пример с предложенной дробью. Необходимо ввести числитель и знаменатель. Это основной тип заданий. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Сравнение</guilabel
+> — в этом упражнении требуется сравнить две дроби, используя символы <guibutton
+>&gt;</guibutton
+>, <guibutton
+>&lt;</guibutton
+> или <guibutton
+>=</guibutton
+>. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Преобразование</guilabel
+> — в этом упражнении требуется перевести предложенное число в дробь. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Смешанная дробь</guilabel
+> — в этом упражнении требуется перевести смешанное число в неправильную дробь или наоборот. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Разложение на множители</guilabel
+> — в этом упражнении требуется разложить число на множители. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Проценты</guilabel
+> — в этом упражнении требуется посчитать процент от числа. </para
+></listitem>
+</itemizedlist>
+
+<para
+>В каждом упражнении &kbruch; создаёт задание, которое пользователь должен решить. Программа проверяет введённый результат и ставит оценку. </para>
+
+<para
+>&kbruch; считает количество правильно решённых задач и задач вообще. Статистика показывается пользователю. </para>
+
+<para
+>Программа &kbruch; очень компактна и фокусируется на создании задач. Доступна контекстно-зависимая справка по различным ситуациям. </para>
+
+</chapter>
+
+
+<chapter id="using-kbruch">
+<title
+>Использование &kbruch;</title>
+
+<sect1 id="mode">
+<title
+>Выбор режима: «Обучение» или «Упражнения»</title>
+<para
+>После запуска &kbruch; предлагает два режима работы: <guilabel
+>Упражнения</guilabel
+>, для проверки знаний, и <guilabel
+>Обучение</guilabel
+>. После щелчка по одной из картинок будет активирован выбранный режим. Снимок экрана выбора режима &kbruch;:</para>
+
+<screenshot>
+	<screeninfo
+>Режимы работы &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_mode.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Режимы работы &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>Щёлкните по картинке, чтобы выбрать режим работы.</para>
+</sect1>
+
+<sect1 id="overview">
+<title
+>Главное окно</title>
+
+<para
+>Снимок экрана главного окна программы &kbruch;:</para>
+
+<screenshot>
+	<screeninfo
+>Главное окно &kbruch; сразу после запуска программы</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_main.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Главное окно &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Все упражнения отображаются на этом экране, что делает работу с &kbruch; простой даже для детей. Главный экран разделён на пять частей: <itemizedlist
+> <listitem
+><para
+>панель меню с тремя элементами <guimenu
+>Файл</guimenu
+>, <guimenu
+>Настройка</guimenu
+> и <guimenu
+>Помощь</guimenu
+> </para
+></listitem
+> <listitem
+><para
+> панель инструментов </para
+></listitem
+> <listitem
+><para
+> <guilabel
+>Параметры</guilabel
+> слева, где возможно изменить сложность и всячески настроить упражнения </para
+></listitem
+> <listitem
+><para
+> часть с заданием, где следует ввести ответ </para
+></listitem
+> <listitem
+><para
+> статистика, которая показывает количество решённых заданий </para
+></listitem
+> </itemizedlist
+> В любое время возможно вернуться на экран выбора режима с помощью кнопки <guiicon
+>Назад</guiicon
+> на панели инструментов. </para>
+<note
+><para
+>Возможно убрать раздел <guilabel
+>Параметры</guilabel
+>, перетащив его влево. </para
+></note>
+<para
+>Сначала выберите задание на панели инструментов. По умолчанию выбрана <guilabel
+>Арифметика</guilabel
+>. Задание изменится в соответствии с выбранным типом. Параметры на панели <guilabel
+>Параметры</guilabel
+> также зависят от типа задания. </para>
+<para
+>На панели инструментов есть кнопка для обновления задания. Это действие также доступно в меню <menuchoice
+><guimenu
+>Файл</guimenu
+><guimenuitem
+>Новый вопрос</guimenuitem
+></menuchoice
+>. Это действие доступно всегда. Если текущее задание не решено, то будет предложено новое, а статистика сброшена. </para>
+<!--<para>
+You can hide the statistic part by dragging the vertical separator to the
+right.
+</para
+>-->
+<para
+>Текущее задание сохраняется при выходе из &kbruch; и восстанавливается при следующем запуске. </para>
+</sect1>
+
+<sect1 id="statistics">
+<title
+>Статистика</title>
+<screenshot>
+	<screeninfo
+>Статистика &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="statistics.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Статистика &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>В этой части окна показывается: <itemizedlist>
+	<listitem
+><para
+>слева — сколько заданий было выполнено </para
+></listitem>
+	<listitem
+><para
+>справа, зелёным — сколько заданий было решено правильно </para
+></listitem>
+	<listitem
+><para
+>слева, красным — сколько заданий было решено неправильно </para
+></listitem>
+		<listitem
+><para
+>справа, оранжевым — сколько заданий было пропущено </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>Возможно сбросить статистику, нажав кнопку <guimenu
+>Новый вопрос</guimenu
+> на панели инструментов или выбрав пункт меню <menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Новый вопрос</guimenuitem
+></menuchoice
+>. </para>
+<para
+>Статистика будет сохранена при выходе из &kbruch; и загружена при следующем запуске. </para>
+</sect1>
+
+<sect1 id="settings">
+<title
+>Настройка интерфейса &kbruch;</title>
+<para
+>В этом окне возможно изменить основные параметры. Чтобы открыть его, выберите пункт меню <menuchoice
+><guimenu
+>Настройка</guimenu
+><guimenuitem
+>Настроить &kbruch;…</guimenuitem
+></menuchoice
+>. </para>
+
+<screenshot>
+	<screeninfo
+>Окно параметров настройки &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="settings.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Окно параметров настройки &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Две вкладки параметров: <itemizedlist>
+	<!-- <listitem
+><para>
+		<guilabel
+>General</guilabel
+>: Set whether to show the mixed number notation in the result.
+		This notation is not known everywhere and can be disabled therefore.
+	</para
+></listitem
+> -->
+	<listitem
+><para
+><guilabel
+>Цвета</guilabel
+>: Выберите цвета для разных частей математического выражения: числа, знаки, черта дроби. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Шрифты</guilabel
+>: Выберите шрифт для заданий. </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>Параметры сохраняются при выходе из &kbruch; и загружаются при следующем запуске программы. </para>
+</sect1>
+
+<sect1 id="learning-screen">
+<title
+>Главное окно обучения</title>
+<screenshot>
+	<screeninfo
+>Режим обучения</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="learning.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Режим обучения</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>Нажатие кнопки <guibutton
+>Подсказка</guibutton
+> скрывает или показывает панель справки справа. </para>
+</sect1>
+</chapter>
+
+<chapter id="exercises">
+<title
+>Упражнения</title>
+
+<sect1 id="exer_fraction">
+<title
+>Упражнения по арифметике</title>
+
+<para
+>В этом упражнении требуется решить пример. Поэтому необходимо ввести целую часть дроби, числитель и знаменатель. Сложность задания возможно настроить. </para>
+
+<sect2 id="task_paras">
+<title
+>Параметры</title>
+<para
+>Существует несколько параметров, влияющих на сложность создаваемых заданий:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Вопрос</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Смешанный вид</guilabel
+></term>
+<listitem
+><para
+>Показывать дробь в вопросе в смешанном виде или нет (пример смешанной дроби: 1 4/5 = 9/5).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Число дробей</guilabel
+></term>
+<listitem
+><para
+>Количество дробей в условии каждого задания, от двух до пяти включительно.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Макс. знаменатель</guilabel
+></term>
+<listitem
+><para
+>Самое большое значение, которое &kbruch; может использовать в качестве знаменателя в задачах (от десяти до пятидесяти).</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ответ</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Смешанный вид</guilabel
+></term>
+<listitem
+><para
+>Показывать дробь в ответе в смешанном виде или нет (пример смешанной дроби: 1 4/5 = 9/5).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Сокращённый вид</guilabel
+></term>
+<listitem
+><para
+>Включите для принудительного использования сокращённого вида.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+<!-- Not in v. 4.2
+<varlistentry>
+<term
+><guilabel
+>Solution</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mixed number</guilabel
+></term>
+<listitem
+><para
+>Set if the fractions will appear as mixed numbers or not in the solution ( mixed number example: 1 4/5 = 9/5 ).</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+-->
+
+<varlistentry>
+<term
+><guilabel
+>Операции</guilabel
+></term>
+<listitem
+><para
+>Действия, которые могут быть использованы в задаче: <guilabel
+>Сложение</guilabel
+>, <guilabel
+>Вычитание</guilabel
+>, <guilabel
+>Умножение</guilabel
+> или <guilabel
+>Деление</guilabel
+>.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>После изменения этих параметров следует нажать кнопку <guimenu
+>Новый вопрос</guimenu
+> на панели инструментов, чтобы создать задачу с этими новыми параметрами. Это также можно сделать с помощью пункта меню <menuchoice
+><guimenu
+>Файл</guimenu
+><guimenuitem
+>Новый вопрос</guimenuitem
+></menuchoice
+>. Данное действие сбросит статистику. Чтобы избежать этого, нажмите кнопку <guibutton
+>Далее</guibutton
+> для продолжения с использованием новых параметров. </para>
+<!--<note>
+<para>
+Your selection of the maximum main denominator will be reset to a default
+value every time you change the number of terms. So you should change the
+number of terms first and then select the maximum main denominator.
+</para>
+</note
+>-->
+<!--para>
+If you have not solved the current task and call the <guimenu
+>New</guimenu>
+action, the task will be counted as not solved correctly. To
+prevent this you have to change the parameters after you solved the task but
+before generating a new one.
+</para-->
+<para
+>Выбранные параметры будут сохранены при выходе из &kbruch; и восстановлены при следующем запуске. </para>
+</sect2>
+
+<sect2 id="exer_fraction_solve_task">
+<title
+>Решение задач</title>
+<para
+>После решения задания введите ответ в три поля ввода. В левое поле — целую часть дроби, в верхнее — числитель, а в нижнее — знаменатель. Если опция <guilabel
+>Смешанный вид</guilabel
+> в разделе <guilabel
+>Ответ</guilabel
+> отключена, то поле для ввода целой части будет скрыто. </para>
+<para
+>Если результат отрицателен, можно поставить минус перед числителем или знаменателем. Если результат равен нулю, оставьте оба поля пустыми. Если знаменатель равен единице, нижнее поле можно оставить пустым. </para>
+<para
+>После ввода ответа нажмите кнопку <guibutton
+>Проверить ответ</guibutton
+> под полями ввода. &kbruch; проверит введённый ответ и покажет правильный результат. При неправильном ответе окно выглядит так: </para>
+<screenshot>
+<screeninfo
+>Проверенная задача</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="checked.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Проверенная задача</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+<para
+>Это задание было решено неверно. Правильный ответ показывается в двух различных формах — сокращённой и форме смешанного числа. </para>
+<note>
+<para
+>Если опция <guilabel
+>Сокращённый вид</guilabel
+> в разделе <guilabel
+>Ответ</guilabel
+> была активирована, следует сократить дробь перед вводом. &kbruch; покажет следующее окно, если дробь не была сокращена. Ответ в таком случае считается неверным. </para>
+</note>
+<screenshot>
+<screeninfo
+>Несокращённый ответ</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="reduced.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Несокращённый ответ</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Для перехода к следующему заданию нажмите кнопку <guimenu
+>Далее</guimenu
+>. Если требуется изменить параметры, сделайте это до нажатия кнопки <guimenu
+>Далее</guimenu
+>. </para>
+</sect2>
+</sect1>
+
+<sect1 id="exer_compare">
+<title
+>Задание на сравнение</title>
+
+<para
+>В этом задании требуется сравнить две дроби. Следует выбрать бо́льшую дробь, указав правильный знак. </para>
+
+<screenshot>
+<screeninfo
+>Задание на сравнение</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="compare.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Задание на сравнение</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Сначала выберите правильный знак сравнения. После этого результат будет показан справа. Зелёный прямоугольник с надписью <guilabel
+>Верно</guilabel
+> сообщает о том, что задание выполнено верно, а красный прямоугольник с надписью <guilabel
+>Неверно</guilabel
+> — об ошибочном ответе. Перейти к следующему заданию можно с помощью кнопки <guibutton
+>Далее</guibutton
+>. </para>
+
+<para
+>В этом задании включена только опция <guilabel
+>Смешанный вид</guilabel
+>. Если опция активирована — для сравнения будут предлагаться смешанные числа.</para>
+</sect1>
+
+<sect1 id="exer_convert">
+<title
+>Задание на преобразование</title>
+
+<para
+>В этом упражнении требуется перевести предложенное число в дробь. Нужно ввести числитель и знаменатель. </para>
+
+<screenshot>
+<screeninfo
+>Задание на преобразование</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="convert.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Задание на преобразование</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Слева от знака равенства на снимке экрана периодическая бесконечная десятичная дробь. Это означает, что эта дробь в десятичной записи имеет повторяющуюся часть. Повторяющаяся часть помечена небольшой полоской над цифрами. Эти цифры повторяются бесконечно. </para>
+
+<para
+>После ввода числителя и знаменателя нажмите кнопку <guibutton
+>Проверить ответ</guibutton
+>. &kbruch; проверит введённые данные и покажет правильный ответ. После этого возможно перейти к следующему заданию с помощью кнопки <guibutton
+>Далее</guibutton
+>. </para>
+
+<note>
+<para
+>Не забывайте сокращать результат. Несокращённые результаты будут засчитаны как неверные. </para>
+</note>
+
+<para
+>Для этого задания не предусмотрена возможность настройки.</para>
+
+</sect1>
+
+<sect1 id="exer_mixed">
+<title
+>Задание на смешанную дробь</title>
+
+<para
+>В этом задании требуется перевести предложенное число в неправильную дробь (или наоборот). Нужно ввести либо числитель и знаменатель для неправильной дроби, либо целое число, числитель и знаменатель для смешанного числа. </para>
+
+<screenshot>
+<screeninfo
+>Задание на смешанную дробь</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="mixed.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Задание на смешанную дробь</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Слева от знака равенства на снимке экрана &mdash; смешанное число. Это означает, что число состоит из целого числа и правильной дроби. Требуется ввести равную неправильную дробь (числитель больше знаменателя). </para>
+
+<para
+>После ввода числителя и знаменателя нажмите кнопку <guibutton
+>Проверить ответ</guibutton
+>. &kbruch; проверит введённые данные и покажет правильный ответ. После этого возможно перейти к следующему заданию с помощью кнопки <guibutton
+>Далее</guibutton
+>. </para>
+
+<note>
+<para
+>Не забывайте сокращать результат. Несокращённые результаты будут засчитаны как неверные. </para>
+</note>
+
+<para
+>Для этого задания не предусмотрена возможность настройки.</para>
+
+</sect1>
+
+<sect1 id="exer_factorize">
+<title
+>Задание на разложение на множители</title>
+
+<para
+>В этом задании требуется представить предложенное число в виде множителей. Нужно ввести все множители числа. </para>
+
+<screenshot>
+<screeninfo
+>Задание на разложение на множители</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="factorize.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Задание на разложение на множители</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Чтобы ввести множитель, нажмите кнопку добавления множителя. Символ <quote
+>x</quote
+> вставляется автоматически при нажатии кнопки добавления множителя. Для удаления последнего введённого множителя нажмите кнопку <guibutton
+>Удалить</guibutton
+>. </para>
+<para
+>После ввода всех множителей числа нажмите кнопку <guibutton
+>Проверить ответ</guibutton
+>. &kbruch; проверит введённые данные и покажет правильный ответ. После этого возможно перейти к следующему заданию с помощью кнопки <guibutton
+>Далее</guibutton
+>. </para>
+
+<para
+>На этом снимке экрана между множителями показан символ умножения <quote
+>x</quote
+>. Произведение всех введённых чисел должно быть равно числу, раскладываемому на множители. </para>
+
+<note>
+<para
+>Требуется ввести все множители, даже если они повторяются. Например: множители 18 — 2, 3 и 3. </para>
+</note>
+
+<para
+>Для этого задания не предусмотрена возможность настройки.</para>
+
+</sect1>
+
+<sect1 id="exer_percentage">
+<title
+>Задание на проценты</title>
+
+<para
+>В этом упражнении требуется решить задание на расчёт процентов.</para>
+
+<screenshot>
+<screeninfo
+>Задание на проценты</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="percentage.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Задание на проценты</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>После ввода ответа нажмите кнопку <guibutton
+>Проверить ответ</guibutton
+>. &kbruch; проверит введённые данные и покажет правильный ответ. После этого возможно перейти к следующему заданию с помощью кнопки <guibutton
+>Далее</guibutton
+>. </para>
+
+<para
+>Для этого задания не предусмотрена возможность настройки.</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Авторские права и лицензия</title>
+<para
+>&kbruch;</para>
+<para
+>Авторское право на программу и документацию © Sebastian Stein <email
+>seb.kde@hpfsc.de</email
+>, 2001-2011 </para>
+
+<!-- needs update ???-->
+
+<para
+>Большое спасибо:</para>
+
+<itemizedlist>
+	<listitem
+><para
+>&Anne-Marie.Mahfouf; за управление проектом &kde; «Образование»</para
+></listitem>
+	<listitem
+><para
+>Klas Kalass за красивый дизайн</para
+></listitem>
+	<listitem
+><para
+>Eva Brucherseifer за написание программы <application
+>KMath</application
+> (графический интерфейс &kbruch; основан на этой программе)</para
+></listitem>
+	<listitem
+><para
+>Dominique Devriese за исправление ошибок</para
+></listitem>
+	<listitem
+><para
+><ulink url="http://www.net-tex.de/"
+>Stefan Schumacher</ulink
+> за тестирование ранней версии</para
+></listitem>
+	<listitem
+><para
+><ulink url="https://www.guckes.net/"
+>Sven Guckes</ulink
+> за тестирование текстового режима (который был удалён)</para
+></listitem>
+	<listitem
+><para
+>&David.Faure; за помощь с &kde; <acronym
+>CVS</acronym
+> и &kde; Bugzilla</para
+></listitem>
+	<listitem
+><para
+>&Robert.Gogolok; за помощь с &kde; <acronym
+>CVS</acronym
+></para
+></listitem>
+	<listitem
+><para
+>John Kesson за вычитывание текста</para
+></listitem>
+</itemizedlist>
+
+<para
+>Новый дизайн интерфейса для &kde; 4.1:</para>
+<itemizedlist>
+<listitem
+><para
+>Paulo Cattai <email
+>paulo.cattai@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Danilo Balzaque <email
+>danilo.balzaque@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Roberto Cunha <email
+>roberto.cunha@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tadeu Araujo <email
+>tadeu.araujo@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tiago Porangaba <email
+>tiago.porangaba@ltia.fc.unesp.br</email
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Перевод на русский: Антон Иванов <email
+>a-i@bk.ru</email
+></para
+><para
+>Обновление перевода: Константин Богданов <email
+>var1able@var1able.ru</email
+></para
+><para
+>Обновление и редактирование: Олеся Герасименко<email
+>translation-team@basealt.ru</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->

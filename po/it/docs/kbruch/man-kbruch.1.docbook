@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Italian "INCLUDE">
+]>
+<!--
+SPDX-FileCopyrightText: 2005 Lauri Watts
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Manuale utente di &kbruch;</title>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<date
+>21/12/2020</date>
+<releaseinfo
+>Applications 20.12</releaseinfo>
+<productname
+>KDE Applications</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kbruch</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kbruch</command
+></refname>
+<refpurpose
+>Impara a calcolare con le frazioni e le percentuali</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kbruch</command
+> <arg choice="opt"
+>options</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descrizione</title>
+<para
+>&kbruch; è un piccolo programma con cui puoi esercitarti a calcolare le frazioni e le percentuali. A questo scopo vi sono diversi esercizi. Il programma controlla che i dati inseriti siano corretti, e risponde di conseguenza.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Vedi anche</title>
+<para
+>La documentazione utente più dettagliata è disponibile da <ulink url="help:/kbruch"
+>help:/kbruch</ulink
+> (inserisci questo come &URL; in &konqueror;, o esegui <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kbruch</parameter
+></userinput
+>).</para>
+<para
+>Ulteriori informazioni sono disponibili sul <ulink url="https://edu.kde.org/kbruch/"
+>sito web di &kde;du</ulink
+></para>
+</refsect1>
+
+<refsect1>
+<title
+>Autori</title>
+<para
+>&kbruch; è stato scritto da <personname
+><firstname
+>Sebastian</firstname
+><surname
+>Stein</surname
+></personname
+> <email
+>seb.kde@hpfsc.de</email
+></para>
+</refsect1>
+
+</refentry>

@@ -1,0 +1,977 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY kappname "&kbruch;">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+><!-- change language only here -->
+]>
+<!--
+SPDX-FileCopyrightText: 2001-2005 Sebastian Stein <seb.kde@hpfsc.de>
+SPDX-FileCopyrightText: 2008 Anne-Marie Mahfouf
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+<book id="kbruch" lang="&language;">
+
+<bookinfo>
+<title
+>Manuale di &kbruch;</title>
+
+<authorgroup>
+<author
+><firstname
+>Sebastian</firstname
+> <surname
+>Stein</surname
+> <email
+>seb.kde@hpfsc.de</email
+> </author>
+<author
+>&Anne-Marie.Mahfouf; </author>
+<othercredit role="translator"
+><firstname
+>Pino</firstname
+><surname
+>Toscano</surname
+><affiliation
+><address
+><email
+>toscano.pino@tiscali.it</email
+></address
+></affiliation
+><contrib
+>Traduzione italiana</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Paolo</firstname
+><surname
+>Zamponi</surname
+><affiliation
+><address
+><email
+>zapaolo@email.it</email
+></address
+></affiliation
+><contrib
+>Aggiornamento della traduzione italiana</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<copyright>
+<year
+>2001-2005</year>
+<holder
+>Sebastian Stein</holder>
+</copyright>
+<copyright>
+<year
+>2008</year>
+<holder
+>&Anne-Marie.Mahfouf;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>21/12/2020</date>
+<releaseinfo
+>Applications 20.12</releaseinfo>
+
+<abstract>
+<para
+>&kbruch; è un piccolo programma per esercitarti a calcolare con frazioni e percentuali. Per questo scopo vi sono differenti esercizi e puoi usare la modalità di apprendimento per esercitarti con le frazioni. Il programma controlla che i dati inseriti siano corretti e risponde di conseguenza. </para>
+
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>educazione</keyword>
+<keyword
+>frazione</keyword>
+<keyword
+>percentuali</keyword>
+<keyword
+>matematica</keyword>
+<keyword
+>denominatore</keyword>
+<keyword
+>kbruch</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introduzione</title>
+
+<para
+>&kbruch; è un piccolo programma con cui puoi fare pratica nel calcolo di frazioni e percentuali. Ci sono sei esercizi diversi e una modalità di apprendimento. </para>
+
+<itemizedlist>
+	<listitem
+><para
+><guilabel
+>Aritmetica</guilabel
+> - in questo esercizio devi risolvere un compito con le frazioni date. Inserisci il numeratore e il denominatore. È l'esercizio principale. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Confronto</guilabel
+> - in questo esercizio devi confrontare la dimensione di 2 frazioni date, usando i simboli <guibutton
+>&gt;</guibutton
+>, <guibutton
+>&lt;</guibutton
+> o <guibutton
+>=</guibutton
+>. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Conversione</guilabel
+> - in questo esercizio devi convertire in frazione un numero dato. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Numeri misti</guilabel
+> - in questo esercizio devi convertire un numero misto in una frazione impropria, e viceversa. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Fattorizzazione</guilabel
+> - in questo esercizio devi ridurre un numero dato nei suoi fattori primi. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Percentuali</guilabel
+> - in questo esercizio devi calcolare le percentuali. </para
+></listitem>
+</itemizedlist>
+
+<para
+>In ogni diverso esercizio &kbruch; genererà un compito, e l'utente deve risolverlo. Il programma controlla i dati inseriti, e ti dice se sono corretti. </para>
+
+<para
+>&kbruch; conta quanti compiti sono stati risolti in totale, e quanti sono stati risolti correttamente. All'utente vengono mostrate delle statistiche. </para>
+
+<para
+>&kbruch; è un'applicazione molto compatta, e si concentra sull'idea di un generatore di compiti. Un sistema di aiuto in linea fornisce informazioni sensibili al contesto per le varie situazioni. </para>
+
+</chapter>
+
+
+<chapter id="using-kbruch">
+<title
+>Usare &kbruch;</title>
+
+<sect1 id="mode">
+<title
+>Scelta della modalità: apprendimento o esercizi</title>
+<para
+>All'avvio, &kbruch; ti offre due modalità: <guilabel
+>Esercizio</guilabel
+>, che è quella di allenamento, e <guilabel
+>Apprendimento</guilabel
+>, dove puoi capire le frazioni. Premendo una delle immagini, la modalità scelta verrà avviata. Ecco una schermata della scelta della modalità di &kbruch;:</para>
+
+<screenshot>
+	<screeninfo
+>Scelta della modalità di &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_mode.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Scelta della modalità di &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>Fai clic su una immagine per scegliere la modalità.</para>
+</sect1>
+
+<sect1 id="overview">
+<title
+>La finestra principale degli esercizi</title>
+
+<para
+>Ecco un'immagine della finestra principale degli esercizi di &kbruch;:</para>
+
+<screenshot>
+	<screeninfo
+>La finestra principale di &kbruch;, subito dopo aver avviato gli esercizi</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_main.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>La finestra principale di &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Tutti gli esercizi vengono svolti in questa schermata. Ciò assicura che &kbruch; sia semplice da usare, anche per gli utenti giovanissimi! La schermata principale è separata in 5 parti: <itemizedlist
+> <listitem
+><para
+>la barra dei menu, con i 3 menu <guimenu
+>File</guimenu
+>, <guimenu
+>Impostazioni</guimenu
+> e <guimenu
+>Aiuto</guimenu
+> </para
+></listitem
+> <listitem
+><para
+>la barra degli strumenti, dove puoi cambiare esercizio</para
+></listitem
+> <listitem
+><para
+>le <guilabel
+>Opzioni</guilabel
+> sulla sinistra, dove puoi definire la difficoltà e varie impostazioni per i compiti</para
+></listitem
+> <listitem
+><para
+>la parte dei compiti, dove devi inserire il risultato dell'esercizio fornito</para
+></listitem
+><listitem
+><para
+>la parte delle statistiche, dove puoi vedere quanti esercizi hai risolto correttamente, quanti ne hai provati</para
+></listitem
+> </itemizedlist
+> Usando il pulsante <guiicon
+>Indietro</guiicon
+> nella barra degli strumenti, in ogni momento puoi scegliere una modalità diversa. </para>
+<note
+><para
+>Puoi nascondere la sezione <guilabel
+>Opzioni:</guilabel
+> trascinandola verso sinistra. </para
+></note>
+<para
+>Per prima cosa devi scegliere un esercizio della barra degli strumenti. Quello predefinito è <guilabel
+>Aritmetica</guilabel
+>. La parte del compito cambierà a seconda dell'esercizio scelto, e contemporaneamente cambieranno anche alcune impostazioni nella sezione <guilabel
+>Opzioni</guilabel
+>. </para>
+<para
+>Sempre nella barra degli strumenti, troverai un'icona per generare un nuovo compito. Questa azione è disponibile anche nel menu <menuchoice
+><guimenu
+>File</guimenu
+><guimenuitem
+>Nuovo</guimenuitem
+></menuchoice
+> ed è sempre abilitata. Se non hai risolto l'esercizio proposto ne viene generato uno nuovo, e le statistiche vengono reimpostate. </para>
+<!--<para>
+You can hide the statistic part by dragging the vertical separator to the
+right.
+</para
+>-->
+<para
+>Se esci da &kbruch;, l'esercizio attualmente scelto sarà salvato e verrà ripristinato all'avvio successivo. </para>
+</sect1>
+
+<sect1 id="statistics">
+<title
+>La parte statistica</title>
+<screenshot>
+	<screeninfo
+>Statistiche di &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="statistics.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Statistiche di &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>In questa parte della finestra puoi vedere: <itemizedlist>
+	<listitem
+><para
+>sulla sinistra, quanti compiti hai risolto </para
+></listitem>
+	<listitem
+><para
+>sulla destra, in verde, quanti compiti hai risolto correttamente </para
+></listitem>
+	<listitem
+><para
+>sulla destra, in rosso, quanti compiti non hai risolto correttamente </para
+></listitem>
+		<listitem
+><para
+>sulla destra, in arancione, quanti compiti hai saltato </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>Puoi azzerare le statistiche premendo il pulsante <guimenu
+>Nuovo</guimenu
+> nella barra degli strumenti, oppure scegliendo <menuchoice
+><guimenu
+>File</guimenu
+> <guimenuitem
+>Nuovo</guimenuitem
+></menuchoice
+> nella barra dei menu. </para>
+<para
+>Le statistiche vengono salvate all'uscita da &kbruch;, e ripristinate al successivo avvio. </para>
+</sect1>
+
+<sect1 id="settings">
+<title
+>Configurazione dell'aspetto di &kbruch;</title>
+<para
+>In questa finestra puoi impostare alcune impostazioni generali sulla visualizzazione dei compiti. Per aprirla, usa <menuchoice
+><guimenu
+>Impostazioni</guimenu
+><guimenuitem
+>Configura &kbruch;...</guimenuitem
+></menuchoice
+>. </para>
+
+<screenshot>
+	<screeninfo
+>La finestra delle impostazioni di &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="settings.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>La finestra delle impostazioni di &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Ci sono due sezioni per modificare le impostazioni: <itemizedlist>
+	<!-- <listitem
+><para>
+		<guilabel
+>General</guilabel
+>: Set whether to show the mixed number notation in the result.
+		This notation is not known everywhere and can be disabled therefore.
+	</para
+></listitem
+> -->
+	<listitem
+><para
+><guilabel
+>Colori</guilabel
+>: scegli i colori per le diverse parti di un'espressione matematica: i numeri, i segni di operazione e la linea di frazione. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Caratteri</guilabel
+>: scegli un tipo di carattere per la visualizzazione dei compiti. </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>Le impostazioni sono salvate all'uscita da &kbruch;, e ripristinate al successivo avvio. </para>
+</sect1>
+
+<sect1 id="learning-screen">
+<title
+>La finestra principale di apprendimento</title>
+<screenshot>
+	<screeninfo
+>La modalità apprendimento di &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="learning.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>La modalità apprendimento di &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>Premere il pulsante <guibutton
+>Suggerimento</guibutton
+> mostra o nasconde l'aiuto sulla destra, che spiega come funzionano gli anelli. </para>
+</sect1>
+</chapter>
+
+<chapter id="exercises">
+<title
+>Gli esercizi</title>
+
+<sect1 id="exer_fraction">
+<title
+>Esercizio aritmetico</title>
+
+<para
+>In questo esercizio devi risolvere un compito dato. Devi quindi inserire la parte intera di una frazione, e numeratore e denominatore. Puoi impostare la difficoltà dei compiti generati con le opzioni a sinistra. </para>
+
+<sect2 id="task_paras">
+<title
+>Opzioni</title>
+<para
+>Ci sono diversi parametri che influenzano la difficoltà dei compiti generati:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Domanda:</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Numero misto:</guilabel
+></term>
+<listitem
+><para
+>Imposta se le frazioni appariranno nelle espressioni delle domande come numeri misti (esempio di numero misto: 1 5/4 = 9/4).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Numero di termini:</guilabel
+></term>
+<listitem
+><para
+>Il numero di frazioni, compreso tra 2 e 5 (entrambi inclusi), presenti in ogni compito.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Denominatore massimo:</guilabel
+></term>
+<listitem
+><para
+>Il più alto numero che &kbruch; userà come denominatore principale nei compiti; varia da un minimo di 10 ad un massimo di 50.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Risposta:</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Numero misto:</guilabel
+></term>
+<listitem
+><para
+>Imposta se le frazioni appariranno nelle risposte come numeri misti (esempio di numero misto: 1 5/4 = 9/4) o meno.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Forma ridotta:</guilabel
+></term>
+<listitem
+><para
+>Spuntalo per forzare l'uso della forma ridotta.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+<!-- Not in v. 4.2
+<varlistentry>
+<term
+><guilabel
+>Solution</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mixed number</guilabel
+></term>
+<listitem
+><para
+>Set if the fractions will appear as mixed numbers or not in the solution ( mixed number example: 1 4/5 = 9/5 ).</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+-->
+
+<varlistentry>
+<term
+><guilabel
+>Operazioni:</guilabel
+></term>
+<listitem
+><para
+>Le operazioni su cui lavorare nel compito: <guilabel
+>Addizione</guilabel
+>, <guilabel
+>Sottrazione</guilabel
+>, <guilabel
+>Moltiplicazione</guilabel
+> o <guilabel
+>Divisione</guilabel
+>. Attiva tutte quelle che vuoi usare.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Dopo aver cambiato i parametri, devi fare clic sul pulsante <guimenu
+>Nuovo</guimenu
+> nella barra degli strumenti per generare un compito con i nuovi parametri. Puoi richiamare quest'azione anche dalla barra dei menu, scegliendo <menuchoice
+><guimenu
+>File</guimenu
+><guimenuitem
+>Nuovo</guimenuitem
+></menuchoice
+>. Ciò azzererà le statistiche. Per evitarlo, premi il pulsante <guibutton
+>Successivo</guibutton
+> per andare avanti con i parametri modificati. </para>
+<!--<note>
+<para>
+Your selection of the maximum main denominator will be reset to a default
+value every time you change the number of terms. So you should change the
+number of terms first and then select the maximum main denominator.
+</para>
+</note
+>-->
+<!--para>
+If you have not solved the current task and call the <guimenu
+>New</guimenu>
+action, the task will be counted as not solved correctly. To
+prevent this you have to change the parameters after you solved the task but
+before generating a new one.
+</para-->
+<para
+>I parametri scelti vengono salvati all'uscita da &kbruch;, e sono ripristinati al successivo avvio. </para>
+</sect2>
+
+<sect2 id="exer_fraction_solve_task">
+<title
+>Risolvere i compiti</title>
+<para
+>Dopo che hai risolto un compito, devi inserire il risultato nelle tre caselle di inserimento. Inserisci la parte intera della frazione in quella a sinistra, il numeratore in quella in alto, e il denominatore nella casella in basso. Se non è spuntata l'opzione <guilabel
+>Numero misto:</guilabel
+> nella sezione <guilabel
+>Risposta:</guilabel
+>, la casella a sinistra (per la parte intera) non è abilitata. Per il risultato devi quindi usare solo le caselle del numeratore e del denominatore. </para>
+<para
+>Se il risultato è negativo, il segno meno può essere inserito sia al numeratore, sia al denominatore. Se il risultato è 0, inserisci 0 nella casella del numeratore. Se il risultato ha il denominatore uguale a 1, puoi lasciare vuota la casella in basso. </para>
+<para
+>Dopo aver inserito il risultato, fai clic sul pulsante <guibutton
+>Controlla</guibutton
+> che si trova sotto le caselle di testo. &kbruch; controllerà i valori inseriti e mostrerà il risultato corretto a destra, sotto la stringa <guilabel
+>Non corretto!</guilabel
+> </para>
+<screenshot>
+<screeninfo
+>Un compito controllato</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="checked.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Un compito controllato</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+<para
+>Questo compito non è stato risolto correttamente. Il valore corretto viene mostrato in 2 forme: normale (ridotta) e numero misto. </para>
+<note>
+<para
+>Se nella sezione Opzioni delle <guilabel
+>Risposte:</guilabel
+> hai spuntato <guilabel
+>Forma ridotta</guilabel
+>, allora devi sempre inserire il risultato in questa forma. Se inserisci il risultato è corretto ma non è in forma ridotta, &kbruch; ti mostrerà un breve messaggio simile a quello mostrato nell'immagine sotto. La risposta verrà quindi contata come non corretta. </para>
+</note>
+<screenshot>
+<screeninfo
+>Un risultato non ridotto</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="reduced.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Un risultato non ridotto</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Per continuare con il compito successivo, fai clic sul pulsante <guibutton
+>Nuovo</guibutton
+>. Se vuoi cambiare i parametri per il successivo, fallo prima di premere il pulsante <guibutton
+>Nuovo</guibutton
+>. </para>
+</sect2>
+</sect1>
+
+<sect1 id="exer_compare">
+<title
+>Esercizio di confronto</title>
+
+<para
+>In questo esercizio devi confrontare 2 frazioni date. Devi indicare la frazione più grande delle due scegliendo il segno di confronto corretto. </para>
+
+<screenshot>
+<screeninfo
+>Esercizio di confronto</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="compare.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Esercizio di confronto</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Prima scegli il segno di confronto corretto. Dopo che lo hai scelto, sulla destra apparirà il risultato. Un quadratino verde con <guilabel
+>Corretto</guilabel
+> ti dirà che la tua risposta è corretta, mentre uno rosso con <guilabel
+>Non corretto</guilabel
+> ti indicherà che non era corretta. Puoi passare al compito successivo premendo il pulsante <guibutton
+>Successivo</guibutton
+>. </para>
+
+<para
+>In questo esercizio è abilitata solo l'opzione <guilabel
+>Numero misto:</guilabel
+>. Se spuntata, le frazioni appariranno come numeri miste.</para>
+</sect1>
+
+<sect1 id="exer_convert">
+<title
+>Esercizio di conversione</title>
+
+<para
+>In questo esercizio devi convertire un numero dato in una frazione. Devi inserire il numeratore e il denominatore. </para>
+
+<screenshot>
+<screeninfo
+>Esercizio di conversione</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="convert.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Esercizio di conversione</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Sul lato sinistro del segno di uguale nell'immagine sopra puoi vedere un numero decimale periodico. Ciò significa che la frazione mostrata come decimale ha una parte che si ripete. Questa è indicata dalla linea sopra i numeri. Questi numeri si ripetono all'infinito. </para>
+
+<para
+>Dopo che hai inserito il numeratore e il denominatore, premi il pulsante <guibutton
+>Controlla</guibutton
+>. &kbruch; controllerà i valori inseriti e ti mostrerà il risultato corretto. Dopo di questo, premendo il pulsante <guibutton
+>Nuovo</guibutton
+>, potrai passare al compito successivo. </para>
+
+<note>
+<para
+>Non ti dimenticare di inserire il risultato ridotto. I risultati non ridotti saranno contati come non risolti correttamente. </para>
+</note>
+
+<para
+>In questo esercizio tutte le opzioni sono disabilitate.</para>
+
+</sect1>
+
+<sect1 id="exer_mixed">
+<title
+>Esercizio coi numeri misti</title>
+
+<para
+>In questo esercizio devi convertire un numero misto in una frazione impropria, e viceversa. Devi inserire un numeratore e un denominatore per la frazione impropria, oppure un numero intero, un numeratore e un denominatore per il numero misto. </para>
+
+<screenshot>
+<screeninfo
+>Esercizio coi numeri misti</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="mixed.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Esercizio coi numeri misti</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Sul lato sinistro del segno di uguale, nell'immagine sopra, puoi vedere un numero misto. Ciò significa il numero è composto da un numero intero e da una frazione propria. Devi inserire la frazione impropria corrispondente (il numeratore di tale frazione è maggiore o uguale al denominatore). </para>
+
+<para
+>Dopo che hai inserito il numeratore e il denominatore, premi il pulsante <guibutton
+>Controlla</guibutton
+>. &kbruch; controllerà i valori inseriti e ti mostrerà il risultato corretto. Dopo di questo, premendo il pulsante <guibutton
+>Nuovo</guibutton
+>, potrai passare al compito successivo. </para>
+
+<note>
+<para
+>Non ti dimenticare di inserire il risultato ridotto. I risultati non ridotti saranno contati come non risolti correttamente. </para>
+</note>
+
+<para
+>In questo esercizio tutte le opzioni sono disabilitate.</para>
+
+</sect1>
+
+<sect1 id="exer_factorize">
+<title
+>Esercizio di fattorizzazione</title>
+
+<para
+>In questo esercizio devi ridurre un numero dato nei suoi fattori primi. Devi inserire tutti i fattori primi del numero. </para>
+
+<screenshot>
+<screeninfo
+>Esercizio di fattorizzazione</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="factorize.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Esercizio di fattorizzazione</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Puoi inserire un fattore premendo i pulsanti dei fattori primi. Il segno <quote
+>x</quote
+> è aggiunto automaticamente quando premi il pulsante del fattore primo successivo. Puoi rimuovere l'ultimo fattore primo inserito premendo il pulsante <guibutton
+>Backspace</guibutton
+>. </para>
+<para
+>Dopo che hai inserito tutti i fattori primi, premi il pulsante <guibutton
+>Controlla</guibutton
+>. &kbruch; controllerà i fattori primi inseriti, e ti mostrerà il risultato corretto. Puoi passare al compito successivo premendo il pulsante <guibutton
+>Successivo</guibutton
+>. </para>
+
+<para
+>Nell'immagine che si trova in alto in questa pagina, puoi vedere un <quote
+>x</quote
+> tra i fattori primi. È il segno di moltiplicazione. Il prodotto di tutti i fattori primi deve essere il numero che stati provando a ridurre in fattori. </para>
+
+<note>
+<para
+>Devi inserire tutti i fattori primi anche quando uno si ripete più volte. Esempio: come fattori primi del numero 18 devi inserire 2, 3 e 3. </para>
+</note>
+
+<para
+>In questo esercizio tutte le opzioni sono disabilitate.</para>
+
+</sect1>
+
+<sect1 id="exer_percentage">
+<title
+>Esercizio sulle percentuali</title>
+
+<para
+>In questo esercizio devi rispondere a delle domande sulle percentuali.</para>
+
+<screenshot>
+<screeninfo
+>Esercizio sulle percentuali</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="percentage.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Esercizio sulle percentuali</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Dopo che hai inserito la risposta, premi il pulsante <guimenu
+>Controlla esercizio</guimenu
+>. &kbruch; la controllerà, e ti mostrerà il risultato corretto. Puoi passare al compito successivo premendo il pulsante <guibutton
+>Successivo</guibutton
+>. </para>
+
+<para
+>In questo esercizio tutte le opzioni sono disabilitate.</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Riconoscimenti e licenza</title>
+<para
+>&kbruch;</para>
+<para
+>Copyright del programma e della documentazione: 2001-2011 Sebastian Stein <email
+>seb.kde@hpfsc.de</email
+> </para>
+
+<!-- needs update ???-->
+
+<para
+>I ringraziamenti vanno a:</para>
+
+<itemizedlist>
+	<listitem
+><para
+>&Anne-Marie.Mahfouf; per la gestione del progetto &kde; Edu</para
+></listitem>
+	<listitem
+><para
+>Klas Kalass per l'aiuto nella progettazione dell'interfaccia</para
+></listitem>
+	<listitem
+><para
+>Eva Brucherseifer per aver scritto <application
+>KMath</application
+> (l'interfaccia grafica di &kbruch; si basa su questo programma)</para
+></listitem>
+	<listitem
+><para
+>Dominique Devriese per correzioni di bug</para
+></listitem>
+	<listitem
+><para
+><ulink url="http://www.net-tex.de/"
+>Stefan Schumacher</ulink
+> per aver provato una delle prime versioni</para
+></listitem>
+	<listitem
+><para
+><ulink url="https://www.guckes.net/"
+>Sven Guckes</ulink
+> per aver provato l'interfaccia di testo (che è stata rimossa)</para
+></listitem>
+	<listitem
+><para
+>&David.Faure; per aver aiutato con il <acronym
+>CVS</acronym
+> e con Bugzilla di &kde;</para
+></listitem>
+	<listitem
+><para
+>&Robert.Gogolok; per aver aiutato con il <acronym
+>CVS</acronym
+> di &kde;</para
+></listitem>
+	<listitem
+><para
+>John Kesson per aver corretto una bozza del manuale</para
+></listitem>
+</itemizedlist>
+
+<para
+>Nuova interfaccia e miglioramenti di usabilità per &kde; 4.1:</para>
+<itemizedlist>
+<listitem
+><para
+>Paulo Cattai <email
+>paulo.cattai@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Danilo Balzaque <email
+>danilo.balzaque@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Roberto Cunha <email
+>roberto.cunha@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tadeu Araujo <email
+>tadeu.araujo@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tiago Porangaba <email
+>tiago.porangaba@ltia.fc.unesp.br</email
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Traduzione italiana di Pino Toscano <email
+>toscano.pino@tiscali.it</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->

@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % French "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Manuel de l'utilisateur de &kbruch;</title>
+<author
+>&Lauri.Watts;&Lauri.Watts.mail;</author>
+<date
+>27-09-2015</date>
+<releaseinfo
+>&kbruch; 5.0 (Applications 15.12)</releaseinfo>
+<productname
+>Applications KDE</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kbruch</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kbruch</command
+></refname>
+<refpurpose
+>Apprendre le calcul des fractions</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kbruch</command
+> <arg choice="opt"
+>options</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Description</title>
+<para
+>&kbruch; est un petit logiciel pour apprendre le calcul des fractions. Différents exercices sont prévus à cet effet. Le logiciel vérifie la saisie de l'utilisateur et donne un retour.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Voir aussi</title>
+<para
+>Une documentation utilisateur détaillée est disponible à partir de <ulink url="help:/kbruch"
+>help:/kbruch</ulink
+> (vous pouvez soit saisir cette <acronym
+>URL</acronym
+> dans &konqueror;, soit lancer <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kbruch</parameter
+></userinput
+>).</para>
+<para
+>Des informations complémentaires sont disponibles sur <ulink url="http://edu.kde.org/kbruch/"
+>le site Internet de « kde-edu »</ulink
+>.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Auteurs</title>
+<para
+>&kbruch; a été écrit par <personname
+><firstname
+>Sebastian</firstname
+><surname
+>Stein</surname
+></personname
+> <email
+>seb.kde@hpfsc.de</email
+></para>
+</refsect1>
+
+</refentry>

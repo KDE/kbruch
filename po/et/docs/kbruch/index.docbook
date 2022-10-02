@@ -1,0 +1,985 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY kappname "&kbruch;">
+<!ENTITY package "kdeedu">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Estonian  "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kbruch" lang="&language;">
+
+<bookinfo>
+<title
+>&kbruch;i käsiraamat</title>
+
+<authorgroup>
+<author
+><firstname
+>Sebastian</firstname
+> <surname
+>Stein</surname
+> <email
+>seb.kde@hpfsc.de</email
+> </author>
+<author
+>&Anne-Marie.Mahfouf; </author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@starman.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<copyright>
+<year
+>2001-2005</year>
+<holder
+>Sebastian Stein</holder>
+</copyright>
+<copyright>
+<year
+>2008</year>
+<holder
+>&Anne-Marie.Mahfouf;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2013-06-23</date>
+<releaseinfo
+>4.2 (&kde; 4.11)</releaseinfo>
+
+<abstract>
+<para
+>&kbruch; on väike rakendus, mis aitab harjutada murdude ja protsentidega arvutamist. Selleks pakutakse mitut laadi ülesandeid, samuti saab murdudega arvutamist harjutada vastavas harjutamisrežiimis. Rakendus kontrollib vastuse õigsust ja annab teada, mida ta sellest arvab. </para>
+
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>haridus</keyword>
+<keyword
+>murrud</keyword>
+<keyword
+>protsent</keyword>
+<keyword
+>matemaatika</keyword>
+<keyword
+>nimetaja</keyword>
+<keyword
+>kbruch</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Sissejuhatus</title>
+
+<para
+>&kbruch; on väike rakendus, mis aitab harjutada murdude ja protsentidega arvutamist. Selleks pakutakse kuut laadi ülesandeid ning harjutamisrežiimi. </para>
+
+<itemizedlist>
+	<listitem
+><para
+>Aritmeetika - selle korral tuleb lahendada etteantud murdudega ülesanne. Sul on vaja sisestada lugeja ja nimetaja. See on põhiline ülesandetüüp. </para
+></listitem>
+	<listitem
+><para
+>Võrdlemine - selle korral tuleb võrrelda kaht etteantud murdarvu, kasutades sümboleid <guibutton
+>&gt;</guibutton
+>, <guibutton
+>&lt;</guibutton
+> ja <guibutton
+>=</guibutton
+>. </para
+></listitem>
+	<listitem
+><para
+>Teisendamine - selle korral tuleb etteantud arv teisendada murruks. </para
+></listitem>
+	<listitem
+><para
+>Segaarvud - selles ülesandes tuleb segaarv teisendada liigmurruks ja vastupidi. </para
+></listitem>
+	<listitem
+><para
+>Algteguriteks lahutamine - selle korral tuleb etteantud arv lahutada algteguriteks. </para
+></listitem>
+	<listitem
+><para
+>Protsentarvutus - selle korral tuleb arvutada protsent. </para
+></listitem>
+</itemizedlist>
+
+<para
+>Kõigi ülesandetüüpide korral loob &kbruch; ülesande ja kasutajal tuleb see lahendada. Programm kontrollib sinu vastust ja annab teada, mida ta sellest arvab. </para>
+
+<para
+>&kbruch; peab arvet, kui palju ülesandeid on kokku lahendatud ja kui paljud õigesti lahendati. Kasutaja näeb ka statistikat. </para>
+
+<para
+>&kbruch; on väga kompaktne ning keskendub ennekõike oma peamisele eesmärgile luua ülesandeid. Abisüsteem pakub kontekstile vastavat infot erinevate olukordade selgitamiseks. </para>
+
+</chapter>
+
+
+<chapter id="using-kbruch">
+<title
+>&kbruch;i kasutamine</title>
+
+<sect1 id="mode">
+<title
+>Režiimi valik: harjutamine või ülesanded</title>
+<para
+>&kbruch;i käivitamisel pakutakse välja kaks režiimi: <guilabel
+>Harjutamine</guilabel
+>, mis tähendab harjutamisrežiimi, ja <guilabel
+>Õppimine</guilabel
+>, milles saab ette võtta murd- ja protsentarvutusi. Pildile klõpsates avatakse valitud režiim: &kbruch;i režiimid näevad välja järgmised:</para>
+
+<screenshot>
+	<screeninfo
+>&kbruch;i režiimivalik</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_mode.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>&kbruch;i režiimivalik</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>Klõpsa režiimi valimiseks pildile.</para>
+</sect1>
+
+<sect1 id="overview">
+<title
+>Harjutamise peaaken</title>
+
+<para
+>&kbruch;i harjutamise peaaken:</para>
+
+<screenshot>
+	<screeninfo
+>&kbruch;i peaaken kohe pärast harjutamise käivitamist</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_main.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>&kbruch;i peaaken</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Kõik, mis on ülesandega seotud, toimub selles aknas. See võimaldab &kbruch;i hõlpsasti kasutada ka väiksematel lastel! Peaaken on jagatud viieks osaks: <itemizedlist
+> <listitem
+><para
+> menüüriba menüüdega <guimenu
+>Fail</guimenu
+>, <guimenu
+>Seadistused</guimenu
+> ja <guimenu
+>Abi</guimenu
+> </para
+></listitem
+> <listitem
+><para
+> tööriistariba, kus saab valida erinevaid ülesandeid </para
+></listitem
+> <listitem
+><para
+> vasakul asuvad <guilabel
+>Valikud</guilabel
+>, kus saab määrata ülesannete raskusastme ja veel mitmesuguseid konkreetse ülesandega seotud asju </para
+></listitem
+> <listitem
+><para
+> ülesanne ise, kus tuleb sisestada antud ülesande vastus </para
+></listitem
+> <listitem
+><para
+> statistikaosa, kus näeb, kui palju ülesandeid oled õigesti lahendanud ja kui palju oled üldse proovinud </para
+></listitem
+> </itemizedlist
+> Mis tahes hetkel võid naasta režiimivaliku aknasse, kui klõpsad tööriistaribal ikoonile <guiicon
+>Tagasi</guiicon
+>. </para>
+<note
+><para
+><guilabel
+>Valikud</guilabel
+> saab peita, kui lohistada sektsiooni vasakule. </para
+></note>
+<para
+>Kõigepealt tuleb aknas vasakul asuvas ülesandevalijas valida vajalik ülesandetüüp. Vaikimisi on selleks <guilabel
+>Aritmeetika</guilabel
+>. Ülesandeosa muutub vastavalt valitud ülesandele. Sektsioonist <guilabel
+>Valikud</guilabel
+> muutub samuti vastavalt valitud ülesandele osa aktiivseks. </para>
+<para
+>Tööriistaribal asub ka uue ülesande loomise ikoon. Seda on võimalik teha ka menüükäsuga <menuchoice
+><guimenu
+>Fail</guimenu
+><guimenuitem
+>Uus</guimenuitem
+></menuchoice
+>. Seda toimingut saab alati ette võtta. Kui sa ei ole parajasti eesolevat ülesannet veel lahendanud, luuakse uus ülesanne ikkagi ja statistikas arvestatakse sulle kaotus. </para>
+<!--<para>
+You can hide the statistic part by dragging the vertical separator to the
+right.
+</para
+>-->
+<para
+>Parajasti avatud ülesanne salvestatakse &kbruch;i sulgemisel ja taastatakse rakenduse uuel käivitamisel. </para>
+</sect1>
+
+<sect1 id="statistics">
+<title
+>Statistikaosa</title>
+<screenshot>
+	<screeninfo
+>&kbruch;i statistika</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="statistics.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>&kbruch;i statistika</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Peaakna selles osas on näha: <itemizedlist>
+	<listitem
+><para
+>vasakul see, kui palju ülesandeid on lahendatud </para
+></listitem>
+	<listitem
+><para
+>paremal see, kui palju ülesandeid on õigesti lahendatud </para
+></listitem>
+	<listitem
+><para
+>paremal punaselt see, kui palju ülesandeid on valesti lahendatud </para
+></listitem>
+		<listitem
+><para
+>paremal oranžilt see, kui palju ülesandeid on vahele jäetud </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>Statistika saab lähtestada, kui klõpsata tööriistaribal ikoonile <guimenu
+>Uus</guimenu
+>. Seda võib teha ka menüükäsuga <menuchoice
+><guimenu
+>Fail</guimenu
+><guimenuitem
+>Uus</guimenuitem
+></menuchoice
+>. </para>
+<para
+>Statistika salvestatakse &kbruch;i sulgemisel ja taastatakse rakenduse uuel käivitamisel. </para>
+</sect1>
+
+<sect1 id="settings">
+<title
+>&kbruch;i välimuse seadistamine</title>
+<para
+>Selles dialoogis saab muuta mõningaid ülesande näitamise üldisi seadistusi. Dialoogi avamiseks vali menüükäsk <menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>&kbruch;i seadistamine</guimenuitem
+></menuchoice
+>. </para>
+
+<screenshot>
+	<screeninfo
+>&kbruch;i seadistustedialoog</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="settings.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>&kbruch;i seadistustedialoog</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Seadistusi saab kohandada kahel kaardil: <itemizedlist>
+	<!-- <listitem
+><para>
+		<guilabel
+>General</guilabel
+>: Set whether to show the mixed number notation in the result.
+		This notation is not known everywhere and can be disabled therefore.
+	</para
+></listitem
+> -->
+	<listitem
+><para
+><guilabel
+>Värvid</guilabel
+>: siin saab valida avaldise erinevate osade värvid (arvudele, tehtemärgile, murrumärgile). </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Fondid</guilabel
+>: siin saab valida ülesande näitamisel kasutatava fondi. </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>Seadistused salvestatakse &kbruch;i sulgemisel ja taastatakse rakenduse uuel käivitamisel. </para>
+</sect1>
+
+<sect1 id="learning-screen">
+<title
+>Harjutamise peaaken</title>
+<screenshot>
+	<screeninfo
+>&kbruch;i harjutamisrežiim</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="learning.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>&kbruch;i harjutamisrežiim</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>Klõpsuga nupule <guibutton
+>Vihje</guibutton
+> saab sisse või välja lülitada paremal näidatava abi, mis selgitab, kuidas ringid toimivad. </para>
+</sect1>
+</chapter>
+
+<chapter id="exercises">
+<title
+>Ülesanded</title>
+
+<sect1 id="exer_fraction">
+<title
+>Aritmeetikaülesanded</title>
+
+<para
+>Selle ülesandetüübi korral tuleb lahendada etteantud ülesanne. Sinul tuleb sisestada murru täisarvuline osa ning lugeja ja nimetaja. Loodud ülesande raskusastet saab muuta mõningate vasakul näha olevate valikutega. </para>
+
+<sect2 id="task_paras">
+<title
+>Valikud</title>
+<para
+>Loodava ülesande raskusastet mõjutab mitu parameetrit:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Küsimus</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Segaarv</guilabel
+></term>
+<listitem
+><para
+>Määrab, kas murrud esinevad küsimuses segaarvuna või mitte (segaarvu näide: 1 4/5 = 9/5 ).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Tegurite arv</guilabel
+></term>
+<listitem
+><para
+>Tegurite (erinevate murdude) arv iga ülesande jaoks kahest viieni (kaasa arvatud).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Nimetaja maks. väärtus</guilabel
+></term>
+<listitem
+><para
+>Suurim number, mida &kbruch; kasutab loodavates ülesannetes nimetajana (minimaalselt 10, maksimaalselt 50).</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Vastus</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Segaarv</guilabel
+></term>
+<listitem
+><para
+>Määrab, kas murrud esinevad vastuses segaarvuna või mitte (segaarvu näide: 1 4/5 = 9/5 ).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Taandamine</guilabel
+></term>
+<listitem
+><para
+>Määrab, kas taandamine on kohustuslik või mitte.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+<!-- Not in v. 4.2
+<varlistentry>
+<term
+><guilabel
+>Solution</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mixed number</guilabel
+></term>
+<listitem
+><para
+>Set if the fractions will appear as mixed numbers or not in the solution ( mixed number example: 1 4/5 = 9/5 ).</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+-->
+
+<varlistentry>
+<term
+><guilabel
+>Tehted</guilabel
+></term>
+<listitem
+><para
+>Tehted, mida ülesannetes kasutada: <guilabel
+>Liitmine</guilabel
+>, <guilabel
+>Lahutamine</guilabel
+>, <guilabel
+>Korrutamine</guilabel
+> või <guilabel
+>Jagamine</guilabel
+>. Märgi ära kõik tehted, mida soovid kasutada.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Pärast parameetrite muutmist tuleb vastava ülesande loomiseks klõpsata tööriistaribal nupule <guimenu
+>Uus</guimenu
+>. Seda võib teha ka menüükäsuga <menuchoice
+><guimenu
+>Ülesanne</guimenu
+><guimenuitem
+>Uus</guimenuitem
+></menuchoice
+>. See lähtestab statistika. Selle vältimiseks klõpsa nupule <guibutton
+>Edasi</guibutton
+>, et jätkata muudetud parameetritega. </para>
+<!--<note>
+<para>
+Your selection of the maximum main denominator will be reset to a default
+value every time you change the number of terms. So you should change the
+number of terms first and then select the maximum main denominator.
+</para>
+</note
+>-->
+<!--para>
+If you have not solved the current task and call the <guimenu
+>New</guimenu>
+action, the task will be counted as not solved correctly. To
+prevent this you have to change the parameters after you solved the task but
+before generating a new one.
+</para-->
+<para
+>Valitud parameetrid salvestatakse &kbruch;i sulgemisel ja need taastatakse rakenduse uuel käivitamisel. </para>
+</sect2>
+
+<sect2 id="exer_fraction_solve_task">
+<title
+>Ülesannete lahendamine</title>
+<para
+>Kui oled ülesande lahendanud, tuleb vastus kirjutada kolme sisendkasti. Vasakpoolsesse tuleb sisestada murru täisarvuline osa, ülemisse lugeja ja alumisse nimetaja. Kui sektsioonis <guilabel
+>Vastus</guilabel
+> on valik <guilabel
+>Segaarv</guilabel
+> märkimata, on vasakpoolne täisarvulise osa kast varjatud. Sel juhul tuleb sisestada ainult lugeja ja nimetaja. </para>
+<para
+>Kui tulemus on negatiivne, võib miinusmärgi kirjutada kas lugeja või nimetaja ette. Kui tulemus on 0, piisab, kui kirjutada lugeja väljale 0. Kui tulemuse nimetaja on 1, võib tühjaks jätta alumise kasti. </para>
+<para
+>Kui vastus on antud, tuleb klõpsata sisendkastide all asuvale nupule <guimenu
+>Kontrolli</guimenu
+>. &kbruch; kontrollib siis sinu vastust ja näitab õiget vastust paremal, teate <guilabel
+>Õige!</guilabel
+> all: </para>
+<screenshot>
+<screeninfo
+>Kontrollitud ülesanne</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="checked.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Kontrollitud ülesanne</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+<para
+>See ülesanne lahendati õigesti. Õiget vastust näidatakse kahel viisil: tavaline (taandatud) ja segaarv. </para>
+<note>
+<para
+>Kui oled märkinud sektsioonis <guilabel
+>Vastus</guilabel
+> ära valiku <guibutton
+>Taandamine</guibutton
+>, tuleb vastus alati anda taandatud kujul - nagu ka koolis hindavad õpetajad vastuse enamasti absoluutselt õigeks ainult siis, kui see on taandatud. Kui annad vastuse taandamata kujul, näitab &kbruch; järgmist teadaannet, ning loeb vastuse valeks. </para>
+</note>
+<screenshot>
+<screeninfo
+>Taandamata tulemus</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="reduced.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Taandamata tulemus</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Järgmise ülesande juurde asumiseks klõpsa nupule <guimenu
+>Edasi</guimenu
+>. Kui soovid muuta järgmise ülesande parameetreid, tee seda kohe ja alles pärast seda klõpsa nupule <guimenu
+>Edasi</guimenu
+>. </para>
+</sect2>
+</sect1>
+
+<sect1 id="exer_compare">
+<title
+>Võrdlemisülesanne</title>
+
+<para
+>Selle ülesandetüübi puhul tuleb võrrelda kaht murdarvu. Sul tuleb valida, kumb neist on suurem, kasutades selleks korrektset võrdlusmärki. </para>
+
+<screenshot>
+<screeninfo
+>Võrdlemisülesanne</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="compare.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Võrdlemisülesanne</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Kõigepealt vali võrdlusmärk. Kui oled valinud enda arvates õige võrdlusmärgi, näidatakse paremal tulemust. Roheline ruuduke kirjaga <guilabel
+>Õige</guilabel
+> annab teada, et vastus oli õige, punane ruuduke kirjaga <guilabel
+>Vale</guilabel
+> aga teatab, et eksisid. Pärast seda võid asuda uue ülesande kallale, klõpsates nupule <guimenu
+>Järgmine</guimenu
+>. </para>
+
+<para
+>Selle ülesande korral saab kasutada ainult valikut <guilabel
+>Segaarv</guilabel
+>. Kui see on sisse lülitatud, näeb murde segaarvudena.</para>
+</sect1>
+
+<sect1 id="exer_convert">
+<title
+>Teisendamisülesanne</title>
+
+<para
+>Selle ülesandetüübi puhul tuleb etteantud arv teisendada murruks. Sul tuleb sisestada lugeja ja nimetaja. </para>
+
+<screenshot>
+<screeninfo
+>Teisendamisülesanne</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="convert.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Teisendamisülesanne</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Toodud pildil on vasakul pool võrdusmärki näha lõpmatu kümnendmurd. See tähendab, et kümnendmurrul on korduv osa. Seda tähistab väike jooneke numbri kohal. Antud number kordub lõputult. </para>
+
+<para
+>Kui oled enda arvates õige lugeja ja nimetaja kirja pannud, klõpsa nupule <guimenu
+>Kontrolli</guimenu
+>. &kbruch; uurib siis sinu arvamust ja näitab õiget vastust. Pärast seda võid asuda uue ülesande kallale, klõpsates nupule <guimenu
+>Edasi</guimenu
+>. </para>
+
+<note>
+<para
+>Ära unusta tulemust taandamast. Taandamata tulemused loetakse valeks vastuseks. </para>
+</note>
+
+<para
+>Selle ülesande korral ei saa ühtegi valikut kasutada.</para>
+
+</sect1>
+
+<sect1 id="exer_mixed">
+<title
+>Segaarvude ülesanne</title>
+
+<para
+>Selle ülesandetüübi puhul tuleb etteantud segaarv teisendada liigmurruks ja vastupidi. Sul tuleb sisestada liigmurru lugeja ja nimetaja või segaarvu täisarv, lugeja ja nimetaja. </para>
+
+<screenshot>
+<screeninfo
+>Segaarvude ülesanne</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="mixed.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Segaarvude ülesanne</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Toodud pildil on vasakul pool võrdusmärki näha segaarv. See tähendab, et arv koosneb täisarvust ja selle taga olevast murrust. Sul tuleb nüüd sisestada vastav liigmurd (sellise murru lugeja on suurem kui nimetaja või sellega võrdne). </para>
+
+<para
+>Kui oled enda arvates õige lugeja ja nimetaja kirja pannud, klõpsa nupule <guimenu
+>Kontrolli</guimenu
+>. &kbruch; uurib siis sinu arvamust ja näitab õiget vastust. Pärast seda võid asuda uue ülesande kallale, klõpsates nupule <guimenu
+>Edasi</guimenu
+>. </para>
+
+<note>
+<para
+>Ära unusta tulemust taandamast. Taandamata tulemused loetakse valeks vastuseks. </para>
+</note>
+
+<para
+>Selle ülesande korral ei saa ühtegi valikut kasutada.</para>
+
+</sect1>
+
+<sect1 id="exer_factorize">
+<title
+>Algteguriteks lahutamise ülesanne</title>
+
+<para
+>Selle ülesandetüübi puhul tuleb etteantud arv lahutada algteguriteks. Sul tuleb sisestada kõik antud arvu algtegurid. </para>
+
+<screenshot>
+<screeninfo
+>Algteguriteks lahutamise ülesanne</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="factorize.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Algteguriteks lahutamise ülesanne</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Algteguri saab sisestada klõpsuga algteguri nuppudel. Märk <quote
+>x</quote
+> lisatakse automaatselt, kui klõpsad järgmisel algteguri nupul Viimase sisestatud algteguri saab eemaldada klõpsuga nupule <guimenu
+>Backspace</guimenu
+>. </para>
+<para
+>Kui oled enda arvates kõik algtegurid kirja pannud, klõpsa nupule <guimenu
+>Kontrolli</guimenu
+>. &kbruch; uurib siis sinu arvamust ja näitab õiget vastust. Pärast seda võid asuda uue ülesande kallale, klõpsates nupule <guimenu
+>Edasi</guimenu
+>. </para>
+
+<para
+>Lehekülje ülaosas asuval pildil on algtegurite vahel näha märk <quote
+>x</quote
+>. See on korrutusmärk. Kõigi algtegurite korrutis ongi see number, mida sul tuleb lahutada. </para>
+
+<note>
+<para
+>Sisestada tuleb kõik algtegurid - ka siis, kui mõni algtegur peaks esinema mitu korda. Näide: 18 algteguritena tuleb sisestada 2, 3 ja 3. </para>
+</note>
+
+<para
+>Selle ülesande korral ei saa ühtegi valikut kasutada.</para>
+
+</sect1>
+
+<sect1 id="exer_percentage">
+<title
+>Protsentülesanne</title>
+
+<para
+>Selle ülesande korral tuleb arvutada protsent.</para>
+
+<screenshot>
+<screeninfo
+>Protsentülesanne</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="percentage.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Protsentülesanne</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Kui oled enda arvates kõik algtegurid kirja pannud, klõpsa nupule <guimenu
+>Kontrolli</guimenu
+>. &kbruch; uurib siis sinu arvamust ja näitab õiget vastust. Pärast seda võid asuda uue ülesande kallale, klõpsates nupule <guimenu
+>Edasi</guimenu
+>. </para>
+
+<para
+>Selle ülesande korral ei saa ühtegi valikut kasutada.</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Autorid ja litsents</title>
+<para
+>&kbruch;</para>
+<para
+>Rakenduse ja dokumentatsiooni autoriõigus 2001-2011: Sebastien Stein <email
+>seb.kde@hpfsc.de</email
+> </para>
+
+<!-- needs update ???-->
+
+<para
+>Tänu väärivad:</para>
+
+<itemizedlist>
+	<listitem
+><para
+>&Anne-Marie.Mahfouf; &kde;-Edu projekti hooldamise eest</para
+></listitem>
+	<listitem
+><para
+>Klas Kalass abi eest liidese kujundamisel</para
+></listitem>
+	<listitem
+><para
+>Eva Brucherseifer rakenduse <application
+>KMath</application
+> kirjutamise eest (sellele tugineb &kbruch;i graafiline kasutajaliides)</para
+></listitem>
+	<listitem
+><para
+>Dominique Devriese vigade parandamise eest</para
+></listitem>
+	<listitem
+><para
+><ulink url="http://www.net-tex.de/"
+>Stefan Schumacher</ulink
+> ühe varase versiooni testimise eest</para
+></listitem>
+	<listitem
+><para
+><ulink url="http://www.guckes.net/"
+>Sven Guckes</ulink
+> tekstiliidese testimise eest (mis küll praeguseks on eemaldatud)</para
+></listitem>
+	<listitem
+><para
+>&David.Faure; abi eest &kde; <acronym
+>CVS</acronym
+>-i ja &kde; Bugzilla kasutamisel</para
+></listitem>
+	<listitem
+><para
+>&Robert.Gogolok; abi eest &kde; <acronym
+>CVS</acronym
+>i kasutamisel</para
+></listitem>
+	<listitem
+><para
+>John Kesson käsiraamatu korrektuuri lugemise eest</para
+></listitem>
+</itemizedlist>
+
+<para
+>Liidese uus kujundus ja kasutamise parandused &kde; 4.1 jaoks:</para>
+<itemizedlist>
+<listitem
+><para
+>Paulo Cattai <email
+>paulo.cattai@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Danilo Balzaque <email
+>danilo.balzaque@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Roberto Cunha <email
+>roberto.cunha@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tadeu Araujo <email
+>tadeu.araujo@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tiago Porangaba <email
+>tiago.porangaba@ltia.fc.unesp.br</email
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Tõlge eesti keelde: Marek Laane <email
+>bald@starman.ee</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Paigaldamine</title>
+
+<sect1 id="getting-kbruch">
+<title
+>&kbruch;i hankimine</title>
+&install.intro.documentation; </sect1>
+
+<sect1 id="requirements">
+<title
+>Nõuded</title>
+
+<para
+>&kbruch;i edukaks paigaldamiseks on vajalik &kde; 
+> 4.1. </para>
+
+<para
+>&kbruch;i leiab <ulink url="http://edu.kde.org/kbruch/"
+>&kbruch;i koduleheküljelt</ulink
+>, see on üks osa &kde;-Edu projektist</para>
+
+<para
+>Muudatusi saab uurida <acronym
+>Git</acronym
+>i kirjete põhjal.</para>
+
+</sect1>
+
+<sect1 id="compilation">
+<title
+>Kompileerimine ja paigaldamine</title>
+&install.compile.documentation; </sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->

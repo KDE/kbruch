@@ -1,0 +1,963 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY kappname "&kbruch;">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Catalan  "INCLUDE"
+><!-- change language only here -->
+]>
+<!--
+SPDX-FileCopyrightText: 2001-2005 Sebastian Stein <seb.kde@hpfsc.de>
+SPDX-FileCopyrightText: 2008 Anne-Marie Mahfouf
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+<book id="kbruch" lang="&language;">
+
+<bookinfo>
+<title
+>El manual del &kbruch;</title>
+
+<authorgroup>
+<author
+><firstname
+>Sebastian</firstname
+> <surname
+>Stein</surname
+> <email
+>seb.kde@hpfsc.de</email
+> </author>
+<author
+>&Anne-Marie.Mahfouf; </author>
+<othercredit role="translator"
+> <firstname
+>Daniel</firstname
+> <surname
+>Fortuny Anguera</surname
+> <affiliation
+><address
+><email
+>dfortuny@xtec.net</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> &traductor.Antoni.Bella; 
+
+</authorgroup>
+
+<copyright>
+<year
+>2001-2005</year>
+<holder
+>Sebastian Stein</holder>
+</copyright>
+<copyright>
+<year
+>2008</year>
+<holder
+>&Anne-Marie.Mahfouf;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>21 de desembre de 2020</date>
+<releaseinfo
+>Aplicacions 20.12</releaseinfo>
+
+<abstract>
+<para
+>El &kbruch; és un programa senzill per a practicar el càlcul amb fraccions i percentatges. Es proposen diversos exercicis i podeu utilitzar el mode d'aprenentatge per a practicar amb fraccions. El programa comprova l'entrada de l'usuari i proporciona una resposta. </para>
+
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>educació</keyword>
+<keyword
+>fracció</keyword>
+<keyword
+>percentatge</keyword>
+<keyword
+>matemàtics</keyword>
+<keyword
+>denominador</keyword>
+<keyword
+>kbruch</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introducció</title>
+
+<para
+>El &kbruch; és un programa senzill per a practicar el càlcul amb fraccions i percentatges. Disposa de sis modes d'exercicis i un mode d'aprenentatge. </para>
+
+<itemizedlist>
+	<listitem
+><para
+><guilabel
+>Aritmètica</guilabel
+>: En aquest exercici heu de resoldre un càlcul de fracció. Cal que escriviu el resultat, &ead;, el numerador i el denominador. Aquest és l'exercici principal. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Comparació</guilabel
+>: En aquest exercici heu de comparar el valor numèric de 2 fraccions, utilitzant els símbols <guibutton
+>&gt;</guibutton
+>, <guibutton
+>&lt;</guibutton
+> o <guibutton
+>=</guibutton
+>. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Conversió</guilabel
+>: En aquest exercici heu de convertir un nombre en una fracció. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Nombres mixtos</guilabel
+>: En aquest exercici heu de convertir un nombre mixt en una fracció impròpia (ràtio) i viceversa. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Factorització</guilabel
+>: En aquest exercici heu de descompondre en factors primers un nombre. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Percentatge</guilabel
+>: En aquest exercici heu de calcular els percentatges. </para
+></listitem>
+</itemizedlist>
+
+<para
+>En cada exercici diferent, el &kbruch; generarà una tasca i l'usuari l'haurà de resoldre. El programa comprova l'entrada i dona una resposta. </para>
+
+<para
+>El &kbruch; compta quantes tasques han estat resoltes i quantes s'han fet correctament. Es mostren estadístiques a l'usuari. </para>
+
+<para
+>El &kbruch; és molt compacte i es basa en la idea principal d'un generador de tasques. Disposa d'una aplicació d'ajuda en línia per a oferir ajuda vinculada amb el context de l'exercici. </para>
+
+</chapter>
+
+
+<chapter id="using-kbruch">
+<title
+>Usar el &kbruch;</title>
+
+<sect1 id="mode">
+<title
+>Triar el mode: aprenentatge o exercici</title>
+<para
+>En iniciar el &kbruch;, us oferirà dos modes: <guilabel
+>Exercici</guilabel
+>, que és el mode d'entrenament i <guilabel
+>Aprenentatge</guilabel
+> en el qual podreu comprendre les fraccions. En fer clic en una de les imatges entrareu en el mode escollit. Aquí teniu una captura de pantalla de les opcions de mode del &kbruch;:</para>
+
+<screenshot>
+	<screeninfo
+>Opcions de mode del &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_mode.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Opcions de mode del &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>Feu clic a una de les imatges per a triar el mode.</para>
+</sect1>
+
+<sect1 id="overview">
+<title
+>Pantalla principal Exercici</title>
+
+<para
+>Aquesta és una captura de pantalla de la pantalla principal Exercici del &kbruch;:</para>
+
+<screenshot>
+	<screeninfo
+>Pantalla principal del &kbruch; en el moment d'iniciar-lo</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_main.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Pantalla principal del &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Tots els exercicis tenen lloc en aquesta pantalla. Això assegura que el &kbruch; és fàcil d'usar fins i tot per a usuaris joves! La pantalla principal es divideix en 5 parts: <itemizedlist
+> <listitem
+><para
+> La barra de menús amb els 3 menús <guimenu
+>Fitxer</guimenu
+>, <guimenu
+>Arranjament</guimenu
+> i <guimenu
+>Ajuda</guimenu
+> </para
+></listitem
+> <listitem
+><para
+> La barra d'eines, on podreu canviar entre els diferents exercicis </para
+></listitem
+> <listitem
+><para
+> Les <guilabel
+>Opcions:</guilabel
+> a l'esquerra, on podreu definir la dificultat i diverses opcions de configuració per a les tasques </para
+></listitem
+> <listitem
+><para
+> La part de la tasca, on heu d'introduir el resultat de la tasca assignada </para
+></listitem
+> <listitem
+><para
+> La part estadística, on podeu veure com s'han resolt moltes tasques correctament o com s'ha intentat </para
+></listitem
+> </itemizedlist
+> En qualsevol moment, podreu tornar als modes utilitzant la icona <guiicon
+>Enrere</guiicon
+> a la barra d'eines. </para>
+<note
+><para
+>Podeu amagar la secció <guilabel
+>Opcions:</guilabel
+> arrossegant-la cap a l'esquerra. </para
+></note>
+<para
+>Primerament, cal que escolliu un exercici en la barra d'eines. De manera predeterminada és <guilabel
+>Aritmètica</guilabel
+>. La part de la tasca canviarà en funció de la tasca triada. S'habilitaran algunes opcions de configuració a la secció <guilabel
+>Opcions</guilabel
+>, en funció de la tasca que seleccioneu. </para>
+<para
+>Trobareu una icona per a generar una nova tasca en la barra d'eines. Aquesta acció també està disponible al menú que teniu en el menú <menuchoice
+><guimenu
+>Fitxer</guimenu
+><guimenuitem
+>Nou</guimenuitem
+></menuchoice
+>. Aquesta acció sempre estarà habilitada. Si no heu resolt la tasca que actualment s'atorga, es generarà una tasca nova i les estadístiques són un retrocés. En el cas de no haver resolt una tasca correctament, es generarà una nova tasca i es retrocedirà en les estadístiques. </para>
+<!--<para>
+You can hide the statistic part by dragging the vertical separator to the
+right.
+</para
+>-->
+<para
+>Si finalitzeu el &kbruch;, l'exercici actual es desarà i el podreu continuar en la propera sessió del programa. </para>
+</sect1>
+
+<sect1 id="statistics">
+<title
+>La part Estadística</title>
+<screenshot>
+	<screeninfo
+>Estadístiques del &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="statistics.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Estadístiques del &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>En aquest apartat es mostra la interfície principal del programa: <itemizedlist>
+	<listitem
+><para
+>a l'esquerra, quantes tasques s'han resolt </para
+></listitem>
+	<listitem
+><para
+>a la dreta, en verd, quantes tasques s'han resolt correctament </para
+></listitem>
+	<listitem
+><para
+>a la dreta, en vermell, quantes tasques s'han resolt incorrectament </para
+></listitem>
+		<listitem
+><para
+>a la dreta, en groc, quantes tasques s'han omès </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>Podeu restablir les estadístiques fent clic al botó <guimenu
+>Nou</guimenu
+> en la barra d'eines o escollint <menuchoice
+><guimenu
+>Fitxer</guimenu
+><guimenuitem
+>Nou</guimenuitem
+></menuchoice
+> a la barra de menús. </para>
+<para
+>Les estadístiques es desaran quan el &kbruch; sigui tancat i seran restaurades en el següent inici. </para>
+</sect1>
+
+<sect1 id="settings">
+<title
+>Configurar l'aparença del &kbruch;</title>
+<para
+>En aquest diàleg podreu ajustar algunes opcions de configuració generals per a la presentació de tasques. Per a obrir-lo, utilitzeu <menuchoice
+><guimenu
+>Arranjament</guimenu
+><guimenuitem
+>Configura el &kbruch;...</guimenuitem
+></menuchoice
+>. </para>
+
+<screenshot>
+	<screeninfo
+>Diàleg de configuració del &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="settings.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Diàleg de configuració del &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Hi ha dues seccions per a ajustar la configuració: <itemizedlist>
+	<!-- <listitem
+><para>
+		<guilabel
+>General</guilabel
+>: Set whether to show the mixed number notation in the result.
+		This notation is not known everywhere and can be disabled therefore.
+	</para
+></listitem
+> -->
+	<listitem
+><para
+><guilabel
+>Colors</guilabel
+>: Trieu els colors per a les diferents parts d'una expressió matemàtica: Número, signe d'operació, barra de fracció. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Tipus de lletra</guilabel
+>: Trieu un tipus de lletra per a la visualització de la tasca. </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>Les opcions de configuració seran desades en finalitzar la sessió del &kbruch; i s'aplicaran durant el següent inici del programa. </para>
+</sect1>
+
+<sect1 id="learning-screen">
+<title
+>Pantalla principal Aprenentatge</title>
+<screenshot>
+	<screeninfo
+>Mode Aprenentatge del &kbruch;</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="learning.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Mode Aprenentatge del &kbruch;</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>En fer clic al botó <guibutton
+>Suggeriment</guibutton
+> alterna la pantalla d'ajuda a la dreta que us explicarà què li sembla el treball. </para>
+</sect1>
+</chapter>
+
+<chapter id="exercises">
+<title
+>Exercici</title>
+
+<sect1 id="exer_fraction">
+<title
+>Exercici d'aritmètica</title>
+
+<para
+>En aquest exercici heu de resoldre una tasca. Per tant, heu d'introduir la part íntegra d'una fracció, el numerador i el denominador. La dificultat de la tasca generada es pot ajustar mitjançant l'ús d'algunes de les opcions de l'esquerra. </para>
+
+<sect2 id="task_paras">
+<title
+>Opcions</title>
+<para
+>Hi ha diversos paràmetres que influeixen en la dificultat de les tasques generades:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Pregunta:</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Nombre mixt:</guilabel
+></term>
+<listitem
+><para
+>Estableix si les fraccions apareixeran o no en forma mixta en l'expressió de la pregunta (exemple de fracció mixta: 1 4/5 = 9/5).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Nombre de termes:</guilabel
+></term>
+<listitem
+><para
+>El nombre de termes (cada fracció per separat) que es presenta en cada tasca. Des de 2 fins a 5 termes.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Denominador màxim:</guilabel
+></term>
+<listitem
+><para
+>El nombre més gran que el &kbruch; pot proposar com a comú denominador en l'operació a calcular. Des d'un mínim de 10 fins a un màxim de 50.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Resposta:</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Nombre mixt:</guilabel
+></term>
+<listitem
+><para
+>Estableix si les fraccions apareixeran o no en forma mixta en la resposta (exemple de fracció mixta: 1 4/5 = 9/5).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Forma reduïda:</guilabel
+></term>
+<listitem
+><para
+>Marqueu-la per tal de forçar l'ús de la forma reduïda.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+<!-- Not in v. 4.2
+<varlistentry>
+<term
+><guilabel
+>Solution</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mixed number</guilabel
+></term>
+<listitem
+><para
+>Set if the fractions will appear as mixed numbers or not in the solution ( mixed number example: 1 4/5 = 9/5 ).</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+-->
+
+<varlistentry>
+<term
+><guilabel
+>Operacions:</guilabel
+></term>
+<listitem
+><para
+>Operacions que s'han d'utilitzar en la tasca: <guilabel
+>Suma:</guilabel
+>, <guilabel
+>Resta:</guilabel
+>, <guilabel
+>Multiplicació:</guilabel
+> o <guilabel
+>Divisió:</guilabel
+>. Marqueu totes les operacions que voleu utilitzar.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Després de canviar els paràmetres feu clic sobre el botó <guimenu
+>Nou</guimenu
+> en la barra d'eines per a generar una tasca i utilitzar els nous paràmetres. També podeu cridar aquesta acció des de la barra de menús amb <menuchoice
+><guimenu
+>Fitxer</guimenu
+><guimenuitem
+>Nou</guimenuitem
+></menuchoice
+>. Això restablirà les estadístiques. Per a evitar-ho, feu clic al botó <guibutton
+>Següent</guibutton
+> per a continuar amb els paràmetres canviats. </para>
+<!--<note>
+<para>
+Your selection of the maximum main denominator will be reset to a default
+value every time you change the number of terms. So you should change the
+number of terms first and then select the maximum main denominator.
+</para>
+</note
+>-->
+<!--para>
+If you have not solved the current task and call the <guimenu
+>New</guimenu>
+action, the task will be counted as not solved correctly. To
+prevent this you have to change the parameters after you solved the task but
+before generating a new one.
+</para-->
+<para
+>Els paràmetres triats es desaran i una vegada reiniciat el &kbruch;, les opcions escollides estaran disponibles. </para>
+</sect2>
+
+<sect2 id="exer_fraction_solve_task">
+<title
+>Resoldre les tasques</title>
+<para
+>Després d'haver resolt una tasca determinada necessitareu introduir el resultat en els tres quadres d'entrada. En el de l'esquerra introduïu la part íntegra de la fracció, en el superior el numerador i en l'inferior el denominador. Si l'opció <guilabel
+>Nombre mixt:</guilabel
+> a la secció <guilabel
+>Resposta:</guilabel
+> està sense marcar, l'entrada a l'esquerra per a la part íntegra de la fracció restarà oculta. A continuació, utilitzeu només les entrades del numerador i denominador. </para>
+<para
+>Si el resultat és negatiu, cal que escriviu el signe menys davant el numerador o el denominador. Si el resultat és 0, escriviu 0 en el numerador. Si el resultat té com a denominador 1, heu de deixar el quadre buit. </para>
+<para
+>Després d'escriure el resultat, hauríeu de fer clic al botó <guibutton
+>Comprova</guibutton
+> que hi ha a sota dels quadres d'entrada. El &kbruch; corregirà l'entrada i mostrarà el resultat correcte a la dreta sota la cadena de text <guilabel
+>Incorrecte!</guilabel
+>: </para>
+<screenshot>
+<screeninfo
+>Correcció del treball</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="checked.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Correcció del treball</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+<para
+>Aquesta tasca ha estat resolta incorrectament. El valor correcte es mostra en 2 formes diferents: El nombre normal (reduït) i el mixt. </para>
+<note>
+<para
+>Si marqueu la <guilabel
+>Forma reduïda:</guilabel
+> en les opcions de la secció <guilabel
+>Respostes:</guilabel
+>, després sempre haureu d'introduir el resultat reduït. El &kbruch; us mostrarà un missatge curt com en la captura de pantalla de sota, si introduïu el resultat correcte sense reducció. La resposta es comptarà com a incorrecta. </para>
+</note>
+<screenshot>
+<screeninfo
+>Resultat sense reduir</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="reduced.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Resultat sense reduir</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Per a continuar amb la següent tasca, feu clic al botó <guibutton
+>Següent</guibutton
+>. Si voleu canviar els paràmetres de la nova tasca, si us plau, feu-ho abans de fer clic al botó <guibutton
+>Següent</guibutton
+>. </para>
+</sect2>
+</sect1>
+
+<sect1 id="exer_compare">
+<title
+>Exercici de comparació</title>
+
+<para
+>En aquest exercici cal comparar 2 fraccions. Heu de triar la fracció més gran de les dues seleccionant el signe de comparació correcte. </para>
+
+<screenshot>
+<screeninfo
+>Exercici de comparació</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="compare.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Exercici de comparació</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Primerament, trieu el signe de comparació correcte. Després d'escollir-lo, el resultat es mostrarà a la dreta. Un quadrat verd amb <guilabel
+>Correcte!</guilabel
+> us dirà que la resposta és correcta, mentre que un quadrat vermell amb <guilabel
+>Incorrecte!</guilabel
+> indicarà que la resposta estava equivocada. Arribareu a la següent tasca fent clic al botó <guibutton
+>Següent</guibutton
+>. </para>
+
+<para
+>En aquest exercici només estarà habilitada l'opció <guilabel
+>Nombre mixt:</guilabel
+>. Si es marca, les fraccions apareixeran com a nombres mixtos.</para>
+</sect1>
+
+<sect1 id="exer_convert">
+<title
+>Exercici de conversió</title>
+
+<para
+>En aquest exercici heu de convertir un nombre en una fracció. Cal escriure el numerador i denominador. </para>
+
+<screenshot>
+<screeninfo
+>Exercici de conversió</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="convert.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Exercici de conversió</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>En el costat esquerre del signe igual en la captura de pantalla podeu veure un decimal. Això vol dir que la fracció, com a nombre decimal té una part de repetició. La part de repetició es marca amb una petita barra a sobre dels nombres. Aquests nombres es repeteixen fins a l'infinit. </para>
+
+<para
+>Després d'haver escrit el numerador i el denominador feu clic al botó <guibutton
+>Comprova</guibutton
+>. El &kbruch; comprovarà la vostra entrada i us presentarà el resultat correcte. A continuació ja podeu passar a la següent tasca fent clic al botó <guibutton
+>Següent</guibutton
+>. </para>
+
+<note>
+<para
+>No oblideu escriure el resultat reduït. En el cas què no ho feu, el resultat es comptarà com a erroni. </para>
+</note>
+
+<para
+>En aquest exercici totes les opcions estan inhabilitades.</para>
+
+</sect1>
+
+<sect1 id="exer_mixed">
+<title
+>Exercici de nombres mixtos</title>
+
+<para
+>En aquest exercici heu de convertir un nombre mixt en una fracció impròpia (ràtio) i viceversa. Heu d'escriure el numerador i el denominador de la fracció impròpia o un nombre enter, el numerador i el denominador del nombre mixt. </para>
+
+<screenshot>
+<screeninfo
+>Exercici de nombres mixtos</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="mixed.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Exercici de nombres mixtos</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>En el costat esquerre del signe igual en la captura de pantalla podeu veure un nombre decimal. Això vol dir que el nombre es compon d'un nombre enter i una fracció pròpia. Heu d'introduir la fracció impròpia igual (la part del numerador de la fracció d'aquesta és major o igual que la part del denominador). </para>
+
+<para
+>Després d'haver escrit el numerador i el denominador feu clic al botó <guibutton
+>Comprova</guibutton
+>. El &kbruch; comprovarà la vostra entrada i us presentarà el resultat correcte. A continuació ja podeu passar a la següent tasca fent clic al botó <guibutton
+>Següent</guibutton
+>. </para>
+
+<note>
+<para
+>No oblideu escriure el resultat reduït. En el cas què no ho feu, el resultat es comptarà com a erroni. </para>
+</note>
+
+<para
+>En aquest exercici totes les opcions estan inhabilitades.</para>
+
+</sect1>
+
+<sect1 id="exer_factorize">
+<title
+>Exercici de factorització</title>
+
+<para
+>En aquest exercici heu de descompondre en factors un nombre en els seus factors primers. Cal introduir tots els factors primers del nombre. </para>
+
+<screenshot>
+<screeninfo
+>Exercici de factorització</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="factorize.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Exercici de factorització</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Podeu afegir factors fent clic en els botons de factor primer. El signe <quote
+>x</quote
+> és inserit automàticament, quan feu clic al següent botó de factor primer. Podeu treure l'últim factor primer fent clic al botó <guibutton
+>Retrocés</guibutton
+>. </para>
+<para
+>Després d'introduir tots els factors primers feu clic sobre el botó <guibutton
+>Comprova</guibutton
+>. El &kbruch; comprovarà l'entrada i presentarà el resultat correcte. Després d'això podeu passar a la següent tasca fent clic sobre el botó <guibutton
+>Següent</guibutton
+>. </para>
+
+<para
+>En la captura de pantalla a la part de dalt d'aquesta pàgina podeu veure <quote
+>x</quote
+> entre els factors primers. Aquest signe és de multiplicació. El producte de tots els factors primers serà el nombre que voleu descompondre en factors. </para>
+
+<note>
+<para
+>Heu d'incorporar tots els factors primers, fins i tot quan un factor primer es repeteix diversos cops. Exemple: dels factors primers del nombre 18 heu d'escriure 2, 3 i 3. </para>
+</note>
+
+<para
+>En aquest exercici totes les opcions estan inhabilitades.</para>
+
+</sect1>
+
+<sect1 id="exer_percentage">
+<title
+>Exercici de percentatge</title>
+
+<para
+>En aquest exercici heu de respondre a algunes preguntes de percentatge.</para>
+
+<screenshot>
+<screeninfo
+>Exercici de percentatge</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="percentage.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Exercici de percentatge</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Una vegada hàgiu introduït la resposta, feu clic en el botó <guibutton
+>Comprova</guibutton
+>. El &kbruch; comprovarà la vostra entrada i presentarà el resultat correcte. Després d'això podreu passar a la tasca següent fent clic sobre el botó <guibutton
+>Següent</guibutton
+>. </para>
+
+<para
+>En aquest exercici totes les opcions estan inhabilitades.</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Crèdits i Llicència</title>
+<para
+>&kbruch;</para>
+<para
+>Programa i documentació Copyright, 2001-2011 Sebastian Stein <email
+>seb.kde@hpfsc.de</email
+> </para>
+
+<!-- needs update ???-->
+
+<para
+>Moltes gràcies a:</para>
+
+<itemizedlist>
+	<listitem
+><para
+>&Anne-Marie.Mahfouf; per coordinar el Projecte educatiu del &kde;</para
+></listitem>
+	<listitem
+><para
+>Klas Kalass per l'ajuda en el disseny de la interfície</para
+></listitem>
+	<listitem
+><para
+>Eva Brucherseifer per escriure el <application
+>KMath</application
+> (la &IGU; del &kbruch; està basada en aquest treball)</para
+></listitem>
+	<listitem
+><para
+>Dominique Devriese per la correcció d'errors</para
+></listitem>
+	<listitem
+><para
+><ulink url="http://www.net-tex.de/"
+>Stefan Schumacher</ulink
+> per provar cada nova versió</para
+></listitem>
+	<listitem
+><para
+><ulink url="https://www.guckes.net/"
+>Sven Guckes</ulink
+> per provar el text de la interfície (el qual ha estat eliminat)</para
+></listitem>
+	<listitem
+><para
+>&David.Faure; per ajudar amb el <acronym
+>CVS</acronym
+> i el Bugzilla del &kde;</para
+></listitem>
+	<listitem
+><para
+>&Robert.Gogolok; per ajudar amb el <acronym
+>CVS</acronym
+> del &kde;</para
+></listitem>
+	<listitem
+><para
+>John Kesson ha estat l'encarregat de la correcció del primer manual</para
+></listitem>
+</itemizedlist>
+
+<para
+>Disseny de la nova interfície i millores d'usabilitat per al &kde; 4.1:</para>
+<itemizedlist>
+<listitem
+><para
+>Paulo Cattai <email
+>paulo.cattai@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Danilo Balzaque <email
+>danilo.balzaque@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Roberto Cunha <email
+>roberto.cunha@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tadeu Araujo <email
+>tadeu.araujo@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tiago Porangaba <email
+>tiago.porangaba@ltia.fc.unesp.br</email
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Traductor de la documentació: David Sanchez Garcia, Albert Astals Cid <email
+>aacid@kde.org</email
+> i &credits.Antoni.Bella;</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->

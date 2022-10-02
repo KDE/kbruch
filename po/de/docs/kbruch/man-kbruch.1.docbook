@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % German "INCLUDE">
+]>
+<!--
+SPDX-FileCopyrightText: 2005 Lauri Watts
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>&kbruch;-Benutzerhandbuch</title>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<date
+>2020-12-21</date>
+<releaseinfo
+>Anwendungen 20.12</releaseinfo>
+<productname
+>KDE-Anwendungen</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kbruch</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kbruch</command
+></refname>
+<refpurpose
+>Rechnen mit Brüchen und Prozenten lernen</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kbruch</command
+> <arg choice="opt"
+>Optionen</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Beschreibung</title>
+<para
+>&kbruch; ist ein kleines Programm, um das Rechnen mit Brüchen und Prozenten zu üben. Für diesen Zweck werden verschiedene Übungen angeboten. Das Programm überprüft die Eingaben des Benutzers und gibt entsprechende Rückmeldungen.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Siehe auch</title>
+<para
+>Weitere ausführliche Dokumentation finden Sie unter <ulink url="help:/kbruch"
+>help:/kbruch</ulink
+> (geben Sie diese &URL; entweder im &konqueror; ein oder starten Sie <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kbruch</parameter
+></userinput
+>).</para>
+<para
+>Weitere Informationen finden Sie auf der <ulink url="https://edu.kde.org/kbruch/"
+> &kde;-Edu-Webseite</ulink
+>.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Autoren</title>
+<para
+>&kbruch; wurde von <personname
+><firstname
+>Sebastian</firstname
+><surname
+>Stein</surname
+></personname
+><email
+>seb.kde@hpfsc.de</email
+> geschrieben.</para>
+</refsect1>
+
+</refentry>

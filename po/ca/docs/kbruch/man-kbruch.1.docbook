@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Catalan  "INCLUDE">
+]>
+<!--
+SPDX-FileCopyrightText: 2005 Lauri Watts
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Manual d'usuari del &kbruch;</title>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<date
+>21 de desembre de 2020</date>
+<releaseinfo
+>Aplicacions 20.12</releaseinfo>
+<productname
+>Aplicacions del KDE</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kbruch</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kbruch</command
+></refname>
+<refpurpose
+>Aprendre càlcul de fraccions i percentatges i percentatges</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kbruch</command
+> <arg choice="opt"
+>opcions</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descripció</title>
+<para
+>El &kbruch; és un programa senzill per a practicar el càlcul amb fraccions i percentatges. Es proporcionen diferents exercicis amb aquesta finalitat. El programa comprova l'entrada de l'usuari i proporciona informació.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Vegeu també</title>
+<para
+>Hi ha disponible documentació d'usuari més detallada des de <ulink url="help:/kbruch"
+>help:/kbruch</ulink
+> (podeu emprar aquest &URL; al &konqueror; o bé executar <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kbruch</parameter
+></userinput
+>).</para>
+<para
+>També hi ha més informació disponible al <ulink url="https://edu.kde.org/kbruch/?site_locale=ca"
+>Lloc web del &kde;du</ulink
+></para>
+</refsect1>
+
+<refsect1>
+<title
+>Autors</title>
+<para
+>El &kbruch; ha estat escrit per en <personname
+><firstname
+>Sebastian</firstname
+><surname
+>Stein</surname
+></personname
+> <email
+>seb.kde@hpfsc.de</email
+></para>
+</refsect1>
+
+</refentry>
