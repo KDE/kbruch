@@ -58,4 +58,4 @@ install( FILES kbruchui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUIDIR}/kbruch )
 install( FILES AppMenuWidgetui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUIDIR}/kbruch )
 install( FILES FractionRingWidgetui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUIDIR}/kbruch )
 
-ecm_install_icons( ICONS 16-apps-kbruch.png 22-apps-kbruch.png 32-apps-kbruch.png 48-apps-kbruch.png 64-apps-kbruch.png sc-apps-kbruch.svgz DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor )
+ecm_install_icons( ICONS 16-apps-kbruch.png 22-apps-kbruch.png 32-apps-kbruch.png 48-apps-kbruch.png 64-apps-kbruch.png 128-apps-kbruch.png sc-apps-kbruch.svgz DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor )
