@@ -48,16 +48,6 @@ Ratio::Ratio(int pnumerator, int pdenominator, bool reduce_fraction) : m_numerat
         reduce();
 }
 
-/* copy constructor */
-Ratio::Ratio(const Ratio & copy_ratio)
-{
-#ifdef DEBUG
-    qDebug() << "copy constructor ratio";
-#endif
-    setNumerator(copy_ratio.numerator(), false);
-    setDenominator(copy_ratio.denominator(), false);
-}
-
 /* destructor */
 Ratio::~Ratio()
 {

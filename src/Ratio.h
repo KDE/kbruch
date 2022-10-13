@@ -27,9 +27,6 @@ public:
     /** constructor with reduce option */
     Ratio(int pnumerator, int pdenominator, bool reduce_fraction);
 
-    /** copy constructor */
-    Ratio(const Ratio & copy_ratio);
-
     /** destructor */
     ~Ratio();
 
