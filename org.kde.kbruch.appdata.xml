@@ -26,6 +26,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="hu">KBruch</name>
   <name xml:lang="id">KBruch</name>
   <name xml:lang="it">KBruch</name>
+  <name xml:lang="ka">KBruch</name>
   <name xml:lang="ko">KBruch</name>
   <name xml:lang="lt">KBruch</name>
   <name xml:lang="nds">KBruch</name>
@@ -61,6 +62,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="hu">Gyakorlat törtekkel</summary>
   <summary xml:lang="id">Latihan Fraksi</summary>
   <summary xml:lang="it">Esercizi con le frazioni</summary>
+  <summary xml:lang="ka">ვარჯიშის ფრაქციები</summary>
   <summary xml:lang="ko">분수 연습</summary>
   <summary xml:lang="lt">Treniruokitės trupmenas</summary>
   <summary xml:lang="nds">Brookreken öven</summary>
@@ -128,6 +130,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="hu">Szolgáltatások:</p>
     <p xml:lang="id">Fitur:</p>
     <p xml:lang="it">Funzionalità:</p>
+    <p xml:lang="ka">თვისებები:</p>
     <p xml:lang="ko">기능:</p>
     <p xml:lang="lt">Ypatybės:</p>
     <p xml:lang="nds">Markmalen:</p>
