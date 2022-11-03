@@ -19,6 +19,7 @@
 #include <QLocale>
 #include <QPushButton>
 #include <QFrame>
+#include <QRandomGenerator>
 
 #ifdef DEBUG
 #include <QDebug>
@@ -196,7 +197,7 @@ void ExerciseConvert::createTask()
 {
     // the tasks are hardcoded here; there are some algorithms to convert
     // rational numbers to fractions, but it is not worth the effort here
-    switch (int ((double(qrand()) / RAND_MAX) * 19 )) {
+    switch (QRandomGenerator::global()->bounded(19)) {
     case  0 :   m_number = QLocale().toString(0.5, 'f', 1);
         m_periodStart = 2;
         m_periodLength = 0;

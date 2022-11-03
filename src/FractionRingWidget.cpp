@@ -26,6 +26,7 @@
 #include <QString>
 #include <QTextEdit>
 #include <QWidgetAction>
+#include <QRandomGenerator>
 
 #ifdef DEBUG
 #include <QDebug>
@@ -402,16 +403,16 @@ void FractionRingWidget::NewTask()
 
 void FractionRingWidget::resetFraction(bool flag = true)
 {
-    int denominator = int ((double(qrand()) / RAND_MAX) * 5) + 2;
-    int numerator = int ((double(qrand()) / RAND_MAX) * (denominator - 1)) + 1;
+    int denominator = QRandomGenerator::global()->bounded(5) + 2;
+    int numerator = QRandomGenerator::global()->bounded(denominator - 1) + 1;
 
     rLeft = Ratio(numerator, denominator, false);
 
-    int denominator2 = int ((double(qrand()) / RAND_MAX) * 5) + 2;
+    int denominator2 = QRandomGenerator::global()->bounded(5) + 2;
     while (denominator2 == denominator) {
-        denominator2 = int ((double(qrand()) / RAND_MAX) * 5) + 2;
+        denominator2 = QRandomGenerator::global()->bounded(5) + 2;
     }
-    int numerator2 = int ((double(qrand()) / RAND_MAX) * (denominator2 - 1)) + 1;
+    int numerator2 = QRandomGenerator::global()->bounded(denominator2 - 1) + 1;
     rRight = Ratio(numerator2, denominator2, false);
 
     multLeft = 1;

@@ -18,6 +18,7 @@
 #include <QIntValidator>
 #include <QPushButton>
 #include <QWidget>
+#include <QRandomGenerator>
 
 #ifdef DEBUG
 #include <QDebug>
@@ -203,13 +204,13 @@ void ExerciseMixedNumbers::createTask()
     int denominator = 1;
     do {
         // numerator should be between 1..15
-        numerator = int ((double(qrand()) / RAND_MAX) * 15 + 1);
+        numerator = QRandomGenerator::global()->bounded(15) + 1;
 
         // denominator should be between 1..(numerator-1)
-        denominator = int ((double(qrand()) / RAND_MAX) * numerator);
+        denominator = QRandomGenerator::global()->bounded(numerator);
 
         // eventually make ratio negative
-        if (double(qrand()) / RAND_MAX >= 0.5) {
+        if (QRandomGenerator::global()->bounded(2) == 1) {
             numerator *= -1;
         }
         tmpRatio.setRatio(numerator, denominator);

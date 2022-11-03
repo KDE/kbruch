@@ -12,13 +12,13 @@
 
 #include <cmath>
 #include <ctime>
+#include <QRandomGenerator>
 
 #include <QDebug>
 
 /** constructor of class task */
 Task::Task()
 {
-    qsrand(time(nullptr));
 #ifdef DEBUG
     qDebug() << "constructor task";
 #endif
@@ -410,7 +410,7 @@ unsigned short Task::make_operation(short padd_add, short padd_div, short padd_m
             op_vector.push_back(SUB);
     } else {
         do {
-            operations = short((double(qrand()) / RAND_MAX) * 4);
+            operations = QRandomGenerator::global()->bounded(4);
             switch (operations) {
             case ADD:
                 if (padd_add == YES) {
@@ -487,7 +487,7 @@ int Task::make_main_dn(unsigned int pmax_md, unsigned short max_product_length)
     /* find a main denominator in the given limits by pmax_md and check
      * if the main denominator has enough prime factors */
     do {
-        denominator = int (((double(qrand()) / RAND_MAX) * pmax_md) + 1);
+        denominator = QRandomGenerator::global()->bounded(pmax_md) + 1;
     } while ((pmax_md < 1) ||
              (prim_factor_nr(denominator) < max_product_length));
 
@@ -542,8 +542,7 @@ void Task::make_numerators(int main_denominator, short pnr_ratios)
 
     /* add a new ratio to the task and compute the numerator randomly */
     for (short tmpcounter = 0; tmpcounter < pnr_ratios; tmpcounter++) {
-        (*this).add_ratio(int ((double(qrand()) / RAND_MAX)
-                               * max_numerator) + 1, 1);
+        (*this).add_ratio(QRandomGenerator::global()->bounded(max_numerator) + 1, 1);
     }
     return;
 }
@@ -577,7 +576,7 @@ void Task::make_denominators(int main_denominator, short pmax_md,
     for (ratio_pointer = ratio_vector.begin();
             ratio_pointer != ratio_vector.end(); ++ratio_pointer) {
         do {
-            tmp_deno = int ((double(qrand()) / RAND_MAX) * pmax_md) + 1;
+            tmp_deno = QRandomGenerator::global()->bounded(pmax_md) + 1;
         } while (main_denominator % tmp_deno != 0);
         (*ratio_pointer).setDenominator(tmp_deno);
     }
@@ -606,8 +605,7 @@ void Task::make_denominators(int main_denominator, short pmax_md,
                     /* the prim_fac_vector is sorted, but we do not want the
                      * factors in this sorted way as our denominators;
                      * so we choose one randomly */
-                    next_fac = (unsigned short)((double(qrand()) / RAND_MAX)
-                                                * unused_fac);
+                    next_fac = QRandomGenerator::global()->bounded(unused_fac);
                     tmp_counter = 0;
 
                     /* check the prime factors, if they are unused */
@@ -641,8 +639,7 @@ void Task::make_denominators(int main_denominator, short pmax_md,
                     /* the prim_fac_vector is sorted, but we do not want the
                      * factors in this sorted way as our denominators;
                      * so we choose one randomly */
-                    next_fac = (unsigned short)((double(qrand()) / RAND_MAX)
-                                                * unused_fac);
+                    next_fac = QRandomGenerator::global()->bounded(unused_fac);
                     tmp_counter = 0;
 
                     /* check the prime factors, if they are unused */
