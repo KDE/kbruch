@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-01 00:41+0000\n"
+"POT-Creation-Date: 2022-11-04 00:41+0000\n"
 "PO-Revision-Date: 2013-03-29 12:46+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -47,7 +47,7 @@ msgstr "Gyakorlás"
 msgid "Open learning KBruch"
 msgstr "Tanuló KBruch megnyitása"
 
-#: AppMenuWidget.cpp:123 FractionRingWidget.cpp:51
+#: AppMenuWidget.cpp:123 FractionRingWidget.cpp:52
 #, kde-format
 msgid "Learning"
 msgstr "Tanulás"
@@ -58,55 +58,55 @@ msgstr "Tanulás"
 msgid "&File"
 msgstr "&Fájl"
 
-#: ExerciseCompare.cpp:83
+#: ExerciseCompare.cpp:84
 #, kde-format
 msgid ">"
 msgstr ">"
 
-#: ExerciseCompare.cpp:87
+#: ExerciseCompare.cpp:88
 #, kde-format
 msgid "Click on this button to select the 'greater than' sign."
 msgstr "Kattints erre a gombra a „nagyobb mint” jel kiválasztásához."
 
-#: ExerciseCompare.cpp:92
+#: ExerciseCompare.cpp:93
 #, kde-format
 msgid "<"
 msgstr "<"
 
-#: ExerciseCompare.cpp:96
+#: ExerciseCompare.cpp:97
 #, kde-format
 msgid "Click on this button to select the 'less than' sign."
 msgstr "Kattints erre a gombra a „kisebb mint” jel kiválasztásához."
 
-#: ExerciseCompare.cpp:101
+#: ExerciseCompare.cpp:102
 #, kde-format
 msgid "="
 msgstr "="
 
-#: ExerciseCompare.cpp:105
+#: ExerciseCompare.cpp:106
 #, kde-format
 msgid "Click on this button to select the 'equals' sign."
 msgstr "Kattints erre a gombra az „egyenlő” jel kiválasztásához."
 
-#: ExerciseCompare.cpp:117 ExerciseCompare.cpp:279 ExerciseConvert.cpp:134
-#: ExerciseFactorize.cpp:160 ExerciseMixedNumbers.cpp:157
-#: ExercisePercentage.cpp:116 TaskView.cpp:152
+#: ExerciseCompare.cpp:118 ExerciseCompare.cpp:280 ExerciseConvert.cpp:135
+#: ExerciseFactorize.cpp:161 ExerciseMixedNumbers.cpp:158
+#: ExercisePercentage.cpp:117 TaskView.cpp:152
 #, kde-format
 msgid "&Skip"
 msgstr "Kihagyá&s"
 
-#: ExerciseCompare.cpp:118 ExerciseConvert.cpp:135 ExerciseFactorize.cpp:161
-#: ExerciseMixedNumbers.cpp:158 ExercisePercentage.cpp:117
+#: ExerciseCompare.cpp:119 ExerciseConvert.cpp:136 ExerciseFactorize.cpp:162
+#: ExerciseMixedNumbers.cpp:159 ExercisePercentage.cpp:118
 #, kde-format
 msgid "Click on this button to skip this question."
 msgstr "Kattints erre a gombra a kérdés kihagyásához."
 
-#: ExerciseCompare.cpp:133 MainQtWidget.cpp:502
+#: ExerciseCompare.cpp:134 MainQtWidget.cpp:502
 #, kde-format
 msgid "In this exercise you have to compare two given fractions."
 msgstr "Ebben a feladatban két adott törtet kell összehasonlítani."
 
-#: ExerciseCompare.cpp:134
+#: ExerciseCompare.cpp:135
 #, kde-format
 msgid ""
 "In this exercise you have to compare two given fractions and choose the "
@@ -115,40 +115,40 @@ msgstr ""
 "Ebben a feladatban két adott törtet kell összehasonlítani és kiválasztani a "
 "helyes relációs jelet."
 
-#: ExerciseCompare.cpp:245 ExerciseCompare.cpp:246 ExerciseCompare.cpp:247
+#: ExerciseCompare.cpp:246 ExerciseCompare.cpp:247 ExerciseCompare.cpp:248
 #, kde-format
 msgid "Click on this button to check your result."
 msgstr "Kattints erre a gombra az eredmény ellenőrzéséhez."
 
-#: ExerciseCompare.cpp:294 ExerciseCompare.cpp:308 ExerciseCompare.cpp:322
+#: ExerciseCompare.cpp:295 ExerciseCompare.cpp:309 ExerciseCompare.cpp:323
 #, kde-format
 msgid "&Next"
 msgstr "Kö&vetkező"
 
-#: ExerciseConvert.cpp:90 TaskView.cpp:108
+#: ExerciseConvert.cpp:91 TaskView.cpp:108
 #, kde-format
 msgid "Enter the numerator of your result"
 msgstr "Add meg a válasz számlálóját"
 
-#: ExerciseConvert.cpp:107 TaskView.cpp:125
+#: ExerciseConvert.cpp:108 TaskView.cpp:125
 #, kde-format
 msgid "Enter the denominator of your result"
 msgstr "Add meg a válasz nevezőjét"
 
-#: ExerciseConvert.cpp:124 ExerciseConvert.cpp:173 ExerciseConvert.cpp:408
-#: ExerciseFactorize.cpp:169 ExerciseFactorize.cpp:274
-#: ExerciseFactorize.cpp:501 ExerciseMixedNumbers.cpp:147
-#: ExerciseMixedNumbers.cpp:188 ExerciseMixedNumbers.cpp:245
-#: ExercisePercentage.cpp:106 ExercisePercentage.cpp:160
-#: ExercisePercentage.cpp:386 TaskView.cpp:142 TaskView.cpp:247
+#: ExerciseConvert.cpp:125 ExerciseConvert.cpp:174 ExerciseConvert.cpp:409
+#: ExerciseFactorize.cpp:170 ExerciseFactorize.cpp:275
+#: ExerciseFactorize.cpp:502 ExerciseMixedNumbers.cpp:148
+#: ExerciseMixedNumbers.cpp:189 ExerciseMixedNumbers.cpp:246
+#: ExercisePercentage.cpp:107 ExercisePercentage.cpp:161
+#: ExercisePercentage.cpp:387 TaskView.cpp:142 TaskView.cpp:247
 #: TaskView.cpp:441
 #, kde-format
 msgid "&Check"
 msgstr "Elle&nőrzés"
 
-#: ExerciseConvert.cpp:126 ExerciseConvert.cpp:370 ExerciseFactorize.cpp:170
-#: ExerciseFactorize.cpp:399 ExerciseMixedNumbers.cpp:149
-#: ExercisePercentage.cpp:108 ExercisePercentage.cpp:350
+#: ExerciseConvert.cpp:127 ExerciseConvert.cpp:371 ExerciseFactorize.cpp:171
+#: ExerciseFactorize.cpp:400 ExerciseMixedNumbers.cpp:150
+#: ExercisePercentage.cpp:109 ExercisePercentage.cpp:351
 #, kde-format
 msgid ""
 "Click on this button to check your result. The button will not work if you "
@@ -157,12 +157,12 @@ msgstr ""
 "Kattints erre a gombra az eredmény ellenőrzéséhez. A gomb csak akkor "
 "nyomható meg, ha már beírtad a választ."
 
-#: ExerciseConvert.cpp:145 MainQtWidget.cpp:508
+#: ExerciseConvert.cpp:146 MainQtWidget.cpp:508
 #, kde-format
 msgid "In this exercise you have to convert a number into a fraction."
 msgstr "Ebben a feladatban egy számot törtté kell alakítani."
 
-#: ExerciseConvert.cpp:146
+#: ExerciseConvert.cpp:147
 #, kde-format
 msgid ""
 "In this exercise you have to convert a given number into a fraction by "
@@ -171,12 +171,12 @@ msgstr ""
 "Ebben a feladatban egy megadott számot kell törtté alakítani a számláló és a "
 "nevező megadásával. A választ mindig egyszerűsített alakban kell beírni!"
 
-#: ExerciseConvert.cpp:308 ExerciseFactorize.cpp:348 ExercisePercentage.cpp:316
+#: ExerciseConvert.cpp:309 ExerciseFactorize.cpp:349 ExercisePercentage.cpp:317
 #, kde-format
 msgid "Click on this button to get to the next question."
 msgstr "Kattints erre a gombra, ha a következő kérdésre szeretnél váltani."
 
-#: ExerciseConvert.cpp:353
+#: ExerciseConvert.cpp:354
 #, kde-format
 msgid ""
 "You entered a 0 as the denominator. This means division by zero, which is "
@@ -185,7 +185,7 @@ msgstr ""
 "Nullát adtál meg nevezőnek. Ez nullával osztást eredményezne, ami nem "
 "megengedett. A program úgy veszi, hogy hibásan oldottad meg a kérdést."
 
-#: ExerciseConvert.cpp:359
+#: ExerciseConvert.cpp:360
 #, kde-format
 msgid ""
 "You entered the correct result, but not reduced.\n"
@@ -196,108 +196,108 @@ msgstr ""
 "Az eredményt mindig egyszerűsített formában kell megadni. Ez a válasz nem "
 "fogadható el helyesnek."
 
-#: ExerciseConvert.cpp:404 ExerciseFactorize.cpp:497
-#: ExerciseMixedNumbers.cpp:286 ExercisePercentage.cpp:382 TaskView.cpp:437
+#: ExerciseConvert.cpp:405 ExerciseFactorize.cpp:498
+#: ExerciseMixedNumbers.cpp:287 ExercisePercentage.cpp:383 TaskView.cpp:437
 #, kde-format
 msgid "N&ext"
 msgstr "Köv&etkező"
 
-#: ExerciseFactorize.cpp:153
+#: ExerciseFactorize.cpp:154
 #, kde-format
 msgid "Backspace"
 msgstr "Backspace"
 
-#: ExerciseFactorize.cpp:197
+#: ExerciseFactorize.cpp:198
 #, kde-format
 msgid "2"
 msgstr "2"
 
-#: ExerciseFactorize.cpp:198
+#: ExerciseFactorize.cpp:199
 #, kde-format
 msgid "3"
 msgstr "3"
 
-#: ExerciseFactorize.cpp:199
+#: ExerciseFactorize.cpp:200
 #, kde-format
 msgid "5"
 msgstr "5"
 
-#: ExerciseFactorize.cpp:200
+#: ExerciseFactorize.cpp:201
 #, kde-format
 msgid "7"
 msgstr "7"
 
-#: ExerciseFactorize.cpp:201
+#: ExerciseFactorize.cpp:202
 #, kde-format
 msgid "11"
 msgstr "11"
 
-#: ExerciseFactorize.cpp:202
+#: ExerciseFactorize.cpp:203
 #, kde-format
 msgid "13"
 msgstr "13"
 
-#: ExerciseFactorize.cpp:203
+#: ExerciseFactorize.cpp:204
 #, kde-format
 msgid "17"
 msgstr "17"
 
-#: ExerciseFactorize.cpp:204
+#: ExerciseFactorize.cpp:205
 #, kde-format
 msgid "19"
 msgstr "19"
 
-#: ExerciseFactorize.cpp:215
+#: ExerciseFactorize.cpp:216
 #, kde-format
 msgid "Add prime factor 2."
 msgstr "2-es prímtényező hozzáadása."
 
-#: ExerciseFactorize.cpp:216
+#: ExerciseFactorize.cpp:217
 #, kde-format
 msgid "Add prime factor 3."
 msgstr "3-as prímtényező hozzáadása."
 
-#: ExerciseFactorize.cpp:217
+#: ExerciseFactorize.cpp:218
 #, kde-format
 msgid "Add prime factor 5."
 msgstr "5-ös prímtényező hozzáadása."
 
-#: ExerciseFactorize.cpp:218
+#: ExerciseFactorize.cpp:219
 #, kde-format
 msgid "Add prime factor 7."
 msgstr "7-es prímtényező hozzáadása."
 
-#: ExerciseFactorize.cpp:219
+#: ExerciseFactorize.cpp:220
 #, kde-format
 msgid "Add prime factor 11."
 msgstr "11-es prímtényező hozzáadása."
 
-#: ExerciseFactorize.cpp:220
+#: ExerciseFactorize.cpp:221
 #, kde-format
 msgid "Add prime factor 13."
 msgstr "13-as prímtényező hozzáadása."
 
-#: ExerciseFactorize.cpp:221
+#: ExerciseFactorize.cpp:222
 #, kde-format
 msgid "Add prime factor 17."
 msgstr "17-es prímtényező hozzáadása."
 
-#: ExerciseFactorize.cpp:222
+#: ExerciseFactorize.cpp:223
 #, kde-format
 msgid "Add prime factor 19."
 msgstr "19-es prímtényező hozzáadása."
 
-#: ExerciseFactorize.cpp:227
+#: ExerciseFactorize.cpp:228
 #, kde-format
 msgid "Removes the last entered prime factor."
 msgstr "Eltávolítja az utoljára hozzáadott prímtényezőt."
 
-#: ExerciseFactorize.cpp:244 MainQtWidget.cpp:520
+#: ExerciseFactorize.cpp:245 MainQtWidget.cpp:520
 #, kde-format
 msgid "In this exercise you have to factorize a given number."
 msgstr "Ebben a feladatban a megadott számot faktorizálni kell."
 
-#: ExerciseFactorize.cpp:245
+#: ExerciseFactorize.cpp:246
 #, kde-format
 msgid ""
 "In this exercise you have to factorize a given number. You have to enter all "
@@ -313,22 +313,22 @@ msgstr ""
 "összes tényezőt be kell írni, az ismétlődőket is! Kattints a „Backspace” "
 "gombra az utoljára hozzáadott prímtényező eltávolításához."
 
-#: ExerciseMixedNumbers.cpp:95 TaskView.cpp:96
+#: ExerciseMixedNumbers.cpp:96 TaskView.cpp:96
 #, kde-format
 msgid "Enter the integer part of the fraction"
 msgstr "Add meg a tört egész részét"
 
-#: ExerciseMixedNumbers.cpp:109
+#: ExerciseMixedNumbers.cpp:110
 #, kde-format
 msgid "Enter the numerator of the fraction"
 msgstr "Add meg a tört számlálóját"
 
-#: ExerciseMixedNumbers.cpp:126
+#: ExerciseMixedNumbers.cpp:127
 #, kde-format
 msgid "Enter the denominator of the fraction"
 msgstr "Add meg a tört nevezőjét"
 
-#: ExerciseMixedNumbers.cpp:164 MainQtWidget.cpp:514
+#: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:514
 #, kde-format
 msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
@@ -336,7 +336,7 @@ msgid ""
 msgstr ""
 "Ebben a feladatban egy vegyes számot hányadossá kell alakítani és viszont."
 
-#: ExerciseMixedNumbers.cpp:165
+#: ExerciseMixedNumbers.cpp:166
 #, kde-format
 msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
@@ -345,7 +345,7 @@ msgstr ""
 "Ebben a feladatban egy vegyes számot hányadossá kell alakítani és viszont. A "
 "választ mindig egyszerűsített alakban kell beírni!"
 
-#: ExerciseMixedNumbers.cpp:244 TaskView.cpp:144 TaskView.cpp:383
+#: ExerciseMixedNumbers.cpp:245 TaskView.cpp:144 TaskView.cpp:383
 #, kde-format
 msgid ""
 "Click this button to check your result. The button will not work if you have "
@@ -354,12 +354,12 @@ msgstr ""
 "Kattints erre a gombra az eredmény ellenőrzéséhez. A gomb csak akkor "
 "nyomható meg, ha már beírtad a választ."
 
-#: ExerciseMixedNumbers.cpp:285 TaskView.cpp:267
+#: ExerciseMixedNumbers.cpp:286 TaskView.cpp:267
 #, kde-format
 msgid "Click this button to get the next question."
 msgstr "Kattints erre a gombra, ha a következő kérdésre szeretnél váltani."
 
-#: ExerciseMixedNumbers.cpp:339 TaskView.cpp:356
+#: ExerciseMixedNumbers.cpp:340 TaskView.cpp:356
 #, kde-format
 msgid ""
 "You entered 0 as the denominator. This means division by zero, which is not "
@@ -368,7 +368,7 @@ msgstr ""
 "Nullát adtál meg nevezőnek. Ez nullával osztást eredményezne, ami nem "
 "megengedett. A program úgy veszi, hogy hibásan oldottad meg a kérdést."
 
-#: ExerciseMixedNumbers.cpp:346 TaskView.cpp:366
+#: ExerciseMixedNumbers.cpp:347 TaskView.cpp:366
 #, kde-format
 msgid ""
 "You entered the correct result, but not in the mixed number notation. This "
@@ -377,7 +377,7 @@ msgstr ""
 "A helyes értéket adtad meg, de nem vegyes számként. Ez a válasz nem "
 "fogadható el helyesnek."
 
-#: ExerciseMixedNumbers.cpp:349 TaskView.cpp:363
+#: ExerciseMixedNumbers.cpp:350 TaskView.cpp:363
 #, kde-format
 msgid ""
 "You entered the correct result, but not reduced. This question will be "
@@ -386,28 +386,28 @@ msgstr ""
 "A helyes értéket adtad meg, de nem egyszerűsített formában. Ez a válasz nem "
 "fogadható el helyesnek."
 
-#: ExercisePercentage.cpp:83 ExercisePercentage.cpp:367
+#: ExercisePercentage.cpp:84 ExercisePercentage.cpp:368
 #, kde-format
 msgctxt "%1 percentage of %2"
 msgid "%1% of %2 = "
 msgstr "%2 %1%-a = "
 
-#: ExercisePercentage.cpp:90
+#: ExercisePercentage.cpp:91
 #, kde-format
 msgid "Enter the result of percentage question"
 msgstr "Add meg a százalékszámítás eredményét"
 
-#: ExercisePercentage.cpp:131 MainQtWidget.cpp:526
+#: ExercisePercentage.cpp:132 MainQtWidget.cpp:526
 #, kde-format
 msgid "In this exercise you have to work with percentage questions."
 msgstr "Ebben a feladatban egy adott százalékszámítási kérdést kell megoldani."
 
-#: ExercisePercentage.cpp:132
+#: ExercisePercentage.cpp:133
 #, kde-format
 msgid "In this exercise you have to enter the fraction of the given number."
 msgstr "Ebben a feladatban a megadott számot törtrészét kell megadni."
 
-#: FractionRingWidget.cpp:103 FractionRingWidget.cpp:108
+#: FractionRingWidget.cpp:104 FractionRingWidget.cpp:109
 #, kde-format
 msgctxt ""
 "Expands the ratio shown on the left by the given factor. Please note, "
@@ -416,36 +416,36 @@ msgctxt ""
 msgid "Expand"
 msgstr "Bővítés"
 
-#: FractionRingWidget.cpp:132 MainQtWidget.cpp:481
+#: FractionRingWidget.cpp:133 MainQtWidget.cpp:481
 #, kde-format
 msgid "New"
 msgstr "Új"
 
-#: FractionRingWidget.cpp:185 MainQtWidget.cpp:531
+#: FractionRingWidget.cpp:186 MainQtWidget.cpp:531
 #, kde-format
 msgctxt "@action opens a new question"
 msgid "&New"
 msgstr "Ú&j"
 
-#: FractionRingWidget.cpp:193 MainQtWidget.cpp:551
+#: FractionRingWidget.cpp:194 MainQtWidget.cpp:551
 #, kde-format
 msgctxt "@action go to the main screen"
 msgid "Back"
 msgstr "Vissza"
 
-#: FractionRingWidget.cpp:200
+#: FractionRingWidget.cpp:201
 #, kde-format
 msgctxt "@action opens hint"
 msgid "Hint"
 msgstr "Tipp"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: FractionRingWidget.cpp:228 MainQtWidget.cpp:806 taskcolorsbase.ui:16
+#: FractionRingWidget.cpp:229 MainQtWidget.cpp:806 taskcolorsbase.ui:16
 #, kde-format
 msgid "Colors"
 msgstr "Színek"
 
-#: FractionRingWidget.cpp:348 FractionRingWidget.cpp:376
+#: FractionRingWidget.cpp:349 FractionRingWidget.cpp:377
 #, kde-format
 msgid ""
 "Now the parts of the inside ring and outside ring have the same size, and we "
@@ -460,12 +460,12 @@ msgstr ""
 "Ezt a közös nevező keresésének hívják. A közös nevező egyenlő részekre "
 "osztja a gyűrűt."
 
-#: FractionRingWidget.cpp:354 FractionRingWidget.cpp:382
+#: FractionRingWidget.cpp:355 FractionRingWidget.cpp:383
 #, kde-format
 msgid "There is a smaller main denominator. Can you find it?"
 msgstr "Van egy kisebb közös nevező. Megtalálod?"
 
-#: FractionRingWidget.cpp:359
+#: FractionRingWidget.cpp:360
 #, kde-format
 msgid ""
 "You have just expanded the first fraction by %1. Our main goal is to make "
@@ -476,7 +476,7 @@ msgstr ""
 "ugyanolyan méretű legyen. Próbálja meg bővíteni az első törtet ennyivel: %2, "
 "és a második törtet pedig ennyivel: %3."
 
-#: FractionRingWidget.cpp:387
+#: FractionRingWidget.cpp:388
 #, kde-format
 msgid ""
 "You have just expanded the second fraction by %1. Our main goal is to make "
@@ -487,7 +487,7 @@ msgstr ""
 "ugyanolyan méretű legyen. Próbálja meg bővíteni az első törtet ennyivel: %2, "
 "és a második törtet pedig ennyivel: %3."
 
-#: FractionRingWidget.cpp:425
+#: FractionRingWidget.cpp:426
 #, kde-format
 msgctxt "Inserted as %1 in the message below."
 msgid "%2 of 1 painted part."
@@ -495,7 +495,7 @@ msgid_plural "%2 of %1 painted parts."
 msgstr[0] "%2 / %1 a festett rész értéke."
 msgstr[1] "%2 / %1 a festett részek értéke."
 
-#: FractionRingWidget.cpp:428
+#: FractionRingWidget.cpp:429
 #, kde-format
 msgctxt "Inserted as %2 in the message below."
 msgid "%2 of 1 painted part."
@@ -503,7 +503,7 @@ msgid_plural "%2 of %1 painted parts."
 msgstr[0] "%2 / %1 a festett rész értéke."
 msgstr[1] "%2 / %1 a festett részek értéke."
 
-#: FractionRingWidget.cpp:431
+#: FractionRingWidget.cpp:432
 #, kde-format
 msgctxt "%1 and %2 are the two messages translated above."
 msgid ""
@@ -521,58 +521,58 @@ msgstr ""
 "A „Bővítés” gombok bővíti ki mindkét törtet. Próbáljon megváltoztatni egyet "
 "a gombok segítségével!"
 
-#: KBruch.cpp:54
+#: KBruch.cpp:52
 #, kde-format
 msgid "KBruch"
 msgstr "KBruch"
 
-#: KBruch.cpp:56
+#: KBruch.cpp:54
 #, kde-format
 msgid "Learn calculating with fractions"
 msgstr "Törtműveletek gyakorlása"
 
-#: KBruch.cpp:58
+#: KBruch.cpp:56
 #, fuzzy, kde-format
 #| msgid "(c) 2002-2011, Sebastian Stein"
 msgid "© 2002-2011, Sebastian Stein"
 msgstr "© Sebastian Stein, 2002-2011."
 
-#: KBruch.cpp:59
+#: KBruch.cpp:57
 #, kde-format
 msgid "Sebastian Stein"
 msgstr "Sebastian Stein"
 
-#: KBruch.cpp:59
+#: KBruch.cpp:57
 #, kde-format
 msgid "Current maintainer, original author"
 msgstr "Jelenlegi karbantartó, eredeti szerző"
 
-#: KBruch.cpp:60
+#: KBruch.cpp:58
 #, kde-format
 msgid "Paulo Cattai"
 msgstr "Paulo Cattai"
 
-#: KBruch.cpp:60 KBruch.cpp:61 KBruch.cpp:62 KBruch.cpp:63 KBruch.cpp:64
+#: KBruch.cpp:58 KBruch.cpp:59 KBruch.cpp:60 KBruch.cpp:61 KBruch.cpp:62
 #, kde-format
 msgid "New interface design and usability improvements"
 msgstr "Új felület tervezése, használhatósági fejlesztések"
 
-#: KBruch.cpp:61
+#: KBruch.cpp:59
 #, kde-format
 msgid "Danilo Balzaque"
 msgstr "Danilo Balzaque"
 
-#: KBruch.cpp:62
+#: KBruch.cpp:60
 #, kde-format
 msgid "Roberto Cunha"
 msgstr "Roberto Cunha"
 
-#: KBruch.cpp:63
+#: KBruch.cpp:61
 #, kde-format
 msgid "Tadeu Araujo"
 msgstr "Tadeu Araujo"
 
-#: KBruch.cpp:64
+#: KBruch.cpp:62
 #, kde-format
 msgid "Tiago Porangaba"
 msgstr "Tiago Porangaba"
