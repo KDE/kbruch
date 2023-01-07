@@ -2,7 +2,8 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
 <!ENTITY kappname "&kbruch;">
 <!ENTITY % addindex "IGNORE">
-<!ENTITY % English "INCLUDE"><!-- change language only here -->
+<!ENTITY % German "INCLUDE"
+><!-- change language only here -->
 ]>
 <!--
 SPDX-FileCopyrightText: 2001-2005 Sebastian Stein <seb.kde@hpfsc.de>
@@ -12,672 +13,830 @@ SPDX-License-Identifier: GFDL-1.2-only
 <book id="kbruch" lang="&language;">
 
 <bookinfo>
-<title>The &kbruch; Handbook</title>
+<title
+>Das Handbuch zu &kbruch;</title>
 
 <authorgroup>
-<author>
-<firstname>Sebastian</firstname>
-<surname>Stein</surname>
-<email>seb.kde@hpfsc.de</email>
-</author>
-<author>
-&Anne-Marie.Mahfouf;
-</author>
-<!-- TRANS:ROLES_OF_TRANSLATORS -->
+<author
+><firstname
+>Sebastian</firstname
+> <surname
+>Stein</surname
+> <email
+>seb.kde@hpfsc.de</email
+> </author>
+<author
+>&Anne-Marie.Mahfouf; </author>
+<othercredit role="translator"
+><firstname
+>Sebastian</firstname
+><surname
+>Stein</surname
+><affiliation
+><address
+><email
+>seb.kde@hpfsc.de</email
+></address
+></affiliation
+><contrib
+>Deutsche Übersetzung</contrib
+></othercredit
+> 
 
 </authorgroup>
 
 <copyright>
-<year>2001-2005</year>
-<holder>Sebastian Stein</holder>
+<year
+>2001-2005</year>
+<holder
+>Sebastian Stein</holder>
 </copyright>
 <copyright>
-<year>2008</year>
-<holder>&Anne-Marie.Mahfouf;</holder>
+<year
+>2008</year>
+<holder
+>&Anne-Marie.Mahfouf;</holder>
 </copyright>
-<legalnotice>&FDLNotice;</legalnotice>
+<legalnotice
+>&FDLNotice;</legalnotice>
 
-<date>2020-12-21</date>
-<releaseinfo>Applications 20.12</releaseinfo>
+<date
+>2020-12-21</date>
+<releaseinfo
+>Anwendungen 20.12</releaseinfo>
 
 <abstract>
-<para>&kbruch; is a small program to practice calculating with fractions and percentages.
-Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's
-input and gives feedback.
-</para>
+<para
+>&kbruch; ist ein kleines Programm, um das Rechnen mit Brüchen und Prozenten zu üben. Für diesen Zweck werden verschiedene Übungen angeboten. Außerdem gibt es einen Modus für das Lernen von Brüchen. Das Programm überprüft die Eingaben des Benutzers und gibt entsprechende Rückmeldungen. </para>
 
 </abstract>
 
 <keywordset>
-<keyword>KDE</keyword>
-<keyword>education</keyword>
-<keyword>fraction</keyword>
-<keyword>percentage</keyword>
-<keyword>mathematics</keyword>
-<keyword>denominator</keyword>
-<keyword>kbruch</keyword>
+<keyword
+>KDE</keyword>
+<keyword
+>Bildung</keyword>
+<keyword
+>Bruch</keyword>
+<keyword
+>Prozentsatz</keyword>
+<keyword
+>Mathematik</keyword>
+<keyword
+>Hauptnenner</keyword>
+<keyword
+>KBruch</keyword>
 </keywordset>
 
 </bookinfo>
 
 <chapter id="introduction">
-<title>Introduction</title>
+<title
+>Einleitung</title>
 
-<para>
-&kbruch; is a small program to practice calculating with fractions and percentages. Six different exercises
-are offered as well as a learning mode.
-</para>
+<para
+>&kbruch; ist ein kleines Programm, um das Rechnen mit Brüchen und Prozenten zu üben. Es werden sechs verschiedene Übungen angeboten, dazu noch ein Lernmodus für Brüche. </para>
 
 <itemizedlist>
-	<listitem><para>
-		<guilabel>Arithmetic</guilabel> - in this exercise you have to solve a given fraction task.
-You have to enter the numerator and the denominator. This is the main exercise.
-	</para></listitem>
-	<listitem><para>
-		<guilabel>Comparison</guilabel> - in this exercise you have to compare the size of 2 given
-fractions, using the symbols <guibutton>&gt;</guibutton>, <guibutton>&lt;</guibutton>
-or <guibutton>=</guibutton>.
-	</para></listitem>
-	<listitem><para>
-		<guilabel>Conversion</guilabel> - in this exercise you have to convert a given number
-into a fraction.
-	</para></listitem>
-	<listitem><para>
-		<guilabel>Mixed Numbers</guilabel> - in this exercise you have to convert a mixed number into an improper fraction
-		(ratio) and vice versa.
-	</para></listitem>
-	<listitem><para>
-		<guilabel>Factorization</guilabel> - in this exercise you have to factorize a given number
-		into its prime factors.
-	</para></listitem>
-	<listitem><para>
-		<guilabel>Percentage</guilabel> - in this exercise you have to calculate percentages.
-	</para></listitem>
+	<listitem
+><para
+><guilabel
+>Arithmetik</guilabel
+> - in dieser Übung muss eine gegebene Bruchaufgabe gelöst werden. Du musst den ganzzahligen Anteil des Bruchs und Zähler und Nenner eingeben. Dies ist die Hauptübung. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Vergleich</guilabel
+> - in dieser Übung müssen 2 gegebene Brüche der Größe nach verglichen mithilfe der Symbole <guibutton
+>&gt;</guibutton
+>, <guibutton
+>&lt;</guibutton
+> oder <guibutton
+>=</guibutton
+> werden. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Umwandeln</guilabel
+> - in dieser Übung muss eine gegebene Zahl in einen Bruch umgewandelt werden. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Gemischter Bruch</guilabel
+> - in dieser Übung muss ein gegebener gemischter Bruch in einen unechten Bruch und umgekehrt umgewandelt werden. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Faktorisieren</guilabel
+> - in dieser Übung muss eine gegebene Zahl in ihre Primfaktoren zerlegt werden. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Prozentaufgaben</guilabel
+> - in dieser Übung müssen Prozente berechnet werden. </para
+></listitem>
 </itemizedlist>
 
-<para>
-In each different exercise &kbruch; will generate a task and the user has to
-solve it. The program checks the input and gives a feedback about it.
-</para>
+<para
+>In jeder Übung erzeugt &kbruch; eine Aufgabe und der Benutzer muss sie lösen. Das Programm überprüft die Eingabe und gibt eine entsprechende Rückmeldung. </para>
 
-<para>
-&kbruch; counts how many tasks were solved at all and how many tasks were
-solved correctly. The statistics are shown to the user.
-<!-- The user can reset the statistics at any point.-->
-</para>
+<para
+>&kbruch; zählt die Anzahl gelöster Aufgaben und wieviel Aufgaben davon richtig gelöst wurden. Diese Statistik wird dem Benutzer angezeigt. </para>
 
-<para>
-&kbruch; is very compact and focuses on the core idea of a task generator. An
-online help system provides context-sensitive help for the different
-situations.
-</para>
+<para
+>&kbruch; ist sehr kompakt und konzentriert sich auf die Idee eines Aufgabenerzeugers. Das Handbuch bietet Hilfe für die verschiedenen Situationen. </para>
 
 </chapter>
 
 
 <chapter id="using-kbruch">
-<title>Using &kbruch;</title>
+<title
+>&kbruch; anwenden</title>
 
 <sect1 id="mode">
-<title>Choosing the mode: learning or exercises</title>
-<para>When you start &kbruch;, it offers you two modes:
-<guilabel>Exercise</guilabel> which is the training mode and
-<guilabel>Learning</guilabel> where you can understand fractions. Clicking
-one of the pictures will enter the chosen mode. Here is a screenshot of
-&kbruch;'s mode choices:</para>
+<title
+>Auswahl des Modus: Lernen oder Übungen</title>
+<para
+>Beim Start von &kbruch; werden zwei Arbeitsweisen zur Auswahl angeboten: <guilabel
+>Übungen</guilabel
+>, um Aufgaben zu lösen und <guilabel
+>Lernen</guilabel
+> mit Erklärungen zu Brüchen. Klicke auf eines der Symbole, um einen Modus zu starten. Hier ein Bildschirmfoto der Modusauswahl von &kbruch;:</para>
 
 <screenshot>
-	<screeninfo>&kbruch; mode choices</screeninfo>
+	<screeninfo
+>&kbruch;s Modusauswahl</screeninfo>
 	<mediaobject>
 		<imageobject>
 			<imagedata fileref="gui_mode.png" format="PNG"/>
 		</imageobject>
 		<textobject>
-			<phrase>&kbruch; mode choices</phrase>
+			<phrase
+>&kbruch;s Modusauswahl</phrase>
 		</textobject>
 	</mediaobject>
 </screenshot>
-<para>Click one of the picture to choose the mode.</para>
+<para
+>Klicke auf ein Symbol, um einen Modus auszuwählen.</para>
 </sect1>
 
 <sect1 id="overview">
-<title>Main Exercise Screen</title>
+<title
+>Das Hauptfenster im Übungsmodus</title>
 
-<para>Here is a screenshot of &kbruch;'s main Exercise screen:</para>
+<para
+>Hier ist ein Bildschirmfoto des Hauptfensters für den Übungsmodus von &kbruch;:</para>
 
 <screenshot>
-	<screeninfo>&kbruch; main screen, directly after the exercise start</screeninfo>
+	<screeninfo
+>&kbruch; Hauptfenster, direkt nach dem Start des Übungsmodus</screeninfo>
 	<mediaobject>
 		<imageobject>
 			<imagedata fileref="gui_main.png" format="PNG"/>
 		</imageobject>
 		<textobject>
-			<phrase>&kbruch; main screen</phrase>
+			<phrase
+>&kbruch; Hauptfenster</phrase>
 		</textobject>
 	</mediaobject>
 </screenshot>
 
-<para>
-All exercises take place in this screen. This ensures that &kbruch; is
-easy to use even for young users! The main screen is separated into 5
-parts:
-
-<itemizedlist>
-	<listitem><para>
-		the menubar with the 3 menus <guimenu>File</guimenu>,
-<guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
-	</para></listitem>
-	<listitem><para>
-		the toolbar, where you can switch between the different
-exercises
-	</para></listitem>
-	<listitem><para>
-		the <guilabel>Options:</guilabel> on the left, where you can
-define the difficulty and various settings for the tasks
-	</para></listitem>
-	<listitem><para>
-		the task part, where you have to enter the result of the given task
-	</para></listitem>
-	<listitem><para>
-		the statistical part, where you can see how many tasks have been solved
-		correctly or attempted
-	</para></listitem>
-</itemizedlist>
-At any time, you can go back to Modes using the <guiicon>Back</guiicon> icon in
-the toolbar.
-</para>
-<note><para>You can hide the <guilabel>Options:</guilabel> section by dragging it to the left.
-</para></note>
-<para>
-First you have to choose an exercise in the toolbar. Default is <guilabel>Arithmetic</guilabel>. The
-task part will change according to the chosen task. Some settings in the <guilabel>Options</guilabel> section
-will be enabled, depending on the task you have chosen.
-</para>
-<para>
-You will find an icon to generate a new task in the toolbar as well. This
-action is also available in the menu
-<menuchoice><guimenu>File</guimenu><guimenuitem>New</guimenuitem></menuchoice>.
-This action is always enabled. If you have not
-solved the currently given task, a new task is generated and the statistics are set back.
-</para>
+<para
+>Alle Übungen werden in diesem Fenster ausgeführt. Damit kann &kbruch; auch von Kindern benutzt werden. Das Fenster ist in fünf Bereiche aufgeteilt: <itemizedlist
+><listitem
+><para
+>die Menüleiste mit den drei Menüs <guimenu
+>Datei</guimenu
+>, <guimenu
+>Einstellungen</guimenu
+> und <guimenu
+>Hilfe</guimenu
+></para
+></listitem
+><listitem
+><para
+>die Werkzeugleiste mit Knöpfen zum Wechseln der Aufgaben</para
+></listitem
+><listitem
+><para
+>die  <guilabel
+>Optionen</guilabel
+> auf der linken Seite mit Einstellungen für die verschiedenen Aufgaben </para
+></listitem
+><listitem
+><para
+>der Aufgabenbereich, in dem die Ergebnisse eingetragen werden müssen</para
+></listitem
+><listitem
+><para
+>die Statistik, in der die Anzahl der Aufgaben und der richtigen bzw. falschen Lösungen angezeigt wird</para
+></listitem
+></itemizedlist
+>. Mit dem Knopf <guiicon
+>Zurück</guiicon
+>in der Werkzeugleiste  kannst du jederzeit zur Modusauswahl zurückgehen. </para>
+<note
+><para
+>Die <guilabel
+>Optionen:</guilabel
+> können durch Ziehen des rechten Trenners zum Hauptfenster ganz nach links ausgeblendet werden. </para
+></note>
+<para
+>Zuerst muss eine Übung in der Werkzeugleiste ausgewählt werden. Als Standard ist <guilabel
+>Arithmetik</guilabel
+> eingestellt. Der Aufgabenteil passt sich der gewählten Übung entsprechend an. Einige Einstellmöglichkeiten im Abschnitt <guilabel
+>Optionen</guilabel
+> werden passend zu den ausgewählten Aufgaben aktiviert. </para>
+<para
+>In der Symbolleiste befindet sich weiterhin ein Symbol, um eine neue Aufgabe zu erstellen. Dieser Befehl ist ebenfalls verfügbar über <menuchoice
+><guimenu
+>Datei</guimenu
+><guimenuitem
+>Neu</guimenuitem
+></menuchoice
+>. Dieser Befehl steht immer zur Verfügung. Wurde die aktuelle Aufgabe noch nicht gelöst, dann wird eine neue Aufgabe erstellt und die Statistik zurückgesetzt. </para>
 <!--<para>
 You can hide the statistic part by dragging the vertical separator to the
 right.
-</para>-->
-<para>
-If you terminate &kbruch; the currently chosen exercise will be saved and
-restored on next startup.
-</para>
+</para
+>-->
+<para
+>Beim Beenden von &kbruch; wird die aktuell gewählte Übung gespeichert und beim nächsten Start wieder aufgerufen. </para>
 </sect1>
 
 <sect1 id="statistics">
-<title>Statistical Part</title>
+<title
+>Statistikteil</title>
 <screenshot>
-	<screeninfo>&kbruch; statistics</screeninfo>
+	<screeninfo
+>&kbruch;s Statistik</screeninfo>
 	<mediaobject>
 		<imageobject>
 			<imagedata fileref="statistics.png" format="PNG"/>
 		</imageobject>
 		<textobject>
-			<phrase>&kbruch; statistics</phrase>
+			<phrase
+>&kbruch;s Statistik</phrase>
 		</textobject>
 	</mediaobject>
 </screenshot>
 
-<para>
-In this part of the main screen you can see:
-<itemizedlist>
-	<listitem><para>
-		on the left, how many tasks have been solved
-	</para></listitem>
-	<listitem><para>
-		on the right, in green, how many tasks have been solved correctly
-	</para></listitem>
-	<listitem><para>
-		on the right, in red, how many tasks have been solved incorrectly
-	</para></listitem>
-		<listitem><para>
-		on the right, in orange, how many tasks have been skipped
-	</para></listitem>
+<para
+>In diesem Teil des Hauptfensters können Sie ablesen: <itemizedlist>
+	<listitem
+><para
+>links, wieviele Aufgaben bearbeitet wurden </para
+></listitem>
+	<listitem
+><para
+>rechts in Grün, wieviele Aufgaben richtig gelöst wurden </para
+></listitem>
+	<listitem
+><para
+>rechts in Rot, wieviele Aufgaben falsch gelöst wurden </para
+></listitem>
+		<listitem
+><para
+>rechts in Orange, wieviele Aufgaben übersprungen wurden </para
+></listitem>
 </itemizedlist>
 </para>
-<para>
-You can reset the statistics by clicking on the <guimenu>New</guimenu> button
-in the toolbar or choosing <menuchoice><guimenu>File</guimenu>
-<guimenuitem>New</guimenuitem></menuchoice> in the menubar.
-</para>
-<para>
-The statistics will be saved when &kbruch; is closed and restored on next
-startup.
-</para>
+<para
+>Die Statistik wird durch Klicken auf den Knopf <guimenu
+>Neu</guimenu
+> in der Werkzeugleiste oder durch Auswahl von  <menuchoice
+><guimenu
+>Datei</guimenu
+> <guimenuitem
+>Neu</guimenuitem
+> </menuchoice
+> in der Menüleiste zurückgesetzt. </para>
+<para
+>Die Statistik wird beim Beenden von &kbruch; gespeichert und beim nächsten Start wieder geladen. </para>
 </sect1>
 
 <sect1 id="settings">
-<title>Configuring &kbruch; appearance</title>
-<para>
-In this dialog you can adjust some general settings for
-the task display. To open this dialog use
-<menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure
-&kbruch;...</guimenuitem></menuchoice>.
-</para>
+<title
+>Das Erscheinungsbild von &kbruch; einrichten</title>
+<para
+>In diesem Dialog können einige allgemeine Einstellungen für die Darstellung der Aufgaben gesetzt werden. Dieser Dialog wird über <menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>&kbruch; einrichten ...</guimenuitem
+></menuchoice
+> aufgerufen. </para>
 
 <screenshot>
-	<screeninfo>&kbruch; settings dialog</screeninfo>
+	<screeninfo
+>&kbruch;s Einrichtungsdialog</screeninfo>
 	<mediaobject>
 		<imageobject>
 			<imagedata fileref="settings.png" format="PNG"/>
 		</imageobject>
 		<textobject>
-			<phrase>&kbruch; settings dialog</phrase>
+			<phrase
+>&kbruch;s Einrichtungsdialog</phrase>
 		</textobject>
 	</mediaobject>
 </screenshot>
 
-<para>
-There are two sections to adjust the setting:
-<itemizedlist>
-	<!-- <listitem><para>
-		<guilabel>General</guilabel>: Set whether to show the mixed number notation in the result.
+<para
+>Es gibt zwei Abschnitte zur Anpassung der Einstellungen: <itemizedlist>
+	<!-- <listitem
+><para>
+		<guilabel
+>General</guilabel
+>: Set whether to show the mixed number notation in the result.
 		This notation is not known everywhere and can be disabled therefore.
-	</para></listitem> -->
-	<listitem><para>
-		<guilabel>Colors</guilabel>: Choose the colors for the different parts of a mathematical
-		expression: numbers, operational sign, fraction bar.
-	</para></listitem>
-	<listitem><para>
-		<guilabel>Fonts</guilabel>: Choose a font for displaying the task.
-	</para></listitem>
+	</para
+></listitem
+> -->
+	<listitem
+><para
+><guilabel
+>Farben</guilabel
+>: Einstellung der Farben für die verschiedenen Teile eines mathematischen Ausdrucks.: Zahlen, Operationszeichen und Bruchstrich. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>Schriftarten</guilabel
+>: Einstellung der Schriftarten für die Anzeige der Aufgaben.  </para
+></listitem>
 </itemizedlist>
 </para>
-<para>
-The settings will be saved on &kbruch;'s termination and restored on the next
-startup.
-</para>
+<para
+>Die Einstellungen werden beim Beenden von &kbruch; gespeichert und beim nächsten Start geladen. </para>
 </sect1>
 
 <sect1 id="learning-screen">
-<title>Main Learning Screen</title>
+<title
+>Das Hauptfenster im Lernmodus</title>
 <screenshot>
-	<screeninfo>&kbruch; learning mode</screeninfo>
+	<screeninfo
+>&kbruch;s Lernmodus</screeninfo>
 	<mediaobject>
 		<imageobject>
 			<imagedata fileref="learning.png" format="PNG"/>
 		</imageobject>
 		<textobject>
-			<phrase>&kbruch; learning mode</phrase>
+			<phrase
+>&kbruch;s Lernmodus</phrase>
 		</textobject>
 	</mediaobject>
 </screenshot>
-<para>
-Clicking the <guibutton>Hint</guibutton> button toggles the display of the help on the right which explains you how the rings work.
-</para>
+<para
+>Klicken auf den Knopf <guibutton
+>Tipp</guibutton
+> in der Werkzeugleiste schaltet die Anzeige der Hilfe rechts ein und aus. In dieser Hilfe wird erklärt, wie die Darstellung der Brüche mit den Ringen funktioniert. </para>
 </sect1>
 </chapter>
 
 <chapter id="exercises">
-<title>Exercises</title>
+<title
+>Übungen</title>
 
 <sect1 id="exer_fraction">
-<title>Exercise Arithmetic</title>
+<title
+>Übung Arithmetik</title>
 
-<para>In this exercise you have to solve a given task. Therefore you have to
-enter the integer part of a fraction and the numerator and the denominator. The difficulty of the generated task can be
-adjusted by using some options on the left.
-</para>
+<para
+>In dieser Übung muss eine gegebene Bruchaufgabe gelöst werden. Dazu muss der ganzzahlige Anteil des Bruchs sowie Zähler und Nenner eingegeben werden. Der Schwierigkeitsgrad der Aufgaben kann mit den Optionen links im Hauptfenster eingestellt werden. </para>
 
 <sect2 id="task_paras">
-<title>Options</title>
-<para>
-There are several parameters which influence the difficulty of the generated
-tasks:</para>
+<title
+>Optionen</title>
+<para
+>Es gibt mehrere Parameter, die die Schwierigkeit der Aufgaben beeinflussen:</para>
 
 <variablelist>
 <varlistentry>
-<term><guilabel>Question:</guilabel></term>
-<listitem><para>
+<term
+><guilabel
+>Frage:</guilabel
+></term>
+<listitem
+><para>
 
 <variablelist>
 <varlistentry>
-<term><guilabel>Mixed number:</guilabel></term>
-<listitem><para>Set if the fractions will appear as mixed numbers or not in the question expression ( mixed number example: 1 4/5 = 9/5 ).</para></listitem>
+<term
+><guilabel
+>Gemischte Brüche:</guilabel
+></term>
+<listitem
+><para
+>Legt fest, ob die Brüche in der Frage als gemischte Brüche oder nicht erscheinen sollen (Beispiel für einen gemischten Bruch: 1 4/5 = 9/5).</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Number of terms:</guilabel></term>
-<listitem><para>The number of terms (separate fractions) given in each
-task. From 2 to 5, inclusive.</para></listitem>
+<term
+><guilabel
+>Anzahl der Terme:</guilabel
+></term>
+<listitem
+><para
+>Die Anzahl von Termen in einer gegebenen Aufgabe, von 2 bis einschließlich 5.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Maximum denominator:</guilabel></term>
-<listitem><para>The highest number &kbruch; will use as the main denominator in the
-tasks it sets. From a minimum of 10 to a maximum of 50.</para></listitem>
+<term
+><guilabel
+>Maximaler Hauptnenner:</guilabel
+></term>
+<listitem
+><para
+>Die höchste Zahl für den Hauptnenner, die in &kbruch; für eine Aufgabe benutzt wird. Der Wert liegt zwischen 10 und 50.</para
+></listitem>
 </varlistentry>
 </variablelist>
 
-</para></listitem>
+</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Answer:</guilabel></term>
-<listitem><para>
+<term
+><guilabel
+>Antwort:</guilabel
+></term>
+<listitem
+><para>
 
 <variablelist>
 <varlistentry>
-<term><guilabel>Mixed number:</guilabel></term>
-<listitem><para>Set if the fractions will appear as mixed numbers or not in the answer ( mixed number example: 1 4/5 = 9/5 ).</para></listitem>
+<term
+><guilabel
+>Gemischte Brüche:</guilabel
+></term>
+<listitem
+><para
+>Legt fest, ob die Brüche in der Antwort als gemischte Brüche oder nicht erscheinen sollen (Beispiel für einen gemischten Bruch: 1 4/5 = 9/5).</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Reduced Form:</guilabel></term>
-<listitem><para>Check this to force the use of the reduced form.</para></listitem>
+<term
+><guilabel
+>Gekürzte Form:</guilabel
+></term>
+<listitem
+><para
+>Mit dieser Einstellung wird die Eingabe der gekürzten Form gefordert.</para
+></listitem>
 </varlistentry>
 </variablelist>
 
-</para></listitem>
+</para
+></listitem>
 </varlistentry>
 <!-- Not in v. 4.2
 <varlistentry>
-<term><guilabel>Solution</guilabel></term>
-<listitem><para>
+<term
+><guilabel
+>Solution</guilabel
+></term>
+<listitem
+><para>
 
 <variablelist>
 <varlistentry>
-<term><guilabel>Mixed number</guilabel></term>
-<listitem><para>Set if the fractions will appear as mixed numbers or not in the solution ( mixed number example: 1 4/5 = 9/5 ).</para></listitem>
+<term
+><guilabel
+>Mixed number</guilabel
+></term>
+<listitem
+><para
+>Set if the fractions will appear as mixed numbers or not in the solution ( mixed number example: 1 4/5 = 9/5 ).</para
+></listitem>
 </varlistentry>
 </variablelist>
 
-</para></listitem>
+</para
+></listitem>
 </varlistentry>
 -->
 
 <varlistentry>
-<term><guilabel>Operations:</guilabel></term>
-<listitem><para>Operations which should be used in the
-task: <guilabel>Addition:</guilabel>, <guilabel>Subtraction:</guilabel>,
-<guilabel>Multiplication:</guilabel> or <guilabel>Division:</guilabel>. Check all operations
- you want to use.</para></listitem>
+<term
+><guilabel
+>Rechenarten:</guilabel
+></term>
+<listitem
+><para
+>Rechenarten, die in dieser Aufgabe genutzt werden sollen: <guilabel
+>Addition</guilabel
+>, <guilabel
+>Subtraktion</guilabel
+>, <guilabel
+>Multiplikation</guilabel
+> oder <guilabel
+>Division</guilabel
+>. Kreuze alle Rechenarten an, die geübt werden sollen.</para
+></listitem>
 </varlistentry>
 
 </variablelist>
 
-<para>
-After you have changed the parameters you have to click on the <guimenu>New</guimenu>
-button in the toolbar to generate a task which uses the new
-parameters. You can also call this action from the menubar with
-<menuchoice><guimenu>File</guimenu><guimenuitem>New</guimenuitem></menuchoice>.
-This will reset the statistics. To avoid that, click the <guibutton>Next</guibutton>
-button to proceed with the changed parameters.
-</para>
+<para
+>Nach Änderung der Parameter klicke auf den Knopf <guimenu
+>Neu</guimenu
+> in der Werkzeugleiste. Dadurch wird eine neue Aufgabe unter Verwendung der neuen Parameter erstellt. Dieser Befehl ist auch im Menü  <menuchoice
+><guimenu
+>Datei</guimenu
+> <guimenuitem
+>Neu</guimenuitem
+> </menuchoice
+> zu erreichen. Damit wird die Statistik zurückgesetzt. Um das zu vermeiden, klicke auf den Knopf <guibutton
+>Weiter</guibutton
+> um die Übung mit den geänderten Parametern fortzusetzen. </para>
 <!--<note>
 <para>
 Your selection of the maximum main denominator will be reset to a default
 value every time you change the number of terms. So you should change the
 number of terms first and then select the maximum main denominator.
 </para>
-</note>-->
+</note
+>-->
 <!--para>
-If you have not solved the current task and call the <guimenu>New</guimenu>
+If you have not solved the current task and call the <guimenu
+>New</guimenu>
 action, the task will be counted as not solved correctly. To
 prevent this you have to change the parameters after you solved the task but
 before generating a new one.
 </para-->
-<para>
-The chosen parameters will be saved on &kbruch;'s termination and restored
-on next startup.
-</para>
+<para
+>Die Parametereinstellungen werden beim Beenden von &kbruch; gespeichert und beim nächsten Start wiederhergestellt. </para>
 </sect2>
 
 <sect2 id="exer_fraction_solve_task">
-<title>Solving Tasks</title>
-<para>
-After you have solved a given task, you need to enter the result into the three
-input boxes. In the left box you enter the integer part of the fraction, in the
-upper box the numerator and in the lower box the denominator.
-If the option <guilabel>Mixed number:</guilabel> in the <guilabel>Answer:</guilabel>
-section is unchecked, the left box for the integer part of the fraction is hidden. Then you use
-only the numerator box and the denominator box for your input.
-</para>
-<para>
-If the result is negative, you can enter a minus sign in front of the numerator
-or denominator. If the result is 0, just type a 0 in the numerator input field.
-If the result has a denominator of 1, you can leave the lower box empty.
-</para>
-<para>
-After you have entered the result you should click the <guibutton>Check</guibutton>
-button below the input boxes. &kbruch; will check your input
-and present the correct result on the right below the <guilabel>Incorrect!</guilabel> string:
-</para>
+<title
+>Aufgaben lösen</title>
+<para
+>Wenn du die Lösung errechnet hast, musst du das Ergebnis in die drei Eingabefelder eintragen, in das linke Feld den ganzzahligen Anteil des Bruchs, in das obere Feld den Zähler und in das untere Feld den Nenner. Wenn <guilabel
+>Gemischte Brüche</guilabel
+> im Abschnitt <guilabel
+>Antwort</guilabel
+> nicht angekreuzt ist, wird das linke Eingabefeld für den ganzzahligen Anteil des Bruchs ausgeblendet. Dann gibst du nur Zähler und Nenner ein. </para>
+<para
+>Falls das Ergebnis negativ ist, kann das entsprechende Minuszeichen entweder mit dem Zähler oder mit dem Nenner eingetragen werden. Falls das Ergebnis 0 ist, reicht es lediglich eine 0 für den Zähler einzutragen. Hat das Ergebnis einen Nenner von 1, kann das untere Eingabefeld leergelassen werden. </para>
+<para
+>Nachdem das Ergebnis eingegeben wurde, musst du auf den Knopf <guimenu
+>Überprüfen</guimenu
+> unter den Eingabefeldern klicken. &kbruch; überprüft die Eingabe und zeigt die richtige lösung rechts unter der Beschriftung <guibutton
+>Falsch</guibutton
+> an: </para>
 <screenshot>
-<screeninfo>Checked Task</screeninfo>
+<screeninfo
+>Überprüfte Aufgabe</screeninfo>
 <mediaobject>
   <imageobject>
 		<imagedata fileref="checked.png" format="PNG"/>
   </imageobject>
   <textobject>
-    <phrase>Checked Task</phrase>
+    <phrase
+>Überprüfte Aufgabe</phrase>
   </textobject>
 </mediaobject>
 </screenshot>
-<para>
-This task was solved incorrectly. The correct value is shown in 2 different
-forms: normal (reduced) and mixed number.
-</para>
+<para
+>Diese Aufgabe wurde falsch gelöst. Das richtige Ergebnis wird in zwei unterschiedlichen Schreibweisen angezeigt: normal (reduziert) und als gemischter Bruch.  </para>
 <note>
-<para>
-If you checked the <guilabel>Reduced form:</guilabel> in the Options in the <guilabel>Answers:</guilabel> section
-then you always have to enter the result reduced. &kbruch; will show you a short message
-like the one in the screenshot below, if you enter the correct result
-unreduced. The answer will then be counted as incorrect.
-</para>
+<para
+>Wenn in den Optionen im Abschnitt <guilabel
+>Antwort</guilabel
+> die <guilabel
+>Gekürzte Form</guilabel
+> ausgewählt ist, muss das Ergebnis immer gekürzt eingegeben werden. &kbruch; zeigt einen kurzen Hinweis wie im unten dargestellten Bildschirmfoto, wenn du das richtige Ergebnis ungekürzt eingibst. Die Antwort wird dann als falsch bewertet. </para>
 </note>
 <screenshot>
-<screeninfo>Unreduced Result</screeninfo>
+<screeninfo
+>Ungekürztes Ergebnis</screeninfo>
 <mediaobject>
   <imageobject>
 		<imagedata fileref="reduced.png" format="PNG"/>
   </imageobject>
   <textobject>
-    <phrase>Unreduced Result</phrase>
+    <phrase
+>Ungekürztes Ergebnis</phrase>
   </textobject>
 </mediaobject>
 </screenshot>
 
-<para>
-To continue with the next task, click on the <guibutton>Next</guibutton>
-button. If you want to change the parameters for the next task please do this
-before clicking on the <guibutton>Next</guibutton> button.
-</para>
+<para
+>Um mit der nächsten Aufgabe fortzufahren, klicke auf den Knopf <guibutton
+>Weiter</guibutton
+>. Möchtest du die Parameter für die nächste Aufgabe ändern, muss dies vor dem Klick auf den Knopf <guibutton
+>Weiter</guibutton
+> geschehen. </para>
 </sect2>
 </sect1>
 
 <sect1 id="exer_compare">
-<title>Exercise Comparison</title>
+<title
+>Übung Vergleich</title>
 
-<para>In this exercise you have to compare 2 given fractions. You have to choose
-the bigger fraction of both by selecting the correct comparison sign.
-</para>
+<para
+>In dieser Übungen müssen 2 gegebene Brüche verglichen werden. Du musst den größeren der beider Brüche wählen, indem du das richtige Vergleichszeichen auswählst. </para>
 
 <screenshot>
-<screeninfo>Exercise Comparison</screeninfo>
+<screeninfo
+>Übungen Vergleich</screeninfo>
 <mediaobject>
   <imageobject>
 		<imagedata fileref="compare.png" format="PNG"/>
   </imageobject>
   <textobject>
-    <phrase>Exercise Comparison</phrase>
+    <phrase
+>Übung Vergleich</phrase>
   </textobject>
 </mediaobject>
 </screenshot>
 
-<para>First choose the correct comparison sign. After you have
-chosen the comparison sign, the result will show on the right. A green square with <guilabel>Correct!</guilabel>
-will tell you that your answer was correct while a red square with <guilabel>Incorrect!</guilabel> will indicate that your
-answer was wrong. You will get to the next task by clicking the <guibutton>Next</guibutton>
-button.
-</para>
+<para
+>Zuerst muss das richtige Vergleichszeichen gewählt werden. Dann wird die  die Eingabe überprüft und das Ergebnis auf der rechten Seite angezeigt. Ein grünes Rechteck mit der Aufschrift <guilabel
+>Richtig</guilabel
+> für eine richtige Lösung, ein rotes Rechteck mit der Aufschrift <guilabel
+>Falsch</guilabel
+> bei einem Fehler. Drücke den Knopf <guibutton
+>Weiter</guibutton
+>, um zur nächsten Aufgabe zu kommen. </para>
 
-<para>In this exercise only the option <guilabel>Mixed number:</guilabel> is enabled. If checked the fractions will appear as mixed numbers.</para>
+<para
+>In dieser Übung kann nur die Einstellung <guilabel
+>Gemischte Brüche</guilabel
+> ausgewählt werden, dann werden alle Brüche in gemischter Schreibweise angezeigt.</para>
 </sect1>
 
 <sect1 id="exer_convert">
-<title>Exercise Conversion</title>
+<title
+>Übung Umwandeln</title>
 
-<para>In this exercise you have to convert a given number into a fraction. You
-have to enter numerator and denominator.
-</para>
+<para
+>In dieser Übung muss eine gegebene Zahl in einen Bruch umgewandelt werden. Dazu muss sowohl der Zähler als auch der Nenner eingegeben werden. </para>
 
 <screenshot>
-<screeninfo>Exercise Conversion</screeninfo>
+<screeninfo
+>Übung Umwandeln</screeninfo>
 <mediaobject>
   <imageobject>
 		<imagedata fileref="convert.png" format="PNG"/>
   </imageobject>
   <textobject>
-    <phrase>Exercise Conversion</phrase>
+    <phrase
+>Übung Umwandeln</phrase>
   </textobject>
 </mediaobject>
 </screenshot>
 
-<para>On the left side of the equal sign in the screenshot above you can see a
-recurring decimal. This means, that the fraction shown as a decimal has a
-repeating part. The repeating part is marked with the small bar above the
-numbers. Those numbers repeat ad infinitum.
-</para>
+<para
+>Auf der linken Seite des Gleichheitszeichen im Bildschirmfoto oben steht ein periodischer Dezimalbruch. Das bedeutet, dass der Bruch dargestellt als Dezimalzahl einen sich wiederholenden Teil hat. Der sich wiederholende Teil ist mit einer kleinen Linie über den entsprechenden Zahlen gekennzeichnet. Diese Zahlen wiederholen sich unendlich oft. </para>
 
-<para>After you have entered the numerator and denominator click on the
-<guibutton>Check</guibutton> button. &kbruch; will check your input and
-present the correct result. After this step you will get to the next task by
-clicking on the <guibutton>Next</guibutton> button.
-</para>
+<para
+>Nach der Eingabe von Zähler und Nenner muss der Knopf <guibutton
+>Überprüfen</guibutton
+> gedrückt werden.  &kbruch; überprüft nun die Eingabe und zeigt das richtige Ergebnis. Nach diesem Schritt geht es mit dem Anklicken des Knopfes <guibutton
+>Weiter</guibutton
+> zur nächsten Aufgabe. </para>
 
 <note>
-<para>
-Do not forget to enter the result reduced. Unreduced results will be counted as
-solved not correctly.
-</para>
+<para
+>Das Ergebnis ist gekürzt einzugeben. Ungekürzte Ergebnisse werden als nicht richtig gewertet. </para>
 </note>
 
-<para>In this exercise all options are disabled.</para>
+<para
+>In dieser Übung sind alle Einstellungen nicht aktiviert.</para>
 
 </sect1>
 
 <sect1 id="exer_mixed">
-<title>Exercise Mixed Numbers</title>
+<title
+>Übung Gemischter Bruch</title>
 
-<para>In this exercise you have to convert a given mixed number into an improper fraction (ratio) and
-vice versa. You have to enter numerator and denominator for improper fraction or a whole number,
-numerator and denominator for mixed number.
-</para>
+<para
+>In dieser Übung muss eingemischter Bruch in einen unechten Bruch (Verhältnis) umgewandelt werden und umgekehrt. Sie müssen sowohl den Zähler als auch den Nenner für einen unechten Bruch oder eine ganze Zahl, einen Zähler und einen Nenner für einen unechten Bruch eingeben.  </para>
 
 <screenshot>
-<screeninfo>Exercise Mixed Numbers</screeninfo>
+<screeninfo
+>Übungen Gemischter Bruch</screeninfo>
 <mediaobject>
   <imageobject>
 		<imagedata fileref="mixed.png" format="PNG"/>
   </imageobject>
   <textobject>
-    <phrase>Exercise Mixed Numbers</phrase>
+    <phrase
+>Übung Gemischter Bruch</phrase>
   </textobject>
 </mediaobject>
 </screenshot>
 
-<para>On the left side of the equal sign in the screenshot above you can see a
-mixed number. This means, that the number is made up of a whole number and a
-proper fraction. You should enter the equal improper fraction (the numerator
-part of such fraction is greater or equal to the denominator part).
-</para>
+<para
+>Auf der linken Seite des Gleichheitszeichen im Bildschirmfoto oben steht ein gemischter Bruch. Das bedeutet, dass der Bruch aus einer ganzen Zahl und einem echten Bruch besteht. Sie müssen den unechten Bruch mit dem gleichen Wert eingeben. Bei einem unechten Bruch ist der Zähler größer oder gleich dem Nenner. </para>
 
-<para>After you have entered the numerator and denominator click on the
-<guibutton>Check</guibutton> button. &kbruch; will check your input and
-present the correct result. After this step you will get to the next task by
-clicking on the <guibutton>Next</guibutton> button.
-</para>
+<para
+>Nach der Eingabe von Zähler und Nenner muss der Knopf <guibutton
+>Überprüfen</guibutton
+> gedrückt werden.  &kbruch; überprüft nun die Eingabe und zeigt das richtige Ergebnis. Nach diesem Schritt geht es mit dem Anklicken des Knopfes <guibutton
+>Weiter</guibutton
+> zur nächsten Aufgabe. </para>
 
 <note>
-<para>
-Do not forget to enter the result reduced. Unreduced results will be counted as
-solved not correctly.
-</para>
+<para
+>Das Ergebnis ist gekürzt einzugeben. Ungekürzte Ergebnisse werden als nicht richtig gewertet. </para>
 </note>
 
-<para>In this exercise all options are disabled.</para>
+<para
+>In dieser Übung sind alle Einstellungen nicht aktiviert.</para>
 
 </sect1>
 
 <sect1 id="exer_factorize">
-<title>Exercise Factorization</title>
+<title
+>Übung Faktorisieren</title>
 
-<para>In this exercise you have to factorize a given number into its prime
-factors. You have to enter all prime factors of the number.
-</para>
+<para
+>In dieser Übung muss eine gegebene Zahl in ihre Primfaktoren zerlegt werden. Es müssen alle Primfaktoren eingegeben werden. </para>
 
 <screenshot>
-<screeninfo>Exercise Factorization</screeninfo>
+<screeninfo
+>Übung Faktorisieren</screeninfo>
 <mediaobject>
   <imageobject>
 		<imagedata fileref="factorize.png" format="PNG"/>
   </imageobject>
   <textobject>
-    <phrase>Exercise Factorization</phrase>
+    <phrase
+>Übung Faktorisieren</phrase>
   </textobject>
 </mediaobject>
 </screenshot>
 
-<para>You can enter a factor by clicking on the prime factor
-buttons. The <quote>x</quote> sign is automatically inserted, when you click the next
-prime factor button. You can remove the last entered
-prime factor by clicking on the <guibutton>Backspace</guibutton> button.
-</para>
-<para>
-After you have entered all prime factors click on the
-<guibutton>Check</guibutton> button. &kbruch; will check your input and
-present the correct result. After this step you will get to the next task by
-clicking on the <guibutton>Next</guibutton> button.
-</para>
+<para
+>Ein Faktor wird durch Anklicken des entsprechenden Primfaktorknopfes hinzugefügt. Das Zeichen <quote
+>x</quote
+> wird automatisch eingefügt, wenn du den nächsten Primfaktor eingibst. Der zuletzt eingegebene Faktor kann durch Anklicken des Knopfes <guibutton
+>Löschen</guibutton
+> wieder entfernt werden. </para>
+<para
+>Nachdem du alle Primfaktoren eingegeben hast muss der Knopf <guibutton
+>Überprüfen</guibutton
+> gedrückt werden. &kbruch; überprüft nun die Eingabe und zeigt das richtige Ergebnis. Nach diesem Schritt geht es mit dem Anklicken des Knopfes <guibutton
+>Weiter</guibutton
+> zur nächsten Aufgabe. </para>
 
-<para>In the screenshot at the top of this page you can see a <quote>x</quote>
-between the prime factors. This is the multiplication sign. The product of all
-prime factors must be the number you try to factorize.
-</para>
+<para
+>Im Bildschirmfoto am Anfang dieser Seite steht ein <quote
+>x</quote
+> zwischen den Primfaktoren. Das ist ein Multiplikationszeichen. Das Produkt aller Primfaktoren muss die zu faktorisierende Zahl ergeben. </para>
 
 <note>
-<para>
-You have to enter all prime factors even when a prime factor repeats several
-times. Example: As prime factors of number 18 you have to enter 2, 3 and 3.
-</para>
+<para
+>Es müssen alle Primfaktoren eingegeben werden, selbst wenn sich ein Primfaktor mehrfach wiederholt. Als Primfaktoren für die Zahl 18 müssen zum Beispiel die Zahlen 2, 3 und 3 eingegeben werden. </para>
 </note>
 
-<para>In this exercise all options are disabled.</para>
+<para
+>In dieser Übung sind alle Einstellungen nicht aktiviert.</para>
 
 </sect1>
 
 <sect1 id="exer_percentage">
-<title>Exercise Percentage</title>
+<title
+>Prozentaufgaben</title>
 
-<para>In this exercise you have to answer some percentage questions.</para>
+<para
+>In dieser Übung müssen Prozentaufgaben gerechnet werden.</para>
 
 <screenshot>
-<screeninfo>Exercise Percentage</screeninfo>
+<screeninfo
+>Prozentaufgaben</screeninfo>
 <mediaobject>
   <imageobject>
 		<imagedata fileref="percentage.png" format="PNG"/>
   </imageobject>
   <textobject>
-    <phrase>Exercise Percentage</phrase>
+    <phrase
+>Prozentaufgaben</phrase>
   </textobject>
 </mediaobject>
 </screenshot>
 
-<para>
-After you have entered your answer click on the
-<guibutton>Check</guibutton> button. &kbruch; will check your input and
-present the correct result. After this step you will get to the next task by
-clicking on the <guibutton>Next</guibutton> button.
-</para>
+<para
+>Nachdem du die Antwort eingegeben hast, muss der Knopf <guibutton
+>Überprüfen</guibutton
+> gedrückt werden. &kbruch; überprüft nun die Eingabe und zeigt das richtige Ergebnis. Nach diesem Schritt geht es mit dem Anklicken des Knopfes <guibutton
+>Weiter</guibutton
+> zur nächsten Aufgabe. </para>
 
-<para>In this exercise all options are disabled.</para>
+<para
+>In dieser Übung sind alle Einstellungen nicht aktiviert.</para>
 
 </sect1>
 
@@ -685,44 +844,109 @@ clicking on the <guibutton>Next</guibutton> button.
 
 <chapter id="credits">
 
-<title>Credits and License</title>
-<para>&kbruch;</para>
-<para>
-Program and documentation Copyright: 2001-2011 Sebastian Stein
- <email>seb.kde@hpfsc.de</email>
-</para>
+<title
+>Danksagungen und Lizenz</title>
+<para
+>&kbruch;</para>
+<para
+>Copyright für Programm und Dokumentation: 2001-2011 Sebastian Stein <email
+>seb.kde@hpfsc.de</email
+> </para>
 
 <!-- needs update ???-->
 
-<para>Thank you goes to:</para>
+<para
+>Dank geht an:</para>
 
 <itemizedlist>
-	<listitem><para>&Anne-Marie.Mahfouf; for managing the &kde; Edu project</para></listitem>
-	<listitem><para>Klas Kalass for helping design the interface</para></listitem>
-	<listitem><para>Eva Brucherseifer for writing <application>KMath</application> (&kbruch;'s &GUI; is based on this work)</para></listitem>
-	<listitem><para>Dominique Devriese for bug fixing</para></listitem>
-	<listitem><para><ulink url="http://www.net-tex.de/">Stefan Schumacher</ulink> for testing a very early version</para></listitem>
-	<listitem><para><ulink url="https://www.guckes.net/">Sven Guckes</ulink> for testing the text interface (which has been removed)</para></listitem>
-	<listitem><para>&David.Faure; for helping with &kde; <acronym>CVS</acronym> and &kde; Bugzilla</para></listitem>
-	<listitem><para>&Robert.Gogolok; for helping with &kde; <acronym>CVS</acronym></para></listitem>
-	<listitem><para>John Kesson for proof reading the handbook</para></listitem>
+	<listitem
+><para
+>&Anne-Marie.Mahfouf; für die Betreuung des &kde;-Edu Projektes</para
+></listitem>
+	<listitem
+><para
+>Klas Kalass für die Gestaltung der Oberfläche</para
+></listitem>
+	<listitem
+><para
+>Eva Brucherseifer für <application
+>KMath</application
+> (Die Oberfläche von &kbruch; basiert auf dieser Arbeit)</para
+></listitem>
+	<listitem
+><para
+>Dominique Devriese für Fehlerbeseitigung</para
+></listitem>
+	<listitem
+><para
+><ulink url="http://www.net-tex.de/"
+>Stefan Schumacher</ulink
+> für den Test einer sehr frühen Version</para
+></listitem>
+	<listitem
+><para
+><ulink url="https://www.guckes.net/"
+>Sven Guckes</ulink
+> für den Test der Textoberfläche (die inzwischen entfernt wurde)</para
+></listitem>
+	<listitem
+><para
+>&David.Faure; für seine Unterstützung bei &kde;-<acronym
+>CVS</acronym
+> und &kde;-Bugzilla</para
+></listitem>
+	<listitem
+><para
+>&Robert.Gogolok; für seine Unterstützung bei &kde; <acronym
+>CVS</acronym
+></para
+></listitem>
+	<listitem
+><para
+>John Kesson für das Korrekturlesen des Handbuchs</para
+></listitem>
 </itemizedlist>
 
-<para>New interface design and usability improvements for &kde; 4.1:</para>
+<para
+>Neues Oberflächendesign und Verbesserung der Benutzbarkeit für &kde; 4.1:</para>
 <itemizedlist>
-<listitem><para>Paulo Cattai <email>paulo.cattai@ltia.fc.unesp.br</email></para></listitem>
-<listitem><para>Danilo Balzaque <email>danilo.balzaque@ltia.fc.unesp.br</email></para></listitem>
-<listitem><para>Roberto Cunha <email>roberto.cunha@ltia.fc.unesp.br</email></para></listitem>
-<listitem><para>Tadeu Araujo <email>tadeu.araujo@ltia.fc.unesp.br</email></para></listitem>
-<listitem><para>Tiago Porangaba <email>tiago.porangaba@ltia.fc.unesp.br</email></para></listitem>
+<listitem
+><para
+>Paulo Cattai <email
+>paulo.cattai@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Danilo Balzaque <email
+>danilo.balzaque@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Roberto Cunha <email
+>roberto.cunha@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tadeu Araujo <email
+>tadeu.araujo@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tiago Porangaba <email
+>tiago.porangaba@ltia.fc.unesp.br</email
+></para
+></listitem>
 </itemizedlist>
 
-<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
-
-&underFDL;           <!-- FDL: do not remove -->
-&underGPL;        	 <!-- GPL License -->
-
-</chapter>
+<para
+>Übersetzung Sebastian Stein<email
+>seb.stein@hpfsc.de</email
+></para
+> &underFDL; &underGPL; </chapter>
 
 &documentation.index;
 </book>
