@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-04 00:41+0000\n"
-"PO-Revision-Date: 2022-10-10 10:18+0200\n"
+"PO-Revision-Date: 2023-01-15 21:36+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -31,17 +31,17 @@ msgstr "Temuri.doghonadze@gmail.com"
 #: AppMenuWidget.cpp:95
 #, kde-format
 msgid "KBruch modes:"
-msgstr ""
+msgstr "KBruch -ს რეჟიმები:"
 
 #: AppMenuWidget.cpp:102
 #, kde-format
 msgid "Open standard KBruch"
-msgstr ""
+msgstr "სტანდარტული KBruch-ის გახსნა"
 
 #: AppMenuWidget.cpp:108 MainQtWidget.cpp:75
 #, kde-format
 msgid "Exercise"
-msgstr ""
+msgstr "ვარჯიში"
 
 #: AppMenuWidget.cpp:117
 #, kde-format
@@ -51,7 +51,7 @@ msgstr ""
 #: AppMenuWidget.cpp:123 FractionRingWidget.cpp:52
 #, kde-format
 msgid "Learning"
-msgstr ""
+msgstr "სწავლა"
 
 #. i18n: ectx: Menu (file)
 #: AppMenuWidgetui.rc:6 FractionRingWidgetui.rc:6 kbruchui.rc:6
@@ -100,7 +100,7 @@ msgstr "გამო&ტოვება"
 #: ExerciseMixedNumbers.cpp:159 ExercisePercentage.cpp:118
 #, kde-format
 msgid "Click on this button to skip this question."
-msgstr ""
+msgstr "კითხვის გამოსატოვებლად ამ ღილაკს დააწკაპუნეთ."
 
 #: ExerciseCompare.cpp:134 MainQtWidget.cpp:502
 #, kde-format
@@ -240,42 +240,42 @@ msgstr "19"
 #: ExerciseFactorize.cpp:216
 #, kde-format
 msgid "Add prime factor 2."
-msgstr ""
+msgstr "მამრავლის დამატება: 2."
 
 #: ExerciseFactorize.cpp:217
 #, kde-format
 msgid "Add prime factor 3."
-msgstr ""
+msgstr "მამრავლის დამატება: 3."
 
 #: ExerciseFactorize.cpp:218
 #, kde-format
 msgid "Add prime factor 5."
-msgstr ""
+msgstr "მამრავლის დამატება: 5."
 
 #: ExerciseFactorize.cpp:219
 #, kde-format
 msgid "Add prime factor 7."
-msgstr ""
+msgstr "მამრავლის დამატება: 7."
 
 #: ExerciseFactorize.cpp:220
 #, kde-format
 msgid "Add prime factor 11."
-msgstr ""
+msgstr "მამრავლის დამატება: 11."
 
 #: ExerciseFactorize.cpp:221
 #, kde-format
 msgid "Add prime factor 13."
-msgstr ""
+msgstr "მამრავლის დამატება: 13."
 
 #: ExerciseFactorize.cpp:222
 #, kde-format
 msgid "Add prime factor 17."
-msgstr ""
+msgstr "მამრავლის დამატება: 17."
 
 #: ExerciseFactorize.cpp:223
 #, kde-format
 msgid "Add prime factor 19."
-msgstr ""
+msgstr "მამრავლის დამატება: 19."
 
 #: ExerciseFactorize.cpp:228
 #, kde-format
@@ -337,7 +337,7 @@ msgstr ""
 #: ExerciseMixedNumbers.cpp:286 TaskView.cpp:267
 #, kde-format
 msgid "Click this button to get the next question."
-msgstr ""
+msgstr "შემდეგი კითხვის მისაღებად ღილაკს დააწკაპუნეთ."
 
 #: ExerciseMixedNumbers.cpp:340 TaskView.cpp:356
 #, kde-format
@@ -491,12 +491,12 @@ msgstr ""
 #: KBruch.cpp:56
 #, kde-format
 msgid "© 2002-2011, Sebastian Stein"
-msgstr ""
+msgstr "© 2002-2011, Sebastian Stein"
 
 #: KBruch.cpp:57
 #, kde-format
 msgid "Sebastian Stein"
-msgstr ""
+msgstr "Sebastian Stein"
 
 #: KBruch.cpp:57
 #, kde-format
@@ -537,7 +537,7 @@ msgstr "Tiago Porangaba"
 #: kbruch.kcfg:11
 #, kde-format
 msgid "Active exercise."
-msgstr ""
+msgstr "მიმდინარე დავალება."
 
 #. i18n: ectx: whatsthis, entry, group (General)
 #: kbruch.kcfg:12
@@ -549,7 +549,7 @@ msgstr ""
 #: kbruch.kcfg:19
 #, kde-format
 msgid "Enable Addition"
-msgstr ""
+msgstr "დამატების ჩართვა"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:20
@@ -561,7 +561,7 @@ msgstr ""
 #: kbruch.kcfg:24
 #, kde-format
 msgid "Enable Subtraction"
-msgstr ""
+msgstr "გამოკლების ჩართვა"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:25
@@ -573,7 +573,7 @@ msgstr ""
 #: kbruch.kcfg:29
 #, kde-format
 msgid "Enable Division"
-msgstr ""
+msgstr "გაყოფის ჩართვა"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:30
@@ -585,7 +585,7 @@ msgstr ""
 #: kbruch.kcfg:34
 #, kde-format
 msgid "Enable Multiplication"
-msgstr ""
+msgstr "გამრავლების ჩართვა"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:35
@@ -597,7 +597,7 @@ msgstr ""
 #: kbruch.kcfg:39
 #, kde-format
 msgid "Enable Multiplication/Division"
-msgstr ""
+msgstr "გამრავლება/გაყოფის ჩართვა"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:40
@@ -609,7 +609,7 @@ msgstr ""
 #: kbruch.kcfg:44
 #, kde-format
 msgid "Number of fractions"
-msgstr ""
+msgstr "ფრაქციების რაოდენობა"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:45
@@ -645,7 +645,7 @@ msgstr ""
 #: kbruch.kcfg:59 kbruch.kcfg:64 kbruch.kcfg:69
 #, kde-format
 msgid "Mixed number"
-msgstr ""
+msgstr "შერეული რიცხვი"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:60
@@ -677,20 +677,20 @@ msgstr ""
 #: kbruch.kcfg:82
 #, kde-format
 msgid "Number of solved tasks"
-msgstr ""
+msgstr "ამოხსნილი ამოცანების რაოდენობა"
 
 #. i18n: ectx: whatsthis, entry, group (Statistics)
 #: kbruch.kcfg:83
 #, kde-format
 msgid "Total number of solved tasks"
-msgstr ""
+msgstr "ამოხსნილი ამოცანების სრული რაოდენობა"
 
 #. i18n: ectx: label, entry, group (Statistics)
 #. i18n: ectx: whatsthis, entry, group (Statistics)
 #: kbruch.kcfg:87 kbruch.kcfg:88
 #, kde-format
 msgid "Number of skipped tasks"
-msgstr ""
+msgstr "გამოტოვებული ამოცანების რაოდენობა"
 
 #. i18n: ectx: label, entry (numberColor), group (TaskViewer)
 #. i18n: ectx: whatsthis, entry (numberColor), group (TaskViewer)
@@ -776,7 +776,7 @@ msgstr ""
 #: MainQtWidget.cpp:162 MainQtWidget.cpp:173
 #, kde-format
 msgid "Mixed number:"
-msgstr ""
+msgstr "შერეული რიცხვი:"
 
 #: MainQtWidget.cpp:163
 #, kde-format
@@ -968,7 +968,7 @@ msgstr "არითმეტიკა"
 #, kde-format
 msgctxt "Comparison Exercise"
 msgid "Comparison"
-msgstr ""
+msgstr "შედარება"
 
 #: MainQtWidget.cpp:569
 #, kde-format
@@ -1007,7 +1007,7 @@ msgstr "პროცენტი"
 #: MainQtWidget.cpp:923
 #, kde-format
 msgid "Comparison"
-msgstr ""
+msgstr "შედარება"
 
 #: MainQtWidget.cpp:939
 #, kde-format
@@ -1027,12 +1027,12 @@ msgstr ""
 #: ResultWidget.cpp:93
 #, kde-format
 msgid "Solution:"
-msgstr ""
+msgstr "გადაწყვეტა:"
 
 #: ResultWidget.cpp:131
 #, kde-format
 msgid "Correct!"
-msgstr ""
+msgstr "სწორია!"
 
 #: ResultWidget.cpp:138 ResultWidget.cpp:145
 #, kde-format
@@ -1047,25 +1047,25 @@ msgstr ""
 #: StatisticsView.cpp:65
 #, kde-format
 msgid "Questions:"
-msgstr ""
+msgstr "კითხვები:"
 
 #: StatisticsView.cpp:71
 #, kde-format
 msgctxt "@info:status the number of correct answers"
 msgid "Correct:"
-msgstr ""
+msgstr "სწორი:"
 
 #: StatisticsView.cpp:77
 #, kde-format
 msgctxt "@info:status the number of incorrect answers"
 msgid "Incorrect:"
-msgstr ""
+msgstr "არასწორი:"
 
 #: StatisticsView.cpp:83
 #, kde-format
 msgctxt "@info:status the number of skipped answers"
 msgid "Skipped:"
-msgstr ""
+msgstr "გამოტოვებული:"
 
 #: StatisticsView.cpp:94
 #, kde-format
