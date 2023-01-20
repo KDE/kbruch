@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-04 00:41+0000\n"
-"PO-Revision-Date: 2023-01-15 21:36+0100\n"
+"PO-Revision-Date: 2023-01-19 07:39+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -455,16 +455,16 @@ msgstr ""
 msgctxt "Inserted as %1 in the message below."
 msgid "%2 of 1 painted part."
 msgid_plural "%2 of %1 painted parts."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 1 დახატული ნაწილიდან."
+msgstr[1] "%2 %1 დახატული ნაწილიდან."
 
 #: FractionRingWidget.cpp:429
 #, kde-format
 msgctxt "Inserted as %2 in the message below."
 msgid "%2 of 1 painted part."
 msgid_plural "%2 of %1 painted parts."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 1 დახატული ნაწილიდან."
+msgstr[1] "%2 %1 დახატული ნაწილიდან."
 
 #: FractionRingWidget.cpp:432
 #, kde-format
@@ -835,7 +835,7 @@ msgstr ""
 #: MainQtWidget.cpp:224
 #, kde-format
 msgid "Reduced form:"
-msgstr ""
+msgstr "შემცირებული ფორმა:"
 
 #: MainQtWidget.cpp:225
 #, kde-format
@@ -845,7 +845,7 @@ msgstr ""
 #: MainQtWidget.cpp:235
 #, kde-format
 msgid "Number of terms:"
-msgstr ""
+msgstr "პირობების რაოდენობა:"
 
 #: MainQtWidget.cpp:236 MainQtWidget.cpp:246
 #, kde-format
@@ -853,6 +853,8 @@ msgid ""
 "The number of \n"
 "terms you want"
 msgstr ""
+"თქვენთვის სასურველი\n"
+"პირობების რაოდენობა"
 
 #: MainQtWidget.cpp:247
 #, kde-format
@@ -891,7 +893,7 @@ msgstr "უკან"
 #: MainQtWidget.cpp:490
 #, kde-format
 msgid "Go back to Modes screen."
-msgstr ""
+msgstr "რეჟიმების გვერდზე დაბრუნება."
 
 #: MainQtWidget.cpp:495
 #, kde-format
@@ -900,6 +902,9 @@ msgid ""
 "\n"
 "Arithmetic"
 msgstr ""
+"\n"
+"\n"
+"არითმეტიკა"
 
 #: MainQtWidget.cpp:496 TaskView.cpp:162
 #, kde-format
@@ -913,6 +918,9 @@ msgid ""
 "\n"
 "Comparison"
 msgstr ""
+"\n"
+"\n"
+"შედარება"
 
 #: MainQtWidget.cpp:507
 #, kde-format
@@ -921,6 +929,9 @@ msgid ""
 "\n"
 "Conversion"
 msgstr ""
+"\n"
+"\n"
+"გადაყვანა"
 
 #: MainQtWidget.cpp:513
 #, kde-format
@@ -929,6 +940,9 @@ msgid ""
 "\n"
 "Mixed Numbers"
 msgstr ""
+"\n"
+"\n"
+"შერეული რიცხვები"
 
 #: MainQtWidget.cpp:519
 #, kde-format
@@ -937,6 +951,9 @@ msgid ""
 "\n"
 "Factorization"
 msgstr ""
+"\n"
+"\n"
+"ფაქტორიზაცია"
 
 #: MainQtWidget.cpp:525
 #, kde-format
@@ -945,6 +962,9 @@ msgid ""
 "\n"
 "Percentage"
 msgstr ""
+"\n"
+"\n"
+"პროცენტულობა"
 
 #: MainQtWidget.cpp:538
 #, kde-format
@@ -980,13 +1000,13 @@ msgstr "გადაყვანა"
 #, kde-format
 msgctxt "Mixed Numbers Exercise"
 msgid "MixedNumbers"
-msgstr ""
+msgstr "შერეული რიცხვები"
 
 #: MainQtWidget.cpp:581
 #, kde-format
 msgctxt "Factorization Exercise"
 msgid "Factorization"
-msgstr ""
+msgstr "ფაქტორიზაცია"
 
 #: MainQtWidget.cpp:587
 #, kde-format
@@ -1017,12 +1037,12 @@ msgstr "გადაყვანა"
 #: MainQtWidget.cpp:955
 #, kde-format
 msgid "Mixed Numbers"
-msgstr ""
+msgstr "შერეული რიცხვები"
 
 #: MainQtWidget.cpp:971
 #, kde-format
 msgid "Factorization"
-msgstr ""
+msgstr "ფაქტორიზაცია"
 
 #: ResultWidget.cpp:93
 #, kde-format
@@ -1037,7 +1057,7 @@ msgstr "სწორია!"
 #: ResultWidget.cpp:138 ResultWidget.cpp:145
 #, kde-format
 msgid "Incorrect!"
-msgstr ""
+msgstr "არასწორია!"
 
 #: StatisticsView.cpp:59
 #, kde-format
