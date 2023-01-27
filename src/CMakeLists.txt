@@ -38,13 +38,13 @@ kconfig_add_kcfg_files(kbruch_SRCS settingsclass.kcfgc )
 add_executable(kbruch ${kbruch_SRCS})
 
 target_link_libraries(kbruch
-    KF5::ConfigCore
-    KF5::ConfigGui
-    KF5::CoreAddons
-    KF5::Crash
-    KF5::I18n
-    KF5::WidgetsAddons
-    KF5::XmlGui
+    KF${KF_MAJOR_VERSION}::ConfigCore
+    KF${KF_MAJOR_VERSION}::ConfigGui
+    KF${KF_MAJOR_VERSION}::CoreAddons
+    KF${KF_MAJOR_VERSION}::Crash
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::WidgetsAddons
+    KF${KF_MAJOR_VERSION}::XmlGui
 )
 
 install(TARGETS kbruch  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
