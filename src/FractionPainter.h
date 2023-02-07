@@ -30,8 +30,8 @@ public:
     /** destructor */
     ~FractionPainter() override;
 
-    void paintFraction(const QString & str_operation, Ratio & leftRatio, int leftMult,
-                       Ratio & rightRatio, int rightMult);
+    void paintFraction(const QString & str_operation, const Ratio & leftRatio, int leftMult,
+                       const Ratio & rightRatio, int rightMult);
     void update();
 protected:
     /** Function is called every time the screen need to be painted.

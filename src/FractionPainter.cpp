@@ -37,8 +37,8 @@ void FractionPainter::paintEvent(QPaintEvent *)
     paintWidget(paint);
 }
 
-void FractionPainter::paintFraction(const QString & op, Ratio & lr, int lm,
-                                    Ratio & rr, int rm)
+void FractionPainter::paintFraction(const QString & op, const Ratio & lr, int lm,
+                                    const Ratio & rr, int rm)
 {
     str_operation = op;
     leftRatio = lr;
