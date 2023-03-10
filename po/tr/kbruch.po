@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kdeedu-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-04 00:41+0000\n"
-"PO-Revision-Date: 2023-01-19 22:40+0300\n"
+"PO-Revision-Date: 2023-03-09 13:33+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -691,7 +691,7 @@ msgstr "Sadeleştirilmiş kesirlerin cevabı"
 #: kbruch.kcfg:55
 #, kde-format
 msgid "Set if the fractions need to be reduced."
-msgstr "Eğer kesirlerin sadeleştirilmeye ihtiyacı varsa ayarlayın."
+msgstr "Eğer kesirlerin sadeleştirilmeye gereksinimi varsa ayarlayın."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:59 kbruch.kcfg:64 kbruch.kcfg:69
@@ -713,7 +713,7 @@ msgstr ""
 msgid ""
 "Set if the fractions will need answers in mixed form or not on solution."
 msgstr ""
-"Kesirler, karmaşık biçim içinde cevaba ihtiyaç duyacaksa ya da çözüm "
+"Kesirler, karmaşık biçim içinde cevaba gereksinim duyacaksa ya da çözüm "
 "içerisinde olmayacaksa buradan ayarlayın."
 
 #. i18n: ectx: whatsthis, entry, group (Task)
