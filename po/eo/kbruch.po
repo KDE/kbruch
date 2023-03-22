@@ -1,12 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# translation of kbruch.pot to esperanto
+# Copyright (C) 2007 Free Software Foundation, Inc.
+# Axel Rousseau <axel@esperanto-jeunes.org>, 2007.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-04 00:41+0000\n"
-"PO-Revision-Date: 2007-12-16 06:50-0500\n"
-"Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
+"PO-Revision-Date: 2023-03-20 22:43+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -16,20 +18,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Zanata 3.5.1\n"
 
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Familia nomo:"
+msgstr "Axel Rousseau"
 
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "Listo de e-leteroj"
+msgstr "axel@esperanto-jeunes.org"
 
 #: AppMenuWidget.cpp:95
-#, fuzzy, kde-format
+#, kde-format
 msgid "KBruch modes:"
-msgstr "KBruch"
+msgstr ""
 
 #: AppMenuWidget.cpp:102
 #, kde-format
@@ -63,9 +65,9 @@ msgid ">"
 msgstr ">"
 
 #: ExerciseCompare.cpp:88
-#, fuzzy, kde-format
+#, kde-format
 msgid "Click on this button to select the 'greater than' sign."
-msgstr "Klaku sur tiu butono por ŝanĝi la komparacian signon"
+msgstr ""
 
 #: ExerciseCompare.cpp:93
 #, kde-format
@@ -73,9 +75,9 @@ msgid "<"
 msgstr "<"
 
 #: ExerciseCompare.cpp:97
-#, fuzzy, kde-format
+#, kde-format
 msgid "Click on this button to select the 'less than' sign."
-msgstr "Klaku sur tiu butono por ŝanĝi la komparacian signon"
+msgstr ""
 
 #: ExerciseCompare.cpp:102
 #, kde-format
@@ -83,9 +85,9 @@ msgid "="
 msgstr "="
 
 #: ExerciseCompare.cpp:106
-#, fuzzy, kde-format
+#, kde-format
 msgid "Click on this button to select the 'equals' sign."
-msgstr "Klaku sur tiu butono por ŝanĝi la komparacian signon"
+msgstr ""
 
 #: ExerciseCompare.cpp:118 ExerciseCompare.cpp:280 ExerciseConvert.cpp:135
 #: ExerciseFactorize.cpp:161 ExerciseMixedNumbers.cpp:158
@@ -96,9 +98,9 @@ msgstr "La&si"
 
 #: ExerciseCompare.cpp:119 ExerciseConvert.cpp:136 ExerciseFactorize.cpp:162
 #: ExerciseMixedNumbers.cpp:159 ExercisePercentage.cpp:118
-#, fuzzy, kde-format
+#, kde-format
 msgid "Click on this button to skip this question."
-msgstr "Klaku sur tiu butono por kontroli vian rezulton"
+msgstr ""
 
 #: ExerciseCompare.cpp:134 MainQtWidget.cpp:502
 #, kde-format
@@ -118,9 +120,9 @@ msgid "Click on this button to check your result."
 msgstr "Klaku sur tiu butono por kontroli vian rezulton"
 
 #: ExerciseCompare.cpp:295 ExerciseCompare.cpp:309 ExerciseCompare.cpp:323
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Next"
-msgstr "&Nova"
+msgstr ""
 
 #: ExerciseConvert.cpp:91 TaskView.cpp:108
 #, kde-format
@@ -139,9 +141,9 @@ msgstr ""
 #: ExercisePercentage.cpp:107 ExercisePercentage.cpp:161
 #: ExercisePercentage.cpp:387 TaskView.cpp:142 TaskView.cpp:247
 #: TaskView.cpp:441
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Check"
-msgstr "&Kontrolu Taskon"
+msgstr ""
 
 #: ExerciseConvert.cpp:127 ExerciseConvert.cpp:371 ExerciseFactorize.cpp:171
 #: ExerciseFactorize.cpp:400 ExerciseMixedNumbers.cpp:150
@@ -165,9 +167,9 @@ msgid ""
 msgstr ""
 
 #: ExerciseConvert.cpp:309 ExerciseFactorize.cpp:349 ExercisePercentage.cpp:317
-#, fuzzy, kde-format
+#, kde-format
 msgid "Click on this button to get to the next question."
-msgstr "Klaku sur tiu butono por ŝanĝi la komparacian signon"
+msgstr ""
 
 #: ExerciseConvert.cpp:354
 #, kde-format
@@ -186,9 +188,9 @@ msgstr ""
 
 #: ExerciseConvert.cpp:405 ExerciseFactorize.cpp:498
 #: ExerciseMixedNumbers.cpp:287 ExercisePercentage.cpp:383 TaskView.cpp:437
-#, fuzzy, kde-format
+#, kde-format
 msgid "N&ext"
-msgstr "Nova Tasko"
+msgstr ""
 
 #: ExerciseFactorize.cpp:154
 #, kde-format
@@ -297,19 +299,19 @@ msgid ""
 msgstr ""
 
 #: ExerciseMixedNumbers.cpp:96 TaskView.cpp:96
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter the integer part of the fraction"
-msgstr "Ŝanĝu la koloron de la dividaĵa streko"
+msgstr ""
 
 #: ExerciseMixedNumbers.cpp:110
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter the numerator of the fraction"
-msgstr "Ŝanĝu la koloron de la dividaĵa streko"
+msgstr ""
 
 #: ExerciseMixedNumbers.cpp:127
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter the denominator of the fraction"
-msgstr "Ŝanĝu la koloron de la dividaĵa streko"
+msgstr ""
 
 #: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:514
 #, kde-format
@@ -333,9 +335,9 @@ msgid ""
 msgstr ""
 
 #: ExerciseMixedNumbers.cpp:286 TaskView.cpp:267
-#, fuzzy, kde-format
+#, kde-format
 msgid "Click this button to get the next question."
-msgstr "Klaku sur tiu butono por ŝanĝi la komparacian signon"
+msgstr ""
 
 #: ExerciseMixedNumbers.cpp:340 TaskView.cpp:356
 #, kde-format
@@ -389,15 +391,15 @@ msgid "Expand"
 msgstr ""
 
 #: FractionRingWidget.cpp:133 MainQtWidget.cpp:481
-#, fuzzy, kde-format
+#, kde-format
 msgid "New"
-msgstr "&Nova"
+msgstr ""
 
 #: FractionRingWidget.cpp:186 MainQtWidget.cpp:531
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action opens a new question"
 msgid "&New"
-msgstr "&Nova"
+msgstr ""
 
 #: FractionRingWidget.cpp:194 MainQtWidget.cpp:551
 #, kde-format
@@ -487,9 +489,9 @@ msgid "Learn calculating with fractions"
 msgstr ""
 
 #: KBruch.cpp:56
-#, fuzzy, kde-format
+#, kde-format
 msgid "© 2002-2011, Sebastian Stein"
-msgstr "Sebastian Stein"
+msgstr ""
 
 #: KBruch.cpp:57
 #, kde-format
@@ -533,33 +535,33 @@ msgstr "Tiago Porangaba"
 
 #. i18n: ectx: label, entry, group (General)
 #: kbruch.kcfg:11
-#, fuzzy, kde-format
+#, kde-format
 msgid "Active exercise."
-msgstr "Ekzerco num. %1:"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (General)
 #: kbruch.kcfg:12
-#, fuzzy, kde-format
+#, kde-format
 msgid "Saves the active exercise's type."
-msgstr "Ekzerco num. %1:"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:19
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enable Addition"
-msgstr "Ebligi Adicion/Subtrahon"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:20
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enable Addition for task generation."
-msgstr "Ebligi Adicion/Subtrahon por taska generado"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:24
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enable Subtraction"
-msgstr "Ebligi Adicion/Subtrahon"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:25
@@ -569,51 +571,51 @@ msgstr "Ebligi Adicion/Subtrahon por taska generado"
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:29
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enable Division"
-msgstr "Ebligi Adicion/Subtrahon"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:30
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enable Division for task generation."
-msgstr "Ebligi Adicion/Subtrahon por taska generado"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:34
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enable Multiplication"
-msgstr "&Divenu ĉefurbon per ĝia regiono..."
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:35
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enable Multiplication for task generation."
-msgstr "Ebligi Adicion/Subtrahon por taska generado"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:39
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enable Multiplication/Division"
-msgstr "&Divenu ĉefurbon per ĝia regiono..."
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:40
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enable Multiplication/Division for task generation."
-msgstr "Ebligi Adicion/Subtrahon por taska generado"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:44
-#, fuzzy, kde-format
+#, kde-format
 msgid "Number of fractions"
-msgstr "<i>Bildnombro</i>: %1"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:45
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set the number of fractions for task generation."
-msgstr "Ebligi Adicion/Subtrahon por taska generado"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:49
@@ -629,9 +631,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:54
-#, fuzzy, kde-format
+#, kde-format
 msgid "Answer reduced fractions"
-msgstr "<i>Bildnombro</i>: %1"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:55
@@ -641,9 +643,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:59 kbruch.kcfg:64 kbruch.kcfg:69
-#, fuzzy, kde-format
+#, kde-format
 msgid "Mixed number"
-msgstr "Nombro"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:60
@@ -667,28 +669,28 @@ msgstr ""
 #. i18n: ectx: label, entry, group (Statistics)
 #. i18n: ectx: whatsthis, entry, group (Statistics)
 #: kbruch.kcfg:77 kbruch.kcfg:78
-#, fuzzy, kde-format
+#, kde-format
 msgid "Number of correctly solved tasks"
-msgstr "<i>Bildnombro</i>: %1"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (Statistics)
 #: kbruch.kcfg:82
-#, fuzzy, kde-format
+#, kde-format
 msgid "Number of solved tasks"
-msgstr "<i>Bildnombro</i>: %1"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (Statistics)
 #: kbruch.kcfg:83
-#, fuzzy, kde-format
+#, kde-format
 msgid "Total number of solved tasks"
-msgstr "<i>Bildnombro</i>: %1"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (Statistics)
 #. i18n: ectx: whatsthis, entry, group (Statistics)
 #: kbruch.kcfg:87 kbruch.kcfg:88
-#, fuzzy, kde-format
+#, kde-format
 msgid "Number of skipped tasks"
-msgstr "<i>Bildnombro</i>: %1"
+msgstr ""
 
 #. i18n: ectx: label, entry (numberColor), group (TaskViewer)
 #. i18n: ectx: whatsthis, entry (numberColor), group (TaskViewer)
@@ -700,16 +702,16 @@ msgstr ""
 #. i18n: ectx: label, entry (operationColor), group (TaskViewer)
 #. i18n: ectx: whatsthis, entry (operationColor), group (TaskViewer)
 #: kbruch.kcfg:100 kbruch.kcfg:101
-#, fuzzy, kde-format
+#, kde-format
 msgid "Color of the operation signs in the task view"
-msgstr "Ŝanĝu la koloron de la operacia signo"
+msgstr ""
 
 #. i18n: ectx: label, entry (fractionBarColor), group (TaskViewer)
 #. i18n: ectx: whatsthis, entry (fractionBarColor), group (TaskViewer)
 #: kbruch.kcfg:105 kbruch.kcfg:106
-#, fuzzy, kde-format
+#, kde-format
 msgid "Color of the fraction bars in the task view"
-msgstr "Ŝanĝu la koloron de la dividaĵa streko"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (TaskViewer)
 #. i18n: ectx: whatsthis, entry, group (TaskViewer)
@@ -733,9 +735,9 @@ msgid ""
 msgstr ""
 
 #: MainQtWidget.cpp:106
-#, fuzzy, kde-format
+#, kde-format
 msgid "Question:"
-msgstr "Bildoperacioj"
+msgstr ""
 
 #: MainQtWidget.cpp:107
 #, kde-format
@@ -743,9 +745,9 @@ msgid "Answer:"
 msgstr ""
 
 #: MainQtWidget.cpp:108
-#, fuzzy, kde-format
+#, kde-format
 msgid "Operations:"
-msgstr "Bildoperacioj"
+msgstr ""
 
 #: MainQtWidget.cpp:114 MainQtWidget.cpp:907
 #, kde-format
@@ -753,9 +755,9 @@ msgid "Arithmetic"
 msgstr ""
 
 #: MainQtWidget.cpp:156
-#, fuzzy, kde-format
+#, kde-format
 msgid "Options:"
-msgstr "Bildoperacioj"
+msgstr ""
 
 #: MainQtWidget.cpp:157
 #, kde-format
@@ -801,9 +803,9 @@ msgid "Check this to use addition operator."
 msgstr ""
 
 #: MainQtWidget.cpp:194
-#, fuzzy, kde-format
+#, kde-format
 msgid "Subtraction:"
-msgstr "Adicion/Subtrahon"
+msgstr ""
 
 #: MainQtWidget.cpp:195
 #, kde-format
@@ -811,9 +813,9 @@ msgid "Check this to use subtraction operator."
 msgstr ""
 
 #: MainQtWidget.cpp:204
-#, fuzzy, kde-format
+#, kde-format
 msgid "Multiplication:"
-msgstr "&Divenu ĉefurbon per ĝia regiono..."
+msgstr ""
 
 #: MainQtWidget.cpp:205
 #, kde-format
@@ -841,9 +843,9 @@ msgid "Check this to force the use of the reduced form."
 msgstr ""
 
 #: MainQtWidget.cpp:235
-#, fuzzy, kde-format
+#, kde-format
 msgid "Number of terms:"
-msgstr "<i>Bildnombro</i>: %1"
+msgstr ""
 
 #: MainQtWidget.cpp:236 MainQtWidget.cpp:246
 #, kde-format
@@ -905,20 +907,20 @@ msgid "In this exercise you have to solve a given question with fractions."
 msgstr ""
 
 #: MainQtWidget.cpp:501
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "\n"
 "\n"
 "Comparison"
-msgstr "Konverto"
+msgstr ""
 
 #: MainQtWidget.cpp:507
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "\n"
 "\n"
 "Conversion"
-msgstr "Konverto"
+msgstr ""
 
 #: MainQtWidget.cpp:513
 #, kde-format
@@ -945,16 +947,16 @@ msgid ""
 msgstr ""
 
 #: MainQtWidget.cpp:538
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action opens a new question"
 msgid "New"
-msgstr "&Nova"
+msgstr ""
 
 #: MainQtWidget.cpp:544
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action go to the main screen"
 msgid "&Back"
-msgstr "&Tasko"
+msgstr ""
 
 #: MainQtWidget.cpp:557
 #, kde-format
@@ -963,22 +965,22 @@ msgid "Arithmetic"
 msgstr ""
 
 #: MainQtWidget.cpp:563
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Comparison Exercise"
 msgid "Comparison"
-msgstr "Konverto"
+msgstr ""
 
 #: MainQtWidget.cpp:569
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Conversion Exercise"
 msgid "Conversion"
-msgstr "Konverto"
+msgstr ""
 
 #: MainQtWidget.cpp:575
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Mixed Numbers Exercise"
 msgid "MixedNumbers"
-msgstr "Nombro"
+msgstr ""
 
 #: MainQtWidget.cpp:581
 #, kde-format
@@ -1003,14 +1005,14 @@ msgid "Percentage"
 msgstr "Elcentaĵo"
 
 #: MainQtWidget.cpp:923
-#, fuzzy, kde-format
+#, kde-format
 msgid "Comparison"
-msgstr "Konverto"
+msgstr ""
 
 #: MainQtWidget.cpp:939
-#, fuzzy, kde-format
+#, kde-format
 msgid "Conversion"
-msgstr "Konverto"
+msgstr ""
 
 #: MainQtWidget.cpp:955
 #, kde-format
@@ -1028,14 +1030,14 @@ msgid "Solution:"
 msgstr ""
 
 #: ResultWidget.cpp:131
-#, fuzzy, kde-format
+#, kde-format
 msgid "Correct!"
-msgstr "Korekte:"
+msgstr ""
 
 #: ResultWidget.cpp:138 ResultWidget.cpp:145
-#, fuzzy, kde-format
+#, kde-format
 msgid "Incorrect!"
-msgstr "Nekorekte:"
+msgstr ""
 
 #: StatisticsView.cpp:59
 #, kde-format
@@ -1043,21 +1045,21 @@ msgid "This is the current total number of solved tasks."
 msgstr ""
 
 #: StatisticsView.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgid "Questions:"
-msgstr "Bildoperacioj"
+msgstr ""
 
 #: StatisticsView.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:status the number of correct answers"
 msgid "Correct:"
-msgstr "Korekte:"
+msgstr ""
 
 #: StatisticsView.cpp:77
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:status the number of incorrect answers"
 msgid "Incorrect:"
-msgstr "Nekorekte:"
+msgstr ""
 
 #: StatisticsView.cpp:83
 #, kde-format
@@ -1094,20 +1096,20 @@ msgid ""
 msgstr ""
 
 #: StatisticsView.cpp:121
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Reset"
-msgstr "Re&starigu"
+msgstr ""
 
 #: StatisticsView.cpp:122
-#, fuzzy, kde-format
+#, kde-format
 msgid "Click this button to reset the statistics."
-msgstr "Klaku sur tiu butono por ŝanĝi la komparacian signon"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, numberLabel)
 #: taskcolorsbase.ui:28
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Number:"
-msgstr "Nombro"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_numberColor)
 #: taskcolorsbase.ui:38
@@ -1117,9 +1119,9 @@ msgstr "Ŝanĝu la koloron de la nombroj"
 
 #. i18n: ectx: property (text), widget (QLabel, operationLabel)
 #: taskcolorsbase.ui:54
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Operation sign:"
-msgstr "Operacia signo:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_operationColor)
 #: taskcolorsbase.ui:70
@@ -1129,9 +1131,9 @@ msgstr "Ŝanĝu la koloron de la operacia signo"
 
 #. i18n: ectx: property (text), widget (QLabel, fractionBarLabel)
 #: taskcolorsbase.ui:86
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Fraction bar:"
-msgstr "Dividaĵa streko"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_fractionBarColor)
 #: taskcolorsbase.ui:96
@@ -1146,9 +1148,9 @@ msgid "Change the font of the numbers"
 msgstr "Ŝanĝu la tiparon de la nombroj"
 
 #: TaskView.cpp:153
-#, fuzzy, kde-format
+#, kde-format
 msgid "Click this button to skip this question."
-msgstr "Klaku sur tiu butono por kontroli vian rezulton"
+msgstr ""
 
 #: TaskView.cpp:163
 #, kde-format
