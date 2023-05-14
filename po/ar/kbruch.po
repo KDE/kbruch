@@ -227,7 +227,7 @@ msgstr "7"
 #: ExerciseFactorize.cpp:202
 #, fuzzy, kde-format
 msgid "11"
-msgstr "١١"
+msgstr "11"
 
 #: ExerciseFactorize.cpp:203
 #, kde-format
