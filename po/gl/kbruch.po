@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-04 00:41+0000\n"
-"PO-Revision-Date: 2023-06-17 13:28+0200\n"
+"PO-Revision-Date: 2023-06-19 11:06+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -692,7 +692,7 @@ msgstr "Responder con fraccións simplificadas"
 #: kbruch.kcfg:55
 #, kde-format
 msgid "Set if the fractions need to be reduced."
-msgstr "Indica se as fraccións deben estar reducidas."
+msgstr "Definir se as fraccións deben estar reducidas."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:59 kbruch.kcfg:64 kbruch.kcfg:69
@@ -718,7 +718,7 @@ msgstr ""
 #: kbruch.kcfg:70
 #, kde-format
 msgid "Set if the fractions will appear in mixed form or not in questions."
-msgstr "Indicar se as fraccións aparecen ou non na forma mixta nas preguntas."
+msgstr "Definir se as fraccións aparecen ou non na forma mixta nas preguntas."
 
 #. i18n: ectx: label, entry, group (Statistics)
 #. i18n: ectx: whatsthis, entry, group (Statistics)
@@ -818,7 +818,7 @@ msgstr "Opcións:"
 #: MainQtWidget.cpp:157
 #, kde-format
 msgid "Set the options to solve the exercises."
-msgstr "Configura as opcións de resolución dos exercicios."
+msgstr "Definir as opcións de resolución dos exercicios."
 
 #: MainQtWidget.cpp:158
 #, kde-format
@@ -828,8 +828,8 @@ msgid ""
 "part or to hide it by moving the handle to the left border of the main "
 "window."
 msgstr ""
-"Esta parte da xanela mostra as opcións para resolver os exercicios. Emprega "
-"o manipulador que hai entre as opcións e a xanela principal para cambiar o "
+"Esta parte da xanela amosa as opcións para resolver os exercicios. Usa o "
+"manipulador que hai entre as opcións e a xanela principal para cambiar o "
 "tamaño desta parte da xanela ou agóchea movendo o manipulador para o bordo "
 "esquerdo da xanela principal."
 
@@ -864,7 +864,7 @@ msgstr "Adición:"
 #: MainQtWidget.cpp:185
 #, kde-format
 msgid "Check this to use addition operator."
-msgstr "Marca esta opción para empregar o operador suma."
+msgstr "Marca esta opción para usar o operador suma."
 
 #: MainQtWidget.cpp:194
 #, kde-format
@@ -874,7 +874,7 @@ msgstr "Resta:"
 #: MainQtWidget.cpp:195
 #, kde-format
 msgid "Check this to use subtraction operator."
-msgstr "Marca esta opción para empregar o operador resta."
+msgstr "Marca esta opción para usar o operador resta."
 
 #: MainQtWidget.cpp:204
 #, kde-format
@@ -884,7 +884,7 @@ msgstr "Multiplicación:"
 #: MainQtWidget.cpp:205
 #, kde-format
 msgid "Check this to use multiplication operator."
-msgstr "Marca esta opción para empregar o operador produto."
+msgstr "Marca esta opción para usar o operador produto."
 
 #: MainQtWidget.cpp:214
 #, kde-format
@@ -894,7 +894,7 @@ msgstr "División:"
 #: MainQtWidget.cpp:215
 #, kde-format
 msgid "Check this to use division operator."
-msgstr "Marca esta opción para empregar o operador división."
+msgstr "Marca esta opción para usar o operador división."
 
 #: MainQtWidget.cpp:224
 #, kde-format
@@ -1254,7 +1254,7 @@ msgstr ""
 "Neste exercicio hai que resolver a pregunta xerada. Hai que inserir a parte "
 "enteira da fracción, o numerador e o denominador. Pódese axustar a "
 "dificultade do problema na parte da xanela das opcións. Non esquezas reducir "
-"o resultado se é obrigatorio empregar a forma reducida."
+"o resultado se é obrigatorio usar a forma reducida."
 
 #: TaskWidget.cpp:96
 #, kde-format
