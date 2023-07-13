@@ -632,4 +632,4 @@ void ExerciseFactorize::setButtonsEnabled(bool enabled)
     m_removeLastFactorButton->setEnabled(enabled);
 }
 
-
+#include "moc_ExerciseFactorize.cpp"

@@ -108,3 +108,5 @@ void FractionPainter::update()
     // update for itself
     ((QWidget *) this)->update();
 }
+
+#include "moc_FractionPainter.cpp"

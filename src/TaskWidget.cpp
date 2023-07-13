@@ -129,3 +129,5 @@ void TaskWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 
     return;
 }
+
+#include "moc_TaskWidget.cpp"

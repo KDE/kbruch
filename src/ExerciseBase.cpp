@@ -29,3 +29,5 @@ ExerciseBase::~ExerciseBase()
     qDebug() << "destructor ExerciseBase()";
 #endif
 }
+
+#include "moc_ExerciseBase.cpp"

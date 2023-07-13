@@ -116,3 +116,5 @@ void StatisticsBarWidget::updateBar(int correct, int skipped, int total)
 
     update();
 }
+
+#include "moc_StatisticsBarWidget.cpp"

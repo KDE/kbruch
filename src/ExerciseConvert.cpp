@@ -438,3 +438,5 @@ void ExerciseConvert::showEvent(QShowEvent *)
     numer_edit->setFocus();
 
 }
+
+#include "moc_ExerciseConvert.cpp"

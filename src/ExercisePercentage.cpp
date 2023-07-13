@@ -400,3 +400,5 @@ void ExercisePercentage::answerReturnPressed()
 {
     slotCheckButtonClicked();
 }
+
+#include "moc_ExercisePercentage.cpp"

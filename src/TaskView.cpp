@@ -459,3 +459,5 @@ void TaskView::showEvent(QShowEvent *)
         numer_edit->setFocus();
 
 }
+
+#include "moc_TaskView.cpp"

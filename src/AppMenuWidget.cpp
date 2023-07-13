@@ -188,3 +188,5 @@ void AppMenuWidget::slotLearningClicked()
     hide();
     return;
 }
+
+#include "moc_AppMenuWidget.cpp"

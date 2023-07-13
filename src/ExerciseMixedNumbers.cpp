@@ -402,3 +402,5 @@ void ExerciseMixedNumbers::denoReturnPressed()
 {
     slotCheckButtonClicked();
 }
+
+#include "moc_ExerciseMixedNumbers.cpp"

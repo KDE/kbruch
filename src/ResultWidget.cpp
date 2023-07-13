@@ -275,3 +275,5 @@ void ResultWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 
     return;
 }
+
+#include "moc_ResultWidget.cpp"

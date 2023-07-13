@@ -468,3 +468,5 @@ bool FractionRingWidget::checkTask()
 {
     return (rLeft.denominator() * multLeft == rRight.denominator() * multRight);
 }
+
+#include "moc_FractionRingWidget.cpp"

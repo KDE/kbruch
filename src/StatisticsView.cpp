@@ -209,3 +209,5 @@ void StatisticsView::resetStatistics()
     m_skipped = 0;
     (void) calc();
 }
+
+#include "moc_StatisticsView.cpp"

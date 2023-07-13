@@ -106,3 +106,5 @@ void RationalWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 
     return;
 }
+
+#include "moc_RationalWidget.cpp"

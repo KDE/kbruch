@@ -80,3 +80,5 @@ void RatioWidget::paintEvent(QPaintEvent* /* p_paintEvent */)
 
     return;
 }
+
+#include "moc_RatioWidget.cpp"

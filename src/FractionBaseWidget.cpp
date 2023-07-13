@@ -168,3 +168,5 @@ void FractionBaseWidget::setColorAndFont()
 
     return;
 }
+
+#include "moc_FractionBaseWidget.cpp"

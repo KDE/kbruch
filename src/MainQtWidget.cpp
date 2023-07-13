@@ -1000,3 +1000,5 @@ void MainQtWidget::goBack()
     kbruchApp->show();
     close();
 }
+
+#include "moc_MainQtWidget.cpp"

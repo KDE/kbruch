@@ -326,3 +326,5 @@ void ExerciseCompare::slotEqualButtonClicked()
 
     return;
 }
+
+#include "moc_ExerciseCompare.cpp"

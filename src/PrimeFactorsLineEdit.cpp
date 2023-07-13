@@ -124,3 +124,5 @@ void PrimeFactorsLineEdit::keyPressEvent(QKeyEvent * event)
         }
     }
 }
+
+#include "moc_PrimeFactorsLineEdit.cpp"
