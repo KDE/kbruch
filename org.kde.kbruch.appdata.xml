@@ -17,6 +17,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="de">KBruch</name>
   <name xml:lang="el">KBruch</name>
   <name xml:lang="en-GB">KBruch</name>
+  <name xml:lang="eo">KBruch</name>
   <name xml:lang="es">KBruch</name>
   <name xml:lang="et">KBruch</name>
   <name xml:lang="eu">KBruch</name>
@@ -53,6 +54,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="de">Bruchrechnen üben</summary>
   <summary xml:lang="el">Εξάσκηση στα κλάσματα</summary>
   <summary xml:lang="en-GB">Exercise Fractions</summary>
+  <summary xml:lang="eo">Ekzerci Frakciojn</summary>
   <summary xml:lang="es">Ejercitar fracciones</summary>
   <summary xml:lang="et">Ülesanded murdudega</summary>
   <summary xml:lang="eu">Zatikiak landu</summary>
@@ -88,6 +90,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="de">KBruch ist ein kleines Programm, um das Rechnen mit Brüchen und Prozenten zu üben. Für diesen Zweck werden verschiedene Übungen angeboten. Außerdem gibt es einen Modus für das Lernen von Brüchen. Das Programm überprüft die Eingaben des Benutzers und gibt entsprechende Rückmeldungen.</p>
     <p xml:lang="el">Το KBruch είναι ένα μικρό πρόγραμμα εξάσκησης στους υπολογισμούς με κλάσματακαι ποσοστά. Διαφορετικές ασκήσεις παρέχονται γι' αυτόν το σκοπό και μπορείτε να χρησιμοποιήσετε τη λειτουργία μάθησης για να εξασκηθείτε στα κλάσματα. Το πρόγραμμα ελέγχει τα δεδομένα του χρήστη και δίνει αναφορά.</p>
     <p xml:lang="en-GB">KBruch is a small program to practice calculating with fractions and percentages. Different exercises are provided for this purpose and you can use the learning mode to practice with fractions. The program checks the user's input and gives feedback.</p>
+    <p xml:lang="eo">KBruch estas malgranda programo por ekzerci kalkuladon kun frakcioj kaj procentoj. Malsamaj ekzercoj estas provizitaj por tiu celo kaj vi povas uzi la lernan reĝimon por ekzerci kun frakcioj. La programo kontrolas la enigon de la uzanto kaj donas sugestojn.</p>
     <p xml:lang="es">KBruch es un pequeño programa para practicar el cálculo con fracciones y porcentajes. Para ello, se proporcionan diferentes ejercicios y se puede utilizar el modo de aprendizaje para practicar con las fracciones. El programa comprueba las respuestas del usuario y hace comentarios al respecto.</p>
     <p xml:lang="et">KBruch on väike rakendus, mis aitab harjutada murdude ja protsentidega arvutamist. Selleks pakutakse mitut laadi ülesandeid, samuti saab murdudega arvutamist harjutada vastavas harjutamisrežiimis. Rakendus kontrollib vastuse õigsust ja annab teada, mida ta sellest arvab.</p>
     <p xml:lang="eu">KBruch zatikiak eta ehunekoak kalkulatuz haiek lantzeko programa txiki bat da. Helburu hori lortzeko ariketa ezberdinak daude, eta zatikiak lantzeko, ikasteko modua erabil dezakezu. Programak, erabiltzailearen sarrerakoa egiaztatu eta horren araberako erantzuna ematen du.</p>
@@ -121,6 +124,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="de">Funktionen:</p>
     <p xml:lang="el">Χαρακτηριστικά:</p>
     <p xml:lang="en-GB">Features:</p>
+    <p xml:lang="eo">Trajtoj:</p>
     <p xml:lang="es">Funciones:</p>
     <p xml:lang="et">Omadused:</p>
     <p xml:lang="eu">Ezaugarriak:</p>
@@ -157,6 +161,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="de">Arithmetik - in dieser Übung muss eine gegebene Bruchaufgabe gelöst werden. Sie müssen den ganzzahligen Anteil des Bruchs und Zähler und Nenner eingeben. Dies ist die Hauptübung.</li>
       <li xml:lang="el">Ασκήσεις αριθμητικής - σε αυτήν την άσκηση επιλύετε ένα δοσμένο πρόβλημα με κλάσματα. Δίνετε τον αριθμητή και τον παρονομαστή. Αυτή είναι η κύρια άσκηση.</li>
       <li xml:lang="en-GB">Arithmetic exercise - in this exercise you have to solve a given fraction task. You have to enter the numerator and the denominator. This is the main exercise.</li>
+      <li xml:lang="eo">Aritmetika ekzerco - en ĉi tiu ekzerco vi devas solvi difinitan frakcian taskon. Vi devas enigi la numeratoro kaj la denominatoro. Ĉi tiu estas la ĉefa ekzerco.</li>
       <li xml:lang="es">Ejercicio de aritmética: en este ejercicio tiene que resolver una operación con fracciones. Deberá introducir el numerador y el denominador. Este es el ejercicio principal.</li>
       <li xml:lang="et">Aritmeetikaülesanded - nende korral tuleb lahendada etteantud murdudega ülesanne. Sul on vaja sisestada lugeja ja nimetaja. See on põhiline ülesandetüüp.</li>
       <li xml:lang="eu">Ariketa aritmetikoa - ariketa honetan zatikien zeregin jakin bat ebatzi behar duzu. Zenbakitzailea eta izendatzailea sartu behar dituzu. Hori da ariketa nagusia.</li>
@@ -188,6 +193,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="de">Vergleich - In dieser Übung müssen 2 gegebene Brüche der Größe nach mithilfe der Symbole  „&gt;“, „&lt; “ oder „=“ verglichen werden.</li>
       <li xml:lang="el">Ασκήσεις σύγκρισης - σε αυτήν την άσκηση συγκρίνετε το μέγεθος 2 δοσμένων κλασμάτων, με χρήση των συμβόλων &gt;, &lt; ή =.</li>
       <li xml:lang="en-GB">Comparison exercise - in this exercise you have to compare the size of 2 given fractions, using the symbols &gt;, &lt; or =.</li>
+      <li xml:lang="eo">Kompara ekzerco - en ĉi tiu ekzerco vi devas kompari la grandecon de 2 donitaj frakcioj, uzante la simbolojn &gt;, &lt; aŭ =.</li>
       <li xml:lang="es">Ejercicio de comparación: en este ejercicio usted debe comparar el tamaño de 2 fracciones dadas, utilizando los símbolos  &gt;, &lt; o =.</li>
       <li xml:lang="et">Võrdlemisülesanded - nendee korral tuleb võrrelda kaht etteantud murdarvu, kasutades sümboleid &gt;, &lt; või =.</li>
       <li xml:lang="eu">Konparatzeko ariketa - ariketa honetan emandako 2 zatikiren tamaina alderatu behar duzu, &gt;, &lt; edo = ikurrak erabiliz.</li>
@@ -220,6 +226,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="de">Umwandeln - in dieser Übung muss eine gegebene Zahl in einen Bruch umgewandelt werden.</li>
       <li xml:lang="el">Ασκήσεις μετατροπής - σε αυτήν την άσκηση μετατρέπετε έναν δοσμένο αριθμό σε κλάσμα.</li>
       <li xml:lang="en-GB">Conversion exercise - in this exercise you have to convert a given number into a fraction.</li>
+      <li xml:lang="eo">Konverta ekzerco - en ĉi tiu ekzerco vi devas konverti donitan nombron en frakcion.</li>
       <li xml:lang="es">Ejercicio de conversión: en este ejercicio debe convertir un número dado en una fracción.</li>
       <li xml:lang="et">Teisendamisülesanded - nende korral tuleb etteantud arv teisendada murruks.</li>
       <li xml:lang="eu">Bihurketa ariketa - ariketa honetan emaniko zenbakia zatikira bihurtu behar duzu.</li>
@@ -252,6 +259,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="de">Faktorisieren - in dieser Übung muss eine gegebene Zahl in ihre Primfaktoren zerlegt werden.</li>
       <li xml:lang="el">Ασκήσεις παραγοντοποίησης - σε αυτήν την άσκηση παραγοντοποιείτε έναν δοσμένο αριθμό σε πρώτους παράγοντες.</li>
       <li xml:lang="en-GB">Factorisation exercise - in this exercise you have to factorise a given number into its prime factors.</li>
+      <li xml:lang="eo">Faktoriga ekzerco - en ĉi tiu ekzerco vi devas faktorigi donitan nombron en ĝiajn primajn faktorojn.</li>
       <li xml:lang="es">Ejercicio de descomponer en factores: en este ejercicio debe descomponer un número dado en sus factores primos.</li>
       <li xml:lang="et">Algteguriteks lahutamise ülesanded - nende korral tuleb etteantud arv lahutada algteguriteks.</li>
       <li xml:lang="eu">Faktorizazio ariketa - ariketa honetan emaniko zenbakia bere faktore lehenetan zatitzen da.</li>
@@ -284,6 +292,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="de">Prozentaufgaben - in dieser Übung müssen Prozente berechnet werden.</li>
       <li xml:lang="el">Ασκήσεις ποσοστών - σε αυτήν την άσκηση υπολογίζετε ποσοστά.</li>
       <li xml:lang="en-GB">Percentage exercise - in this exercise you have to calculate percentages.</li>
+      <li xml:lang="eo">Procenta ekzerco - en ĉi tiu ekzerco vi devas kalkuli procentojn.</li>
       <li xml:lang="es">Ejercicio de porcentajes: en este ejercicio debe calcular porcentajes.</li>
       <li xml:lang="et">Protsentülesanded - nende korral tuleb arvutada protsent.</li>
       <li xml:lang="eu">Ehunekoen ariketa - ariketa honetan ehunekoak kalkulatu behar dituzu.</li>
@@ -324,6 +333,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="de">Bruchrechnen üben mit KBruch</caption>
       <caption xml:lang="el">Ασκήσεις κλασμάτων με το KBruch</caption>
       <caption xml:lang="en-GB">Exercising fractions with KBruch</caption>
+      <caption xml:lang="eo">Ekzercante frakciojn per KBruch</caption>
       <caption xml:lang="es">Ejercitando las fracciones con KBruch</caption>
       <caption xml:lang="et">Ülesanded murdudega KBruchis</caption>
       <caption xml:lang="eu">Zatikiak lantzea KBrunch erabiliz</caption>
