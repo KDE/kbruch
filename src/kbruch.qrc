@@ -1,0 +1,8 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/kxmlgui5/kbruch">
+        <file>kbruchui.rc</file>
+        <file>AppMenuWidgetui.rc</file>
+        <file>FractionRingWidgetui.rc</file>
+    </qresource>
+</RCC>
