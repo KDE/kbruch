@@ -21,9 +21,6 @@
 #include <KLocalizedString>
 
 /* these includes are needed for Qt support */
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <Kdelibs4ConfigMigrator>
-#endif
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QObject>
@@ -31,21 +28,8 @@
 /* the main program */
 int main(int argc, char * argv[])
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-#endif
     QApplication app(argc, argv);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-#endif
     KLocalizedString::setApplicationDomain("kbruch");
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Kdelibs4ConfigMigrator migrate(QStringLiteral("kbruch"));
-    migrate.setConfigFiles(QStringList() << QStringLiteral("kbruchrc"));
-    migrate.setUiFiles(QStringList() << QStringLiteral("AppMenuWidgetui.rc") <<  QStringLiteral("FractionRingWidgetui.rc") << QStringLiteral("kbruchui.rc"));
-    migrate.migrate();
-#endif
-
 
     /* fill the about data; the common KDE about dialog will show it to the
      * user */
