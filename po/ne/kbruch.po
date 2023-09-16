@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-04 00:41+0000\n"
+"POT-Creation-Date: 2023-09-16 01:54+0000\n"
 "PO-Revision-Date: 2007-08-29 14:14+0545\n"
 "Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -557,58 +557,58 @@ msgid ""
 "spinbox values!"
 msgstr ""
 
-#: KBruch.cpp:52
+#: KBruch.cpp:36
 #, kde-format
 msgid "KBruch"
 msgstr "केडीई ब्रुच"
 
-#: KBruch.cpp:54
+#: KBruch.cpp:38
 #, kde-format
 msgid "Learn calculating with fractions"
 msgstr "फ्र्याक्सनसँग गणना गर्न सिक्नुहोस्"
 
-#: KBruch.cpp:56
+#: KBruch.cpp:40
 #, fuzzy, kde-format
 #| msgid "(c) 2002-2004, Sebastian Stein"
 msgid "© 2002-2011, Sebastian Stein"
 msgstr "(c) 2002-2004, सिबास्टियन स्टेन"
 
-#: KBruch.cpp:57
+#: KBruch.cpp:41
 #, kde-format
 msgid "Sebastian Stein"
 msgstr "सिबास्टियन स्टेन"
 
-#: KBruch.cpp:57
+#: KBruch.cpp:41
 #, kde-format
 msgid "Current maintainer, original author"
 msgstr ""
 
-#: KBruch.cpp:58
+#: KBruch.cpp:42
 #, kde-format
 msgid "Paulo Cattai"
 msgstr ""
 
-#: KBruch.cpp:58 KBruch.cpp:59 KBruch.cpp:60 KBruch.cpp:61 KBruch.cpp:62
+#: KBruch.cpp:42 KBruch.cpp:43 KBruch.cpp:44 KBruch.cpp:45 KBruch.cpp:46
 #, kde-format
 msgid "New interface design and usability improvements"
 msgstr ""
 
-#: KBruch.cpp:59
+#: KBruch.cpp:43
 #, kde-format
 msgid "Danilo Balzaque"
 msgstr ""
 
-#: KBruch.cpp:60
+#: KBruch.cpp:44
 #, kde-format
 msgid "Roberto Cunha"
 msgstr ""
 
-#: KBruch.cpp:61
+#: KBruch.cpp:45
 #, kde-format
 msgid "Tadeu Araujo"
 msgstr ""
 
-#: KBruch.cpp:62
+#: KBruch.cpp:46
 #, kde-format
 msgid "Tiago Porangaba"
 msgstr ""

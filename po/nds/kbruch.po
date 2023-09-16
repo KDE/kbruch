@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-04 00:41+0000\n"
+"POT-Creation-Date: 2023-09-16 01:54+0000\n"
 "PO-Revision-Date: 2014-04-24 00:47+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -523,58 +523,58 @@ msgstr ""
 "De Verwiedern-Dreihknoop verwiedert de Bröök. Probeer dat man maal ut un "
 "änner een vun de Dreihknoop-Weerten!"
 
-#: KBruch.cpp:52
+#: KBruch.cpp:36
 #, kde-format
 msgid "KBruch"
 msgstr "KBruch"
 
-#: KBruch.cpp:54
+#: KBruch.cpp:38
 #, kde-format
 msgid "Learn calculating with fractions"
 msgstr "Bröökreken öven"
 
-#: KBruch.cpp:56
+#: KBruch.cpp:40
 #, fuzzy, kde-format
 #| msgid "(c) 2002-2011, Sebastian Stein"
 msgid "© 2002-2011, Sebastian Stein"
 msgstr "© 2002-2011, Sebastian Stein"
 
-#: KBruch.cpp:57
+#: KBruch.cpp:41
 #, kde-format
 msgid "Sebastian Stein"
 msgstr "Sebastian Stein"
 
-#: KBruch.cpp:57
+#: KBruch.cpp:41
 #, kde-format
 msgid "Current maintainer, original author"
 msgstr "Pleger opstunns, Orginaalautor"
 
-#: KBruch.cpp:58
+#: KBruch.cpp:42
 #, kde-format
 msgid "Paulo Cattai"
 msgstr "Paulo Cattai"
 
-#: KBruch.cpp:58 KBruch.cpp:59 KBruch.cpp:60 KBruch.cpp:61 KBruch.cpp:62
+#: KBruch.cpp:42 KBruch.cpp:43 KBruch.cpp:44 KBruch.cpp:45 KBruch.cpp:46
 #, kde-format
 msgid "New interface design and usability improvements"
 msgstr "Nieg Utsehn vun de Böversiet un Verbetern an de Bruukborkeit"
 
-#: KBruch.cpp:59
+#: KBruch.cpp:43
 #, kde-format
 msgid "Danilo Balzaque"
 msgstr "Danilo Balzaque"
 
-#: KBruch.cpp:60
+#: KBruch.cpp:44
 #, kde-format
 msgid "Roberto Cunha"
 msgstr "Roberto Cunha"
 
-#: KBruch.cpp:61
+#: KBruch.cpp:45
 #, kde-format
 msgid "Tadeu Araujo"
 msgstr "Tadeu Araujo"
 
-#: KBruch.cpp:62
+#: KBruch.cpp:46
 #, kde-format
 msgid "Tiago Porangaba"
 msgstr "Tiago Porangaba"

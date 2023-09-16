@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-04 00:41+0000\n"
+"POT-Creation-Date: 2023-09-16 01:54+0000\n"
 "PO-Revision-Date: 2023-09-02 02:56\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -497,57 +497,57 @@ msgstr ""
 "\n"
 "增加“扩展”值可以将各分数更细分，试试看吧！"
 
-#: KBruch.cpp:52
+#: KBruch.cpp:36
 #, kde-format
 msgid "KBruch"
 msgstr "KBruch"
 
-#: KBruch.cpp:54
+#: KBruch.cpp:38
 #, kde-format
 msgid "Learn calculating with fractions"
 msgstr "学习分数运算"
 
-#: KBruch.cpp:56
+#: KBruch.cpp:40
 #, kde-format
 msgid "© 2002-2011, Sebastian Stein"
 msgstr "© 2002-2011, Sebastian Stein"
 
-#: KBruch.cpp:57
+#: KBruch.cpp:41
 #, kde-format
 msgid "Sebastian Stein"
 msgstr "Sebastian Stein"
 
-#: KBruch.cpp:57
+#: KBruch.cpp:41
 #, kde-format
 msgid "Current maintainer, original author"
 msgstr "当前维护者、作者"
 
-#: KBruch.cpp:58
+#: KBruch.cpp:42
 #, kde-format
 msgid "Paulo Cattai"
 msgstr "Paulo Cattai"
 
-#: KBruch.cpp:58 KBruch.cpp:59 KBruch.cpp:60 KBruch.cpp:61 KBruch.cpp:62
+#: KBruch.cpp:42 KBruch.cpp:43 KBruch.cpp:44 KBruch.cpp:45 KBruch.cpp:46
 #, kde-format
 msgid "New interface design and usability improvements"
 msgstr "新界面设计与易用性改进"
 
-#: KBruch.cpp:59
+#: KBruch.cpp:43
 #, kde-format
 msgid "Danilo Balzaque"
 msgstr "Danilo Balzaque"
 
-#: KBruch.cpp:60
+#: KBruch.cpp:44
 #, kde-format
 msgid "Roberto Cunha"
 msgstr "Roberto Cunha"
 
-#: KBruch.cpp:61
+#: KBruch.cpp:45
 #, kde-format
 msgid "Tadeu Araujo"
 msgstr "Tadeu Araujo"
 
-#: KBruch.cpp:62
+#: KBruch.cpp:46
 #, kde-format
 msgid "Tiago Porangaba"
 msgstr "Tiago Porangaba"

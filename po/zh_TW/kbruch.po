@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-04 00:41+0000\n"
+"POT-Creation-Date: 2023-09-16 01:54+0000\n"
 "PO-Revision-Date: 2020-09-17 16:02+0800\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
@@ -496,57 +496,57 @@ msgstr ""
 " \n"
 " 按下「擴分」鍵可以乘上每個分數。試著改變不同的值！"
 
-#: KBruch.cpp:52
+#: KBruch.cpp:36
 #, kde-format
 msgid "KBruch"
 msgstr "KBruch"
 
-#: KBruch.cpp:54
+#: KBruch.cpp:38
 #, kde-format
 msgid "Learn calculating with fractions"
 msgstr "練習分數的計算"
 
-#: KBruch.cpp:56
+#: KBruch.cpp:40
 #, kde-format
 msgid "© 2002-2011, Sebastian Stein"
 msgstr "© 2002-2011, Sebastian Stein"
 
-#: KBruch.cpp:57
+#: KBruch.cpp:41
 #, kde-format
 msgid "Sebastian Stein"
 msgstr "Sebastian Stein"
 
-#: KBruch.cpp:57
+#: KBruch.cpp:41
 #, kde-format
 msgid "Current maintainer, original author"
 msgstr "目前維護者，原始作者"
 
-#: KBruch.cpp:58
+#: KBruch.cpp:42
 #, kde-format
 msgid "Paulo Cattai"
 msgstr "Paulo Cattai"
 
-#: KBruch.cpp:58 KBruch.cpp:59 KBruch.cpp:60 KBruch.cpp:61 KBruch.cpp:62
+#: KBruch.cpp:42 KBruch.cpp:43 KBruch.cpp:44 KBruch.cpp:45 KBruch.cpp:46
 #, kde-format
 msgid "New interface design and usability improvements"
 msgstr "新介面設計與可用性加強"
 
-#: KBruch.cpp:59
+#: KBruch.cpp:43
 #, kde-format
 msgid "Danilo Balzaque"
 msgstr "Danilo Balzaque"
 
-#: KBruch.cpp:60
+#: KBruch.cpp:44
 #, kde-format
 msgid "Roberto Cunha"
 msgstr "Roberto Cunha"
 
-#: KBruch.cpp:61
+#: KBruch.cpp:45
 #, kde-format
 msgid "Tadeu Araujo"
 msgstr "Tadeu Araujo"
 
-#: KBruch.cpp:62
+#: KBruch.cpp:46
 #, kde-format
 msgid "Tiago Porangaba"
 msgstr "Tiago Porangaba"
