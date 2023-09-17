@@ -1,13 +1,14 @@
 # translation of kbruch.pot to esperanto
 # Copyright (C) 2007 Free Software Foundation, Inc.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2007.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:54+0000\n"
-"PO-Revision-Date: 2023-03-21 22:43+0100\n"
+"PO-Revision-Date: 2023-09-16 08:00+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -15,43 +16,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Esperanto\n"
+"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Zanata 3.5.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Axel Rousseau"
+msgstr "Axel Rousseau,Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "axel@esperanto-jeunes.org"
+msgstr "axel@esperanto-jeunes.org,okellogg@users.sourceforge.net"
 
 #: AppMenuWidget.cpp:95
 #, kde-format
 msgid "KBruch modes:"
-msgstr ""
+msgstr "KBruch-reĝimoj:"
 
 #: AppMenuWidget.cpp:102
 #, kde-format
 msgid "Open standard KBruch"
-msgstr ""
+msgstr "Malfermi norman KBruch"
 
 #: AppMenuWidget.cpp:108 MainQtWidget.cpp:75
 #, kde-format
 msgid "Exercise"
-msgstr ""
+msgstr "Ekzerco"
 
 #: AppMenuWidget.cpp:117
 #, kde-format
 msgid "Open learning KBruch"
-msgstr ""
+msgstr "Malfermi lernadan KBruch"
 
 #: AppMenuWidget.cpp:123 FractionRingWidget.cpp:52
 #, kde-format
 msgid "Learning"
-msgstr ""
+msgstr "Lernado"
 
 #. i18n: ectx: Menu (file)
 #: AppMenuWidgetui.rc:6 FractionRingWidgetui.rc:6 kbruchui.rc:6
@@ -67,7 +68,7 @@ msgstr ">"
 #: ExerciseCompare.cpp:88
 #, kde-format
 msgid "Click on this button to select the 'greater than' sign."
-msgstr ""
+msgstr "Alklaku ĉi tiun butonon por elekti la signon \"pli granda ol\"."
 
 #: ExerciseCompare.cpp:93
 #, kde-format
@@ -77,7 +78,7 @@ msgstr "<"
 #: ExerciseCompare.cpp:97
 #, kde-format
 msgid "Click on this button to select the 'less than' sign."
-msgstr ""
+msgstr "Alklaku ĉi tiun butonon por elekti la signon 'malpli ol'."
 
 #: ExerciseCompare.cpp:102
 #, kde-format
@@ -87,7 +88,7 @@ msgstr "="
 #: ExerciseCompare.cpp:106
 #, kde-format
 msgid "Click on this button to select the 'equals' sign."
-msgstr ""
+msgstr "Alklaku ĉi tiun butonon por elekti la signon 'egalas'."
 
 #: ExerciseCompare.cpp:118 ExerciseCompare.cpp:280 ExerciseConvert.cpp:135
 #: ExerciseFactorize.cpp:161 ExerciseMixedNumbers.cpp:158
@@ -100,12 +101,12 @@ msgstr "La&si"
 #: ExerciseMixedNumbers.cpp:159 ExercisePercentage.cpp:118
 #, kde-format
 msgid "Click on this button to skip this question."
-msgstr ""
+msgstr "Alklaku ĉi tiun butonon por preterlasi ĉi tiun demandon."
 
 #: ExerciseCompare.cpp:134 MainQtWidget.cpp:502
 #, kde-format
 msgid "In this exercise you have to compare two given fractions."
-msgstr ""
+msgstr "En ĉi tiu ekzerco vi devas kompari du donitajn frakciojn."
 
 #: ExerciseCompare.cpp:135
 #, kde-format
@@ -113,6 +114,8 @@ msgid ""
 "In this exercise you have to compare two given fractions and choose the "
 "correct comparison sign."
 msgstr ""
+"En ĉi tiu ekzerco vi devas kompari du donitajn frakciojn kaj elekti la "
+"ĝustan komparsignon."
 
 #: ExerciseCompare.cpp:246 ExerciseCompare.cpp:247 ExerciseCompare.cpp:248
 #, kde-format
@@ -122,17 +125,17 @@ msgstr "Klaku sur tiu butono por kontroli vian rezulton"
 #: ExerciseCompare.cpp:295 ExerciseCompare.cpp:309 ExerciseCompare.cpp:323
 #, kde-format
 msgid "&Next"
-msgstr ""
+msgstr "&Sekva"
 
 #: ExerciseConvert.cpp:91 TaskView.cpp:108
 #, kde-format
 msgid "Enter the numerator of your result"
-msgstr ""
+msgstr "Enigu la numeratoron de via rezulto"
 
 #: ExerciseConvert.cpp:108 TaskView.cpp:125
 #, kde-format
 msgid "Enter the denominator of your result"
-msgstr ""
+msgstr "Enigu la denominatoron de via rezulto"
 
 #: ExerciseConvert.cpp:125 ExerciseConvert.cpp:174 ExerciseConvert.cpp:409
 #: ExerciseFactorize.cpp:170 ExerciseFactorize.cpp:275
@@ -143,7 +146,7 @@ msgstr ""
 #: TaskView.cpp:441
 #, kde-format
 msgid "&Check"
-msgstr ""
+msgstr "&Kontroli"
 
 #: ExerciseConvert.cpp:127 ExerciseConvert.cpp:371 ExerciseFactorize.cpp:171
 #: ExerciseFactorize.cpp:400 ExerciseMixedNumbers.cpp:150
@@ -153,11 +156,13 @@ msgid ""
 "Click on this button to check your result. The button will not work if you "
 "have not entered a result yet."
 msgstr ""
+"Alklaku ĉi tiun butonon por kontroli vian rezulton. La butono ne funkcios se "
+"vi ankoraŭ ne enigis rezulton."
 
 #: ExerciseConvert.cpp:146 MainQtWidget.cpp:508
 #, kde-format
 msgid "In this exercise you have to convert a number into a fraction."
-msgstr ""
+msgstr "En ĉi tiu ekzerco vi devas konverti nombron en frakcion."
 
 #: ExerciseConvert.cpp:147
 #, kde-format
@@ -165,11 +170,13 @@ msgid ""
 "In this exercise you have to convert a given number into a fraction by "
 "entering a numerator and denominator. Do not forget to reduce the result."
 msgstr ""
+"En ĉi tiu ekzerco vi devas konverti donitan nombron en frakcion per enigo de "
+"numeratoro kaj denominatoro. Ne forgesu redukti la rezulton."
 
 #: ExerciseConvert.cpp:309 ExerciseFactorize.cpp:349 ExercisePercentage.cpp:317
 #, kde-format
 msgid "Click on this button to get to the next question."
-msgstr ""
+msgstr "Alklaku ĉi tiun butonon por atingi la sekvan demandon."
 
 #: ExerciseConvert.cpp:354
 #, kde-format
@@ -177,6 +184,8 @@ msgid ""
 "You entered a 0 as the denominator. This means division by zero, which is "
 "not allowed. This question will be counted as not correctly solved."
 msgstr ""
+"Vi enigis 0 kiel la denominatoro. Ĉi tio signifas dividon per nulo, kio ne "
+"estas permesita. Ĉi tiu demando estos kalkulita kiel ne ĝuste solvita."
 
 #: ExerciseConvert.cpp:360
 #, kde-format
@@ -185,12 +194,15 @@ msgid ""
 "Always enter your results as reduced. This question will be counted as not "
 "correctly solved."
 msgstr ""
+"Vi enigis la ĝustan rezulton, sed ne reduktitan.\n"
+"Ĉiam enigu viajn rezultojn kiel reduktitajn. Ĉi tiu demando estos kalkulita "
+"kiel ne ĝuste solvita."
 
 #: ExerciseConvert.cpp:405 ExerciseFactorize.cpp:498
 #: ExerciseMixedNumbers.cpp:287 ExercisePercentage.cpp:383 TaskView.cpp:437
 #, kde-format
 msgid "N&ext"
-msgstr ""
+msgstr "S&ekva"
 
 #: ExerciseFactorize.cpp:154
 #, kde-format
@@ -240,52 +252,52 @@ msgstr "19"
 #: ExerciseFactorize.cpp:216
 #, kde-format
 msgid "Add prime factor 2."
-msgstr ""
+msgstr "Aldonu priman faktoron 2."
 
 #: ExerciseFactorize.cpp:217
 #, kde-format
 msgid "Add prime factor 3."
-msgstr ""
+msgstr "Aldonu priman faktoron 3."
 
 #: ExerciseFactorize.cpp:218
 #, kde-format
 msgid "Add prime factor 5."
-msgstr ""
+msgstr "Aldonu priman faktoron 5."
 
 #: ExerciseFactorize.cpp:219
 #, kde-format
 msgid "Add prime factor 7."
-msgstr ""
+msgstr "Aldonu priman faktoron 7."
 
 #: ExerciseFactorize.cpp:220
 #, kde-format
 msgid "Add prime factor 11."
-msgstr ""
+msgstr "Aldonu priman faktoron 11."
 
 #: ExerciseFactorize.cpp:221
 #, kde-format
 msgid "Add prime factor 13."
-msgstr ""
+msgstr "Aldonu priman faktoron 13."
 
 #: ExerciseFactorize.cpp:222
 #, kde-format
 msgid "Add prime factor 17."
-msgstr ""
+msgstr "Aldonu priman faktoron 17."
 
 #: ExerciseFactorize.cpp:223
 #, kde-format
 msgid "Add prime factor 19."
-msgstr ""
+msgstr "Aldonu priman faktoron 19."
 
 #: ExerciseFactorize.cpp:228
 #, kde-format
 msgid "Removes the last entered prime factor."
-msgstr ""
+msgstr "Forigas la laste enigitan priman faktoron."
 
 #: ExerciseFactorize.cpp:245 MainQtWidget.cpp:520
 #, kde-format
 msgid "In this exercise you have to factorize a given number."
-msgstr ""
+msgstr "En ĉi tiu ekzerco vi devas faktorigi donitan nombron."
 
 #: ExerciseFactorize.cpp:246
 #, kde-format
@@ -297,21 +309,27 @@ msgid ""
 "repeats several times. Click the 'Backspace' button to remove the last "
 "entered prime factor."
 msgstr ""
+"En ĉi tiu ekzerco vi devas faktorigi donitan nombron. Vi devas enigi ĉiujn "
+"primajn faktorojn de la nombro. Vi povas aldoni priman faktoron alklakante "
+"la respondan butonon. La elektitaj primaj faktoroj estos montritaj en la "
+"eniga kampo. Ne forgesu enigi ĉiujn primajn faktorojn, eĉ kiam prima faktoro "
+"ripetas plurajn fojojn. Alklaku la butonon 'Retropaŝo' por forigi la laste "
+"enigitan priman faktoron."
 
 #: ExerciseMixedNumbers.cpp:96 TaskView.cpp:96
 #, kde-format
 msgid "Enter the integer part of the fraction"
-msgstr ""
+msgstr "Enigu la entjeran parton de la frakcio"
 
 #: ExerciseMixedNumbers.cpp:110
 #, kde-format
 msgid "Enter the numerator of the fraction"
-msgstr ""
+msgstr "Enigu la numeratoron de la frakcio"
 
 #: ExerciseMixedNumbers.cpp:127
 #, kde-format
 msgid "Enter the denominator of the fraction"
-msgstr ""
+msgstr "Enigu la denominatoron de la frakcio"
 
 #: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:514
 #, kde-format
@@ -319,6 +337,8 @@ msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
 "versa."
 msgstr ""
+"En ĉi tiu ekzerco vi devas konverti miksitan nombron al proporcio kaj "
+"inverse."
 
 #: ExerciseMixedNumbers.cpp:166
 #, kde-format
@@ -326,6 +346,8 @@ msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
 "versa. Do not forget to reduce the result."
 msgstr ""
+"En ĉi tiu ekzerco vi devas konverti miksitan nombron al proporcio kaj "
+"inverse. Ne forgesu redukti la rezulton."
 
 #: ExerciseMixedNumbers.cpp:245 TaskView.cpp:144 TaskView.cpp:383
 #, kde-format
@@ -333,11 +355,13 @@ msgid ""
 "Click this button to check your result. The button will not work if you have "
 "not entered a result yet."
 msgstr ""
+"Alklaku ĉi tiun butonon por kontroli vian rezulton. La butono ne funkcios se "
+"vi ankoraŭ ne enigis rezulton."
 
 #: ExerciseMixedNumbers.cpp:286 TaskView.cpp:267
 #, kde-format
 msgid "Click this button to get the next question."
-msgstr ""
+msgstr "Alklaku ĉi tiun butonon por ricevi la sekvan demandon."
 
 #: ExerciseMixedNumbers.cpp:340 TaskView.cpp:356
 #, kde-format
@@ -345,6 +369,8 @@ msgid ""
 "You entered 0 as the denominator. This means division by zero, which is not "
 "allowed. This question will be counted as not correctly solved."
 msgstr ""
+"Vi enigis 0 kiel la denominatoro. Ĉi tio signifas dividon per nulo, kio ne "
+"estas permesita. Ĉi tiu demando estos kalkulita kiel ne ĝuste solvita."
 
 #: ExerciseMixedNumbers.cpp:347 TaskView.cpp:366
 #, kde-format
@@ -352,6 +378,8 @@ msgid ""
 "You entered the correct result, but not in the mixed number notation. This "
 "question will be counted as not correctly solved."
 msgstr ""
+"Vi enigis la ĝustan rezulton, sed ne en la miksita nombronotacio. Ĉi tiu "
+"demando estos kalkulita kiel ne ĝuste solvita."
 
 #: ExerciseMixedNumbers.cpp:350 TaskView.cpp:363
 #, kde-format
@@ -359,27 +387,29 @@ msgid ""
 "You entered the correct result, but not reduced. This question will be "
 "counted as not correctly solved."
 msgstr ""
+"Vi enigis la ĝustan rezulton, sed ne reduktita. Ĉi tiu demando estos "
+"kalkulita kiel ne ĝuste solvita."
 
 #: ExercisePercentage.cpp:84 ExercisePercentage.cpp:368
 #, kde-format
 msgctxt "%1 percentage of %2"
 msgid "%1% of %2 = "
-msgstr ""
+msgstr "%1% el %2 ="
 
 #: ExercisePercentage.cpp:91
 #, kde-format
 msgid "Enter the result of percentage question"
-msgstr ""
+msgstr "Enigu la rezulton de procenta demando"
 
 #: ExercisePercentage.cpp:132 MainQtWidget.cpp:526
 #, kde-format
 msgid "In this exercise you have to work with percentage questions."
-msgstr ""
+msgstr "En ĉi tiu ekzerco vi devas labori kun procentaj demandoj."
 
 #: ExercisePercentage.cpp:133
 #, kde-format
 msgid "In this exercise you have to enter the fraction of the given number."
-msgstr ""
+msgstr "En ĉi tiu ekzerco vi devas enigi la frakcion de la donita nombro."
 
 #: FractionRingWidget.cpp:104 FractionRingWidget.cpp:109
 #, kde-format
@@ -388,30 +418,30 @@ msgctxt ""
 "expanding is not the same as multiplying. For example, expanding a ratio by "
 "2 basically means multiplying the ratio with 2/2 and not with 2/1!"
 msgid "Expand"
-msgstr ""
+msgstr "Vastigi"
 
 #: FractionRingWidget.cpp:133 MainQtWidget.cpp:481
 #, kde-format
 msgid "New"
-msgstr ""
+msgstr "Nova"
 
 #: FractionRingWidget.cpp:186 MainQtWidget.cpp:531
 #, kde-format
 msgctxt "@action opens a new question"
 msgid "&New"
-msgstr ""
+msgstr "&Nova"
 
 #: FractionRingWidget.cpp:194 MainQtWidget.cpp:551
 #, kde-format
 msgctxt "@action go to the main screen"
 msgid "Back"
-msgstr ""
+msgstr "Reen"
 
 #: FractionRingWidget.cpp:201
 #, kde-format
 msgctxt "@action opens hint"
 msgid "Hint"
-msgstr ""
+msgstr "Sugesto"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: FractionRingWidget.cpp:229 MainQtWidget.cpp:806 taskcolorsbase.ui:16
@@ -428,11 +458,16 @@ msgid ""
 "This is called finding the main denominator. The main denominator divides "
 "the rings into equal parts."
 msgstr ""
+"Nun la partoj de la interna ringo kaj ekstera ringo havas la saman "
+"grandecon, kaj ni povas aldoni la frakciojn!\n"
+"\n"
+"Tion oni nomas trovi la ĉefan denominatoron. La ĉefa denominatoro dividas la "
+"ringojn en egalajn partojn."
 
 #: FractionRingWidget.cpp:355 FractionRingWidget.cpp:383
 #, kde-format
 msgid "There is a smaller main denominator. Can you find it?"
-msgstr ""
+msgstr "Estas pli malgranda ĉefa denominatoro. Ĉu vi povas trovi ĝin?"
 
 #: FractionRingWidget.cpp:360
 #, kde-format
@@ -441,6 +476,9 @@ msgid ""
 "all parts be the same size. Try expanding the first fraction by %2 and the "
 "second fraction by %3."
 msgstr ""
+"Vi ĵus vastigis la unuan frakcion je %1. Nia ĉefa celo estas ke ĉiuj partoj "
+"estu samgrandaj. Provu vastigi la unuan frakcion je %2 kaj la duan frakcion "
+"je %3."
 
 #: FractionRingWidget.cpp:388
 #, kde-format
@@ -449,22 +487,25 @@ msgid ""
 "all parts be the same size. Try expanding the first fraction by %2 and the "
 "second fraction by %3."
 msgstr ""
+"Vi ĵus vastigis la duan frakcion je %1. Nia ĉefa celo estas ke ĉiuj partoj "
+"estu samgrandaj. Provu vastigi la unuan frakcion je %2 kaj la duan frakcion "
+"je %3."
 
 #: FractionRingWidget.cpp:426
 #, kde-format
 msgctxt "Inserted as %1 in the message below."
 msgid "%2 of 1 painted part."
 msgid_plural "%2 of %1 painted parts."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 el 1 pentrita parto."
+msgstr[1] "%2 el %1 pentritaj partoj."
 
 #: FractionRingWidget.cpp:429
 #, kde-format
 msgctxt "Inserted as %2 in the message below."
 msgid "%2 of 1 painted part."
 msgid_plural "%2 of %1 painted parts."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 el 1 pentrita parto."
+msgstr[1] "%2 el %1 pentritaj partoj."
 
 #: FractionRingWidget.cpp:432
 #, kde-format
@@ -477,6 +518,12 @@ msgid ""
 "The 'Expand' spinboxes expand each fraction. Try to change one of the "
 "spinbox values!"
 msgstr ""
+"La ekstera ringo reprezentas la maldekstran frakcion. %1\n"
+"\n"
+"La interna ringo reprezentas la ĝustan frakcion. %2\n"
+"\n"
+"La spinkestoj 'Pligrandigi' vastigas ĉiun frakcion. Provu ŝanĝi unu el la "
+"valoroj de spinkesto!"
 
 #: KBruch.cpp:36
 #, kde-format
@@ -486,12 +533,12 @@ msgstr "KBruch"
 #: KBruch.cpp:38
 #, kde-format
 msgid "Learn calculating with fractions"
-msgstr ""
+msgstr "Lerni kalkuli kun frakcioj"
 
 #: KBruch.cpp:40
 #, kde-format
 msgid "© 2002-2011, Sebastian Stein"
-msgstr ""
+msgstr "© 2002-2011, Sebastian Stein"
 
 #: KBruch.cpp:41
 #, kde-format
@@ -501,7 +548,7 @@ msgstr "Sebastian Stein"
 #: KBruch.cpp:41
 #, kde-format
 msgid "Current maintainer, original author"
-msgstr ""
+msgstr "Nuna prizorganto, origina aŭtoro"
 
 #: KBruch.cpp:42
 #, kde-format
@@ -511,7 +558,7 @@ msgstr "Paulo Cattai"
 #: KBruch.cpp:42 KBruch.cpp:43 KBruch.cpp:44 KBruch.cpp:45 KBruch.cpp:46
 #, kde-format
 msgid "New interface design and usability improvements"
-msgstr ""
+msgstr "Nova interfaco-dezajno kaj uzeblo-plibonigoj"
 
 #: KBruch.cpp:43
 #, kde-format
@@ -537,31 +584,31 @@ msgstr "Tiago Porangaba"
 #: kbruch.kcfg:11
 #, kde-format
 msgid "Active exercise."
-msgstr ""
+msgstr "Aktiva ekzerco."
 
 #. i18n: ectx: whatsthis, entry, group (General)
 #: kbruch.kcfg:12
 #, kde-format
 msgid "Saves the active exercise's type."
-msgstr ""
+msgstr "Konservas la tipon de la aktiva ekzerco."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:19
 #, kde-format
 msgid "Enable Addition"
-msgstr ""
+msgstr "Ebligi Aldonon"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:20
 #, kde-format
 msgid "Enable Addition for task generation."
-msgstr ""
+msgstr "Ebligi Aldonon por taskogenerado."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:24
 #, kde-format
 msgid "Enable Subtraction"
-msgstr ""
+msgstr "Ebligi Subtraho"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:25
@@ -573,85 +620,85 @@ msgstr "Ebligi Adicion/Subtrahon por taska generado"
 #: kbruch.kcfg:29
 #, kde-format
 msgid "Enable Division"
-msgstr ""
+msgstr "Ebligi Dividadon"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:30
 #, kde-format
 msgid "Enable Division for task generation."
-msgstr ""
+msgstr "Ebligi Dividadon por taskogenerado."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:34
 #, kde-format
 msgid "Enable Multiplication"
-msgstr ""
+msgstr "Ebligi Multiplikon"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:35
 #, kde-format
 msgid "Enable Multiplication for task generation."
-msgstr ""
+msgstr "Ebligi Multiplikadon por taskogenerado."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:39
 #, kde-format
 msgid "Enable Multiplication/Division"
-msgstr ""
+msgstr "Ebligi Multiplikon/Dividadon"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:40
 #, kde-format
 msgid "Enable Multiplication/Division for task generation."
-msgstr ""
+msgstr "Ebligi Multiplikon/Dividadon por taskogenerado."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:44
 #, kde-format
 msgid "Number of fractions"
-msgstr ""
+msgstr "Nombro de frakcioj"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:45
 #, kde-format
 msgid "Set the number of fractions for task generation."
-msgstr ""
+msgstr "Agordu la nombron da frakcioj por taskogenerado."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:49
 #, kde-format
 msgid "Max. main denominator"
-msgstr ""
+msgstr "Maks. ĉefa denominatoro"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:50
 #, kde-format
 msgid "Set the maximum value of the main denominator."
-msgstr ""
+msgstr "Agordu la maksimuman valoron de la ĉefa denominatoro."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:54
 #, kde-format
 msgid "Answer reduced fractions"
-msgstr ""
+msgstr "Respondi reduktitajn frakciojn"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:55
 #, kde-format
 msgid "Set if the fractions need to be reduced."
-msgstr ""
+msgstr "Agordu se la frakcioj devas esti reduktitaj."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:59 kbruch.kcfg:64 kbruch.kcfg:69
 #, kde-format
 msgid "Mixed number"
-msgstr ""
+msgstr "Miksita nombro"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:60
 #, kde-format
 msgid "Set if the fractions will appear in mixed form or not on solution."
-msgstr ""
+msgstr "Agordu ĉu la frakcioj aperos en miksita formo aŭ ne en solvo."
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:65
@@ -659,72 +706,73 @@ msgstr ""
 msgid ""
 "Set if the fractions will need answers in mixed form or not on solution."
 msgstr ""
+"Fiksu ĉu la frakcioj bezonos respondojn en miksita formo aŭ ne en solvo."
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:70
 #, kde-format
 msgid "Set if the fractions will appear in mixed form or not in questions."
-msgstr ""
+msgstr "Agordu ĉu la frakcioj aperos en miksita formo aŭ ne en demandoj."
 
 #. i18n: ectx: label, entry, group (Statistics)
 #. i18n: ectx: whatsthis, entry, group (Statistics)
 #: kbruch.kcfg:77 kbruch.kcfg:78
 #, kde-format
 msgid "Number of correctly solved tasks"
-msgstr ""
+msgstr "Nombro de ĝuste solvitaj taskoj"
 
 #. i18n: ectx: label, entry, group (Statistics)
 #: kbruch.kcfg:82
 #, kde-format
 msgid "Number of solved tasks"
-msgstr ""
+msgstr "Nombro de solvitaj taskoj"
 
 #. i18n: ectx: whatsthis, entry, group (Statistics)
 #: kbruch.kcfg:83
 #, kde-format
 msgid "Total number of solved tasks"
-msgstr ""
+msgstr "Tuta nombro da solvitaj taskoj"
 
 #. i18n: ectx: label, entry, group (Statistics)
 #. i18n: ectx: whatsthis, entry, group (Statistics)
 #: kbruch.kcfg:87 kbruch.kcfg:88
 #, kde-format
 msgid "Number of skipped tasks"
-msgstr ""
+msgstr "Nombro de preterpasitaj taskoj"
 
 #. i18n: ectx: label, entry (numberColor), group (TaskViewer)
 #. i18n: ectx: whatsthis, entry (numberColor), group (TaskViewer)
 #: kbruch.kcfg:95 kbruch.kcfg:96
 #, kde-format
 msgid "Color of the numbers in the task view"
-msgstr ""
+msgstr "Koloro de la nombroj en la taskovido"
 
 #. i18n: ectx: label, entry (operationColor), group (TaskViewer)
 #. i18n: ectx: whatsthis, entry (operationColor), group (TaskViewer)
 #: kbruch.kcfg:100 kbruch.kcfg:101
 #, kde-format
 msgid "Color of the operation signs in the task view"
-msgstr ""
+msgstr "Koloro de la operacio signas en la taskovido"
 
 #. i18n: ectx: label, entry (fractionBarColor), group (TaskViewer)
 #. i18n: ectx: whatsthis, entry (fractionBarColor), group (TaskViewer)
 #: kbruch.kcfg:105 kbruch.kcfg:106
 #, kde-format
 msgid "Color of the fraction bars in the task view"
-msgstr ""
+msgstr "Koloro de la frakciaj strioj en la taskovido"
 
 #. i18n: ectx: label, entry, group (TaskViewer)
 #. i18n: ectx: whatsthis, entry, group (TaskViewer)
 #: kbruch.kcfg:110 kbruch.kcfg:111
 #, kde-format
 msgid "Font used for the task view"
-msgstr ""
+msgstr "Tiparo uzata por la taskovido"
 
 #. i18n: ectx: label, entry, group (TaskViewer)
 #: kbruch.kcfg:115
 #, kde-format
 msgid "Enable showing the result also as a mixed number"
-msgstr ""
+msgstr "Ebligi montri la rezulton ankaŭ kiel miksitan nombron"
 
 #. i18n: ectx: whatsthis, entry, group (TaskViewer)
 #: kbruch.kcfg:116
@@ -733,36 +781,37 @@ msgid ""
 "Enables/disables showing the result also in the special mixed-number "
 "notation."
 msgstr ""
+"Ebligas/malŝaltas montri la rezulton ankaŭ en la speciala miksnumera notacio."
 
 #: MainQtWidget.cpp:106
 #, kde-format
 msgid "Question:"
-msgstr ""
+msgstr "Demando:"
 
 #: MainQtWidget.cpp:107
 #, kde-format
 msgid "Answer:"
-msgstr ""
+msgstr "Respondo:"
 
 #: MainQtWidget.cpp:108
 #, kde-format
 msgid "Operations:"
-msgstr ""
+msgstr "Operacioj:"
 
 #: MainQtWidget.cpp:114 MainQtWidget.cpp:907
 #, kde-format
 msgid "Arithmetic"
-msgstr ""
+msgstr "Aritmetiko"
 
 #: MainQtWidget.cpp:156
 #, kde-format
 msgid "Options:"
-msgstr ""
+msgstr "Opcioj:"
 
 #: MainQtWidget.cpp:157
 #, kde-format
 msgid "Set the options to solve the exercises."
-msgstr ""
+msgstr "Agordu la eblojn por solvi la ekzercojn."
 
 #: MainQtWidget.cpp:158
 #, kde-format
@@ -772,11 +821,15 @@ msgid ""
 "part or to hide it by moving the handle to the left border of the main "
 "window."
 msgstr ""
+"Ĉi tiu parto de la fenestro montras la eblojn por solvi la ekzercojn. Uzu la "
+"tenilon inter la opcioj kaj ĉefa fenestro por ŝanĝi la grandecon de ĉi tiu "
+"fenestra parto aŭ por kaŝi ĝin movante la tenilon al la maldekstra bordo de "
+"la ĉefa fenestro."
 
 #: MainQtWidget.cpp:162 MainQtWidget.cpp:173
 #, kde-format
 msgid "Mixed number:"
-msgstr ""
+msgstr "Miksita nombro:"
 
 #: MainQtWidget.cpp:163
 #, kde-format
@@ -784,6 +837,8 @@ msgid ""
 "Set if the fractions will appear as mixed numbers or not in the question "
 "expression (mixed number example: 1 4/5 = 9/5 )."
 msgstr ""
+"Agordu ĉu la frakcioj aperos kiel miksitaj nombroj aŭ ne en la demanda "
+"esprimo (ekzemplo pri miksita nombro: 1 4/5 = 9/5 )."
 
 #: MainQtWidget.cpp:174
 #, kde-format
@@ -791,61 +846,63 @@ msgid ""
 "Set if the fractions will appear as mixed numbers or not in the answer "
 "(mixed number example: 1 4/5 = 9/5 )."
 msgstr ""
+"Agordu ĉu la frakcioj aperos kiel miksitaj nombroj aŭ ne en la respondo "
+"(miksita nombro-ekzemplo: 1 4/5 = 9/5 )."
 
 #: MainQtWidget.cpp:184
 #, kde-format
 msgid "Addition:"
-msgstr ""
+msgstr "Aldono:"
 
 #: MainQtWidget.cpp:185
 #, kde-format
 msgid "Check this to use addition operator."
-msgstr ""
+msgstr "Kontrolu ĉi tion por uzi aldonan operatoron."
 
 #: MainQtWidget.cpp:194
 #, kde-format
 msgid "Subtraction:"
-msgstr ""
+msgstr "Subtraho:"
 
 #: MainQtWidget.cpp:195
 #, kde-format
 msgid "Check this to use subtraction operator."
-msgstr ""
+msgstr "Kontrolu ĉi tion por uzi operatoron de subtraho."
 
 #: MainQtWidget.cpp:204
 #, kde-format
 msgid "Multiplication:"
-msgstr ""
+msgstr "Multipliko:"
 
 #: MainQtWidget.cpp:205
 #, kde-format
 msgid "Check this to use multiplication operator."
-msgstr ""
+msgstr "Kontrolu ĉi tion por uzi multiplikan operatoron."
 
 #: MainQtWidget.cpp:214
 #, kde-format
 msgid "Division:"
-msgstr ""
+msgstr "Divido:"
 
 #: MainQtWidget.cpp:215
 #, kde-format
 msgid "Check this to use division operator."
-msgstr ""
+msgstr "Kontrolu ĉi tion por uzi dividan operatoron."
 
 #: MainQtWidget.cpp:224
 #, kde-format
 msgid "Reduced form:"
-msgstr ""
+msgstr "Reduktita formo:"
 
 #: MainQtWidget.cpp:225
 #, kde-format
 msgid "Check this to force the use of the reduced form."
-msgstr ""
+msgstr "Kontrolu ĉi tion por devigi la uzon de la reduktita formo."
 
 #: MainQtWidget.cpp:235
 #, kde-format
 msgid "Number of terms:"
-msgstr ""
+msgstr "Nombro da terminoj:"
 
 #: MainQtWidget.cpp:236 MainQtWidget.cpp:246
 #, kde-format
@@ -853,6 +910,8 @@ msgid ""
 "The number of \n"
 "terms you want"
 msgstr ""
+"La nombro de \n"
+"termoj kiujn vi volas"
 
 #: MainQtWidget.cpp:247
 #, kde-format
@@ -860,16 +919,18 @@ msgid ""
 "Choose the number of terms (2, 3, 4 or 5) you \n"
 "want for calculating fractions."
 msgstr ""
+"Elektu la nombron da terminoj (2, 3, 4 aŭ 5) kiujn vi \n"
+"volas por kalkuli frakciojn."
 
 #: MainQtWidget.cpp:250
 #, kde-format
 msgid "Maximum denominator:"
-msgstr ""
+msgstr "Maksimuma denominatoro:"
 
 #: MainQtWidget.cpp:260
 #, kde-format
 msgid "The maximum number you can have as main denominator"
-msgstr ""
+msgstr "La maksimuma nombro, kiun vi povas havi kiel ĉefa denominatoro"
 
 #: MainQtWidget.cpp:261
 #, kde-format
@@ -877,11 +938,13 @@ msgid ""
 "Choose the number which will be the maximum for the main denominator: 10, "
 "20, 30, 40 or 50."
 msgstr ""
+"Elektu la nombron, kiu estos la maksimumo por la ĉefa denominatoro: 10, 20, "
+"30, 40 aŭ 50."
 
 #: MainQtWidget.cpp:483
 #, kde-format
 msgid "Reset statistics and set a new task."
-msgstr ""
+msgstr "Restarigu statistikojn kaj starigu novan taskon."
 
 #: MainQtWidget.cpp:488
 #, kde-format
@@ -891,7 +954,7 @@ msgstr "Reen"
 #: MainQtWidget.cpp:490
 #, kde-format
 msgid "Go back to Modes screen."
-msgstr ""
+msgstr "Reiru al la ekrano de Reĝimoj."
 
 #: MainQtWidget.cpp:495
 #, kde-format
@@ -900,11 +963,14 @@ msgid ""
 "\n"
 "Arithmetic"
 msgstr ""
+"\n"
+"\n"
+"Aritmetiko"
 
 #: MainQtWidget.cpp:496 TaskView.cpp:162
 #, kde-format
 msgid "In this exercise you have to solve a given question with fractions."
-msgstr ""
+msgstr "En ĉi tiu ekzerco vi devas solvi donitan demandon per frakcioj."
 
 #: MainQtWidget.cpp:501
 #, kde-format
@@ -913,6 +979,9 @@ msgid ""
 "\n"
 "Comparison"
 msgstr ""
+"\n"
+"\n"
+"Komparo"
 
 #: MainQtWidget.cpp:507
 #, kde-format
@@ -921,6 +990,9 @@ msgid ""
 "\n"
 "Conversion"
 msgstr ""
+"\n"
+"\n"
+"Konvertiĝo"
 
 #: MainQtWidget.cpp:513
 #, kde-format
@@ -929,6 +1001,9 @@ msgid ""
 "\n"
 "Mixed Numbers"
 msgstr ""
+"\n"
+"\n"
+"Miksitaj Nombroj"
 
 #: MainQtWidget.cpp:519
 #, kde-format
@@ -937,6 +1012,9 @@ msgid ""
 "\n"
 "Factorization"
 msgstr ""
+"\n"
+"\n"
+"Faktorigo"
 
 #: MainQtWidget.cpp:525
 #, kde-format
@@ -945,54 +1023,57 @@ msgid ""
 "\n"
 "Percentage"
 msgstr ""
+"\n"
+"\n"
+"Procento"
 
 #: MainQtWidget.cpp:538
 #, kde-format
 msgctxt "@action opens a new question"
 msgid "New"
-msgstr ""
+msgstr "Nova"
 
 #: MainQtWidget.cpp:544
 #, kde-format
 msgctxt "@action go to the main screen"
 msgid "&Back"
-msgstr ""
+msgstr "&Reen"
 
 #: MainQtWidget.cpp:557
 #, kde-format
 msgctxt "Arithmetic Exercise"
 msgid "Arithmetic"
-msgstr ""
+msgstr "Aritmetiko"
 
 #: MainQtWidget.cpp:563
 #, kde-format
 msgctxt "Comparison Exercise"
 msgid "Comparison"
-msgstr ""
+msgstr "Komparo"
 
 #: MainQtWidget.cpp:569
 #, kde-format
 msgctxt "Conversion Exercise"
 msgid "Conversion"
-msgstr ""
+msgstr "Konvertiĝo"
 
 #: MainQtWidget.cpp:575
 #, kde-format
 msgctxt "Mixed Numbers Exercise"
 msgid "MixedNumbers"
-msgstr ""
+msgstr "Miksitaj Nombroj"
 
 #: MainQtWidget.cpp:581
 #, kde-format
 msgctxt "Factorization Exercise"
 msgid "Factorization"
-msgstr ""
+msgstr "Faktorigo"
 
 #: MainQtWidget.cpp:587
 #, kde-format
 msgctxt "Percentage Exercise"
 msgid "Percentage"
-msgstr ""
+msgstr "Procento"
 
 #: MainQtWidget.cpp:809
 #, kde-format
@@ -1007,85 +1088,85 @@ msgstr "Elcentaĵo"
 #: MainQtWidget.cpp:923
 #, kde-format
 msgid "Comparison"
-msgstr ""
+msgstr "Komparo"
 
 #: MainQtWidget.cpp:939
 #, kde-format
 msgid "Conversion"
-msgstr ""
+msgstr "Konvertiĝo"
 
 #: MainQtWidget.cpp:955
 #, kde-format
 msgid "Mixed Numbers"
-msgstr ""
+msgstr "Miksitaj Nombroj"
 
 #: MainQtWidget.cpp:971
 #, kde-format
 msgid "Factorization"
-msgstr ""
+msgstr "Faktorigo"
 
 #: ResultWidget.cpp:93
 #, kde-format
 msgid "Solution:"
-msgstr ""
+msgstr "Solvo:"
 
 #: ResultWidget.cpp:131
 #, kde-format
 msgid "Correct!"
-msgstr ""
+msgstr "Ĝuste!"
 
 #: ResultWidget.cpp:138 ResultWidget.cpp:145
 #, kde-format
 msgid "Incorrect!"
-msgstr ""
+msgstr "Malkorekta!"
 
 #: StatisticsView.cpp:59
 #, kde-format
 msgid "This is the current total number of solved tasks."
-msgstr ""
+msgstr "Ĉi tio estas la nuna totala nombro de solvitaj taskoj."
 
 #: StatisticsView.cpp:65
 #, kde-format
 msgid "Questions:"
-msgstr ""
+msgstr "Demandoj:"
 
 #: StatisticsView.cpp:71
 #, kde-format
 msgctxt "@info:status the number of correct answers"
 msgid "Correct:"
-msgstr ""
+msgstr "Ĝuste:"
 
 #: StatisticsView.cpp:77
 #, kde-format
 msgctxt "@info:status the number of incorrect answers"
 msgid "Incorrect:"
-msgstr ""
+msgstr "Malkorekta:"
 
 #: StatisticsView.cpp:83
 #, kde-format
 msgctxt "@info:status the number of skipped answers"
 msgid "Skipped:"
-msgstr ""
+msgstr "Preterpasita:"
 
 #: StatisticsView.cpp:94
 #, kde-format
 msgid "This is the current total number of correctly solved tasks."
-msgstr ""
+msgstr "Ĉi tio estas la nuna totala nombro de ĝuste solvitaj taskoj."
 
 #: StatisticsView.cpp:100
 #, kde-format
 msgid "This is the current total number of unsolved tasks."
-msgstr ""
+msgstr "Ĉi tio estas la nuna totala nombro de nesolvitaj taskoj."
 
 #: StatisticsView.cpp:106
 #, kde-format
 msgid "This is the current total number of skipped tasks."
-msgstr ""
+msgstr "Ĉi tio estas la nuna totala nombro de preterlasitaj taskoj."
 
 #: StatisticsView.cpp:109
 #, kde-format
 msgid "This part of the window shows the statistics."
-msgstr ""
+msgstr "Ĉi tiu parto de la fenestro montras la statistikojn."
 
 #: StatisticsView.cpp:110
 #, kde-format
@@ -1094,22 +1175,26 @@ msgid ""
 "counted. You can reset the statistics by clicking on the 'New' button in the "
 "toolbar or by selecting 'New' from the 'File' menu"
 msgstr ""
+"Ĉi tiu parto de la fenestro montras la statistikojn. Ĉiu ekzerco, kiun vi "
+"faras, estas kalkulita. Vi povas restarigi la statistikon alklakante la "
+"butonon \"Nova\" en la ilobreto aŭ elektante \"Nova\" el la menuo \"Dosiero"
+"\"."
 
 #: StatisticsView.cpp:121
 #, kde-format
 msgid "&Reset"
-msgstr ""
+msgstr "&Restarigi"
 
 #: StatisticsView.cpp:122
 #, kde-format
 msgid "Click this button to reset the statistics."
-msgstr ""
+msgstr "Alklaku ĉi tiun butonon por restarigi la statistikon."
 
 #. i18n: ectx: property (text), widget (QLabel, numberLabel)
 #: taskcolorsbase.ui:28
 #, kde-format
 msgid "&Number:"
-msgstr ""
+msgstr "&Nombro:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_numberColor)
 #: taskcolorsbase.ui:38
@@ -1121,7 +1206,7 @@ msgstr "Ŝanĝu la koloron de la nombroj"
 #: taskcolorsbase.ui:54
 #, kde-format
 msgid "&Operation sign:"
-msgstr ""
+msgstr "&Operacia signo:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_operationColor)
 #: taskcolorsbase.ui:70
@@ -1133,7 +1218,7 @@ msgstr "Ŝanĝu la koloron de la operacia signo"
 #: taskcolorsbase.ui:86
 #, kde-format
 msgid "&Fraction bar:"
-msgstr ""
+msgstr "&Frakcia stango:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_fractionBarColor)
 #: taskcolorsbase.ui:96
@@ -1150,7 +1235,7 @@ msgstr "Ŝanĝu la tiparon de la nombroj"
 #: TaskView.cpp:153
 #, kde-format
 msgid "Click this button to skip this question."
-msgstr ""
+msgstr "Alklaku ĉi tiun butonon por preterlasi ĉi tiun demandon."
 
 #: TaskView.cpp:163
 #, kde-format
@@ -1160,24 +1245,28 @@ msgid ""
 "can adjust the difficulty of the question in the options window part. Do not "
 "forget to reduce the result, if the use of the reduced form is forced."
 msgstr ""
+"En ĉi tiu ekzerco vi devas solvi la generitan demandon. Vi devas enigi la "
+"entjeran parton de la frakcio kaj la numeratoro kaj la denominatoro. Vi "
+"povas ĝustigi la malfacilecon de la demando en la opcia fenestroparto. Ne "
+"forgesu redukti la rezulton, se la uzo de la reduktita formo estas devigita."
 
 #: TaskWidget.cpp:96
 #, kde-format
 msgctxt "addition symbol"
 msgid "+"
-msgstr ""
+msgstr "+"
 
 #: TaskWidget.cpp:99
 #, kde-format
 msgctxt "subtraction symbol"
 msgid "−"
-msgstr ""
+msgstr "−"
 
 #: TaskWidget.cpp:102
 #, kde-format
 msgctxt "multiplication symbol"
 msgid "×"
-msgstr ""
+msgstr "×"
 
 #: TaskWidget.cpp:105
 #, kde-format
