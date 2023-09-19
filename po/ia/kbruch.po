@@ -2,12 +2,13 @@
 # This file is distributed under the same license as the kbruch package.
 #
 # SPDX-FileCopyrightText: 2023 giovanni <g.sora@tiscali.it>
+# giovanni <g.sora@tiscali.it>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:54+0000\n"
-"PO-Revision-Date: 2023-09-17 23:02+0200\n"
+"PO-Revision-Date: 2023-09-18 11:10+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -30,7 +31,7 @@ msgstr "g.sora@tiscali.it"
 #: AppMenuWidget.cpp:95
 #, kde-format
 msgid "KBruch modes:"
-msgstr ""
+msgstr "Modos de KBruch:"
 
 #: AppMenuWidget.cpp:102
 #, kde-format
@@ -40,7 +41,7 @@ msgstr ""
 #: AppMenuWidget.cpp:108 MainQtWidget.cpp:75
 #, kde-format
 msgid "Exercise"
-msgstr ""
+msgstr "Exercitio"
 
 #: AppMenuWidget.cpp:117
 #, kde-format
@@ -50,13 +51,13 @@ msgstr ""
 #: AppMenuWidget.cpp:123 FractionRingWidget.cpp:52
 #, kde-format
 msgid "Learning"
-msgstr ""
+msgstr "Apprendente"
 
 #. i18n: ectx: Menu (file)
 #: AppMenuWidgetui.rc:6 FractionRingWidgetui.rc:6 kbruchui.rc:6
 #, kde-format
 msgid "&File"
-msgstr ""
+msgstr "&File"
 
 #: ExerciseCompare.cpp:84
 #, kde-format
@@ -71,7 +72,7 @@ msgstr ""
 #: ExerciseCompare.cpp:93
 #, kde-format
 msgid "<"
-msgstr ""
+msgstr "<"
 
 #: ExerciseCompare.cpp:97
 #, kde-format
@@ -81,7 +82,7 @@ msgstr ""
 #: ExerciseCompare.cpp:102
 #, kde-format
 msgid "="
-msgstr ""
+msgstr "="
 
 #: ExerciseCompare.cpp:106
 #, kde-format
@@ -93,7 +94,7 @@ msgstr ""
 #: ExercisePercentage.cpp:117 TaskView.cpp:152
 #, kde-format
 msgid "&Skip"
-msgstr ""
+msgstr "&Salta"
 
 #: ExerciseCompare.cpp:119 ExerciseConvert.cpp:136 ExerciseFactorize.cpp:162
 #: ExerciseMixedNumbers.cpp:159 ExercisePercentage.cpp:118
@@ -121,7 +122,7 @@ msgstr ""
 #: ExerciseCompare.cpp:295 ExerciseCompare.cpp:309 ExerciseCompare.cpp:323
 #, kde-format
 msgid "&Next"
-msgstr ""
+msgstr "Seque&nte"
 
 #: ExerciseConvert.cpp:91 TaskView.cpp:108
 #, kde-format
@@ -142,7 +143,7 @@ msgstr ""
 #: TaskView.cpp:441
 #, kde-format
 msgid "&Check"
-msgstr ""
+msgstr "Verifi&ca"
 
 #: ExerciseConvert.cpp:127 ExerciseConvert.cpp:371 ExerciseFactorize.cpp:171
 #: ExerciseFactorize.cpp:400 ExerciseMixedNumbers.cpp:150
@@ -189,52 +190,52 @@ msgstr ""
 #: ExerciseMixedNumbers.cpp:287 ExercisePercentage.cpp:383 TaskView.cpp:437
 #, kde-format
 msgid "N&ext"
-msgstr ""
+msgstr "Proxim&e"
 
 #: ExerciseFactorize.cpp:154
 #, kde-format
 msgid "Backspace"
-msgstr ""
+msgstr "RetroSpatio"
 
 #: ExerciseFactorize.cpp:198
 #, kde-format
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: ExerciseFactorize.cpp:199
 #, kde-format
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: ExerciseFactorize.cpp:200
 #, kde-format
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: ExerciseFactorize.cpp:201
 #, kde-format
 msgid "7"
-msgstr ""
+msgstr "7"
 
 #: ExerciseFactorize.cpp:202
 #, kde-format
 msgid "11"
-msgstr ""
+msgstr "11"
 
 #: ExerciseFactorize.cpp:203
 #, kde-format
 msgid "13"
-msgstr ""
+msgstr "13"
 
 #: ExerciseFactorize.cpp:204
 #, kde-format
 msgid "17"
-msgstr ""
+msgstr "17"
 
 #: ExerciseFactorize.cpp:205
 #, kde-format
 msgid "19"
-msgstr ""
+msgstr "19"
 
 #: ExerciseFactorize.cpp:216
 #, kde-format
@@ -363,7 +364,7 @@ msgstr ""
 #, kde-format
 msgctxt "%1 percentage of %2"
 msgid "%1% of %2 = "
-msgstr ""
+msgstr "%1% de  %2 = "
 
 #: ExercisePercentage.cpp:91
 #, kde-format
@@ -387,36 +388,36 @@ msgctxt ""
 "expanding is not the same as multiplying. For example, expanding a ratio by "
 "2 basically means multiplying the ratio with 2/2 and not with 2/1!"
 msgid "Expand"
-msgstr ""
+msgstr "Expande"
 
 #: FractionRingWidget.cpp:133 MainQtWidget.cpp:481
 #, kde-format
 msgid "New"
-msgstr ""
+msgstr "Nove "
 
 #: FractionRingWidget.cpp:186 MainQtWidget.cpp:531
 #, kde-format
 msgctxt "@action opens a new question"
 msgid "&New"
-msgstr ""
+msgstr "&Nove "
 
 #: FractionRingWidget.cpp:194 MainQtWidget.cpp:551
 #, kde-format
 msgctxt "@action go to the main screen"
 msgid "Back"
-msgstr ""
+msgstr "Retro"
 
 #: FractionRingWidget.cpp:201
 #, kde-format
 msgctxt "@action opens hint"
 msgid "Hint"
-msgstr ""
+msgstr "Suggestion"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: FractionRingWidget.cpp:229 MainQtWidget.cpp:806 taskcolorsbase.ui:16
 #, kde-format
 msgid "Colors"
-msgstr ""
+msgstr "Colores"
 
 #: FractionRingWidget.cpp:349 FractionRingWidget.cpp:377
 #, kde-format
@@ -736,27 +737,27 @@ msgstr ""
 #: MainQtWidget.cpp:106
 #, kde-format
 msgid "Question:"
-msgstr ""
+msgstr "Demanda:"
 
 #: MainQtWidget.cpp:107
 #, kde-format
 msgid "Answer:"
-msgstr ""
+msgstr "Responde:"
 
 #: MainQtWidget.cpp:108
 #, kde-format
 msgid "Operations:"
-msgstr ""
+msgstr "Operationes:"
 
 #: MainQtWidget.cpp:114 MainQtWidget.cpp:907
 #, kde-format
 msgid "Arithmetic"
-msgstr ""
+msgstr "Arithmetica"
 
 #: MainQtWidget.cpp:156
 #, kde-format
 msgid "Options:"
-msgstr ""
+msgstr "Optiones:"
 
 #: MainQtWidget.cpp:157
 #, kde-format
@@ -794,7 +795,7 @@ msgstr ""
 #: MainQtWidget.cpp:184
 #, kde-format
 msgid "Addition:"
-msgstr ""
+msgstr "Addition:"
 
 #: MainQtWidget.cpp:185
 #, kde-format
@@ -804,7 +805,7 @@ msgstr ""
 #: MainQtWidget.cpp:194
 #, kde-format
 msgid "Subtraction:"
-msgstr ""
+msgstr "Subtraction:"
 
 #: MainQtWidget.cpp:195
 #, kde-format
@@ -814,7 +815,7 @@ msgstr ""
 #: MainQtWidget.cpp:204
 #, kde-format
 msgid "Multiplication:"
-msgstr ""
+msgstr "Multiplication:"
 
 #: MainQtWidget.cpp:205
 #, kde-format
@@ -824,7 +825,7 @@ msgstr ""
 #: MainQtWidget.cpp:214
 #, kde-format
 msgid "Division:"
-msgstr ""
+msgstr "Division:"
 
 #: MainQtWidget.cpp:215
 #, kde-format
@@ -885,7 +886,7 @@ msgstr ""
 #: MainQtWidget.cpp:488
 #, kde-format
 msgid "Back"
-msgstr ""
+msgstr "Retro"
 
 #: MainQtWidget.cpp:490
 #, kde-format
@@ -949,19 +950,19 @@ msgstr ""
 #, kde-format
 msgctxt "@action opens a new question"
 msgid "New"
-msgstr ""
+msgstr "Nove "
 
 #: MainQtWidget.cpp:544
 #, kde-format
 msgctxt "@action go to the main screen"
 msgid "&Back"
-msgstr ""
+msgstr "&Retro"
 
 #: MainQtWidget.cpp:557
 #, kde-format
 msgctxt "Arithmetic Exercise"
 msgid "Arithmetic"
-msgstr ""
+msgstr "Arithmetica"
 
 #: MainQtWidget.cpp:563
 #, kde-format
@@ -973,7 +974,7 @@ msgstr ""
 #, kde-format
 msgctxt "Conversion Exercise"
 msgid "Conversion"
-msgstr ""
+msgstr "Conversion"
 
 #: MainQtWidget.cpp:575
 #, kde-format
@@ -991,17 +992,17 @@ msgstr ""
 #, kde-format
 msgctxt "Percentage Exercise"
 msgid "Percentage"
-msgstr ""
+msgstr "Percentage"
 
 #: MainQtWidget.cpp:809
 #, kde-format
 msgid "Fonts"
-msgstr ""
+msgstr "Fonts"
 
 #: MainQtWidget.cpp:891
 #, kde-format
 msgid "Percentage"
-msgstr ""
+msgstr "Percentage"
 
 #: MainQtWidget.cpp:923
 #, kde-format
@@ -1011,7 +1012,7 @@ msgstr ""
 #: MainQtWidget.cpp:939
 #, kde-format
 msgid "Conversion"
-msgstr ""
+msgstr "Conversion"
 
 #: MainQtWidget.cpp:955
 #, kde-format
@@ -1026,12 +1027,12 @@ msgstr ""
 #: ResultWidget.cpp:93
 #, kde-format
 msgid "Solution:"
-msgstr ""
+msgstr "Solution:"
 
 #: ResultWidget.cpp:131
 #, kde-format
 msgid "Correct!"
-msgstr ""
+msgstr "Correcte!"
 
 #: ResultWidget.cpp:138 ResultWidget.cpp:145
 #, kde-format
@@ -1052,7 +1053,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status the number of correct answers"
 msgid "Correct:"
-msgstr ""
+msgstr "Correcte:"
 
 #: StatisticsView.cpp:77
 #, kde-format
@@ -1064,7 +1065,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status the number of skipped answers"
 msgid "Skipped:"
-msgstr ""
+msgstr "Saltate:"
 
 #: StatisticsView.cpp:94
 #, kde-format
@@ -1097,7 +1098,7 @@ msgstr ""
 #: StatisticsView.cpp:121
 #, kde-format
 msgid "&Reset"
-msgstr ""
+msgstr "&Reinitialisa"
 
 #: StatisticsView.cpp:122
 #, kde-format
@@ -1108,7 +1109,7 @@ msgstr ""
 #: taskcolorsbase.ui:28
 #, kde-format
 msgid "&Number:"
-msgstr ""
+msgstr "&Numero:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_numberColor)
 #: taskcolorsbase.ui:38
@@ -1164,22 +1165,22 @@ msgstr ""
 #, kde-format
 msgctxt "addition symbol"
 msgid "+"
-msgstr ""
+msgstr "+"
 
 #: TaskWidget.cpp:99
 #, kde-format
 msgctxt "subtraction symbol"
 msgid "−"
-msgstr ""
+msgstr "−"
 
 #: TaskWidget.cpp:102
 #, kde-format
 msgctxt "multiplication symbol"
 msgid "×"
-msgstr ""
+msgstr "×"
 
 #: TaskWidget.cpp:105
 #, kde-format
 msgctxt "division symbol"
 msgid "/"
-msgstr ""
+msgstr "/"
