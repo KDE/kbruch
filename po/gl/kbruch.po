@@ -904,7 +904,7 @@ msgstr "Forma reducida:"
 #: MainQtWidget.cpp:225
 #, kde-format
 msgid "Check this to force the use of the reduced form."
-msgstr "Marca esta opción para obrigar a utilizar a forma reducida."
+msgstr "Marca esta opción para obrigar a usar a forma reducida."
 
 #: MainQtWidget.cpp:235
 #, kde-format
