@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-04 00:41+0000\n"
-"PO-Revision-Date: 2023-09-16 23:53+0200\n"
+"PO-Revision-Date: 2023-10-08 06:19+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1236,6 +1236,10 @@ msgid ""
 "can adjust the difficulty of the question in the options window part. Do not "
 "forget to reduce the result, if the use of the reduced form is forced."
 msgstr ""
+"ამ სავარჯიშოში გენერირებულ კითხვებს უნდა უპასუხოთ. უნდა შეიყვანოთ წილადის "
+"მთელი ნაწილი, მრიცხველი და მნიშვნელი. კითხვის სირთულის მორგება პარამეტრების "
+"ფანჯრის ნაწილში შეგიძლიათ. არ დაგავიწყდეთ, დაამრგვალოთ შედეგი, თუ ეს "
+"პარამეტრი ჩართულია."
 
 #: TaskWidget.cpp:96
 #, kde-format
