@@ -8,9 +8,9 @@
 #ifndef PRIMENUMBER_H
 #define PRIMENUMBER_H
 
-#include <QVector>
+#include <QList>
 
-typedef QVector<uint> UnsignedIntArray;
+typedef QList<uint> UnsignedIntArray;
 
 /** Class to handle prime numbers.
  *  The prime numbers are stored in a static vector, so that different instances
