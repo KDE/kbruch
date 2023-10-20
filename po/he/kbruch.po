@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:54+0000\n"
-"PO-Revision-Date: 2017-05-16 06:59-0400\n"
+"PO-Revision-Date: 2023-10-19 23:03+0300\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <Kde-l10n-he@kde.org>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Poedit-Bookmarks: -1,-1,-1,52,-1,-1,-1,-1,-1,-1\n"
 
 #, kde-format
@@ -34,22 +34,22 @@ msgstr "israelb@gmail.com,elcuco@kde.org,tahmar1900@gmail.com,aviand@gmail.com"
 #: AppMenuWidget.cpp:95
 #, kde-format
 msgid "KBruch modes:"
-msgstr "מצבים:"
+msgstr "מצבי KBruch:"
 
 #: AppMenuWidget.cpp:102
 #, kde-format
 msgid "Open standard KBruch"
-msgstr "פתח מצב רגיל"
+msgstr "פתיחת KBruch במצב רגיל"
 
 #: AppMenuWidget.cpp:108 MainQtWidget.cpp:75
 #, kde-format
 msgid "Exercise"
-msgstr "תרגיל"
+msgstr "תרגול"
 
 #: AppMenuWidget.cpp:117
 #, kde-format
 msgid "Open learning KBruch"
-msgstr "פתח מצב לימודי"
+msgstr "פתיחת KBruch במצב לימודי"
 
 #: AppMenuWidget.cpp:123 FractionRingWidget.cpp:52
 #, kde-format
@@ -70,7 +70,7 @@ msgstr ">"
 #: ExerciseCompare.cpp:88
 #, kde-format
 msgid "Click on this button to select the 'greater than' sign."
-msgstr "לחץ על כפתור זה על מנת לשנות את סימן השוויון."
+msgstr "לחיצה על כפתור זה תבחר את הסימן ‚גדול מ־’."
 
 #: ExerciseCompare.cpp:93
 #, kde-format
@@ -80,7 +80,7 @@ msgstr "<"
 #: ExerciseCompare.cpp:97
 #, kde-format
 msgid "Click on this button to select the 'less than' sign."
-msgstr "לחץ על כפתור זה על מנת לבחור את סימן האי-שיויון."
+msgstr "לחיצה על כפתור זה תבחר את הסימן ‚קטן מ־’."
 
 #: ExerciseCompare.cpp:102
 #, kde-format
@@ -90,52 +90,52 @@ msgstr "="
 #: ExerciseCompare.cpp:106
 #, kde-format
 msgid "Click on this button to select the 'equals' sign."
-msgstr "לחץ על כפתור זה על מנת לבחור את סימן השיויון."
+msgstr "לחיצה על כפתור זה תבחר את הסימן ‚שווה’."
 
 #: ExerciseCompare.cpp:118 ExerciseCompare.cpp:280 ExerciseConvert.cpp:135
 #: ExerciseFactorize.cpp:161 ExerciseMixedNumbers.cpp:158
 #: ExercisePercentage.cpp:117 TaskView.cpp:152
 #, kde-format
 msgid "&Skip"
-msgstr "&דלג"
+msgstr "&דילוג"
 
 #: ExerciseCompare.cpp:119 ExerciseConvert.cpp:136 ExerciseFactorize.cpp:162
 #: ExerciseMixedNumbers.cpp:159 ExercisePercentage.cpp:118
 #, kde-format
 msgid "Click on this button to skip this question."
-msgstr "לחץ על כפתור זה על מנת לדלג על שאלה זו."
+msgstr "לחיצה על כפתור זה תדלג על שאלה זו."
 
 #: ExerciseCompare.cpp:134 MainQtWidget.cpp:502
 #, kde-format
 msgid "In this exercise you have to compare two given fractions."
-msgstr "בתרגיל זה עליך להשוות שני שברים נתונים."
+msgstr "בתרגיל זה צריך להשוות בין שני שברים."
 
 #: ExerciseCompare.cpp:135
 #, kde-format
 msgid ""
 "In this exercise you have to compare two given fractions and choose the "
 "correct comparison sign."
-msgstr "בתרגיל זה עליך להשוות שני שברים נתונים ולבחור את סימן השיויון המתאים."
+msgstr "בתרגיל זה צריך להשוות בין שני שברים ולבחור את סימן השוויון המתאים."
 
 #: ExerciseCompare.cpp:246 ExerciseCompare.cpp:247 ExerciseCompare.cpp:248
 #, kde-format
 msgid "Click on this button to check your result."
-msgstr "לחץ על כפתור זה על מנת לבדוק את תשובתך."
+msgstr "לחיצה על כפתור זה תבדוק את תשובתך."
 
 #: ExerciseCompare.cpp:295 ExerciseCompare.cpp:309 ExerciseCompare.cpp:323
 #, kde-format
 msgid "&Next"
-msgstr "&הבא"
+msgstr "ה&בא"
 
 #: ExerciseConvert.cpp:91 TaskView.cpp:108
 #, kde-format
 msgid "Enter the numerator of your result"
-msgstr "הכנס את המונה של תשובתך"
+msgstr "נא למלא את המונה בתשובה שלך"
 
 #: ExerciseConvert.cpp:108 TaskView.cpp:125
 #, kde-format
 msgid "Enter the denominator of your result"
-msgstr "הכנס את המכנה של תשובתך"
+msgstr "נא למלא את המכנה בתשובה שלך"
 
 #: ExerciseConvert.cpp:125 ExerciseConvert.cpp:174 ExerciseConvert.cpp:409
 #: ExerciseFactorize.cpp:170 ExerciseFactorize.cpp:275
@@ -146,7 +146,7 @@ msgstr "הכנס את המכנה של תשובתך"
 #: TaskView.cpp:441
 #, kde-format
 msgid "&Check"
-msgstr "&בדוק"
+msgstr "&בדיקה"
 
 #: ExerciseConvert.cpp:127 ExerciseConvert.cpp:371 ExerciseFactorize.cpp:171
 #: ExerciseFactorize.cpp:400 ExerciseMixedNumbers.cpp:150
@@ -156,13 +156,12 @@ msgid ""
 "Click on this button to check your result. The button will not work if you "
 "have not entered a result yet."
 msgstr ""
-"לחץ על כפתור זה על מנת לבדוק את תשובתך. הכפתור לא יעבוד אם עדיין לא הכנסת "
-"תוצאה."
+"לחיצה על כפתור זה תבדוק את תשובתך. הכפתור לא יעבוד אם עדיין לא מילאת תוצאה."
 
 #: ExerciseConvert.cpp:146 MainQtWidget.cpp:508
 #, kde-format
 msgid "In this exercise you have to convert a number into a fraction."
-msgstr "במשימה זו עליך להמיר מספר לשבר."
+msgstr "במשימה זו צריך להמיר מספר לשבר."
 
 #: ExerciseConvert.cpp:147
 #, kde-format
@@ -170,13 +169,13 @@ msgid ""
 "In this exercise you have to convert a given number into a fraction by "
 "entering a numerator and denominator. Do not forget to reduce the result."
 msgstr ""
-"במשימה זו עליך להמיר מספר לשבר על ידי הכנסת מונה ומכנה. אל תשכח לצמצם את "
+"במשימה זו צריך להמיר מספר לשבר על ידי מילוי מונה ומכנה. לא לשכוח לצמצם את "
 "התוצאה."
 
 #: ExerciseConvert.cpp:309 ExerciseFactorize.cpp:349 ExercisePercentage.cpp:317
 #, kde-format
 msgid "Click on this button to get to the next question."
-msgstr "לחץ על כפתור זה על מנת לעבור לתרגיל הבא."
+msgstr "כפתור זה יעביר אותך לתרגיל הבא."
 
 #: ExerciseConvert.cpp:354
 #, kde-format
@@ -184,8 +183,8 @@ msgid ""
 "You entered a 0 as the denominator. This means division by zero, which is "
 "not allowed. This question will be counted as not correctly solved."
 msgstr ""
-"הכנסת אפס בתור מכנה. זאת אומרת חלוקה באפס, שהיא פעולה אסורה במתמטיקה. תרגיל "
-"זה יחשב כפתרון שגוי."
+"מילאת אפס במכנה. זאת אומרת חלוקה באפס, שהיא פעולה אסורה במתמטיקה. תרגיל זה "
+"ייחשב כפתרון שגוי."
 
 #: ExerciseConvert.cpp:360
 #, kde-format
@@ -194,8 +193,8 @@ msgid ""
 "Always enter your results as reduced. This question will be counted as not "
 "correctly solved."
 msgstr ""
-"כתבת את התשובה הנכונה אבל לא מצומצמת.\n"
-"תמיד כתוב תשובות מצומצמות. תרגיל זה יחשב כפתרון שגוי."
+"כתבת את התשובה הנכונה אבל לא צמצמת.\n"
+"תמיד לכתוב תשובות מצומצמות. תרגיל זה ייחשב כפתרון שגוי."
 
 #: ExerciseConvert.cpp:405 ExerciseFactorize.cpp:498
 #: ExerciseMixedNumbers.cpp:287 ExercisePercentage.cpp:383 TaskView.cpp:437
@@ -251,52 +250,52 @@ msgstr "19"
 #: ExerciseFactorize.cpp:216
 #, kde-format
 msgid "Add prime factor 2."
-msgstr "הוסף גורם ראשוני 2."
+msgstr "הוספת גורם ראשוני 2."
 
 #: ExerciseFactorize.cpp:217
 #, kde-format
 msgid "Add prime factor 3."
-msgstr "הוסף גורם ראשוני 3."
+msgstr "הוספת גורם ראשוני 3."
 
 #: ExerciseFactorize.cpp:218
 #, kde-format
 msgid "Add prime factor 5."
-msgstr "הוסף גורם ראשוני 5."
+msgstr "הוספת גורם ראשוני 5."
 
 #: ExerciseFactorize.cpp:219
 #, kde-format
 msgid "Add prime factor 7."
-msgstr "הוסף גורם ראשוני 7."
+msgstr "הוספת גורם ראשוני 7."
 
 #: ExerciseFactorize.cpp:220
 #, kde-format
 msgid "Add prime factor 11."
-msgstr "הוסף גורם ראשוני 11."
+msgstr "הוספת גורם ראשוני 11."
 
 #: ExerciseFactorize.cpp:221
 #, kde-format
 msgid "Add prime factor 13."
-msgstr "הוסף גורם ראשוני 13."
+msgstr "הוספת גורם ראשוני 13."
 
 #: ExerciseFactorize.cpp:222
 #, kde-format
 msgid "Add prime factor 17."
-msgstr "הוסף גורם ראשוני 17."
+msgstr "הוספת גורם ראשוני 17."
 
 #: ExerciseFactorize.cpp:223
 #, kde-format
 msgid "Add prime factor 19."
-msgstr "הוסף גורם ראשוני 19."
+msgstr "הוספת גורם ראשוני 19."
 
 #: ExerciseFactorize.cpp:228
 #, kde-format
 msgid "Removes the last entered prime factor."
-msgstr "מסיר את הגורם הראשוני שהוכנס."
+msgstr "מסיר את הגורם הראשוני האחרון שסופק."
 
 #: ExerciseFactorize.cpp:245 MainQtWidget.cpp:520
 #, kde-format
 msgid "In this exercise you have to factorize a given number."
-msgstr "במשימה זו עליך לחלק לגורמים מספר נתון."
+msgstr "במשימה זו צריך לחלק מספר כלשהו לגורמים."
 
 #: ExerciseFactorize.cpp:246
 #, kde-format
@@ -308,33 +307,33 @@ msgid ""
 "repeats several times. Click the 'Backspace' button to remove the last "
 "entered prime factor."
 msgstr ""
-"במשימה זו עליך לחלק לגורמים מספר נתון. עליך להכניס את כל הגורמים הראשוניים "
-"של המספר. באפשרותך להוסיף גורם ראשוני על ידי לחיצה על הכפתור המתאים. הגורמים "
-"הראשוניים שנבחרו יוצגו בתיבת הקלט. לא לשכוח להכניס את כל הגורמים הראשוניים, "
-"אפילו כשאחד מהם חוזר על עצמו מספר פעמים. לחץ על כפתור \"מחק\" כדי להסיר את "
-"הגורם הראשוני האחרון שהוכנס."
+"במשימה זו צריך לחלק מספר מסוים לגורמים. צריך להכניס את כל הגורמים הראשוניים "
+"של המספר. אפשר להוסיף גורם ראשוני בלחיצה על הכפתור המתאים. הגורמים הראשוניים "
+"שנבחרו יוצגו בתיבת הקלט. לא לשכוח להכניס את כל הגורמים הראשוניים, אפילו "
+"כשאחד מהם חוזר על עצמו מספר פעמים. לחיצה על „מחיקה” תסיר את הגורם הראשוני "
+"האחרון שמילאת."
 
 #: ExerciseMixedNumbers.cpp:96 TaskView.cpp:96
 #, kde-format
 msgid "Enter the integer part of the fraction"
-msgstr "הכנס את המספר השלם של השבר"
+msgstr "יש למלא את המספר השלם של השבר"
 
 #: ExerciseMixedNumbers.cpp:110
 #, kde-format
 msgid "Enter the numerator of the fraction"
-msgstr "הכנס את המונה של השבר"
+msgstr "יש למלא את המונה של השבר"
 
 #: ExerciseMixedNumbers.cpp:127
 #, kde-format
 msgid "Enter the denominator of the fraction"
-msgstr "הכנס את המכנה של השבר"
+msgstr "יש למלא את המכנה של השבר"
 
 #: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:514
 #, kde-format
 msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
 "versa."
-msgstr "בתרגיל זה עליך להמיר מספר מעורב לשבר ושבר למספר מעורב."
+msgstr "בתרגיל זה צריך להמיר מספר מעורב לשבר ושבר למספר מעורב."
 
 #: ExerciseMixedNumbers.cpp:166
 #, kde-format
@@ -342,7 +341,7 @@ msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
 "versa. Do not forget to reduce the result."
 msgstr ""
-"בתרגיל זה עליך להמיר מספר מערוב לשבר ושבר למספר מעורב. אל תשכח לצמצם את "
+"בתרגיל זה צריך להמיר מספר מעורב לשבר ושבר למספר מעורב. לא לשכוח לצמצם את "
 "התוצאה."
 
 #: ExerciseMixedNumbers.cpp:245 TaskView.cpp:144 TaskView.cpp:383
@@ -351,13 +350,12 @@ msgid ""
 "Click this button to check your result. The button will not work if you have "
 "not entered a result yet."
 msgstr ""
-"לחץ על כפתור זה על מנת לבדוק את תשובתך. הכפתור לא יעבוד אם לא הכנסת תוצאה "
-"עדיין."
+"לחיצה על כפתור זה תבדוק את תשובתך. הכפתור לא יעבוד אם לא מילאת תוצאה עדיין."
 
 #: ExerciseMixedNumbers.cpp:286 TaskView.cpp:267
 #, kde-format
 msgid "Click this button to get the next question."
-msgstr "לחץ על כפתור זה על מנת לעבור לתרגיל הבא."
+msgstr "לחיצה על כפתור זה תעביר לתרגיל הבא."
 
 #: ExerciseMixedNumbers.cpp:340 TaskView.cpp:356
 #, kde-format
@@ -374,8 +372,8 @@ msgid ""
 "You entered the correct result, but not in the mixed number notation. This "
 "question will be counted as not correctly solved."
 msgstr ""
-"כתבת את התשובה הנכונה אבל לא מצומצמת.\n"
-"תמיד כתוב תשובות מצומצמות. תרגיל זה יחשב כפתרון שגוי."
+"כתבת את התשובה הנכונה אבל לא צמצמת. תמיד לכתוב תשובות מצומצמות. תרגיל זה "
+"ייחשב כפתרון שגוי."
 
 #: ExerciseMixedNumbers.cpp:350 TaskView.cpp:363
 #, kde-format
@@ -383,29 +381,29 @@ msgid ""
 "You entered the correct result, but not reduced. This question will be "
 "counted as not correctly solved."
 msgstr ""
-"כתבת את התשובה הנכונה אבל לא מצומצמת.\n"
-"תמיד כתוב תשובות מצומצמות. תרגיל זה יחשב כפתרון שגוי."
+"כתבת את התשובה הנכונה אבל לא צמצמת. תמיד לכתוב תשובות מצומצמות. תרגיל זה "
+"ייחשב כפתרון שגוי."
 
 #: ExercisePercentage.cpp:84 ExercisePercentage.cpp:368
 #, kde-format
 msgctxt "%1 percentage of %2"
 msgid "%1% of %2 = "
-msgstr "%1 מתוך %2 ="
+msgstr "%1 מתוך %2 = "
 
 #: ExercisePercentage.cpp:91
 #, kde-format
 msgid "Enter the result of percentage question"
-msgstr "הכנס את תוצאת השאלה האחוזית"
+msgstr "יש להכניס את תוצאת השאלה האחוזית"
 
 #: ExercisePercentage.cpp:132 MainQtWidget.cpp:526
 #, kde-format
 msgid "In this exercise you have to work with percentage questions."
-msgstr "בתרגיל זה עליך לעבוד עם שאלות אחוזיות."
+msgstr "בתרגיל זה צריך לעבוד עם שאלות אחוזיות."
 
 #: ExercisePercentage.cpp:133
 #, kde-format
 msgid "In this exercise you have to enter the fraction of the given number."
-msgstr "בתרגיל זה עליך לחלק לגורמים מספר נתון."
+msgstr "בתרגיל זה צריך לחלק מספר נתון לגורמים."
 
 #: FractionRingWidget.cpp:104 FractionRingWidget.cpp:109
 #, kde-format
@@ -431,13 +429,13 @@ msgstr "&חדש"
 #, kde-format
 msgctxt "@action go to the main screen"
 msgid "Back"
-msgstr "חזור"
+msgstr "חזרה"
 
 #: FractionRingWidget.cpp:201
 #, kde-format
 msgctxt "@action opens hint"
 msgid "Hint"
-msgstr "הראה/החבא רמז"
+msgstr "הצגת/הסתרת רמז"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: FractionRingWidget.cpp:229 MainQtWidget.cpp:806 taskcolorsbase.ui:16
@@ -456,13 +454,12 @@ msgid ""
 msgstr ""
 "כעת החלקים בטבעת הפנימית והחיצונית שווים וניתן לחבר את השברים!\n"
 "\n"
-"פעולה זו נקראת \"מציאת מכנה משותף\". המכנה המשותף מחלק את הטבעות לחלקים "
-"שווים."
+"פעולה זו נקראת „מציאת מכנה משותף”. המכנה המשותף מחלק את הטבעות לחלקים שווים."
 
 #: FractionRingWidget.cpp:355 FractionRingWidget.cpp:383
 #, kde-format
 msgid "There is a smaller main denominator. Can you find it?"
-msgstr "קיים מכנה משותף קטן יותר, התוכל למוצאו ?"
+msgstr "קיים מכנה משותף קטן יותר. אולי ננסה למצוא אותו?"
 
 #: FractionRingWidget.cpp:360
 #, kde-format
@@ -471,8 +468,8 @@ msgid ""
 "all parts be the same size. Try expanding the first fraction by %2 and the "
 "second fraction by %3."
 msgstr ""
-"הרחבת את השבר הראשון ב־%1. המטרה היא שכל החלקים יהיו באותו גודל. נסה להרחיב "
-"את השבר הראשון ב־%2 ואת השבר השני ב־%3."
+"הרחבת את השבר הראשון ב־%1. המטרה היא שכל החלקים יהיו באותו גודל. כדאי לנסות "
+"להרחיב את השבר הראשון ב־%2 ואת השבר השני ב־%3."
 
 #: FractionRingWidget.cpp:388
 #, kde-format
@@ -481,24 +478,24 @@ msgid ""
 "all parts be the same size. Try expanding the first fraction by %2 and the "
 "second fraction by %3."
 msgstr ""
-"הרחבת את השבר השני ב־%1. המטרה היא שכל החלקים יהיו באותו גודל. נסה להרחיב את "
-"השבר הראשון ב־%2 ואת השבר השני ב־%3."
+"הרחבת את השבר השני ב־%1. המטרה היא שכל החלקים יהיו באותו גודל. כדאי לנסות "
+"להרחיב את השבר הראשון ב־%2 ואת השבר השני ב־%3."
 
 #: FractionRingWidget.cpp:426
 #, kde-format
 msgctxt "Inserted as %1 in the message below."
 msgid "%2 of 1 painted part."
 msgid_plural "%2 of %1 painted parts."
-msgstr[0] "%2 חלקים צבועים מתוך חלק אחד"
-msgstr[1] "%2 חלקים צבועים מתוך %1"
+msgstr[0] "%2 חלקים צבועים מתוך חלק אחד."
+msgstr[1] "%2 חלקים צבועים מתוך %1."
 
 #: FractionRingWidget.cpp:429
 #, kde-format
 msgctxt "Inserted as %2 in the message below."
 msgid "%2 of 1 painted part."
 msgid_plural "%2 of %1 painted parts."
-msgstr[0] "%2 חלקים צבועים מתוך חלק אחד"
-msgstr[1] "%2 חלקים צבועים מתוך %1"
+msgstr[0] "%2 חלקים צבועים מתוך חלק אחד."
+msgstr[1] "%2 חלקים צבועים מתוך %1."
 
 #: FractionRingWidget.cpp:432
 #, kde-format
@@ -515,7 +512,8 @@ msgstr ""
 "\n"
 "הטבעת הפנימית מייצגת את השבר הימני. %2\n"
 "\n"
-"תיבת הטווח \"הרחב ב\" מרחיבה את החלוקה. נסה לשנות את אחד הערכים בתיבות אלו !"
+"תיבת הטווח „הרחבה” מרחיבה את החלוקה. כדאי לנסות לשנות את אחד הערכים בתיבות "
+"אלו!"
 
 #: KBruch.cpp:36
 #, kde-format
@@ -525,17 +523,17 @@ msgstr "KBruch"
 #: KBruch.cpp:38
 #, kde-format
 msgid "Learn calculating with fractions"
-msgstr "למד חישובים עם שברים"
+msgstr "לימוד חישובים עם שברים"
 
 #: KBruch.cpp:40
-#, fuzzy, kde-format
+#, kde-format
 msgid "© 2002-2011, Sebastian Stein"
-msgstr "(c) 2002-2011, Sebastian Stein"
+msgstr "© 2002‏-2011, סבסטיאן שטיין"
 
 #: KBruch.cpp:41
 #, kde-format
 msgid "Sebastian Stein"
-msgstr "Sebastian Stein"
+msgstr "סבסטיאן שטיין"
 
 #: KBruch.cpp:41
 #, kde-format
@@ -545,7 +543,7 @@ msgstr "מתחזק נוכחי, יוצר התכנה"
 #: KBruch.cpp:42
 #, kde-format
 msgid "Paulo Cattai"
-msgstr "Paulo Cattai"
+msgstr "פאולו קטאל"
 
 #: KBruch.cpp:42 KBruch.cpp:43 KBruch.cpp:44 KBruch.cpp:45 KBruch.cpp:46
 #, kde-format
@@ -555,94 +553,94 @@ msgstr "עיצוב ממשק חדש ושיפור שימושיות"
 #: KBruch.cpp:43
 #, kde-format
 msgid "Danilo Balzaque"
-msgstr "Danilo Balzaque"
+msgstr "דנילו בלסק"
 
 #: KBruch.cpp:44
 #, kde-format
 msgid "Roberto Cunha"
-msgstr "Roberto Cunha"
+msgstr "רוברטו קוניה"
 
 #: KBruch.cpp:45
 #, kde-format
 msgid "Tadeu Araujo"
-msgstr "Tadeu Araujo"
+msgstr "תדאו אראוחו"
 
 #: KBruch.cpp:46
 #, kde-format
 msgid "Tiago Porangaba"
-msgstr "Tiago Porangaba"
+msgstr "טיאגו פורנבאגה"
 
 #. i18n: ectx: label, entry, group (General)
 #: kbruch.kcfg:11
 #, kde-format
 msgid "Active exercise."
-msgstr "משימה פעילה."
+msgstr "תרגיל פעיל."
 
 #. i18n: ectx: whatsthis, entry, group (General)
 #: kbruch.kcfg:12
 #, kde-format
 msgid "Saves the active exercise's type."
-msgstr "שמור את סוג המשימה הפעילה."
+msgstr "שומר את סוג התרגיל הפעיל."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:19
 #, kde-format
 msgid "Enable Addition"
-msgstr "אפשר חיבור"
+msgstr "הפעלת חיבור"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:20
 #, kde-format
 msgid "Enable Addition for task generation."
-msgstr "אפשר חיבור ליצירת תרגיל"
+msgstr "הפעלת חיבור ליצירת משימות."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:24
 #, kde-format
 msgid "Enable Subtraction"
-msgstr "אפשר חיסור"
+msgstr "הפעלת חיסור"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:25
 #, kde-format
 msgid "Enable Addition/Subtraction for task generation."
-msgstr "הפעל חיבור/חיסור ליצירת תרגיל."
+msgstr "הפעל חיבור/חיסור ליצירת משימה."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:29
 #, kde-format
 msgid "Enable Division"
-msgstr "אפשר חלוקה"
+msgstr "הפעלת חלוקה"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:30
 #, kde-format
 msgid "Enable Division for task generation."
-msgstr "אפשר חלוקה ליצירת תרגיל"
+msgstr "הפעלת חילוק ליצירת משימות."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:34
 #, kde-format
 msgid "Enable Multiplication"
-msgstr "אפשר הכפלה"
+msgstr "הפעלת הכפלה"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:35
 #, kde-format
 msgid "Enable Multiplication for task generation."
-msgstr "אפשר הכפלה ליצירת תרגיל."
+msgstr "הפעלת הכפלה ליצירת משימה."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:39
 #, kde-format
 msgid "Enable Multiplication/Division"
-msgstr "הפעל כפל/חילוק"
+msgstr "הפעלת כפל/חילוק"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:40
 #, kde-format
 msgid "Enable Multiplication/Division for task generation."
-msgstr "הפעל כפל/חילוק ליצירת תרגיל."
+msgstr "הפעלת כפל/חילוק ליצירת משימה."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:44
@@ -654,31 +652,31 @@ msgstr "מספר השברים"
 #: kbruch.kcfg:45
 #, kde-format
 msgid "Set the number of fractions for task generation."
-msgstr "הגדר את מספר השברים ליצירת תרגיל."
+msgstr "הגדרת מספר השברים ליצירת תרגיל."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:49
 #, kde-format
 msgid "Max. main denominator"
-msgstr "מקסימום מכנה ראשי"
+msgstr "מכנה ראשי מרבי"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:50
 #, kde-format
 msgid "Set the maximum value of the main denominator."
-msgstr "הגדר את הערך המקסימלי למכנה ראשי."
+msgstr "הגדרת ערך המכנה הראשי המרבי המרבי."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:54
 #, kde-format
 msgid "Answer reduced fractions"
-msgstr "כתוב שבר מצומצם כתשובה"
+msgstr "תשובה בשברים מצומצמים"
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:55
 #, kde-format
 msgid "Set if the fractions need to be reduced."
-msgstr "קבע האם שברים צריכים להיות מצומצמים."
+msgstr "הגדרה האם שברים צריכים להיות מצומצמים."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:59 kbruch.kcfg:64 kbruch.kcfg:69
@@ -690,80 +688,80 @@ msgstr "מספר מעורב"
 #: kbruch.kcfg:60
 #, kde-format
 msgid "Set if the fractions will appear in mixed form or not on solution."
-msgstr "קבע האם שברים יופיעו בצורה מצומצמת או בפתרון."
+msgstr "הגדרה האם שברים יופיעו בצורה מעורבת או לא בפתרון."
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:65
 #, kde-format
 msgid ""
 "Set if the fractions will need answers in mixed form or not on solution."
-msgstr "קבע האם על שברים להופיע בצורה מצומצמת או לא בפתרון."
+msgstr "הגדרה האם על שברים ידרשו תשובות כצורה מעורבת או לא בפתרון."
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:70
 #, kde-format
 msgid "Set if the fractions will appear in mixed form or not in questions."
-msgstr "קבע האם השבר יופיע בצורה מצומצמת או לא בשאלות."
+msgstr "הגדרה האם השבר יופיע בצורה מעורבת או לא בשאלות."
 
 #. i18n: ectx: label, entry, group (Statistics)
 #. i18n: ectx: whatsthis, entry, group (Statistics)
 #: kbruch.kcfg:77 kbruch.kcfg:78
 #, kde-format
 msgid "Number of correctly solved tasks"
-msgstr "מספר התרגילים שנפתרו נכונה"
+msgstr "מספר המשימות שנפתרו כראוי"
 
 #. i18n: ectx: label, entry, group (Statistics)
 #: kbruch.kcfg:82
 #, kde-format
 msgid "Number of solved tasks"
-msgstr "מספר התרגילים שניפתרו"
+msgstr "מספר המשימות שנפתרו"
 
 #. i18n: ectx: whatsthis, entry, group (Statistics)
 #: kbruch.kcfg:83
 #, kde-format
 msgid "Total number of solved tasks"
-msgstr "סה\"כ תרגילים פתורים"
+msgstr "סך כל התרגילים הפתורים"
 
 #. i18n: ectx: label, entry, group (Statistics)
 #. i18n: ectx: whatsthis, entry, group (Statistics)
 #: kbruch.kcfg:87 kbruch.kcfg:88
 #, kde-format
 msgid "Number of skipped tasks"
-msgstr "מספר התרגילים שדולגו"
+msgstr "מספר המשימות שדולגו"
 
 #. i18n: ectx: label, entry (numberColor), group (TaskViewer)
 #. i18n: ectx: whatsthis, entry (numberColor), group (TaskViewer)
 #: kbruch.kcfg:95 kbruch.kcfg:96
 #, kde-format
 msgid "Color of the numbers in the task view"
-msgstr "צבע המספרים בתצוגת התרגילים"
+msgstr "צבע המספרים בתצוגת המשימות"
 
 #. i18n: ectx: label, entry (operationColor), group (TaskViewer)
 #. i18n: ectx: whatsthis, entry (operationColor), group (TaskViewer)
 #: kbruch.kcfg:100 kbruch.kcfg:101
 #, kde-format
 msgid "Color of the operation signs in the task view"
-msgstr "צבע סימני האופרטורים בתצוגת התרגילים"
+msgstr "צבע סימני הפעולות בתצוגת המשימות"
 
 #. i18n: ectx: label, entry (fractionBarColor), group (TaskViewer)
 #. i18n: ectx: whatsthis, entry (fractionBarColor), group (TaskViewer)
 #: kbruch.kcfg:105 kbruch.kcfg:106
 #, kde-format
 msgid "Color of the fraction bars in the task view"
-msgstr "צבע קווי השבר בתצוגת התרגילים"
+msgstr "צבע קווי השבר בתצוגת המשימות"
 
 #. i18n: ectx: label, entry, group (TaskViewer)
 #. i18n: ectx: whatsthis, entry, group (TaskViewer)
 #: kbruch.kcfg:110 kbruch.kcfg:111
 #, kde-format
 msgid "Font used for the task view"
-msgstr "גופן לשימוש בתצוגת התרגילים"
+msgstr "גופן לשימוש בתצוגת המשימות"
 
 #. i18n: ectx: label, entry, group (TaskViewer)
 #: kbruch.kcfg:115
 #, kde-format
 msgid "Enable showing the result also as a mixed number"
-msgstr "הפעל תצוגת התוצאה גם כמספר מעורב"
+msgstr "הפעלת הצגת התוצאה גם כמספר מעורב"
 
 #. i18n: ectx: whatsthis, entry, group (TaskViewer)
 #: kbruch.kcfg:116
@@ -771,12 +769,12 @@ msgstr "הפעל תצוגת התוצאה גם כמספר מעורב"
 msgid ""
 "Enables/disables showing the result also in the special mixed-number "
 "notation."
-msgstr "כאן באפשרותך לבחור אם להראות את התוצאות גם כמספרים מעורבים."
+msgstr "כאן ניתן לבחור אם להראות את התוצאות גם כמספרים מעורבים."
 
 #: MainQtWidget.cpp:106
 #, kde-format
 msgid "Question:"
-msgstr "שאלות:"
+msgstr "שאלה:"
 
 #: MainQtWidget.cpp:107
 #, kde-format
@@ -801,7 +799,7 @@ msgstr "אפשרויות:"
 #: MainQtWidget.cpp:157
 #, kde-format
 msgid "Set the options to solve the exercises."
-msgstr "לחץ על הכפתור על מנת לאפס את הסטטיסטיקה."
+msgstr "יש להגדיר את האפשרויות כדי לפתור את התרגילים."
 
 #: MainQtWidget.cpp:158
 #, kde-format
@@ -819,7 +817,7 @@ msgstr ""
 #: MainQtWidget.cpp:162 MainQtWidget.cpp:173
 #, kde-format
 msgid "Mixed number:"
-msgstr "מספר מעורב:"
+msgstr "שבר מעורב:"
 
 #: MainQtWidget.cpp:163
 #, kde-format
@@ -857,7 +855,7 @@ msgstr "חיסור:"
 #: MainQtWidget.cpp:195
 #, kde-format
 msgid "Check this to use subtraction operator."
-msgstr "סמן על מנת להשתמש בסימן פעולת החיסור.סמן "
+msgstr "יש לסמן את זה כדי להשתמש בסימן החיסור."
 
 #: MainQtWidget.cpp:204
 #, kde-format
@@ -907,18 +905,18 @@ msgid ""
 "Choose the number of terms (2, 3, 4 or 5) you \n"
 "want for calculating fractions."
 msgstr ""
-"בחר את מספר הגורמים (2, 3, 4 או 5)\n"
-"שברצונך לקבל לחישוב השברים."
+"נא לבחור את מספר הביטויים (2, 3, 4 או 5)\n"
+"לקבל לטובת חישוב השברים."
 
 #: MainQtWidget.cpp:250
 #, kde-format
 msgid "Maximum denominator:"
-msgstr "מכנה משותף מקסימלי:"
+msgstr "מכנה משותף מרבי:"
 
 #: MainQtWidget.cpp:260
 #, kde-format
 msgid "The maximum number you can have as main denominator"
-msgstr "המספר המקסימלי שאתה יכול לקבל בתור מכנה משותף."
+msgstr "המספר המרבי שאפשר לקבל בתור מכנה משותף"
 
 #: MainQtWidget.cpp:261
 #, kde-format
@@ -930,7 +928,7 @@ msgstr "בחר את המספר שיהיה המכנה המשותף המקסימל
 #: MainQtWidget.cpp:483
 #, kde-format
 msgid "Reset statistics and set a new task."
-msgstr "אפס תוצאות והתחל תרגיל חדש"
+msgstr "איפוס סטטיסטיקה והתחלת משימה חדשה."
 
 #: MainQtWidget.cpp:488
 #, kde-format
@@ -940,7 +938,7 @@ msgstr "חזרה"
 #: MainQtWidget.cpp:490
 #, kde-format
 msgid "Go back to Modes screen."
-msgstr "חזור למסך המצבים"
+msgstr "חזרה למסך המצבים."
 
 #: MainQtWidget.cpp:495
 #, kde-format
@@ -956,7 +954,7 @@ msgstr ""
 #: MainQtWidget.cpp:496 TaskView.cpp:162
 #, kde-format
 msgid "In this exercise you have to solve a given question with fractions."
-msgstr "בתרגיל זה עליך לפתור שאלה נתונה עם שברים."
+msgstr "בתרגיל זה צריך לפתור שאלה עם שברים."
 
 #: MainQtWidget.cpp:501
 #, kde-format
@@ -1000,7 +998,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"חלוקה לגורמים"
+"פירוק לגורמים"
 
 #: MainQtWidget.cpp:525
 #, kde-format
@@ -1023,7 +1021,7 @@ msgstr "חדש"
 #, kde-format
 msgctxt "@action go to the main screen"
 msgid "&Back"
-msgstr "&קודם"
+msgstr "ה&קודם"
 
 #: MainQtWidget.cpp:557
 #, kde-format
@@ -1047,13 +1045,13 @@ msgstr "המרה"
 #, kde-format
 msgctxt "Mixed Numbers Exercise"
 msgid "MixedNumbers"
-msgstr "מספריםמעורבים"
+msgstr "מספרים_מעורבים"
 
 #: MainQtWidget.cpp:581
 #, kde-format
 msgctxt "Factorization Exercise"
 msgid "Factorization"
-msgstr "חלוקה לגורמים"
+msgstr "פירוק לגורמים"
 
 #: MainQtWidget.cpp:587
 #, kde-format
@@ -1120,13 +1118,13 @@ msgstr "שאלות:"
 #, kde-format
 msgctxt "@info:status the number of correct answers"
 msgid "Correct:"
-msgstr "נכון:"
+msgstr "נכונות:"
 
 #: StatisticsView.cpp:77
 #, kde-format
 msgctxt "@info:status the number of incorrect answers"
 msgid "Incorrect:"
-msgstr "טעות:"
+msgstr "שגויות:"
 
 #: StatisticsView.cpp:83
 #, kde-format
@@ -1137,12 +1135,12 @@ msgstr "דולגו:"
 #: StatisticsView.cpp:94
 #, kde-format
 msgid "This is the current total number of correctly solved tasks."
-msgstr "זה המספר הכולל הנוכחי של תרגילים פתורים נכונה."
+msgstr "זה המספר הכולל הנוכחי של תרגילים שנפתרו כראוי."
 
 #: StatisticsView.cpp:100
 #, kde-format
 msgid "This is the current total number of unsolved tasks."
-msgstr "זה המספר הכולל הנוכחי של תרגילים לא פתורים."
+msgstr "זה המספר הכולל הנוכחי של תרגילים שלא נפתרו."
 
 #: StatisticsView.cpp:106
 #, kde-format
@@ -1152,52 +1150,52 @@ msgstr "זה המספר הכולל הנוכחי של תרגילים שדולגו
 #: StatisticsView.cpp:109
 #, kde-format
 msgid "This part of the window shows the statistics."
-msgstr "חלק זה של החלון מראה את הסטטיסטיקה."
+msgstr "אזור זה של החלון מראה את הסטטיסטיקה."
 
 #: StatisticsView.cpp:110
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "This part of the window shows the statistics. Each exercise you do is "
 "counted. You can reset the statistics by clicking on the 'New' button in the "
 "toolbar or by selecting 'New' from the 'File' menu"
 msgstr ""
-"חלק זה של החלון מראה את התוצאות. כל תרגיל שאתה עושה נספר. אתה יכול לאפס את "
-"הסטטיסטיקה על ידי לחיצה על הכפתור 'חדש' בסרגל הכלים או על ידי לחיצה על 'חדש' "
-"בתפריט 'קובץ'."
+"חלק זה של החלון מציג את הסטטיסטיקה. כל תרגיל שהשלמת נספר. אפשר לאפס את "
+"הסטטיסטיקה בלחיצה על הכפתור ‚חדש’ בסרגל הכלים או בלחיצה על ‚חדש’ בתפריט "
+"‚קובץ’"
 
 #: StatisticsView.cpp:121
 #, kde-format
 msgid "&Reset"
-msgstr "&אפס"
+msgstr "&איפוס"
 
 #: StatisticsView.cpp:122
 #, kde-format
 msgid "Click this button to reset the statistics."
-msgstr "לחץ על כפתור זה על מנת לאפס את הסטטיסטיקה."
+msgstr "כפתור זה יאפס את הסטטיסטיקה."
 
 #. i18n: ectx: property (text), widget (QLabel, numberLabel)
 #: taskcolorsbase.ui:28
 #, kde-format
 msgid "&Number:"
-msgstr "&מספר:"
+msgstr "מ&ספר:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_numberColor)
 #: taskcolorsbase.ui:38
 #, kde-format
 msgid "Change the color of the numbers"
-msgstr "שנה את צבע המיספרים"
+msgstr "שינוי צבע המספרים"
 
 #. i18n: ectx: property (text), widget (QLabel, operationLabel)
 #: taskcolorsbase.ui:54
 #, kde-format
 msgid "&Operation sign:"
-msgstr "&סימן הפעולה:"
+msgstr "סימן ה&פעולה:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_operationColor)
 #: taskcolorsbase.ui:70
 #, kde-format
 msgid "Change the color of the operation signs"
-msgstr "שנה את צבע סימני האופרטורים"
+msgstr "שינוי צבע סימוני הפעולות"
 
 #. i18n: ectx: property (text), widget (QLabel, fractionBarLabel)
 #: taskcolorsbase.ui:86
@@ -1209,18 +1207,18 @@ msgstr "קו שבר:"
 #: taskcolorsbase.ui:96
 #, kde-format
 msgid "Change the color of the fraction bar"
-msgstr "שנה את צבע קו השבר"
+msgstr "שינוי צבע קו השבר"
 
 #. i18n: ectx: property (toolTip), widget (KFontChooser, kcfg_taskFont)
 #: taskfontsbase.ui:16
 #, kde-format
 msgid "Change the font of the numbers"
-msgstr "שנה את הגופן של המספרים"
+msgstr "החלפת גופן המספרים"
 
 #: TaskView.cpp:153
 #, kde-format
 msgid "Click this button to skip this question."
-msgstr "לחץ על כפתור זה על מנת לדלג על שאלה זו."
+msgstr "כפתור זה ידלג על שאלה זו."
 
 #: TaskView.cpp:163
 #, kde-format
@@ -1230,27 +1228,27 @@ msgid ""
 "can adjust the difficulty of the question in the options window part. Do not "
 "forget to reduce the result, if the use of the reduced form is forced."
 msgstr ""
-"בתרגיל זה עליך לפתור את השאלה הנתונה. עליך לכתוב את המספר השלם של השבר ואת "
-"המונה והמכנה. באפשרותך לשנות את רמת הקושי באמצעות חלק האפשרויות שבחלון. אל "
-"תשכח לצמצם את התוצאה אם האפשרות \"צורה מצומצמת\" נבחרה."
+"בתרגיל זה צריך לפתור את השאלה הנתונה. צריך לכתוב את המספר השלם של השבר ואת "
+"המונה והמכנה. אפשר לשנות את רמת הקושי דרך אזור האפשרויות שבחלון. לא לשכוח "
+"לצמצם את התוצאה אם האפשרות „צורה מצומצמת” נבחרה."
 
 #: TaskWidget.cpp:96
 #, kde-format
 msgctxt "addition symbol"
 msgid "+"
-msgstr ""
+msgstr "﬩"
 
 #: TaskWidget.cpp:99
 #, kde-format
 msgctxt "subtraction symbol"
 msgid "−"
-msgstr ""
+msgstr "−"
 
 #: TaskWidget.cpp:102
 #, kde-format
 msgctxt "multiplication symbol"
 msgid "×"
-msgstr ""
+msgstr "×"
 
 #: TaskWidget.cpp:105
 #, kde-format
