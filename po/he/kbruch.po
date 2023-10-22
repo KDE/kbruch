@@ -5,21 +5,22 @@
 # tahmar1900 <tahmar1900@gmail.com>, 2006, 2011.
 # Avi Sand <aviand@gmail.com>, 2009.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2023 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:54+0000\n"
-"PO-Revision-Date: 2023-10-19 23:03+0300\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew <Kde-l10n-he@kde.org>\n"
+"PO-Revision-Date: 2023-10-21 16:07+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Lokalize 23.08.1\n"
 "X-Poedit-Bookmarks: -1,-1,-1,52,-1,-1,-1,-1,-1,-1\n"
 
 #, kde-format
@@ -483,24 +484,24 @@ msgstr ""
 "להרחיב את השבר הראשון ב־%2 ואת השבר השני ב־%3."
 
 #: FractionRingWidget.cpp:426
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Inserted as %1 in the message below."
 msgid "%2 of 1 painted part."
 msgid_plural "%2 of %1 painted parts."
 msgstr[0] "%2 חלקים צבועים מתוך חלק אחד."
-msgstr[1] "%2 חלקים צבועים מתוך %1."
-msgstr[2] ""
-msgstr[3] ""
+msgstr[1] "%2 חלקים צבועים מתוך שניים."
+msgstr[2] "%2 חלקים צבועים מתוך %1."
+msgstr[3] "%2 חלקים צבועים מתוך %1."
 
 #: FractionRingWidget.cpp:429
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Inserted as %2 in the message below."
 msgid "%2 of 1 painted part."
 msgid_plural "%2 of %1 painted parts."
 msgstr[0] "%2 חלקים צבועים מתוך חלק אחד."
-msgstr[1] "%2 חלקים צבועים מתוך %1."
-msgstr[2] ""
-msgstr[3] ""
+msgstr[1] "%2 חלקים צבועים מתוך שניים."
+msgstr[2] "%2 חלקים צבועים מתוך %1."
+msgstr[3] "%2 חלקים צבועים מתוך %1."
 
 #: FractionRingWidget.cpp:432
 #, kde-format
