@@ -184,7 +184,7 @@ msgstr ""
 #: ExerciseConvert.cpp:309 ExerciseFactorize.cpp:349 ExercisePercentage.cpp:317
 #, kde-format
 msgid "Click on this button to get to the next question."
-msgstr "Premeu este botó per a anar a la pregunta següent."
+msgstr "Premeu este botó per a anar fins a la pregunta següent."
 
 #: ExerciseConvert.cpp:354
 #, kde-format
@@ -369,7 +369,7 @@ msgstr ""
 #: ExerciseMixedNumbers.cpp:286 TaskView.cpp:267
 #, kde-format
 msgid "Click this button to get the next question."
-msgstr "Premeu este botó per a anar a la pregunta següent."
+msgstr "Premeu este botó per a anar fins a la pregunta següent."
 
 #: ExerciseMixedNumbers.cpp:340 TaskView.cpp:356
 #, kde-format
