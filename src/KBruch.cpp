@@ -29,7 +29,7 @@
 int main(int argc, char * argv[])
 {
     QApplication app(argc, argv);
-    KLocalizedString::setApplicationDomain("kbruch");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kbruch"));
 
     /* fill the about data; the common KDE about dialog will show it to the
      * user */
