@@ -794,8 +794,8 @@ msgid ""
 "Enables/disables showing the result also in the special mixed-number "
 "notation."
 msgstr ""
-"Activa/desactiva mostrar el resultat també en la notació especial de nombre "
-"mixt."
+"Activa o desactiva mostrar el resultat també en la notació especial de "
+"nombre mixt."
 
 #: MainQtWidget.cpp:106
 #, kde-format
