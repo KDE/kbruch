@@ -412,12 +412,7 @@ msgid "In this exercise you have to enter the fraction of the given number."
 msgstr "En ĉi tiu ekzerco vi devas enigi la frakcion de la donita nombro."
 
 #: FractionRingWidget.cpp:104 FractionRingWidget.cpp:109
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Expands the ratio shown on the left by the given factor. Please note, "
-#| "¦expanding is not the same as multiplying. For example, expanding a ratio "
-#| "by ¦2 basically means multiplying the ratio with 2/2 and not with 2/1!"
-#| msgid "Expand"
+#, kde-format
 msgctxt ""
 "Expands the ratio shown on the left by the given factor. Please note, "
 "expanding is not the same as multiplying. For example, expanding a ratio by "
