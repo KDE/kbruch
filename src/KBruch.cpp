@@ -46,6 +46,8 @@ int main(int argc, char * argv[])
     aboutData.addAuthor(i18n("Tiago Porangaba"), i18n("New interface design and usability improvements"), QStringLiteral("tiago.porangaba@ltia.fc.unesp.br"));
     aboutData.setHomepage(QStringLiteral("https://edu.kde.org/kbruch/"));
 
+    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("kbruch")));
+
     KCrash::initialize();
 
     QCommandLineParser parser;
