@@ -50,6 +50,17 @@ target_link_libraries(kbruch
 
 install(TARGETS kbruch  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
+if(APPLE)
+    set_target_properties(kbruch PROPERTIES
+        MACOSX_BUNDLE_DISPLAY_NAME "KBruch"
+        MACOSX_BUNDLE_BUNDLE_NAME "KBruch"
+        MACOSX_BUNDLE_LONG_VERSION_STRING "KBruch ${RELEASE_SERVICE_VERSION}"
+        MACOSX_BUNDLE_SHORT_VERSION_STRING "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}"
+        MACOSX_BUNDLE_BUNDLE_VERSION "${RELEASE_SERVICE_VERSION}"
+        MACOSX_BUNDLE_GUI_IDENTIFIER "org.kde.kbruch"
+        MACOSX_BUNDLE_COPYRIGHT "2002-2024 The KBruch Developers")
+
+endif()
 
 ########### install files ###############
 
