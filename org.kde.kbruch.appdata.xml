@@ -102,6 +102,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="fr">KBruch est un petit programme pour s'entraîner au calcul de fractions et de pourcentages. Différents exercices sont fournis dans ce but et vous pouvez utiliser le mode d'apprentissage pour vous entraîner aux fractions. Le programme vérifie les saisies de l'utilisateur et donne un retour.</p>
     <p xml:lang="gl">KBruch é un pequeno programa para practicar o cálculo con fraccións e porcentaxes. Fornécense distintos tipos de exercicios que serán de utilidade e pódese usar o modo de aprendizaxe para practicar as fraccións. O programa comproba a entrada do usuario e reacciona en consecuencia.</p>
     <p xml:lang="he">KBruch היא תוכנית לתרגול חישוב עם שברים ואחוזים. למטרה הזאת מוצגים תרגילים שונים ואפשר להשתמש במצב הלמידה כדי לתרגל עם שברים. התוכנית בודקת את קלט המשתמש ומספקת משוב.</p>
+    <p xml:lang="hu">A KBruch egy kis program a törtekkel és százalékokkal való számolás gyakorlására. Különböző gyakorlatokat biztosít erre a célra, és Ön a tanulási módot használhatja a törtek gyakorlására. A program ellenőrzi a felhasználó bevitelét, és visszajelzést ad.</p>
     <p xml:lang="id">KBruch adalah program kecil untuk berlatih menghitung dengan pecahan dan persentase. Latihan yang berbeda disediakan untuk tujuan ini dan kamu bisa menggunakan mode belajar untuk berlatih dengan pecahan. Program memeriksa input pengguna dan memberikan umpan balik.</p>
     <p xml:lang="it">KBruch è un piccolo programma con cui puoi esercitarti a calcolare le frazioni e le percentuali. Per questo scopo ci sono diversi esercizi, inoltre puoi usare la modalità di apprendimento per esercitarti con le frazioni. Il programma controlla che i dati inseriti siano corretti, e te lo fa sapere.</p>
     <p xml:lang="ka">KBruch პატარა პროგრამაა ნაწილებზე და პროცენტებზე სავარჯიშოთ. წარმოდგენილია ვარჯიშის სხვადასხვა ვარიანტები და შეგიძლიათ, რეჟიმი თვითონ აირჩიოთ. პროგრამა ამოწყებს მომხმარებლის მიერ შეყვანილ მნიშვნელობებს და პასუხს უბრუნებს მას.</p>
@@ -178,6 +179,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="fr">Exercice d'arithmétique - dans cet exercice, vous devez résoudre une tâche sous la forme d'une fraction. Vous devez saisir le numérateur et le dénominateur. Il s'agit de l'exercice principal.</li>
       <li xml:lang="gl">Exercicio de aritmética - neste exercicio hai que resolver un problema cunha fracción dada. Hai que inserir o numerador e o denominador. Este é o tipo principal de exercicio.</li>
       <li xml:lang="he">תרגיל חשבון - בתרגיל הזה צריך לפתוח משימה עם שבר. יש למלא את המונה והמכנה. זה התרגיל הראשי.</li>
+      <li xml:lang="hu">Számtani feladat - ebben a feladatban egy adott törtet kell megoldania. Meg kell adnia a számlálót és a nevezőt. Ez a fő gyakorlat.</li>
       <li xml:lang="id">Latihan aritmatika - dalam latihan ini kamu harus menyelesaikan tugas fraksi yang diberikan. Kamu harus memasukkan pembilang dan penyebut. Ini adalah latihan utama.</li>
       <li xml:lang="it">Esercizio aritmetico: devi risolvere un compito con delle frazioni date, inserendo il numeratore e il denominatore. È l'esercizio principale.</li>
       <li xml:lang="ka">არითმეტიკული სავარჯიშო - ამ სავარჯიშოში მოცემული ნაწილის ამოცანას ამოხსნით. უნდა შეიყვანოთ ნუმერატორი და დენომინატორი. ეს მთავარი სავარჯიშოა.</li>
@@ -212,6 +214,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="fr">Exercice de comparaison - dans cet exercice, vous devez comparer deux fractions données en utilisant les symboles &gt;, &lt; ou =.</li>
       <li xml:lang="gl">Exercicio de comparación - neste exercicio hai que comparar o tamaño de dúas fraccións dadas usando os símbolos &gt;, &lt; e =.</li>
       <li xml:lang="he">תרגיל השוואה - בתרגיל הזה צריך להשוות גודל בין 2 שברים, באמצעות הסימנים &gt;,‏ &lt; או =.</li>
+      <li xml:lang="hu">Összehasonlító feladat - ebben a feladatban 2 tört méretét kell összehasonlítania a &gt;, &lt; vagy = szimbólumok segítségével.</li>
       <li xml:lang="id">Latihan perbandingan - dalam latihan ini kamu harus membandingkan ukuran 2 fraksi yang diberikan, menggunakan simbol &gt;, &lt; atau =.</li>
       <li xml:lang="it">Esercizio di confronto: devi confrontare il valore di 2 frazioni date usando i simboli &gt;, &lt; o =.</li>
       <li xml:lang="ka">შედარების სავარჯიშო - ამ სავარჯიშოში 2 მოცემული ნაწილი უნდა შეადაროთ სიმბოლოებით &gt;, &lt; ან =.</li>
@@ -247,6 +250,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="fr">Exercice de conversion - dans cet exercice, vous devez convertir un nombre donné en une fraction.</li>
       <li xml:lang="gl">Exercicio de conversión - nestes exercicios hai que converter un número dado nunha fracción.</li>
       <li xml:lang="he">תרגיל המרה - בתרגיל הזה צריך להמיר מספר כלשהו לשבר.</li>
+      <li xml:lang="hu">Átváltási feladat - ebben a feladatban egy adott számot kell átváltania egy törtre.</li>
       <li xml:lang="id">Latihan perbandingan - dalam latihan ini kamu harus membandingkan angka ke dalam fraksi. </li>
       <li xml:lang="it">Esercizio di conversione: devi convertire un numero dato in una frazione.</li>
       <li xml:lang="ka">გადაყვანის სავარჯიშო - ამ სავარჯიშოში რიცხვი წილადში უნდა გადაიყვანოთ.</li>
@@ -282,6 +286,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="fr">Exercice de factorisation - dans cet exercice, vous devez trouver les facteurs premiers d'un nombre donné.</li>
       <li xml:lang="gl">Exercicio de factorización - neste exercicio hai que descompor un número dado nos seus factores primos.</li>
       <li xml:lang="he">תרגיל פירוק לגורמים - בתרגיל הזה צריך לפרק מספר מסוים לגורמים הראשוניים שלו.</li>
+      <li xml:lang="hu">Felbontásos feladat - ebben a feladatban egy adott számot kell prímtényezőire bontania.</li>
       <li xml:lang="id">Latihan faktor - dalam latihan ini kamu harus memfaktor angka yang diberikan ke dalam faktor prima.</li>
       <li xml:lang="it">Esercizio di fattorizzazione: devi ridurre un numero dato nei suoi fattori primi.</li>
       <li xml:lang="ka">ფაქტორიზაციის სავარჯიშო - ამ სავარჯიშოში მითითებული რიცხვი მარტივ მამრავლებად უნდა დაშალოთ.</li>
@@ -317,6 +322,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="fr">Exercice de pourcentages - dans cet exercice, vous devez calculer des pourcentages.</li>
       <li xml:lang="gl">Exercicio de porcentaxe - neste exercicio hai que calcular porcentaxes.</li>
       <li xml:lang="he">תרגיל אחוזים - בתרגיל הזה צריך לחשב אחוזים.</li>
+      <li xml:lang="hu">Százalékos feladat - ebben a gyakorlatban százalékokat kell számolnia.</li>
       <li xml:lang="id">Latihan persentase - dalam latihan ini kamu harus mengkalkulasi persentase.</li>
       <li xml:lang="it">Esercizio sulle percentuali: devi calcolare delle percentuali.</li>
       <li xml:lang="ka">პროცენტების სავარჯიშო - ამ სავარჯიშოში პროცენტების გამოთვლას გასწავლით.</li>
@@ -360,6 +366,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="fr">Exercice sur les fractions grâce à KBruch</caption>
       <caption xml:lang="gl">Facendo exercicios de fraccións con KBruch</caption>
       <caption xml:lang="he">תרגול שברים עם KBruch</caption>
+      <caption xml:lang="hu">Törtek gyakorlása a KBruchhal</caption>
       <caption xml:lang="id">Berlatih fraksi dengan KBruch</caption>
       <caption xml:lang="it">Esercitati con le frazioni usando KBruch</caption>
       <caption xml:lang="ka">წილადების გამოთვლა KBruch-თან ერთად</caption>
