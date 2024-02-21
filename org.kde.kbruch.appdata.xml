@@ -7,6 +7,9 @@ SPDX-License-Identifier: CC0-1.0
   <id>org.kde.kbruch.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
+  <developer id="org.kde">
+    <name translate="no">KDE</name>
+  </developer>
   <name>KBruch</name>
   <name xml:lang="ar">الكسور</name>
   <name xml:lang="ast">KBruch</name>
@@ -348,6 +351,8 @@ SPDX-License-Identifier: CC0-1.0
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kbruch</url>
   <url type="help">https://docs.kde.org/?application=kbruch</url>
   <url type="donation">https://www.kde.org/community/donations/?app=kbruch&amp;source=appdata</url>
+  <url type="vcs-browser">https://commits.kde.org/kbruch</url>
+  <url type="contribute">https://community.kde.org/Get_Involved</url>
   <screenshots>
     <screenshot type="default">
       <caption>Exercising fractions with KBruch</caption>
@@ -399,4 +404,8 @@ SPDX-License-Identifier: CC0-1.0
     <release version="23.08.4" date="2023-12-07"/>
   </releases>
   <content_rating type="oars-1.1"/>
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </recommends>
 </component>
