@@ -5,7 +5,11 @@
 <!ENTITY % Ukrainian "INCLUDE"
 ><!-- change language only here -->
 ]>
-
+<!--
+SPDX-FileCopyrightText: 2001-2005 Sebastian Stein <seb.kde@hpfsc.de>
+SPDX-FileCopyrightText: 2008 Anne-Marie Mahfouf
+SPDX-License-Identifier: GFDL-1.2-only
+-->
 <book id="kbruch" lang="&language;">
 
 <bookinfo>
@@ -938,8 +942,7 @@ before generating a new one.
 >Юрій Чорноіван <email
 >yurchor@ukr.net</email
 ></para
-> 
-&underFDL; &underGPL; </chapter>
+> &underFDL; &underGPL; </chapter>
 
 &documentation.index;
 </book>
