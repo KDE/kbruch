@@ -168,7 +168,13 @@ MainQtWidget::MainQtWidget()
     m_QuestionMixedCheck->setObjectName(QStringLiteral("QuestionMixedCheck"));
     m_QuestionMixedCheck->setChecked(m_questionMixed);
     m_taskview->setQuestionMixed(m_questionMixed);
-    QObject::connect(m_QuestionMixedCheck, &QCheckBox::stateChanged, this, &MainQtWidget::QuestionMixedCheckSlot);
+#if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
+    QObject::connect(m_QuestionMixedCheck, &QCheckBox::stateChanged, this,
+                     &MainQtWidget::QuestionMixedCheckSlot);
+#else
+    QObject::connect(m_QuestionMixedCheck, &QCheckBox::checkStateChanged, this,
+                     &MainQtWidget::QuestionMixedCheckSlot);
+#endif
 
     m_AnswerMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
     m_AnswerMixedLabel->setToolTip(i18n("Set if the fractions will appear as mixed numbers or not in the answer (mixed number example: 1 4/5 = 9/5 )."));
@@ -189,7 +195,13 @@ MainQtWidget::MainQtWidget()
     m_AdditionCheck = new QCheckBox(pageOptions);
     m_AdditionCheck->setObjectName(QStringLiteral("AdditionCheck"));
     m_AdditionCheck->setChecked(m_addAdd);
-    QObject::connect(m_AdditionCheck, &QCheckBox::stateChanged, this, &MainQtWidget::AdditionCheckSlot);
+#if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
+    QObject::connect(m_AdditionCheck, &QCheckBox::stateChanged, this,
+                     &MainQtWidget::AdditionCheckSlot);
+#else
+    QObject::connect(m_AdditionCheck, &QCheckBox::checkStateChanged, this,
+                     &MainQtWidget::AdditionCheckSlot);
+#endif
 
     m_SubtractionLabel = new QLabel(i18n("Subtraction:"), pageOptions);
     m_SubtractionLabel->setToolTip(i18n("Check this to use subtraction operator."));
@@ -199,7 +211,13 @@ MainQtWidget::MainQtWidget()
     m_SubtractionCheck = new QCheckBox(pageOptions);
     m_SubtractionCheck->setObjectName(QStringLiteral("SubtractionCheck"));
     m_SubtractionCheck->setChecked(m_addSub);
-    QObject::connect(m_SubtractionCheck, &QCheckBox::stateChanged, this, &MainQtWidget::SubtractionCheckSlot);
+#if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
+    QObject::connect(m_SubtractionCheck, &QCheckBox::stateChanged, this,
+                     &MainQtWidget::SubtractionCheckSlot);
+#else
+    QObject::connect(m_SubtractionCheck, &QCheckBox::checkStateChanged, this,
+                     &MainQtWidget::SubtractionCheckSlot);
+#endif
 
     m_MultiplicationLabel = new QLabel(i18n("Multiplication:"), pageOptions);
     m_MultiplicationLabel->setToolTip(i18n("Check this to use multiplication operator."));
@@ -209,7 +227,13 @@ MainQtWidget::MainQtWidget()
     m_MultiplicationCheck = new QCheckBox(pageOptions);
     m_MultiplicationCheck->setObjectName(QStringLiteral("MultiplicationCheck"));
     m_MultiplicationCheck->setChecked(m_addMult);
-    QObject::connect(m_MultiplicationCheck, &QCheckBox::stateChanged, this, &MainQtWidget::MultiplicationCheckSlot);
+#if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
+    QObject::connect(m_MultiplicationCheck, &QCheckBox::stateChanged, this,
+                     &MainQtWidget::MultiplicationCheckSlot);
+#else
+    QObject::connect(m_MultiplicationCheck, &QCheckBox::checkStateChanged, this,
+                     &MainQtWidget::MultiplicationCheckSlot);
+#endif
 
     m_DivisionLabel = new QLabel(i18n("Division:"), pageOptions);
     m_DivisionLabel->setToolTip(i18n("Check this to use division operator."));
@@ -219,7 +243,13 @@ MainQtWidget::MainQtWidget()
     m_DivisionCheck = new QCheckBox(pageOptions);
     m_DivisionCheck->setObjectName(QStringLiteral("DivisionCheck"));
     m_DivisionCheck->setChecked(m_addDiv);
-    QObject::connect(m_DivisionCheck, &QCheckBox::stateChanged, this, &MainQtWidget::DivisionCheckSlot);
+#if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
+    QObject::connect(m_DivisionCheck, &QCheckBox::stateChanged, this,
+                     &MainQtWidget::DivisionCheckSlot);
+#else
+    QObject::connect(m_DivisionCheck, &QCheckBox::checkStateChanged, this,
+                     &MainQtWidget::DivisionCheckSlot);
+#endif
 
     m_ReducedLabel = new QLabel(i18n("Reduced form:"), pageOptions);
     m_ReducedLabel->setToolTip(i18n("Check this to force the use of the reduced form."));
