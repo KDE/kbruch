@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 01:54+0000\n"
+"POT-Creation-Date: 2024-04-16 00:35+0000\n"
 "PO-Revision-Date: 2009-06-09 10:16+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -103,7 +103,7 @@ msgstr "រំលង"
 msgid "Click on this button to skip this question."
 msgstr "ចុច​លើ​ប៊ូតុង​នេះ​ដើម្បី​រំលង​សំណួរ​នេះ ។"
 
-#: ExerciseCompare.cpp:134 MainQtWidget.cpp:502
+#: ExerciseCompare.cpp:134 MainQtWidget.cpp:532
 #, kde-format
 msgid "In this exercise you have to compare two given fractions."
 msgstr "នៅក្នុង​លំហាត់​នេះ អ្នកត្រូវតែ​ប្រៀបធៀប​ប្រភាគ​ដែល​បាន​ផ្ដល់ឲ្យ​​ពីរ ។"
@@ -158,7 +158,7 @@ msgstr ""
 "ចុច​ប៊ូតុង​នេះ​ដើម្បី​ពិនិត្យ​មើល​លទ្ធផល​របស់អ្នក ។ ប៊ូតុង​នេះ​នឹង​មិន​ដំណើរការទេ ប្រសិន​បើអ្នក​មិនទាន់​បាន​បញ្ចូល​លទ្ធ​"
 "ផល​ទេនោះ ។"
 
-#: ExerciseConvert.cpp:146 MainQtWidget.cpp:508
+#: ExerciseConvert.cpp:146 MainQtWidget.cpp:538
 #, kde-format
 msgid "In this exercise you have to convert a number into a fraction."
 msgstr "នៅក្នុង​លំហាត់​នេះ​អ្នកត្រូវ​បម្លែង​លេខ​ទៅជា​ប្រភាគ ។"
@@ -293,7 +293,7 @@ msgstr "ដាក់ 19 ជា​កត្តា​ដំបូង​គេ​ 
 msgid "Removes the last entered prime factor."
 msgstr "យក​កត្តា​ដំបូង​ដែលបាន​បញ្ចូល​ចុងក្រោយ​ចេញ ។"
 
-#: ExerciseFactorize.cpp:245 MainQtWidget.cpp:520
+#: ExerciseFactorize.cpp:245 MainQtWidget.cpp:550
 #, kde-format
 msgid "In this exercise you have to factorize a given number."
 msgstr "នៅក្នុង​លំហាត់​នេះ អ្នកត្រូវតែ​ដាក់លេខ​ដែល​បានឲ្យ​ជា​ភាគ​រាយ ។"
@@ -327,7 +327,7 @@ msgstr "បញ្ចូល​ផ្នែក​ចំនួន​គត់​រ
 msgid "Enter the denominator of the fraction"
 msgstr "បញ្ចូល​ផ្នែក​ចំនួន​គត់​របស់​ប្រភាគ"
 
-#: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:514
+#: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:544
 #, kde-format
 msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
@@ -393,7 +393,7 @@ msgstr "%1% នៃ %2 = "
 msgid "Enter the result of percentage question"
 msgstr "បញ្ចូល​លទ្ធផល​របស់​សំណួរ​ភាគរយ"
 
-#: ExercisePercentage.cpp:132 MainQtWidget.cpp:526
+#: ExercisePercentage.cpp:132 MainQtWidget.cpp:556
 #, kde-format
 msgid "In this exercise you have to work with percentage questions."
 msgstr "នៅក្នុង​លំហាត់​នេះ​ អ្នក​ត្រូវ​ធ្វើការ​ជា​មួយ​នឹង​សំណួរ​ភាគ​រយ ។"
@@ -412,18 +412,18 @@ msgctxt ""
 msgid "Expand"
 msgstr "ពង្រីក"
 
-#: FractionRingWidget.cpp:133 MainQtWidget.cpp:481
+#: FractionRingWidget.cpp:133 MainQtWidget.cpp:511
 #, kde-format
 msgid "New"
 msgstr "ថ្មី"
 
-#: FractionRingWidget.cpp:186 MainQtWidget.cpp:531
+#: FractionRingWidget.cpp:186 MainQtWidget.cpp:561
 #, kde-format
 msgctxt "@action opens a new question"
 msgid "&New"
 msgstr "ថ្មី"
 
-#: FractionRingWidget.cpp:194 MainQtWidget.cpp:551
+#: FractionRingWidget.cpp:194 MainQtWidget.cpp:581
 #, kde-format
 msgctxt "@action go to the main screen"
 msgid "Back"
@@ -436,7 +436,7 @@ msgid "Hint"
 msgstr "ជំនួយ"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: FractionRingWidget.cpp:229 MainQtWidget.cpp:806 taskcolorsbase.ui:16
+#: FractionRingWidget.cpp:229 MainQtWidget.cpp:836 taskcolorsbase.ui:16
 #, kde-format
 msgid "Colors"
 msgstr "ពណ៌​"
@@ -782,7 +782,7 @@ msgstr "ចម្លើយ ៖"
 msgid "Operations:"
 msgstr "ប្រមាណវិធី​ ៖"
 
-#: MainQtWidget.cpp:114 MainQtWidget.cpp:907
+#: MainQtWidget.cpp:114 MainQtWidget.cpp:937
 #, kde-format
 msgid "Arithmetic"
 msgstr "លេខ​គណិត"
@@ -808,7 +808,7 @@ msgstr ""
 "ផ្នែក​របស់បង្អួច​នេះ​បង្ហាញ​នូវ​ជម្រើស​ ដើម្បី​ដោះស្រាយ​លំហាត់ ។ ប្រើ​ចំណុច​ទាញ រវាង​​ជម្រើស និងបង្អួច​មេ​ "
 "ដើម្បី​ផ្លាស់ប្ដូរ​ទំហំ​របស់​ផ្នែក​បង្អួច ឬ​ត្រូវ​លាក់​វា​ ដោយ​ផ្លាស់ទី​ចំណុច​ទាញ​ទៅ​ស៊ុម​ឆ្វេង​របស់​បង្អួច​មេ ។"
 
-#: MainQtWidget.cpp:162 MainQtWidget.cpp:173
+#: MainQtWidget.cpp:162 MainQtWidget.cpp:179
 #, kde-format
 msgid "Mixed number:"
 msgstr "លេខ​ចម្រុះ ៖"
@@ -821,7 +821,7 @@ msgid ""
 msgstr ""
 "កំណត់ ប្រសិន​បើ​ប្រភាគ​នឹង​បង្ហាញ​ជា​ចំនួន​លាយ​ ឬក៏អត់នៅ​ក្នុង​កន្សោម​សំណួរ (គំរូ​ចំនួន​លាយ ៖ 1 4/5 = 9/5 ) ។"
 
-#: MainQtWidget.cpp:174
+#: MainQtWidget.cpp:180
 #, kde-format
 msgid ""
 "Set if the fractions will appear as mixed numbers or not in the answer "
@@ -829,108 +829,108 @@ msgid ""
 msgstr ""
 "កំណត់ បើ​ប្រភាគ​នឹង​លេច​ឡើង​ក្នុង​ចំនួន​លាយ ឬមិន​នៅក្នុង​ចម្លើយ ( ឧទាហរណ៍​ចំនួន​លាយ ៖ 1 4/5 = 9/5 ) ។"
 
-#: MainQtWidget.cpp:184
+#: MainQtWidget.cpp:190
 #, kde-format
 msgid "Addition:"
 msgstr "បូក ៖"
 
-#: MainQtWidget.cpp:185
+#: MainQtWidget.cpp:191
 #, kde-format
 msgid "Check this to use addition operator."
 msgstr "ធីក​នេះ​ដើម្បី​ប្រើ​ប្រមាណ​វិធីបន្ថែម ។"
 
-#: MainQtWidget.cpp:194
+#: MainQtWidget.cpp:206
 #, kde-format
 msgid "Subtraction:"
 msgstr "ដក ៖"
 
-#: MainQtWidget.cpp:195
+#: MainQtWidget.cpp:207
 #, kde-format
 msgid "Check this to use subtraction operator."
 msgstr "ធីក​នេះ​ដើម្បី​ប្រើ​ប្រមាណ​វិធី​ដក ។"
 
-#: MainQtWidget.cpp:204
+#: MainQtWidget.cpp:222
 #, kde-format
 msgid "Multiplication:"
 msgstr "​គុណ ៖"
 
-#: MainQtWidget.cpp:205
+#: MainQtWidget.cpp:223
 #, kde-format
 msgid "Check this to use multiplication operator."
 msgstr "ធីក​នេះដើម្បីប្រើ​ប្រមាណវិធី​គុណ ។"
 
-#: MainQtWidget.cpp:214
+#: MainQtWidget.cpp:238
 #, kde-format
 msgid "Division:"
 msgstr "ចែក ៖"
 
-#: MainQtWidget.cpp:215
+#: MainQtWidget.cpp:239
 #, kde-format
 msgid "Check this to use division operator."
 msgstr "ធីកនេះដើម្បី​ប្រើប្រមាណវិធី​ចែក ។"
 
-#: MainQtWidget.cpp:224
+#: MainQtWidget.cpp:254
 #, kde-format
 msgid "Reduced form:"
 msgstr "ទម្រង់​ខ្លី ៖"
 
-#: MainQtWidget.cpp:225
+#: MainQtWidget.cpp:255
 #, kde-format
 msgid "Check this to force the use of the reduced form."
 msgstr "ធីក​នេះដើម្បី​បង្ខំ​ការ​ប្រើ​សំណុំបែបបទ​កាត់បន្ថយ ។"
 
-#: MainQtWidget.cpp:235
+#: MainQtWidget.cpp:265
 #, kde-format
 msgid "Number of terms:"
 msgstr "ចំនួន​អង្គ ៖"
 
-#: MainQtWidget.cpp:236 MainQtWidget.cpp:246
+#: MainQtWidget.cpp:266 MainQtWidget.cpp:276
 #, kde-format
 msgid ""
 "The number of \n"
 "terms you want"
 msgstr "ចំនួន​អង្គ​ដែល​អ្នក​ចង់​បាន"
 
-#: MainQtWidget.cpp:247
+#: MainQtWidget.cpp:277
 #, kde-format
 msgid ""
 "Choose the number of terms (2, 3, 4 or 5) you \n"
 "want for calculating fractions."
 msgstr "ជ្រើស​ចំនួន​អង្គ​ (2, 3, 4 ឬ 5) ដែលអ្នក​ចង់យក​មកធ្វើការ​គណនា​ប្រភាគ ។"
 
-#: MainQtWidget.cpp:250
+#: MainQtWidget.cpp:280
 #, kde-format
 msgid "Maximum denominator:"
 msgstr "ភាគបែង​អតិបរមា ៖"
 
-#: MainQtWidget.cpp:260
+#: MainQtWidget.cpp:290
 #, kde-format
 msgid "The maximum number you can have as main denominator"
 msgstr "ចំនួន​អតិបរមា​ដែលអ្នក​អាច​មាន​ភាគបែង​រួម"
 
-#: MainQtWidget.cpp:261
+#: MainQtWidget.cpp:291
 #, kde-format
 msgid ""
 "Choose the number which will be the maximum for the main denominator: 10, "
 "20, 30, 40 or 50."
 msgstr "ជ្រើស​ចំនួន​ដែល​នឹង​ជា​ចំនួន​អតិបរមា​សម្រាប់​ភាគបែង​រួម ៖ 10, 20, 30, 40 ឬ 50 ។"
 
-#: MainQtWidget.cpp:483
+#: MainQtWidget.cpp:513
 #, kde-format
 msgid "Reset statistics and set a new task."
 msgstr "កំណត់​ស្ថិតិ​ឡើង​វិញ ហើយ​កំណត់​ភារកិច្ច​ថ្មី ។"
 
-#: MainQtWidget.cpp:488
+#: MainQtWidget.cpp:518
 #, kde-format
 msgid "Back"
 msgstr "ថយក្រោយ"
 
-#: MainQtWidget.cpp:490
+#: MainQtWidget.cpp:520
 #, kde-format
 msgid "Go back to Modes screen."
 msgstr "ត្រឡប់​ទៅ​កាន់​អេក្រង់​របៀប ។"
 
-#: MainQtWidget.cpp:495
+#: MainQtWidget.cpp:525
 #, kde-format
 msgid ""
 "\n"
@@ -941,12 +941,12 @@ msgstr ""
 "\n"
 "លេខ​គណិត"
 
-#: MainQtWidget.cpp:496 TaskView.cpp:162
+#: MainQtWidget.cpp:526 TaskView.cpp:162
 #, kde-format
 msgid "In this exercise you have to solve a given question with fractions."
 msgstr "នៅក្នុង​លំហាត់​នេះ​អ្នក​ត្រូវ​ដោះស្រាយសំណួរ​​ដែលបាន​ផ្ដល់​ឲ្យ​ដោយ​ប្រភាគ ។"
 
-#: MainQtWidget.cpp:501
+#: MainQtWidget.cpp:531
 #, kde-format
 msgid ""
 "\n"
@@ -957,7 +957,7 @@ msgstr ""
 "\n"
 "ប្រៀបធៀប"
 
-#: MainQtWidget.cpp:507
+#: MainQtWidget.cpp:537
 #, kde-format
 msgid ""
 "\n"
@@ -968,7 +968,7 @@ msgstr ""
 "\n"
 "ការបម្លែង​"
 
-#: MainQtWidget.cpp:513
+#: MainQtWidget.cpp:543
 #, kde-format
 msgid ""
 "\n"
@@ -979,7 +979,7 @@ msgstr ""
 "\n"
 "លេខ​ចម្រុះ"
 
-#: MainQtWidget.cpp:519
+#: MainQtWidget.cpp:549
 #, kde-format
 msgid ""
 "\n"
@@ -990,7 +990,7 @@ msgstr ""
 "\n"
 "ការបំបែក​ជា​ភាគរាយ"
 
-#: MainQtWidget.cpp:525
+#: MainQtWidget.cpp:555
 #, kde-format
 msgid ""
 "\n"
@@ -1001,80 +1001,80 @@ msgstr ""
 "\n"
 "ភាគរយ"
 
-#: MainQtWidget.cpp:538
+#: MainQtWidget.cpp:568
 #, kde-format
 msgctxt "@action opens a new question"
 msgid "New"
 msgstr "ថ្មី"
 
-#: MainQtWidget.cpp:544
+#: MainQtWidget.cpp:574
 #, kde-format
 msgctxt "@action go to the main screen"
 msgid "&Back"
 msgstr "ថយក្រោយ"
 
-#: MainQtWidget.cpp:557
+#: MainQtWidget.cpp:587
 #, kde-format
 msgctxt "Arithmetic Exercise"
 msgid "Arithmetic"
 msgstr "លេខ​គណិត"
 
-#: MainQtWidget.cpp:563
+#: MainQtWidget.cpp:593
 #, kde-format
 msgctxt "Comparison Exercise"
 msgid "Comparison"
 msgstr "ប្រៀបធៀប"
 
-#: MainQtWidget.cpp:569
+#: MainQtWidget.cpp:599
 #, kde-format
 msgctxt "Conversion Exercise"
 msgid "Conversion"
 msgstr "ការបម្លែង​"
 
-#: MainQtWidget.cpp:575
+#: MainQtWidget.cpp:605
 #, kde-format
 msgctxt "Mixed Numbers Exercise"
 msgid "MixedNumbers"
 msgstr "លេខ​ចម្រុះ"
 
-#: MainQtWidget.cpp:581
+#: MainQtWidget.cpp:611
 #, kde-format
 msgctxt "Factorization Exercise"
 msgid "Factorization"
 msgstr "ការ​បំបែក​ជា​ភាគរាយ"
 
-#: MainQtWidget.cpp:587
+#: MainQtWidget.cpp:617
 #, kde-format
 msgctxt "Percentage Exercise"
 msgid "Percentage"
 msgstr "ភាគរយ"
 
-#: MainQtWidget.cpp:809
+#: MainQtWidget.cpp:839
 #, kde-format
 msgid "Fonts"
 msgstr "ពុម្ពអក្សរ"
 
-#: MainQtWidget.cpp:891
+#: MainQtWidget.cpp:921
 #, kde-format
 msgid "Percentage"
 msgstr "ភាគរយ"
 
-#: MainQtWidget.cpp:923
+#: MainQtWidget.cpp:953
 #, kde-format
 msgid "Comparison"
 msgstr "ប្រៀបធៀប"
 
-#: MainQtWidget.cpp:939
+#: MainQtWidget.cpp:969
 #, kde-format
 msgid "Conversion"
 msgstr "ការបម្លែង​"
 
-#: MainQtWidget.cpp:955
+#: MainQtWidget.cpp:985
 #, kde-format
 msgid "Mixed Numbers"
 msgstr "លេខ​ចម្រុះ"
 
-#: MainQtWidget.cpp:971
+#: MainQtWidget.cpp:1001
 #, kde-format
 msgid "Factorization"
 msgstr "ការបំបែក​ជា​ភាគរាយ"

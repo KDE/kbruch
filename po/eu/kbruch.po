@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 01:54+0000\n"
+"POT-Creation-Date: 2024-04-16 00:35+0000\n"
 "PO-Revision-Date: 2020-11-14 23:53+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque\n"
@@ -109,7 +109,7 @@ msgstr "&Saltatu"
 msgid "Click on this button to skip this question."
 msgstr "Egin klik botoi honetan ariketa hau saltatzeko."
 
-#: ExerciseCompare.cpp:134 MainQtWidget.cpp:502
+#: ExerciseCompare.cpp:134 MainQtWidget.cpp:532
 #, kde-format
 msgid "In this exercise you have to compare two given fractions."
 msgstr "Ariketa honetan emandako 2 zatiki konparatu behar dituzu."
@@ -165,7 +165,7 @@ msgstr ""
 "Klikatu botoi honetan zure emaitza egiaztateko. Botoiak ez du funtzionatuko "
 "emaitzarik sartu ez baduzu."
 
-#: ExerciseConvert.cpp:146 MainQtWidget.cpp:508
+#: ExerciseConvert.cpp:146 MainQtWidget.cpp:538
 #, kde-format
 msgid "In this exercise you have to convert a number into a fraction."
 msgstr "Ariketa honetan zenbakia zatiki batean bihurtu behar duzu."
@@ -300,7 +300,7 @@ msgstr "Gehitu 19 faktore lehena."
 msgid "Removes the last entered prime factor."
 msgstr "Sartutako azken faktore lehena kentzan du."
 
-#: ExerciseFactorize.cpp:245 MainQtWidget.cpp:520
+#: ExerciseFactorize.cpp:245 MainQtWidget.cpp:550
 #, kde-format
 msgid "In this exercise you have to factorize a given number."
 msgstr "Ariketa honetan emandako zenbaki bat faktorizatu behar duzu."
@@ -337,7 +337,7 @@ msgstr "Sartu zatikiaren zenbakitzailea"
 msgid "Enter the denominator of the fraction"
 msgstr "Sartu zatikiaren izendatzailea"
 
-#: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:514
+#: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:544
 #, kde-format
 msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
@@ -407,7 +407,7 @@ msgstr "%2(r)en % %1 = "
 msgid "Enter the result of percentage question"
 msgstr "Sartu ehunekoa ariketaren emaitza"
 
-#: ExercisePercentage.cpp:132 MainQtWidget.cpp:526
+#: ExercisePercentage.cpp:132 MainQtWidget.cpp:556
 #, kde-format
 msgid "In this exercise you have to work with percentage questions."
 msgstr "Ariketa honetan ehunekoen galderekin lan egin behar duzu."
@@ -426,18 +426,18 @@ msgctxt ""
 msgid "Expand"
 msgstr "Hedatu"
 
-#: FractionRingWidget.cpp:133 MainQtWidget.cpp:481
+#: FractionRingWidget.cpp:133 MainQtWidget.cpp:511
 #, kde-format
 msgid "New"
 msgstr "Berria"
 
-#: FractionRingWidget.cpp:186 MainQtWidget.cpp:531
+#: FractionRingWidget.cpp:186 MainQtWidget.cpp:561
 #, kde-format
 msgctxt "@action opens a new question"
 msgid "&New"
 msgstr "&Berria"
 
-#: FractionRingWidget.cpp:194 MainQtWidget.cpp:551
+#: FractionRingWidget.cpp:194 MainQtWidget.cpp:581
 #, kde-format
 msgctxt "@action go to the main screen"
 msgid "Back"
@@ -450,7 +450,7 @@ msgid "Hint"
 msgstr "Argibidea"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: FractionRingWidget.cpp:229 MainQtWidget.cpp:806 taskcolorsbase.ui:16
+#: FractionRingWidget.cpp:229 MainQtWidget.cpp:836 taskcolorsbase.ui:16
 #, kde-format
 msgid "Colors"
 msgstr "Koloreak"
@@ -805,7 +805,7 @@ msgstr "Erantzuna:"
 msgid "Operations:"
 msgstr "Eragiketak:"
 
-#: MainQtWidget.cpp:114 MainQtWidget.cpp:907
+#: MainQtWidget.cpp:114 MainQtWidget.cpp:937
 #, kde-format
 msgid "Arithmetic"
 msgstr "Aritmetikoa"
@@ -832,7 +832,7 @@ msgstr ""
 "leiho nagusiaren arteko heldulekua erabili leiho honen tamaina aldatzeko, "
 "edo ezkutatu ezazu heldulekua leiho nagusiaren ezkerreko ertzera eramanez."
 
-#: MainQtWidget.cpp:162 MainQtWidget.cpp:173
+#: MainQtWidget.cpp:162 MainQtWidget.cpp:179
 #, kde-format
 msgid "Mixed number:"
 msgstr "Zenbaki mistoa:"
@@ -846,7 +846,7 @@ msgstr ""
 "Galderako adierazpenean zatikiak zenbaki misto gisa agertuko diren edo ez "
 "ezartzea (zenbaki nahasiaren adibidea: 1 4/5 = 9/5 )."
 
-#: MainQtWidget.cpp:174
+#: MainQtWidget.cpp:180
 #, kde-format
 msgid ""
 "Set if the fractions will appear as mixed numbers or not in the answer "
@@ -855,62 +855,62 @@ msgstr ""
 "Erantzunean zatikiak zenbaki misto gisa agertuko diren edo ez ezartzea "
 "(zenbaki nahasiaren adibidea: 1 4/5 = 9/5 )."
 
-#: MainQtWidget.cpp:184
+#: MainQtWidget.cpp:190
 #, kde-format
 msgid "Addition:"
 msgstr "Batuketa:"
 
-#: MainQtWidget.cpp:185
+#: MainQtWidget.cpp:191
 #, kde-format
 msgid "Check this to use addition operator."
 msgstr "Aktibatu hau batuketaren eragilea erabiltzeko."
 
-#: MainQtWidget.cpp:194
+#: MainQtWidget.cpp:206
 #, kde-format
 msgid "Subtraction:"
 msgstr "Kenketa:"
 
-#: MainQtWidget.cpp:195
+#: MainQtWidget.cpp:207
 #, kde-format
 msgid "Check this to use subtraction operator."
 msgstr "Aktibatu hau kenketaren eragilea erabiltzeko."
 
-#: MainQtWidget.cpp:204
+#: MainQtWidget.cpp:222
 #, kde-format
 msgid "Multiplication:"
 msgstr "Biderketa:"
 
-#: MainQtWidget.cpp:205
+#: MainQtWidget.cpp:223
 #, kde-format
 msgid "Check this to use multiplication operator."
 msgstr "Aktibatu hau biderketaren eragilea erabiltzeko."
 
-#: MainQtWidget.cpp:214
+#: MainQtWidget.cpp:238
 #, kde-format
 msgid "Division:"
 msgstr "Zatiketa:"
 
-#: MainQtWidget.cpp:215
+#: MainQtWidget.cpp:239
 #, kde-format
 msgid "Check this to use division operator."
 msgstr "Aktibatu hau zatiketaren eragilea erabiltzeko."
 
-#: MainQtWidget.cpp:224
+#: MainQtWidget.cpp:254
 #, kde-format
 msgid "Reduced form:"
 msgstr "Forma sinplifikatua:"
 
-#: MainQtWidget.cpp:225
+#: MainQtWidget.cpp:255
 #, kde-format
 msgid "Check this to force the use of the reduced form."
 msgstr "Aktibatu hau forma sinplifikatua erabiltzea derrigortzeko."
 
-#: MainQtWidget.cpp:235
+#: MainQtWidget.cpp:265
 #, kde-format
 msgid "Number of terms:"
 msgstr "Termino kopurua:"
 
-#: MainQtWidget.cpp:236 MainQtWidget.cpp:246
+#: MainQtWidget.cpp:266 MainQtWidget.cpp:276
 #, kde-format
 msgid ""
 "The number of \n"
@@ -919,7 +919,7 @@ msgstr ""
 "Nahi dituzun \n"
 "termino kopurua"
 
-#: MainQtWidget.cpp:247
+#: MainQtWidget.cpp:277
 #, kde-format
 msgid ""
 "Choose the number of terms (2, 3, 4 or 5) you \n"
@@ -928,39 +928,39 @@ msgstr ""
 "Aukeratu zatikien kalkuluetan nahi\n"
 "dituzun termino kopurua (2, 3, 4 edo 5)."
 
-#: MainQtWidget.cpp:250
+#: MainQtWidget.cpp:280
 #, kde-format
 msgid "Maximum denominator:"
 msgstr "Gehienezko izendatzailea:"
 
-#: MainQtWidget.cpp:260
+#: MainQtWidget.cpp:290
 #, kde-format
 msgid "The maximum number you can have as main denominator"
 msgstr "Zatitzaile nagusi bezala izan dezakezun zenbaki maximoa."
 
-#: MainQtWidget.cpp:261
+#: MainQtWidget.cpp:291
 #, kde-format
 msgid ""
 "Choose the number which will be the maximum for the main denominator: 10, "
 "20, 30, 40 or 50."
 msgstr "Hautatu izendatzaile nagusiaren zenbaki maximoa: 10 20, 30, 40 edo 50."
 
-#: MainQtWidget.cpp:483
+#: MainQtWidget.cpp:513
 #, kde-format
 msgid "Reset statistics and set a new task."
 msgstr "Berrezarri estatistikak eta ezarri ariketa berria."
 
-#: MainQtWidget.cpp:488
+#: MainQtWidget.cpp:518
 #, kde-format
 msgid "Back"
 msgstr "Atzera"
 
-#: MainQtWidget.cpp:490
+#: MainQtWidget.cpp:520
 #, kde-format
 msgid "Go back to Modes screen."
 msgstr "Joan atzera pantailako moduetan."
 
-#: MainQtWidget.cpp:495
+#: MainQtWidget.cpp:525
 #, kde-format
 msgid ""
 "\n"
@@ -971,12 +971,12 @@ msgstr ""
 "\n"
 "Aritmetikoa"
 
-#: MainQtWidget.cpp:496 TaskView.cpp:162
+#: MainQtWidget.cpp:526 TaskView.cpp:162
 #, kde-format
 msgid "In this exercise you have to solve a given question with fractions."
 msgstr "Ariketa honetan emandako zatikien ariketa  ebatzi behar duzu."
 
-#: MainQtWidget.cpp:501
+#: MainQtWidget.cpp:531
 #, kde-format
 msgid ""
 "\n"
@@ -987,7 +987,7 @@ msgstr ""
 "\n"
 "Konparaketa"
 
-#: MainQtWidget.cpp:507
+#: MainQtWidget.cpp:537
 #, kde-format
 msgid ""
 "\n"
@@ -998,7 +998,7 @@ msgstr ""
 "\n"
 "Bihurketa"
 
-#: MainQtWidget.cpp:513
+#: MainQtWidget.cpp:543
 #, kde-format
 msgid ""
 "\n"
@@ -1009,7 +1009,7 @@ msgstr ""
 "\n"
 "Zenbaki mistoak"
 
-#: MainQtWidget.cpp:519
+#: MainQtWidget.cpp:549
 #, kde-format
 msgid ""
 "\n"
@@ -1020,7 +1020,7 @@ msgstr ""
 "\n"
 "Faktorizazioa"
 
-#: MainQtWidget.cpp:525
+#: MainQtWidget.cpp:555
 #, kde-format
 msgid ""
 "\n"
@@ -1031,80 +1031,80 @@ msgstr ""
 "\n"
 "Ehunekoa"
 
-#: MainQtWidget.cpp:538
+#: MainQtWidget.cpp:568
 #, kde-format
 msgctxt "@action opens a new question"
 msgid "New"
 msgstr "Berria"
 
-#: MainQtWidget.cpp:544
+#: MainQtWidget.cpp:574
 #, kde-format
 msgctxt "@action go to the main screen"
 msgid "&Back"
 msgstr "&Atzera"
 
-#: MainQtWidget.cpp:557
+#: MainQtWidget.cpp:587
 #, kde-format
 msgctxt "Arithmetic Exercise"
 msgid "Arithmetic"
 msgstr "Aritmetikoa"
 
-#: MainQtWidget.cpp:563
+#: MainQtWidget.cpp:593
 #, kde-format
 msgctxt "Comparison Exercise"
 msgid "Comparison"
 msgstr "Konparaketa"
 
-#: MainQtWidget.cpp:569
+#: MainQtWidget.cpp:599
 #, kde-format
 msgctxt "Conversion Exercise"
 msgid "Conversion"
 msgstr "Bihurketa"
 
-#: MainQtWidget.cpp:575
+#: MainQtWidget.cpp:605
 #, kde-format
 msgctxt "Mixed Numbers Exercise"
 msgid "MixedNumbers"
 msgstr "ZenbakiMistoak"
 
-#: MainQtWidget.cpp:581
+#: MainQtWidget.cpp:611
 #, kde-format
 msgctxt "Factorization Exercise"
 msgid "Factorization"
 msgstr "Faktorizazioa"
 
-#: MainQtWidget.cpp:587
+#: MainQtWidget.cpp:617
 #, kde-format
 msgctxt "Percentage Exercise"
 msgid "Percentage"
 msgstr "Ehunekoa"
 
-#: MainQtWidget.cpp:809
+#: MainQtWidget.cpp:839
 #, kde-format
 msgid "Fonts"
 msgstr "Letra-tipoak"
 
-#: MainQtWidget.cpp:891
+#: MainQtWidget.cpp:921
 #, kde-format
 msgid "Percentage"
 msgstr "Ehunekoa"
 
-#: MainQtWidget.cpp:923
+#: MainQtWidget.cpp:953
 #, kde-format
 msgid "Comparison"
 msgstr "Konparaketa"
 
-#: MainQtWidget.cpp:939
+#: MainQtWidget.cpp:969
 #, kde-format
 msgid "Conversion"
 msgstr "Bihurketa"
 
-#: MainQtWidget.cpp:955
+#: MainQtWidget.cpp:985
 #, kde-format
 msgid "Mixed Numbers"
 msgstr "Zenbaki mistoak"
 
-#: MainQtWidget.cpp:971
+#: MainQtWidget.cpp:1001
 #, kde-format
 msgid "Factorization"
 msgstr "Faktorizazioa"
