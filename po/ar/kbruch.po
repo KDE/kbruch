@@ -1,13 +1,13 @@
 # translation of kbruch.po to
 # Ahmad M. Zawawi <azawawi@emirates.net.ae>, 2004.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-16 00:35+0000\n"
-"PO-Revision-Date: 2022-01-22 14:43+0400\n"
+"PO-Revision-Date: 2024-05-02 12:15+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -549,12 +549,12 @@ msgstr "روبرتو ريبيرو فيلهو"
 #: KBruch.cpp:45
 #, kde-format
 msgid "Tadeu Araujo"
-msgstr ""
+msgstr "تادو اراوجو"
 
 #: KBruch.cpp:46
 #, kde-format
 msgid "Tiago Porangaba"
-msgstr ""
+msgstr "تياغو بورانغابا"
 
 #. i18n: ectx: label, entry, group (General)
 #: kbruch.kcfg:11
@@ -970,25 +970,25 @@ msgid ""
 msgstr ""
 
 #: MainQtWidget.cpp:568
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action opens a new question"
 msgid "New"
 msgstr "جديد"
 
 #: MainQtWidget.cpp:574
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action go to the main screen"
 msgid "&Back"
 msgstr "&عُد"
 
 #: MainQtWidget.cpp:587
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Arithmetic Exercise"
 msgid "Arithmetic"
-msgstr "حسابيات"
+msgstr "الحسابيات"
 
 #: MainQtWidget.cpp:593
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Comparison Exercise"
 msgid "Comparison"
 msgstr "المقارنة"
@@ -1028,7 +1028,7 @@ msgid "Percentage"
 msgstr "النسبة"
 
 #: MainQtWidget.cpp:953
-#, fuzzy, kde-format
+#, kde-format
 msgid "Comparison"
 msgstr "المقارنة"
 
@@ -1133,9 +1133,9 @@ msgstr "اضغط على الزر لإعادة تعيين الإحصائيات."
 
 #. i18n: ectx: property (text), widget (QLabel, numberLabel)
 #: taskcolorsbase.ui:28
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Number:"
-msgstr "الرقم"
+msgstr "&عدد:"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_numberColor)
 #: taskcolorsbase.ui:38
@@ -1162,7 +1162,7 @@ msgstr "غيّر اللّون من عملية"
 #: taskcolorsbase.ui:86
 #, fuzzy, kde-format
 msgid "&Fraction bar:"
-msgstr "جزء شريط:"
+msgstr "شرطة الكسر"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_fractionBarColor)
 #: taskcolorsbase.ui:96
