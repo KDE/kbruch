@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-16 00:35+0000\n"
-"PO-Revision-Date: 2024-05-02 12:15+0400\n"
+"PO-Revision-Date: 2024-05-09 10:13+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -205,27 +205,27 @@ msgid "Backspace"
 msgstr "Backspace"
 
 #: ExerciseFactorize.cpp:198
-#, fuzzy, kde-format
+#, kde-format
 msgid "2"
 msgstr "2"
 
 #: ExerciseFactorize.cpp:199
-#, fuzzy, kde-format
+#, kde-format
 msgid "3"
 msgstr "3"
 
 #: ExerciseFactorize.cpp:200
-#, fuzzy, kde-format
+#, kde-format
 msgid "5"
 msgstr "5"
 
 #: ExerciseFactorize.cpp:201
-#, fuzzy, kde-format
+#, kde-format
 msgid "7"
 msgstr "7"
 
 #: ExerciseFactorize.cpp:202
-#, fuzzy, kde-format
+#, kde-format
 msgid "11"
 msgstr "11"
 
@@ -930,20 +930,26 @@ msgid "In this exercise you have to solve a given question with fractions."
 msgstr "داخل إلى a المهمة مع."
 
 #: MainQtWidget.cpp:531
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "\n"
 "\n"
 "Comparison"
-msgstr "المقارنة"
+msgstr ""
+"\n"
+"\n"
+"المقارنة"
 
 #: MainQtWidget.cpp:537
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "\n"
 "\n"
 "Conversion"
-msgstr "تحويل"
+msgstr ""
+"\n"
+"\n"
+"التحويل"
 
 #: MainQtWidget.cpp:543
 #, kde-format
@@ -954,12 +960,15 @@ msgid ""
 msgstr ""
 
 #: MainQtWidget.cpp:549
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "\n"
 "\n"
 "Factorization"
-msgstr "التحليل للعوامل"
+msgstr ""
+"\n"
+"\n"
+"التحليل للعوامل"
 
 #: MainQtWidget.cpp:555
 #, kde-format
