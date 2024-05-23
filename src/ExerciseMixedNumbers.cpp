@@ -93,7 +93,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     m_integerEdit = new QLineEdit(m_tmpTaskWidget);
     m_integerEdit->setObjectName(QStringLiteral("m_integerEdit"));
     m_integerEdit->setValidator(intValidator);
-    m_integerEdit->setToolTip(i18n("Enter the integer part of the fraction"));
+    m_integerEdit->setToolTip(i18nc("@info:tooltip", "Enter the integer part of the fraction"));
     m_integerEdit->setFont(defaultFont);
     m_integerEdit->setFixedSize(85, 42);
     m_integerEdit->setAlignment(Qt::AlignHCenter);
@@ -107,7 +107,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     m_numerEdit = new QLineEdit(m_tmpTaskWidget);
     m_numerEdit->setObjectName(QStringLiteral("m_numerEdit"));
     m_numerEdit->setValidator(intValidator);
-    m_numerEdit->setToolTip(i18n("Enter the numerator of the fraction"));
+    m_numerEdit->setToolTip(i18nc("@info:tooltip", "Enter the numerator of the fraction"));
     m_numerEdit->setFont(defaultFont);
     m_numerEdit->setFixedSize(85, 42);
     m_numerEdit->setAlignment(Qt::AlignHCenter);
@@ -124,7 +124,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     m_denoEdit = new QLineEdit(m_tmpTaskWidget);
     m_denoEdit->setObjectName(QStringLiteral("m_numerEdit"));
     m_denoEdit->setValidator(intValidator);
-    m_denoEdit->setToolTip(i18n("Enter the denominator of the fraction"));
+    m_denoEdit->setToolTip(i18nc("@info:tooltip", "Enter the denominator of the fraction"));
     m_denoEdit->setFont(defaultFont);
     m_denoEdit->setFixedSize(85, 42);
     m_denoEdit->setAlignment(Qt::AlignHCenter);
@@ -147,7 +147,7 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     m_checkButton->setObjectName(QStringLiteral("m_checkButton"));
     m_checkButton->setText(i18n("&Check"));
     m_checkButton->setDefault(true);    // is the default button of the dialog
-    m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+    m_checkButton->setToolTip(i18nc("@info:tooltip", "Click on this button to check your result. The button will not work if you have not entered a result yet."));
     m_checkButton->setFont(defaultFont);
     QObject::connect(m_checkButton, &QPushButton::clicked, this, &ExerciseMixedNumbers::slotCheckButtonClicked);
     m_checkLayout->addWidget(m_checkButton, 1, 0);
@@ -156,13 +156,13 @@ ExerciseMixedNumbers::ExerciseMixedNumbers(QWidget * parent) :
     m_skipButton = new QPushButton(m_checkWidget);
     m_skipButton->setObjectName(QStringLiteral("m_skipButton"));
     m_skipButton->setText(i18n("&Skip"));
-    m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
+    m_skipButton->setToolTip(i18nc("@info:tooltip", "Click on this button to skip this question."));
     m_skipButton->setFont(defaultFont);
     QObject::connect(m_skipButton, &QPushButton::clicked, this, &ExerciseMixedNumbers::slotSkipButtonClicked);
     m_checkLayout->addWidget(m_skipButton, 1, 1);
 
     // add tooltip and qwhatsthis help to the exercise widget
-    setToolTip(i18n("In this exercise you have to convert a mixed number into a ratio and vice versa."));
+    setToolTip(i18nc("@info:tooltip", "In this exercise you have to convert a mixed number into a ratio and vice versa."));
     setWhatsThis(i18n("In this exercise you have to convert a mixed number into a ratio and vice versa. Do not forget to reduce the result."));
 }
 
@@ -242,7 +242,7 @@ void ExerciseMixedNumbers::nextTask()
     m_resultWidget->setResult(Ratio(), -1);
 
     // change check button
-    m_checkButton->setToolTip(i18n("Click this button to check your result. The button will not work if you have not entered a result yet."));
+    m_checkButton->setToolTip(i18nc("@info:tooltip", "Click this button to check your result. The button will not work if you have not entered a result yet."));
     m_checkButton->setText(i18n("&Check"));
 
     // clear user input and restore input fields
@@ -283,7 +283,7 @@ void ExerciseMixedNumbers::showResult()
     bool wrong = false;
 
     // update UI while solution is shown
-    m_checkButton->setToolTip(i18n("Click this button to get the next question."));
+    m_checkButton->setToolTip(i18nc("@info:tooltip", "Click this button to get the next question."));
     m_checkButton->setText(i18n("N&ext"));
     m_integerEdit->setEnabled(false);
     m_numerEdit->setEnabled(false);

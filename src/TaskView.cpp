@@ -93,7 +93,7 @@ TaskView::TaskView(QWidget * parent,
     integer_edit = new QLineEdit(taskWidget);
     integer_edit->setObjectName(QStringLiteral("integer_edit"));
     integer_edit->setValidator(valnum);   // use the int validator
-    integer_edit->setToolTip(i18n("Enter the integer part of the fraction"));
+    integer_edit->setToolTip(i18nc("@info:tooltip", "Enter the integer part of the fraction"));
     integer_edit->setFont(defaultFont);
     integer_edit->setFixedSize(85, 42);
     integer_edit->setAlignment(Qt::AlignHCenter);
@@ -105,7 +105,7 @@ TaskView::TaskView(QWidget * parent,
     numer_edit = new QLineEdit(taskWidget);
     numer_edit->setObjectName(QStringLiteral("numer_edit"));
     numer_edit->setValidator(valnum);   // use the int validator
-    numer_edit->setToolTip(i18n("Enter the numerator of your result"));
+    numer_edit->setToolTip(i18nc("@info:tooltip", "Enter the numerator of your result"));
     numer_edit->setFont(defaultFont);
     numer_edit->setFixedSize(85, 42);
     numer_edit->setAlignment(Qt::AlignHCenter);
@@ -122,7 +122,7 @@ TaskView::TaskView(QWidget * parent,
     deno_edit = new QLineEdit(taskWidget);
     deno_edit->setObjectName(QStringLiteral("deno_edit"));
     deno_edit->setValidator(valnum);   // use the int validator
-    deno_edit->setToolTip(i18n("Enter the denominator of your result"));
+    deno_edit->setToolTip(i18nc("@info:tooltip", "Enter the denominator of your result"));
     deno_edit->setFont(defaultFont);
     deno_edit->setFixedSize(85, 42);
     deno_edit->setAlignment(Qt::AlignHCenter);
@@ -141,7 +141,7 @@ TaskView::TaskView(QWidget * parent,
     m_checkButton->setObjectName(QStringLiteral("m_checkButton"));
     m_checkButton->setText(i18n("&Check"));
     m_checkButton->setDefault(true);  // is the default button of the dialog
-    m_checkButton->setToolTip(i18n("Click this button to check your result. The button will not work if you have not entered a result yet."));
+    m_checkButton->setToolTip(i18nc("@info:tooltip", "Click this button to check your result. The button will not work if you have not entered a result yet."));
     m_checkButton->setFont(defaultFont);
     QObject::connect(m_checkButton, &QPushButton::clicked, this, &TaskView::slotCheckButtonClicked);
     checkLayout->addWidget(m_checkButton, 1, 0);
@@ -150,7 +150,7 @@ TaskView::TaskView(QWidget * parent,
     m_skipButton = new QPushButton(checkWidget);
     m_skipButton->setObjectName(QStringLiteral("m_skipButton"));
     m_skipButton->setText(i18n("&Skip"));
-    m_skipButton->setToolTip(i18n("Click this button to skip this question."));
+    m_skipButton->setToolTip(i18nc("@info:tooltip", "Click this button to skip this question."));
     m_skipButton->setFont(defaultFont);
     QObject::connect(m_skipButton, &QPushButton::clicked, this, &TaskView::slotSkipButtonClicked);
     checkLayout->addWidget(m_skipButton, 1, 1);
@@ -159,7 +159,7 @@ TaskView::TaskView(QWidget * parent,
     m_taskWidget->show();
 
     // add tooltip and qwhatsthis help to the widget
-    setToolTip(i18n("In this exercise you have to solve a given question with fractions."));
+    setToolTip(i18nc("@info:tooltip", "In this exercise you have to solve a given question with fractions."));
     setWhatsThis(i18n("In this exercise you have to solve the generated question. You have to enter the integer part of the fraction and the numerator and the denominator. You can adjust the difficulty of the question in the options window part. Do not forget to reduce the result, if the use of the reduced form is forced."));
 }
 
@@ -264,7 +264,7 @@ void TaskView::showResult()
     bool wrong = false;
 
     // change the tooltip of the check button
-    m_checkButton->setToolTip(i18n("Click this button to get the next question."));
+    m_checkButton->setToolTip(i18nc("@info:tooltip", "Click this button to get the next question."));
 
     numer_edit->setEnabled(false);
     deno_edit->setEnabled(false);
@@ -380,7 +380,7 @@ void TaskView::showResult()
 void TaskView::nextTask()
 {
     // change the tooltip of the check button
-    m_checkButton->setToolTip(i18n("Click this button to check your result. The button will not work if you have not entered a result yet."));
+    m_checkButton->setToolTip(i18nc("@info:tooltip", "Click this button to check your result. The button will not work if you have not entered a result yet."));
 
     numer_edit->setEnabled(true);
     deno_edit->setEnabled(true);

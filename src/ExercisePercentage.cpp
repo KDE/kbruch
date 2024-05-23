@@ -88,7 +88,7 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
     answer_edit = new QLineEdit(taskWidget);
     answer_edit->setObjectName(QStringLiteral("answer_edit"));
     answer_edit->setValidator(valnum);   // use the int validator
-    answer_edit->setToolTip(i18n("Enter the result of percentage question"));
+    answer_edit->setToolTip(i18nc("@info:tooltip", "Enter the result of percentage question"));
     answer_edit->setFixedSize(85, 42);
     answer_edit->setAlignment(Qt::AlignHCenter);
     answer_edit->setFont(defaultFont);
@@ -106,7 +106,7 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
     m_checkButton->setObjectName(QStringLiteral("m_checkButton"));
     m_checkButton->setText(i18n("&Check"));
     m_checkButton->setDefault(true);  // is the default button of the dialog
-    m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+    m_checkButton->setToolTip(i18nc("@info:tooltip", "Click on this button to check your result. The button will not work if you have not entered a result yet."));
     m_checkButton->setFont(defaultFont);
     QObject::connect(m_checkButton, &QPushButton::clicked, this, &ExercisePercentage::slotCheckButtonClicked);
     checkLayout->addWidget(m_checkButton, 2, 0);
@@ -115,7 +115,7 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
     m_skipButton = new QPushButton(checkWidget);
     m_skipButton->setObjectName(QStringLiteral("m_skipButton"));
     m_skipButton->setText(i18n("&Skip"));
-    m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
+    m_skipButton->setToolTip(i18nc("@info:tooltip", "Click on this button to skip this question."));
     m_skipButton->setFont(defaultFont);
     QObject::connect(m_skipButton, &QPushButton::clicked, this, &ExercisePercentage::slotSkipButtonClicked);
     checkLayout->addWidget(m_skipButton, 2, 1);
@@ -129,7 +129,7 @@ ExercisePercentage::ExercisePercentage(QWidget * parent) :
     checkWidget->setLayout(checkLayout);
 
     // add tooltip and qwhatsthis help to the widget
-    setToolTip(i18n("In this exercise you have to work with percentage questions."));
+    setToolTip(i18nc("@info:tooltip", "In this exercise you have to work with percentage questions."));
     setWhatsThis(i18n("In this exercise you have to enter the fraction of the given number."));
 
 }
@@ -314,7 +314,7 @@ void ExercisePercentage::showResult()
     Ratio correct_result;
 
     // change the tooltip of the check button
-    m_checkButton->setToolTip(i18n("Click on this button to get to the next question."));
+    m_checkButton->setToolTip(i18nc("@info:tooltip", "Click on this button to get to the next question."));
 
     answer_edit->setEnabled(false);
     m_skipButton->setEnabled(false);
@@ -348,7 +348,7 @@ void ExercisePercentage::showResult()
 void ExercisePercentage::nextTask()
 {
     // change the tooltip of the check button
-    m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+    m_checkButton->setToolTip(i18nc("@info:tooltip", "Click on this button to check your result. The button will not work if you have not entered a result yet."));
 
     answer_edit->setEnabled(true);
     m_skipButton->setEnabled(true);

@@ -88,7 +88,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
     numer_edit = new QLineEdit(taskWidget);
     numer_edit->setObjectName(QStringLiteral("numer_edit"));
     numer_edit->setValidator(valnum);   // use the int validator
-    numer_edit->setToolTip(i18n("Enter the numerator of your result"));
+    numer_edit->setToolTip(i18nc("@info:tooltip", "Enter the numerator of your result"));
     numer_edit->setFixedSize(85, 42);
     numer_edit->setAlignment(Qt::AlignHCenter);
     numer_edit->setFont(defaultFont);
@@ -105,7 +105,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
     deno_edit = new QLineEdit(taskWidget);
     deno_edit->setObjectName(QStringLiteral("deno_edit"));
     deno_edit->setValidator(valnum);   // use the int validator
-    deno_edit->setToolTip(i18n("Enter the denominator of your result"));
+    deno_edit->setToolTip(i18nc("@info:tooltip", "Enter the denominator of your result"));
     deno_edit->setFixedSize(85, 42);
     deno_edit->setAlignment(Qt::AlignHCenter);
     deno_edit->setFont(defaultFont);
@@ -124,7 +124,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
     m_checkButton->setObjectName(QStringLiteral("m_checkButton"));
     m_checkButton->setText(i18n("&Check"));
     m_checkButton->setDefault(true);  // is the default button of the dialog
-    m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+    m_checkButton->setToolTip(i18nc("@info:tooltip", "Click on this button to check your result. The button will not work if you have not entered a result yet."));
     m_checkButton->setFont(defaultFont);
     QObject::connect(m_checkButton, &QPushButton::clicked, this, &ExerciseConvert::slotCheckButtonClicked);
     checkLayout->addWidget(m_checkButton, 1, 0);
@@ -133,7 +133,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
     m_skipButton = new QPushButton(checkWidget);
     m_skipButton->setObjectName(QStringLiteral("m_skipButton"));
     m_skipButton->setText(i18n("&Skip"));
-    m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
+    m_skipButton->setToolTip(i18nc("@info:tooltip", "Click on this button to skip this question."));
     m_skipButton->setFont(defaultFont);
     QObject::connect(m_skipButton, &QPushButton::clicked, this, &ExerciseConvert::slotSkipButtonClicked);
     checkLayout->addWidget(m_skipButton, 1, 1);
@@ -143,7 +143,7 @@ ExerciseConvert::ExerciseConvert(QWidget * parent) :
     checkWidget->setLayout(checkLayout);
 
     // add tooltip and qwhatsthis help to the widget
-    setToolTip(i18n("In this exercise you have to convert a number into a fraction."));
+    setToolTip(i18nc("@info:tooltip", "In this exercise you have to convert a number into a fraction."));
     setWhatsThis(i18n("In this exercise you have to convert a given number into a fraction by entering a numerator and denominator. Do not forget to reduce the result."));
 }
 
@@ -306,7 +306,7 @@ void ExerciseConvert::showResult()
     Ratio entered_result;
 
     // change the tooltip of the check button
-    m_checkButton->setToolTip(i18n("Click on this button to get to the next question."));
+    m_checkButton->setToolTip(i18nc("@info:tooltip", "Click on this button to get to the next question."));
 
     numer_edit->setEnabled(false);
     deno_edit->setEnabled(false);
@@ -368,7 +368,7 @@ void ExerciseConvert::showResult()
 void ExerciseConvert::nextTask()
 {
     // change the tooltip of the check button
-    m_checkButton->setToolTip(i18n("Click on this button to check your result. The button will not work if you have not entered a result yet."));
+    m_checkButton->setToolTip(i18nc("@info:tooltip", "Click on this button to check your result. The button will not work if you have not entered a result yet."));
 
     numer_edit->setEnabled(true);
     deno_edit->setEnabled(true);

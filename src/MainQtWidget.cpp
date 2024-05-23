@@ -154,13 +154,13 @@ MainQtWidget::MainQtWidget()
     m_exercisePercentage->hide();
 
     m_OptionsLabel = new QLabel(i18n("Options:"), pageOptions);
-    m_OptionsLabel->setToolTip(i18n("Set the options to solve the exercises."));
+    m_OptionsLabel->setToolTip(i18nc("@info:tooltip", "Set the options to solve the exercises."));
     m_OptionsLabel->setWhatsThis(i18n("This part of the window shows the options to solve the exercises. Use the handle between the options and main window to change the size of this window part or to hide it by moving the handle to the left border of the main window."));
     m_OptionsLabel->setObjectName(QStringLiteral("OptionsLabel"));
     m_OptionsLabel->setFont(defaultFont);
 
     m_QuestionMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
-    m_QuestionMixedLabel->setToolTip(i18n("Set if the fractions will appear as mixed numbers or not in the question expression (mixed number example: 1 4/5 = 9/5 )."));
+    m_QuestionMixedLabel->setToolTip(i18nc("@info:tooltip", "Set if the fractions will appear as mixed numbers or not in the question expression (mixed number example: 1 4/5 = 9/5 )."));
     m_QuestionMixedLabel->setObjectName(QStringLiteral("QuestionMixedLabel"));
     m_QuestionMixedLabel->setAlignment(Qt::AlignRight);
 
@@ -177,7 +177,7 @@ MainQtWidget::MainQtWidget()
 #endif
 
     m_AnswerMixedLabel = new QLabel(i18n("Mixed number:"), pageOptions);
-    m_AnswerMixedLabel->setToolTip(i18n("Set if the fractions will appear as mixed numbers or not in the answer (mixed number example: 1 4/5 = 9/5 )."));
+    m_AnswerMixedLabel->setToolTip(i18nc("@info:tooltip", "Set if the fractions will appear as mixed numbers or not in the answer (mixed number example: 1 4/5 = 9/5 )."));
     m_AnswerMixedLabel->setObjectName(QStringLiteral("AnswerMixedLabel"));
     m_AnswerMixedLabel->setAlignment(Qt::AlignRight);
 
@@ -188,7 +188,7 @@ MainQtWidget::MainQtWidget()
     QObject::connect(m_AnswerMixedCheck, &QRadioButton::toggled, this, &MainQtWidget::AnswerMixedCheckSlot);
 
     m_AdditionLabel = new QLabel(i18n("Addition:"), pageOptions);
-    m_AdditionLabel->setToolTip(i18n("Check this to use addition operator."));
+    m_AdditionLabel->setToolTip(i18nc("@info:tooltip", "Check this to use addition operator."));
     m_AdditionLabel->setObjectName(QStringLiteral("AdditionLabel"));
     m_AdditionLabel->setAlignment(Qt::AlignRight);
 
@@ -204,7 +204,7 @@ MainQtWidget::MainQtWidget()
 #endif
 
     m_SubtractionLabel = new QLabel(i18n("Subtraction:"), pageOptions);
-    m_SubtractionLabel->setToolTip(i18n("Check this to use subtraction operator."));
+    m_SubtractionLabel->setToolTip(i18nc("@info:tooltip", "Check this to use subtraction operator."));
     m_SubtractionLabel->setObjectName(QStringLiteral("SubtractionLabel"));
     m_SubtractionLabel->setAlignment(Qt::AlignRight);
 
@@ -220,7 +220,7 @@ MainQtWidget::MainQtWidget()
 #endif
 
     m_MultiplicationLabel = new QLabel(i18n("Multiplication:"), pageOptions);
-    m_MultiplicationLabel->setToolTip(i18n("Check this to use multiplication operator."));
+    m_MultiplicationLabel->setToolTip(i18nc("@info:tooltip", "Check this to use multiplication operator."));
     m_MultiplicationLabel->setObjectName(QStringLiteral("MultiplicationLabel"));
     m_MultiplicationLabel->setAlignment(Qt::AlignRight);
 
@@ -236,7 +236,7 @@ MainQtWidget::MainQtWidget()
 #endif
 
     m_DivisionLabel = new QLabel(i18n("Division:"), pageOptions);
-    m_DivisionLabel->setToolTip(i18n("Check this to use division operator."));
+    m_DivisionLabel->setToolTip(i18nc("@info:tooltip", "Check this to use division operator."));
     m_DivisionLabel->setObjectName(QStringLiteral("DivisionLabel"));
     m_DivisionLabel->setAlignment(Qt::AlignRight);
 
@@ -252,7 +252,7 @@ MainQtWidget::MainQtWidget()
 #endif
 
     m_ReducedLabel = new QLabel(i18n("Reduced form:"), pageOptions);
-    m_ReducedLabel->setToolTip(i18n("Check this to force the use of the reduced form."));
+    m_ReducedLabel->setToolTip(i18nc("@info:tooltip", "Check this to force the use of the reduced form."));
     m_ReducedLabel->setObjectName(QStringLiteral("ReducedLabel"));
     m_ReducedLabel->setAlignment(Qt::AlignRight);
 
@@ -263,7 +263,7 @@ MainQtWidget::MainQtWidget()
     QObject::connect(m_ReducedCheck, &QRadioButton::toggled, this, &MainQtWidget::ReducedFormCheckSlot);
 
     m_NrOfTermsLabel = new QLabel(i18n("Number of terms:"), pageOptions);
-    m_NrOfTermsLabel->setToolTip(i18n("The number of \nterms you want"));
+    m_NrOfTermsLabel->setToolTip(i18nc("@info:tooltip", "The number of \nterms you want"));
     m_NrOfTermsLabel->setObjectName(QStringLiteral("NrOfTermsLabel"));
     m_NrOfTermsLabel->setAlignment(Qt::AlignRight);
 
@@ -273,7 +273,7 @@ MainQtWidget::MainQtWidget()
     m_NrOfTermsBox->addItem(QStringLiteral("4"));
     m_NrOfTermsBox->addItem(QStringLiteral("5"));
     m_NrOfTermsBox->setCurrentIndex(m_nrRatios - 2);
-    m_NrOfTermsBox->setToolTip(i18n("The number of \nterms you want"));
+    m_NrOfTermsBox->setToolTip(i18nc("@info:tooltip", "The number of \nterms you want"));
     m_NrOfTermsBox->setWhatsThis(i18n("Choose the number of terms (2, 3, 4 or 5) you \nwant for calculating fractions."));
     QObject::connect(m_NrOfTermsBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::activated), this, &MainQtWidget::NrOfTermsBoxSlot);
 
@@ -287,7 +287,7 @@ MainQtWidget::MainQtWidget()
     m_MaxMainDenominatorBox->addItem(QStringLiteral("20"));
     m_MaxMainDenominatorBox->addItem(QStringLiteral("30"));
     m_MaxMainDenominatorBox->addItem(QStringLiteral("50"));
-    m_MaxMainDenominatorBox->setToolTip(i18n("The maximum number you can have as main denominator"));
+    m_MaxMainDenominatorBox->setToolTip(i18nc("@info:tooltip", "The maximum number you can have as main denominator"));
     m_MaxMainDenominatorBox->setWhatsThis(i18n("Choose the number which will be the maximum for the main denominator: 10, 20, 30, 40 or 50."));
     switch (m_maxMainDenominator) {
     case 10 :
@@ -510,50 +510,50 @@ void MainQtWidget::setupActions()
     m_NewTaskButton->setObjectName(QStringLiteral("NewTaskButton"));
     m_NewTaskButton->setText(i18n("New"));
     m_NewTaskButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
-    m_NewTaskButton->setToolTip(i18n("Reset statistics and set a new task."));
+    m_NewTaskButton->setToolTip(i18nc("@info:tooltip", "Reset statistics and set a new task."));
     m_NewTaskButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
     m_BackTaskButton = new QToolButton(this);
     m_BackTaskButton->setObjectName(QStringLiteral("BackTaskButton"));
     m_BackTaskButton->setText(i18n("Back"));
     m_BackTaskButton->setIcon(QIcon::fromTheme(QStringLiteral("go-previous")));
-    m_BackTaskButton->setToolTip(i18n("Go back to Modes screen."));
+    m_BackTaskButton->setToolTip(i18nc("@info:tooltip", "Go back to Modes screen."));
     m_BackTaskButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
     m_ArithmeticButton = new QToolButton(this);
     m_ArithmeticButton->setObjectName(QStringLiteral("ArithmeticButton"));
     m_ArithmeticButton->setText(i18n("\n\nArithmetic"));
-    m_ArithmeticButton->setToolTip(i18n("In this exercise you have to solve a given question with fractions."));
+    m_ArithmeticButton->setToolTip(i18nc("@info:tooltip", "In this exercise you have to solve a given question with fractions."));
     m_ArithmeticButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
     m_ComparisonButton = new QToolButton(this);
     m_ComparisonButton->setObjectName(QStringLiteral("ComparisonButton"));
     m_ComparisonButton->setText(i18n("\n\nComparison"));
-    m_ComparisonButton->setToolTip(i18n("In this exercise you have to compare two given fractions."));
+    m_ComparisonButton->setToolTip(i18nc("@info:tooltip", "In this exercise you have to compare two given fractions."));
     m_ComparisonButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
     m_ConversionButton = new QToolButton(this);
     m_ConversionButton->setObjectName(QStringLiteral("ConversionButton"));
     m_ConversionButton->setText(i18n("\n\nConversion"));
-    m_ConversionButton->setToolTip(i18n("In this exercise you have to convert a number into a fraction."));
+    m_ConversionButton->setToolTip(i18nc("@info:tooltip", "In this exercise you have to convert a number into a fraction."));
     m_ConversionButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
     m_MixedNumbersButton = new QToolButton(this);
     m_MixedNumbersButton->setObjectName(QStringLiteral("MixedNumbersButton"));
     m_MixedNumbersButton->setText(i18n("\n\nMixed Numbers"));
-    m_MixedNumbersButton->setToolTip(i18n("In this exercise you have to convert a mixed number into a ratio and vice versa."));
+    m_MixedNumbersButton->setToolTip(i18nc("@info:tooltip", "In this exercise you have to convert a mixed number into a ratio and vice versa."));
     m_MixedNumbersButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
     m_FactorizationButton = new QToolButton(this);
     m_FactorizationButton->setObjectName(QStringLiteral("Factorization"));
     m_FactorizationButton->setText(i18n("\n\nFactorization"));
-    m_FactorizationButton->setToolTip(i18n("In this exercise you have to factorize a given number."));
+    m_FactorizationButton->setToolTip(i18nc("@info:tooltip", "In this exercise you have to factorize a given number."));
     m_FactorizationButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
     m_PercentageButton = new QToolButton(this);
     m_PercentageButton->setObjectName(QStringLiteral("Percentage"));
     m_PercentageButton->setText(i18n("\n\nPercentage"));
-    m_PercentageButton->setToolTip(i18n("In this exercise you have to work with percentage questions."));
+    m_PercentageButton->setToolTip(i18nc("@info:tooltip", "In this exercise you have to work with percentage questions."));
     m_PercentageButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
 

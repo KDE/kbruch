@@ -85,7 +85,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
     m_moreButton->setFixedSize(74, 30);
     m_moreButton->setFont(defaultFont);
     QObject::connect(m_moreButton, &QPushButton::clicked, this, &ExerciseCompare::slotMoreButtonClicked);
-    m_moreButton->setToolTip(i18n("Click on this button to select the 'greater than' sign."));
+    m_moreButton->setToolTip(i18nc("@info:tooltip", "Click on this button to select the 'greater than' sign."));
     taskLayout->addWidget(m_moreButton, 1, 2);
 
     m_minorButton = new QPushButton(taskWidget);
@@ -94,7 +94,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
     m_minorButton->setFixedSize(74, 30);
     m_minorButton->setFont(defaultFont);
     QObject::connect(m_minorButton, &QPushButton::clicked, this, &ExerciseCompare::slotMinorButtonClicked);
-    m_minorButton->setToolTip(i18n("Click on this button to select the 'less than' sign."));
+    m_minorButton->setToolTip(i18nc("@info:tooltip", "Click on this button to select the 'less than' sign."));
     taskLayout->addWidget(m_minorButton, 2, 2);
 
     m_equalButton = new QPushButton(taskWidget);
@@ -103,7 +103,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
     m_equalButton->setFixedSize(74, 30);
     m_equalButton->setFont(defaultFont);
     QObject::connect(m_equalButton, &QPushButton::clicked, this, &ExerciseCompare::slotEqualButtonClicked);
-    m_equalButton->setToolTip(i18n("Click on this button to select the 'equals' sign."));
+    m_equalButton->setToolTip(i18nc("@info:tooltip", "Click on this button to select the 'equals' sign."));
     taskLayout->addWidget(m_equalButton, 3, 2);
 
     // Create Skip and Check buttons
@@ -116,7 +116,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
     m_skipButton = new QPushButton(checkWidget);
     m_skipButton->setObjectName(QStringLiteral("m_skipButton"));
     m_skipButton->setText(i18n("&Skip"));
-    m_skipButton->setToolTip(i18n("Click on this button to skip this question."));
+    m_skipButton->setToolTip(i18nc("@info:tooltip", "Click on this button to skip this question."));
     m_skipButton->setFont(defaultFont);
     QObject::connect(m_skipButton, &QPushButton::clicked, this, &ExerciseCompare::slotSkipButtonClicked);
     checkLayout->addWidget(m_skipButton, 1, 0);
@@ -131,7 +131,7 @@ ExerciseCompare::ExerciseCompare(QWidget * parent) :
     checkWidget->setLayout(checkLayout);
 
     // add tooltip and qwhatsthis help to the widget
-    setToolTip(i18n("In this exercise you have to compare two given fractions."));
+    setToolTip(i18nc("@info:tooltip", "In this exercise you have to compare two given fractions."));
     setWhatsThis(i18n("In this exercise you have to compare two given fractions and choose the correct comparison sign."));
 
     // that the user can start typing without moving the focus
@@ -243,9 +243,9 @@ void ExerciseCompare::showResult()
 void ExerciseCompare::nextTask()
 {
     // change the tooltip of the check button
-    m_equalButton->setToolTip(i18n("Click on this button to check your result."));
-    m_moreButton->setToolTip(i18n("Click on this button to check your result."));
-    m_minorButton->setToolTip(i18n("Click on this button to check your result."));
+    m_equalButton->setToolTip(i18nc("@info:tooltip", "Click on this button to check your result."));
+    m_moreButton->setToolTip(i18nc("@info:tooltip", "Click on this button to check your result."));
+    m_minorButton->setToolTip(i18nc("@info:tooltip", "Click on this button to check your result."));
     // enable sign button
     m_equalButton->setEnabled(true);
     m_minorButton->setEnabled(true);

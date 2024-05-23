@@ -106,7 +106,7 @@ StatisticsView::StatisticsView(QWidget * parent) :
         i18n("This is the current total number of skipped tasks."));
 
     // add tooltip and qwhatsthis help to the widget
-    setToolTip(i18n("This part of the window shows the statistics."));
+    setToolTip(i18nc("@info:tooltip", "This part of the window shows the statistics."));
     setWhatsThis(i18n("This part of the window shows the statistics. Each exercise you do is counted. You can reset the statistics by clicking on the 'New' button in the toolbar or by selecting 'New' from the 'File' menu"));
 
     QBoxLayout * cLayout = new QBoxLayout(QBoxLayout::LeftToRight);
@@ -119,7 +119,7 @@ StatisticsView::StatisticsView(QWidget * parent) :
     resetButton = new QPushButton(this);
     resetButton->setObjectName(QStringLiteral("resetButton"));
     resetButton->setText(i18n("&Reset"));
-    resetButton->setToolTip(i18n("Click this button to reset the statistics."));
+    resetButton->setToolTip(i18nc("@info:tooltip", "Click this button to reset the statistics."));
     resetButton->setFont(defaultFont);
     QObject::connect(resetButton, &QPushButton::clicked, this, &StatisticsView::resetStatistics);
     labelGrid->addWidget(resetButton, 5, 5, Qt::AlignRight);
