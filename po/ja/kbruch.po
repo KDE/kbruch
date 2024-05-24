@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-16 00:35+0000\n"
+"POT-Creation-Date: 2024-05-24 00:36+0000\n"
 "PO-Revision-Date: 2009-11-26 20:45+0900\n"
 "Last-Translator: Yukiko Bando <ybando@k6.dion.ne.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -37,7 +37,9 @@ msgid "KBruch modes:"
 msgstr "KBruch のモード:"
 
 #: AppMenuWidget.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open standard KBruch"
+msgctxt "@info:tooltip"
 msgid "Open standard KBruch"
 msgstr "標準の KBruch を開きます"
 
@@ -47,7 +49,9 @@ msgid "Exercise"
 msgstr ""
 
 #: AppMenuWidget.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open learning KBruch"
+msgctxt "@info:tooltip"
 msgid "Open learning KBruch"
 msgstr "学習モードの KBruch を開きます"
 
@@ -68,7 +72,9 @@ msgid ">"
 msgstr ">"
 
 #: ExerciseCompare.cpp:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Click on this button to select the 'greater than' sign."
+msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'greater than' sign."
 msgstr "このボタンをクリックして大なり符号を選択します。"
 
@@ -78,7 +84,9 @@ msgid "<"
 msgstr "<"
 
 #: ExerciseCompare.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Click on this button to select the 'less than' sign."
+msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'less than' sign."
 msgstr "このボタンをクリックして小なり符号を選択します。"
 
@@ -88,7 +96,9 @@ msgid "="
 msgstr "="
 
 #: ExerciseCompare.cpp:106
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Click on this button to select the 'equals' sign."
+msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'equals' sign."
 msgstr "このボタンをクリックして等号を選択します。"
 
@@ -102,12 +112,16 @@ msgstr "スキップ(&K)"
 
 #: ExerciseCompare.cpp:119 ExerciseConvert.cpp:136 ExerciseFactorize.cpp:162
 #: ExerciseMixedNumbers.cpp:159 ExercisePercentage.cpp:118
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Click on this button to skip this question."
+msgctxt "@info:tooltip"
 msgid "Click on this button to skip this question."
 msgstr "この問題を飛ばすときは、このボタンをクリックします。"
 
 #: ExerciseCompare.cpp:134 MainQtWidget.cpp:532
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "In this exercise you have to compare two given fractions."
+msgctxt "@info:tooltip"
 msgid "In this exercise you have to compare two given fractions."
 msgstr ""
 "このエクササイズでは、与えられた 2 つの分数の大きさを比較して、正しい比較符号"
@@ -123,7 +137,9 @@ msgstr ""
 "を選択します。"
 
 #: ExerciseCompare.cpp:246 ExerciseCompare.cpp:247 ExerciseCompare.cpp:248
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Click on this button to check your result."
+msgctxt "@info:tooltip"
 msgid "Click on this button to check your result."
 msgstr "このボタンをクリックして答えが正しいかどうかチェックします。"
 
@@ -133,12 +149,16 @@ msgid "&Next"
 msgstr "次へ(&N)"
 
 #: ExerciseConvert.cpp:91 TaskView.cpp:108
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Enter the numerator of your result"
+msgctxt "@info:tooltip"
 msgid "Enter the numerator of your result"
 msgstr "答えの分子を入力します。"
 
 #: ExerciseConvert.cpp:108 TaskView.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Enter the denominator of your result"
+msgctxt "@info:tooltip"
 msgid "Enter the denominator of your result"
 msgstr "答えの分母を入力します。"
 
@@ -156,7 +176,11 @@ msgstr "チェック(&C)"
 #: ExerciseConvert.cpp:127 ExerciseConvert.cpp:371 ExerciseFactorize.cpp:171
 #: ExerciseFactorize.cpp:400 ExerciseMixedNumbers.cpp:150
 #: ExercisePercentage.cpp:109 ExercisePercentage.cpp:351
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Click on this button to check your result. The button will not work if "
+#| "you have not entered a result yet."
+msgctxt "@info:tooltip"
 msgid ""
 "Click on this button to check your result. The button will not work if you "
 "have not entered a result yet."
@@ -165,7 +189,9 @@ msgstr ""
 "いないときは、このボタンは動きません。"
 
 #: ExerciseConvert.cpp:146 MainQtWidget.cpp:538
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "In this exercise you have to convert a number into a fraction."
+msgctxt "@info:tooltip"
 msgid "In this exercise you have to convert a number into a fraction."
 msgstr "このエクササイズでは、与えられた数を分数に変換します。"
 
@@ -179,7 +205,9 @@ msgstr ""
 "答えを約分するのを忘れないようにしてください。"
 
 #: ExerciseConvert.cpp:309 ExerciseFactorize.cpp:349 ExercisePercentage.cpp:317
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Click on this button to get to the next question."
+msgctxt "@info:tooltip"
 msgid "Click on this button to get to the next question."
 msgstr "このボタンをクリックして次の問題に進みます。"
 
@@ -254,52 +282,72 @@ msgid "19"
 msgstr "19"
 
 #: ExerciseFactorize.cpp:216
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 2."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 2."
 msgstr "素因数 2 を加えます。"
 
 #: ExerciseFactorize.cpp:217
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 3."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 3."
 msgstr "素因数 3 を加えます。"
 
 #: ExerciseFactorize.cpp:218
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 5."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 5."
 msgstr "素因数 5 を加えます。"
 
 #: ExerciseFactorize.cpp:219
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 7."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 7."
 msgstr "素因数 7 を加えます。"
 
 #: ExerciseFactorize.cpp:220
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 11."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 11."
 msgstr "素因数 11 を加えます。"
 
 #: ExerciseFactorize.cpp:221
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 13."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 13."
 msgstr "素因数 13 を加えます。"
 
 #: ExerciseFactorize.cpp:222
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 17."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 17."
 msgstr "素因数 17 を加えます。"
 
 #: ExerciseFactorize.cpp:223
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 19."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 19."
 msgstr "素因数 19 を加えます。"
 
 #: ExerciseFactorize.cpp:228
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Removes the last entered prime factor."
+msgctxt "@info:tooltip"
 msgid "Removes the last entered prime factor."
 msgstr "最後に入力した素因数を取り消します。"
 
 #: ExerciseFactorize.cpp:245 MainQtWidget.cpp:550
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "In this exercise you have to factorize a given number."
+msgctxt "@info:tooltip"
 msgid "In this exercise you have to factorize a given number."
 msgstr "このエクササイズでは、与えられた数を素数の積に分解します。"
 
@@ -320,25 +368,30 @@ msgstr ""
 "ンをクリックします。"
 
 #: ExerciseMixedNumbers.cpp:96 TaskView.cpp:96
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Enter the integer part of the fraction"
+msgctxt "@info:tooltip"
 msgid "Enter the integer part of the fraction"
 msgstr "答えの整数部分を入力します。"
 
 #: ExerciseMixedNumbers.cpp:110
 #, fuzzy, kde-format
 #| msgid "Enter the integer part of the fraction"
+msgctxt "@info:tooltip"
 msgid "Enter the numerator of the fraction"
 msgstr "答えの整数部分を入力します。"
 
 #: ExerciseMixedNumbers.cpp:127
 #, fuzzy, kde-format
 #| msgid "Enter the integer part of the fraction"
+msgctxt "@info:tooltip"
 msgid "Enter the denominator of the fraction"
 msgstr "答えの整数部分を入力します。"
 
 #: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:544
 #, fuzzy, kde-format
 #| msgid "In this exercise you have to convert a number into a fraction."
+msgctxt "@info:tooltip"
 msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
 "versa."
@@ -357,7 +410,11 @@ msgstr ""
 "答えを約分するのを忘れないようにしてください。"
 
 #: ExerciseMixedNumbers.cpp:245 TaskView.cpp:144 TaskView.cpp:383
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Click this button to check your result. The button will not work if you "
+#| "have not entered a result yet."
+msgctxt "@info:tooltip"
 msgid ""
 "Click this button to check your result. The button will not work if you have "
 "not entered a result yet."
@@ -366,7 +423,9 @@ msgstr ""
 "いないときは、このボタンは動きません。"
 
 #: ExerciseMixedNumbers.cpp:286 TaskView.cpp:267
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Click this button to get the next question."
+msgctxt "@info:tooltip"
 msgid "Click this button to get the next question."
 msgstr "このボタンをクリックして次の問題に進みます。"
 
@@ -404,12 +463,16 @@ msgid "%1% of %2 = "
 msgstr "%2 の %1% = "
 
 #: ExercisePercentage.cpp:91
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Enter the result of percentage question"
+msgctxt "@info:tooltip"
 msgid "Enter the result of percentage question"
 msgstr "百分率の問題の答えを入力します。"
 
 #: ExercisePercentage.cpp:132 MainQtWidget.cpp:556
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "In this exercise you have to work with percentage questions."
+msgctxt "@info:tooltip"
 msgid "In this exercise you have to work with percentage questions."
 msgstr "このエクササイズでは、百分率の問題を解きます。"
 
@@ -830,7 +893,9 @@ msgid "Options:"
 msgstr "オプション:"
 
 #: MainQtWidget.cpp:157
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Set the options to solve the exercises."
+msgctxt "@info:tooltip"
 msgid "Set the options to solve the exercises."
 msgstr "エクササイズのオプションを設定します。"
 
@@ -852,14 +917,22 @@ msgid "Mixed number:"
 msgstr "帯分数:"
 
 #: MainQtWidget.cpp:163
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set if the fractions will appear as mixed numbers or not in the question "
+#| "expression (mixed number example: 1 4/5 = 9/5 )."
+msgctxt "@info:tooltip"
 msgid ""
 "Set if the fractions will appear as mixed numbers or not in the question "
 "expression (mixed number example: 1 4/5 = 9/5 )."
 msgstr "問題の分数を帯分数で表示する場合 (例: 9/5 → 1 4/5)、チェックします。"
 
 #: MainQtWidget.cpp:180
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Set if the fractions will appear as mixed numbers or not in the answer "
+#| "(mixed number example: 1 4/5 = 9/5 )."
+msgctxt "@info:tooltip"
 msgid ""
 "Set if the fractions will appear as mixed numbers or not in the answer "
 "(mixed number example: 1 4/5 = 9/5 )."
@@ -871,7 +944,9 @@ msgid "Addition:"
 msgstr "足し算:"
 
 #: MainQtWidget.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Check this to use addition operator."
+msgctxt "@info:tooltip"
 msgid "Check this to use addition operator."
 msgstr "演算子 + を使う場合、チェックします。"
 
@@ -881,7 +956,9 @@ msgid "Subtraction:"
 msgstr "引き算:"
 
 #: MainQtWidget.cpp:207
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Check this to use subtraction operator."
+msgctxt "@info:tooltip"
 msgid "Check this to use subtraction operator."
 msgstr "演算子 − を使う場合、チェックします。"
 
@@ -891,7 +968,9 @@ msgid "Multiplication:"
 msgstr "掛け算:"
 
 #: MainQtWidget.cpp:223
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Check this to use multiplication operator."
+msgctxt "@info:tooltip"
 msgid "Check this to use multiplication operator."
 msgstr "演算子 × を使う場合、チェックします。"
 
@@ -901,7 +980,9 @@ msgid "Division:"
 msgstr "割り算:"
 
 #: MainQtWidget.cpp:239
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Check this to use division operator."
+msgctxt "@info:tooltip"
 msgid "Check this to use division operator."
 msgstr "演算子 ÷ を使う場合、チェックします。"
 
@@ -911,7 +992,9 @@ msgid "Reduced form:"
 msgstr "約分:"
 
 #: MainQtWidget.cpp:255
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Check this to force the use of the reduced form."
+msgctxt "@info:tooltip"
 msgid "Check this to force the use of the reduced form."
 msgstr "答えを約分する場合、チェックします。"
 
@@ -921,7 +1004,11 @@ msgid "Number of terms:"
 msgstr "項数:"
 
 #: MainQtWidget.cpp:266 MainQtWidget.cpp:276
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "The number of \n"
+#| "terms you want"
+msgctxt "@info:tooltip"
 msgid ""
 "The number of \n"
 "terms you want"
@@ -942,7 +1029,9 @@ msgid "Maximum denominator:"
 msgstr "分母の最大値:"
 
 #: MainQtWidget.cpp:290
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "The maximum number you can have as main denominator"
+msgctxt "@info:tooltip"
 msgid "The maximum number you can have as main denominator"
 msgstr "分母の最大値を選択します。"
 
@@ -954,7 +1043,9 @@ msgid ""
 msgstr "分母の最大値 (10, 20, 30, 40, 50) を選択します。"
 
 #: MainQtWidget.cpp:513
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reset statistics and set a new task."
+msgctxt "@info:tooltip"
 msgid "Reset statistics and set a new task."
 msgstr "統計をリセットして新しい課題をセットします。"
 
@@ -964,7 +1055,9 @@ msgid "Back"
 msgstr "戻る"
 
 #: MainQtWidget.cpp:520
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Go back to Modes screen."
+msgctxt "@info:tooltip"
 msgid "Go back to Modes screen."
 msgstr "モード選択ページに戻ります。"
 
@@ -980,7 +1073,9 @@ msgstr ""
 "計算"
 
 #: MainQtWidget.cpp:526 TaskView.cpp:162
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "In this exercise you have to solve a given question with fractions."
+msgctxt "@info:tooltip"
 msgid "In this exercise you have to solve a given question with fractions."
 msgstr "このエクササイズでは、与えられた式を解きます。"
 
@@ -1176,7 +1271,9 @@ msgid "This is the current total number of skipped tasks."
 msgstr "これまでにスキップした問題の数"
 
 #: StatisticsView.cpp:109
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "This part of the window shows the statistics."
+msgctxt "@info:tooltip"
 msgid "This part of the window shows the statistics."
 msgstr "ここに統計が表示されます。"
 
@@ -1204,6 +1301,7 @@ msgstr ""
 #: StatisticsView.cpp:122
 #, fuzzy, kde-format
 #| msgid "Click this button to get the next question."
+msgctxt "@info:tooltip"
 msgid "Click this button to reset the statistics."
 msgstr "このボタンをクリックして次の問題に進みます。"
 
@@ -1251,7 +1349,9 @@ msgid "Change the font of the numbers"
 msgstr "数字のフォントを変更"
 
 #: TaskView.cpp:153
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Click this button to skip this question."
+msgctxt "@info:tooltip"
 msgid "Click this button to skip this question."
 msgstr "この問題を飛ばすときは、このボタンをクリックします。"
 

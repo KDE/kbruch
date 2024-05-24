@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-16 00:35+0000\n"
+"POT-Creation-Date: 2024-05-24 00:36+0000\n"
 "PO-Revision-Date: 2006-10-04 16:21+0300\n"
 "Last-Translator: Zlatko Popov <zlatkopopov@fsa-bg.org>\n"
 "Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
@@ -34,6 +34,7 @@ msgstr "KBruch"
 
 #: AppMenuWidget.cpp:102
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Open standard KBruch"
 msgstr ""
 
@@ -44,6 +45,7 @@ msgstr ""
 
 #: AppMenuWidget.cpp:117
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Open learning KBruch"
 msgstr ""
 
@@ -65,6 +67,7 @@ msgstr ""
 
 #: ExerciseCompare.cpp:88
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'greater than' sign."
 msgstr "Смяна на знака за сравнение."
 
@@ -75,6 +78,7 @@ msgstr ""
 
 #: ExerciseCompare.cpp:97
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'less than' sign."
 msgstr "Следваща задача."
 
@@ -85,6 +89,7 @@ msgstr ""
 
 #: ExerciseCompare.cpp:106
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'equals' sign."
 msgstr "Следваща задача."
 
@@ -98,11 +103,13 @@ msgstr ""
 #: ExerciseCompare.cpp:119 ExerciseConvert.cpp:136 ExerciseFactorize.cpp:162
 #: ExerciseMixedNumbers.cpp:159 ExercisePercentage.cpp:118
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Click on this button to skip this question."
 msgstr "Проверка на резултата."
 
 #: ExerciseCompare.cpp:134 MainQtWidget.cpp:532
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "In this exercise you have to compare two given fractions."
 msgstr "В това упражнение трябва да сравните 2 дроби."
 
@@ -114,7 +121,9 @@ msgid ""
 msgstr "В това упражнение трябва да сравните 2 дроби."
 
 #: ExerciseCompare.cpp:246 ExerciseCompare.cpp:247 ExerciseCompare.cpp:248
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Click on this button to check your result."
+msgctxt "@info:tooltip"
 msgid "Click on this button to check your result."
 msgstr "Проверка на резултата."
 
@@ -124,12 +133,16 @@ msgid "&Next"
 msgstr "&Нова задача"
 
 #: ExerciseConvert.cpp:91 TaskView.cpp:108
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Enter the numerator of your result"
+msgctxt "@info:tooltip"
 msgid "Enter the numerator of your result"
 msgstr "Въведете числителя на резултата"
 
 #: ExerciseConvert.cpp:108 TaskView.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Enter the denominator of your result"
+msgctxt "@info:tooltip"
 msgid "Enter the denominator of your result"
 msgstr "Въведете знаменателя на резултата"
 
@@ -147,7 +160,11 @@ msgstr "&Проверка"
 #: ExerciseConvert.cpp:127 ExerciseConvert.cpp:371 ExerciseFactorize.cpp:171
 #: ExerciseFactorize.cpp:400 ExerciseMixedNumbers.cpp:150
 #: ExercisePercentage.cpp:109 ExercisePercentage.cpp:351
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Click on this button to check your result. The button will not work if "
+#| "you have not entered a result yet."
+msgctxt "@info:tooltip"
 msgid ""
 "Click on this button to check your result. The button will not work if you "
 "have not entered a result yet."
@@ -156,7 +173,9 @@ msgstr ""
 "видите резултата, ако още не сте въвели отговора."
 
 #: ExerciseConvert.cpp:146 MainQtWidget.cpp:538
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "In this exercise you have to convert a number into a fraction."
+msgctxt "@info:tooltip"
 msgid "In this exercise you have to convert a number into a fraction."
 msgstr "В това упражнение трябва да преобразувате число в дроб."
 
@@ -171,6 +190,7 @@ msgstr ""
 
 #: ExerciseConvert.cpp:309 ExerciseFactorize.cpp:349 ExercisePercentage.cpp:317
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Click on this button to get to the next question."
 msgstr "Следваща задача."
 
@@ -245,52 +265,72 @@ msgid "19"
 msgstr "19"
 
 #: ExerciseFactorize.cpp:216
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 2."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 2."
 msgstr "Добавяне на прост делител 2."
 
 #: ExerciseFactorize.cpp:217
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 3."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 3."
 msgstr "Добавяне на прост делител 3."
 
 #: ExerciseFactorize.cpp:218
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 5."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 5."
 msgstr "Добавяне на прост делител 5."
 
 #: ExerciseFactorize.cpp:219
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 7."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 7."
 msgstr "Добавяне на прост делител 7."
 
 #: ExerciseFactorize.cpp:220
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 11."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 11."
 msgstr "Добавяне на прост делител 11."
 
 #: ExerciseFactorize.cpp:221
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 13."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 13."
 msgstr "Добавяне на прост делител 13."
 
 #: ExerciseFactorize.cpp:222
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 17."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 17."
 msgstr "Добавяне на прост делител 17."
 
 #: ExerciseFactorize.cpp:223
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add prime factor 19."
+msgctxt "@info:tooltip"
 msgid "Add prime factor 19."
 msgstr "Добавяне на прост делител 19."
 
 #: ExerciseFactorize.cpp:228
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Removes the last entered prime factor."
+msgctxt "@info:tooltip"
 msgid "Removes the last entered prime factor."
 msgstr "Премахване на последния въведен прост делител."
 
 #: ExerciseFactorize.cpp:245 MainQtWidget.cpp:550
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "In this exercise you have to factorize a given number."
+msgctxt "@info:tooltip"
 msgid "In this exercise you have to factorize a given number."
 msgstr "В това упражнение трябва да разложите дадено число на множители."
 
@@ -312,21 +352,25 @@ msgstr ""
 
 #: ExerciseMixedNumbers.cpp:96 TaskView.cpp:96
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Enter the integer part of the fraction"
 msgstr "Промяна на цвета на дробната черта"
 
 #: ExerciseMixedNumbers.cpp:110
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Enter the numerator of the fraction"
 msgstr "Промяна на цвета на дробната черта"
 
 #: ExerciseMixedNumbers.cpp:127
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Enter the denominator of the fraction"
 msgstr "Промяна на цвета на дробната черта"
 
 #: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:544
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
 "versa."
@@ -343,6 +387,7 @@ msgstr ""
 
 #: ExerciseMixedNumbers.cpp:245 TaskView.cpp:144 TaskView.cpp:383
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "Click this button to check your result. The button will not work if you have "
 "not entered a result yet."
@@ -352,6 +397,7 @@ msgstr ""
 
 #: ExerciseMixedNumbers.cpp:286 TaskView.cpp:267
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Click this button to get the next question."
 msgstr "Следваща задача."
 
@@ -389,12 +435,14 @@ msgid "%1% of %2 = "
 msgstr ""
 
 #: ExercisePercentage.cpp:91
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Enter the result of percentage question"
-msgstr ""
+msgstr "В това упражнение трябва да решите задача с дроби."
 
 #: ExercisePercentage.cpp:132 MainQtWidget.cpp:556
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "In this exercise you have to work with percentage questions."
 msgstr "В това упражнение трябва да решите задача с дроби."
 
@@ -788,6 +836,7 @@ msgstr "Действия:"
 
 #: MainQtWidget.cpp:157
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Set the options to solve the exercises."
 msgstr "Изтриване на статистиката."
 
@@ -807,6 +856,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:163
 #, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "Set if the fractions will appear as mixed numbers or not in the question "
 "expression (mixed number example: 1 4/5 = 9/5 )."
@@ -814,6 +864,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:180
 #, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "Set if the fractions will appear as mixed numbers or not in the answer "
 "(mixed number example: 1 4/5 = 9/5 )."
@@ -826,6 +877,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:191
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Check this to use addition operator."
 msgstr ""
 
@@ -836,6 +888,7 @@ msgstr "Събиране/изваждане"
 
 #: MainQtWidget.cpp:207
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Check this to use subtraction operator."
 msgstr ""
 
@@ -846,6 +899,7 @@ msgstr "Умножение/деление"
 
 #: MainQtWidget.cpp:223
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Check this to use multiplication operator."
 msgstr ""
 
@@ -856,6 +910,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:239
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Check this to use division operator."
 msgstr ""
 
@@ -866,6 +921,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:255
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Check this to force the use of the reduced form."
 msgstr ""
 
@@ -876,6 +932,7 @@ msgstr "Брой дроби"
 
 #: MainQtWidget.cpp:266 MainQtWidget.cpp:276
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "The number of \n"
 "terms you want"
@@ -895,7 +952,9 @@ msgid "Maximum denominator:"
 msgstr "Най-голям общ делител:"
 
 #: MainQtWidget.cpp:290
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "The maximum number you can have as main denominator"
+msgctxt "@info:tooltip"
 msgid "The maximum number you can have as main denominator"
 msgstr "Максималното число, което можете да имате като общ множител"
 
@@ -908,6 +967,7 @@ msgstr "Изберете максималното число за общ дел�
 
 #: MainQtWidget.cpp:513
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Reset statistics and set a new task."
 msgstr ""
 
@@ -918,6 +978,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:520
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Go back to Modes screen."
 msgstr ""
 
@@ -931,6 +992,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:526 TaskView.cpp:162
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "In this exercise you have to solve a given question with fractions."
 msgstr "В това упражнение трябва да решите задача с дроби."
 
@@ -1111,7 +1173,9 @@ msgid "This is the current total number of skipped tasks."
 msgstr "Общ брой решени задачи."
 
 #: StatisticsView.cpp:109
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "This part of the window shows the statistics."
+msgctxt "@info:tooltip"
 msgid "This part of the window shows the statistics."
 msgstr "Статистика на упражненията."
 
@@ -1134,6 +1198,7 @@ msgstr "&Изтриване"
 
 #: StatisticsView.cpp:122
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Click this button to reset the statistics."
 msgstr "Следваща задача."
 
@@ -1181,6 +1246,7 @@ msgstr "Промяна на шрифта на числата"
 
 #: TaskView.cpp:153
 #, fuzzy, kde-format
+msgctxt "@info:tooltip"
 msgid "Click this button to skip this question."
 msgstr "Проверка на резултата."
 

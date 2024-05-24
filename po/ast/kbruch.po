@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-16 00:35+0000\n"
+"POT-Creation-Date: 2024-05-24 00:36+0000\n"
 "PO-Revision-Date: 2023-10-25 12:34+0200\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -34,6 +34,7 @@ msgstr ""
 
 #: AppMenuWidget.cpp:102
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Open standard KBruch"
 msgstr ""
 
@@ -44,6 +45,7 @@ msgstr ""
 
 #: AppMenuWidget.cpp:117
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Open learning KBruch"
 msgstr ""
 
@@ -65,6 +67,7 @@ msgstr ""
 
 #: ExerciseCompare.cpp:88
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'greater than' sign."
 msgstr ""
 
@@ -75,6 +78,7 @@ msgstr ""
 
 #: ExerciseCompare.cpp:97
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'less than' sign."
 msgstr ""
 
@@ -85,6 +89,7 @@ msgstr ""
 
 #: ExerciseCompare.cpp:106
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'equals' sign."
 msgstr ""
 
@@ -98,11 +103,13 @@ msgstr ""
 #: ExerciseCompare.cpp:119 ExerciseConvert.cpp:136 ExerciseFactorize.cpp:162
 #: ExerciseMixedNumbers.cpp:159 ExercisePercentage.cpp:118
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Click on this button to skip this question."
 msgstr ""
 
 #: ExerciseCompare.cpp:134 MainQtWidget.cpp:532
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "In this exercise you have to compare two given fractions."
 msgstr ""
 
@@ -115,6 +122,7 @@ msgstr ""
 
 #: ExerciseCompare.cpp:246 ExerciseCompare.cpp:247 ExerciseCompare.cpp:248
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Click on this button to check your result."
 msgstr ""
 
@@ -125,11 +133,13 @@ msgstr ""
 
 #: ExerciseConvert.cpp:91 TaskView.cpp:108
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Enter the numerator of your result"
 msgstr ""
 
 #: ExerciseConvert.cpp:108 TaskView.cpp:125
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Enter the denominator of your result"
 msgstr ""
 
@@ -148,6 +158,7 @@ msgstr ""
 #: ExerciseFactorize.cpp:400 ExerciseMixedNumbers.cpp:150
 #: ExercisePercentage.cpp:109 ExercisePercentage.cpp:351
 #, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "Click on this button to check your result. The button will not work if you "
 "have not entered a result yet."
@@ -155,6 +166,7 @@ msgstr ""
 
 #: ExerciseConvert.cpp:146 MainQtWidget.cpp:538
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "In this exercise you have to convert a number into a fraction."
 msgstr ""
 
@@ -167,6 +179,7 @@ msgstr ""
 
 #: ExerciseConvert.cpp:309 ExerciseFactorize.cpp:349 ExercisePercentage.cpp:317
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Click on this button to get to the next question."
 msgstr ""
 
@@ -238,51 +251,61 @@ msgstr "19"
 
 #: ExerciseFactorize.cpp:216
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Add prime factor 2."
 msgstr ""
 
 #: ExerciseFactorize.cpp:217
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Add prime factor 3."
 msgstr ""
 
 #: ExerciseFactorize.cpp:218
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Add prime factor 5."
 msgstr ""
 
 #: ExerciseFactorize.cpp:219
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Add prime factor 7."
 msgstr ""
 
 #: ExerciseFactorize.cpp:220
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Add prime factor 11."
 msgstr ""
 
 #: ExerciseFactorize.cpp:221
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Add prime factor 13."
 msgstr ""
 
 #: ExerciseFactorize.cpp:222
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Add prime factor 17."
 msgstr ""
 
 #: ExerciseFactorize.cpp:223
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Add prime factor 19."
 msgstr ""
 
 #: ExerciseFactorize.cpp:228
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Removes the last entered prime factor."
 msgstr ""
 
 #: ExerciseFactorize.cpp:245 MainQtWidget.cpp:550
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "In this exercise you have to factorize a given number."
 msgstr ""
 
@@ -299,21 +322,25 @@ msgstr ""
 
 #: ExerciseMixedNumbers.cpp:96 TaskView.cpp:96
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Enter the integer part of the fraction"
 msgstr ""
 
 #: ExerciseMixedNumbers.cpp:110
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Enter the numerator of the fraction"
 msgstr ""
 
 #: ExerciseMixedNumbers.cpp:127
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Enter the denominator of the fraction"
 msgstr ""
 
 #: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:544
 #, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
 "versa."
@@ -328,6 +355,7 @@ msgstr ""
 
 #: ExerciseMixedNumbers.cpp:245 TaskView.cpp:144 TaskView.cpp:383
 #, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "Click this button to check your result. The button will not work if you have "
 "not entered a result yet."
@@ -335,6 +363,7 @@ msgstr ""
 
 #: ExerciseMixedNumbers.cpp:286 TaskView.cpp:267
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Click this button to get the next question."
 msgstr ""
 
@@ -367,11 +396,13 @@ msgstr ""
 
 #: ExercisePercentage.cpp:91
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Enter the result of percentage question"
 msgstr ""
 
 #: ExercisePercentage.cpp:132 MainQtWidget.cpp:556
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "In this exercise you have to work with percentage questions."
 msgstr ""
 
@@ -760,6 +791,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:157
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Set the options to solve the exercises."
 msgstr ""
 
@@ -779,6 +811,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:163
 #, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "Set if the fractions will appear as mixed numbers or not in the question "
 "expression (mixed number example: 1 4/5 = 9/5 )."
@@ -786,6 +819,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:180
 #, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "Set if the fractions will appear as mixed numbers or not in the answer "
 "(mixed number example: 1 4/5 = 9/5 )."
@@ -798,6 +832,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:191
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Check this to use addition operator."
 msgstr ""
 
@@ -808,6 +843,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:207
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Check this to use subtraction operator."
 msgstr ""
 
@@ -818,6 +854,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:223
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Check this to use multiplication operator."
 msgstr ""
 
@@ -828,6 +865,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:239
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Check this to use division operator."
 msgstr ""
 
@@ -838,6 +876,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:255
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Check this to force the use of the reduced form."
 msgstr ""
 
@@ -848,6 +887,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:266 MainQtWidget.cpp:276
 #, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "The number of \n"
 "terms you want"
@@ -867,6 +907,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:290
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "The maximum number you can have as main denominator"
 msgstr ""
 
@@ -879,6 +920,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:513
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Reset statistics and set a new task."
 msgstr ""
 
@@ -889,6 +931,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:520
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Go back to Modes screen."
 msgstr ""
 
@@ -902,6 +945,7 @@ msgstr ""
 
 #: MainQtWidget.cpp:526 TaskView.cpp:162
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "In this exercise you have to solve a given question with fractions."
 msgstr ""
 
@@ -1083,6 +1127,7 @@ msgstr ""
 
 #: StatisticsView.cpp:109
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "This part of the window shows the statistics."
 msgstr ""
 
@@ -1101,6 +1146,7 @@ msgstr ""
 
 #: StatisticsView.cpp:122
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Click this button to reset the statistics."
 msgstr ""
 
@@ -1148,6 +1194,7 @@ msgstr ""
 
 #: TaskView.cpp:153
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Click this button to skip this question."
 msgstr ""
 
