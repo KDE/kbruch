@@ -10,13 +10,13 @@
 # obsoleteman <tulliana@gmail.com>, 2008-2009,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014.
 # Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdeedu-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-24 00:36+0000\n"
-"PO-Revision-Date: 2023-03-31 21:30+0300\n"
+"PO-Revision-Date: 2024-05-24 06:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -42,8 +42,7 @@ msgid "KBruch modes:"
 msgstr "KBruch kipleri:"
 
 #: AppMenuWidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Open standard KBruch"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open standard KBruch"
 msgstr "Standart KBruch aç"
@@ -54,8 +53,7 @@ msgid "Exercise"
 msgstr "Alıştırma"
 
 #: AppMenuWidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Open learning KBruch"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open learning KBruch"
 msgstr "KBruch öğrenmeyi aç"
@@ -77,11 +75,10 @@ msgid ">"
 msgstr ">"
 
 #: ExerciseCompare.cpp:88
-#, fuzzy, kde-format
-#| msgid "Click on this button to select the 'greater than' sign."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'greater than' sign."
-msgstr "'Büyüktür' işaretini seçmek için bu düğmeye tıklayın."
+msgstr "“Büyüktür” işaretini seçmek için bu düğmeye tıklayın."
 
 #: ExerciseCompare.cpp:93
 #, kde-format
@@ -89,11 +86,10 @@ msgid "<"
 msgstr "<"
 
 #: ExerciseCompare.cpp:97
-#, fuzzy, kde-format
-#| msgid "Click on this button to select the 'less than' sign."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'less than' sign."
-msgstr "'Küçüktür' işaretini seçmek için bu düğmeyi tıklayın."
+msgstr "“Küçüktür” işaretini seçmek için bu düğmeye tıklayın."
 
 #: ExerciseCompare.cpp:102
 #, kde-format
@@ -101,11 +97,10 @@ msgid "="
 msgstr "="
 
 #: ExerciseCompare.cpp:106
-#, fuzzy, kde-format
-#| msgid "Click on this button to select the 'equals' sign."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'equals' sign."
-msgstr "'Eşittir' işaretini seçmek için bu düğmeyi tıklayın."
+msgstr "“Eşittir” işaretini seçmek için bu düğmeye tıklayın."
 
 #: ExerciseCompare.cpp:118 ExerciseCompare.cpp:280 ExerciseConvert.cpp:135
 #: ExerciseFactorize.cpp:161 ExerciseMixedNumbers.cpp:158
@@ -116,15 +111,13 @@ msgstr "&Atla"
 
 #: ExerciseCompare.cpp:119 ExerciseConvert.cpp:136 ExerciseFactorize.cpp:162
 #: ExerciseMixedNumbers.cpp:159 ExercisePercentage.cpp:118
-#, fuzzy, kde-format
-#| msgid "Click on this button to skip this question."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to skip this question."
 msgstr "Bu soruyu atlamak için bu düğmeye basın."
 
 #: ExerciseCompare.cpp:134 MainQtWidget.cpp:532
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to compare two given fractions."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to compare two given fractions."
 msgstr "Bu alıştırmada, verilen 2 kesiri karşılaştırmalısınız."
@@ -139,11 +132,10 @@ msgstr ""
 "işaretini seçmelisiniz."
 
 #: ExerciseCompare.cpp:246 ExerciseCompare.cpp:247 ExerciseCompare.cpp:248
-#, fuzzy, kde-format
-#| msgid "Click on this button to check your result."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to check your result."
-msgstr "Sonucunuzu kontrol etmek için bu düğmeye tıklayın."
+msgstr "Sonucunuzu denetlemek için bu düğmeye tıklayın."
 
 #: ExerciseCompare.cpp:295 ExerciseCompare.cpp:309 ExerciseCompare.cpp:323
 #, kde-format
@@ -151,15 +143,13 @@ msgid "&Next"
 msgstr "&Sonraki"
 
 #: ExerciseConvert.cpp:91 TaskView.cpp:108
-#, fuzzy, kde-format
-#| msgid "Enter the numerator of your result"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the numerator of your result"
 msgstr "Sonucunuzun payını girin"
 
 #: ExerciseConvert.cpp:108 TaskView.cpp:125
-#, fuzzy, kde-format
-#| msgid "Enter the denominator of your result"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the denominator of your result"
 msgstr "Sonucunuzun paydasını girin"
@@ -178,21 +168,17 @@ msgstr "&Denetle"
 #: ExerciseConvert.cpp:127 ExerciseConvert.cpp:371 ExerciseFactorize.cpp:171
 #: ExerciseFactorize.cpp:400 ExerciseMixedNumbers.cpp:150
 #: ExercisePercentage.cpp:109 ExercisePercentage.cpp:351
-#, fuzzy, kde-format
-#| msgid ""
-#| "Click on this button to check your result. The button will not work if "
-#| "you have not entered a result yet."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Click on this button to check your result. The button will not work if you "
 "have not entered a result yet."
 msgstr ""
-"Sonucunuzu kontrol etmek için bu düğmeye tıklayın. Eğer daha hiçbir sonuç "
+"Sonucunuzu denetlemek için bu düğmeye tıklayın. Eğer daha hiçbir sonuç "
 "girmediyseniz düğme çalışmaz."
 
 #: ExerciseConvert.cpp:146 MainQtWidget.cpp:538
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to convert a number into a fraction."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to convert a number into a fraction."
 msgstr "Bu alıştırmada bir sayıyı bir kesire dönüştürmelisiniz."
@@ -207,8 +193,7 @@ msgstr ""
 "dönüştürmelisiniz. Sonucu sadeleştirmeyi unutmayın."
 
 #: ExerciseConvert.cpp:309 ExerciseFactorize.cpp:349 ExercisePercentage.cpp:317
-#, fuzzy, kde-format
-#| msgid "Click on this button to get to the next question."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to get to the next question."
 msgstr "Sonraki soruyu görmek için bu düğmeye tıklayın."
@@ -285,71 +270,61 @@ msgid "19"
 msgstr "19"
 
 #: ExerciseFactorize.cpp:216
-#, fuzzy, kde-format
-#| msgid "Add prime factor 2."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 2."
-msgstr "2 asal çarpanını ekle."
+msgstr "2 asal çarpanını toplayın."
 
 #: ExerciseFactorize.cpp:217
-#, fuzzy, kde-format
-#| msgid "Add prime factor 3."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 3."
-msgstr "3 asal çarpanını ekle."
+msgstr "3 asal çarpanını toplayın."
 
 #: ExerciseFactorize.cpp:218
-#, fuzzy, kde-format
-#| msgid "Add prime factor 5."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 5."
-msgstr "5 asal çarpanını ekle."
+msgstr "5 asal çarpanını toplayın."
 
 #: ExerciseFactorize.cpp:219
-#, fuzzy, kde-format
-#| msgid "Add prime factor 7."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 7."
-msgstr "7 asal çarpanını ekle."
+msgstr "7 asal çarpanını toplayın."
 
 #: ExerciseFactorize.cpp:220
-#, fuzzy, kde-format
-#| msgid "Add prime factor 11."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 11."
-msgstr "11 asal çarpanını ekle."
+msgstr "11 asal çarpanını toplayın."
 
 #: ExerciseFactorize.cpp:221
-#, fuzzy, kde-format
-#| msgid "Add prime factor 13."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 13."
-msgstr "13 asal çarpanını ekle."
+msgstr "13 asal çarpanını toplayın."
 
 #: ExerciseFactorize.cpp:222
-#, fuzzy, kde-format
-#| msgid "Add prime factor 17."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 17."
-msgstr "17 asal çarpanını ekle."
+msgstr "17 asal çarpanını toplayın."
 
 #: ExerciseFactorize.cpp:223
-#, fuzzy, kde-format
-#| msgid "Add prime factor 19."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 19."
-msgstr "19 asal çarpanını ekle."
+msgstr "19 asal çarpanını toplayın."
 
 #: ExerciseFactorize.cpp:228
-#, fuzzy, kde-format
-#| msgid "Removes the last entered prime factor."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Removes the last entered prime factor."
-msgstr "Son girilen asal çarpanı siler."
+msgstr "Son girilen asal çarpanı kaldırır."
 
 #: ExerciseFactorize.cpp:245 MainQtWidget.cpp:550
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to factorize a given number."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to factorize a given number."
 msgstr "Bu çalışmada verilen bir sayıyı çarpanlarına ayırmanız gerekiyor."
@@ -368,35 +343,28 @@ msgstr ""
 "asal çarpanlarını girmelisiniz. İlgili düğmeye tıklayarak bir asal çarpan "
 "ekleyebilirsiniz. Seçilen asal çarpanlar girdi alanında gösterilir. Bir asal "
 "çarpan birden fazla defa kullanılsa bile, tüm asal çarpanları girmeyi "
-"unutmayın. Son girilen asal çarpanı silmek için 'Backspace' (Geri) tuşuna "
-"basın."
+"unutmayın. Son girilen asal çarpanı silmek için “Geri Sil” düğmesine basın."
 
 #: ExerciseMixedNumbers.cpp:96 TaskView.cpp:96
-#, fuzzy, kde-format
-#| msgid "Enter the integer part of the fraction"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the integer part of the fraction"
-msgstr "Kesirin tam sayı kısmını gir"
+msgstr "Kesrin tam sayı kısmını girin"
 
 #: ExerciseMixedNumbers.cpp:110
-#, fuzzy, kde-format
-#| msgid "Enter the numerator of the fraction"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the numerator of the fraction"
 msgstr "Kesrin payını girin"
 
 #: ExerciseMixedNumbers.cpp:127
-#, fuzzy, kde-format
-#| msgid "Enter the denominator of the fraction"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the denominator of the fraction"
 msgstr "Kesrin paydasını girin"
 
 #: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:544
-#, fuzzy, kde-format
-#| msgid ""
-#| "In this exercise you have to convert a mixed number into a ratio and vice "
-#| "versa."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
@@ -415,21 +383,17 @@ msgstr ""
 "tersini de yapmalısınız. Sonuçları sadeleştirmeyi unutmayın."
 
 #: ExerciseMixedNumbers.cpp:245 TaskView.cpp:144 TaskView.cpp:383
-#, fuzzy, kde-format
-#| msgid ""
-#| "Click this button to check your result. The button will not work if you "
-#| "have not entered a result yet."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Click this button to check your result. The button will not work if you have "
 "not entered a result yet."
 msgstr ""
-"Sonucunuzu kontrol etmek için bu düğmeye tıklayın. Eğer henüz hiçbir sonuç "
+"Sonucunuzu denetlemek için bu düğmeye tıklayın. Eğer henüz hiçbir sonuç "
 "girmediyseniz düğme çalışmaz."
 
 #: ExerciseMixedNumbers.cpp:286 TaskView.cpp:267
-#, fuzzy, kde-format
-#| msgid "Click this button to get the next question."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click this button to get the next question."
 msgstr "Yeni soruyu görmek için bu düğmeye tıklayın."
@@ -468,15 +432,13 @@ msgid "%1% of %2 = "
 msgstr "%​%1/%2 = "
 
 #: ExercisePercentage.cpp:91
-#, fuzzy, kde-format
-#| msgid "Enter the result of percentage question"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the result of percentage question"
 msgstr "Yüzde sorusunun sonucunu girin"
 
 #: ExercisePercentage.cpp:132 MainQtWidget.cpp:556
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to work with percentage questions."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to work with percentage questions."
 msgstr "Bu alıştırmada yüzde sorularıyla çalışmak zorundasınız."
@@ -595,7 +557,7 @@ msgstr ""
 "\n"
 "İç halka sağ kesri temsil etmektedir. %2\n"
 "\n"
-"'Genişlet' düğmesi kesri genişletir. Bu değerlerden birini değiştirmeyi "
+"‘Genişlet’ düğmesi kesri genişletir. Bu değerlerden birini değiştirmeyi "
 "deneyin!"
 
 #: KBruch.cpp:36
@@ -611,7 +573,7 @@ msgstr "Kesirlerle işlem yapmayı öğren"
 #: KBruch.cpp:40
 #, kde-format
 msgid "© 2002-2011, Sebastian Stein"
-msgstr "© 2002-2011, Sebastian Stein"
+msgstr "© 2002–2011, Sebastian Stein"
 
 #: KBruch.cpp:41
 #, kde-format
@@ -888,8 +850,7 @@ msgid "Options:"
 msgstr "Seçenekler:"
 
 #: MainQtWidget.cpp:157
-#, fuzzy, kde-format
-#| msgid "Set the options to solve the exercises."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the options to solve the exercises."
 msgstr "Alıştırmaları çözmek için seçenekleri ayarlayın."
@@ -913,10 +874,7 @@ msgid "Mixed number:"
 msgstr "Bileşik kesir:"
 
 #: MainQtWidget.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set if the fractions will appear as mixed numbers or not in the question "
-#| "expression (mixed number example: 1 4/5 = 9/5 )."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Set if the fractions will appear as mixed numbers or not in the question "
@@ -926,10 +884,7 @@ msgstr ""
 "olmayacaksa bunu ayarlayın (bileşik kesir örneği: 1 5/4 = 9/5)."
 
 #: MainQtWidget.cpp:180
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set if the fractions will appear as mixed numbers or not in the answer "
-#| "(mixed number example: 1 4/5 = 9/5 )."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Set if the fractions will appear as mixed numbers or not in the answer "
@@ -944,11 +899,10 @@ msgid "Addition:"
 msgstr "Toplama:"
 
 #: MainQtWidget.cpp:191
-#, fuzzy, kde-format
-#| msgid "Check this to use addition operator."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use addition operator."
-msgstr "Toplama işareti kullanmak için bunu işaretle."
+msgstr "Toplama işareti kullanmak için bunu işaretleyin."
 
 #: MainQtWidget.cpp:206
 #, kde-format
@@ -956,11 +910,10 @@ msgid "Subtraction:"
 msgstr "Çıkarma:"
 
 #: MainQtWidget.cpp:207
-#, fuzzy, kde-format
-#| msgid "Check this to use subtraction operator."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use subtraction operator."
-msgstr "Çıkarma işareti kullanmak için bunu işaretle."
+msgstr "Çıkarma işareti kullanmak için bunu işaretleyin."
 
 #: MainQtWidget.cpp:222
 #, kde-format
@@ -968,11 +921,10 @@ msgid "Multiplication:"
 msgstr "Çarpma:"
 
 #: MainQtWidget.cpp:223
-#, fuzzy, kde-format
-#| msgid "Check this to use multiplication operator."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use multiplication operator."
-msgstr "Çarpma işareti kullanmak için bunu işaretle."
+msgstr "Çarpma işareti kullanmak için bunu işaretleyin."
 
 #: MainQtWidget.cpp:238
 #, kde-format
@@ -980,11 +932,10 @@ msgid "Division:"
 msgstr "Bölme:"
 
 #: MainQtWidget.cpp:239
-#, fuzzy, kde-format
-#| msgid "Check this to use division operator."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use division operator."
-msgstr "Bölme işaretini kullanmak için bunu işaretle."
+msgstr "Bölme işaretini kullanmak için bunu işaretleyin."
 
 #: MainQtWidget.cpp:254
 #, kde-format
@@ -992,11 +943,10 @@ msgid "Reduced form:"
 msgstr "Sadeleştirilmiş biçim:"
 
 #: MainQtWidget.cpp:255
-#, fuzzy, kde-format
-#| msgid "Check this to force the use of the reduced form."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to force the use of the reduced form."
-msgstr "Sadeleştirilmiş biçim kullanımına zorlamak için bunu işaretle."
+msgstr "Sadeleştirilmiş biçim kullanımına zorlamak için bunu işaretleyin."
 
 #: MainQtWidget.cpp:265
 #, kde-format
@@ -1004,10 +954,7 @@ msgid "Number of terms:"
 msgstr "Terimlerin sayısı:"
 
 #: MainQtWidget.cpp:266 MainQtWidget.cpp:276
-#, fuzzy, kde-format
-#| msgid ""
-#| "The number of \n"
-#| "terms you want"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "The number of \n"
@@ -1031,8 +978,7 @@ msgid "Maximum denominator:"
 msgstr "En büyük payda:"
 
 #: MainQtWidget.cpp:290
-#, fuzzy, kde-format
-#| msgid "The maximum number you can have as main denominator"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The maximum number you can have as main denominator"
 msgstr "Ana payda olarak kullanabileceğiniz en büyük sayı"
@@ -1042,14 +988,14 @@ msgstr "Ana payda olarak kullanabileceğiniz en büyük sayı"
 msgid ""
 "Choose the number which will be the maximum for the main denominator: 10, "
 "20, 30, 40 or 50."
-msgstr "Ana paydanın en büyük olabileceği sayıyı seçin: 10,20,30,40 veya 50."
+msgstr ""
+"Ana paydanın en büyük olabileceği sayıyı seçin: 10, 20, 30, 40 veya 50."
 
 #: MainQtWidget.cpp:513
-#, fuzzy, kde-format
-#| msgid "Reset statistics and set a new task."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset statistics and set a new task."
-msgstr "İstatistikleri sıfırla ve yeni bir görev belirle."
+msgstr "İstatistikleri sıfırlayin ve yeni bir görev belirleyin."
 
 #: MainQtWidget.cpp:518
 #, kde-format
@@ -1057,11 +1003,10 @@ msgid "Back"
 msgstr "Geri"
 
 #: MainQtWidget.cpp:520
-#, fuzzy, kde-format
-#| msgid "Go back to Modes screen."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Go back to Modes screen."
-msgstr "Kipler ekranına geri dön."
+msgstr "Kipler ekranına geri dönün."
 
 #: MainQtWidget.cpp:525
 #, kde-format
@@ -1075,8 +1020,7 @@ msgstr ""
 "Aritmetik"
 
 #: MainQtWidget.cpp:526 TaskView.cpp:162
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to solve a given question with fractions."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to solve a given question with fractions."
 msgstr "Bu çalışmada verilen bir soruyu kesirlerle çözmelisiniz."
@@ -1273,8 +1217,7 @@ msgid "This is the current total number of skipped tasks."
 msgstr "Bu, şu anki toplam atlanmış görev sayısıdır."
 
 #: StatisticsView.cpp:109
-#, fuzzy, kde-format
-#| msgid "This part of the window shows the statistics."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "This part of the window shows the statistics."
 msgstr "Pencerenin bu bölümü istatistikleri gösterir."
@@ -1287,8 +1230,8 @@ msgid ""
 "toolbar or by selecting 'New' from the 'File' menu"
 msgstr ""
 "Pencerenin bu parçası istatistikleri gösterir. Yaptığınız her alıştırma "
-"hesaba katılır. İstatistikleri araç çubuğundaki 'Yeni' düğmesiyle veya "
-"'Dosya' menüsündeki 'Yeni' düğmesiyle sıfırlayabilirsiniz."
+"hesaba katılır. İstatistikleri araç çubuğundaki ‘Yeni’ düğmesiyle veya "
+"‘Dosya’ menüsündeki ‘Yeni’ düğmesiyle sıfırlayabilirsiniz."
 
 #: StatisticsView.cpp:121
 #, kde-format
@@ -1296,8 +1239,7 @@ msgid "&Reset"
 msgstr "&Sıfırla"
 
 #: StatisticsView.cpp:122
-#, fuzzy, kde-format
-#| msgid "Click this button to reset the statistics."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click this button to reset the statistics."
 msgstr "İstatistikleri sıfırlamak için bu düğmeye tıklayın."
@@ -1345,8 +1287,7 @@ msgid "Change the font of the numbers"
 msgstr "Sayıların fontunu değiştir"
 
 #: TaskView.cpp:153
-#, fuzzy, kde-format
-#| msgid "Click this button to skip this question."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click this button to skip this question."
 msgstr "Bu soruyu atlamak için bu düğmeye tıklayın."
