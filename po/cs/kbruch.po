@@ -2,22 +2,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2012, 2013, 2014, 2017, 2020.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012.
-# Vit Pelcak <vit@pelcak.org>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-24 00:36+0000\n"
-"PO-Revision-Date: 2023-06-23 09:44+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2024-06-11 09:33+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -38,7 +38,7 @@ msgstr "Režimy KBruch:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open standard KBruch"
-msgstr ""
+msgstr "Otevřít standardní KBruch"
 
 #: AppMenuWidget.cpp:108 MainQtWidget.cpp:75
 #, kde-format
@@ -49,7 +49,7 @@ msgstr "Cvičení"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open learning KBruch"
-msgstr ""
+msgstr "Otevřít učení s KBruch"
 
 #: AppMenuWidget.cpp:123 FractionRingWidget.cpp:52
 #, kde-format
@@ -71,7 +71,7 @@ msgstr ">"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'greater than' sign."
-msgstr ""
+msgstr "Kliknutím na tlačítko vyberte znaménko 'větší než'."
 
 #: ExerciseCompare.cpp:93
 #, kde-format
@@ -82,7 +82,7 @@ msgstr "<"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'less than' sign."
-msgstr ""
+msgstr "Kliknutím na tlačítko vyberte znaménko 'menší než'."
 
 #: ExerciseCompare.cpp:102
 #, kde-format
@@ -93,7 +93,7 @@ msgstr "="
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'equals' sign."
-msgstr ""
+msgstr "Kliknutím na tlačítko vyberte znaménko 'rovná se'."
 
 #: ExerciseCompare.cpp:118 ExerciseCompare.cpp:280 ExerciseConvert.cpp:135
 #: ExerciseFactorize.cpp:161 ExerciseMixedNumbers.cpp:158
@@ -107,13 +107,13 @@ msgstr "Pře&skočit"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to skip this question."
-msgstr ""
+msgstr "Pro přeskočení úlohy klikněte na tlačítko."
 
 #: ExerciseCompare.cpp:134 MainQtWidget.cpp:532
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to compare two given fractions."
-msgstr ""
+msgstr "V tomto cvičení máte za úkol porovnávat dva zlomky."
 
 #: ExerciseCompare.cpp:135
 #, kde-format
@@ -128,7 +128,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to check your result."
-msgstr ""
+msgstr "Kliknutím na toto tlačítko překontrolujete výsledek."
 
 #: ExerciseCompare.cpp:295 ExerciseCompare.cpp:309 ExerciseCompare.cpp:323
 #, kde-format
@@ -139,13 +139,13 @@ msgstr "&Následující"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the numerator of your result"
-msgstr ""
+msgstr "Zadejte čitatele výsledku"
 
 #: ExerciseConvert.cpp:108 TaskView.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the denominator of your result"
-msgstr ""
+msgstr "Zadejte jmenovatele výsledku"
 
 #: ExerciseConvert.cpp:125 ExerciseConvert.cpp:174 ExerciseConvert.cpp:409
 #: ExerciseFactorize.cpp:170 ExerciseFactorize.cpp:275
@@ -167,12 +167,14 @@ msgid ""
 "Click on this button to check your result. The button will not work if you "
 "have not entered a result yet."
 msgstr ""
+"Kliknutím na toto tlačítko překontrolujete výsledek. Pokud jste nezadali "
+"žádné řešení, tlačítko nebude fungovat."
 
 #: ExerciseConvert.cpp:146 MainQtWidget.cpp:538
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to convert a number into a fraction."
-msgstr ""
+msgstr "V tomto cvičení máte číslo převést na zlomek."
 
 #: ExerciseConvert.cpp:147
 #, kde-format
@@ -187,7 +189,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to get to the next question."
-msgstr ""
+msgstr "Kliknutím na toto tlačítko přejdete k následující úloze."
 
 #: ExerciseConvert.cpp:354
 #, kde-format
@@ -264,61 +266,61 @@ msgstr "19"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 2."
-msgstr ""
+msgstr "Přidat prvočíslo 2."
 
 #: ExerciseFactorize.cpp:217
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 3."
-msgstr ""
+msgstr "Přidat prvočíslo 3."
 
 #: ExerciseFactorize.cpp:218
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 5."
-msgstr ""
+msgstr "Přidat prvočíslo 5."
 
 #: ExerciseFactorize.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 7."
-msgstr ""
+msgstr "Přidat prvočíslo 7."
 
 #: ExerciseFactorize.cpp:220
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 11."
-msgstr ""
+msgstr "Přidat prvočíslo 11."
 
 #: ExerciseFactorize.cpp:221
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 13."
-msgstr ""
+msgstr "Přidat prvočíslo 13."
 
 #: ExerciseFactorize.cpp:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 17."
-msgstr ""
+msgstr "Přidat prvočíslo 17."
 
 #: ExerciseFactorize.cpp:223
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 19."
-msgstr ""
+msgstr "Přidat prvočíslo 19."
 
 #: ExerciseFactorize.cpp:228
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Removes the last entered prime factor."
-msgstr ""
+msgstr "Odstraní poslední zadané prvočíslo."
 
 #: ExerciseFactorize.cpp:245 MainQtWidget.cpp:550
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to factorize a given number."
-msgstr ""
+msgstr "V tomto cvičení máte rozložit zadané číslo na prvočísla."
 
 #: ExerciseFactorize.cpp:246
 #, kde-format
@@ -335,19 +337,19 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the integer part of the fraction"
-msgstr ""
+msgstr "Zadejte část zlomku, která je představována celým číslem"
 
 #: ExerciseMixedNumbers.cpp:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the numerator of the fraction"
-msgstr ""
+msgstr "Zadejte čitatel zlomku"
 
 #: ExerciseMixedNumbers.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the denominator of the fraction"
-msgstr ""
+msgstr "Zadejte jmenovatel zlomku"
 
 #: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:544
 #, kde-format
@@ -355,7 +357,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
 "versa."
-msgstr ""
+msgstr "V tomto cvičení musíte převést smíšené číslo do poměru a obráceně."
 
 #: ExerciseMixedNumbers.cpp:166
 #, kde-format
@@ -371,12 +373,14 @@ msgid ""
 "Click this button to check your result. The button will not work if you have "
 "not entered a result yet."
 msgstr ""
+"Pro kontrolu výsledku klikněte na toto tlačítko. Pokud jste ještě nezadali "
+"žádné řešení, tlačítko nebude fungovat."
 
 #: ExerciseMixedNumbers.cpp:286 TaskView.cpp:267
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click this button to get the next question."
-msgstr ""
+msgstr "Klikněte na toto tlačítko pro obdržení následující úlohy."
 
 #: ExerciseMixedNumbers.cpp:340 TaskView.cpp:356
 #, kde-format
@@ -413,13 +417,13 @@ msgstr "%1% z %2 = "
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the result of percentage question"
-msgstr ""
+msgstr "Zadejte výsledek úlohy na procenta"
 
 #: ExercisePercentage.cpp:132 MainQtWidget.cpp:556
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to work with percentage questions."
-msgstr ""
+msgstr "V tomto cvičení máte řešit úlohy s procenty."
 
 #: ExercisePercentage.cpp:133
 #, kde-format
@@ -827,7 +831,7 @@ msgstr "Volby:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the options to solve the exercises."
-msgstr ""
+msgstr "Nastavte volby pro řešení cvičení."
 
 #: MainQtWidget.cpp:158
 #, kde-format
@@ -853,6 +857,8 @@ msgid ""
 "Set if the fractions will appear as mixed numbers or not in the question "
 "expression (mixed number example: 1 4/5 = 9/5 )."
 msgstr ""
+"Nastavte, zda se zlomky budou nebo nebudou objevovat ve smíšeném čísle v "
+"zadání úlohy (příklad smíšeného čísla: 1 4/5 = 9/5)."
 
 #: MainQtWidget.cpp:180
 #, kde-format
@@ -861,6 +867,8 @@ msgid ""
 "Set if the fractions will appear as mixed numbers or not in the answer "
 "(mixed number example: 1 4/5 = 9/5 )."
 msgstr ""
+"Nastavte, zda se zlomky budou nebo nebudou objevovat ve smíšeném čísle v "
+"odpovědi (příklad smíšeného čísla: 1 4/5 = 9/5)."
 
 #: MainQtWidget.cpp:190
 #, kde-format
@@ -871,7 +879,7 @@ msgstr "Sčítání:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use addition operator."
-msgstr ""
+msgstr "Zaškrtněte, přejete-li si použít sčítací operátor."
 
 #: MainQtWidget.cpp:206
 #, kde-format
@@ -882,7 +890,7 @@ msgstr "Odčítání:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use subtraction operator."
-msgstr ""
+msgstr "Zaškrtněte, přejete-li si použít odečítací operátor."
 
 #: MainQtWidget.cpp:222
 #, kde-format
@@ -893,7 +901,7 @@ msgstr "Násobení:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use multiplication operator."
-msgstr ""
+msgstr "Zaškrtněte, přejete-li si použít operátor násobení."
 
 #: MainQtWidget.cpp:238
 #, kde-format
@@ -904,7 +912,7 @@ msgstr "Dělení:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use division operator."
-msgstr ""
+msgstr "Zaškrtněte, přejete-li si použít operátor dělení."
 
 #: MainQtWidget.cpp:254
 #, kde-format
@@ -916,6 +924,7 @@ msgstr "Podoba v základním tvaru:"
 msgctxt "@info:tooltip"
 msgid "Check this to force the use of the reduced form."
 msgstr ""
+"Zaškrtněte, přejete-li si vynutit použití podoby výsledku v základním tvaru."
 
 #: MainQtWidget.cpp:265
 #, kde-format
@@ -929,6 +938,8 @@ msgid ""
 "The number of \n"
 "terms you want"
 msgstr ""
+"Počet členů v úloze,\n"
+"který si přejete"
 
 #: MainQtWidget.cpp:277
 #, kde-format
@@ -948,7 +959,7 @@ msgstr "Největší dělitel:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The maximum number you can have as main denominator"
-msgstr ""
+msgstr "Největší číslo, které můžete mít jako společného jmenovatele"
 
 #: MainQtWidget.cpp:291
 #, kde-format
@@ -963,7 +974,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset statistics and set a new task."
-msgstr ""
+msgstr "Vynulovat statistiky a nastavit novou úlohu."
 
 #: MainQtWidget.cpp:518
 #, kde-format
@@ -974,7 +985,7 @@ msgstr "Zpět"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Go back to Modes screen."
-msgstr ""
+msgstr "Jdi zpět na obrazovku režimu."
 
 #: MainQtWidget.cpp:525
 #, kde-format
@@ -991,7 +1002,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to solve a given question with fractions."
-msgstr ""
+msgstr "V tomto cvičení máte vyřešit zadané úlohy na zlomky."
 
 #: MainQtWidget.cpp:531
 #, kde-format
@@ -1188,7 +1199,7 @@ msgstr "Toto je aktuální celkový počet vynechaných úloh."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This part of the window shows the statistics."
-msgstr ""
+msgstr "Část okna zobrazující statistiky."
 
 #: StatisticsView.cpp:110
 #, kde-format
@@ -1211,7 +1222,7 @@ msgstr "O&bnovit"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click this button to reset the statistics."
-msgstr ""
+msgstr "Klikněte na toto tlačítko pro resetování statistik."
 
 #. i18n: ectx: property (text), widget (QLabel, numberLabel)
 #: taskcolorsbase.ui:28
@@ -1259,7 +1270,7 @@ msgstr "Změnit písmo čísel"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click this button to skip this question."
-msgstr ""
+msgstr "Pro přeskočení úlohy klikněte na tlačítko."
 
 #: TaskView.cpp:163
 #, kde-format
