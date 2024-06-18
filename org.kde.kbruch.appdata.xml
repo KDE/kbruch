@@ -11,6 +11,7 @@ SPDX-License-Identifier: CC0-1.0
     <name translate="no">KDE</name>
   </developer>
   <name>KBruch</name>
+  <launchable type="desktop-id">org.kde.kbruch.desktop</launchable>
   <name xml:lang="ar">الكسور</name>
   <name xml:lang="ast">KBruch</name>
   <name xml:lang="bs">KBruch</name>
