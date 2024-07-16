@@ -1,28 +1,28 @@
 # Translation for kbruch.po to Euskara/Basque (eu)
 # Copyright (C) 2003, 2005, 2009 Free Software Foundation, Inc.
-# Copyright (C) 2010-2020, This file is copyright:
+# Copyright (C) 2010-2024 This file is copyright:
 # This file is distributed under the same license as the kbruch package.
-# KDE euskaratzeko proiektuko arduraduna <xalba@euskalnet.net>.
+# SPDX-FileCopyrightText: 2024 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Marcos  <marcos@euskalgnu.org>, 2003.
 # Ion Gaztañaga <ion_g_m@hotmail.com>, 2005.
 # Ion Gaztañaga <igaztanaga@gmail.com>, 2005.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2009.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-24 00:36+0000\n"
-"PO-Revision-Date: 2020-11-14 23:53+0100\n"
+"PO-Revision-Date: 2024-07-15 23:14+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
-"Language-Team: Basque\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.08.3\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, kde-format
@@ -41,8 +41,7 @@ msgid "KBruch modes:"
 msgstr "KBruch moduak:"
 
 #: AppMenuWidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Open standard KBruch"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open standard KBruch"
 msgstr "Ireki KBruch estandarra"
@@ -53,16 +52,15 @@ msgid "Exercise"
 msgstr "Ariketa"
 
 #: AppMenuWidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Open learning KBruch"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open learning KBruch"
-msgstr "Ireki KBruch-en ikasketa"
+msgstr "Ireki ikasteko KBruch"
 
 #: AppMenuWidget.cpp:123 FractionRingWidget.cpp:52
 #, kde-format
 msgid "Learning"
-msgstr "Ikasketa"
+msgstr "Ikastea"
 
 #. i18n: ectx: Menu (file)
 #: AppMenuWidgetui.rc:6 FractionRingWidgetui.rc:6 kbruchui.rc:6
@@ -76,11 +74,10 @@ msgid ">"
 msgstr ">"
 
 #: ExerciseCompare.cpp:88
-#, fuzzy, kde-format
-#| msgid "Click on this button to select the 'greater than' sign."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'greater than' sign."
-msgstr "Egin klik botoi honetan 'handiagoa baino' zeinua hautatzeko."
+msgstr "Egin klik botoi honetan 'handiagoa baino' ikurra hautatzeko."
 
 #: ExerciseCompare.cpp:93
 #, kde-format
@@ -88,11 +85,10 @@ msgid "<"
 msgstr "<"
 
 #: ExerciseCompare.cpp:97
-#, fuzzy, kde-format
-#| msgid "Click on this button to select the 'less than' sign."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'less than' sign."
-msgstr "Egin klik botoi honetan 'txikiagoa baino' zeinua hautatzeko."
+msgstr "Egin klik botoi honetan 'txikiagoa baino' ikurra hautatzeko."
 
 #: ExerciseCompare.cpp:102
 #, kde-format
@@ -100,11 +96,10 @@ msgid "="
 msgstr "="
 
 #: ExerciseCompare.cpp:106
-#, fuzzy, kde-format
-#| msgid "Click on this button to select the 'equals' sign."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'equals' sign."
-msgstr "Egin klik botoi honetan 'berdinak' zeinua hautatzeko."
+msgstr "Egin klik botoi honetan 'berdin' ikurra hautatzeko."
 
 #: ExerciseCompare.cpp:118 ExerciseCompare.cpp:280 ExerciseConvert.cpp:135
 #: ExerciseFactorize.cpp:161 ExerciseMixedNumbers.cpp:158
@@ -115,18 +110,16 @@ msgstr "&Saltatu"
 
 #: ExerciseCompare.cpp:119 ExerciseConvert.cpp:136 ExerciseFactorize.cpp:162
 #: ExerciseMixedNumbers.cpp:159 ExercisePercentage.cpp:118
-#, fuzzy, kde-format
-#| msgid "Click on this button to skip this question."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to skip this question."
-msgstr "Egin klik botoi honetan ariketa hau saltatzeko."
+msgstr "Egin klik botoi honetan galdera hau saltatzeko."
 
 #: ExerciseCompare.cpp:134 MainQtWidget.cpp:532
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to compare two given fractions."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to compare two given fractions."
-msgstr "Ariketa honetan emandako 2 zatiki konparatu behar dituzu."
+msgstr "Ariketa honetan emandako bi zatiki konparatu behar dituzu."
 
 #: ExerciseCompare.cpp:135
 #, kde-format
@@ -138,11 +131,10 @@ msgstr ""
 "zeinu zuzena aukeratu."
 
 #: ExerciseCompare.cpp:246 ExerciseCompare.cpp:247 ExerciseCompare.cpp:248
-#, fuzzy, kde-format
-#| msgid "Click on this button to check your result."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to check your result."
-msgstr "Klikatu botoi honetan zure emaitza egiaztatzeko."
+msgstr "Egin klik botoi honetan zure emaitza egiaztatzeko."
 
 #: ExerciseCompare.cpp:295 ExerciseCompare.cpp:309 ExerciseCompare.cpp:323
 #, kde-format
@@ -150,15 +142,13 @@ msgid "&Next"
 msgstr "&Hurrengoa"
 
 #: ExerciseConvert.cpp:91 TaskView.cpp:108
-#, fuzzy, kde-format
-#| msgid "Enter the numerator of your result"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the numerator of your result"
 msgstr "Sartu zure emaitzaren zenbakitzailea"
 
 #: ExerciseConvert.cpp:108 TaskView.cpp:125
-#, fuzzy, kde-format
-#| msgid "Enter the denominator of your result"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the denominator of your result"
 msgstr "Sartu zure emaitzaren izendatzailea"
@@ -177,24 +167,20 @@ msgstr "&Egiaztatu"
 #: ExerciseConvert.cpp:127 ExerciseConvert.cpp:371 ExerciseFactorize.cpp:171
 #: ExerciseFactorize.cpp:400 ExerciseMixedNumbers.cpp:150
 #: ExercisePercentage.cpp:109 ExercisePercentage.cpp:351
-#, fuzzy, kde-format
-#| msgid ""
-#| "Click on this button to check your result. The button will not work if "
-#| "you have not entered a result yet."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Click on this button to check your result. The button will not work if you "
 "have not entered a result yet."
 msgstr ""
-"Klikatu botoi honetan zure emaitza egiaztateko. Botoiak ez du funtzionatuko "
-"emaitzarik sartu ez baduzu."
+"Egin klik botoi honetan zure emaitza egiaztatzeko. Botoia ez da ibiliko "
+"aurrena emaitzarik sartu ez baduzu."
 
 #: ExerciseConvert.cpp:146 MainQtWidget.cpp:538
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to convert a number into a fraction."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to convert a number into a fraction."
-msgstr "Ariketa honetan zenbakia zatiki batean bihurtu behar duzu."
+msgstr "Ariketa honetan zenbaki bat zatiki bihurtu behar duzu."
 
 #: ExerciseConvert.cpp:147
 #, kde-format
@@ -206,8 +192,7 @@ msgstr ""
 "izendatzailea sartuz. Ez ahaztu emaitza sinplifikatzea!"
 
 #: ExerciseConvert.cpp:309 ExerciseFactorize.cpp:349 ExercisePercentage.cpp:317
-#, fuzzy, kde-format
-#| msgid "Click on this button to get to the next question."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to get to the next question."
 msgstr "Egin klik botoi honetan hurrengo ariketa eskuratzeko."
@@ -284,74 +269,64 @@ msgid "19"
 msgstr "19"
 
 #: ExerciseFactorize.cpp:216
-#, fuzzy, kde-format
-#| msgid "Add prime factor 2."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 2."
 msgstr "Gehitu 2 faktore lehena."
 
 #: ExerciseFactorize.cpp:217
-#, fuzzy, kde-format
-#| msgid "Add prime factor 3."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 3."
 msgstr "Gehitu 3 faktore lehena."
 
 #: ExerciseFactorize.cpp:218
-#, fuzzy, kde-format
-#| msgid "Add prime factor 5."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 5."
 msgstr "Gehitu 5 faktore lehena."
 
 #: ExerciseFactorize.cpp:219
-#, fuzzy, kde-format
-#| msgid "Add prime factor 7."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 7."
 msgstr "Gehitu 7 faktore lehena."
 
 #: ExerciseFactorize.cpp:220
-#, fuzzy, kde-format
-#| msgid "Add prime factor 11."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 11."
 msgstr "Gehitu 11 faktore lehena."
 
 #: ExerciseFactorize.cpp:221
-#, fuzzy, kde-format
-#| msgid "Add prime factor 13."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 13."
 msgstr "Gehitu 13 faktore lehena."
 
 #: ExerciseFactorize.cpp:222
-#, fuzzy, kde-format
-#| msgid "Add prime factor 17."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 17."
 msgstr "Gehitu 17 faktore lehena."
 
 #: ExerciseFactorize.cpp:223
-#, fuzzy, kde-format
-#| msgid "Add prime factor 19."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 19."
 msgstr "Gehitu 19 faktore lehena."
 
 #: ExerciseFactorize.cpp:228
-#, fuzzy, kde-format
-#| msgid "Removes the last entered prime factor."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Removes the last entered prime factor."
-msgstr "Sartutako azken faktore lehena kentzan du."
+msgstr "Sartutako azken faktore lehena kentzen du."
 
 #: ExerciseFactorize.cpp:245 MainQtWidget.cpp:550
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to factorize a given number."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to factorize a given number."
-msgstr "Ariketa honetan emandako zenbaki bat faktorizatu behar duzu."
+msgstr "Ariketa honetan zenbaki jakin bat faktorizatu behar duzu."
 
 #: ExerciseFactorize.cpp:246
 #, kde-format
@@ -371,31 +346,25 @@ msgstr ""
 "azken faktore lehena ezabatzeko."
 
 #: ExerciseMixedNumbers.cpp:96 TaskView.cpp:96
-#, fuzzy, kde-format
-#| msgid "Enter the integer part of the fraction"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the integer part of the fraction"
-msgstr "Sartu zatikiaren osoko zatia"
+msgstr "Sartu zatikiaren zati osoa"
 
 #: ExerciseMixedNumbers.cpp:110
-#, fuzzy, kde-format
-#| msgid "Enter the numerator of the fraction"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the numerator of the fraction"
 msgstr "Sartu zatikiaren zenbakitzailea"
 
 #: ExerciseMixedNumbers.cpp:127
-#, fuzzy, kde-format
-#| msgid "Enter the denominator of the fraction"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the denominator of the fraction"
 msgstr "Sartu zatikiaren izendatzailea"
 
 #: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:544
-#, fuzzy, kde-format
-#| msgid ""
-#| "In this exercise you have to convert a mixed number into a ratio and vice "
-#| "versa."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
@@ -414,21 +383,17 @@ msgstr ""
 "alderantziz. Ez ahaztu emaitza sinplifikatzea."
 
 #: ExerciseMixedNumbers.cpp:245 TaskView.cpp:144 TaskView.cpp:383
-#, fuzzy, kde-format
-#| msgid ""
-#| "Click this button to check your result. The button will not work if you "
-#| "have not entered a result yet."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Click this button to check your result. The button will not work if you have "
 "not entered a result yet."
 msgstr ""
-"Egin klik botoi honetan zure emaitza egiaztateko. Botoiak ez du "
-"funtzionatuko emaitzarik sartu ez baduzu."
+"Egin klik botoi honetan zure emaitza egiaztateko. Botoia ez da ibiliko "
+"emaitzarik sartu ez baduzu."
 
 #: ExerciseMixedNumbers.cpp:286 TaskView.cpp:267
-#, fuzzy, kde-format
-#| msgid "Click this button to get the next question."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click this button to get the next question."
 msgstr "Egin klik botoi honetan hurrengo ariketa eskuratzeko."
@@ -467,15 +432,13 @@ msgid "%1% of %2 = "
 msgstr "%2(r)en % %1 = "
 
 #: ExercisePercentage.cpp:91
-#, fuzzy, kde-format
-#| msgid "Enter the result of percentage question"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the result of percentage question"
-msgstr "Sartu ehunekoa ariketaren emaitza"
+msgstr "Sartu ehunekoen galderaren emaitza"
 
 #: ExercisePercentage.cpp:132 MainQtWidget.cpp:556
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to work with percentage questions."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to work with percentage questions."
 msgstr "Ariketa honetan ehunekoen galderekin lan egin behar duzu."
@@ -884,11 +847,10 @@ msgid "Options:"
 msgstr "Aukerak:"
 
 #: MainQtWidget.cpp:157
-#, fuzzy, kde-format
-#| msgid "Set the options to solve the exercises."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the options to solve the exercises."
-msgstr "Ezarri aukerak ariketak ebazteko."
+msgstr "Ezarri ariketak ebazteko aukerak."
 
 #: MainQtWidget.cpp:158
 #, kde-format
@@ -908,30 +870,24 @@ msgid "Mixed number:"
 msgstr "Zenbaki mistoa:"
 
 #: MainQtWidget.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set if the fractions will appear as mixed numbers or not in the question "
-#| "expression (mixed number example: 1 4/5 = 9/5 )."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Set if the fractions will appear as mixed numbers or not in the question "
 "expression (mixed number example: 1 4/5 = 9/5 )."
 msgstr ""
-"Galderako adierazpenean zatikiak zenbaki misto gisa agertuko diren edo ez "
-"ezartzea (zenbaki nahasiaren adibidea: 1 4/5 = 9/5 )."
+"Ezarri, galderaren adierazpenean, zatikiak zenbaki misto gisa agertuko diren "
+"edo ez (zenbaki mistoaren adibidea: 1 4/5 = 9/5 )."
 
 #: MainQtWidget.cpp:180
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set if the fractions will appear as mixed numbers or not in the answer "
-#| "(mixed number example: 1 4/5 = 9/5 )."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Set if the fractions will appear as mixed numbers or not in the answer "
 "(mixed number example: 1 4/5 = 9/5 )."
 msgstr ""
-"Erantzunean zatikiak zenbaki misto gisa agertuko diren edo ez ezartzea "
-"(zenbaki nahasiaren adibidea: 1 4/5 = 9/5 )."
+"Ezarri, erantzunean, zatikiak zenbaki misto gisa agertuko diren edo ez "
+"(zenbaki mistoaren adibidea: 1 4/5 = 9/5 )."
 
 #: MainQtWidget.cpp:190
 #, kde-format
@@ -939,11 +895,10 @@ msgid "Addition:"
 msgstr "Batuketa:"
 
 #: MainQtWidget.cpp:191
-#, fuzzy, kde-format
-#| msgid "Check this to use addition operator."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use addition operator."
-msgstr "Aktibatu hau batuketaren eragilea erabiltzeko."
+msgstr "Markatu hau batuketa-eragilea erabiltzeko."
 
 #: MainQtWidget.cpp:206
 #, kde-format
@@ -951,11 +906,10 @@ msgid "Subtraction:"
 msgstr "Kenketa:"
 
 #: MainQtWidget.cpp:207
-#, fuzzy, kde-format
-#| msgid "Check this to use subtraction operator."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use subtraction operator."
-msgstr "Aktibatu hau kenketaren eragilea erabiltzeko."
+msgstr "Markatu hau kenketa-eragilea erabiltzeko."
 
 #: MainQtWidget.cpp:222
 #, kde-format
@@ -963,11 +917,10 @@ msgid "Multiplication:"
 msgstr "Biderketa:"
 
 #: MainQtWidget.cpp:223
-#, fuzzy, kde-format
-#| msgid "Check this to use multiplication operator."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use multiplication operator."
-msgstr "Aktibatu hau biderketaren eragilea erabiltzeko."
+msgstr "Markatu hau biderketa-eragilea erabiltzeko."
 
 #: MainQtWidget.cpp:238
 #, kde-format
@@ -975,11 +928,10 @@ msgid "Division:"
 msgstr "Zatiketa:"
 
 #: MainQtWidget.cpp:239
-#, fuzzy, kde-format
-#| msgid "Check this to use division operator."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use division operator."
-msgstr "Aktibatu hau zatiketaren eragilea erabiltzeko."
+msgstr "Markatu hau zatiketa-eragilea erabiltzeko."
 
 #: MainQtWidget.cpp:254
 #, kde-format
@@ -987,11 +939,10 @@ msgid "Reduced form:"
 msgstr "Forma sinplifikatua:"
 
 #: MainQtWidget.cpp:255
-#, fuzzy, kde-format
-#| msgid "Check this to force the use of the reduced form."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to force the use of the reduced form."
-msgstr "Aktibatu hau forma sinplifikatua erabiltzea derrigortzeko."
+msgstr "Markatu hau forma sinplifikatua erabiltzea derrigortzeko."
 
 #: MainQtWidget.cpp:265
 #, kde-format
@@ -999,16 +950,13 @@ msgid "Number of terms:"
 msgstr "Termino kopurua:"
 
 #: MainQtWidget.cpp:266 MainQtWidget.cpp:276
-#, fuzzy, kde-format
-#| msgid ""
-#| "The number of \n"
-#| "terms you want"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "The number of \n"
 "terms you want"
 msgstr ""
-"Nahi dituzun \n"
+"Nahi duzun\n"
 "termino kopurua"
 
 #: MainQtWidget.cpp:277
@@ -1026,11 +974,10 @@ msgid "Maximum denominator:"
 msgstr "Gehienezko izendatzailea:"
 
 #: MainQtWidget.cpp:290
-#, fuzzy, kde-format
-#| msgid "The maximum number you can have as main denominator"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The maximum number you can have as main denominator"
-msgstr "Zatitzaile nagusi bezala izan dezakezun zenbaki maximoa."
+msgstr "Izendatzaile nagusi bezala izan dezakezun zenbaki maximoa."
 
 #: MainQtWidget.cpp:291
 #, kde-format
@@ -1040,11 +987,10 @@ msgid ""
 msgstr "Hautatu izendatzaile nagusiaren zenbaki maximoa: 10 20, 30, 40 edo 50."
 
 #: MainQtWidget.cpp:513
-#, fuzzy, kde-format
-#| msgid "Reset statistics and set a new task."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset statistics and set a new task."
-msgstr "Berrezarri estatistikak eta ezarri ariketa berria."
+msgstr "Berrezarri estatistikak eta ezarri ariketa berri bat."
 
 #: MainQtWidget.cpp:518
 #, kde-format
@@ -1052,11 +998,10 @@ msgid "Back"
 msgstr "Atzera"
 
 #: MainQtWidget.cpp:520
-#, fuzzy, kde-format
-#| msgid "Go back to Modes screen."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Go back to Modes screen."
-msgstr "Joan atzera pantailako moduetan."
+msgstr "Itzuli Moduak pantailara."
 
 #: MainQtWidget.cpp:525
 #, kde-format
@@ -1070,11 +1015,10 @@ msgstr ""
 "Aritmetikoa"
 
 #: MainQtWidget.cpp:526 TaskView.cpp:162
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to solve a given question with fractions."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to solve a given question with fractions."
-msgstr "Ariketa honetan emandako zatikien ariketa  ebatzi behar duzu."
+msgstr "Ariketa honetan zatikien ariketa jakin bat ebatzi behar duzu."
 
 #: MainQtWidget.cpp:531
 #, kde-format
@@ -1268,11 +1212,10 @@ msgid "This is the current total number of skipped tasks."
 msgstr "Uneko guztizko saltatutako ariketa kopurua da."
 
 #: StatisticsView.cpp:109
-#, fuzzy, kde-format
-#| msgid "This part of the window shows the statistics."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "This part of the window shows the statistics."
-msgstr "Lehioaren zati honek estatistikak erakusten ditu."
+msgstr "Leihoaren zati honek estatistikak erakusten ditu."
 
 #: StatisticsView.cpp:110
 #, kde-format
@@ -1291,11 +1234,10 @@ msgid "&Reset"
 msgstr "&Berrezarri"
 
 #: StatisticsView.cpp:122
-#, fuzzy, kde-format
-#| msgid "Click this button to reset the statistics."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click this button to reset the statistics."
-msgstr "Egin klik botoi honi estatistikak berrezartzeko."
+msgstr "Egin klik botoi honetan estatistikak berrezartzeko."
 
 #. i18n: ectx: property (text), widget (QLabel, numberLabel)
 #: taskcolorsbase.ui:28
@@ -1340,8 +1282,7 @@ msgid "Change the font of the numbers"
 msgstr "Aldatu zenbakien letra-tipoa"
 
 #: TaskView.cpp:153
-#, fuzzy, kde-format
-#| msgid "Click this button to skip this question."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click this button to skip this question."
 msgstr "Egin klik botoi honetan ariketa hau saltatzeko."
