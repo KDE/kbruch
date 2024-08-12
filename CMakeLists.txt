@@ -44,7 +44,7 @@ set_package_properties(KF6DocTools PROPERTIES DESCRIPTION
     "Tools to generate documentation"
     TYPE OPTIONAL
 )
-ecm_set_disabled_deprecation_versions(QT 6.7  KF 6.4.0)
+ecm_set_disabled_deprecation_versions(QT 6.7  KF 6.5.0)
 
 kde_enable_exceptions()
 
