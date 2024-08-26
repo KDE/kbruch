@@ -40,7 +40,6 @@ msgstr "KBruch kjøremåter:"
 
 #: AppMenuWidget.cpp:102
 #, fuzzy, kde-format
-#| msgid "Open standard KBruch"
 msgctxt "@info:tooltip"
 msgid "Open standard KBruch"
 msgstr "Åpne standard KBruch"
@@ -52,7 +51,6 @@ msgstr "Øvelses"
 
 #: AppMenuWidget.cpp:117
 #, fuzzy, kde-format
-#| msgid "Open learning KBruch"
 msgctxt "@info:tooltip"
 msgid "Open learning KBruch"
 msgstr "Åpne lærings-KBruch"
@@ -75,7 +73,6 @@ msgstr ">"
 
 #: ExerciseCompare.cpp:88
 #, fuzzy, kde-format
-#| msgid "Click on this button to select the 'greater than' sign."
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'greater than' sign."
 msgstr "Trykk på denne knappen for å velge tegnet «større enn»."
@@ -87,7 +84,6 @@ msgstr "<"
 
 #: ExerciseCompare.cpp:97
 #, fuzzy, kde-format
-#| msgid "Click on this button to select the 'less than' sign."
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'less than' sign."
 msgstr "Trykk på denne knappen for å velge tegnet «mindre enn»."
@@ -99,7 +95,6 @@ msgstr "="
 
 #: ExerciseCompare.cpp:106
 #, fuzzy, kde-format
-#| msgid "Click on this button to select the 'equals' sign."
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'equals' sign."
 msgstr "Trykk på denne knappen for å velge likhetstegnet."
@@ -114,14 +109,12 @@ msgstr "&Hopp over"
 #: ExerciseCompare.cpp:119 ExerciseConvert.cpp:136 ExerciseFactorize.cpp:162
 #: ExerciseMixedNumbers.cpp:159 ExercisePercentage.cpp:118
 #, fuzzy, kde-format
-#| msgid "Click on this button to skip this question."
 msgctxt "@info:tooltip"
 msgid "Click on this button to skip this question."
 msgstr "Trykk på denne knappen for å hoppe over dette spørsmålet."
 
 #: ExerciseCompare.cpp:134 MainQtWidget.cpp:532
 #, fuzzy, kde-format
-#| msgid "In this exercise you have to compare two given fractions."
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to compare two given fractions."
 msgstr "I denne øvelsen skal du sammenligne to gitte brøker."
@@ -137,7 +130,6 @@ msgstr ""
 
 #: ExerciseCompare.cpp:246 ExerciseCompare.cpp:247 ExerciseCompare.cpp:248
 #, fuzzy, kde-format
-#| msgid "Click on this button to check your result."
 msgctxt "@info:tooltip"
 msgid "Click on this button to check your result."
 msgstr "Trykk på denne knappen for å sjekke resultatene dine."
@@ -149,14 +141,12 @@ msgstr "&Neste"
 
 #: ExerciseConvert.cpp:91 TaskView.cpp:108
 #, fuzzy, kde-format
-#| msgid "Enter the numerator of your result"
 msgctxt "@info:tooltip"
 msgid "Enter the numerator of your result"
 msgstr "Oppgi nevner i svaret"
 
 #: ExerciseConvert.cpp:108 TaskView.cpp:125
 #, fuzzy, kde-format
-#| msgid "Enter the denominator of your result"
 msgctxt "@info:tooltip"
 msgid "Enter the denominator of your result"
 msgstr "Oppgi teller i svaret"
@@ -176,9 +166,6 @@ msgstr "&Sjekk"
 #: ExerciseFactorize.cpp:400 ExerciseMixedNumbers.cpp:150
 #: ExercisePercentage.cpp:109 ExercisePercentage.cpp:351
 #, fuzzy, kde-format
-#| msgid ""
-#| "Click on this button to check your result. The button will not work if "
-#| "you have not entered a result yet."
 msgctxt "@info:tooltip"
 msgid ""
 "Click on this button to check your result. The button will not work if you "
@@ -189,7 +176,6 @@ msgstr ""
 
 #: ExerciseConvert.cpp:146 MainQtWidget.cpp:538
 #, fuzzy, kde-format
-#| msgid "In this exercise you have to convert a number into a fraction."
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to convert a number into a fraction."
 msgstr "I denne øvelsen skal du gjøre om et tall til en brøk."
@@ -205,7 +191,6 @@ msgstr ""
 
 #: ExerciseConvert.cpp:309 ExerciseFactorize.cpp:349 ExercisePercentage.cpp:317
 #, fuzzy, kde-format
-#| msgid "Click on this button to get to the next question."
 msgctxt "@info:tooltip"
 msgid "Click on this button to get to the next question."
 msgstr "Trykk på denne knappen for å gå til neste oppgave."
@@ -283,70 +268,60 @@ msgstr "19"
 
 #: ExerciseFactorize.cpp:216
 #, fuzzy, kde-format
-#| msgid "Add prime factor 2."
 msgctxt "@info:tooltip"
 msgid "Add prime factor 2."
 msgstr "Legg til primfaktor 2."
 
 #: ExerciseFactorize.cpp:217
 #, fuzzy, kde-format
-#| msgid "Add prime factor 3."
 msgctxt "@info:tooltip"
 msgid "Add prime factor 3."
 msgstr "Legg til primfaktor 3."
 
 #: ExerciseFactorize.cpp:218
 #, fuzzy, kde-format
-#| msgid "Add prime factor 5."
 msgctxt "@info:tooltip"
 msgid "Add prime factor 5."
 msgstr "Legg til primfaktor 5."
 
 #: ExerciseFactorize.cpp:219
 #, fuzzy, kde-format
-#| msgid "Add prime factor 7."
 msgctxt "@info:tooltip"
 msgid "Add prime factor 7."
 msgstr "Legg til primfaktor 7."
 
 #: ExerciseFactorize.cpp:220
 #, fuzzy, kde-format
-#| msgid "Add prime factor 11."
 msgctxt "@info:tooltip"
 msgid "Add prime factor 11."
 msgstr "Legg til primfaktor 11."
 
 #: ExerciseFactorize.cpp:221
 #, fuzzy, kde-format
-#| msgid "Add prime factor 13."
 msgctxt "@info:tooltip"
 msgid "Add prime factor 13."
 msgstr "Legg til primfaktor 13."
 
 #: ExerciseFactorize.cpp:222
 #, fuzzy, kde-format
-#| msgid "Add prime factor 17."
 msgctxt "@info:tooltip"
 msgid "Add prime factor 17."
 msgstr "Legg til primfaktor 17."
 
 #: ExerciseFactorize.cpp:223
 #, fuzzy, kde-format
-#| msgid "Add prime factor 19."
 msgctxt "@info:tooltip"
 msgid "Add prime factor 19."
 msgstr "Legg til primfaktor 19."
 
 #: ExerciseFactorize.cpp:228
 #, fuzzy, kde-format
-#| msgid "Removes the last entered prime factor."
 msgctxt "@info:tooltip"
 msgid "Removes the last entered prime factor."
 msgstr "Fjerner den sist oppgitte primfaktoren."
 
 #: ExerciseFactorize.cpp:245 MainQtWidget.cpp:550
 #, fuzzy, kde-format
-#| msgid "In this exercise you have to factorize a given number."
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to factorize a given number."
 msgstr "I denne øvelsen skal du faktorisere et gitt tall."
@@ -369,30 +344,24 @@ msgstr ""
 
 #: ExerciseMixedNumbers.cpp:96 TaskView.cpp:96
 #, fuzzy, kde-format
-#| msgid "Enter the integer part of the fraction"
 msgctxt "@info:tooltip"
 msgid "Enter the integer part of the fraction"
 msgstr "Skriv inn heltallsdelen av brøken"
 
 #: ExerciseMixedNumbers.cpp:110
 #, fuzzy, kde-format
-#| msgid "Enter the numerator of the fraction"
 msgctxt "@info:tooltip"
 msgid "Enter the numerator of the fraction"
 msgstr "Skriv inn telleren i brøken"
 
 #: ExerciseMixedNumbers.cpp:127
 #, fuzzy, kde-format
-#| msgid "Enter the denominator of the fraction"
 msgctxt "@info:tooltip"
 msgid "Enter the denominator of the fraction"
 msgstr "Skriv inn nevneren i brøken"
 
 #: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:544
 #, fuzzy, kde-format
-#| msgid ""
-#| "In this exercise you have to convert a mixed number into a ratio and vice "
-#| "versa."
 msgctxt "@info:tooltip"
 msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
@@ -411,9 +380,6 @@ msgstr ""
 
 #: ExerciseMixedNumbers.cpp:245 TaskView.cpp:144 TaskView.cpp:383
 #, fuzzy, kde-format
-#| msgid ""
-#| "Click this button to check your result. The button will not work if you "
-#| "have not entered a result yet."
 msgctxt "@info:tooltip"
 msgid ""
 "Click this button to check your result. The button will not work if you have "
@@ -424,7 +390,6 @@ msgstr ""
 
 #: ExerciseMixedNumbers.cpp:286 TaskView.cpp:267
 #, fuzzy, kde-format
-#| msgid "Click this button to get the next question."
 msgctxt "@info:tooltip"
 msgid "Click this button to get the next question."
 msgstr "Trykk på denne knappen for å gå til neste oppgave."
@@ -464,14 +429,12 @@ msgstr "%1 % av %2 ="
 
 #: ExercisePercentage.cpp:91
 #, fuzzy, kde-format
-#| msgid "Enter the result of percentage question"
 msgctxt "@info:tooltip"
 msgid "Enter the result of percentage question"
 msgstr "Skriv svaret på prosent-spørsmålet:"
 
 #: ExercisePercentage.cpp:132 MainQtWidget.cpp:556
 #, fuzzy, kde-format
-#| msgid "In this exercise you have to work with percentage questions."
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to work with percentage questions."
 msgstr "I denne øvelsen skal du løse oppgaver med prosentspørsmål."
@@ -877,7 +840,6 @@ msgstr "Valg:"
 
 #: MainQtWidget.cpp:157
 #, fuzzy, kde-format
-#| msgid "Set the options to solve the exercises."
 msgctxt "@info:tooltip"
 msgid "Set the options to solve the exercises."
 msgstr "Oppgi valg for å løse oppgavene."
@@ -901,9 +863,6 @@ msgstr "Blandet tall:"
 
 #: MainQtWidget.cpp:163
 #, fuzzy, kde-format
-#| msgid ""
-#| "Set if the fractions will appear as mixed numbers or not in the question "
-#| "expression (mixed number example: 1 4/5 = 9/5 )."
 msgctxt "@info:tooltip"
 msgid ""
 "Set if the fractions will appear as mixed numbers or not in the question "
@@ -914,9 +873,6 @@ msgstr ""
 
 #: MainQtWidget.cpp:180
 #, fuzzy, kde-format
-#| msgid ""
-#| "Set if the fractions will appear as mixed numbers or not in the answer "
-#| "(mixed number example: 1 4/5 = 9/5 )."
 msgctxt "@info:tooltip"
 msgid ""
 "Set if the fractions will appear as mixed numbers or not in the answer "
@@ -932,7 +888,6 @@ msgstr "Addisjon:"
 
 #: MainQtWidget.cpp:191
 #, fuzzy, kde-format
-#| msgid "Check this to use addition operator."
 msgctxt "@info:tooltip"
 msgid "Check this to use addition operator."
 msgstr "Sett merke for å bruke addisjonsoperator."
@@ -944,7 +899,6 @@ msgstr "Subtraksjon:"
 
 #: MainQtWidget.cpp:207
 #, fuzzy, kde-format
-#| msgid "Check this to use subtraction operator."
 msgctxt "@info:tooltip"
 msgid "Check this to use subtraction operator."
 msgstr "Sett merke for å bruke subtraksjonsoperator."
@@ -956,7 +910,6 @@ msgstr "Multiplikasjon:"
 
 #: MainQtWidget.cpp:223
 #, fuzzy, kde-format
-#| msgid "Check this to use multiplication operator."
 msgctxt "@info:tooltip"
 msgid "Check this to use multiplication operator."
 msgstr "Sett merke for å bruke multiplikasjonsoperator."
@@ -968,7 +921,6 @@ msgstr "Divisjon:"
 
 #: MainQtWidget.cpp:239
 #, fuzzy, kde-format
-#| msgid "Check this to use division operator."
 msgctxt "@info:tooltip"
 msgid "Check this to use division operator."
 msgstr "Sett merke for å bruke divisjonsoperator."
@@ -980,7 +932,6 @@ msgstr "Forkortet form:"
 
 #: MainQtWidget.cpp:255
 #, fuzzy, kde-format
-#| msgid "Check this to force the use of the reduced form."
 msgctxt "@info:tooltip"
 msgid "Check this to force the use of the reduced form."
 msgstr "Sett merke for å tvinge fram bruk av forkortet form."
@@ -992,9 +943,6 @@ msgstr "Antall ledd:"
 
 #: MainQtWidget.cpp:266 MainQtWidget.cpp:276
 #, fuzzy, kde-format
-#| msgid ""
-#| "The number of \n"
-#| "terms you want"
 msgctxt "@info:tooltip"
 msgid ""
 "The number of \n"
@@ -1019,7 +967,6 @@ msgstr "Største hovednevner:"
 
 #: MainQtWidget.cpp:290
 #, fuzzy, kde-format
-#| msgid "The maximum number you can have as main denominator"
 msgctxt "@info:tooltip"
 msgid "The maximum number you can have as main denominator"
 msgstr "Største tallet du kan ha som hovednevner"
@@ -1035,7 +982,6 @@ msgstr ""
 
 #: MainQtWidget.cpp:513
 #, fuzzy, kde-format
-#| msgid "Reset statistics and set a new task."
 msgctxt "@info:tooltip"
 msgid "Reset statistics and set a new task."
 msgstr "Tilbakestill resultatliste og oppgi en ny oppgave."
@@ -1047,7 +993,6 @@ msgstr "Tilbake"
 
 #: MainQtWidget.cpp:520
 #, fuzzy, kde-format
-#| msgid "Go back to Modes screen."
 msgctxt "@info:tooltip"
 msgid "Go back to Modes screen."
 msgstr "Gå tilbake til kjøremåte-skjermen."
@@ -1066,7 +1011,6 @@ msgstr ""
 
 #: MainQtWidget.cpp:526 TaskView.cpp:162
 #, fuzzy, kde-format
-#| msgid "In this exercise you have to solve a given question with fractions."
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to solve a given question with fractions."
 msgstr "I denne øvelsen skal du løse en gitt oppgave med brøker."
@@ -1268,7 +1212,6 @@ msgstr "Dette er totalt antall oppgaver hoppet over hittil."
 
 #: StatisticsView.cpp:109
 #, fuzzy, kde-format
-#| msgid "This part of the window shows the statistics."
 msgctxt "@info:tooltip"
 msgid "This part of the window shows the statistics."
 msgstr "Denne delen av vinduet viser resultatene."
@@ -1291,7 +1234,6 @@ msgstr "&Tilbakestill"
 
 #: StatisticsView.cpp:122
 #, fuzzy, kde-format
-#| msgid "Click this button to reset the statistics."
 msgctxt "@info:tooltip"
 msgid "Click this button to reset the statistics."
 msgstr "Trykk på denne knappen for å nullstille resultatlista."
@@ -1340,7 +1282,6 @@ msgstr "Endre skrifta som brukes på tallene"
 
 #: TaskView.cpp:153
 #, fuzzy, kde-format
-#| msgid "Click this button to skip this question."
 msgctxt "@info:tooltip"
 msgid "Click this button to skip this question."
 msgstr "Trykk på denne knappen for å hoppe over dette spørsmålet."
