@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Slovenian "INCLUDE">
+]>
+<!--
+SPDX-FileCopyrightText: 2005 Lauri Watts
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>&kbruch; Uporabniški priročnik</title>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<date
+>21.12.2020</date>
+<releaseinfo
+>Aplikacije 20.12</releaseinfo>
+<productname
+>Aplikacije KDE</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kbruch</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kbruch</command
+></refname>
+<refpurpose
+>Naučite se računati z ulomki in odstotki</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kbruch</command
+> <arg choice="opt"
+>možnosti</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Opis</title>
+<para
+>&kbruch; je majhen program za vadbo računanja z ulomki in odstotki. V ta namen so na voljo različne vaje. Program preveri uporabnikov vnos in poda povratne informacije.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Poglej tudi</title>
+<para
+>Podrobnejša uporabniška dokumentacija je na voljo na <ulink url="help:/kbruch"
+>help:/kbruch</ulink
+> (vnesite ta &URL; v &konqueror; ali zaženite <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kbruch</parameter
+></userinput
+>).</para>
+<para
+>Dodatne informacije so na voljo tudi na <ulink url="https://edu.kde.org/kbruch/"
+>spletnem mestu &kde;du</ulink
+></para>
+</refsect1>
+
+<refsect1>
+<title
+>Avtorji</title>
+<para
+>&kbruch; je napisal <personname
+><firstname
+>Sebastian</firstname
+><surname
+>Stein</surname
+></personname
+> <email
+>seb.kde@hpfsc.de</email
+></para>
+</refsect1>
+
+</refentry>
