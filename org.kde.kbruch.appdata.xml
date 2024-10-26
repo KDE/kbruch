@@ -174,7 +174,7 @@ SPDX-License-Identifier: CC0-1.0
       <li>Arithmetic exercise - in this exercise you have to solve a given fraction task. You have to enter the numerator and the denominator. This is the main exercise.</li>
       <li xml:lang="ar">تمرين حسابي - في هذا التمرين عليك حل مهمة كسر معينة. عليك إدخال البسط والمقام. هذا هو التمرين الرئيس.</li>
       <li xml:lang="bs">Aritmetička vježba - u ovoj vježbi morate riješiti dati razlomak . Morate ući u brojnik i nazivnik. Ovo je glavna vježba.</li>
-      <li xml:lang="ca">Exercici aritmètic: En aquest exercici heu de resoldre un càlcul de fracció. Cal que escriviu el resultat, és a dir, el numerador i el denominador. Aquest és l'exercici principal.</li>
+      <li xml:lang="ca">Exercici aritmètic: En aquest exercici heu de resoldre un càlcul de fracció. Cal que escrigueu el resultat, és a dir, el numerador i el denominador. Aquest és l'exercici principal.</li>
       <li xml:lang="ca-valencia">Exercici aritmètic: En este exercici heu de resoldre un càlcul de fracció. Cal que escriviu el resultat, és a dir, el numerador i el denominador. Este és l'exercici principal.</li>
       <li xml:lang="de">Arithmetik - in dieser Übung muss eine gegebene Bruchaufgabe gelöst werden. Sie müssen den ganzzahligen Anteil des Bruchs und Zähler und Nenner eingeben. Dies ist die Hauptübung.</li>
       <li xml:lang="el">Ασκήσεις αριθμητικής - σε αυτήν την άσκηση επιλύετε ένα δοσμένο πρόβλημα με κλάσματα. Δίνετε τον αριθμητή και τον παρονομαστή. Αυτή είναι η κύρια άσκηση.</li>
@@ -203,7 +203,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="sk">Aritmetické cvičenie - v tomto cvičení musíte vyriešiť danú úlohu so zlomkami. Musíte zadať čitateľa a menovateľa. Toto je hlavné cvičenie.</li>
       <li xml:lang="sl">Računstvo -  v tej vaji morate rešiti nalogo z ulomki. Vnesti morate števec in imenovalec. To je glavna vaja.</li>
       <li xml:lang="sv">Aritmetikövning: I den här övningen måste du lösa en given uppgift med bråk. Du måste skriva in täljare och nämnare. Detta är den huvudsakliga övningen.</li>
-      <li xml:lang="tr">Aritmetik alıştırma - bu alıştırmada verilen bir kesir görevini çözmeniz gerekir. Payı ve paydayı girmeniz gerekir. Bu ana alıştırmadır.</li>
+      <li xml:lang="tr">Aritmetik alıştırma — bu alıştırmada verilen bir kesir görevini çözmeniz gerekir. Payı ve paydayı girmeniz gerekir. Bu ana alıştırmadır.</li>
       <li xml:lang="uk">Вправа з арифметики — у цій вправі вам потрібно буде розв’язати завдання з дробів. Вам слід буде ввести чисельник і знаменник відповіді. Це головна вправа програми.</li>
       <li xml:lang="x-test">xxArithmetic exercise - in this exercise you have to solve a given fraction task. You have to enter the numerator and the denominator. This is the main exercise.xx</li>
       <li xml:lang="zh-CN">算术练习——在此练习中，你需要解决所给的分数计算任务，输入分子和分母。此为主要练习。</li>
@@ -239,7 +239,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="sk">Porovnávacie cvičenie - v tomto cvičení musíte porovnať veľkosť 2 daných zlomkov, pomocou symbolov &gt;, &lt; alebo =.</li>
       <li xml:lang="sl">Primerjava - v tej vaji morate primerjati velikost dveh ulomkov z uporabo znakov &gt;, &lt; ali =.</li>
       <li xml:lang="sv">Jämförelseövning: I den här övningen måste du jämföra storleken på två givna bråk, med symbolerna &gt;, &lt; eller =.</li>
-      <li xml:lang="tr">Karşılaştırma alıştırması - bu alıştırmada verilen 2 kesrin boyutlarını &gt;, &lt; veya = ifadeleriyle karşılaştırırsınız.</li>
+      <li xml:lang="tr">Karşılaştırma alıştırması — bu alıştırmada verilen 2 kesrin boyutlarını &gt;, &lt; veya = ifadeleriyle karşılaştırırsınız.</li>
       <li xml:lang="uk">Порівняння — у цій вправі вам потрібно буде порівняти величини 2 заданих дробів за допомогою символів &gt;, &lt; або =.</li>
       <li xml:lang="x-test">xxComparison exercise - in this exercise you have to compare the size of 2 given fractions, using the symbols &gt;, &lt; or =.xx</li>
       <li xml:lang="zh-CN">比较练习——在此练习中，您需要使用 &gt;、&lt; 或 = 符号来比较所给两个分数的大小。</li>
@@ -276,7 +276,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="sk">Prevodové cvičenie - v tomto cvičení musíte previesť dané číslo na zlomok.</li>
       <li xml:lang="sl">Pretvorba - v tej vaji morate dano število pretvoriti v ulomek.</li>
       <li xml:lang="sv">Konverteringsövning: I den här övningen måste du konvertera ett givet tal till ett bråk.</li>
-      <li xml:lang="tr">Dönüşüm alıştırması - bu alıştırmada verilen bir sayıyı kesre dönüştürmeniz gerekir.</li>
+      <li xml:lang="tr">Dönüşüm alıştırması — bu alıştırmada verilen bir sayıyı kesre dönüştürmeniz gerekir.</li>
       <li xml:lang="uk">Перетворення — у цій вправі вам слід буде перетворити задане число на дріб.</li>
       <li xml:lang="x-test">xxConversion exercise - in this exercise you have to convert a given number into a fraction.xx</li>
       <li xml:lang="zh-CN">转换练习——在此练习中，您需要将所给数字转换为分数。</li>
@@ -313,7 +313,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="sk">Rozkladové cvičenie - v tomto cvičení musíte rozložiť dané číslo na prvočíselné činitele.</li>
       <li xml:lang="sl">Razstavljanje - v tej vaji morate razstaviti dano število v prafaktorje.</li>
       <li xml:lang="sv">Faktoriseringsövning: I den här övningen måste du faktorisera ett givet tal i dess primtalsfaktorer.</li>
-      <li xml:lang="tr">Çarpanlara ayırma alıştırması - bu alıştırmada verilen bir sayıyı asal çarpanlarına ayırmanız gerekir.</li>
+      <li xml:lang="tr">Çarpanlara ayırma alıştırması — bu alıştırmada verilen bir sayıyı asal çarpanlarına ayırmanız gerekir.</li>
       <li xml:lang="uk">Розкладання на множники — у цій вправі вам слід буде розкласти задане число на його елементарні множники.</li>
       <li xml:lang="x-test">xxFactorization exercise - in this exercise you have to factorize a given number into its prime factors.xx</li>
       <li xml:lang="zh-CN">因式分解练习——在此练习中，您需要将所给数字因式分解为质因子。</li>
@@ -350,7 +350,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="sk">Percentové cvičenie - v tomto cvičení musíte vypočítať percentá.</li>
       <li xml:lang="sl">Odstotki - v tej vaji morate izračunati odstotke.</li>
       <li xml:lang="sv">Procentövning: I den här övningen måste du beräkna procent.</li>
-      <li xml:lang="tr">Yüzde alıştırması - bu alıştırmada yüzde hesaplamanız gerekir.</li>
+      <li xml:lang="tr">Yüzde alıştırması — bu alıştırmada yüzde hesaplamanız gerekir.</li>
       <li xml:lang="uk">Вправа з відсотками — у цій вправі вам потрібно буде виконати обчислення, пов’язані з відсотками.</li>
       <li xml:lang="x-test">xxPercentage exercise - in this exercise you have to calculate percentages.xx</li>
       <li xml:lang="zh-CN">百分比练习——在此练习中，您需要计算百分比。</li>
