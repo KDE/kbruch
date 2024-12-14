@@ -44,6 +44,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="pt">KBruch</name>
   <name xml:lang="pt-BR">KBruch</name>
   <name xml:lang="ru">KBruch</name>
+  <name xml:lang="sa">कब्रुच्</name>
   <name xml:lang="sk">KBruch</name>
   <name xml:lang="sl">KBruch</name>
   <name xml:lang="sv">Kbruch</name>
@@ -84,6 +85,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="pt">Exercitar Fracções</summary>
   <summary xml:lang="pt-BR">Exercícios com frações</summary>
   <summary xml:lang="ru">Упражнения с дробями</summary>
+  <summary xml:lang="sa">व्यायामः अंशाः</summary>
   <summary xml:lang="sk">Cvičenie zlomkov</summary>
   <summary xml:lang="sl">Vaje z ulomki</summary>
   <summary xml:lang="sv">Övningar med bråk</summary>
@@ -121,6 +123,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="pt">O KBruch é um pequeno programa que ajuda a praticar o cálculo de fracções e percentagens. São oferecidos diferentes exercícios para esse fim, podendo também usar o modo de aprendizagem para exercitar as fracções. O programa verifica os dados introduzidos pelo utilizador e dá as reacções respectivas.</p>
     <p xml:lang="pt-BR">KBruch é um pequeno programa para exercitar o cálculo de frações e porcentagens. São fornecidos diferentes exercícios para esse fim e você poderá usar o modo de aprendizagem para praticar as frações. O programa verifica os dados inseridos pelo usuário e fornece algum retorno.</p>
     <p xml:lang="ru">KBruch — простая программа для тренировки вычислений с дробями и процентами. Для начинающих есть режим обучения работе с дробями. Программа проверяет ответ пользователя и сообщает, был ли он правильным.</p>
+    <p xml:lang="sa">KBruch इति अंशैः प्रतिशतैः च गणनायाः अभ्यासार्थं लघुः कार्यक्रमः अस्ति । अस्य कृते भिन्नाः अभ्यासाः प्रदत्ताः सन्ति तथा च भवान् भिन्नैः सह अभ्यासं कर्तुं शिक्षणविधिं उपयोक्तुं शक्नोति । कार्यक्रमः उपयोक्तुः निवेशं परीक्ष्य प्रतिक्रियां ददाति ।</p>
     <p xml:lang="sk">KBruch je malý program na výuku počítania so zlomkami a percentami. Sú tu rôzne cvičenia na tento účel a môžete použiť režim učenia na precvičovanie zlomkov. Program kontroluje vstup používateľa a reaguje naň.</p>
     <p xml:lang="sl">KBruch je majhen program za vadbo ulomkov in odstotkov. Ponuja različne vaje, lahko pa uporabite tudi učni način. Program preveri uporabnikov vnos ter poda odziv.</p>
     <p xml:lang="sv">Kbruch är ett litet program för att öva räkning med bråk och procent. Olika övningar tillhandahålls för detta syfte, och du kan använda inlärningsläget för att öva dig på bråk. Programmet kontrollerar användarens indata och ger återmatning.</p>
@@ -162,6 +165,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="pt">Funcionalidades:</p>
     <p xml:lang="pt-BR">Recursos:</p>
     <p xml:lang="ru">Возможности:</p>
+    <p xml:lang="sa">गुणाः:</p>
     <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sl">Zmožnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
@@ -200,6 +204,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="pt">Exercício aritmético - neste exercício, terá de resolver uma dada tarefa de fracções. Terá de indicar o numerador e o denominador. Este é o exercício principal.</li>
       <li xml:lang="pt-BR">Exercício aritmético - Neste exercício, você terá que resolver uma determinada tarefa de frações. Terá que indicar o numerador e o denominador. Esse é o exercício principal.</li>
       <li xml:lang="ru">Арифметические упражнения: нужно произвести вычисления и ввести ответ в виде дроби.</li>
+      <li xml:lang="sa">अंकगणितीयव्यायाम - अस्मिन् अभ्यासे भवद्भिः दत्तं अंशकार्यं समाधातव्यम् । भवद्भिः गणकं हरं च प्रविष्टव्यम् । एषः मुख्यः अभ्यासः ।</li>
       <li xml:lang="sk">Aritmetické cvičenie - v tomto cvičení musíte vyriešiť danú úlohu so zlomkami. Musíte zadať čitateľa a menovateľa. Toto je hlavné cvičenie.</li>
       <li xml:lang="sl">Računstvo -  v tej vaji morate rešiti nalogo z ulomki. Vnesti morate števec in imenovalec. To je glavna vaja.</li>
       <li xml:lang="sv">Aritmetikövning: I den här övningen måste du lösa en given uppgift med bråk. Du måste skriva in täljare och nämnare. Detta är den huvudsakliga övningen.</li>
@@ -236,6 +241,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="pt">Exercícios de comparação - neste exercício, terá de comparar o valor de 2 dadas fracções, usando os símbolos &gt;, &lt; ou =.</li>
       <li xml:lang="pt-BR">Exercício de comparação - Neste exercício, terá que comparar o tamanho de 2 frações apresentadas, usando os símbolos &gt;, &lt; or =.</li>
       <li xml:lang="ru">Упражнения на сравнение: нужно сравнить по величине две дроби, то есть ответить, какая из них больше, или равны ли они.</li>
+      <li xml:lang="sa">तुलना-अभ्यासः - अस्मिन् अभ्यासे भवद्भिः २ दत्त-अंशानां आकारस्य तुलना कर्तव्या, &gt;, &lt; वा =।</li>
       <li xml:lang="sk">Porovnávacie cvičenie - v tomto cvičení musíte porovnať veľkosť 2 daných zlomkov, pomocou symbolov &gt;, &lt; alebo =.</li>
       <li xml:lang="sl">Primerjava - v tej vaji morate primerjati velikost dveh ulomkov z uporabo znakov &gt;, &lt; ali =.</li>
       <li xml:lang="sv">Jämförelseövning: I den här övningen måste du jämföra storleken på två givna bråk, med symbolerna &gt;, &lt; eller =.</li>
@@ -273,6 +279,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="pt">Exercício de conversão - neste exercício, terá de converter um dado número numa fracção.</li>
       <li xml:lang="pt-BR">Exercício de conversão - Neste exercício, terá que converter um determinado número numa fração.</li>
       <li xml:lang="ru">Упражнения на преобразование: нужно записать десятичную дробь в форме рациональной дроби.</li>
+      <li xml:lang="sa">रूपान्तरण-अभ्यासः - अस्मिन् अभ्यासे भवन्तः दत्तां संख्यां भिन्नरूपेण परिवर्तयितुं अर्हन्ति ।</li>
       <li xml:lang="sk">Prevodové cvičenie - v tomto cvičení musíte previesť dané číslo na zlomok.</li>
       <li xml:lang="sl">Pretvorba - v tej vaji morate dano število pretvoriti v ulomek.</li>
       <li xml:lang="sv">Konverteringsövning: I den här övningen måste du konvertera ett givet tal till ett bråk.</li>
@@ -310,6 +317,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="pt">Exercício de decomposição de factores - neste exercício, terá de decompor um número nos seus factores primos.</li>
       <li xml:lang="pt-BR">Exercício de decomposição de fatores - Neste exercício, você terá que decompor um número nos seus fatores primos.</li>
       <li xml:lang="ru">Разложение на множители: нужно разложить натуральное число в произведение простых чисел.</li>
+      <li xml:lang="sa">गुणनखण्डीकरण-अभ्यासः - अस्मिन् अभ्यासे भवद्भिः दत्तां संख्यां तस्याः अभाज्यगुणकेषु गुणनखण्डीकरणं कर्तव्यम् ।</li>
       <li xml:lang="sk">Rozkladové cvičenie - v tomto cvičení musíte rozložiť dané číslo na prvočíselné činitele.</li>
       <li xml:lang="sl">Razstavljanje - v tej vaji morate razstaviti dano število v prafaktorje.</li>
       <li xml:lang="sv">Faktoriseringsövning: I den här övningen måste du faktorisera ett givet tal i dess primtalsfaktorer.</li>
@@ -347,6 +355,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="pt">Exercício de percentagens - neste exercício, terá de calcular percentagens.</li>
       <li xml:lang="pt-BR">Exercício de porcentagens - Neste exercício, terá que calcular porcentagens.</li>
       <li xml:lang="ru">Упражнения с процентами: нужно вычислять проценты от чисел.</li>
+      <li xml:lang="sa">प्रतिशतव्यायाम - अस्मिन् अभ्यासे भवद्भिः प्रतिशतगणना कर्तव्या ।</li>
       <li xml:lang="sk">Percentové cvičenie - v tomto cvičení musíte vypočítať percentá.</li>
       <li xml:lang="sl">Odstotki - v tej vaji morate izračunati odstotke.</li>
       <li xml:lang="sv">Procentövning: I den här övningen måste du beräkna procent.</li>
@@ -393,6 +402,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="pt">A praticar fracções com o KBruch</caption>
       <caption xml:lang="pt-BR">Exercitando frações com o KBruch</caption>
       <caption xml:lang="ru">Упражнения с дробями в KBruch</caption>
+      <caption xml:lang="sa">KBruch इत्यनेन भिन्नानां व्यायामः</caption>
       <caption xml:lang="sk">Cvičenie zlomkov</caption>
       <caption xml:lang="sl">Vaje z ulomki s KBruch</caption>
       <caption xml:lang="sv">Bråkövning med Kbruch</caption>
