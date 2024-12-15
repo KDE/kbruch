@@ -20,12 +20,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: AppMenuWidget.cpp:95
 #, kde-format
@@ -36,7 +36,7 @@ msgstr "KBruch मोड्स् : १."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open standard KBruch"
-msgstr ""
+msgstr "मानक KBruch उद्घाटयन्तु"
 
 #: AppMenuWidget.cpp:108 MainQtWidget.cpp:75
 #, kde-format
@@ -47,7 +47,7 @@ msgstr "व्यायामः"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open learning KBruch"
-msgstr ""
+msgstr "मुक्तशिक्षण KBruch"
 
 #: AppMenuWidget.cpp:123 FractionRingWidget.cpp:52
 #, kde-format
@@ -69,7 +69,7 @@ msgstr ">"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'greater than' sign."
-msgstr ""
+msgstr "'greater than' इति चिह्नं चिन्वन्तु इति एतत् बटन् नुदन्तु ।"
 
 #: ExerciseCompare.cpp:93
 #, kde-format
@@ -80,7 +80,7 @@ msgstr "<"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'less than' sign."
-msgstr ""
+msgstr "'less than' इति चिह्नं चिन्वन्तु इति एतत् बटन् नुदन्तु ।"
 
 #: ExerciseCompare.cpp:102
 #, kde-format
@@ -91,7 +91,7 @@ msgstr "="
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'equals' sign."
-msgstr ""
+msgstr "'equals' चिह्नं चिन्वितुं अस्मिन् बटन् नुदन्तु ।"
 
 #: ExerciseCompare.cpp:118 ExerciseCompare.cpp:280 ExerciseConvert.cpp:135
 #: ExerciseFactorize.cpp:161 ExerciseMixedNumbers.cpp:158
@@ -105,13 +105,13 @@ msgstr "&क्षिपते"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to skip this question."
-msgstr ""
+msgstr "एतत् प्रश्नं त्यक्तुं एतत् बटन् नुदन्तु ।"
 
 #: ExerciseCompare.cpp:134 MainQtWidget.cpp:532
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to compare two given fractions."
-msgstr ""
+msgstr "अस्मिन् अभ्यासे भवद्भिः दत्तयोः भिन्नयोः तुलना कर्तव्या ।"
 
 #: ExerciseCompare.cpp:135
 #, kde-format
@@ -124,7 +124,7 @@ msgstr "अस्मिन् अभ्यासे भवद्भिः दत
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to check your result."
-msgstr ""
+msgstr "भवतः परिणामं पश्यन् अस्मिन् बटन् नुदन्तु ।"
 
 #: ExerciseCompare.cpp:295 ExerciseCompare.cpp:309 ExerciseCompare.cpp:323
 #, kde-format
@@ -135,13 +135,13 @@ msgstr "&अग्रिम"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the numerator of your result"
-msgstr ""
+msgstr "भवतः परिणामस्य गणकं प्रविशतु"
 
 #: ExerciseConvert.cpp:108 TaskView.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the denominator of your result"
-msgstr ""
+msgstr "भवतः परिणामस्य हरकं प्रविशतु"
 
 #: ExerciseConvert.cpp:125 ExerciseConvert.cpp:174 ExerciseConvert.cpp:409
 #: ExerciseFactorize.cpp:170 ExerciseFactorize.cpp:275
@@ -163,12 +163,14 @@ msgid ""
 "Click on this button to check your result. The button will not work if you "
 "have not entered a result yet."
 msgstr ""
+"भवतः परिणामं पश्यन् अस्मिन् बटन् नुदन्तु । यदि भवान् अद्यापि परिणामं न प्रविष्टवान् तर्हि "
+"बटनं कार्यं न करिष्यति।"
 
 #: ExerciseConvert.cpp:146 MainQtWidget.cpp:538
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to convert a number into a fraction."
-msgstr ""
+msgstr "अस्मिन् अभ्यासे भवद्भिः एकां संख्यां भिन्नरूपेण परिवर्तयितव्या ।"
 
 #: ExerciseConvert.cpp:147
 #, kde-format
@@ -183,7 +185,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to get to the next question."
-msgstr ""
+msgstr "अग्रिमप्रश्नं प्राप्तुं एतत् बटन् नुदन्तु ।"
 
 #: ExerciseConvert.cpp:354
 #, kde-format
@@ -260,61 +262,61 @@ msgstr "१९"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 2."
-msgstr ""
+msgstr "अभाज्य गुणनखण्डं 2 योजयन्तु।"
 
 #: ExerciseFactorize.cpp:217
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 3."
-msgstr ""
+msgstr "अभाज्य गुणनखण्डं 3 योजयन्तु।"
 
 #: ExerciseFactorize.cpp:218
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 5."
-msgstr ""
+msgstr "अभाज्य गुणनखण्डं 5 योजयन्तु।"
 
 #: ExerciseFactorize.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 7."
-msgstr ""
+msgstr "अभाज्य गुणनखण्डं योजयन्तु 7."
 
 #: ExerciseFactorize.cpp:220
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 11."
-msgstr ""
+msgstr "अभाज्यगुणकं ११ योजयतु ।"
 
 #: ExerciseFactorize.cpp:221
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 13."
-msgstr ""
+msgstr "अभाज्य गुणनखण्डं 13 योजयन्तु।"
 
 #: ExerciseFactorize.cpp:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 17."
-msgstr ""
+msgstr "अभाज्य गुणनखण्डं 17 योजयन्तु।"
 
 #: ExerciseFactorize.cpp:223
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 19."
-msgstr ""
+msgstr "अभाज्यगुणकं १९ योजयतु ।"
 
 #: ExerciseFactorize.cpp:228
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Removes the last entered prime factor."
-msgstr ""
+msgstr "अन्तिमप्रविष्टं अभाज्यगुणकं निष्कासयति ।"
 
 #: ExerciseFactorize.cpp:245 MainQtWidget.cpp:550
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to factorize a given number."
-msgstr ""
+msgstr "अस्मिन् अभ्यासे भवद्भिः दत्तां संख्यां गुणनखण्डीकरणं कर्तव्यम् ।"
 
 #: ExerciseFactorize.cpp:246
 #, kde-format
@@ -336,19 +338,19 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the integer part of the fraction"
-msgstr ""
+msgstr "भिन्नस्य पूर्णाङ्कभागं प्रविशन्तु"
 
 #: ExerciseMixedNumbers.cpp:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the numerator of the fraction"
-msgstr ""
+msgstr "भिन्नस्य गणकं प्रविशतु"
 
 #: ExerciseMixedNumbers.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the denominator of the fraction"
-msgstr ""
+msgstr "भिन्नस्य हरं प्रविशतु"
 
 #: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:544
 #, kde-format
@@ -356,7 +358,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
 "versa."
-msgstr ""
+msgstr "अस्मिन् अभ्यासे भवद्भिः मिश्रितसङ्ख्यां अनुपातरूपेण परिवर्तयितुं भवति तथा च विपरीतम् ।"
 
 #: ExerciseMixedNumbers.cpp:166
 #, kde-format
@@ -374,12 +376,14 @@ msgid ""
 "Click this button to check your result. The button will not work if you have "
 "not entered a result yet."
 msgstr ""
+"भवतः परिणामं पश्यन् एतत् बटन् नुदन्तु । यदि भवान् अद्यापि परिणामं न प्रविष्टवान् तर्हि बटनं "
+"कार्यं न करिष्यति।"
 
 #: ExerciseMixedNumbers.cpp:286 TaskView.cpp:267
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click this button to get the next question."
-msgstr ""
+msgstr "अग्रिमप्रश्नं प्राप्तुं एतत् बटन् नुदन्तु ।"
 
 #: ExerciseMixedNumbers.cpp:340 TaskView.cpp:356
 #, kde-format
@@ -411,19 +415,19 @@ msgstr ""
 #, kde-format
 msgctxt "%1 percentage of %2"
 msgid "%1% of %2 = "
-msgstr ""
+msgstr "%1% %2 = "
 
 #: ExercisePercentage.cpp:91
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the result of percentage question"
-msgstr ""
+msgstr "प्रतिशतप्रश्नस्य परिणामं प्रविशतु"
 
 #: ExercisePercentage.cpp:132 MainQtWidget.cpp:556
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to work with percentage questions."
-msgstr ""
+msgstr "अस्मिन् अभ्यासे भवद्भिः प्रतिशतप्रश्नैः सह कार्यं कर्तव्यम् ।"
 
 #: ExercisePercentage.cpp:133
 #, kde-format
@@ -437,7 +441,7 @@ msgctxt ""
 "expanding is not the same as multiplying. For example, expanding a ratio by "
 "2 basically means multiplying the ratio with 2/2 and not with 2/1!"
 msgid "Expand"
-msgstr ""
+msgstr "आतन्"
 
 #: FractionRingWidget.cpp:133 MainQtWidget.cpp:511
 #, kde-format
@@ -448,7 +452,7 @@ msgstr "नूतनम्‌"
 #, kde-format
 msgctxt "@action opens a new question"
 msgid "&New"
-msgstr ""
+msgstr "&नूतनम्‌"
 
 #: FractionRingWidget.cpp:194 MainQtWidget.cpp:581
 #, kde-format
@@ -460,7 +464,7 @@ msgstr "पृष्ठभागः"
 #, kde-format
 msgctxt "@action opens hint"
 msgid "Hint"
-msgstr ""
+msgstr "संकेत"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: FractionRingWidget.cpp:229 MainQtWidget.cpp:836 taskcolorsbase.ui:16
@@ -512,16 +516,16 @@ msgstr ""
 msgctxt "Inserted as %1 in the message below."
 msgid "%2 of 1 painted part."
 msgid_plural "%2 of %1 painted parts."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 of 1 चित्रित भाग।"
+msgstr[1] "%1 चित्रितभागानाम् %2 ।"
 
 #: FractionRingWidget.cpp:429
 #, kde-format
 msgctxt "Inserted as %2 in the message below."
 msgid "%2 of 1 painted part."
 msgid_plural "%2 of %1 painted parts."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 of 1 चित्रित भाग।"
+msgstr[1] "%1 चित्रितभागानाम् %2 ।"
 
 #: FractionRingWidget.cpp:432
 #, kde-format
@@ -534,6 +538,11 @@ msgid ""
 "The 'Expand' spinboxes expand each fraction. Try to change one of the "
 "spinbox values!"
 msgstr ""
+"बहिः वलयः वामभागस्य प्रतिनिधित्वं करोति । %1\n"
+"\n"
+"अन्तः वलयः सम्यक् अंशं प्रतिनिधियति । %2\n"
+"\n"
+"'Expand' स्पिनबॉक्स्स् प्रत्येकं अंशं विस्तारयन्ति । स्पिनबॉक्स मूल्येषु एकं परिवर्तयितुं प्रयतध्वम्!"
 
 #: KBruch.cpp:36
 #, kde-format
@@ -821,7 +830,7 @@ msgstr "विकल्पाः : १."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the options to solve the exercises."
-msgstr ""
+msgstr "अभ्यासानां समाधानार्थं विकल्पान् सेट् कुर्वन्तु।"
 
 #: MainQtWidget.cpp:158
 #, kde-format
@@ -847,6 +856,8 @@ msgid ""
 "Set if the fractions will appear as mixed numbers or not in the question "
 "expression (mixed number example: 1 4/5 = 9/5 )."
 msgstr ""
+"प्रश्नव्यञ्जने भिन्नाः मिश्रसङ्ख्यारूपेण दृश्यन्ते वा न वा इति सेट् कुर्वन्तु "
+"(मिश्रितसङ्ख्याउदाहरणम्: १ ४/५ = ९/५) ।"
 
 #: MainQtWidget.cpp:180
 #, kde-format
@@ -855,6 +866,8 @@ msgid ""
 "Set if the fractions will appear as mixed numbers or not in the answer "
 "(mixed number example: 1 4/5 = 9/5 )."
 msgstr ""
+"भिन्नाः मिश्रसङ्ख्यारूपेण दृश्यन्ते वा उत्तरे न वा इति सेट् कुर्वन्तु (मिश्रितसङ्ख्यायाः उदाहरणम्: "
+"१ ४/५ = ९/५) ।"
 
 #: MainQtWidget.cpp:190
 #, kde-format
@@ -865,7 +878,7 @@ msgstr "योजन:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use addition operator."
-msgstr ""
+msgstr "addition operator इत्यस्य उपयोगाय एतत् पश्यन्तु ।"
 
 #: MainQtWidget.cpp:206
 #, kde-format
@@ -876,7 +889,7 @@ msgstr "घटावः : १."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use subtraction operator."
-msgstr ""
+msgstr "घटावसञ्चालकस्य उपयोगाय एतत् पश्यन्तु ।"
 
 #: MainQtWidget.cpp:222
 #, kde-format
@@ -887,7 +900,7 @@ msgstr "गुणनम् : १."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use multiplication operator."
-msgstr ""
+msgstr "गुणनसञ्चालकस्य उपयोगाय एतत् पश्यन्तु ।"
 
 #: MainQtWidget.cpp:238
 #, kde-format
@@ -898,7 +911,7 @@ msgstr "विभागः : १."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use division operator."
-msgstr ""
+msgstr "विभागसञ्चालकस्य उपयोगाय एतत् पश्यन्तु ।"
 
 #: MainQtWidget.cpp:254
 #, kde-format
@@ -909,7 +922,7 @@ msgstr "न्यूनीकृतं रूपम् : १."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to force the use of the reduced form."
-msgstr ""
+msgstr "न्यूनीकृतरूपस्य उपयोगं बाध्यं कर्तुं एतत् परीक्ष्यताम् ।"
 
 #: MainQtWidget.cpp:265
 #, kde-format
@@ -923,6 +936,8 @@ msgid ""
 "The number of \n"
 "terms you want"
 msgstr ""
+"इति संख्या \n"
+"पदानि भवन्तः इच्छन्ति"
 
 #: MainQtWidget.cpp:277
 #, kde-format
@@ -942,7 +957,7 @@ msgstr "उच्चतमः हरः : १."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The maximum number you can have as main denominator"
-msgstr ""
+msgstr "अधिकतमं संख्या यत् भवतः मुख्यहररूपेण भवितुम् अर्हति"
 
 #: MainQtWidget.cpp:291
 #, kde-format
@@ -955,7 +970,7 @@ msgstr "मुख्यहरस्य कृते अधिकतमं भव
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset statistics and set a new task."
-msgstr ""
+msgstr "सांख्यिकी पुनः सेट् कृत्वा नूतनं कार्यं सेट् कुर्वन्तु।"
 
 #: MainQtWidget.cpp:518
 #, kde-format
@@ -966,7 +981,7 @@ msgstr "पृष्ठभागः"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Go back to Modes screen."
-msgstr ""
+msgstr "पुनः Modes screen प्रति गच्छन्तु ।"
 
 #: MainQtWidget.cpp:525
 #, kde-format
@@ -983,7 +998,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to solve a given question with fractions."
-msgstr ""
+msgstr "अस्मिन् अभ्यासे भवद्भिः दत्तं प्रश्नं भिन्नैः सह समाधानं कर्तव्यम् ।"
 
 #: MainQtWidget.cpp:531
 #, kde-format
@@ -1050,7 +1065,7 @@ msgstr "नूतनम्‌"
 #, kde-format
 msgctxt "@action go to the main screen"
 msgid "&Back"
-msgstr ""
+msgstr "&पृष्ठभागः"
 
 #: MainQtWidget.cpp:587
 #, kde-format
@@ -1074,7 +1089,7 @@ msgstr "परिवर्तनम्"
 #, kde-format
 msgctxt "Mixed Numbers Exercise"
 msgid "MixedNumbers"
-msgstr ""
+msgstr "मिश्रसंख्याः"
 
 #: MainQtWidget.cpp:611
 #, kde-format
@@ -1147,19 +1162,19 @@ msgstr "प्रश्नाः : १."
 #, kde-format
 msgctxt "@info:status the number of correct answers"
 msgid "Correct:"
-msgstr ""
+msgstr "उचितं:"
 
 #: StatisticsView.cpp:77
 #, kde-format
 msgctxt "@info:status the number of incorrect answers"
 msgid "Incorrect:"
-msgstr ""
+msgstr "अशुद्धम् : १."
 
 #: StatisticsView.cpp:83
 #, kde-format
 msgctxt "@info:status the number of skipped answers"
 msgid "Skipped:"
-msgstr ""
+msgstr "त्यक्तम् : १."
 
 #: StatisticsView.cpp:94
 #, kde-format
@@ -1180,7 +1195,7 @@ msgstr "एषा वर्तमानकाले त्यक्तकार�
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This part of the window shows the statistics."
-msgstr ""
+msgstr "विण्डो इत्यस्य अयं भागः सांख्यिकी दर्शयति ।"
 
 #: StatisticsView.cpp:110
 #, kde-format
@@ -1202,7 +1217,7 @@ msgstr "&पुनः सेट् कुर्वन्तु"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click this button to reset the statistics."
-msgstr ""
+msgstr "सांख्यिकी पुनः सेट् कर्तुं एतत् बटन् नुदन्तु ।"
 
 #. i18n: ectx: property (text), widget (QLabel, numberLabel)
 #: taskcolorsbase.ui:28
@@ -1250,7 +1265,7 @@ msgstr "संख्यानां फन्ट् परिवर्तयन�
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click this button to skip this question."
-msgstr ""
+msgstr "एतत् प्रश्नं त्यक्तुं एतत् बटन् नुदन्तु ।"
 
 #: TaskView.cpp:163
 #, kde-format
@@ -1268,22 +1283,22 @@ msgstr ""
 #, kde-format
 msgctxt "addition symbol"
 msgid "+"
-msgstr ""
+msgstr "+"
 
 #: TaskWidget.cpp:99
 #, kde-format
 msgctxt "subtraction symbol"
 msgid "−"
-msgstr ""
+msgstr "−"
 
 #: TaskWidget.cpp:102
 #, kde-format
 msgctxt "multiplication symbol"
 msgid "×"
-msgstr ""
+msgstr "×"
 
 #: TaskWidget.cpp:105
 #, kde-format
 msgctxt "division symbol"
 msgid "/"
-msgstr ""
+msgstr "/ ."
