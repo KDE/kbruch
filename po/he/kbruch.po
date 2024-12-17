@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-24 00:36+0000\n"
-"PO-Revision-Date: 2024-05-24 06:04+0300\n"
+"PO-Revision-Date: 2024-12-16 07:58+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 "X-Poedit-Bookmarks: -1,-1,-1,52,-1,-1,-1,-1,-1,-1\n"
 
 #, kde-format
@@ -930,7 +930,7 @@ msgstr "צורה מצומצמת:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to force the use of the reduced form."
-msgstr "לחץ כאן על מנת לכפות שימוש בצורה מצומצמת."
+msgstr "נא ללחוץ כאן כדי לכפות שימוש בצורה מצומצמת."
 
 #: MainQtWidget.cpp:265
 #, kde-format
