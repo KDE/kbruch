@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the kbruch package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-24 00:36+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-20 21:51+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -30,7 +32,7 @@ msgstr "भवतः ईमेलपत्राणि"
 #: AppMenuWidget.cpp:95
 #, kde-format
 msgid "KBruch modes:"
-msgstr "KBruch मोड्स् : १."
+msgstr "KBruch मोड्स् :"
 
 #: AppMenuWidget.cpp:102
 #, kde-format
@@ -814,7 +816,7 @@ msgstr "उत्तरम्‌:"
 #: MainQtWidget.cpp:108
 #, kde-format
 msgid "Operations:"
-msgstr "संचालनम् : १."
+msgstr "संचालनम् :"
 
 #: MainQtWidget.cpp:114 MainQtWidget.cpp:937
 #, kde-format
@@ -824,7 +826,7 @@ msgstr "अंकगणित"
 #: MainQtWidget.cpp:156
 #, kde-format
 msgid "Options:"
-msgstr "विकल्पाः : १."
+msgstr "विकल्पाः :"
 
 #: MainQtWidget.cpp:157
 #, kde-format
@@ -847,7 +849,7 @@ msgstr ""
 #: MainQtWidget.cpp:162 MainQtWidget.cpp:179
 #, kde-format
 msgid "Mixed number:"
-msgstr "मिश्रित संख्या : १."
+msgstr "मिश्रित संख्या :"
 
 #: MainQtWidget.cpp:163
 #, kde-format
@@ -883,7 +885,7 @@ msgstr "addition operator इत्यस्य उपयोगाय एतत�
 #: MainQtWidget.cpp:206
 #, kde-format
 msgid "Subtraction:"
-msgstr "घटावः : १."
+msgstr "घटावः :"
 
 #: MainQtWidget.cpp:207
 #, kde-format
@@ -894,7 +896,7 @@ msgstr "घटावसञ्चालकस्य उपयोगाय एत�
 #: MainQtWidget.cpp:222
 #, kde-format
 msgid "Multiplication:"
-msgstr "गुणनम् : १."
+msgstr "गुणनम् :"
 
 #: MainQtWidget.cpp:223
 #, kde-format
@@ -905,7 +907,7 @@ msgstr "गुणनसञ्चालकस्य उपयोगाय एत�
 #: MainQtWidget.cpp:238
 #, kde-format
 msgid "Division:"
-msgstr "विभागः : १."
+msgstr "विभागः :"
 
 #: MainQtWidget.cpp:239
 #, kde-format
@@ -916,7 +918,7 @@ msgstr "विभागसञ्चालकस्य उपयोगाय ए�
 #: MainQtWidget.cpp:254
 #, kde-format
 msgid "Reduced form:"
-msgstr "न्यूनीकृतं रूपम् : १."
+msgstr "न्यूनीकृतं रूपम् :"
 
 #: MainQtWidget.cpp:255
 #, kde-format
@@ -927,7 +929,7 @@ msgstr "न्यूनीकृतरूपस्य उपयोगं बा�
 #: MainQtWidget.cpp:265
 #, kde-format
 msgid "Number of terms:"
-msgstr "पदानाम् संख्या : १."
+msgstr "पदानाम् संख्या :"
 
 #: MainQtWidget.cpp:266 MainQtWidget.cpp:276
 #, kde-format
@@ -951,7 +953,7 @@ msgstr ""
 #: MainQtWidget.cpp:280
 #, kde-format
 msgid "Maximum denominator:"
-msgstr "उच्चतमः हरः : १."
+msgstr "उच्चतमः हरः :"
 
 #: MainQtWidget.cpp:290
 #, kde-format
@@ -1156,7 +1158,7 @@ msgstr "एषा वर्तमानसमाधानकार्यस्�
 #: StatisticsView.cpp:65
 #, kde-format
 msgid "Questions:"
-msgstr "प्रश्नाः : १."
+msgstr "प्रश्नाः :"
 
 #: StatisticsView.cpp:71
 #, kde-format
@@ -1168,13 +1170,13 @@ msgstr "उचितं:"
 #, kde-format
 msgctxt "@info:status the number of incorrect answers"
 msgid "Incorrect:"
-msgstr "अशुद्धम् : १."
+msgstr "अशुद्धम् :"
 
 #: StatisticsView.cpp:83
 #, kde-format
 msgctxt "@info:status the number of skipped answers"
 msgid "Skipped:"
-msgstr "त्यक्तम् : १."
+msgstr "त्यक्तम् :"
 
 #: StatisticsView.cpp:94
 #, kde-format
@@ -1235,7 +1237,7 @@ msgstr "संख्यानां वर्णं परिवर्तयन�
 #: taskcolorsbase.ui:54
 #, kde-format
 msgid "&Operation sign:"
-msgstr "&सञ्चालनचिह्नम् : १."
+msgstr "&सञ्चालनचिह्नम् :"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_operationColor)
 #: taskcolorsbase.ui:70
@@ -1247,7 +1249,7 @@ msgstr "ऑपरेशन चिह्नानां वर्णं परि
 #: taskcolorsbase.ui:86
 #, kde-format
 msgid "&Fraction bar:"
-msgstr "&अंशपट्टिका : १."
+msgstr "&अंशपट्टिका :"
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_fractionBarColor)
 #: taskcolorsbase.ui:96
