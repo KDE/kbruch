@@ -26,12 +26,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Sebastian Stein,Thorsten Mürell,Martin Ereth"
+msgstr "Deutsches KDE-Übersetzungsteam"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kbruch@hpfsc.de,thorsten@muerell.de,martin.ereth@arcor.de"
+msgstr "kde-i18n-de@kde.org"
 
 #: AppMenuWidget.cpp:95
 #, kde-format
