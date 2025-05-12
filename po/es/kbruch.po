@@ -1,20 +1,20 @@
-# translation of kbruch.po to Spanish
-# Copyright (C) 2003, 2004, 2005, 2007, 2008, 2009 Free Software Foundation, Inc.
+# Spanish translations for kbruch.po package.
+# Copyright (C) 2003-2025 This file is copyright:
+# This file is distributed under the same license as the kbruch package.
 #
-# Development-KDE, 2005.
-# Miguel Revilla Rodríguez <yo@miguelrevilla.com>, 2003, 2004.
-# Juan Manuel Garcia Molina <juanma@superiodico.net>, 2004.
-# Rafael Beccar <rafael.beccar@kdemail.net>, 2004, 2005.
-# Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008.
+# SPDX-FileCopyrightText: 2003, 2004 Miguel Revilla Rodríguez <yo@miguelrevilla.com>
+# SPDX-FileCopyrightText: 2004 Juan Manuel Garcia Molina <juanma@superiodico.net>
+# SPDX-FileCopyrightText: 2004, 2005 Rafael Beccar <rafael.beccar@kdemail.net>
+# SPDX-FileCopyrightText: 2007, 2008 Santiago Fernández Sancho <santi@kde-es.org>
 # SPDX-FileCopyrightText: 2008, 2009, 2010, 2011, 2013, 2020, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
-# Enrique Matias Sanchez (Quique) <cronopios@gmail.com>, 2009.
-# Rocio Gallego <traducciones@rociogallego.com>, 2014.
+# SPDX-FileCopyrightText: 2009 Enrique Matias Sanchez (Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2014 Rocio Gallego <traducciones@rociogallego.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-24 00:36+0000\n"
-"PO-Revision-Date: 2025-03-19 14:29+0100\n"
+"PO-Revision-Date: 2025-05-11 22:15+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
