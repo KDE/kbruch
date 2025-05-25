@@ -345,8 +345,8 @@ msgstr ""
 "els factors primers del nombre. Podeu afegir un factor primer prement el "
 "botó corresponent. Els factors primers escollits es mostraran en la línia "
 "d'entrada. No oblideu introduir tots els factors primers, fins i tot quan un "
-"factor primer es repetix diverses vegades. Cliqueu en el botó «Retrocés» per "
-"tal d'eliminar l'últim factor primer introduït."
+"factor primer es repetix diverses vegades. Cliqueu damunt del botó "
+"«Retrocés» per tal d'eliminar l'últim factor primer introduït."
 
 #: ExerciseMixedNumbers.cpp:96 TaskView.cpp:96
 #, kde-format
@@ -973,7 +973,7 @@ msgid ""
 "Choose the number of terms (2, 3, 4 or 5) you \n"
 "want for calculating fractions."
 msgstr ""
-"Escolliu el nombre de termes que voleu \n"
+"Trieu el nombre de termes que voleu \n"
 "per a calcular fraccions (2, 3, 4 o 5)."
 
 #: MainQtWidget.cpp:280
@@ -992,7 +992,7 @@ msgstr "El nombre màxim que es pot tindre com a comú denominador"
 msgid ""
 "Choose the number which will be the maximum for the main denominator: 10, "
 "20, 30, 40 or 50."
-msgstr "Escolliu el nombre màxim per al comú denominador: 10, 20, 30, 40 o 50."
+msgstr "Trieu el nombre màxim per al comú denominador: 10, 20, 30, 40 o 50."
 
 #: MainQtWidget.cpp:513
 #, kde-format
