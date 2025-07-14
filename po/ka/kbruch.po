@@ -1219,7 +1219,7 @@ msgstr ""
 #: StatisticsView.cpp:121
 #, kde-format
 msgid "&Reset"
-msgstr "&საწყისი მნიშვნელობებზე დაბრუნება"
+msgstr "ჩამოყ&რა"
 
 #: StatisticsView.cpp:122
 #, kde-format
