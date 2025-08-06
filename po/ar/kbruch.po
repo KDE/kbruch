@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-24 00:36+0000\n"
-"PO-Revision-Date: 2025-01-15 18:33+0400\n"
+"PO-Revision-Date: 2025-08-05 21:33+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -332,7 +332,7 @@ msgstr ""
 "الأولية للعدد. يمكنك إضافة عامل أولي بالنقر فوق الزر المقابل. ستظهر العوامل "
 "الأولية المختارة في حقل الإدخال. لا تنس إدخال جميع العوامل الأولية، حتى "
 "عندما يتكرر عامل أولي عدة مرات. انقر فوق مفتاح \"Backspace\" لإزالة آخر عامل "
-"أولي تم إدخاله."
+"أولي مُدخل."
 
 #: ExerciseMixedNumbers.cpp:96 TaskView.cpp:96
 #, kde-format
@@ -407,8 +407,8 @@ msgid ""
 "You entered the correct result, but not reduced. This question will be "
 "counted as not correctly solved."
 msgstr ""
-"لقد أدخلت النتيجة الصحيحة، ولكن لم يتم تصغيرها. سيحتسب هذا السؤال على أنه لم "
-"يحل بشكل صحيح."
+"لقد أدخلت النتيجة الصحيحة، ولكن لم تصغّر. سيحتسب هذا السؤال على أنه لم يحل "
+"بشكل صحيح."
 
 #: ExercisePercentage.cpp:84 ExercisePercentage.cpp:368
 #, kde-format
@@ -518,7 +518,7 @@ msgid "%2 of 1 painted part."
 msgid_plural "%2 of %1 painted parts."
 msgstr[0] "%2 من لا شيء."
 msgstr[1] "%2 من جزء مطلي."
-msgstr[2] "%2 من جزئين مطليين."
+msgstr[2] "%2 من جزأين مطليين."
 msgstr[3] "%2 من %1 أجزاء مطلية."
 msgstr[4] "%2 من %1 جزءًا مطلي."
 msgstr[5] "%2 من %1 جزء مطلي."
@@ -530,7 +530,7 @@ msgid "%2 of 1 painted part."
 msgid_plural "%2 of %1 painted parts."
 msgstr[0] "%2 من لا شيء."
 msgstr[1] "%2 من جزء مطلي."
-msgstr[2] "%2 من جزئين مطليين."
+msgstr[2] "%2 من جزأين مطليين."
 msgstr[3] "%2 من %1 أجزاء مطلية."
 msgstr[4] "%2 من %1 جزءًا مطلي."
 msgstr[5] "%2 من %1 جزء مطلي."
@@ -1135,7 +1135,7 @@ msgstr "تحويل"
 #: MainQtWidget.cpp:985
 #, kde-format
 msgid "Mixed Numbers"
-msgstr "أرقام مخطلتة"
+msgstr "أرقام مختلطة"
 
 #: MainQtWidget.cpp:1001
 #, kde-format
@@ -1238,7 +1238,7 @@ msgstr "&عدد:"
 #: taskcolorsbase.ui:38
 #, kde-format
 msgid "Change the color of the numbers"
-msgstr "غيّر لون الارقام"
+msgstr "غيّر لون الأرقام"
 
 #. i18n: ectx: property (text), widget (QLabel, operationLabel)
 #: taskcolorsbase.ui:54
@@ -1268,7 +1268,7 @@ msgstr "غيِّر لون شريط الكسر"
 #: taskfontsbase.ui:16
 #, kde-format
 msgid "Change the font of the numbers"
-msgstr "غيّر خط الارقام"
+msgstr "غيّر خط الأرقام"
 
 #: TaskView.cpp:153
 #, kde-format
