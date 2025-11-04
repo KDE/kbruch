@@ -578,7 +578,7 @@ msgstr ""
 "L'anneau intérieur représente la fraction de droite. %2\n"
 "\n"
 "Le bouton « Multiplier » multiplie chaque fraction. Essayez de modifier une "
-"des valeurs de la boîte de sélection !"
+"des valeurs de la boite de sélection !"
 
 #: KBruch.cpp:36
 #, kde-format
