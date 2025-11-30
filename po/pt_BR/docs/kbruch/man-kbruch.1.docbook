@@ -2,17 +2,21 @@
 <!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
 <!ENTITY % Brazilian-Portuguese "INCLUDE">
 ]>
+<!--
+SPDX-FileCopyrightText: 2005 Lauri Watts
+SPDX-License-Identifier: GFDL-1.2-only
+-->
 
 <refentry lang="&language;">
 <refentryinfo>
 <title
 >Manual do Usuário do &kbruch;</title>
 <author
->&Lauri.Watts;&Lauri.Watts.mail;</author>
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
 <date
->27/09/2015</date>
+>21/12/2020</date>
 <releaseinfo
->&kbruch; 5.0 (Applications 15.12)</releaseinfo>
+>Applications 20.12</releaseinfo>
 <productname
 >KDE Applications</productname>
 </refentryinfo>
@@ -32,7 +36,7 @@
 >kbruch</command
 ></refname>
 <refpurpose
->Aprender a calcular com frações</refpurpose>
+>Aprender a calcular com frações e porcentagens</refpurpose>
 </refnamediv>
 
 <refsynopsisdiv>
@@ -48,7 +52,7 @@
 <title
 >Descrição</title>
 <para
->O &kbruch; é um pequeno programa para praticar cálculos com frações. Estão disponíveis vários exercícios para este fim. O programa verifica os dados introduzidos e fornece um resultado.</para>
+>O &kbruch; é um pequeno programa para praticar cálculos com frações e porcentagens. Estão disponíveis vários exercícios para este fim. O programa verifica os dados introduzidos e fornece um resultado.</para>
 </refsect1>
 
 <refsect1>
@@ -57,9 +61,7 @@
 <para
 >A documentação mais detalhada para o usuário está disponível em <ulink url="help:/kbruch"
 >help:/kbruch</ulink
-> (tanto poderá inserir esta <acronym
->URL</acronym
-> no &konqueror;, como executar o comando <userinput
+> (tanto poderá inserir esta &URL; no &konqueror;, como executar o comando <userinput
 ><command
 >khelpcenter</command
 > <parameter
@@ -68,7 +70,7 @@
 >).</para>
 <para
 >Também existe mais informações disponível no <ulink url="https://edu.kde.org/kbruch/"
->site do kde-edu</ulink
+>site do &kde; de aplicativos educativos</ulink
 ></para>
 </refsect1>
 
