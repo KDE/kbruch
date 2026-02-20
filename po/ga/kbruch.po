@@ -33,11 +33,10 @@ msgid "KBruch modes:"
 msgstr "Móid KBruch:"
 
 #: AppMenuWidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Open standard KBruch"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open standard KBruch"
-msgstr "Oscail gnáth-KBruch"
+msgstr ""
 
 #: AppMenuWidget.cpp:108 MainQtWidget.cpp:75
 #, kde-format
@@ -45,11 +44,10 @@ msgid "Exercise"
 msgstr ""
 
 #: AppMenuWidget.cpp:117
-#, fuzzy, kde-format
-#| msgid "Open learning KBruch"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Open learning KBruch"
-msgstr "Oscail KBruch foghlama"
+msgstr ""
 
 #: AppMenuWidget.cpp:123 FractionRingWidget.cpp:52
 #, kde-format
@@ -68,11 +66,10 @@ msgid ">"
 msgstr ">"
 
 #: ExerciseCompare.cpp:88
-#, fuzzy, kde-format
-#| msgid "Click on this button to select the 'greater than' sign."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'greater than' sign."
-msgstr "Cliceáil an cnaipe seo chun an comhartha 'níos mó ná' a roghnú."
+msgstr ""
 
 #: ExerciseCompare.cpp:93
 #, kde-format
@@ -80,11 +77,10 @@ msgid "<"
 msgstr "<"
 
 #: ExerciseCompare.cpp:97
-#, fuzzy, kde-format
-#| msgid "Click on this button to select the 'less than' sign."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'less than' sign."
-msgstr "Cliceáil an cnaipe seo chun an comhartha 'níos lú ná' a roghnú."
+msgstr ""
 
 #: ExerciseCompare.cpp:102
 #, kde-format
@@ -92,11 +88,10 @@ msgid "="
 msgstr "="
 
 #: ExerciseCompare.cpp:106
-#, fuzzy, kde-format
-#| msgid "Click on this button to select the 'equals' sign."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to select the 'equals' sign."
-msgstr "Cliceáil an cnaipe seo chun an comhartha 'cothrom le' a roghnú."
+msgstr ""
 
 #: ExerciseCompare.cpp:118 ExerciseCompare.cpp:280 ExerciseConvert.cpp:135
 #: ExerciseFactorize.cpp:161 ExerciseMixedNumbers.cpp:158
@@ -107,18 +102,16 @@ msgstr "&Ná bac leis"
 
 #: ExerciseCompare.cpp:119 ExerciseConvert.cpp:136 ExerciseFactorize.cpp:162
 #: ExerciseMixedNumbers.cpp:159 ExercisePercentage.cpp:118
-#, fuzzy, kde-format
-#| msgid "Click on this button to skip this question."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to skip this question."
-msgstr "Cliceáil an cnaipe seo chun dul go dtí an chéad cheist eile."
+msgstr ""
 
 #: ExerciseCompare.cpp:134 MainQtWidget.cpp:532
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to compare two given fractions."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to compare two given fractions."
-msgstr "Sa cheacht seo caithfidh tú dhá chodán a chur i gcomparáid."
+msgstr ""
 
 #: ExerciseCompare.cpp:135
 #, kde-format
@@ -130,11 +123,10 @@ msgstr ""
 "ceart comparáide a roghnú."
 
 #: ExerciseCompare.cpp:246 ExerciseCompare.cpp:247 ExerciseCompare.cpp:248
-#, fuzzy, kde-format
-#| msgid "Click on this button to check your result."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to check your result."
-msgstr "Cliceáil an cnaipe seo chun do thoradh a sheiceáil."
+msgstr ""
 
 #: ExerciseCompare.cpp:295 ExerciseCompare.cpp:309 ExerciseCompare.cpp:323
 #, kde-format
@@ -142,18 +134,16 @@ msgid "&Next"
 msgstr "&Ar Aghaidh"
 
 #: ExerciseConvert.cpp:91 TaskView.cpp:108
-#, fuzzy, kde-format
-#| msgid "Enter the numerator of your result"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the numerator of your result"
-msgstr "Iontráil uimhreoir do thoraidh"
+msgstr ""
 
 #: ExerciseConvert.cpp:108 TaskView.cpp:125
-#, fuzzy, kde-format
-#| msgid "Enter the denominator of your result"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the denominator of your result"
-msgstr "Iontráil ainmneoir do thoraidh"
+msgstr ""
 
 #: ExerciseConvert.cpp:125 ExerciseConvert.cpp:174 ExerciseConvert.cpp:409
 #: ExerciseFactorize.cpp:170 ExerciseFactorize.cpp:275
@@ -169,24 +159,18 @@ msgstr "Sei&ceáil"
 #: ExerciseConvert.cpp:127 ExerciseConvert.cpp:371 ExerciseFactorize.cpp:171
 #: ExerciseFactorize.cpp:400 ExerciseMixedNumbers.cpp:150
 #: ExercisePercentage.cpp:109 ExercisePercentage.cpp:351
-#, fuzzy, kde-format
-#| msgid ""
-#| "Click on this button to check your result. The button will not work if "
-#| "you have not entered a result yet."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Click on this button to check your result. The button will not work if you "
 "have not entered a result yet."
 msgstr ""
-"Cliceáil an cnaipe seo chun do thoradh a sheiceáil. Ní oibríonn an cnaipe "
-"mura bhfuil toradh iontráilte agat fós."
 
 #: ExerciseConvert.cpp:146 MainQtWidget.cpp:538
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to convert a number into a fraction."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to convert a number into a fraction."
-msgstr "Sa cheacht seo, caithfidh tú uimhir a thiontú go codán."
+msgstr ""
 
 #: ExerciseConvert.cpp:147
 #, kde-format
@@ -196,11 +180,10 @@ msgid ""
 msgstr ""
 
 #: ExerciseConvert.cpp:309 ExerciseFactorize.cpp:349 ExercisePercentage.cpp:317
-#, fuzzy, kde-format
-#| msgid "Click on this button to get to the next question."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click on this button to get to the next question."
-msgstr "Cliceáil an cnaipe seo chun dul go dtí an chéad cheist eile."
+msgstr ""
 
 #: ExerciseConvert.cpp:354
 #, kde-format
@@ -269,74 +252,64 @@ msgid "19"
 msgstr "19"
 
 #: ExerciseFactorize.cpp:216
-#, fuzzy, kde-format
-#| msgid "Add prime factor 2."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 2."
-msgstr "Cuir fachtóir príomha 2 leis."
+msgstr ""
 
 #: ExerciseFactorize.cpp:217
-#, fuzzy, kde-format
-#| msgid "Add prime factor 3."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 3."
-msgstr "Cuir fachtóir príomha 3 leis."
+msgstr ""
 
 #: ExerciseFactorize.cpp:218
-#, fuzzy, kde-format
-#| msgid "Add prime factor 5."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 5."
-msgstr "Cuir fachtóir príomha 5 leis."
+msgstr ""
 
 #: ExerciseFactorize.cpp:219
-#, fuzzy, kde-format
-#| msgid "Add prime factor 7."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 7."
-msgstr "Cuir fachtóir príomha 7 leis."
+msgstr ""
 
 #: ExerciseFactorize.cpp:220
-#, fuzzy, kde-format
-#| msgid "Add prime factor 11."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 11."
-msgstr "Cuir fachtóir príomha 11 leis."
+msgstr ""
 
 #: ExerciseFactorize.cpp:221
-#, fuzzy, kde-format
-#| msgid "Add prime factor 13."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 13."
-msgstr "Cuir fachtóir príomha 13 leis."
+msgstr ""
 
 #: ExerciseFactorize.cpp:222
-#, fuzzy, kde-format
-#| msgid "Add prime factor 17."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 17."
-msgstr "Cuir fachtóir príomha 17 leis."
+msgstr ""
 
 #: ExerciseFactorize.cpp:223
-#, fuzzy, kde-format
-#| msgid "Add prime factor 19."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add prime factor 19."
-msgstr "Cuir fachtóir príomha 19 leis."
+msgstr ""
 
 #: ExerciseFactorize.cpp:228
-#, fuzzy, kde-format
-#| msgid "Removes the last entered prime factor."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Removes the last entered prime factor."
-msgstr "Baineann sé seo an fachtóir príomha a iontráladh is déanaí."
+msgstr ""
 
 #: ExerciseFactorize.cpp:245 MainQtWidget.cpp:550
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to factorize a given number."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to factorize a given number."
-msgstr "Sa cheacht seo caithfidh tú uimhir a fhachtóiriú."
+msgstr ""
 
 #: ExerciseFactorize.cpp:246
 #, kde-format
@@ -350,34 +323,30 @@ msgid ""
 msgstr ""
 
 #: ExerciseMixedNumbers.cpp:96 TaskView.cpp:96
-#, fuzzy, kde-format
-#| msgid "Change the color of the numbers"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the integer part of the fraction"
-msgstr "Athraigh dath na n-uimhreacha"
+msgstr ""
 
 #: ExerciseMixedNumbers.cpp:110
-#, fuzzy, kde-format
-#| msgid "Enter the numerator of your result"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the numerator of the fraction"
-msgstr "Iontráil uimhreoir do thoraidh"
+msgstr ""
 
 #: ExerciseMixedNumbers.cpp:127
-#, fuzzy, kde-format
-#| msgid "Enter the denominator of your result"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the denominator of the fraction"
-msgstr "Iontráil ainmneoir do thoraidh"
+msgstr ""
 
 #: ExerciseMixedNumbers.cpp:165 MainQtWidget.cpp:544
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to convert a number into a fraction."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
 "versa."
-msgstr "Sa cheacht seo, caithfidh tú uimhir a thiontú go codán."
+msgstr ""
 
 #: ExerciseMixedNumbers.cpp:166
 #, kde-format
@@ -387,24 +356,18 @@ msgid ""
 msgstr ""
 
 #: ExerciseMixedNumbers.cpp:245 TaskView.cpp:144 TaskView.cpp:383
-#, fuzzy, kde-format
-#| msgid ""
-#| "Click on this button to check your result. The button will not work if "
-#| "you have not entered a result yet."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Click this button to check your result. The button will not work if you have "
 "not entered a result yet."
 msgstr ""
-"Cliceáil an cnaipe seo chun do thoradh a sheiceáil. Ní oibríonn an cnaipe "
-"mura bhfuil toradh iontráilte agat fós."
 
 #: ExerciseMixedNumbers.cpp:286 TaskView.cpp:267
-#, fuzzy, kde-format
-#| msgid "Click this button to get the next question."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click this button to get the next question."
-msgstr "Cliceáil an cnaipe seo chun dul go dtí an chéad cheist eile."
+msgstr ""
 
 #: ExerciseMixedNumbers.cpp:340 TaskView.cpp:356
 #, kde-format
@@ -434,18 +397,16 @@ msgid "%1% of %2 = "
 msgstr "%1% de %2 = "
 
 #: ExercisePercentage.cpp:91
-#, fuzzy, kde-format
-#| msgid "Enter the result of percentage question"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter the result of percentage question"
-msgstr "Iontráil toradh na ceiste céatadáin"
+msgstr ""
 
 #: ExercisePercentage.cpp:132 MainQtWidget.cpp:556
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to work with percentage questions."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to work with percentage questions."
-msgstr "Sa cheacht seo caithfidh tú obair a dhéanamh le céatadáin."
+msgstr ""
 
 #: ExercisePercentage.cpp:133
 #, kde-format
@@ -572,10 +533,9 @@ msgid "Learn calculating with fractions"
 msgstr ""
 
 #: KBruch.cpp:40
-#, fuzzy, kde-format
-#| msgid "(c) 2002-2011, Sebastian Stein"
+#, kde-format
 msgid "© 2002-2011, Sebastian Stein"
-msgstr "© 2002-2011, Sebastian Stein"
+msgstr ""
 
 #: KBruch.cpp:41
 #, kde-format
@@ -715,10 +675,9 @@ msgstr "Socraigh luach uasta an phríomhainmneora."
 
 #. i18n: ectx: label, entry, group (Task)
 #: kbruch.kcfg:54
-#, fuzzy, kde-format
-#| msgid "Number of fractions"
+#, kde-format
 msgid "Answer reduced fractions"
-msgstr "Líon na gcodán"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry, group (Task)
 #: kbruch.kcfg:55
@@ -754,10 +713,9 @@ msgstr ""
 #. i18n: ectx: label, entry, group (Statistics)
 #. i18n: ectx: whatsthis, entry, group (Statistics)
 #: kbruch.kcfg:77 kbruch.kcfg:78
-#, fuzzy, kde-format
-#| msgid "Number of solved tasks"
+#, kde-format
 msgid "Number of correctly solved tasks"
-msgstr "Líon na dtascanna réitithe"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (Statistics)
 #: kbruch.kcfg:82
@@ -774,10 +732,9 @@ msgstr "Líon iomlán na dtascanna réitithe"
 #. i18n: ectx: label, entry, group (Statistics)
 #. i18n: ectx: whatsthis, entry, group (Statistics)
 #: kbruch.kcfg:87 kbruch.kcfg:88
-#, fuzzy, kde-format
-#| msgid "Number of solved tasks"
+#, kde-format
 msgid "Number of skipped tasks"
-msgstr "Líon na dtascanna réitithe"
+msgstr ""
 
 #. i18n: ectx: label, entry (numberColor), group (TaskViewer)
 #. i18n: ectx: whatsthis, entry (numberColor), group (TaskViewer)
@@ -789,26 +746,23 @@ msgstr "Dath na n-uimhreacha san amharc tascanna"
 #. i18n: ectx: label, entry (operationColor), group (TaskViewer)
 #. i18n: ectx: whatsthis, entry (operationColor), group (TaskViewer)
 #: kbruch.kcfg:100 kbruch.kcfg:101
-#, fuzzy, kde-format
-#| msgid "Color of the numbers in the task view"
+#, kde-format
 msgid "Color of the operation signs in the task view"
-msgstr "Dath na n-uimhreacha san amharc tascanna"
+msgstr ""
 
 #. i18n: ectx: label, entry (fractionBarColor), group (TaskViewer)
 #. i18n: ectx: whatsthis, entry (fractionBarColor), group (TaskViewer)
 #: kbruch.kcfg:105 kbruch.kcfg:106
-#, fuzzy, kde-format
-#| msgid "Color of the numbers in the task view"
+#, kde-format
 msgid "Color of the fraction bars in the task view"
-msgstr "Dath na n-uimhreacha san amharc tascanna"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (TaskViewer)
 #. i18n: ectx: whatsthis, entry, group (TaskViewer)
 #: kbruch.kcfg:110 kbruch.kcfg:111
-#, fuzzy, kde-format
-#| msgid "Color of the numbers in the task view"
+#, kde-format
 msgid "Font used for the task view"
-msgstr "Dath na n-uimhreacha san amharc tascanna"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (TaskViewer)
 #: kbruch.kcfg:115
@@ -850,11 +804,10 @@ msgid "Options:"
 msgstr "Roghanna:"
 
 #: MainQtWidget.cpp:157
-#, fuzzy, kde-format
-#| msgid "Set the options to solve the exercises."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the options to solve the exercises."
-msgstr "Socraigh na roghanna chun na ceachtanna a dhéanamh."
+msgstr ""
 
 #: MainQtWidget.cpp:158
 #, kde-format
@@ -892,11 +845,10 @@ msgid "Addition:"
 msgstr "Suimiú:"
 
 #: MainQtWidget.cpp:191
-#, fuzzy, kde-format
-#| msgid "Check this to use addition operator."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use addition operator."
-msgstr "Cuir tic anseo chun oibreoir suimiúcháin a úsáid."
+msgstr ""
 
 #: MainQtWidget.cpp:206
 #, kde-format
@@ -904,11 +856,10 @@ msgid "Subtraction:"
 msgstr "Dealú:"
 
 #: MainQtWidget.cpp:207
-#, fuzzy, kde-format
-#| msgid "Check this to use subtraction operator."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use subtraction operator."
-msgstr "Cuir tic anseo chun oibreoir dealaithe a úsáid."
+msgstr ""
 
 #: MainQtWidget.cpp:222
 #, kde-format
@@ -916,11 +867,10 @@ msgid "Multiplication:"
 msgstr "Iolrú:"
 
 #: MainQtWidget.cpp:223
-#, fuzzy, kde-format
-#| msgid "Check this to use multiplication operator."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use multiplication operator."
-msgstr "Cuir tic anseo chun oibreoir iolrúcháin a úsáid."
+msgstr ""
 
 #: MainQtWidget.cpp:238
 #, kde-format
@@ -928,11 +878,10 @@ msgid "Division:"
 msgstr "Roinnt:"
 
 #: MainQtWidget.cpp:239
-#, fuzzy, kde-format
-#| msgid "Check this to use division operator."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this to use division operator."
-msgstr "Cuir tic anseo chun oibreoir roinnte a úsáid."
+msgstr ""
 
 #: MainQtWidget.cpp:254
 #, kde-format
@@ -951,17 +900,12 @@ msgid "Number of terms:"
 msgstr "Líon na dtéarmaí:"
 
 #: MainQtWidget.cpp:266 MainQtWidget.cpp:276
-#, fuzzy, kde-format
-#| msgid ""
-#| "The number of \n"
-#| "terms you want"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "The number of \n"
 "terms you want"
 msgstr ""
-"Líon na dtéarmaí \n"
-"a theastaíonn uait"
 
 #: MainQtWidget.cpp:277
 #, kde-format
@@ -978,11 +922,10 @@ msgid "Maximum denominator:"
 msgstr "Ainmneoir is mó:"
 
 #: MainQtWidget.cpp:290
-#, fuzzy, kde-format
-#| msgid "Set the maximum value of the main denominator."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The maximum number you can have as main denominator"
-msgstr "Socraigh luach uasta an phríomhainmneora."
+msgstr ""
 
 #: MainQtWidget.cpp:291
 #, kde-format
@@ -992,11 +935,10 @@ msgid ""
 msgstr ""
 
 #: MainQtWidget.cpp:513
-#, fuzzy, kde-format
-#| msgid "Reset statistics and set a new task."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset statistics and set a new task."
-msgstr "Athshocraigh na staitisticí agus socraigh tasc nua."
+msgstr ""
 
 #: MainQtWidget.cpp:518
 #, kde-format
@@ -1004,11 +946,10 @@ msgid "Back"
 msgstr "Siar"
 
 #: MainQtWidget.cpp:520
-#, fuzzy, kde-format
-#| msgid "Go back to Modes screen."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Go back to Modes screen."
-msgstr "Téigh siar go dtí scáileán na Mód."
+msgstr ""
 
 #: MainQtWidget.cpp:525
 #, kde-format
@@ -1022,11 +963,10 @@ msgstr ""
 "Uimhríocht"
 
 #: MainQtWidget.cpp:526 TaskView.cpp:162
-#, fuzzy, kde-format
-#| msgid "In this exercise you have to convert a number into a fraction."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "In this exercise you have to solve a given question with fractions."
-msgstr "Sa cheacht seo, caithfidh tú uimhir a thiontú go codán."
+msgstr ""
 
 #: MainQtWidget.cpp:531
 #, kde-format
@@ -1220,11 +1160,10 @@ msgid "This is the current total number of skipped tasks."
 msgstr ""
 
 #: StatisticsView.cpp:109
-#, fuzzy, kde-format
-#| msgid "This part of the window shows the statistics."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "This part of the window shows the statistics."
-msgstr "Taispeántar na staitisticí sa chuid seo den fhuinneog."
+msgstr ""
 
 #: StatisticsView.cpp:110
 #, kde-format
@@ -1240,11 +1179,10 @@ msgid "&Reset"
 msgstr "Athshoc&raigh"
 
 #: StatisticsView.cpp:122
-#, fuzzy, kde-format
-#| msgid "Click this button to reset the statistics."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click this button to reset the statistics."
-msgstr "Cliceáil an cnaipe chun na staitisticí a athshocrú."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, numberLabel)
 #: taskcolorsbase.ui:28
@@ -1260,45 +1198,39 @@ msgstr "Athraigh dath na n-uimhreacha"
 
 #. i18n: ectx: property (text), widget (QLabel, operationLabel)
 #: taskcolorsbase.ui:54
-#, fuzzy, kde-format
-#| msgid "Operations:"
+#, kde-format
 msgid "&Operation sign:"
-msgstr "Oibríochtaí:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_operationColor)
 #: taskcolorsbase.ui:70
-#, fuzzy, kde-format
-#| msgid "Change the color of the numbers"
+#, kde-format
 msgid "Change the color of the operation signs"
-msgstr "Athraigh dath na n-uimhreacha"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, fractionBarLabel)
 #: taskcolorsbase.ui:86
-#, fuzzy, kde-format
-#| msgid "Subtraction:"
+#, kde-format
 msgid "&Fraction bar:"
-msgstr "Dealú:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_fractionBarColor)
 #: taskcolorsbase.ui:96
-#, fuzzy, kde-format
-#| msgid "Change the color of the numbers"
+#, kde-format
 msgid "Change the color of the fraction bar"
-msgstr "Athraigh dath na n-uimhreacha"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KFontChooser, kcfg_taskFont)
 #: taskfontsbase.ui:16
-#, fuzzy, kde-format
-#| msgid "Change the color of the numbers"
+#, kde-format
 msgid "Change the font of the numbers"
-msgstr "Athraigh dath na n-uimhreacha"
+msgstr ""
 
 #: TaskView.cpp:153
-#, fuzzy, kde-format
-#| msgid "Click on this button to skip this question."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Click this button to skip this question."
-msgstr "Cliceáil an cnaipe seo chun dul go dtí an chéad cheist eile."
+msgstr ""
 
 #: TaskView.cpp:163
 #, kde-format
@@ -1332,46 +1264,3 @@ msgstr ""
 msgctxt "division symbol"
 msgid "/"
 msgstr "/"
-
-#~ msgid "Freestyle"
-#~ msgstr "Saorstíl"
-
-#~ msgid "Original Author"
-#~ msgstr "An Chéad Údar"
-
-#~ msgid " or "
-#~ msgstr " nó "
-
-#~ msgid "Multiply"
-#~ msgstr "Iolraigh"
-
-#~ msgid "General"
-#~ msgstr "Ginearálta"
-
-#~ msgctxt "@info:status the given answer was correct"
-#~ msgid "CORRECT"
-#~ msgstr "CEART"
-
-#~ msgctxt "@info:status the given answer was incorrect"
-#~ msgid "WRONG"
-#~ msgstr "MÍCHEART"
-
-#~ msgctxt "@info:status the answer given was correct"
-#~ msgid "CORRECT"
-#~ msgstr "CEART"
-
-#~ msgctxt "@info:status the answer given was incorrect"
-#~ msgid "WRONG"
-#~ msgstr "MÍCHEART"
-
-#~ msgid "Terms:"
-#~ msgstr "Téarmaí:"
-
-#~ msgid "Maximal Main Denominator"
-#~ msgstr "Príomhainmneoir Is Mó"
-
-#~ msgid "Main Toolbar"
-#~ msgstr "Príomhbharra Uirlisí"
-
-#~ msgid "Tasks so far:"
-#~ msgstr "Tascanna go dtí seo:"
