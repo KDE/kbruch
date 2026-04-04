@@ -3,31 +3,34 @@
 # SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2014, 2017, 2020, 2024 Vít Pelčák <vit@pelcak.org>
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012.
 # SPDX-FileCopyrightText: 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <filipek.libor@protonmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:48+0000\n"
-"PO-Revision-Date: 2024-06-11 09:33+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
-"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2026-04-03 22:38+0200\n"
+"Last-Translator: Libor Filípek <filipek.libor@protonmail.com>\n"
+"Language-Team: \n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Martina Blahová,Lukáš Tinkl,Klára Cihlářová,Pavel Fric"
+msgstr "Martina Blahová,Lukáš Tinkl,Klára Cihlářová,Pavel Fric,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "mblah@gvid.cz,lukas@kde.org,koty@seznam.cz, pavelfric@seznam.cz"
+msgstr ""
+"mblah@gvid.cz,lukas@kde.org,koty@seznam.cz,pavelfric@seznam.cz,libor."
+"filipek@gmail.com"
 
 #: AppMenuWidget.cpp:95
 #, kde-format
@@ -332,6 +335,12 @@ msgid ""
 "repeats several times. Click the 'Backspace' button to remove the last "
 "entered prime factor."
 msgstr ""
+"V tomto cvičení máte za úkol rozložit dané číslo na prvočísla. Musíte zadat "
+"všechna prvočísla, na která se číslo dělí. Prvočíslo můžete přidat kliknutím "
+"na příslušné tlačítko. Zvolená prvočísla se zobrazí ve vstupním poli. "
+"Nezapomeňte zadat všechna prvočísla, i když se některé z nich opakuje "
+"několikrát. Kliknutím na tlačítko \"Zpět\" odstraníte poslední zadané "
+"prvočíslo."
 
 #: ExerciseMixedNumbers.cpp:96 TaskView.cpp:96
 #, kde-format
@@ -365,6 +374,8 @@ msgid ""
 "In this exercise you have to convert a mixed number into a ratio and vice "
 "versa. Do not forget to reduce the result."
 msgstr ""
+"V tomto cvičení musíte převést smíšené číslo do poměru a obráceně. "
+"Nezapomeňte výsledek zkrátit."
 
 #: ExerciseMixedNumbers.cpp:245 TaskView.cpp:144 TaskView.cpp:383
 #, kde-format
@@ -388,8 +399,8 @@ msgid ""
 "You entered 0 as the denominator. This means division by zero, which is not "
 "allowed. This question will be counted as not correctly solved."
 msgstr ""
-"Zadali jste 0 jako jmenovatel. Dělení nulou však není povoleno. Tato úloha "
-"bude započítána jako vyřešená nesprávně."
+"Zadali jste 0 jako jmenovatel. Dělení nulou však není povoleno. Tato otázka "
+"bude vyhodnocena jako nesprávně vyřešená."
 
 #: ExerciseMixedNumbers.cpp:347 TaskView.cpp:366
 #, kde-format
@@ -397,6 +408,8 @@ msgid ""
 "You entered the correct result, but not in the mixed number notation. This "
 "question will be counted as not correctly solved."
 msgstr ""
+"Zadali jste správný výsledek, ale ne ve formátu smíšeného čísla. Tato otázka "
+"bude vyhodnocena jako nesprávně vyřešená."
 
 #: ExerciseMixedNumbers.cpp:350 TaskView.cpp:363
 #, kde-format
@@ -404,8 +417,8 @@ msgid ""
 "You entered the correct result, but not reduced. This question will be "
 "counted as not correctly solved."
 msgstr ""
-"Zadali jste správný výsledek, ale ne v základním tvaru. Tato úloha nebude "
-"brána jako nesprávně vyřešená."
+"Zadali jste správný výsledek, ale ne v základním tvaru. Tato otázka bude "
+"vyhodnocena jako nesprávně vyřešená"
 
 #: ExercisePercentage.cpp:84 ExercisePercentage.cpp:368
 #, kde-format
@@ -537,6 +550,12 @@ msgid ""
 "The 'Expand' spinboxes expand each fraction. Try to change one of the "
 "spinbox values!"
 msgstr ""
+"Vnější kruh představuje levou část zlomku. %1\n"
+"\n"
+"Vnitřní kruh představuje pravou část zlomku. %2\n"
+"\n"
+"Pomocí rolovacích políček „Rozbalit“ lze jednotlivé části zlomku rozbalit. "
+"Zkuste změnit jednu z hodnot v číselníku!"
 
 #: KBruch.cpp:36
 #, kde-format
