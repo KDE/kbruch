@@ -8,29 +8,30 @@ msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:48+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-05-30 17:05-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "ئابدۇقادىر ئابلىز, غەيرەت كەنجى"
+msgstr "ئابدۇقادىر ئابلىز، غەيرەت كەنجى"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "sahran.ug@gmail.com,  gheyret@gmail.com"
+msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 
 #: AppMenuWidget.cpp:95
 #, kde-format
 msgid "KBruch modes:"
-msgstr "KBruch"
+msgstr ""
 
 #: AppMenuWidget.cpp:102
 #, kde-format
@@ -41,7 +42,7 @@ msgstr ""
 #: AppMenuWidget.cpp:108 MainQtWidget.cpp:75
 #, kde-format
 msgid "Exercise"
-msgstr ""
+msgstr "مەشىق"
 
 #: AppMenuWidget.cpp:117
 #, kde-format
@@ -63,7 +64,7 @@ msgstr "ھۆججەت(&F)"
 #: ExerciseCompare.cpp:84
 #, kde-format
 msgid ">"
-msgstr ">"
+msgstr ""
 
 #: ExerciseCompare.cpp:88
 #, kde-format
@@ -74,7 +75,7 @@ msgstr ""
 #: ExerciseCompare.cpp:93
 #, kde-format
 msgid "<"
-msgstr "<"
+msgstr ""
 
 #: ExerciseCompare.cpp:97
 #, kde-format
@@ -202,7 +203,7 @@ msgstr ""
 #: ExerciseMixedNumbers.cpp:287 ExercisePercentage.cpp:383 TaskView.cpp:437
 #, kde-format
 msgid "N&ext"
-msgstr ""
+msgstr "كېيىنكى(&E)"
 
 #: ExerciseFactorize.cpp:154
 #, kde-format
@@ -418,7 +419,7 @@ msgctxt ""
 "expanding is not the same as multiplying. For example, expanding a ratio by "
 "2 basically means multiplying the ratio with 2/2 and not with 2/1!"
 msgid "Expand"
-msgstr "كېڭەيت"
+msgstr "ياي"
 
 #: FractionRingWidget.cpp:133 MainQtWidget.cpp:511
 #, kde-format
@@ -435,7 +436,7 @@ msgstr "يېڭى(&N)"
 #, kde-format
 msgctxt "@action go to the main screen"
 msgid "Back"
-msgstr "كەينى"
+msgstr "قايت"
 
 #: FractionRingWidget.cpp:201
 #, kde-format
@@ -447,7 +448,7 @@ msgstr "كۆرسەتمە(Hint)"
 #: FractionRingWidget.cpp:229 MainQtWidget.cpp:836 taskcolorsbase.ui:16
 #, kde-format
 msgid "Colors"
-msgstr "رەڭلەر"
+msgstr "رەڭ"
 
 #: FractionRingWidget.cpp:349 FractionRingWidget.cpp:377
 #, kde-format
@@ -534,7 +535,7 @@ msgstr ""
 #: KBruch.cpp:42
 #, kde-format
 msgid "Paulo Cattai"
-msgstr "Paulo Cattai"
+msgstr ""
 
 #: KBruch.cpp:42 KBruch.cpp:43 KBruch.cpp:44 KBruch.cpp:45 KBruch.cpp:46
 #, kde-format
@@ -544,22 +545,22 @@ msgstr ""
 #: KBruch.cpp:43
 #, kde-format
 msgid "Danilo Balzaque"
-msgstr "Danilo Balzaque"
+msgstr ""
 
 #: KBruch.cpp:44
 #, kde-format
 msgid "Roberto Cunha"
-msgstr "Roberto Cunha"
+msgstr ""
 
 #: KBruch.cpp:45
 #, kde-format
 msgid "Tadeu Araujo"
-msgstr "Tadeu Araujo"
+msgstr ""
 
 #: KBruch.cpp:46
 #, kde-format
 msgid "Tiago Porangaba"
-msgstr "Tiago Porangaba"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (General)
 #: kbruch.kcfg:11
@@ -785,7 +786,7 @@ msgstr "ھېساب(ئارىفمېتىكا)"
 #: MainQtWidget.cpp:156
 #, kde-format
 msgid "Options:"
-msgstr "تاللانمىلار:"
+msgstr "تاللانما:"
 
 #: MainQtWidget.cpp:157
 #, kde-format
@@ -925,7 +926,7 @@ msgstr ""
 #: MainQtWidget.cpp:518
 #, kde-format
 msgid "Back"
-msgstr "كەينى"
+msgstr "قايت"
 
 #: MainQtWidget.cpp:520
 #, kde-format
@@ -1012,7 +1013,7 @@ msgstr "يېڭى"
 #, kde-format
 msgctxt "@action go to the main screen"
 msgid "&Back"
-msgstr "كەينى(&B)"
+msgstr "قايت(&B)"
 
 #: MainQtWidget.cpp:587
 #, kde-format
@@ -1053,7 +1054,7 @@ msgstr "پىرسەنت"
 #: MainQtWidget.cpp:839
 #, kde-format
 msgid "Fonts"
-msgstr "خەت نۇسخىلىرى"
+msgstr "خەت نۇسخا"
 
 #: MainQtWidget.cpp:921
 #, kde-format
@@ -1224,7 +1225,7 @@ msgstr ""
 #, kde-format
 msgctxt "addition symbol"
 msgid "+"
-msgstr ""
+msgstr "+"
 
 #: TaskWidget.cpp:99
 #, kde-format
@@ -1236,10 +1237,10 @@ msgstr ""
 #, kde-format
 msgctxt "multiplication symbol"
 msgid "×"
-msgstr ""
+msgstr "×"
 
 #: TaskWidget.cpp:105
 #, kde-format
 msgctxt "division symbol"
 msgid "/"
-msgstr "/"
+msgstr ""
