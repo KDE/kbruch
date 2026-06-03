@@ -49,6 +49,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="sl">KBruch</name>
   <name xml:lang="sv">Kbruch</name>
   <name xml:lang="tr">KBruch</name>
+  <name xml:lang="ug">KBruch</name>
   <name xml:lang="uk">KBruch</name>
   <name xml:lang="zh-CN">KBruch</name>
   <name xml:lang="zh-TW">KBruch</name>
@@ -89,6 +90,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="sl">Vaje z ulomki</summary>
   <summary xml:lang="sv">Övningar med bråk</summary>
   <summary xml:lang="tr">Kesir Alıştırmaları Yap</summary>
+  <summary xml:lang="ug">كەسىر سان مەشقى</summary>
   <summary xml:lang="uk">Вправи з дробами</summary>
   <summary xml:lang="zh-CN">分数练习</summary>
   <summary xml:lang="zh-TW">練習分數</summary>
@@ -168,6 +170,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="sl">Zmožnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="tr">Özellikleri:</p>
+    <p xml:lang="ug">ئىقتىدار:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="zh-CN">功能：</p>
     <p xml:lang="zh-TW">功能:</p>
