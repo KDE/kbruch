@@ -207,7 +207,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 </screenshot>
 
 <para
->Alle Übungen werden in diesem Fenster ausgeführt. Damit kann &kbruch; auch von Kindern benutzt werden. Das Fenster ist in fünf Bereiche aufgeteilt: <itemizedlist
+>Alle Übungen werden in diesem Fenster ausgeführt. Damit kann &kbruch; auch von Kindern verwendet werden. Das Fenster ist in fünf Bereiche aufgeteilt: <itemizedlist
 ><listitem
 ><para
 >die Menüleiste mit den drei Menüs <guimenu
@@ -454,7 +454,7 @@ right.
 ></term>
 <listitem
 ><para
->Die höchste Zahl für den Hauptnenner, die in &kbruch; für eine Aufgabe benutzt wird. Der Wert liegt zwischen 10 und 50.</para
+>Die höchste Zahl für den Hauptnenner, die in &kbruch; für eine Aufgabe verwendet wird. Der Wert liegt zwischen 10 und 50.</para
 ></listitem>
 </varlistentry>
 </variablelist>
