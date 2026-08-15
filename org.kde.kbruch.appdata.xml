@@ -372,6 +372,9 @@ SPDX-License-Identifier: CC0-1.0
   <url type="donation">https://www.kde.org/community/donations/?app=kbruch&amp;source=appdata</url>
   <url type="vcs-browser">https://commits.kde.org/kbruch</url>
   <url type="contribute">https://community.kde.org/Get_Involved</url>
+  <custom>
+    <value key="KDE::mailinglist">kde-edu@kde.org</value>
+  </custom>
   <screenshots>
     <screenshot type="default">
       <caption>Exercising fractions with KBruch</caption>
