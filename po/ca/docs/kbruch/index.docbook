@@ -102,7 +102,7 @@ SPDX-License-Identifier: GFDL-1.2-only
 ><para
 ><guilabel
 >Aritmètica</guilabel
->: En aquest exercici heu de resoldre un càlcul de fracció. Cal que escriviu el resultat, &ead;, el numerador i el denominador. Aquest és l'exercici principal. </para
+>: En aquest exercici heu de resoldre un càlcul de fracció. Cal escriure el resultat, &ead;, el numerador i el denominador. Aquest és l'exercici principal. </para
 ></listitem>
 	<listitem
 ><para
@@ -587,7 +587,7 @@ before generating a new one.
 >Resposta:</guilabel
 > està sense marcar, l'entrada a l'esquerra per a la part íntegra de la fracció restarà oculta. A continuació, utilitzeu només les entrades del numerador i denominador. </para>
 <para
->Si el resultat és negatiu, cal que escriviu el signe menys davant el numerador o el denominador. Si el resultat és 0, escriviu 0 en el numerador. Si el resultat té com a denominador 1, heu de deixar el quadre buit. </para>
+>Si el resultat és negatiu, cal escriure el signe menys davant el numerador o el denominador. Si el resultat és 0, escrigueu 0 en el numerador. Si el resultat té com a denominador 1, heu de deixar el quadre buit. </para>
 <para
 >Després d'escriure el resultat, hauríeu de fer clic al botó <guibutton
 >Comprova</guibutton
