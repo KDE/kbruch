@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: kbruch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:48+0000\n"
-"PO-Revision-Date: 2026-05-30 17:05-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
-"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -86,7 +86,7 @@ msgstr ""
 #: ExerciseCompare.cpp:102
 #, kde-format
 msgid "="
-msgstr "="
+msgstr ""
 
 #: ExerciseCompare.cpp:106
 #, kde-format
@@ -208,47 +208,47 @@ msgstr "كېيىنكى(&E)"
 #: ExerciseFactorize.cpp:154
 #, kde-format
 msgid "Backspace"
-msgstr "Backspace"
+msgstr ""
 
 #: ExerciseFactorize.cpp:198
 #, kde-format
 msgid "2"
-msgstr "2"
+msgstr ""
 
 #: ExerciseFactorize.cpp:199
 #, kde-format
 msgid "3"
-msgstr "3"
+msgstr ""
 
 #: ExerciseFactorize.cpp:200
 #, kde-format
 msgid "5"
-msgstr "5"
+msgstr ""
 
 #: ExerciseFactorize.cpp:201
 #, kde-format
 msgid "7"
-msgstr "7"
+msgstr ""
 
 #: ExerciseFactorize.cpp:202
 #, kde-format
 msgid "11"
-msgstr "11"
+msgstr ""
 
 #: ExerciseFactorize.cpp:203
 #, kde-format
 msgid "13"
-msgstr "13"
+msgstr ""
 
 #: ExerciseFactorize.cpp:204
 #, kde-format
 msgid "17"
-msgstr "17"
+msgstr ""
 
 #: ExerciseFactorize.cpp:205
 #, kde-format
 msgid "19"
-msgstr "19"
+msgstr ""
 
 #: ExerciseFactorize.cpp:216
 #, kde-format
@@ -510,7 +510,7 @@ msgstr ""
 #: KBruch.cpp:36
 #, kde-format
 msgid "KBruch"
-msgstr "KBruch"
+msgstr ""
 
 #: KBruch.cpp:38
 #, kde-format
@@ -1225,7 +1225,7 @@ msgstr ""
 #, kde-format
 msgctxt "addition symbol"
 msgid "+"
-msgstr "+"
+msgstr ""
 
 #: TaskWidget.cpp:99
 #, kde-format
@@ -1237,7 +1237,7 @@ msgstr ""
 #, kde-format
 msgctxt "multiplication symbol"
 msgid "×"
-msgstr "×"
+msgstr ""
 
 #: TaskWidget.cpp:105
 #, kde-format
