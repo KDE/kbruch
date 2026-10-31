@@ -1335,22 +1335,3 @@ msgstr "×"
 msgctxt "division symbol"
 msgid "/"
 msgstr "/"
-
-#~ msgid "Freestyle"
-#~ msgstr "Estil lliure"
-
-#~ msgid "Original Author"
-#~ msgstr "Autor original"
-
-#~ msgid ""
-#~ "Set if the fractions will appear as mixed numbers or not in the solution "
-#~ "(mixed number example: 1 4/5 = 9/5 )."
-#~ msgstr ""
-#~ "Estableix si les fraccions apareixeran o no en forma mixta en la "
-#~ "solució(exemple de fracció mixta: 1·4/5 = 9/5)."
-
-#~ msgid " or "
-#~ msgstr " o "
-
-#~ msgid "Multiply"
-#~ msgstr "Multiplica"
