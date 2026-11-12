@@ -811,7 +811,7 @@ msgstr "Skrur på visningen også som et blandet tall"
 msgid ""
 "Enables/disables showing the result also in the special mixed-number "
 "notation."
-msgstr "Skrur av/på visningen også som et blandet tall."
+msgstr "Skrur på/av visningen også som et blandet tall."
 
 #: MainQtWidget.cpp:106
 #, kde-format
