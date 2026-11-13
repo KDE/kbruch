@@ -1,0 +1,963 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY kappname "&kbruch;">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Arabic "INCLUDE"
+><!-- change language only here -->
+]>
+<!--
+SPDX-FileCopyrightText: 2001-2005 Sebastian Stein <seb.kde@hpfsc.de>
+SPDX-FileCopyrightText: 2008 Anne-Marie Mahfouf
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+<book id="kbruch" lang="&language;">
+
+<bookinfo>
+<title
+>دليل الكسور</title>
+
+<authorgroup>
+<author
+><firstname
+>Sebastian</firstname
+> <surname
+>Stein</surname
+> <email
+>seb.kde@hpfsc.de</email
+> </author>
+<author
+>&Anne-Marie.Mahfouf; </author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<copyright>
+<year
+>2001-2005</year>
+<holder
+>Sebastian Stein</holder>
+</copyright>
+<copyright>
+<year
+>2008</year>
+<holder
+>&Anne-Marie.Mahfouf;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2020-12-21</date>
+<releaseinfo
+>تطبيقات 20.12</releaseinfo>
+
+<abstract>
+<para
+>الكسور هو برنامج صغير لممارسة الحساب باستخدام الكسور والنسب المئوية. توجد تمارين مختلفة لهذا الغرض ويمكنك استخدام وضع التعلم للتدرب على الكسور. يتحقق البرنامج مدخلات المستخدم ويعطي التغذية الراجعة. </para>
+
+</abstract>
+
+<keywordset>
+<keyword
+>كيدي</keyword>
+<keyword
+>تعليم</keyword>
+<keyword
+>كسر</keyword>
+<keyword
+>نسبة مئوية</keyword>
+<keyword
+>رياضيات</keyword>
+<keyword
+>مقام</keyword>
+<keyword
+>الكسور</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>مقدمة</title>
+
+<para
+>الكسور برنامج صغير لممارسة الحساب بالكسور والنسب المئوية. يُقدَّم ستة تمارين مختلفة بالإضافة إلى وضع تعلم. </para>
+
+<itemizedlist>
+	<listitem
+><para
+><guilabel
+>حساب</guilabel
+> - في هذا التمرين، عليك حل مهمة كسرية معطاة. يجب إدخال البسط والمقام. هذا هو التمرين الرئيس. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>مقارنة</guilabel
+> - في هذا التمرين، عليك مقارنة حجم كسرين معطيين باستخدام الرموز <guibutton
+>&gt;</guibutton
+> أو <guibutton
+>&lt;</guibutton
+> أو <guibutton
+>=</guibutton
+>. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>تحويل</guilabel
+> - في هذا التمرين، عليك تحويل عدد معطى إلى كسر. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>أعداد مختلطة</guilabel
+> - في هذا التمرين، عليك تحويل عدد مختلط إلى كسر غير فعلي (نسبة) والعكس. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>تحليل</guilabel
+> - في هذا التمرين، عليك تحليل عدد معطى إلى عوامله الأولية. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>نسبة مئوية</guilabel
+> - في هذا التمرين، عليك حساب النسب المئوية. </para
+></listitem>
+</itemizedlist>
+
+<para
+>في كل تمرين مختلف، يولِّد الكسور مهمة ويجب على المستخدم حلها. يتحقق البرنامج من الإدخال ويُعطي تغذية راجعة حوله. </para>
+
+<para
+>يُحصي الكسور عدد المهام التي حُلَّت إجمالًا وعدد المهام التي حُلَّت بشكل صحيح. تُعرض الإحصائيات للمستخدم. </para>
+
+<para
+>الكسور مضغوط جدًا ويركز على الفكرة الأساسية لمولِّد المهام. يُوفر نظام مساعدة عبر الإنترنت مساعدة حساسة للسياق للمواقف المختلفة. </para>
+
+</chapter>
+
+
+<chapter id="using-kbruch">
+<title
+>استخدام الكسور</title>
+
+<sect1 id="mode">
+<title
+>اختيار الوضع: تعلم أو تمارين</title>
+<para
+>عند بدء الكسور، يُقدم لك وضعين: <guilabel
+>تمرين</guilabel
+> وهو وضع التدريب و<guilabel
+>تعلم</guilabel
+> حيث يمكنك فهم الكسور. النقر على إحدى الصور سيدخل الوضع المختار. هذه لقطة شاشة لخيارات وضع الكسور:</para>
+
+<screenshot>
+	<screeninfo
+>خيارات وضع الكسور</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_mode.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>خيارات وضع الكسور</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>انقر إحدى الصور لاختيار الوضع.</para>
+</sect1>
+
+<sect1 id="overview">
+<title
+>شاشة التمرين الرئيسة</title>
+
+<para
+>هذه لقطة شاشة لشاشة التمرين الرئيسة لـ الكسور:</para>
+
+<screenshot>
+	<screeninfo
+>شاشة الكسور الرئيسة، مباشرة بعد بدء التمرين</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="gui_main.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>شاشة الكسور الرئيسة</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>جميع التمارين تجري في هذه الشاشة. يضمن هذا سهولة استخدام الكسور حتى للمستخدمين الصغار! تُقسم الشاشة الرئيسة إلى 5 أجزاء: <itemizedlist
+> <listitem
+><para
+> شريط القوائم مع القوائم الثلاث <guimenu
+>ملف</guimenu
+> و<guimenu
+>إعدادات</guimenu
+> و<guimenu
+>مساعدة</guimenu
+> </para
+></listitem
+> <listitem
+><para
+> شريط الأدوات، حيث يمكنك التبديل بين التمارين المختلفة </para
+></listitem
+> <listitem
+><para
+> <guilabel
+>خيارات:</guilabel
+> على اليسار، حيث يمكنك تحديد الصعوبة والإعدادات المختلفة للمهام </para
+></listitem
+> <listitem
+><para
+> جزء المهمة، حيث يجب إدخال نتيجة المهمة المعطاة </para
+></listitem
+> <listitem
+><para
+> الجزء الإحصائي، حيث يمكنك رؤية عدد المهام التي حُلَّت بشكل صحيح أو التي جُرِّبت </para
+></listitem
+> </itemizedlist
+> في أي وقت، يمكنك العودة إلى الأوضاع باستخدام أيقونة <guiicon
+>رجوع</guiicon
+> في شريط الأدوات. </para>
+<note
+><para
+>يمكنك إخفاء قسم <guilabel
+>خيارات:</guilabel
+> بسحبه إلى اليسار. </para
+></note>
+<para
+>أولًا، عليك اختيار تمرين في شريط الأدوات. المبدئي هو <guilabel
+>حساب</guilabel
+>. سيتغير جزء المهمة وفقًا للمهمة المختارة. سيتم تمكين بعض الإعدادات في قسم <guilabel
+>خيارات</guilabel
+> اعتمادًا على المهمة التي اخترتها. </para>
+<para
+>ستجد أيضًا أيقونة لتوليد مهمة جديدة في شريط الأدوات. هذا الإجراء متاح أيضًا في القائمة <menuchoice
+><guimenu
+>ملف</guimenu
+><guimenuitem
+>جديد</guimenuitem
+></menuchoice
+>. هذا الإجراء مُفعَّل دائمًا. إذا لم تحل المهمة المعطاة حاليًا، تُولَّد مهمة جديدة وتُعاد الإحصائيات. </para>
+<!--<para>
+You can hide the statistic part by dragging the vertical separator to the
+right.
+</para
+>-->
+<para
+>إذا أنهيت الكسور، سيُحفظ التمرين المختار حاليًا ويُستعاد عند بدء التشغيل التالي. </para>
+</sect1>
+
+<sect1 id="statistics">
+<title
+>الجزء الإحصائي</title>
+<screenshot>
+	<screeninfo
+>إحصائيات الكسور</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="statistics.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>إحصائيات الكسور</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>في هذا الجزء من الشاشة الرئيسة، يمكنك رؤية: <itemizedlist>
+	<listitem
+><para
+>على اليسار، عدد المهام التي حُلَّت </para
+></listitem>
+	<listitem
+><para
+>على اليمين، باللون الأخضر، عدد المهام التي حُلَّت بشكل صحيح </para
+></listitem>
+	<listitem
+><para
+>على اليمين، باللون الأحمر، عدد المهام التي حُلَّت بشكل خاطئ </para
+></listitem>
+		<listitem
+><para
+>على اليمين، باللون البرتقالي، عدد المهام التي تخطَّيتها </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>يمكنك إعادة تعيين الإحصائيات بالنقر على زر <guimenu
+>جديد</guimenu
+> في شريط الأدوات أو اختيار <menuchoice
+><guimenu
+>ملف</guimenu
+> <guimenuitem
+>جديد</guimenuitem
+></menuchoice
+> في شريط القوائم. </para>
+<para
+>ستُحفظ الإحصاءات عند إغلاق الكسور وتُستعاد عند بدء التشغيل التالي. </para>
+</sect1>
+
+<sect1 id="settings">
+<title
+>ضبط مظهر الكسور</title>
+<para
+>في هذا الحوار يمكنك ضبط بعض الإعدادات العامة لعرض المهمة. لفتح هذا الحوار استخدم <menuchoice
+><guimenu
+>الإعدادات</guimenu
+><guimenuitem
+>اضبط الكسور...</guimenuitem
+></menuchoice
+>. </para>
+
+<screenshot>
+	<screeninfo
+>حوار إعدادات الكسور</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="settings.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>حوار إعدادات الكسور</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>يوجد قسمان لضبط الإعداد: <itemizedlist>
+	<!-- <listitem
+><para>
+		<guilabel
+>General</guilabel
+>: Set whether to show the mixed number notation in the result.
+		This notation is not known everywhere and can be disabled therefore.
+	</para
+></listitem
+> -->
+	<listitem
+><para
+><guilabel
+>الألوان</guilabel
+>: اختر الألوان للأجزاء المختلفة من تعبير رياضي: الأعداد، علامة العملية، شريط الكسر. </para
+></listitem>
+	<listitem
+><para
+><guilabel
+>الخطوط</guilabel
+>: اختر خطًا لعرض المهمة. </para
+></listitem>
+</itemizedlist>
+</para>
+<para
+>ستُحفظ الإعدادات عند إنهاء الكسور وتُستعاد عند بدء التشغيل التالي. </para>
+</sect1>
+
+<sect1 id="learning-screen">
+<title
+>شاشة التعلم الرئيسة</title>
+<screenshot>
+	<screeninfo
+>وضع تعلم الكسور</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="learning.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>وضع تعلم الكسور</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+<para
+>النقر على الزر <guibutton
+>تلميح</guibutton
+> يبدّل عرض المساعدة على اليمين التي تشرح لك كيفية عمل الحلقات. </para>
+</sect1>
+</chapter>
+
+<chapter id="exercises">
+<title
+>تمارين</title>
+
+<sect1 id="exer_fraction">
+<title
+>تمرين الحساب</title>
+
+<para
+>في هذا التمرين عليك حل مهمة معطاة. لذلك عليك إدخال الجزء الصحيح من الكسر والبسط والمقام. يمكن ضبط صعوبة المهمة المُنشأة باستخدام بعض الخيارات على اليسار. </para>
+
+<sect2 id="task_paras">
+<title
+>خيارات</title>
+<para
+>توجد عدة وسائط تؤثر على صعوبة المهام المُنشأة:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>السؤال:</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>عدد مختلط:</guilabel
+></term>
+<listitem
+><para
+>اضبط ما إذا كانت الكسور ستظهر كأعداد مختلطة أم لا في تعبير السؤال (مثال عدد مختلط: 1 4/5 = 9/5).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>عدد الحدود:</guilabel
+></term>
+<listitem
+><para
+>عدد الحدود (الكسور المنفصلة) المُعطاة في كل مهمة. من 2 إلى 5، شاملًا.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>أقصى مقام:</guilabel
+></term>
+<listitem
+><para
+>أعلى رقم سيستخدمه الكسور كمقام رئيس في المهام التي يضعها. من حد أدنى 10 إلى حد أقصى 50.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>الإجابة:</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>عدد مختلط:</guilabel
+></term>
+<listitem
+><para
+>اضبط ما إذا كانت الكسور ستظهر كأعداد مختلطة أم لا في الإجابة (مثال عدد مختلط: 1 4/5 = 9/5).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>صيغة مختزلة:</guilabel
+></term>
+<listitem
+><para
+>أشر على هذا لفرض استخدام الصيغة المختزلة.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+<!-- Not in v. 4.2
+<varlistentry>
+<term
+><guilabel
+>Solution</guilabel
+></term>
+<listitem
+><para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mixed number</guilabel
+></term>
+<listitem
+><para
+>Set if the fractions will appear as mixed numbers or not in the solution ( mixed number example: 1 4/5 = 9/5 ).</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</para
+></listitem>
+</varlistentry>
+-->
+
+<varlistentry>
+<term
+><guilabel
+>العمليات:</guilabel
+></term>
+<listitem
+><para
+>العمليات التي ينبغي استخدامها في المهمة: <guilabel
+>جمع:</guilabel
+>، <guilabel
+>طرح:</guilabel
+>، <guilabel
+>ضرب:</guilabel
+> أو <guilabel
+>قسمة:</guilabel
+>. أشر على كل العمليات التي تريد استخدامها.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>بعد تغيير الوسائط عليك النقر على الزر <guimenu
+>جديد</guimenu
+> في شريط الأدوات لإنشاء مهمة تستخدم الوسائط الجديدة. يمكنك أيضًا استدعاء هذا الإجراء من شريط القوائم بـ <menuchoice
+><guimenu
+>ملف</guimenu
+><guimenuitem
+>جديد</guimenuitem
+></menuchoice
+>. هذا سيُعيد ضبط الإحصاءات. لتجنب ذلك، انقر على الزر <guibutton
+>التالي</guibutton
+> للمتابعة بالوسائط المُغيّرة. </para>
+<!--<note>
+<para>
+Your selection of the maximum main denominator will be reset to a default
+value every time you change the number of terms. So you should change the
+number of terms first and then select the maximum main denominator.
+</para>
+</note
+>-->
+<!--para>
+If you have not solved the current task and call the <guimenu
+>New</guimenu>
+action, the task will be counted as not solved correctly. To
+prevent this you have to change the parameters after you solved the task but
+before generating a new one.
+</para-->
+<para
+>ستُحفظ الوسائط المُختارة عند إنهاء الكسور وتُستعاد عند بدء التشغيل التالي. </para>
+</sect2>
+
+<sect2 id="exer_fraction_solve_task">
+<title
+>حل المهام</title>
+<para
+>بعد حل مهمة معطاة، تحتاج إلى إدخال النتيجة في مربعات الإدخال الثلاثة. في المربع الأيسر تُدخل الجزء الصحيح من الكسر، في المربع العلوي البسط وفي المربع السفلي المقام. إذا كان الخيار <guilabel
+>عدد مختلط:</guilabel
+> في قسم <guilabel
+>الإجابة:</guilabel
+> غير مُشار عليه، يُخفى المربع الأيسر للجزء الصحيح من الكسر. عندها تستخدم فقط مربع البسط ومربع المقام لإدخالك. </para>
+<para
+>إذا كانت النتيجة سالبة، يمكنك إدخال علامة ناقص أمام البسط أو المقام. إذا كانت النتيجة 0، اكتب 0 فقط في حقل إدخال البسط. إذا كان مقام النتيجة 1، يمكنك ترك المربع السفلي فارغًا. </para>
+<para
+>بعد إدخال النتيجة ينبغي النقر على الزر <guibutton
+>تحقق</guibutton
+> أسفل مربعات الإدخال. سيتحقق الكسور من إدخالك ويُظهر النتيجة الصحيحة على اليمين أسفل السلسلة <guilabel
+>خطأ!</guilabel
+>: </para>
+<screenshot>
+<screeninfo
+>مهمة مُتحقق منها</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="checked.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>مهمة مُتحقق منها</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+<para
+>حُلّت هذه المهمة بشكل خاطئ. تُعرض القيمة الصحيحة في صيغتين مختلفتين: عادية (مختزلة) وعدد مختلط. </para>
+<note>
+<para
+>إذا أشرت على <guilabel
+>صيغة مختزلة:</guilabel
+> في الخيارات في قسم <guilabel
+>الإجابات:</guilabel
+> فعليك دائمًا إدخال النتيجة مختزلة. سيعرض لك الكسور رسالة قصيرة مثل تلك في لقطة الشاشة أدناه، إذا أدخلت النتيجة الصحيحة غير مختزلة. ستُحسب الإجابة عندها كخاطئة. </para>
+</note>
+<screenshot>
+<screeninfo
+>نتيجة غير مختزلة</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="reduced.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>نتيجة غير مختزلة</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>للمتابعة مع المهمة التالية، انقر على الزر <guibutton
+>التالي</guibutton
+>. إذا أردت تغيير الوسائط للمهمة التالية فافعل ذلك قبل النقر على الزر <guibutton
+>التالي</guibutton
+>. </para>
+</sect2>
+</sect1>
+
+<sect1 id="exer_compare">
+<title
+>تمرين المقارنة</title>
+
+<para
+>في هذا التمرين، عليك مقارنة كسرين معطيين. عليك اختيار الكسر الأكبر منهما باختيار علامة المقارنة الصحيحة. </para>
+
+<screenshot>
+<screeninfo
+>تمرين المقارنة</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="compare.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>تمرين المقارنة</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>اختر أولًا علامة المقارنة الصحيحة. بعد اختيار علامة المقارنة، ستظهر النتيجة على اليمين. مربع أخضر مع <guilabel
+>صحيح!</guilabel
+> سيخبرك أن إجابتك صحيحة بينما مربع أحمر مع <guilabel
+>خطأ!</guilabel
+> سيشير إلى أن إجابتك خاطئة. ستنتقل إلى المهمة التالية بالنقر على زر <guibutton
+>التالي</guibutton
+>. </para>
+
+<para
+>في هذا التمرين، الخيار <guilabel
+>عدد مختلط:</guilabel
+> هو فقط المُفعّل. إذا وُضعت علامة، ستظهر الكسور كأعداد مختلطة.</para>
+</sect1>
+
+<sect1 id="exer_convert">
+<title
+>تمرين التحويل</title>
+
+<para
+>في هذا التمرين، عليك تحويل عدد معطى إلى كسر. عليك إدخال البسط والمقام. </para>
+
+<screenshot>
+<screeninfo
+>تمرين التحويل</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="convert.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>تمرين التحويل</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>على الجانب الأيسر من علامة المساواة في لقطة الشاشة أعلاه، يمكنك رؤية عدد عشري دوري. هذا يعني أن الكسر المُظهر كعدد عشري له جزء متكرر. الجزء المتكرر مُعلّم بالشريط الصغير فوق الأعداد. تلك الأعداد تتكرر إلى ما لا نهاية. </para>
+
+<para
+>بعد إدخال البسط والمقام، انقر على زر <guibutton
+>تحقق</guibutton
+>. سيتحقق الكسور من إدخالك ويعرض النتيجة الصحيحة. بعد هذه الخطوة، ستنتقل إلى المهمة التالية بالنقر على زر <guibutton
+>التالي</guibutton
+>. </para>
+
+<note>
+<para
+>لا تنسَ إدخال النتيجة مبسطة. النتائج غير المبسطة ستُحسب على أنها لم تُحل بشكل صحيح. </para>
+</note>
+
+<para
+>في هذا التمرين، جميع الخيارات معطلة.</para>
+
+</sect1>
+
+<sect1 id="exer_mixed">
+<title
+>تمرين الأعداد المختلطة</title>
+
+<para
+>في هذا التمرين، عليك تحويل عدد مختلط معطى إلى كسر غير فعلي (نسبة) والعكس صحيح. عليك إدخال البسط والمقام للكسر غير الفعلي أو عدد صحيح وبسط ومقام للعدد المختلط. </para>
+
+<screenshot>
+<screeninfo
+>تمرين الأعداد المختلطة</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="mixed.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>تمرين الأعداد المختلطة</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>على الجانب الأيسر من علامة المساواة في لقطة الشاشة أعلاه، يمكنك رؤية عدد مختلط. هذا يعني أن العدد مكون من عدد صحيح وكسر فعلي. عليك إدخال الكسر غير الفعلي المساوي (جزء البسط من هذا الكسر أكبر من أو يساوي جزء المقام). </para>
+
+<para
+>بعد إدخال البسط والمقام، انقر على زر <guibutton
+>تحقق</guibutton
+>. سيتحقق الكسور من إدخالك ويعرض النتيجة الصحيحة. بعد هذه الخطوة، ستنتقل إلى المهمة التالية بالنقر على زر <guibutton
+>التالي</guibutton
+>. </para>
+
+<note>
+<para
+>لا تنسَ إدخال النتيجة مبسطة. النتائج غير المبسطة ستُحسب على أنها لم تُحل بشكل صحيح. </para>
+</note>
+
+<para
+>في هذا التمرين، جميع الخيارات معطلة.</para>
+
+</sect1>
+
+<sect1 id="exer_factorize">
+<title
+>تمرين التحليل إلى عوامل</title>
+
+<para
+>في هذا التمرين، عليك تحليل عدد معطى إلى عوامله الأولية. عليك إدخال جميع العوامل الأولية للعدد. </para>
+
+<screenshot>
+<screeninfo
+>تمرين التحليل إلى عوامل</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="factorize.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>تمرين التحليل إلى عوامل</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>يمكنك إدخال عامل بالنقر على أزرار العوامل الأولية. تُدرج علامة <quote
+>x</quote
+> آليًا عند النقر على زر العامل الأولي التالي. يمكنك إزالة آخر عامل أولي أُدخل بالنقر على زر <guibutton
+>مسافة خلفية</guibutton
+>. </para>
+<para
+>بعد إدخال جميع العوامل الأولية، انقر على زر <guibutton
+>تحقق</guibutton
+>. سيتحقق الكسور من إدخالك ويعرض النتيجة الصحيحة. بعد هذه الخطوة، ستنتقل إلى المهمة التالية بالنقر على زر <guibutton
+>التالي</guibutton
+>. </para>
+
+<para
+>في لقطة الشاشة في أعلى هذه الصفحة، يمكنك رؤية <quote
+>x</quote
+> بين العوامل الأولية. هذه علامة الضرب. يجب أن يكون حاصل ضرب جميع العوامل الأولية هو العدد الذي تحاول تحليله. </para>
+
+<note>
+<para
+>عليك إدخال جميع العوامل الأولية حتى عندما يتكرر عامل أولي عدة مرات. مثال: كعوامل أولية للعدد 18، عليك إدخال 2 و3 و3. </para>
+</note>
+
+<para
+>في هذا التمرين، جميع الخيارات معطلة.</para>
+
+</sect1>
+
+<sect1 id="exer_percentage">
+<title
+>تمرين النسبة المئوية</title>
+
+<para
+>في هذا التمرين، عليك الإجابة على بعض أسئلة النسبة المئوية.</para>
+
+<screenshot>
+<screeninfo
+>تمرين النسبة المئوية</screeninfo>
+<mediaobject>
+  <imageobject>
+		<imagedata fileref="percentage.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>تمرين النسبة المئوية</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>بعد إدخال إجابتك، انقر على زر <guibutton
+>تحقق</guibutton
+>. سيتحقق الكسور من إدخالك ويعرض النتيجة الصحيحة. بعد هذه الخطوة، ستنتقل إلى المهمة التالية بالنقر على زر <guibutton
+>التالي</guibutton
+>. </para>
+
+<para
+>في هذا التمرين، جميع الخيارات معطلة.</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>الإسنادات والرخصة</title>
+<para
+>الكسور</para>
+<para
+>البرنامج والوثائق حقوق النشر: 2001-2011 Sebastian Stein <email
+>seb.kde@hpfsc.de</email
+> </para>
+
+<!-- needs update ???-->
+
+<para
+>الشكر موصول لـ:</para>
+
+<itemizedlist>
+	<listitem
+><para
+>&Anne-Marie.Mahfouf; لإدارة مشروع &kde; التعليمي</para
+></listitem>
+	<listitem
+><para
+>Klas Kalass للمساعدة في تصميم الواجهة</para
+></listitem>
+	<listitem
+><para
+>Eva Brucherseifer لكتابة <application
+>KMath</application
+> (واجهة الكسور الرسومية مبنية على هذا العمل)</para
+></listitem>
+	<listitem
+><para
+>Dominique Devriese لإصلاح الأخطاء</para
+></listitem>
+	<listitem
+><para
+><ulink url="http://www.net-tex.de/"
+>Stefan Schumacher</ulink
+> لاختبار نسخة مبكرة جدًا</para
+></listitem>
+	<listitem
+><para
+><ulink url="https://www.guckes.net/"
+>Sven Guckes</ulink
+> لاختبار واجهة النص (التي أُزيلت)</para
+></listitem>
+	<listitem
+><para
+>&David.Faure; لمساعدته مع &kde; <acronym
+>CVS</acronym
+> و &kde; Bugzilla</para
+></listitem>
+	<listitem
+><para
+>&Robert.Gogolok; لمساعدته مع &kde; <acronym
+>CVS</acronym
+></para
+></listitem>
+	<listitem
+><para
+>John Kesson لمراجعة الدليل</para
+></listitem>
+</itemizedlist>
+
+<para
+>تصميم واجهة جديد وتحسينات قابلية الاستخدام لـ &kde; 4.1:</para>
+<itemizedlist>
+<listitem
+><para
+>Paulo Cattai <email
+>paulo.cattai@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Danilo Balzaque <email
+>danilo.balzaque@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Roberto Cunha <email
+>roberto.cunha@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tadeu Araujo <email
+>tadeu.araujo@ltia.fc.unesp.br</email
+></para
+></listitem>
+<listitem
+><para
+>Tiago Porangaba <email
+>tiago.porangaba@ltia.fc.unesp.br</email
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->

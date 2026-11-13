@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Arabic "INCLUDE">
+]>
+<!--
+SPDX-FileCopyrightText: 2005 Lauri Watts
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>دليل مستخدم الكسور</title>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<date
+>2020-12-21</date>
+<releaseinfo
+>تطبيقات 20.12</releaseinfo>
+<productname
+>تطبيقات كِيدِي</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kbruch</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kbruch</command
+></refname>
+<refpurpose
+>تعلّم الحساب بالكسور والنسب المئوية</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kbruch</command
+> <arg choice="opt"
+>خيارات</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>الوصف</title>
+<para
+>الكسور هو برنامج صغير لممارسة الحساب بالكسور والنسب المئوية. تُوفَّر تمارين مختلفة لهذا الغرض. يتحقق البرنامج من إدخال المستخدم ويُقدّم تغذية راجعة.</para>
+</refsect1>
+
+<refsect1>
+<title
+>انظر أيضًا</title>
+<para
+>وثائق المستخدم الأكثر تفصيلًا متوفرة من <ulink url="help:/kbruch"
+>help:/kbruch</ulink
+> (إما بإدخال هذا &URL; في &konqueror;، أو بتشغيل <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kbruch</parameter
+></userinput
+>).</para>
+<para
+>تتوفر أيضًا معلومات إضافية على <ulink url="https://edu.kde.org/kbruch/"
+>موقع كيدي التعليمي</ulink
+></para>
+</refsect1>
+
+<refsect1>
+<title
+>المؤلفون</title>
+<para
+>الكسور كُتب بواسطة <personname
+><firstname
+>سيباستيان</firstname
+><surname
+>شتاين</surname
+></personname
+> <email
+>seb.kde@hpfsc.de</email
+></para>
+</refsect1>
+
+</refentry>
